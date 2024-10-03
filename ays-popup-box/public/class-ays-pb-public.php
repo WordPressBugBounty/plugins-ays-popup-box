@@ -1354,8 +1354,11 @@ class Ays_Pb_Public {
             // Notification type | Logo width
             $notification_logo_width = (isset($options['notification_logo_width']) && $options['notification_logo_width'] != '') ? absint( esc_attr($options['notification_logo_width']) ) . '%' : '100%';
 
+            // Notification type | Logo max-width | Measurement unit
+            $notification_logo_max_width_measurement_unit = (isset($options['notification_logo_max_width_measurement_unit']) && $options['notification_logo_max_width_measurement_unit'] == 'percentage') ? '%' : 'px';
+
             // Notification type | Logo max-width
-            $notification_logo_max_width = (isset($options['notification_logo_max_width']) && $options['notification_logo_max_width'] != '') ? absint( esc_attr($options['notification_logo_max_width']) ) . 'px' : '100px';
+            $notification_logo_max_width = (isset($options['notification_logo_max_width']) && $options['notification_logo_max_width'] != '') ? absint( esc_attr($options['notification_logo_max_width']) ) . $notification_logo_max_width_measurement_unit : '100px';
 
             // Notification type | Logo min-width
             $notification_logo_min_width = (isset($options['notification_logo_min_width']) && $options['notification_logo_min_width'] != '') ? absint( esc_attr($options['notification_logo_min_width']) ) . 'px' : '50px';

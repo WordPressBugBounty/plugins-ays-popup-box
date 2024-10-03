@@ -1096,6 +1096,9 @@ class Ays_PopupBox_List_Table extends WP_List_Table {
         // Notification type | Logo max-width
         $notification_logo_max_width = (isset($_POST['ays_pb_notification_logo_max_width']) && $_POST['ays_pb_notification_logo_max_width'] != '') ? absint( intval($_POST['ays_pb_notification_logo_max_width']) ) : 100;
 
+        // Notification type | Logo max-width | Measurement unit
+        $notification_logo_max_width_measurement_unit = (isset($_POST['ays_pb_notification_logo_max_width_measurement_unit']) && $_POST['ays_pb_notification_logo_max_width_measurement_unit'] != '') ? stripslashes( sanitize_text_field($_POST['ays_pb_notification_logo_max_width_measurement_unit']) ) : 'pixels';
+
         // Notification type | Logo min-width
         $notification_logo_min_width = (isset($_POST['ays_pb_notification_logo_min_width']) && $_POST['ays_pb_notification_logo_min_width'] != '') ? absint( intval($_POST['ays_pb_notification_logo_min_width']) ) : 50;
 
@@ -1303,6 +1306,12 @@ class Ays_PopupBox_List_Table extends WP_List_Table {
         // Close button delay mobile
         $close_button_delay_for_mobile = (isset($_POST['ays_pb_close_button_delay_for_mobile']) && $_POST['ays_pb_close_button_delay_for_mobile'] != '') ? abs( intval($_POST['ays_pb_close_button_delay_for_mobile']) ) : '';
 
+        // Popup name
+        $popup_name = (isset($_POST['ays_pb_popup_name']) && $_POST['ays_pb_popup_name'] != '') ? sanitize_text_field($_POST['ays_pb_popup_name']) : '';
+
+        // Popup category
+        $popup_category_id = (isset($_POST['ays_popup_category']) && $_POST['ays_popup_category'] != '') ? absint( sanitize_text_field($_POST['ays_popup_category']) ) : null;
+
         // Width
 		$width = ( isset( $_POST['ays-pb']["width"] ) && $_POST['ays-pb']["width"] != '' ) ? absint( intval( $_POST['ays-pb']["width"] ) ) : '';
 
@@ -1327,9 +1336,6 @@ class Ays_PopupBox_List_Table extends WP_List_Table {
 
         //Show once per session
 		$cookie = ( isset( $_POST['ays-pb']["cookie"] ) && $_POST['ays-pb']["cookie"] != '' ) ? absint( intval( $_POST['ays-pb']["cookie"] ) ) : 0;
-
-        //Category Id 
-        $popup_category_id = ( isset( $_POST['ays_popup_category'] ) && $_POST['ays_popup_category'] != '' ) ? absint( sanitize_text_field( $_POST['ays_popup_category'] ) ) : null;
 
         //Background Color
 		$bgcolor = ( isset( $_POST['ays-pb']["bgcolor"] ) && $_POST['ays-pb']["bgcolor"] != '' ) ? wp_unslash(sanitize_text_field( $_POST['ays-pb']["bgcolor"] )) : '#FFFFFF';
@@ -1733,9 +1739,6 @@ class Ays_PopupBox_List_Table extends WP_List_Table {
         //Box Shadow Z offset Mobile
         $pb_box_shadow_z_offset_mobile = (isset($_POST['ays_pb_box_shadow_z_offset_mobile']) && $_POST['ays_pb_box_shadow_z_offset_mobile'] != '' && intval( $_POST['ays_pb_box_shadow_z_offset_mobile'] ) != 0) ? intval( $_POST['ays_pb_box_shadow_z_offset_mobile'] ) : 15;
 
-        // Popup Name
-        $popup_name = ( isset($_POST['ays_pb_popup_name']) && $_POST['ays_pb_popup_name'] != "" ) ? sanitize_text_field( $_POST['ays_pb_popup_name'] ) : '';
-
         //Disable scroll on popup
         $disable_scroll_on_popup = ( isset( $_POST['ays_pb_disable_scroll_on_popup'] ) && $_POST['ays_pb_disable_scroll_on_popup'] != '' ) ? 'on' : 'off';
 
@@ -1853,6 +1856,7 @@ class Ays_PopupBox_List_Table extends WP_List_Table {
             'notification_logo_redirect_to_new_tab' => $notification_logo_redirect_to_new_tab,
             'notification_logo_width' => $notification_logo_width,
             'notification_logo_max_width' => $notification_logo_max_width,
+            'notification_logo_max_width_measurement_unit' => $notification_logo_max_width_measurement_unit,
             'notification_logo_min_width' => $notification_logo_min_width,
             'notification_main_content' => $notification_main_content,
             'notification_button_1_text' => $notification_button_1_text,

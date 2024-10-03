@@ -146,6 +146,7 @@ $options = array(
     'notification_logo_redirect_to_new_tab' => 'off',
     'notification_logo_width' => 100,
     'notification_logo_max_width' => 100,
+    'notification_logo_max_width_measurement_unit' => 'pixels',
     'notification_logo_min_width' => 50,
     'notification_main_content' => 'Write the custom notification banner text here.',
     'notification_button_1_text' => 'Click!',
@@ -505,6 +506,9 @@ $notification_logo_width = (isset($options['notification_logo_width']) && $optio
 
 // Notification type | Logo max-width
 $notification_logo_max_width = (isset($options['notification_logo_max_width']) && $options['notification_logo_max_width'] != '') ? absint( esc_attr($options['notification_logo_max_width']) ) : 100;
+
+// Notification type | Logo max-width | Measurement unit
+$notification_logo_max_width_measurement_unit = (isset($options['notification_logo_max_width_measurement_unit']) && $options['notification_logo_max_width_measurement_unit'] != '') ? stripslashes( esc_attr($options['notification_logo_max_width_measurement_unit']) ) : 'pixels';
 
 // Notification type | Logo min-width
 $notification_logo_min_width = (isset($options['notification_logo_min_width']) && $options['notification_logo_min_width'] != '') ? absint( esc_attr($options['notification_logo_min_width']) ) : 50;
@@ -1896,7 +1900,7 @@ $ays_users_roles = $wp_roles->roles;
                                         <div class="col-sm-3">
                                             <label for="ays_pb_notification_logo_max_width">
                                                 <?php  echo __('Max-width', "ays-popup-box" ) ?>
-                                                <a class="ays_help" data-toggle="tooltip" title="<?php echo __('Specify the max-width of the logo in pixels.', "ays-popup-box"); ?>" >
+                                                <a class="ays_help" data-toggle="tooltip" title="<?php echo __('Specify the max-width of the logo.', "ays-popup-box"); ?>" >
                                                     <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
                                                 </a>
                                             </label>
@@ -1906,8 +1910,15 @@ $ays_users_roles = $wp_roles->roles;
                                                 <div>
                                                     <input type="number" id="ays_pb_notification_logo_max_width" class="ays-text-input" name="ays_pb_notification_logo_max_width" value="<?php echo $notification_logo_max_width ?>" />
                                                 </div>
-                                                <div class="ays_dropdown_max_width">
-                                                    <input type="text" value="px" class="ays-form-hint-for-size" disabled>
+                                                <div class="ays_pb_width_by_percentage_px_box">
+                                                    <select name="ays_pb_notification_logo_max_width_measurement_unit" id="ays_pb_notification_logo_max_width_measurement_unit" class="ays_pb_aysDropdown ays-pb-percent">
+                                                        <option value="pixels" <?php echo $notification_logo_max_width_measurement_unit == "pixels" ? "selected" : ""; ?>>
+                                                            <?php echo __( "px", "ays-popup-box" ); ?>
+                                                        </option>
+                                                        <option value="percentage" <?php echo $notification_logo_max_width_measurement_unit == "percentage" ? "selected" : ""; ?>>
+                                                            <?php echo __( "%", "ays-popup-box" ); ?>
+                                                        </option>
+                                                    </select>
                                                 </div>
                                             </div>
                                         </div>
