@@ -1102,6 +1102,9 @@ class Ays_PopupBox_List_Table extends WP_List_Table {
         // Notification type | Logo min-width
         $notification_logo_min_width = (isset($_POST['ays_pb_notification_logo_min_width']) && $_POST['ays_pb_notification_logo_min_width'] != '') ? absint( intval($_POST['ays_pb_notification_logo_min_width']) ) : 50;
 
+        // Notification type | Logo min-width | Measurement unit
+        $notification_logo_min_width_measurement_unit = (isset($_POST['ays_pb_notification_logo_min_width_measurement_unit']) && $_POST['ays_pb_notification_logo_min_width_measurement_unit'] != '') ? stripslashes( sanitize_text_field($_POST['ays_pb_notification_logo_min_width_measurement_unit']) ) : 'pixels';
+
         // Notification type | Main content
         $notification_main_content = (isset($_POST['ays_pb_notification_main_content']) && $_POST['ays_pb_notification_main_content'] != '') ? wp_kses_post($_POST['ays_pb_notification_main_content']) : '';
 
@@ -1311,6 +1314,24 @@ class Ays_PopupBox_List_Table extends WP_List_Table {
 
         // Popup category
         $popup_category_id = (isset($_POST['ays_popup_category']) && $_POST['ays_popup_category'] != '') ? absint( sanitize_text_field($_POST['ays_popup_category']) ) : null;
+
+        // Enable overlay
+        $switchoverlay = (isset($_POST['ays-pb']['onoffoverlay']) && $_POST['ays-pb']['onoffoverlay'] == 'on') ? 'On' : 'Off';
+
+        // Enable overlay | Opacity
+        $overlay_opacity = ($switchoverlay == 'On') && isset($_POST['ays-pb']['overlay_opacity']) ? stripslashes( sanitize_text_field($_POST['ays-pb']['overlay_opacity']) ) : '0.5'; 
+
+        // Enable overlay | Enable different opacity for mobile
+        $enable_overlay_text_mobile = (isset($_POST['ays_pb_enable_overlay_text_mobile']) && $_POST['ays_pb_enable_overlay_text_mobile'] == 'on') ? 'on' : 'off';
+
+        // Enable overlay | Opacity mobile
+        $overlay_mobile_opacity = ($switchoverlay == 'On') && isset($_POST['ays_pb_overlay_mobile_opacity']) ? stripslashes( sanitize_text_field($_POST['ays_pb_overlay_mobile_opacity']) ) : '0.5';
+
+        // Blured overlay
+        $blured_overlay = (isset($_POST['ays_pb_blured_overlay']) && $_POST['ays_pb_blured_overlay'] != '') ? 'on' : 'off';
+
+        // Blured overlay mobile
+        $blured_overlay_mobile = (isset($_POST['ays_pb_blured_overlay_mobile']) && $_POST['ays_pb_blured_overlay_mobile'] != '') ? 'on' : 'off';
 
         // Width
 		$width = ( isset( $_POST['ays-pb']["width"] ) && $_POST['ays-pb']["width"] != '' ) ? absint( intval( $_POST['ays-pb']["width"] ) ) : '';
@@ -1649,11 +1670,6 @@ class Ays_PopupBox_List_Table extends WP_List_Table {
      
         $log_user = (isset($_POST['ays-pb']["log_user"]) &&  $_POST['ays-pb']["log_user"] == 'on') ? 'On' : 'Off';
         $guest = (isset($_POST['ays-pb']["guest"]) &&  $_POST['ays-pb']["guest"] == 'on') ? 'On' : 'Off';
-        $switchoverlay = (isset($_POST['ays-pb']["onoffoverlay"]) &&  $_POST['ays-pb']["onoffoverlay"] == 'on') ? 'On' : 'Off';
-        $overlay_opacity = ($switchoverlay == 'On') && isset($_POST['ays-pb']["overlay_opacity"]) ? stripslashes(sanitize_text_field( $_POST['ays-pb']['overlay_opacity'] )) : '0.5'; 
-        $overlay_mobile_opacity = ($switchoverlay == 'On') && isset($_POST['ays_pb_overlay_mobile_opacity']) ? stripslashes(sanitize_text_field( $_POST['ays_pb_overlay_mobile_opacity'] )) : '0.5';
-        // Enable different overlay mobile text for mobile
-        $enable_overlay_text_mobile = ( isset($_POST['ays_pb_enable_overlay_text_mobile']) && $_POST['ays_pb_enable_overlay_text_mobile'] == 'on' ) ? 'on' : 'off';
 
         //Show Popup Title
         $showPopupTitle = ( isset($_POST["show_popup_title"]) &&  $_POST["show_popup_title"] == 'on' ) ? 'On' : 'Off';
@@ -1763,12 +1779,6 @@ class Ays_PopupBox_List_Table extends WP_List_Table {
         // Close button hover color
         $close_button_hover_color = ( isset($_POST['ays_pb_close_button_hover_color']) && $_POST['ays_pb_close_button_hover_color'] != "" ) ? sanitize_text_field( $_POST['ays_pb_close_button_hover_color'] ) : '#000000';
 
-        // Blured Overlay
-        $blured_overlay = ( isset($_POST['ays_pb_blured_overlay']) && $_POST['ays_pb_blured_overlay'] != "" ) ? 'on' : 'off';
-
-        // Blured Overlay Mobile
-        $blured_overlay_mobile = ( isset($_POST['ays_pb_blured_overlay_mobile']) && $_POST['ays_pb_blured_overlay_mobile'] != "" ) ? 'on' : 'off';
-
         $options = array(
             'enable_background_gradient' => $enable_background_gradient,
             'background_gradient_color_1' => $pb_background_gradient_color_1,
@@ -1858,6 +1868,7 @@ class Ays_PopupBox_List_Table extends WP_List_Table {
             'notification_logo_max_width' => $notification_logo_max_width,
             'notification_logo_max_width_measurement_unit' => $notification_logo_max_width_measurement_unit,
             'notification_logo_min_width' => $notification_logo_min_width,
+            'notification_logo_min_width_measurement_unit' => $notification_logo_min_width_measurement_unit,
             'notification_main_content' => $notification_main_content,
             'notification_button_1_text' => $notification_button_1_text,
             'notification_button_1_hover_text' => $notification_button_1_hover_text,

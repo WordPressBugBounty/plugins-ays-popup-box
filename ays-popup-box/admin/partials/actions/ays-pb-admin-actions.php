@@ -148,6 +148,7 @@ $options = array(
     'notification_logo_max_width' => 100,
     'notification_logo_max_width_measurement_unit' => 'pixels',
     'notification_logo_min_width' => 50,
+    'notification_logo_min_width_measurement_unit' => 'pixels',
     'notification_main_content' => 'Write the custom notification banner text here.',
     'notification_button_1_text' => 'Click!',
     'notification_button_1_hover_text' => 'Click!',
@@ -512,6 +513,9 @@ $notification_logo_max_width_measurement_unit = (isset($options['notification_lo
 
 // Notification type | Logo min-width
 $notification_logo_min_width = (isset($options['notification_logo_min_width']) && $options['notification_logo_min_width'] != '') ? absint( esc_attr($options['notification_logo_min_width']) ) : 50;
+
+// Notification type | Logo min-width | Measurement unit
+$notification_logo_min_width_measurement_unit = (isset($options['notification_logo_min_width_measurement_unit']) && $options['notification_logo_min_width_measurement_unit'] != '') ? stripslashes( esc_attr($options['notification_logo_min_width_measurement_unit']) ) : 'pixels';
 
 // Notification type | Main content
 $notification_main_content = (isset($options['notification_main_content']) && $options['notification_main_content'] != '') ? stripslashes($options['notification_main_content']) : 'Write the custom notification banner text here.';
@@ -1940,8 +1944,15 @@ $ays_users_roles = $wp_roles->roles;
                                                 <div>
                                                     <input type="number" id="ays_pb_notification_logo_min_width" class="ays-text-input" name="ays_pb_notification_logo_min_width" value="<?php echo $notification_logo_min_width ?>" />
                                                 </div>
-                                                <div class="ays_dropdown_max_width">
-                                                    <input type="text" value="px" class="ays-form-hint-for-size" disabled>
+                                                <div class="ays_pb_width_by_percentage_px_box">
+                                                    <select name="ays_pb_notification_logo_min_width_measurement_unit" id="ays_pb_notification_logo_min_width_measurement_unit" class="ays_pb_aysDropdown ays-pb-percent">
+                                                        <option value="pixels" <?php echo $notification_logo_min_width_measurement_unit == "pixels" ? "selected" : ""; ?>>
+                                                            <?php echo __( "px", "ays-popup-box" ); ?>
+                                                        </option>
+                                                        <option value="percentage" <?php echo $notification_logo_min_width_measurement_unit == "percentage" ? "selected" : ""; ?>>
+                                                            <?php echo __( "%", "ays-popup-box" ); ?>
+                                                        </option>
+                                                    </select>
                                                 </div>
                                             </div>
                                         </div>

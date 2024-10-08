@@ -1360,8 +1360,11 @@ class Ays_Pb_Public {
             // Notification type | Logo max-width
             $notification_logo_max_width = (isset($options['notification_logo_max_width']) && $options['notification_logo_max_width'] != '') ? absint( esc_attr($options['notification_logo_max_width']) ) . $notification_logo_max_width_measurement_unit : '100px';
 
+            // Notification type | Logo min-width | Measurement unit
+            $notification_logo_min_width_measurement_unit = (isset($options['notification_logo_min_width_measurement_unit']) && $options['notification_logo_min_width_measurement_unit'] == 'percentage') ? '%' : 'px';
+
             // Notification type | Logo min-width
-            $notification_logo_min_width = (isset($options['notification_logo_min_width']) && $options['notification_logo_min_width'] != '') ? absint( esc_attr($options['notification_logo_min_width']) ) . 'px' : '50px';
+            $notification_logo_min_width = (isset($options['notification_logo_min_width']) && $options['notification_logo_min_width'] != '') ? absint( esc_attr($options['notification_logo_min_width']) ) . $notification_logo_min_width_measurement_unit : '50px';
 
             // Notification type | Button 1 background color
             $notification_button_1_bg_color = (isset($options['notification_button_1_bg_color']) && $options['notification_button_1_bg_color'] != '') ? stripslashes( esc_attr($options['notification_button_1_bg_color']) ) : '#F66123';
