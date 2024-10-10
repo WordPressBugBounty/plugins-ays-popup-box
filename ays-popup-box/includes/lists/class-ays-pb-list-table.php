@@ -1021,6 +1021,16 @@ class Ays_PopupBox_List_Table extends WP_List_Table {
             return;
         }
 
+        $social_links_default = array(
+            'linkedin_link' => '',
+            'facebook_link' => '',
+            'twitter_link' => '',
+            'vkontakte_link' => '',
+            'youtube_link' => '',
+            'instagram_link' => '',
+            'behance_link' => '',
+        );
+
         // Id
 		$id = (isset($_POST['id']) && $_POST['id'] != '') ? absint( intval($_POST['id']) ) : null;
 
@@ -1092,6 +1102,9 @@ class Ays_PopupBox_List_Table extends WP_List_Table {
 
         // Notification type | Logo width
         $notification_logo_width = (isset($_POST['ays_pb_notification_logo_width']) && $_POST['ays_pb_notification_logo_width'] != '') ? absint( intval($_POST['ays_pb_notification_logo_width']) ) : 100;
+
+        // Notification type | Logo width | Measurement unit
+        $notification_logo_width_measurement_unit = (isset($_POST['ays_pb_notification_logo_width_measurement_unit']) && $_POST['ays_pb_notification_logo_width_measurement_unit'] != '') ? stripslashes( sanitize_text_field($_POST['ays_pb_notification_logo_width_measurement_unit']) ) : 'percentage';
 
         // Notification type | Logo max-width
         $notification_logo_max_width = (isset($_POST['ays_pb_notification_logo_max_width']) && $_POST['ays_pb_notification_logo_max_width'] != '') ? absint( intval($_POST['ays_pb_notification_logo_max_width']) ) : 100;
@@ -1333,6 +1346,58 @@ class Ays_PopupBox_List_Table extends WP_List_Table {
         // Blured overlay mobile
         $blured_overlay_mobile = (isset($_POST['ays_pb_blured_overlay_mobile']) && $_POST['ays_pb_blured_overlay_mobile'] != '') ? 'on' : 'off';
 
+        // Enable popup sound
+        $enable_pb_sound = (isset($_POST['ays_pb_enable_sounds']) && $_POST['ays_pb_enable_sounds'] == 'on') ? 'on' : 'off';
+
+        // Enable social media links
+        $enable_social_links = (isset($_POST['ays_pb_enable_social_links']) && $_POST['ays_pb_enable_social_links'] == 'on') ? 'on' : 'off';
+
+        // Enable social media links | Heading for share buttons
+        $social_buttons_heading = (isset($_POST['ays_pb_social_buttons_heading']) && $_POST['ays_pb_social_buttons_heading'] != '') ? stripslashes($_POST['ays_pb_social_buttons_heading']) : '';
+
+        // Enable social media links | Social media link buttons
+        $ays_social_links = (isset($_POST['ays_social_links'])) ? array_map( 'sanitize_text_field', $_POST['ays_social_links'] ) : $social_links_default;
+
+        // Enable social media links | LinkedIn link
+        $linkedin_link = (isset($ays_social_links['ays_pb_linkedin_link']) && $ays_social_links['ays_pb_linkedin_link'] != '') ? sanitize_text_field($ays_social_links['ays_pb_linkedin_link']) : '';
+
+        // Enable social media links | Facebook link
+        $facebook_link = (isset($ays_social_links['ays_pb_facebook_link']) && $ays_social_links['ays_pb_facebook_link'] != '') ? sanitize_text_field($ays_social_links['ays_pb_facebook_link']) : '';
+
+        // Enable social media links | X link
+        $twitter_link = (isset($ays_social_links['ays_pb_twitter_link']) && $ays_social_links['ays_pb_twitter_link'] != '') ? sanitize_text_field($ays_social_links['ays_pb_twitter_link']) : '';
+
+        // Enable social media links | VKontakte link
+        $vkontakte_link = (isset($ays_social_links['ays_pb_vkontakte_link']) && $ays_social_links['ays_pb_vkontakte_link'] != '') ? sanitize_text_field($ays_social_links['ays_pb_vkontakte_link']) : '';
+
+        // Enable social media links | Youtube link
+        $youtube_link = (isset($ays_social_links['ays_pb_youtube_link']) && $ays_social_links['ays_pb_youtube_link'] != '') ? sanitize_text_field($ays_social_links['ays_pb_youtube_link']) : '';
+
+        // Enable social media links | Instagram link
+        $instagram_link = (isset($ays_social_links['ays_pb_instagram_link']) && $ays_social_links['ays_pb_instagram_link'] != '') ? sanitize_text_field($ays_social_links['ays_pb_instagram_link']) : '';
+
+        // Enable social media links | Behance link
+        $behance_link = (isset($ays_social_links['ays_pb_behance_link']) && $ays_social_links['ays_pb_behance_link'] != '') ? sanitize_text_field($ays_social_links['ays_pb_behance_link']) : '';
+
+        $social_links = array(
+            'linkedin_link' => $linkedin_link,
+            'facebook_link' => $facebook_link,
+            'twitter_link' => $twitter_link,
+            'vkontakte_link' => $vkontakte_link,
+            'youtube_link' => $youtube_link,
+            'instagram_link' => $instagram_link,
+            'behance_link' => $behance_link,
+        );
+
+        // Schedule the popup
+        $active_date_check = (isset($_POST['active_date_check']) && $_POST['active_date_check'] == 'on') ? 'on' : 'off';
+
+        // Schedule the popup | Start date
+        $activeInterval = (isset($_POST['ays-active']) && $_POST['ays-active'] != '') ? sanitize_text_field($_POST['ays-active']) : '';
+
+        // Schedule the popup | End date
+        $deactiveInterval = (isset($_POST['ays-deactive']) && $_POST['ays-deactive'] != '') ? sanitize_text_field($_POST['ays-deactive']) : '';
+
         // Width
 		$width = ( isset( $_POST['ays-pb']["width"] ) && $_POST['ays-pb']["width"] != '' ) ? absint( intval( $_POST['ays-pb']["width"] ) ) : '';
 
@@ -1453,11 +1518,6 @@ class Ays_PopupBox_List_Table extends WP_List_Table {
         // Background Image Sizing Mobile
         $pb_bg_image_sizing_mobile = (isset($_POST['ays_pb_bg_image_sizing_mobile']) && $_POST['ays_pb_bg_image_sizing_mobile'] != "") ? stripslashes( sanitize_text_field($_POST['ays_pb_bg_image_sizing_mobile']) ) : 'cover';
 
-        // Schedule Popup
-        $active_date_check = (isset($_POST['active_date_check']) && $_POST['active_date_check'] == "on") ? 'on' : 'off';
-        $activeInterval = isset($_POST['ays-active']) ? sanitize_text_field($_POST['ays-active']) : "";
-        $deactiveInterval = isset($_POST['ays-deactive']) ? sanitize_text_field($_POST['ays-deactive']) : "";
-
         // Custom class for quiz container
         $custom_class = (isset($_POST['ays-pb']["custom-class"]) && $_POST['ays-pb']["custom-class"] != "") ? stripslashes( sanitize_text_field($_POST['ays-pb']["custom-class"]) ) : '';
         $users_role = (isset($_POST['ays-pb']["ays_users_roles"]) && !empty($_POST['ays-pb']["ays_users_roles"])) ? $_POST['ays-pb']["ays_users_roles"] : array();
@@ -1473,9 +1533,6 @@ class Ays_PopupBox_List_Table extends WP_List_Table {
         $pb_background_gradient_color_1_mobile = !isset($_POST['ays_background_gradient_color_1_mobile']) ? '' : stripslashes(sanitize_text_field($_POST['ays_background_gradient_color_1_mobile'] ));
         $pb_background_gradient_color_2_mobile = !isset($_POST['ays_background_gradient_color_2_mobile']) ? '' : stripslashes(sanitize_text_field( $_POST['ays_background_gradient_color_2_mobile'] ));
         $pb_gradient_direction_mobile = !isset($_POST['ays_pb_gradient_direction_mobile']) ? '' : stripslashes( sanitize_text_field($_POST['ays_pb_gradient_direction_mobile']) );
-
-        //Enable PopupBox sound option
-        $enable_pb_sound = (isset($_POST['ays_pb_enable_sounds']) && $_POST['ays_pb_enable_sounds'] == "on") ? 'on' : 'off';
 
         //Overlay Color
         $overlay_color = (isset($_POST['ays_pb_overlay_color']) && $_POST['ays_pb_overlay_color'] != '') ? stripslashes(sanitize_text_field( $_POST['ays_pb_overlay_color'] )) : '#000';
@@ -1538,39 +1595,6 @@ class Ays_PopupBox_List_Table extends WP_List_Table {
         //open full screen
         $enable_pb_fullscreen = (isset($_POST['enable_pb_fullscreen']) && $_POST['enable_pb_fullscreen'] == 'on') ? 'on' : 'off';
 
-        // Social Media links
-        $enable_social_links = (isset($_POST['ays_pb_enable_social_links']) && $_POST['ays_pb_enable_social_links'] == "on") ? 'on' : 'off';
-        $ays_social_links = (isset($_POST['ays_social_links'])) ? array_map( 'sanitize_text_field', $_POST['ays_social_links'] ) : array(
-            'linkedin_link'   => '',
-            'facebook_link'   => '',
-            'twitter_link'    => '',
-            'vkontakte_link'  => '',
-            'youtube_link'    => '',
-            'instagram_link'  => '',
-            'behance_link'    => '',
-        );
-       
-        $linkedin_link = isset($ays_social_links['ays_pb_linkedin_link']) && $ays_social_links['ays_pb_linkedin_link'] != '' ? sanitize_text_field($ays_social_links['ays_pb_linkedin_link']) : '';
-        $facebook_link = isset($ays_social_links['ays_pb_facebook_link']) && $ays_social_links['ays_pb_facebook_link'] != '' ? sanitize_text_field($ays_social_links['ays_pb_facebook_link']) : '';
-        $twitter_link = isset($ays_social_links['ays_pb_twitter_link']) && $ays_social_links['ays_pb_twitter_link'] != '' ? sanitize_text_field($ays_social_links['ays_pb_twitter_link']) : '';
-        $vkontakte_link = isset($ays_social_links['ays_pb_vkontakte_link']) && $ays_social_links['ays_pb_vkontakte_link'] != '' ? sanitize_text_field($ays_social_links['ays_pb_vkontakte_link']) : '';
-        $youtube_link = isset($ays_social_links['ays_pb_youtube_link']) && $ays_social_links['ays_pb_youtube_link'] != '' ? sanitize_text_field($ays_social_links['ays_pb_youtube_link']) : '';
-        $instagram_link = isset($ays_social_links['ays_pb_instagram_link']) && $ays_social_links['ays_pb_instagram_link'] != '' ? sanitize_text_field($ays_social_links['ays_pb_instagram_link']) : '';
-        $behance_link = isset($ays_social_links['ays_pb_behance_link']) && $ays_social_links['ays_pb_behance_link'] != '' ? sanitize_text_field($ays_social_links['ays_pb_behance_link']) : '';
-
-        $social_links = array(
-            'linkedin_link'   => $linkedin_link,
-            'facebook_link'   => $facebook_link,
-            'twitter_link'    => $twitter_link,
-            'vkontakte_link'  => $vkontakte_link,
-            'youtube_link'    => $youtube_link,
-            'instagram_link'  => $instagram_link,
-            'behance_link'    => $behance_link,
-        );
-       
-        // Heading for social buttons
-        $social_buttons_heading = (isset($_POST['ays_pb_social_buttons_heading']) && $_POST['ays_pb_social_buttons_heading'] != '') ? stripslashes($_POST['ays_pb_social_buttons_heading']) : "";
-       
         //close button_size
         $close_button_size = (isset($_POST['ays_pb_close_button_size']) && $_POST['ays_pb_close_button_size'] != '' ) ? abs(sanitize_text_field($_POST['ays_pb_close_button_size'])) : '';
        
@@ -1865,6 +1889,7 @@ class Ays_PopupBox_List_Table extends WP_List_Table {
             'notification_logo_redirect_url' => $notification_logo_redirect_url,
             'notification_logo_redirect_to_new_tab' => $notification_logo_redirect_to_new_tab,
             'notification_logo_width' => $notification_logo_width,
+            'notification_logo_width_measurement_unit' => $notification_logo_width_measurement_unit,
             'notification_logo_max_width' => $notification_logo_max_width,
             'notification_logo_max_width_measurement_unit' => $notification_logo_max_width_measurement_unit,
             'notification_logo_min_width' => $notification_logo_min_width,

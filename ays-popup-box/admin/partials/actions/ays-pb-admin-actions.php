@@ -145,6 +145,7 @@ $options = array(
     'notification_logo_redirect_url' => '',
     'notification_logo_redirect_to_new_tab' => 'off',
     'notification_logo_width' => 100,
+    'notification_logo_width_measurement_unit' => 'percentage',
     'notification_logo_max_width' => 100,
     'notification_logo_max_width_measurement_unit' => 'pixels',
     'notification_logo_min_width' => 50,
@@ -505,6 +506,9 @@ $notification_logo_redirect_to_new_tab = (isset($options['notification_logo_redi
 // Notification type | Logo width
 $notification_logo_width = (isset($options['notification_logo_width']) && $options['notification_logo_width'] != '') ? absint( esc_attr($options['notification_logo_width']) ) : 100;
 
+// Notification type | Logo width | Measurement unit
+$notification_logo_width_measurement_unit = (isset($options['notification_logo_width_measurement_unit']) && $options['notification_logo_width_measurement_unit'] != '') ? stripslashes( esc_attr($options['notification_logo_width_measurement_unit']) ) : 'percentage';
+
 // Notification type | Logo max-width
 $notification_logo_max_width = (isset($options['notification_logo_max_width']) && $options['notification_logo_max_width'] != '') ? absint( esc_attr($options['notification_logo_max_width']) ) : 100;
 
@@ -775,7 +779,7 @@ $linkedin_link = (isset($social_links['linkedin_link']) && $social_links['linked
 // Enable social media links | Facebook link
 $facebook_link = (isset($social_links['facebook_link']) && $social_links['facebook_link'] != '') ? esc_url($social_links['facebook_link']) : '';
 
-// Enable social media links | X (Twitter) link
+// Enable social media links | X link
 $twitter_link = (isset($social_links['twitter_link']) && $social_links['twitter_link'] != '') ? esc_url($social_links['twitter_link']) : '';
 
 // Enable social media links | VKontakte link
@@ -1891,8 +1895,15 @@ $ays_users_roles = $wp_roles->roles;
                                                 <div>
                                                     <input type="number" id="ays_pb_notification_logo_width" class="ays-text-input" name="ays_pb_notification_logo_width" value="<?php echo $notification_logo_width ?>" />
                                                 </div>
-                                                <div class="ays_dropdown_max_width">
-                                                    <input type="text" value="%" class="ays-form-hint-for-size" disabled>
+                                                <div class="ays_pb_width_by_percentage_px_box">
+                                                    <select name="ays_pb_notification_logo_width_measurement_unit" id="ays_pb_notification_logo_width_measurement_unit" class="ays_pb_aysDropdown ays-pb-percent">
+                                                        <option value="pixels" <?php echo $notification_logo_width_measurement_unit == "pixels" ? "selected" : ""; ?>>
+                                                            <?php echo __( "px", "ays-popup-box" ); ?>
+                                                        </option>
+                                                        <option value="percentage" <?php echo $notification_logo_width_measurement_unit == "percentage" ? "selected" : ""; ?>>
+                                                            <?php echo __( "%", "ays-popup-box" ); ?>
+                                                        </option>
+                                                    </select>
                                                 </div>
                                             </div>
                                         </div>
@@ -3505,8 +3516,8 @@ $ays_users_roles = $wp_roles->roles;
                                 <div class="form-group row">
                                     <div class="col-sm-4">
                                         <label for="ays_pb_twitter_link">
-                                            <?php echo __('X (Twitter) link',"ays-popup-box")?>
-                                            <a class="ays_help" data-toggle="tooltip" title="<?php echo __('X (Twitter) profile or page link for showing at the end of the popup.',"ays-popup-box")?>">
+                                            <?php echo __('X link',"ays-popup-box")?>
+                                            <a class="ays_help" data-toggle="tooltip" title="<?php echo __('X profile or page link for showing at the end of the popup.',"ays-popup-box")?>">
                                                 <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
                                             </a>
                                         </label>

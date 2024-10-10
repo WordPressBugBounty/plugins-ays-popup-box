@@ -1351,8 +1351,11 @@ class Ays_Pb_Public {
 
             $screen_shade = $ays_pb_template == 'notification' ? '' : "<div id='ays-pb-screen-shade_" . $id . "' overlay='overlay_" . $id . "' data-mobile-overlay='" . $enable_overlay_text_mobile . "'></div>";
 
+            // Notification type | Logo width | Measurement unit
+            $notification_logo_width_measurement_unit = (isset($options['notification_logo_width_measurement_unit']) && $options['notification_logo_width_measurement_unit'] == 'pixels') ? 'px' : '%';
+
             // Notification type | Logo width
-            $notification_logo_width = (isset($options['notification_logo_width']) && $options['notification_logo_width'] != '') ? absint( esc_attr($options['notification_logo_width']) ) . '%' : '100%';
+            $notification_logo_width = (isset($options['notification_logo_width']) && $options['notification_logo_width'] != '') ? absint( esc_attr($options['notification_logo_width']) ) . $notification_logo_width_measurement_unit : '100%';
 
             // Notification type | Logo max-width | Measurement unit
             $notification_logo_max_width_measurement_unit = (isset($options['notification_logo_max_width_measurement_unit']) && $options['notification_logo_max_width_measurement_unit'] == 'percentage') ? '%' : 'px';
