@@ -1118,6 +1118,9 @@ class Ays_PopupBox_List_Table extends WP_List_Table {
         // Notification type | Logo min-width | Measurement unit
         $notification_logo_min_width_measurement_unit = (isset($_POST['ays_pb_notification_logo_min_width_measurement_unit']) && $_POST['ays_pb_notification_logo_min_width_measurement_unit'] != '') ? stripslashes( sanitize_text_field($_POST['ays_pb_notification_logo_min_width_measurement_unit']) ) : 'pixels';
 
+        // Notification type | Logo min-height
+        $notification_logo_min_height = (isset($_POST['ays_pb_notification_logo_min_height']) && $_POST['ays_pb_notification_logo_min_height'] != '') ? absint( intval($_POST['ays_pb_notification_logo_min_height']) ) : '';
+
         // Notification type | Main content
         $notification_main_content = (isset($_POST['ays_pb_notification_main_content']) && $_POST['ays_pb_notification_main_content'] != '') ? wp_kses_post($_POST['ays_pb_notification_main_content']) : '';
 
@@ -1397,6 +1400,27 @@ class Ays_PopupBox_List_Table extends WP_List_Table {
 
         // Schedule the popup | End date
         $deactiveInterval = (isset($_POST['ays-deactive']) && $_POST['ays-deactive'] != '') ? sanitize_text_field($_POST['ays-deactive']) : '';
+
+        // Change the popup creation date
+        $pb_create_date = (isset($_POST['ays_pb_change_creation_date']) && $_POST['ays_pb_change_creation_date'] != '') ? sanitize_text_field($_POST['ays_pb_change_creation_date']) : current_time('mysql');
+
+        // Change the popup author
+        $pb_create_author = (isset($_POST['ays_pb_create_author']) && $_POST['ays_pb_create_author'] != '') ? absint( sanitize_text_field($_POST['ays_pb_create_author']) ) : '';
+        if ($pb_create_author != '' && $pb_create_author > 0) {
+            $user = get_userdata($pb_create_author);
+
+            if (!is_null($user) && $user) {
+                $pb_author = array(
+                    'id' => $user->ID."",
+                    'name' => $user->data->display_name
+                );
+
+                $author = json_encode($pb_author, JSON_UNESCAPED_SLASHES);
+            } else {
+                $author_data = json_decode($author, true);
+                $pb_create_author = (isset($author_data['id']) && $author_data['id'] != '') ? absint( sanitize_text_field($author_data['id']) ) : get_current_user_id();
+            }
+        }
 
         // Width
 		$width = ( isset( $_POST['ays-pb']["width"] ) && $_POST['ays-pb']["width"] != '' ) ? absint( intval( $_POST['ays-pb']["width"] ) ) : '';
@@ -1717,30 +1741,6 @@ class Ays_PopupBox_List_Table extends WP_List_Table {
         }
         $JSON_user_role = json_encode($users_role);
 
-        // Change the author of the current pb
-        $pb_create_author = ( isset($_POST['ays_pb_create_author']) && $_POST['ays_pb_create_author'] != "" ) ? absint( sanitize_text_field( $_POST['ays_pb_create_author'] ) ) : '';
-
-        // PB creation date
-        $pb_create_date = (isset($_POST['ays_pb_change_creation_date']) && $_POST['ays_pb_change_creation_date'] != '') ? sanitize_text_field($_POST['ays_pb_change_creation_date']) : current_time( 'mysql' ) ;
-
-        // Change the author of the current pb
-        $pb_create_author = ( isset($_POST['ays_pb_create_author']) && $_POST['ays_pb_create_author'] != "" ) ? absint( sanitize_text_field( $_POST['ays_pb_create_author'] ) ) : '';
-
-        if ( $pb_create_author != "" && $pb_create_author > 0 ) {
-            $user = get_userdata($pb_create_author);
-            if ( ! is_null( $user ) && $user ) {
-                $pb_author = array(
-                    'id' => $user->ID."",
-                    'name' => $user->data->display_name
-                );
-
-                $author = json_encode($pb_author, JSON_UNESCAPED_SLASHES);
-            } else {
-                $author_data = json_decode($author, true);
-                $pb_create_author = (isset( $author_data['id'] ) && $author_data['id'] != "") ? absint( sanitize_text_field( $author_data['id'] ) ) : get_current_user_id();
-            }
-        }
-
         //Enable dismiss
         $enable_dismiss = ( isset($_POST['ays_pb_enable_dismiss']) && $_POST['ays_pb_enable_dismiss'] != "" ) ? 'on' : 'off';
         $enable_dismiss_text = ( isset($_POST['ays_pb_enable_dismiss_text']) && $_POST['ays_pb_enable_dismiss_text'] != "" ) ? stripslashes( sanitize_text_field($_POST['ays_pb_enable_dismiss_text']) ) : 'Dismiss ad';
@@ -1894,6 +1894,7 @@ class Ays_PopupBox_List_Table extends WP_List_Table {
             'notification_logo_max_width_measurement_unit' => $notification_logo_max_width_measurement_unit,
             'notification_logo_min_width' => $notification_logo_min_width,
             'notification_logo_min_width_measurement_unit' => $notification_logo_min_width_measurement_unit,
+            'notification_logo_min_height' => $notification_logo_min_height,
             'notification_main_content' => $notification_main_content,
             'notification_button_1_text' => $notification_button_1_text,
             'notification_button_1_hover_text' => $notification_button_1_hover_text,
