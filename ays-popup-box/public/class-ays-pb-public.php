@@ -1369,6 +1369,9 @@ class Ays_Pb_Public {
             // Notification type | Logo min-width
             $notification_logo_min_width = (isset($options['notification_logo_min_width']) && $options['notification_logo_min_width'] != '') ? absint( esc_attr($options['notification_logo_min_width']) ) . $notification_logo_min_width_measurement_unit : '50px';
 
+            // Notification type | Logo max-height
+            $notification_logo_max_height = (isset($options['notification_logo_max_height']) && $options['notification_logo_max_height'] != '') ? absint( esc_attr($options['notification_logo_max_height']) ) . 'px' : 'none';
+
             // Notification type | Logo min-height
             $notification_logo_min_height = (isset($options['notification_logo_min_height']) && $options['notification_logo_min_height'] != '') ? absint( esc_attr($options['notification_logo_min_height']) ) . 'px' : 'auto';
 
@@ -1469,6 +1472,7 @@ class Ays_Pb_Public {
                             width: " . $notification_logo_width . ";
                             max-width: " . $notification_logo_max_width . ";
                             min-width: " . $notification_logo_min_width . ";
+                            max-height: " . $notification_logo_max_height . ";
                             min-height: " . $notification_logo_min_height . ";
                         }
 

@@ -1118,6 +1118,9 @@ class Ays_PopupBox_List_Table extends WP_List_Table {
         // Notification type | Logo min-width | Measurement unit
         $notification_logo_min_width_measurement_unit = (isset($_POST['ays_pb_notification_logo_min_width_measurement_unit']) && $_POST['ays_pb_notification_logo_min_width_measurement_unit'] != '') ? stripslashes( sanitize_text_field($_POST['ays_pb_notification_logo_min_width_measurement_unit']) ) : 'pixels';
 
+        // Notification type | Logo max-height
+        $notification_logo_max_height = (isset($_POST['ays_pb_notification_logo_max_height']) && $_POST['ays_pb_notification_logo_max_height'] != '') ? absint( intval($_POST['ays_pb_notification_logo_max_height']) ) : '';
+
         // Notification type | Logo min-height
         $notification_logo_min_height = (isset($_POST['ays_pb_notification_logo_min_height']) && $_POST['ays_pb_notification_logo_min_height'] != '') ? absint( intval($_POST['ays_pb_notification_logo_min_height']) ) : '';
 
@@ -1894,6 +1897,7 @@ class Ays_PopupBox_List_Table extends WP_List_Table {
             'notification_logo_max_width_measurement_unit' => $notification_logo_max_width_measurement_unit,
             'notification_logo_min_width' => $notification_logo_min_width,
             'notification_logo_min_width_measurement_unit' => $notification_logo_min_width_measurement_unit,
+            'notification_logo_max_height' => $notification_logo_max_height,
             'notification_logo_min_height' => $notification_logo_min_height,
             'notification_main_content' => $notification_main_content,
             'notification_button_1_text' => $notification_button_1_text,

@@ -150,6 +150,7 @@ $options = array(
     'notification_logo_max_width_measurement_unit' => 'pixels',
     'notification_logo_min_width' => 50,
     'notification_logo_min_width_measurement_unit' => 'pixels',
+    'notification_logo_max_height' => '',
     'notification_logo_min_height' => '',
     'notification_main_content' => 'Write the custom notification banner text here.',
     'notification_button_1_text' => 'Click!',
@@ -521,6 +522,9 @@ $notification_logo_min_width = (isset($options['notification_logo_min_width']) &
 
 // Notification type | Logo min-width | Measurement unit
 $notification_logo_min_width_measurement_unit = (isset($options['notification_logo_min_width_measurement_unit']) && $options['notification_logo_min_width_measurement_unit'] != '') ? stripslashes( esc_attr($options['notification_logo_min_width_measurement_unit']) ) : 'pixels';
+
+// Notification type | Logo max-height
+$notification_logo_max_height = (isset($options['notification_logo_max_height']) && $options['notification_logo_max_height'] != '') ? absint( esc_attr($options['notification_logo_max_height']) ) : '';
 
 // Notification type | Logo min-height
 $notification_logo_min_height = (isset($options['notification_logo_min_height']) && $options['notification_logo_min_height'] != '') ? absint( esc_attr($options['notification_logo_min_height']) ) : '';
@@ -1970,6 +1974,30 @@ $ays_users_roles = $wp_roles->roles;
                                                     </select>
                                                 </div>
                                             </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="ays-pb-accordion-body">
+                                    <div class="form-group row">
+                                        <div class="col-sm-3">
+                                            <label for="ays_pb_notification_logo_max_height">
+                                                <?php  echo __('Max-height', "ays-popup-box" ) ?>
+                                                <a class="ays_help" data-toggle="tooltip" title="<?php echo __('Specify the max-height of the logo in pixels. ', "ays-popup-box"); ?>" >
+                                                    <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                                </a>
+                                            </label>
+                                        </div>
+                                        <div class="col-sm-9">
+                                            <div style="display: flex; gap: 10px">
+                                                <div>
+                                                    <input type="number" id="ays_pb_notification_logo_max_height" class="ays-text-input" name="ays_pb_notification_logo_max_height" value="<?php echo $notification_logo_max_height ?>" />
+                                                </div>
+                                                <div class="ays_dropdown_max_width">
+                                                    <input type="text" value="px" class="ays-form-hint-for-size" disabled>
+                                                </div>
+                                            </div>
+                                            <span style="display:block;" class="ays-pb-small-hint-text"><?php echo __("For auto leave blank", "ays-popup-box");?></span>
                                         </div>
                                     </div>
                                 </div>
