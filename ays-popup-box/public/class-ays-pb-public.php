@@ -1427,6 +1427,9 @@ class Ays_Pb_Public {
 
             $notification_button_1_padding = $notification_button_1_padding_top_bottom . ' ' . $notification_button_1_padding_left_right;
 
+            // Notification type | Button 1 transition
+            $notification_button_1_transition = (isset($options['notification_button_1_transition']) && $options['notification_button_1_transition'] !== '') ? stripslashes( esc_attr($options['notification_button_1_transition']) ) . 's' : '0.3s';
+
             // Notification type | Button 1 box shadow
             $notification_button_1_enable_box_shadow = (isset($options['notification_button_1_enable_box_shadow']) && $options['notification_button_1_enable_box_shadow'] == 'on') ? true : false;
 
@@ -1484,6 +1487,7 @@ class Ays_Pb_Public {
                             border-radius: " . $notification_button_1_border_radius . ";
                             border: " . $notification_button_1_border . ";
                             padding: " . $notification_button_1_padding . ";
+                            transition: " . $notification_button_1_transition . ";
                             box-shadow: " . $notification_button_1_box_shadow . ";
                             letter-spacing: " . $notification_button_1_letter_spacing . ";
                             text-transform: " . $notification_button_1_text_transformation . ";

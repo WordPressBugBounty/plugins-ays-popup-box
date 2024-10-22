@@ -172,6 +172,7 @@ $options = array(
     'notification_button_1_border_style' => 'solid',
     'notification_button_1_padding_left_right' => 32,
     'notification_button_1_padding_top_bottom' => 12,
+    'notification_button_1_transition' => '0.3',
     'notification_button_1_enable_box_shadow' => 'off',
     'notification_button_1_box_shadow_color' => '#FF8319',
     'notification_button_1_box_shadow_x_offset' => 0,
@@ -588,6 +589,9 @@ $notification_button_1_padding_left_right = (isset($options['notification_button
 
 // Notification type | Button 1 padding top/bottom
 $notification_button_1_padding_top_bottom = (isset($options['notification_button_1_padding_top_bottom']) && $options['notification_button_1_padding_top_bottom'] !== '') ? absint( esc_attr($options['notification_button_1_padding_top_bottom']) ) : 12;
+
+// Notification type | Button 1 padding transition
+$notification_button_1_transition = (isset($options['notification_button_1_transition']) && $options['notification_button_1_transition'] !== '') ? stripslashes( esc_attr($options['notification_button_1_transition']) ) : '0.3';
 
 // Notification type | Button 1 box shadow
 $notification_button_1_enable_box_shadow = (isset($options['notification_button_1_enable_box_shadow']) && $options['notification_button_1_enable_box_shadow'] == 'on') ? true : false;
@@ -1916,9 +1920,7 @@ $ays_users_roles = $wp_roles->roles;
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                <hr>
-                                <div class="ays-pb-accordion-body">
+                                    <hr>
                                     <div class="form-group row">
                                         <div class="col-sm-3">
                                             <label for="ays_pb_notification_logo_max_width">
@@ -1946,9 +1948,7 @@ $ays_users_roles = $wp_roles->roles;
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                <hr>
-                                <div class="ays-pb-accordion-body">
+                                    <hr>
                                     <div class="form-group row">
                                         <div class="col-sm-3">
                                             <label for="ays_pb_notification_logo_min_width">
@@ -1976,9 +1976,7 @@ $ays_users_roles = $wp_roles->roles;
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                <hr>
-                                <div class="ays-pb-accordion-body">
+                                    <hr>
                                     <div class="form-group row">
                                         <div class="col-sm-3">
                                             <label for="ays_pb_notification_logo_max_height">
@@ -2000,9 +1998,7 @@ $ays_users_roles = $wp_roles->roles;
                                             <span style="display:block;" class="ays-pb-small-hint-text"><?php echo __("For auto leave blank", "ays-popup-box");?></span>
                                         </div>
                                     </div>
-                                </div>
-                                <hr>
-                                <div class="ays-pb-accordion-body">
+                                    <hr>
                                     <div class="form-group row">
                                         <div class="col-sm-3">
                                             <label for="ays_pb_notification_logo_min_height">
@@ -2396,6 +2392,27 @@ $ays_users_roles = $wp_roles->roles;
                                             <div class="col-sm-4 ays_divider_left">
                                                 <span class="ays-pb-small-hint-text"><?php echo  __('Top / Bottom',"ays-popup-box") ?></span>
                                                 <input type="number" class="ays-pb-text-input ays-pb-text-input-short" id="ays_pb_notification_button_1_padding_top_bottom" name="ays_pb_notification_button_1_padding_top_bottom" style="width: 100px;" value="<?php echo $notification_button_1_padding_top_bottom; ?>">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="form-group row">
+                                        <div class="col-sm-3">
+                                            <label for="ays_pb_notification_button_1_transition">
+                                                <?php  echo __('Transition', "ays-popup-box" ) ?>
+                                                <a class="ays_help" data-toggle="tooltip" title="<?php echo __( "Set the button's transition duration in seconds. This controls the time it takes for the button's style changes, such as hover effects, to animate smoothly.", "ays-popup-box"); ?>" >
+                                                    <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                                </a>
+                                            </label>
+                                        </div>
+                                        <div class="col-sm-9">
+                                            <div style="display: flex; gap: 10px">
+                                                <div>
+                                                    <input id="ays_pb_notification_button_1_transition" class="ays-pb-text-input ays-pb-text-input-short" name="ays_pb_notification_button_1_transition" type="number" step="0.1" value="<?php echo $notification_button_1_transition; ?>">
+                                                </div>
+                                                <div class="ays_dropdown_max_width">
+                                                    <input type="text" value="s" class="ays-form-hint-for-size" disabled>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>

@@ -1184,6 +1184,9 @@ class Ays_PopupBox_List_Table extends WP_List_Table {
         // Notification type | Button 1 padding top/bottom
         $notification_button_1_padding_top_bottom = (isset($_POST['ays_pb_notification_button_1_padding_top_bottom']) && $_POST['ays_pb_notification_button_1_padding_top_bottom'] !== '') ? absint( intval($_POST['ays_pb_notification_button_1_padding_top_bottom']) ) : 12;
 
+        // Notification type | Button 1 padding transition
+        $notification_button_1_transition = (isset($_POST['ays_pb_notification_button_1_transition']) && $_POST['ays_pb_notification_button_1_transition'] !== '') ? stripslashes( sanitize_text_field($_POST['ays_pb_notification_button_1_transition']) ) : '0.3';
+
         // Notification type | Button 1 box shadow
         $notification_button_1_enable_box_shadow = (isset($_POST['ays_pb_notification_button_1_enable_box_shadow']) && $_POST['ays_pb_notification_button_1_enable_box_shadow'] == 'on') ? 'on' : 'off';
 
@@ -1424,6 +1427,18 @@ class Ays_PopupBox_List_Table extends WP_List_Table {
                 $pb_create_author = (isset($author_data['id']) && $author_data['id'] != '') ? absint( sanitize_text_field($author_data['id']) ) : get_current_user_id();
             }
         }
+
+        // Enable dismiss ad
+        $enable_dismiss = (isset($_POST['ays_pb_enable_dismiss']) && $_POST['ays_pb_enable_dismiss'] != '') ? 'on' : 'off';
+
+        // Enable dismiss ad | Dismiss ad text
+        $enable_dismiss_text = (isset($_POST['ays_pb_enable_dismiss_text']) && $_POST['ays_pb_enable_dismiss_text'] != '') ? stripslashes( sanitize_text_field($_POST['ays_pb_enable_dismiss_text']) ) : 'Dismiss ad';
+
+        // Enable dismiss ad | Enable different dismiss ad text mobile
+        $enable_dismiss_mobile = (isset($_POST['ays_pb_enable_dismiss_mobile']) && $_POST['ays_pb_enable_dismiss_mobile'] != '') ? 'on' : 'off';
+
+        // Enable dismiss ad | Dismiss ad text mobile
+        $enable_dismiss_text_mobile = (isset($_POST['ays_pb_enable_dismiss_text_mobile']) && $_POST['ays_pb_enable_dismiss_text_mobile'] != '') ? stripslashes( sanitize_text_field($_POST['ays_pb_enable_dismiss_text_mobile']) ) : 'Dismiss ad';
 
         // Width
 		$width = ( isset( $_POST['ays-pb']["width"] ) && $_POST['ays-pb']["width"] != '' ) ? absint( intval( $_POST['ays-pb']["width"] ) ) : '';
@@ -1744,14 +1759,6 @@ class Ays_PopupBox_List_Table extends WP_List_Table {
         }
         $JSON_user_role = json_encode($users_role);
 
-        //Enable dismiss
-        $enable_dismiss = ( isset($_POST['ays_pb_enable_dismiss']) && $_POST['ays_pb_enable_dismiss'] != "" ) ? 'on' : 'off';
-        $enable_dismiss_text = ( isset($_POST['ays_pb_enable_dismiss_text']) && $_POST['ays_pb_enable_dismiss_text'] != "" ) ? stripslashes( sanitize_text_field($_POST['ays_pb_enable_dismiss_text']) ) : 'Dismiss ad';
-
-        //Enable dismiss mobile
-        $enable_dismiss_mobile = ( isset($_POST['ays_pb_enable_dismiss_mobile']) && $_POST['ays_pb_enable_dismiss_mobile'] != "" ) ? 'on' : 'off';
-        $enable_dismiss_text_mobile = ( isset($_POST['ays_pb_enable_dismiss_text_mobile']) && $_POST['ays_pb_enable_dismiss_text_mobile'] != "" ) ? stripslashes( sanitize_text_field($_POST['ays_pb_enable_dismiss_text_mobile']) ) : 'Dismiss ad';
-
         //Enabel Box Shadow
         $enable_box_shadow = ( isset( $_POST['ays_pb_enable_box_shadow'] ) && $_POST['ays_pb_enable_box_shadow'] == 'on' ) ? 'on' : 'off';
 
@@ -1919,6 +1926,7 @@ class Ays_PopupBox_List_Table extends WP_List_Table {
             'notification_button_1_border_style' => $notification_button_1_border_style,
             'notification_button_1_padding_left_right' => $notification_button_1_padding_left_right,
             'notification_button_1_padding_top_bottom' => $notification_button_1_padding_top_bottom,
+            'notification_button_1_transition' => $notification_button_1_transition,
             'notification_button_1_enable_box_shadow' => $notification_button_1_enable_box_shadow,
             'notification_button_1_box_shadow_color' => $notification_button_1_box_shadow_color,
             'notification_button_1_box_shadow_x_offset' => $notification_button_1_box_shadow_x_offset,
