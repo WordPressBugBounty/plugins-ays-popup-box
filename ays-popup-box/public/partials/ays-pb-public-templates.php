@@ -3569,7 +3569,7 @@ class Ays_Pb_Public_Templates {
                                 </header>
                                 <div class='ays_video_main' >
                                      <div class='ays_video_content'>
-                                        <video controls src='".$ays_pb_video_src."' class='wp-video-shortcode' style='border-radius:".$attr['border_radius']."px'></video>
+                                        <video controls playsinline src='".$ays_pb_video_src."' class='wp-video-shortcode' style='border-radius:".$attr['border_radius']."px'></video>
                                         <input type='hidden' class='autoclose_on_video_completion_check' value='".$autoclose_on_video_completion."'>
                                     </div>
                                 </div>

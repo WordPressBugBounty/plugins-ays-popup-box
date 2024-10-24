@@ -2236,7 +2236,7 @@ class Ays_Pb_Public {
                                     });
                                 }
                             }
-                            
+
                             jQuery(document).on('click', '.ays-pb-modal-close_".$id."', function() {
                                 $(document).find('body').removeClass('pb_disable_scroll_".$id."');
                                 $(document).find('html').removeClass('pb_disable_scroll_".$id."');

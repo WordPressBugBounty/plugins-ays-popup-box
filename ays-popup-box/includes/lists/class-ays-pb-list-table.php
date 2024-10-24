@@ -1440,6 +1440,21 @@ class Ays_PopupBox_List_Table extends WP_List_Table {
         // Enable dismiss ad | Dismiss ad text mobile
         $enable_dismiss_text_mobile = (isset($_POST['ays_pb_enable_dismiss_text_mobile']) && $_POST['ays_pb_enable_dismiss_text_mobile'] != '') ? stripslashes( sanitize_text_field($_POST['ays_pb_enable_dismiss_text_mobile']) ) : 'Dismiss ad';
 
+        // Disable page scrolling
+        $disable_scroll = (isset($_POST['disable_scroll']) && $_POST['disable_scroll'] == 'on') ? 'on' : 'off';
+
+        // Disable page scrolling mobile
+        $disable_scroll_mobile = (isset($_POST['disable_scroll_mobile']) && $_POST['disable_scroll_mobile'] == 'on') ? 'on' : 'off';
+
+        // Disable popup scrolling
+        $disable_scroll_on_popup = (isset($_POST['ays_pb_disable_scroll_on_popup']) && $_POST['ays_pb_disable_scroll_on_popup'] != '') ? 'on' : 'off';
+
+        // Disable popup scrolling mobile
+        $disable_scroll_on_popup_mobile = (isset($_POST['ays_pb_disable_scroll_on_popup_mobile']) && $_POST['ays_pb_disable_scroll_on_popup_mobile'] != '') ? 'on' : 'off';
+
+        // Show scrollbar
+        $show_scrollbar = (isset($_POST['ays_pb_show_scrollbar']) && $_POST['ays_pb_show_scrollbar'] != '') ? 'on' : 'off';
+
         // Width
 		$width = ( isset( $_POST['ays-pb']["width"] ) && $_POST['ays-pb']["width"] != '' ) ? absint( intval( $_POST['ays-pb']["width"] ) ) : '';
 
@@ -1652,12 +1667,6 @@ class Ays_PopupBox_List_Table extends WP_List_Table {
         //Border style mobile
         $border_style_mobile = ( isset($_POST['ays_pb_border_style_mobile']) && $_POST['ays_pb_border_style_mobile'] !== '' ) ? stripslashes( sanitize_text_field($_POST['ays_pb_border_style_mobile']) ) : '';
 
-        // Disable scrolling
-        $disable_scroll = (isset($_POST['disable_scroll']) && $_POST['disable_scroll'] == 'on') ? 'on' : 'off';
-       
-        // Disable scrolling mobile
-        $disable_scroll_mobile = (isset($_POST['disable_scroll_mobile']) && $_POST['disable_scroll_mobile'] == 'on') ? 'on' : 'off';
-
         // Min Height
         $pb_min_height = (isset($_POST['ays_pb_min_height']) && $_POST['ays_pb_min_height'] != '') ? absint(intval($_POST['ays_pb_min_height'])) : '';
 
@@ -1788,15 +1797,6 @@ class Ays_PopupBox_List_Table extends WP_List_Table {
 
         //Box Shadow Z offset Mobile
         $pb_box_shadow_z_offset_mobile = (isset($_POST['ays_pb_box_shadow_z_offset_mobile']) && $_POST['ays_pb_box_shadow_z_offset_mobile'] != '' && intval( $_POST['ays_pb_box_shadow_z_offset_mobile'] ) != 0) ? intval( $_POST['ays_pb_box_shadow_z_offset_mobile'] ) : 15;
-
-        //Disable scroll on popup
-        $disable_scroll_on_popup = ( isset( $_POST['ays_pb_disable_scroll_on_popup'] ) && $_POST['ays_pb_disable_scroll_on_popup'] != '' ) ? 'on' : 'off';
-
-        //Disable scroll on popup mobile
-        $disable_scroll_on_popup_mobile = ( isset( $_POST['ays_pb_disable_scroll_on_popup_mobile'] ) && $_POST['ays_pb_disable_scroll_on_popup_mobile'] != '' ) ? 'on' : 'off';
-
-        //Show scrollbar
-        $show_scrollbar = ( isset( $_POST['ays_pb_show_scrollbar'] ) && $_POST['ays_pb_show_scrollbar'] != '' ) ? 'on' : 'off';
 
         //Hide on desktop
         $hide_on_pc = ( isset( $_POST['ays_pb_hide_on_pc'] ) && $_POST['ays_pb_hide_on_pc'] == 'on' ) ? 'on' : 'off';

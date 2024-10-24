@@ -867,7 +867,7 @@ if (isset($options['disable_scroll_on_popup_mobile'])) {
     $ays_pb_disable_scroll_on_popup_mobile = $ays_pb_disable_scroll_on_popup;
 }
 
-// Show scrolblar
+// Show scrollbar
 $options['show_scrollbar'] = (isset($options['show_scrollbar']) && $options['show_scrollbar'] != '') ? esc_attr( stripslashes($options['show_scrollbar']) ) : 'off';
 $ays_pb_show_scrollbar = (isset($options['show_scrollbar']) && $options['show_scrollbar'] == 'on') ? true : false;
 
@@ -2411,7 +2411,7 @@ $ays_users_roles = $wp_roles->roles;
                                                     <input id="ays_pb_notification_button_1_transition" class="ays-pb-text-input ays-pb-text-input-short" name="ays_pb_notification_button_1_transition" type="number" step="0.1" value="<?php echo $notification_button_1_transition; ?>">
                                                 </div>
                                                 <div class="ays_dropdown_max_width">
-                                                    <input type="text" value="s" class="ays-form-hint-for-size" disabled>
+                                                    <input type="text" value="sec" class="ays-form-hint-for-size" disabled>
                                                 </div>
                                             </div>
                                         </div>
