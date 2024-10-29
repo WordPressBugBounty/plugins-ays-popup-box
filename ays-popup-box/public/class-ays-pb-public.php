@@ -365,7 +365,7 @@ class Ays_Pb_Public {
         //Tigran
         if(isset($popupbox['onoffswitch']) && $popupbox['onoffswitch'] == 'On'){
 			
-			if(!isset($_COOKIE['ays_popup_cookie_'.$id])){
+			if(!isset($_COOKIE['ays_popup_cookie_'.$id]) && isset($popupbox['cookie']) && $popupbox['cookie'] != 0){
 				$this->ays_set_cookie($popupbox);
 			}elseif(isset($popupbox['cookie']) && $popupbox['cookie'] == 0){
                 $this->ays_remove_cookie($popupbox);
@@ -1396,8 +1396,11 @@ class Ays_Pb_Public {
             // Notification type | Button 1 letter spacing
             $notification_button_1_letter_spacing = (isset($options['notification_button_1_letter_spacing']) && $options['notification_button_1_letter_spacing'] != '') ? absint( esc_attr($options['notification_button_1_letter_spacing']) ) . 'px' : 0;
 
-            // Notification type | Button 1 font size
+            // Notification type | Button 1 font size | On desktop
             $notification_button_1_font_size = (isset($options['notification_button_1_font_size']) && $options['notification_button_1_font_size'] != '') ? absint( esc_attr($options['notification_button_1_font_size']) ) . 'px' : '15px';
+
+            // Notification type | Button 1 font size | On mobile
+            $notification_button_1_font_size_mobile = (isset($options['notification_button_1_font_size_mobile']) && $options['notification_button_1_font_size_mobile'] != '') ? absint( esc_attr($options['notification_button_1_font_size_mobile']) ) . 'px' : $notification_button_1_font_size;
 
             // Notification type | Button 1 font weight
             $notification_button_1_font_weight = (isset($options['notification_button_1_font_weight']) && $options['notification_button_1_font_weight'] != '') ? stripslashes( esc_attr($options['notification_button_1_font_weight']) ) : 'normal';
@@ -1608,6 +1611,10 @@ class Ays_Pb_Public {
                                 " . $box_shadow_mobile . ";
                                 box-sizing: border-box;
                                 " . $max_height_styles_mobile . "
+                            }
+
+                            .ays_notification_window.ays-pb-modal_".$id." div.ays_pb_notification_button_1 button {
+                                font-size: " . $notification_button_1_font_size_mobile . ";
                             }
 
                             .ays_cmd_window {

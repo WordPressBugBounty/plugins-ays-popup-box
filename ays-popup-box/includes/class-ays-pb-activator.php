@@ -373,6 +373,7 @@ class Ays_Pb_Activator {
             'notification_button_1_text_decoration' => '',
             'notification_button_1_letter_spacing' => 0,
             'notification_button_1_font_size' => 15,
+            'notification_button_1_font_size_mobile' => 15,
             'notification_button_1_font_weight' => 'normal',
             'notification_button_1_border_radius' => 6,
             'notification_button_1_border_width' => 0,

@@ -1160,9 +1160,12 @@ class Ays_PopupBox_List_Table extends WP_List_Table {
         // Notification type | Button 1 letter spacing
         $notification_button_1_letter_spacing = (isset($_POST['ays_pb_notification_button_1_letter_spacing']) && $_POST['ays_pb_notification_button_1_letter_spacing'] != '') ? absint( intval($_POST['ays_pb_notification_button_1_letter_spacing']) ) : 0;
 
-        // Notification type | Button 1 font size
+        // Notification type | Button 1 font size | On desktop
         $notification_button_1_font_size = (isset($_POST['ays_pb_notification_button_1_font_size']) && $_POST['ays_pb_notification_button_1_font_size'] != '') ? absint( intval($_POST['ays_pb_notification_button_1_font_size']) ) : 15;
-    
+
+        // Notification type | Button 1 font size | On desktop
+        $notification_button_1_font_size_mobile = (isset($_POST['ays_pb_notification_button_1_font_size_mobile']) && $_POST['ays_pb_notification_button_1_font_size_mobile'] != '') ? absint( intval($_POST['ays_pb_notification_button_1_font_size_mobile']) ) : 15;
+
         // Notification type | Button 1 font weight
         $notification_button_1_font_weight = (isset($_POST['ays_pb_notification_button_1_font_weight']) && $_POST['ays_pb_notification_button_1_font_weight'] != '') ? stripslashes( sanitize_text_field($_POST['ays_pb_notification_button_1_font_weight']) ) : 'normal';
 
@@ -1919,6 +1922,7 @@ class Ays_PopupBox_List_Table extends WP_List_Table {
             'notification_button_1_text_decoration' => $notification_button_1_text_decoration,
             'notification_button_1_letter_spacing' => $notification_button_1_letter_spacing,
             'notification_button_1_font_size' => $notification_button_1_font_size,
+            'notification_button_1_font_size_mobile' => $notification_button_1_font_size_mobile,
             'notification_button_1_font_weight' => $notification_button_1_font_weight,
             'notification_button_1_border_radius' => $notification_button_1_border_radius,
             'notification_button_1_border_width' => $notification_button_1_border_width,

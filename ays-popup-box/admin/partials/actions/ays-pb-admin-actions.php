@@ -165,6 +165,7 @@ $options = array(
     'notification_button_1_text_decoration' => 'none',
     'notification_button_1_letter_spacing' => 0,
     'notification_button_1_font_size' => 15,
+    'notification_button_1_font_size_mobile' => 15,
     'notification_button_1_font_weight' => 'normal',
     'notification_button_1_border_radius' => 6,
     'notification_button_1_border_width' => 0,
@@ -566,8 +567,11 @@ $notification_button_1_text_decoration = (isset($options['notification_button_1_
 // Notification type | Button 1 letter spacing
 $notification_button_1_letter_spacing = (isset($options['notification_button_1_letter_spacing']) && $options['notification_button_1_letter_spacing'] != '') ? absint( esc_attr($options['notification_button_1_letter_spacing']) ) : 0;
 
-// Notification type | Button 1 font size
+// Notification type | Button 1 font size | On desktop
 $notification_button_1_font_size = (isset($options['notification_button_1_font_size']) && $options['notification_button_1_font_size'] != '') ? absint( esc_attr($options['notification_button_1_font_size']) ) : 15;
+
+// Notification type | Button 1 font size | On mobile
+$notification_button_1_font_size_mobile = (isset($options['notification_button_1_font_size_mobile']) && $options['notification_button_1_font_size_mobile'] != '') ? absint( esc_attr($options['notification_button_1_font_size_mobile']) ) : $notification_button_1_font_size;
 
 // Notification type | Button 1 font weight
 $notification_button_1_font_weight = (isset($options['notification_button_1_font_weight']) && $options['notification_button_1_font_weight'] != '') ? stripslashes( esc_attr($options['notification_button_1_font_weight']) ) : 'normal';
@@ -2252,7 +2256,33 @@ $ays_users_roles = $wp_roles->roles;
                                             </label>
                                         </div>
                                         <div class="col-sm-9">
-                                            <input id="ays_pb_notification_button_1_font_size" class="ays-pb-text-input ays-pb-text-input-short" name="ays_pb_notification_button_1_font_size" type="number" value="<?php echo $notification_button_1_font_size; ?>">
+                                            <div class="row">
+                                                <div class="col-sm-3">
+                                                    <label for='ays_pb_notification_button_1_font_size'>
+                                                        <?php echo __('On Desktop', "ays-popup-box"); ?>
+                                                        <a class="ays_help" data-toggle="tooltip" title="<?php echo __('Define the font size of the button text in pixels for desktop devices.',"ays-popup-box")?>">
+                                                            <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                                        </a>
+                                                    </label>
+                                                </div>
+                                                <div class="col-sm-9">
+                                                    <input id="ays_pb_notification_button_1_font_size" class="ays-pb-text-input ays-pb-text-input-short" name="ays_pb_notification_button_1_font_size" type="number" value="<?php echo $notification_button_1_font_size; ?>">
+                                                </div>
+                                            </div>
+                                            <hr>
+                                            <div class="row">
+                                                <div class="col-sm-3">
+                                                    <label for='ays_pb_notification_button_1_font_size'>
+                                                        <?php echo __('On mobile', "ays-popup-box"); ?>
+                                                        <a class="ays_help" data-toggle="tooltip" title="<?php echo __('Define the font size of the button text in pixels for mobile devices.',"ays-popup-box")?>">
+                                                            <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                                        </a>
+                                                    </label>
+                                                </div>
+                                                <div class="col-sm-9">
+                                                    <input id="ays_pb_notification_button_1_font_size_mobile" class="ays-pb-text-input ays-pb-text-input-short" name="ays_pb_notification_button_1_font_size_mobile" type="number" value="<?php echo $notification_button_1_font_size_mobile; ?>">
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                     <hr>
