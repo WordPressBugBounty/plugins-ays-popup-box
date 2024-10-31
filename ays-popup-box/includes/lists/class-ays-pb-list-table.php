@@ -1166,8 +1166,11 @@ class Ays_PopupBox_List_Table extends WP_List_Table {
         // Notification type | Button 1 font size | On desktop
         $notification_button_1_font_size_mobile = (isset($_POST['ays_pb_notification_button_1_font_size_mobile']) && $_POST['ays_pb_notification_button_1_font_size_mobile'] != '') ? absint( intval($_POST['ays_pb_notification_button_1_font_size_mobile']) ) : 15;
 
-        // Notification type | Button 1 font weight
+        // Notification type | Button 1 font weight | On desktop
         $notification_button_1_font_weight = (isset($_POST['ays_pb_notification_button_1_font_weight']) && $_POST['ays_pb_notification_button_1_font_weight'] != '') ? stripslashes( sanitize_text_field($_POST['ays_pb_notification_button_1_font_weight']) ) : 'normal';
+
+        // Notification type | Button 1 font weight | On mobile
+        $notification_button_1_font_weight_mobile = (isset($_POST['ays_pb_notification_button_1_font_weight_mobile']) && $_POST['ays_pb_notification_button_1_font_weight_mobile'] != '') ? stripslashes( sanitize_text_field($_POST['ays_pb_notification_button_1_font_weight_mobile']) ) : 'normal';
 
         // Notification type | Button 1 border radius
         $notification_button_1_border_radius = (isset($_POST['ays_pb_notification_button_1_border_radius']) && $_POST['ays_pb_notification_button_1_border_radius'] != '') ? absint( intval($_POST['ays_pb_notification_button_1_border_radius']) ) : 6;
@@ -1924,6 +1927,7 @@ class Ays_PopupBox_List_Table extends WP_List_Table {
             'notification_button_1_font_size' => $notification_button_1_font_size,
             'notification_button_1_font_size_mobile' => $notification_button_1_font_size_mobile,
             'notification_button_1_font_weight' => $notification_button_1_font_weight,
+            'notification_button_1_font_weight_mobile' => $notification_button_1_font_weight_mobile,
             'notification_button_1_border_radius' => $notification_button_1_border_radius,
             'notification_button_1_border_width' => $notification_button_1_border_width,
             'notification_button_1_border_color' => $notification_button_1_border_color,

@@ -1402,8 +1402,11 @@ class Ays_Pb_Public {
             // Notification type | Button 1 font size | On mobile
             $notification_button_1_font_size_mobile = (isset($options['notification_button_1_font_size_mobile']) && $options['notification_button_1_font_size_mobile'] != '') ? absint( esc_attr($options['notification_button_1_font_size_mobile']) ) . 'px' : $notification_button_1_font_size;
 
-            // Notification type | Button 1 font weight
+            // Notification type | Button 1 font weight | On desktop
             $notification_button_1_font_weight = (isset($options['notification_button_1_font_weight']) && $options['notification_button_1_font_weight'] != '') ? stripslashes( esc_attr($options['notification_button_1_font_weight']) ) : 'normal';
+
+            // Notification type | Button 1 font weight | On mobile
+            $notification_button_1_font_weight_mobile = (isset($options['notification_button_1_font_weight_mobile']) && $options['notification_button_1_font_weight_mobile'] != '') ? stripslashes( esc_attr($options['notification_button_1_font_weight_mobile']) ) : $notification_button_1_font_weight;
 
             // Notification type | Button 1 border radius
             $notification_button_1_border_radius = (isset($options['notification_button_1_border_radius']) && $options['notification_button_1_border_radius'] != '') ? absint( esc_attr($options['notification_button_1_border_radius']) ) . 'px' : '6px';
@@ -1615,6 +1618,7 @@ class Ays_Pb_Public {
 
                             .ays_notification_window.ays-pb-modal_".$id." div.ays_pb_notification_button_1 button {
                                 font-size: " . $notification_button_1_font_size_mobile . ";
+                                font-weight: " . $notification_button_1_font_weight_mobile . ";
                             }
 
                             .ays_cmd_window {

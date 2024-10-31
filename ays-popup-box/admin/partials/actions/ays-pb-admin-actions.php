@@ -167,6 +167,7 @@ $options = array(
     'notification_button_1_font_size' => 15,
     'notification_button_1_font_size_mobile' => 15,
     'notification_button_1_font_weight' => 'normal',
+    'notification_button_1_font_weight_mobile' => 'normal',
     'notification_button_1_border_radius' => 6,
     'notification_button_1_border_width' => 0,
     'notification_button_1_border_color' => '#FFFFFF',
@@ -573,8 +574,11 @@ $notification_button_1_font_size = (isset($options['notification_button_1_font_s
 // Notification type | Button 1 font size | On mobile
 $notification_button_1_font_size_mobile = (isset($options['notification_button_1_font_size_mobile']) && $options['notification_button_1_font_size_mobile'] != '') ? absint( esc_attr($options['notification_button_1_font_size_mobile']) ) : $notification_button_1_font_size;
 
-// Notification type | Button 1 font weight
+// Notification type | Button 1 font weight | On desktop
 $notification_button_1_font_weight = (isset($options['notification_button_1_font_weight']) && $options['notification_button_1_font_weight'] != '') ? stripslashes( esc_attr($options['notification_button_1_font_weight']) ) : 'normal';
+
+// Notification type | Button 1 font weight | On mobile
+$notification_button_1_font_weight_mobile = (isset($options['notification_button_1_font_weight_mobile']) && $options['notification_button_1_font_weight_mobile'] != '') ? stripslashes( esc_attr($options['notification_button_1_font_weight_mobile']) ) : $notification_button_1_font_weight;
 
 // Notification type | Button 1 border radius
 $notification_button_1_border_radius = (isset($options['notification_button_1_border_radius']) && $options['notification_button_1_border_radius'] != '') ? absint( esc_attr($options['notification_button_1_border_radius']) ) : 6;
@@ -2272,7 +2276,7 @@ $ays_users_roles = $wp_roles->roles;
                                             <hr>
                                             <div class="row">
                                                 <div class="col-sm-3">
-                                                    <label for='ays_pb_notification_button_1_font_size'>
+                                                    <label for='ays_pb_notification_button_1_font_size_mobile'>
                                                         <?php echo __('On mobile', "ays-popup-box"); ?>
                                                         <a class="ays_help" data-toggle="tooltip" title="<?php echo __('Define the font size of the button text in pixels for mobile devices.',"ays-popup-box")?>">
                                                             <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
@@ -2296,21 +2300,61 @@ $ays_users_roles = $wp_roles->roles;
                                             </label>
                                         </div>
                                         <div class="col-sm-9">
-                                            <select name="ays_pb_notification_button_1_font_weight" id="ays_pb_notification_button_1_font_weight" class="ays_pb_aysDropdown">
-                                                <?php
-                                                    foreach ($font_weight_options as $key => $font_weight) {
-                                                        $selected = '';
-                                                        if ($key == $notification_button_1_font_weight) {
-                                                            $selected = 'selected';
-                                                        }
-                                                ?>
-                                                <option value="<?php echo $key ;?>" <?php echo $selected ;?>>
-                                                    <?php echo $font_weight; ?>
-                                                </option>
-                                                <?php
-                                                    }
-                                                ?>
-                                            </select>
+                                            <div class="row">
+                                                <div class="col-sm-3">
+                                                    <label for='ays_pb_notification_button_1_font_weight'>
+                                                        <?php echo __('On Desktop', "ays-popup-box"); ?>
+                                                        <a class="ays_help" data-toggle="tooltip" title="<?php echo __('Specify the font weight for the button for desktop devices.',"ays-popup-box")?>">
+                                                            <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                                        </a>
+                                                    </label>
+                                                </div>
+                                                <div class="col-sm-9">
+                                                    <select name="ays_pb_notification_button_1_font_weight" id="ays_pb_notification_button_1_font_weight" class="ays_pb_aysDropdown">
+                                                        <?php
+                                                            foreach ($font_weight_options as $key => $font_weight) {
+                                                                $selected = '';
+                                                                if ($key == $notification_button_1_font_weight) {
+                                                                    $selected = 'selected';
+                                                                }
+                                                        ?>
+                                                        <option value="<?php echo $key ;?>" <?php echo $selected ;?>>
+                                                            <?php echo $font_weight; ?>
+                                                        </option>
+                                                        <?php
+                                                            }
+                                                        ?>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <hr>
+                                            <div class="row">
+                                                <div class="col-sm-3">
+                                                    <label for='ays_pb_notification_button_1_font_weight_mobile'>
+                                                        <?php echo __('On mobile', "ays-popup-box"); ?>
+                                                        <a class="ays_help" data-toggle="tooltip" title="<?php echo __('Specify the font weight for the button for mobile devices.',"ays-popup-box")?>">
+                                                            <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                                        </a>
+                                                    </label>
+                                                </div>
+                                                <div class="col-sm-9">
+                                                    <select name="ays_pb_notification_button_1_font_weight_mobile" id="ays_pb_notification_button_1_font_weight_mobile" class="ays_pb_aysDropdown">
+                                                        <?php
+                                                            foreach ($font_weight_options as $key => $font_weight) {
+                                                                $selected = '';
+                                                                if ($key == $notification_button_1_font_weight_mobile) {
+                                                                    $selected = 'selected';
+                                                                }
+                                                        ?>
+                                                        <option value="<?php echo $key ;?>" <?php echo $selected ;?>>
+                                                            <?php echo $font_weight; ?>
+                                                        </option>
+                                                        <?php
+                                                            }
+                                                        ?>
+                                                    </select>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
