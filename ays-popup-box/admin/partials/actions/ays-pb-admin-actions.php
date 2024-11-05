@@ -164,6 +164,7 @@ $options = array(
     'notification_button_1_text_transformation' => 'none',
     'notification_button_1_text_decoration' => 'none',
     'notification_button_1_letter_spacing' => 0,
+    'notification_button_1_letter_spacing_mobile' => 0,
     'notification_button_1_font_size' => 15,
     'notification_button_1_font_size_mobile' => 15,
     'notification_button_1_font_weight' => 'normal',
@@ -440,7 +441,7 @@ switch ($modal_content) {
         break;
 }
 
-// Popup template
+// Template
 $view_type = (isset($popupbox['view_type']) && $popupbox['view_type'] != '') ? stripslashes( esc_attr($popupbox['view_type']) ) : '';
 
 // Popup title
@@ -565,8 +566,11 @@ $notification_button_1_text_transformation = (isset($options['notification_butto
 // Notification type | Button 1 text decoration
 $notification_button_1_text_decoration = (isset($options['notification_button_1_text_decoration']) && $options['notification_button_1_text_decoration'] != '') ? stripslashes( esc_attr($options['notification_button_1_text_decoration']) ) : 'none';
 
-// Notification type | Button 1 letter spacing
+// Notification type | Button 1 letter spacing | On desktop
 $notification_button_1_letter_spacing = (isset($options['notification_button_1_letter_spacing']) && $options['notification_button_1_letter_spacing'] != '') ? absint( esc_attr($options['notification_button_1_letter_spacing']) ) : 0;
+
+// Notification type | Button 1 letter spacing | On mobile
+$notification_button_1_letter_spacing_mobile = (isset($options['notification_button_1_letter_spacing_mobile']) && $options['notification_button_1_letter_spacing_mobile'] != '') ? absint( esc_attr($options['notification_button_1_letter_spacing_mobile']) ) : $notification_button_1_letter_spacing;
 
 // Notification type | Button 1 font size | On desktop
 $notification_button_1_font_size = (isset($options['notification_button_1_font_size']) && $options['notification_button_1_font_size'] != '') ? absint( esc_attr($options['notification_button_1_font_size']) ) : 15;
@@ -2246,7 +2250,33 @@ $ays_users_roles = $wp_roles->roles;
                                             </label>
                                         </div>
                                         <div class="col-sm-9">
-                                            <input id="ays_pb_notification_button_1_letter_spacing" class="ays-pb-text-input ays-pb-text-input-short" name="ays_pb_notification_button_1_letter_spacing" type="number" value="<?php echo $notification_button_1_letter_spacing; ?>">
+                                            <div class="row">
+                                                <div class="col-sm-3">
+                                                    <label for='ays_pb_notification_button_1_letter_spacing'>
+                                                        <?php echo __('On Desktop', "ays-popup-box"); ?>
+                                                        <a class="ays_help" data-toggle="tooltip" title="<?php echo __('Define the space between the letters of the button in pixels for desktop devices.',"ays-popup-box")?>">
+                                                            <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                                        </a>
+                                                    </label>
+                                                </div>
+                                                <div class="col-sm-9">
+                                                    <input id="ays_pb_notification_button_1_letter_spacing" class="ays-pb-text-input ays-pb-text-input-short" name="ays_pb_notification_button_1_letter_spacing" type="number" value="<?php echo $notification_button_1_letter_spacing; ?>">
+                                                </div>
+                                            </div>
+                                            <hr>
+                                            <div class="row">
+                                                <div class="col-sm-3">
+                                                    <label for='ays_pb_notification_button_1_letter_spacing_mobile'>
+                                                        <?php echo __('On mobile', "ays-popup-box"); ?>
+                                                        <a class="ays_help" data-toggle="tooltip" title="<?php echo __('Define the space between the letters of the button in pixels for mobile devices.',"ays-popup-box")?>">
+                                                            <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                                        </a>
+                                                    </label>
+                                                </div>
+                                                <div class="col-sm-9">
+                                                    <input id="ays_pb_notification_button_1_letter_spacing_mobile" class="ays-pb-text-input ays-pb-text-input-short" name="ays_pb_notification_button_1_letter_spacing_mobile" type="number" value="<?php echo $notification_button_1_letter_spacing_mobile; ?>">
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                     <hr>

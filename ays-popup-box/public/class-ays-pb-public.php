@@ -1393,8 +1393,11 @@ class Ays_Pb_Public {
             // Notification type | Button 1 text decoration
             $notification_button_1_text_decoration = (isset($options['notification_button_1_text_decoration']) && $options['notification_button_1_text_decoration'] != '') ? stripslashes( esc_attr($options['notification_button_1_text_decoration']) ) : 'none';
 
-            // Notification type | Button 1 letter spacing
+            // Notification type | Button 1 letter spacing | On desktop
             $notification_button_1_letter_spacing = (isset($options['notification_button_1_letter_spacing']) && $options['notification_button_1_letter_spacing'] != '') ? absint( esc_attr($options['notification_button_1_letter_spacing']) ) . 'px' : 0;
+
+            // Notification type | Button 1 letter spacing | On mobile
+            $notification_button_1_letter_spacing_mobile = (isset($options['notification_button_1_letter_spacing_mobile']) && $options['notification_button_1_letter_spacing_mobile'] != '') ? absint( esc_attr($options['notification_button_1_letter_spacing_mobile']) ) . 'px' : $notification_button_1_letter_spacing;
 
             // Notification type | Button 1 font size | On desktop
             $notification_button_1_font_size = (isset($options['notification_button_1_font_size']) && $options['notification_button_1_font_size'] != '') ? absint( esc_attr($options['notification_button_1_font_size']) ) . 'px' : '15px';
@@ -1619,6 +1622,7 @@ class Ays_Pb_Public {
                             .ays_notification_window.ays-pb-modal_".$id." div.ays_pb_notification_button_1 button {
                                 font-size: " . $notification_button_1_font_size_mobile . ";
                                 font-weight: " . $notification_button_1_font_weight_mobile . ";
+                                letter-spacing: " . $notification_button_1_letter_spacing_mobile . ";
                             }
 
                             .ays_cmd_window {
