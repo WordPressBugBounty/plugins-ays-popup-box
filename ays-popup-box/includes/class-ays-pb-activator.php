@@ -354,6 +354,8 @@ class Ays_Pb_Activator {
             'notification_logo_redirect_to_new_tab' => 'off',
             'notification_logo_width' => 100,
             'notification_logo_width_measurement_unit' => 'percentage',
+            'notification_logo_width_mobile' => 100,
+            'notification_logo_width_measurement_unit_mobile' => 'percentage',
             'notification_logo_max_width' => 100,
             'notification_logo_max_width_measurement_unit' => 'pixels',
             'notification_logo_min_width' => 50,

@@ -1100,11 +1100,17 @@ class Ays_PopupBox_List_Table extends WP_List_Table {
         // Notification type | Logo redirect to the new tab
         $notification_logo_redirect_to_new_tab = (isset($_POST['ays_pb_notification_logo_redirect_to_new_tab']) && $_POST['ays_pb_notification_logo_redirect_to_new_tab'] == 'on') ? 'on' : 'off';
 
-        // Notification type | Logo width
+        // Notification type | Logo width | On dektop
         $notification_logo_width = (isset($_POST['ays_pb_notification_logo_width']) && $_POST['ays_pb_notification_logo_width'] != '') ? absint( intval($_POST['ays_pb_notification_logo_width']) ) : 100;
 
-        // Notification type | Logo width | Measurement unit
+        // Notification type | Logo width | Measurement unit | On dektop
         $notification_logo_width_measurement_unit = (isset($_POST['ays_pb_notification_logo_width_measurement_unit']) && $_POST['ays_pb_notification_logo_width_measurement_unit'] != '') ? stripslashes( sanitize_text_field($_POST['ays_pb_notification_logo_width_measurement_unit']) ) : 'percentage';
+
+        // Notification type | Logo width | On mobile
+        $notification_logo_width_mobile = (isset($_POST['ays_pb_notification_logo_width_mobile']) && $_POST['ays_pb_notification_logo_width_mobile'] != '') ? absint( intval($_POST['ays_pb_notification_logo_width_mobile']) ) : 100;
+
+        // Notification type | Logo width | Measurement unit | On mobile
+        $notification_logo_width_measurement_unit_mobile = (isset($_POST['ays_pb_notification_logo_width_measurement_unit_mobile']) && $_POST['ays_pb_notification_logo_width_measurement_unit_mobile'] != '') ? stripslashes( sanitize_text_field($_POST['ays_pb_notification_logo_width_measurement_unit_mobile']) ) : 'percentage';
 
         // Notification type | Logo max-width
         $notification_logo_max_width = (isset($_POST['ays_pb_notification_logo_max_width']) && $_POST['ays_pb_notification_logo_max_width'] != '') ? absint( intval($_POST['ays_pb_notification_logo_max_width']) ) : 100;
@@ -1467,6 +1473,21 @@ class Ays_PopupBox_List_Table extends WP_List_Table {
         // Template
 		$view_type = (isset($_POST['ays-pb']['view_type']) && $_POST['ays-pb']['view_type'] != '') ? wp_unslash( sanitize_text_field($_POST['ays-pb']['view_type']) ) : '';
 
+        // Display Content | Show title
+        $showPopupTitle = (isset($_POST['show_popup_title']) && $_POST['show_popup_title'] == 'on') ? 'On' : 'Off';
+
+        // Display Content | Show desctiption
+        $showPopupDesc = (isset($_POST['show_popup_desc']) && $_POST['show_popup_desc'] == 'on') ? 'On' : 'Off';
+
+        // Enable different display content mobile
+        $enable_display_content_mobile = (isset($_POST['ays_pb_enable_display_content_mobile']) && $_POST['ays_pb_enable_display_content_mobile'] == 'on') ? 'on' : 'off';
+
+        // Display Content | Show title mobile
+        $show_popup_title_mobile = (isset($_POST['show_popup_title_mobile']) && $_POST['show_popup_title_mobile'] == 'on') ? 'On' : 'Off';
+
+        // Display Content | Show description mobile
+        $show_popup_desc_mobile = (isset($_POST['show_popup_desc_mobile']) && $_POST['show_popup_desc_mobile'] == 'on') ? 'On' : 'Off';
+
         // Width
 		$width = ( isset( $_POST['ays-pb']["width"] ) && $_POST['ays-pb']["width"] != '' ) ? absint( intval( $_POST['ays-pb']["width"] ) ) : '';
 
@@ -1755,21 +1776,6 @@ class Ays_PopupBox_List_Table extends WP_List_Table {
         $log_user = (isset($_POST['ays-pb']["log_user"]) &&  $_POST['ays-pb']["log_user"] == 'on') ? 'On' : 'Off';
         $guest = (isset($_POST['ays-pb']["guest"]) &&  $_POST['ays-pb']["guest"] == 'on') ? 'On' : 'Off';
 
-        //Show Popup Title
-        $showPopupTitle = ( isset($_POST["show_popup_title"]) &&  $_POST["show_popup_title"] == 'on' ) ? 'On' : 'Off';
-
-        //Show Popup Description
-        $showPopupDesc = ( isset($_POST["show_popup_desc"]) &&  $_POST["show_popup_desc"] == 'on' ) ? 'On' : 'Off';
-
-        //Enable Different Display Content Mobile
-        $enable_display_content_mobile = ( isset($_POST['ays_pb_enable_display_content_mobile']) && $_POST['ays_pb_enable_display_content_mobile'] == 'on' ) ? 'on' : 'off';
-
-        //Show Popup Title Mobile
-        $show_popup_title_mobile = ( isset($_POST['show_popup_title_mobile']) && $_POST['show_popup_title_mobile'] == 'on' ) ? 'On' : 'Off';
-
-        //Show Popup Desc Mobile
-        $show_popup_desc_mobile = ( isset($_POST['show_popup_desc_mobile']) && $_POST['show_popup_desc_mobile'] == 'on' ) ? 'On' : 'Off';
-
         if($show_all == 'yes'){
             $view_place = '';
         }else{
@@ -1909,6 +1915,8 @@ class Ays_PopupBox_List_Table extends WP_List_Table {
             'notification_logo_redirect_to_new_tab' => $notification_logo_redirect_to_new_tab,
             'notification_logo_width' => $notification_logo_width,
             'notification_logo_width_measurement_unit' => $notification_logo_width_measurement_unit,
+            'notification_logo_width_mobile' => $notification_logo_width_mobile,
+            'notification_logo_width_measurement_unit_mobile' => $notification_logo_width_measurement_unit_mobile,
             'notification_logo_max_width' => $notification_logo_max_width,
             'notification_logo_max_width_measurement_unit' => $notification_logo_max_width_measurement_unit,
             'notification_logo_min_width' => $notification_logo_min_width,

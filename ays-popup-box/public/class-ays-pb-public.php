@@ -1351,11 +1351,17 @@ class Ays_Pb_Public {
 
             $screen_shade = $ays_pb_template == 'notification' ? '' : "<div id='ays-pb-screen-shade_" . $id . "' overlay='overlay_" . $id . "' data-mobile-overlay='" . $enable_overlay_text_mobile . "'></div>";
 
-            // Notification type | Logo width | Measurement unit
+            // Notification type | Logo width | Measurement unit | On desktop
             $notification_logo_width_measurement_unit = (isset($options['notification_logo_width_measurement_unit']) && $options['notification_logo_width_measurement_unit'] == 'pixels') ? 'px' : '%';
 
-            // Notification type | Logo width
+            // Notification type | Logo width | On desktop
             $notification_logo_width = (isset($options['notification_logo_width']) && $options['notification_logo_width'] != '') ? absint( esc_attr($options['notification_logo_width']) ) . $notification_logo_width_measurement_unit : '100%';
+
+            // Notification type | Logo width | Measurement unit | On mobile
+            $notification_logo_width_measurement_unit_mobile = (isset($options['notification_logo_width_measurement_unit_mobile']) && $options['notification_logo_width_measurement_unit_mobile'] == 'pixels') ? 'px' : $notification_logo_width_measurement_unit;
+
+            // Notification type | Logo width | On desktop
+            $notification_logo_width_mobile = (isset($options['notification_logo_width_mobile']) && $options['notification_logo_width_mobile'] != '') ? absint( esc_attr($options['notification_logo_width_mobile']) ) . $notification_logo_width_measurement_unit_mobile : $notification_logo_width;
 
             // Notification type | Logo max-width | Measurement unit
             $notification_logo_max_width_measurement_unit = (isset($options['notification_logo_max_width_measurement_unit']) && $options['notification_logo_max_width_measurement_unit'] == 'percentage') ? '%' : 'px';
@@ -1617,6 +1623,10 @@ class Ays_Pb_Public {
                                 " . $box_shadow_mobile . ";
                                 box-sizing: border-box;
                                 " . $max_height_styles_mobile . "
+                            }
+
+                            .ays_notification_window.ays-pb-modal_".$id." .ays_pb_notification_logo img {
+                                width: " . $notification_logo_width_mobile . ";
                             }
 
                             .ays_notification_window.ays-pb-modal_".$id." div.ays_pb_notification_button_1 button {
