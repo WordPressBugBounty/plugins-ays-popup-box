@@ -1112,11 +1112,17 @@ class Ays_PopupBox_List_Table extends WP_List_Table {
         // Notification type | Logo width | Measurement unit | On mobile
         $notification_logo_width_measurement_unit_mobile = (isset($_POST['ays_pb_notification_logo_width_measurement_unit_mobile']) && $_POST['ays_pb_notification_logo_width_measurement_unit_mobile'] != '') ? stripslashes( sanitize_text_field($_POST['ays_pb_notification_logo_width_measurement_unit_mobile']) ) : 'percentage';
 
-        // Notification type | Logo max-width
+        // Notification type | Logo max-width | On dektop
         $notification_logo_max_width = (isset($_POST['ays_pb_notification_logo_max_width']) && $_POST['ays_pb_notification_logo_max_width'] != '') ? absint( intval($_POST['ays_pb_notification_logo_max_width']) ) : 100;
 
-        // Notification type | Logo max-width | Measurement unit
+        // Notification type | Logo max-width | Measurement unit | On dektop
         $notification_logo_max_width_measurement_unit = (isset($_POST['ays_pb_notification_logo_max_width_measurement_unit']) && $_POST['ays_pb_notification_logo_max_width_measurement_unit'] != '') ? stripslashes( sanitize_text_field($_POST['ays_pb_notification_logo_max_width_measurement_unit']) ) : 'pixels';
+
+        // Notification type | Logo max-width | On mobile
+        $notification_logo_max_width_mobile = (isset($_POST['ays_pb_notification_logo_max_width_mobile']) && $_POST['ays_pb_notification_logo_max_width_mobile'] != '') ? absint( intval($_POST['ays_pb_notification_logo_max_width_mobile']) ) : 100;
+
+        // Notification type | Logo max-width | Measurement unit | On mobile
+        $notification_logo_max_width_measurement_unit_mobile = (isset($_POST['ays_pb_notification_logo_max_width_measurement_unit_mobile']) && $_POST['ays_pb_notification_logo_max_width_measurement_unit_mobile'] != '') ? stripslashes( sanitize_text_field($_POST['ays_pb_notification_logo_max_width_measurement_unit_mobile']) ) : 'pixels';
 
         // Notification type | Logo min-width
         $notification_logo_min_width = (isset($_POST['ays_pb_notification_logo_min_width']) && $_POST['ays_pb_notification_logo_min_width'] != '') ? absint( intval($_POST['ays_pb_notification_logo_min_width']) ) : 50;
@@ -1919,6 +1925,8 @@ class Ays_PopupBox_List_Table extends WP_List_Table {
             'notification_logo_width_measurement_unit_mobile' => $notification_logo_width_measurement_unit_mobile,
             'notification_logo_max_width' => $notification_logo_max_width,
             'notification_logo_max_width_measurement_unit' => $notification_logo_max_width_measurement_unit,
+            'notification_logo_max_width_mobile' => $notification_logo_max_width_mobile,
+            'notification_logo_max_width_measurement_unit_mobile' => $notification_logo_max_width_measurement_unit_mobile,
             'notification_logo_min_width' => $notification_logo_min_width,
             'notification_logo_min_width_measurement_unit' => $notification_logo_min_width_measurement_unit,
             'notification_logo_max_height' => $notification_logo_max_height,

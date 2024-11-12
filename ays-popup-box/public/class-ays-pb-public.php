@@ -1360,14 +1360,20 @@ class Ays_Pb_Public {
             // Notification type | Logo width | Measurement unit | On mobile
             $notification_logo_width_measurement_unit_mobile = (isset($options['notification_logo_width_measurement_unit_mobile']) && $options['notification_logo_width_measurement_unit_mobile'] == 'pixels') ? 'px' : $notification_logo_width_measurement_unit;
 
-            // Notification type | Logo width | On desktop
+            // Notification type | Logo width | On mobile
             $notification_logo_width_mobile = (isset($options['notification_logo_width_mobile']) && $options['notification_logo_width_mobile'] != '') ? absint( esc_attr($options['notification_logo_width_mobile']) ) . $notification_logo_width_measurement_unit_mobile : $notification_logo_width;
 
-            // Notification type | Logo max-width | Measurement unit
+            // Notification type | Logo max-width | Measurement unit | On desktop
             $notification_logo_max_width_measurement_unit = (isset($options['notification_logo_max_width_measurement_unit']) && $options['notification_logo_max_width_measurement_unit'] == 'percentage') ? '%' : 'px';
 
-            // Notification type | Logo max-width
+            // Notification type | Logo max-width | On desktop
             $notification_logo_max_width = (isset($options['notification_logo_max_width']) && $options['notification_logo_max_width'] != '') ? absint( esc_attr($options['notification_logo_max_width']) ) . $notification_logo_max_width_measurement_unit : '100px';
+
+            // Notification type | Logo max-width | Measurement unit | On mobile
+            $notification_logo_max_width_measurement_unit_mobile = (isset($options['notification_logo_max_width_measurement_unit_mobile']) && $options['notification_logo_max_width_measurement_unit_mobile'] == 'percentage') ? '%' : $notification_logo_max_width_measurement_unit;
+
+            // Notification type | Logo max-width | On mobile
+            $notification_logo_max_width_mobile = (isset($options['notification_logo_max_width_mobile']) && $options['notification_logo_max_width_mobile'] != '') ? absint( esc_attr($options['notification_logo_max_width_mobile']) ) . $notification_logo_max_width_measurement_unit_mobile : $notification_logo_max_width;
 
             // Notification type | Logo min-width | Measurement unit
             $notification_logo_min_width_measurement_unit = (isset($options['notification_logo_min_width_measurement_unit']) && $options['notification_logo_min_width_measurement_unit'] == 'percentage') ? '%' : 'px';
@@ -1627,6 +1633,7 @@ class Ays_Pb_Public {
 
                             .ays_notification_window.ays-pb-modal_".$id." .ays_pb_notification_logo img {
                                 width: " . $notification_logo_width_mobile . ";
+                                max-width: " . $notification_logo_max_width_mobile . ";
                             }
 
                             .ays_notification_window.ays-pb-modal_".$id." div.ays_pb_notification_button_1 button {

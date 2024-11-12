@@ -150,6 +150,8 @@ $options = array(
     'notification_logo_width_measurement_unit_mobile' => 'percentage',
     'notification_logo_max_width' => 100,
     'notification_logo_max_width_measurement_unit' => 'pixels',
+    'notification_logo_max_width_mobile' => 100,
+    'notification_logo_max_width_measurement_unit_mobile' => 'pixels',
     'notification_logo_min_width' => 50,
     'notification_logo_min_width_measurement_unit' => 'pixels',
     'notification_logo_max_height' => '',
@@ -523,11 +525,17 @@ $notification_logo_width_mobile = (isset($options['notification_logo_width_mobil
 // Notification type | Logo width | Measurement unit | On mobile
 $notification_logo_width_measurement_unit_mobile = (isset($options['notification_logo_width_measurement_unit_mobile']) && $options['notification_logo_width_measurement_unit_mobile'] != '') ? stripslashes( esc_attr($options['notification_logo_width_measurement_unit_mobile']) ) : $notification_logo_width_measurement_unit;
 
-// Notification type | Logo max-width
+// Notification type | Logo max-width | On desktop
 $notification_logo_max_width = (isset($options['notification_logo_max_width']) && $options['notification_logo_max_width'] != '') ? absint( esc_attr($options['notification_logo_max_width']) ) : 100;
 
-// Notification type | Logo max-width | Measurement unit
+// Notification type | Logo max-width | Measurement unit | On desktop
 $notification_logo_max_width_measurement_unit = (isset($options['notification_logo_max_width_measurement_unit']) && $options['notification_logo_max_width_measurement_unit'] != '') ? stripslashes( esc_attr($options['notification_logo_max_width_measurement_unit']) ) : 'pixels';
+
+// Notification type | Logo max-width | On mobile
+$notification_logo_max_width_mobile = (isset($options['notification_logo_max_width_mobile']) && $options['notification_logo_max_width_mobile'] != '') ? absint( esc_attr($options['notification_logo_max_width_mobile']) ) : $notification_logo_max_width;
+
+// Notification type | Logo max-width | Measurement unit | On mobile
+$notification_logo_max_width_measurement_unit_mobile = (isset($options['notification_logo_max_width_measurement_unit_mobile']) && $options['notification_logo_max_width_measurement_unit_mobile'] != '') ? stripslashes( esc_attr($options['notification_logo_max_width_measurement_unit_mobile']) ) : $notification_logo_max_width_measurement_unit;
 
 // Notification type | Logo min-width
 $notification_logo_min_width = (isset($options['notification_logo_min_width']) && $options['notification_logo_min_width'] != '') ? absint( esc_attr($options['notification_logo_min_width']) ) : 50;
@@ -1991,19 +1999,59 @@ $ays_users_roles = $wp_roles->roles;
                                             </label>
                                         </div>
                                         <div class="col-sm-9">
-                                            <div style="display: flex; gap: 10px">
-                                                <div>
-                                                    <input type="number" id="ays_pb_notification_logo_max_width" class="ays-text-input" name="ays_pb_notification_logo_max_width" value="<?php echo $notification_logo_max_width ?>" />
+                                            <div class="row">
+                                                <div class="col-sm-3">
+                                                    <label for='ays_pb_notification_logo_max_width'>
+                                                        <?php echo __('On Desktop', "ays-popup-box"); ?>
+                                                        <a class="ays_help" data-toggle="tooltip" title="<?php echo __('Specify the max-width of the logo for desktop devices.',"ays-popup-box")?>">
+                                                            <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                                        </a>
+                                                    </label>
                                                 </div>
-                                                <div class="ays_pb_width_by_percentage_px_box">
-                                                    <select name="ays_pb_notification_logo_max_width_measurement_unit" id="ays_pb_notification_logo_max_width_measurement_unit" class="ays_pb_aysDropdown ays-pb-percent">
-                                                        <option value="pixels" <?php echo $notification_logo_max_width_measurement_unit == "pixels" ? "selected" : ""; ?>>
-                                                            <?php echo __( "px", "ays-popup-box" ); ?>
-                                                        </option>
-                                                        <option value="percentage" <?php echo $notification_logo_max_width_measurement_unit == "percentage" ? "selected" : ""; ?>>
-                                                            <?php echo __( "%", "ays-popup-box" ); ?>
-                                                        </option>
-                                                    </select>
+                                                <div class="col-sm-9">
+                                                    <div style="display: flex; gap: 10px">
+                                                        <div>
+                                                            <input type="number" id="ays_pb_notification_logo_max_width" class="ays-text-input" name="ays_pb_notification_logo_max_width" value="<?php echo $notification_logo_max_width ?>" />
+                                                        </div>
+                                                        <div class="ays_pb_width_by_percentage_px_box">
+                                                            <select name="ays_pb_notification_logo_max_width_measurement_unit" id="ays_pb_notification_logo_max_width_measurement_unit" class="ays_pb_aysDropdown ays-pb-percent">
+                                                                <option value="pixels" <?php echo $notification_logo_max_width_measurement_unit == "pixels" ? "selected" : ""; ?>>
+                                                                    <?php echo __( "px", "ays-popup-box" ); ?>
+                                                                </option>
+                                                                <option value="percentage" <?php echo $notification_logo_max_width_measurement_unit == "percentage" ? "selected" : ""; ?>>
+                                                                    <?php echo __( "%", "ays-popup-box" ); ?>
+                                                                </option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <hr>
+                                            <div class="row">
+                                                <div class="col-sm-3">
+                                                    <label for='ays_pb_notification_logo_max_width_mobile'>
+                                                        <?php echo __('On mobile', "ays-popup-box"); ?>
+                                                        <a class="ays_help" data-toggle="tooltip" title="<?php echo __('Specify the max-width of the logo for mobile devices.',"ays-popup-box")?>">
+                                                            <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                                        </a>
+                                                    </label>
+                                                </div>
+                                                <div class="col-sm-9">
+                                                    <div style="display: flex; gap: 10px; align-items:center">
+                                                        <div>
+                                                            <input type="number" id="ays_pb_notification_logo_max_width_mobile" class="ays-text-input" name="ays_pb_notification_logo_max_width_mobile" value="<?php echo $notification_logo_max_width_mobile ?>" />
+                                                        </div>
+                                                        <div class="ays_pb_width_by_percentage_px_box">
+                                                            <select name="ays_pb_notification_logo_max_width_measurement_unit_mobile" id="ays_pb_notification_logo_max_width_measurement_unit_mobile" class="ays_pb_aysDropdown ays-pb-percent">
+                                                                <option value="pixels" <?php echo $notification_logo_max_width_measurement_unit_mobile == "pixels" ? "selected" : ""; ?>>
+                                                                    <?php echo __( "px", "ays-popup-box" ); ?>
+                                                                </option>
+                                                                <option value="percentage" <?php echo $notification_logo_max_width_measurement_unit_mobile == "percentage" ? "selected" : ""; ?>>
+                                                                    <?php echo __( "%", "ays-popup-box" ); ?>
+                                                                </option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
