@@ -588,10 +588,15 @@ class Ays_Pb_Admin {
         /*
          *  Documentation : https://codex.wordpress.org/Plugin_API/Filter_Reference/plugin_action_links_(plugin_file_name)
          */
+
+        $popup_ajax_deactivate_plugin_nonce = wp_create_nonce( 'popup-box-ajax-deactivate-plugin-nonce' );
+
         $settings_link = array(
             '<a href="' . admin_url( 'options-general.php?page=' . $this->plugin_name ) . '">' . __('Settings', "ays-popup-box") . '</a>',
             '<a href="https://ays-demo.com/popup-box-plugin-free-demo/" target="_blank">' . __('Demo', "ays-popup-box") . '</a>',
-            '<a id="ays-pb-plugins-buy-now-button" href="https://ays-pro.com/wordpress/popup-box?utm_source=dashboard&utm_medium=popup-free&utm_campaign=plugins-buy-now-button" target="_blank">' . __('Upgrade 30% Sale', "ays-popup-box") . '</a>',
+            '<a id="ays-pb-plugins-buy-now-button" href="https://ays-pro.com/wordpress/popup-box?utm_source=dashboard&utm_medium=popup-free&utm_campaign=plugins-buy-now-button" target="_blank">' . __('Upgrade 30% Sale', "ays-popup-box") . '</a>
+            <input type="hidden" id="popup_box_ajax_deactivate_plugin_nonce" name="popup_box_ajax_deactivate_plugin_nonce" value="' . $popup_ajax_deactivate_plugin_nonce .'">',
+            
         );
         return array_merge(  $settings_link, $links );
 
@@ -607,23 +612,42 @@ class Ays_Pb_Admin {
     }
 
     public function deactivate_plugin_option() {
-        error_reporting(0);
+        // Run a security check.
+        check_ajax_referer( 'popup-box-ajax-deactivate-plugin-nonce', sanitize_key( $_REQUEST['_ajax_nonce'] ) );
 
-        $request_value = isset( $_REQUEST['upgrade_plugin'] ) ? sanitize_text_field( $_REQUEST['upgrade_plugin'] ) : '';
-
-        $upgrade_option = get_option( 'ays_pb_upgrade_plugin', '' );
-
-        if ( $upgrade_option === '' ) {
-            add_option( 'ays_pb_upgrade_plugin', $request_value );
-        } else {
-            update_option( 'ays_pb_upgrade_plugin', $request_value );
+        // Check for permissions.
+        if ( ! current_user_can( 'manage_options' ) ) {
+            ob_end_clean();
+            $ob_get_clean = ob_get_clean();
+            echo json_encode(array(
+                'option' => ''
+            ));
+            wp_die();
         }
 
-        $response = array(
-            'option' => get_option( 'ays_pb_upgrade_plugin', '' ),
-        );
+        if( is_user_logged_in() ) {
+            $request_value = isset( $_REQUEST['upgrade_plugin'] ) ? sanitize_text_field( $_REQUEST['upgrade_plugin'] ) : '';
+            $upgrade_option = get_option( 'ays_pb_upgrade_plugin', '' );
 
-        wp_send_json_success( $response );
+            if ( $upgrade_option === '' ) {
+                add_option( 'ays_pb_upgrade_plugin', $request_value );
+            } else {
+                update_option( 'ays_pb_upgrade_plugin', $request_value );
+            }
+
+            $response = array(
+                'option' => get_option( 'ays_pb_upgrade_plugin', '' ),
+            );
+
+            wp_send_json_success( $response );
+        } else {
+            ob_end_clean();
+            $ob_get_clean = ob_get_clean();
+            echo json_encode(array(
+                'option' => ''
+            ));
+            wp_die();
+        }
     }
 
     public function get_selected_options_pb() {
