@@ -787,7 +787,8 @@ class Ays_Pb_Admin {
                 </div>
                 <p style="font-size:13px;text-align:center;font-style:italic;">
                     <span style="margin-left:0px;margin-right:10px;" class="ays_heart_beat"><img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/hearth.svg"?>"></span>
-                    <span><?php echo __( "If you love our plugin, please do big favor and rate us on WordPress.org", "ays-popup-box"); ?></span> 
+                    <span><?php echo __( "If you love our plugin, please do big favor and rate us on", "ays-popup-box"); ?></span> 
+                    <a target="_blank" href='https://wordpress.org/support/plugin/ays-popup-box/reviews/?rate=5#new-post'>WordPress.org</a>
                     <a target="_blank" class="ays-rated-link" href='http://bit.ly/3kYanHL'>
                         <span class="ays-dashicons ays-dashicons-star-empty"></span>
                     	<span class="ays-dashicons ays-dashicons-star-empty"></span>

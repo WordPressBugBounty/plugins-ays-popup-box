@@ -1331,7 +1331,8 @@ class Ays_Pb_Public {
 
                 $iscloseButtonOff = $closeButton != 'on' ? true : false;
 
-                $popupbox_view .= "<script>";
+                $popupbox_view .= "<script>
+                    document.addEventListener('DOMContentLoaded', function() {";
                 if($enable_pb_position_mobile) {
                     $popupbox_view .= "if (window.innerWidth < 768) { "
                                             . $this->setPopupPosition($id, $ays_pb_position_mobile, $popupbox['view_type'], $iscloseButtonOff, $ays_pb_margin, $mobile_height) .
@@ -1345,7 +1346,8 @@ class Ays_Pb_Public {
                                             . $this->setPopupPosition($id, $ays_pb_position, $popupbox['view_type'], $iscloseButtonOff, $ays_pb_margin, $popupbox["height"]) .
                                         " }";
                 }
-                $popupbox_view .= "</script>";
+                $popupbox_view .= "});
+                </script>";
 
             }
 
@@ -1748,10 +1750,10 @@ class Ays_Pb_Public {
 
             if($ays_pb_action_buttons_type != 'clickSelector'){
                 $popupbox_view .= "
-                    <script>
-                    (function( $ ) {
-	                    'use strict';
-                        $(document).ready(function(){
+                <script>
+                    document.addEventListener('DOMContentLoaded', function() {
+                        (function( $ ) {
+                            'use strict';
                             let pbViewsFlag_".$id." = true;
                             if ('" . $ays_pb_template . "' == 'notification') {
                                 $(document).find('.ays-pb-modals').prependTo($(document.body));
@@ -2273,9 +2275,8 @@ class Ays_Pb_Public {
                                 $(document).find('body').removeClass('pb_disable_scroll_".$id."');
                                 $(document).find('html').removeClass('pb_disable_scroll_".$id."');
                             });
-
-                        });
-                    })( jQuery );
+                        })( jQuery );
+                    });
                 </script>";
             }
 
@@ -2287,156 +2288,96 @@ class Ays_Pb_Public {
                 }
                 $popupbox_view .= "                
                     <script>
-                        (function( $ ) {
-                            'use strict';
-                        $(document).ready(function(){
-                            let pbViewsFlag_".$id." = true;
-                            var ays_flag = true;
-                            var show_only_once = '{$show_only_once}';
-                            let isMobile = false;
-                            let closePopupOverlay = " . $close_popup_overlay_flag . ";
-                            let isPageScrollDisabled = " . (int)$disable_scroll . ";
-                            let checkAnimSpeed = " . $ays_pb_check_anim_speed . ";
-                            let ays_pb_animation_close_speed = $(document).find('#ays_pb_animation_close_speed_".$id."').val();
-                            let ays_pb_effectIn_".$id." = $(document).find('#ays_pb_modal_animate_in_".$id."').val();
-                            let ays_pb_effectOut_".$id." = $(document).find('#ays_pb_modal_animate_out_".$id."').val();
-                            if (window.innerWidth < 768) {
-                                isMobile = true;
-                                closePopupOverlay = " . $close_popup_overlay_mobile_flag . ";
-                                isPageScrollDisabled = " . (int)$disable_scroll_mobile . ";
-                                checkAnimSpeed = " . $ays_pb_check_anim_speed_mobile . ";
-                                ays_pb_animation_close_speed = $(document).find('#ays_pb_animation_close_speed_mobile_".$id."').val();
-                                ays_pb_effectIn_".$id." = $(document).find('#ays_pb_modal_animate_in_mobile_".$id."').val();
-                                ays_pb_effectOut_".$id." = $(document).find('#ays_pb_modal_animate_out_mobile_".$id."').val();
-                            }
-                            $(document).".$cl."('click', '".$ays_pb_action_buttons."', function(){
-                                var actionSelector = '".$ays_pb_action_buttons."';
-                                if(actionSelector.length === 0) {
-                                    return;
-                                }
-
-                                $(document).find('.ays_pb_music_sound').css({'display':'block'});
-
-                                if(show_only_once == 'on'){
-                                    $.ajax({
-                                        url: '".admin_url('admin-ajax.php')."',
-                                        method: 'post',
-                                        dataType: 'json',
-                                        data: {
-                                            action: 'ays_pb_set_cookie_only_once',
-                                            id: ".$popupbox['id'].",
-                                            title: '".htmlentities($popupbox['title'],ENT_QUOTES)."',
-                                        },
-                                    });
-                                }
-                             
-                              var dataAttr = $(document).find('.ays-pb-modal_".$id."').attr('data-ays-flag');
-                              if(ays_flag && dataAttr == 'true'){
-                                ays_flag = false;
-                                $(document).find('.av_pop_modals_".$id."').css('display','block');
-                                $(document).find('.av_pop_modals_".$id."').css('pointer-events', 'auto');
-
+                        document.addEventListener('DOMContentLoaded', function() {
+                            (function( $ ) {
+                                'use strict';
+                                let pbViewsFlag_".$id." = true;
+                                var ays_flag = true;
+                                var show_only_once = '{$show_only_once}';
+                                let isMobile = false;
+                                let closePopupOverlay = " . $close_popup_overlay_flag . ";
+                                let isPageScrollDisabled = " . (int)$disable_scroll . ";
+                                let checkAnimSpeed = " . $ays_pb_check_anim_speed . ";
+                                let ays_pb_animation_close_speed = $(document).find('#ays_pb_animation_close_speed_".$id."').val();
+                                let ays_pb_effectIn_".$id." = $(document).find('#ays_pb_modal_animate_in_".$id."').val();
+                                let ays_pb_effectOut_".$id." = $(document).find('#ays_pb_modal_animate_out_".$id."').val();
                                 if (window.innerWidth < 768) {
-                                    $(document).find('.ays_pb_timer_".$id." span').html($(document).find('.ays_pb_timer_".$id." span').attr('data-ays-mobile-seconds'));
+                                    isMobile = true;
+                                    closePopupOverlay = " . $close_popup_overlay_mobile_flag . ";
+                                    isPageScrollDisabled = " . (int)$disable_scroll_mobile . ";
+                                    checkAnimSpeed = " . $ays_pb_check_anim_speed_mobile . ";
+                                    ays_pb_animation_close_speed = $(document).find('#ays_pb_animation_close_speed_mobile_".$id."').val();
+                                    ays_pb_effectIn_".$id." = $(document).find('#ays_pb_modal_animate_in_mobile_".$id."').val();
+                                    ays_pb_effectOut_".$id." = $(document).find('#ays_pb_modal_animate_out_mobile_".$id."').val();
                                 }
-                                else{
-                                    $(document).find('.ays_pb_timer_".$id." span').html($(document).find('.ays_pb_timer_".$id." span').attr('data-ays-seconds'));
+                                $(document).".$cl."('click', '".$ays_pb_action_buttons."', function(){
+                                    var actionSelector = '".$ays_pb_action_buttons."';
+                                    if(actionSelector.length === 0) {
+                                        return;
+                                    }
 
-                                }
-                                
-                                clearInterval(timer_pb_".$id.");
-                                timer_pb_".$id." = null;
-                                $(document).find('.ays-pb-modal_".$id."').removeClass(ays_pb_effectOut_".$id.");
-                                $(document).find('.ays-pb-modal_".$id."').addClass(ays_pb_effectIn_".$id.");
-                                $(document).find('.ays-pb-modal_".$id."').css('display', 'block');
-                                
-                                if (window.innerWidth < 768 && $(document).find('#ays-pb-screen-shade_".$id."').attr('data-mobile-overlay') == 'true') {
-                                    $(document).find('#ays-pb-screen-shade_".$id."').css({'opacity': '".$overlay_mobile_opacity."', 'display': 'block'});
-                                }
-                                else{
-                                    $(document).find('#ays-pb-screen-shade_".$id."').css({'opacity': '".$overlay_opacity."', 'display': 'block'});
-                                }
-                                $(document).find('.ays-pb-modal-check_".$id."').prop('checked', true);
-                                $(document).find('.ays-pb-modal-check_".$id."').attr('checked', true);
-                                var ays_pb_animation_close_seconds = (ays_pb_animation_close_speed / 1000);
-                                var sound_src = $(document).find('#ays_pb_sound_".$id."').attr('src');
-                                var close_sound_src = $(document).find('#ays_pb_close_sound_".$id."').attr('src');
+                                    $(document).find('.ays_pb_music_sound').css({'display':'block'});
 
-                                ays_pb_animation_close_speed = parseFloat(ays_pb_animation_close_speed) - 50;
-                                
-                                if ('". $ays_pb_check_sound ."' === 'on' && typeof sound_src !== 'undefined'){
-                                    $('#ays_pb_sound_".$id."').get(0).play();
-                                    $(document).find('.ays_pb_pause_sound_".$id."').on('click',function(){
-                                        var audio = $('#ays_pb_sound_".$id."').get(0);
-                                        audio.pause();
-                                        audio.currentTime = 0;
-                                    });
-                                }
-                                //close sound start
-                                if(checkAnimSpeed && typeof close_sound_src !== 'undefined' && '". $ays_pb_check_sound ."' === 'on'){
-                                    if(checkAnimSpeed !== 0){
-                                        $(document).find('.ays_pb_pause_sound_".$id."').on('click',function(){
-                                            $('#ays_pb_close_sound_".$id."').get(0).play();
-                                            if(ays_pb_effectOut_".$id." != 'none'){
-                                                setTimeout(function(){
-                                                    $(document).find('.ays-pb-modal_".$id."').css('display', 'none');
-                                                        var audio = $('#ays_pb_close_sound_".$id."').get(0);
-                                                        audio.pause();
-                                                        audio.currentTime = 0;
-                                                        clearInterval(timer_pb_".$id.");
-                                                }, ays_pb_animation_close_speed);
-                                            }else{
-                                                $(document).find('.ays-pb-modal_".$id."').css('display', 'none');
-                                                var audio = $('#ays_pb_close_sound_".$id."').get(0);
-                                                audio.pause();
-                                                audio.currentTime = 0;
-                                            }
+                                    if(show_only_once == 'on'){
+                                        $.ajax({
+                                            url: '".admin_url('admin-ajax.php')."',
+                                            method: 'post',
+                                            dataType: 'json',
+                                            data: {
+                                                action: 'ays_pb_set_cookie_only_once',
+                                                id: ".$popupbox['id'].",
+                                                title: '".htmlentities($popupbox['title'],ENT_QUOTES)."',
+                                            },
                                         });
                                     }
-                                }
-                                //close sound end
+                             
+                                    var dataAttr = $(document).find('.ays-pb-modal_".$id."').attr('data-ays-flag');
+                                    if(ays_flag && dataAttr == 'true'){
+                                        ays_flag = false;
+                                        $(document).find('.av_pop_modals_".$id."').css('display','block');
+                                        $(document).find('.av_pop_modals_".$id."').css('pointer-events', 'auto');
 
-                                var time_pb_str_".$id." = $(document).find('.ays_pb_timer_".$id." span').attr('data-ays-seconds');
-                                if (window.innerWidth < 768) {
-                                    var mobileTimer = +$(document).find('.ays_pb_timer_".$id." span').attr('data-ays-mobile-seconds');
-                                    $(document).find('.ays_pb_timer_".$id." span').html(mobileTimer);
-                                    time_pb_str_".$id." = mobileTimer;
-                                }
-                                var time_pb_".$id." = parseInt(time_pb_str_".$id.");
-                                if(time_pb_".$id." !== undefined){ 
-                                 if(time_pb_".$id." !== 0){
-                                    var timer_pb_".$id." = setInterval(function(){
-                                        let newTime_pb_".$id." = time_pb_".$id."--;
-                                        $(document).find('.ays_pb_timer_".$id." span').text(newTime_pb_".$id.");
-                                        $(document).find('.ays-pb-modal_".$id."').css({
-                                            'animation-duration': ays_pb_animation_close_seconds + 's'
-                                        }); 
-                                        if(newTime_pb_".$id." <= 0){
-                                            $(document).find('.ays-pb-modal-close_".$id."').trigger('click');
-                                            $(document).find('.ays-pb-modal_".$id."').attr('class', '".$modal_class." ays-pb-modal_".$id." ".$custom_class." '+ays_pb_effectOut_".$id.");
-                                            $modal_close_additional_js
-                                            if(ays_pb_effectOut_".$id." != 'none'){
-                                                setTimeout(function(){
-                                                    $(document).find('.ays-pb-modal_".$id."').css('display', 'none');
-                                                    ays_flag = true;
-                                                }, ays_pb_animation_close_speed);
-                                            }else{
-                                                $(document).find('.ays-pb-modal_".$id."').css('display', 'none');
-                                                ays_flag = true;
-                                            }
-                                            if ('". $ays_pb_check_sound ."' === 'on' && typeof sound_src !== 'undefined'){
+                                        if (window.innerWidth < 768) {
+                                            $(document).find('.ays_pb_timer_".$id." span').html($(document).find('.ays_pb_timer_".$id." span').attr('data-ays-mobile-seconds'));
+                                        } else {
+                                            $(document).find('.ays_pb_timer_".$id." span').html($(document).find('.ays_pb_timer_".$id." span').attr('data-ays-seconds'));
+                                        }
+                                
+                                        clearInterval(timer_pb_".$id.");
+                                        timer_pb_".$id." = null;
+                                        $(document).find('.ays-pb-modal_".$id."').removeClass(ays_pb_effectOut_".$id.");
+                                        $(document).find('.ays-pb-modal_".$id."').addClass(ays_pb_effectIn_".$id.");
+                                        $(document).find('.ays-pb-modal_".$id."').css('display', 'block');
+
+                                        if (window.innerWidth < 768 && $(document).find('#ays-pb-screen-shade_".$id."').attr('data-mobile-overlay') == 'true') {
+                                            $(document).find('#ays-pb-screen-shade_".$id."').css({'opacity': '".$overlay_mobile_opacity."', 'display': 'block'});
+                                        } else {
+                                            $(document).find('#ays-pb-screen-shade_".$id."').css({'opacity': '".$overlay_opacity."', 'display': 'block'});
+                                        }
+                                        $(document).find('.ays-pb-modal-check_".$id."').prop('checked', true);
+                                        $(document).find('.ays-pb-modal-check_".$id."').attr('checked', true);
+                                        var ays_pb_animation_close_seconds = (ays_pb_animation_close_speed / 1000);
+                                        var sound_src = $(document).find('#ays_pb_sound_".$id."').attr('src');
+                                        var close_sound_src = $(document).find('#ays_pb_close_sound_".$id."').attr('src');
+
+                                        ays_pb_animation_close_speed = parseFloat(ays_pb_animation_close_speed) - 50;
+
+                                        if ('". $ays_pb_check_sound ."' === 'on' && typeof sound_src !== 'undefined'){
+                                            $('#ays_pb_sound_".$id."').get(0).play();
+                                            $(document).find('.ays_pb_pause_sound_".$id."').on('click',function(){
                                                 var audio = $('#ays_pb_sound_".$id."').get(0);
                                                 audio.pause();
                                                 audio.currentTime = 0;
-                                                clearInterval(timer_pb_".$id.");
-                                            }
-                                            if ('". $ays_pb_check_anim_speed ."' && typeof close_sound_src !== 'undefined' && '". $ays_pb_check_sound ."' === 'on'){
-                                                if(checkAnimSpeed !== 0){
+                                            });
+                                        }
+                                        //close sound start
+                                        if(checkAnimSpeed && typeof close_sound_src !== 'undefined' && '". $ays_pb_check_sound ."' === 'on'){
+                                            if(checkAnimSpeed !== 0){
+                                                $(document).find('.ays_pb_pause_sound_".$id."').on('click',function(){
                                                     $('#ays_pb_close_sound_".$id."').get(0).play();
                                                     if(ays_pb_effectOut_".$id." != 'none'){
                                                         setTimeout(function(){
                                                             $(document).find('.ays-pb-modal_".$id."').css('display', 'none');
-                                                            ays_flag = true;
                                                                 var audio = $('#ays_pb_close_sound_".$id."').get(0);
                                                                 audio.pause();
                                                                 audio.currentTime = 0;
@@ -2444,68 +2385,339 @@ class Ays_Pb_Public {
                                                         }, ays_pb_animation_close_speed);
                                                     }else{
                                                         $(document).find('.ays-pb-modal_".$id."').css('display', 'none');
+                                                        var audio = $('#ays_pb_close_sound_".$id."').get(0);
+                                                        audio.pause();
+                                                        audio.currentTime = 0;
+                                                    }
+                                                });
+                                            }
+                                        }
+                                        //close sound end
+
+                                        var time_pb_str_".$id." = $(document).find('.ays_pb_timer_".$id." span').attr('data-ays-seconds');
+                                        if (window.innerWidth < 768) {
+                                            var mobileTimer = +$(document).find('.ays_pb_timer_".$id." span').attr('data-ays-mobile-seconds');
+                                            $(document).find('.ays_pb_timer_".$id." span').html(mobileTimer);
+                                            time_pb_str_".$id." = mobileTimer;
+                                        }
+                                        var time_pb_".$id." = parseInt(time_pb_str_".$id.");
+                                        if(time_pb_".$id." !== undefined){ 
+                                            if(time_pb_".$id." !== 0){
+                                                var timer_pb_".$id." = setInterval(function(){
+                                                    let newTime_pb_".$id." = time_pb_".$id."--;
+                                                    $(document).find('.ays_pb_timer_".$id." span').text(newTime_pb_".$id.");
+                                                    $(document).find('.ays-pb-modal_".$id."').css({
+                                                        'animation-duration': ays_pb_animation_close_seconds + 's'
+                                                    }); 
+                                                    if(newTime_pb_".$id." <= 0){
+                                                        $(document).find('.ays-pb-modal-close_".$id."').trigger('click');
+                                                        $(document).find('.ays-pb-modal_".$id."').attr('class', '".$modal_class." ays-pb-modal_".$id." ".$custom_class." '+ays_pb_effectOut_".$id.");
+                                                        $modal_close_additional_js
+                                                        if(ays_pb_effectOut_".$id." != 'none'){
+                                                            setTimeout(function(){
+                                                                $(document).find('.ays-pb-modal_".$id."').css('display', 'none');
+                                                                ays_flag = true;
+                                                            }, ays_pb_animation_close_speed);
+                                                        }else{
+                                                            $(document).find('.ays-pb-modal_".$id."').css('display', 'none');
                                                             ays_flag = true;
-                                                            var audio = $('#ays_pb_close_sound_".$id."').get(0);
+                                                        }
+                                                        if ('". $ays_pb_check_sound ."' === 'on' && typeof sound_src !== 'undefined'){
+                                                            var audio = $('#ays_pb_sound_".$id."').get(0);
                                                             audio.pause();
                                                             audio.currentTime = 0;
+                                                            clearInterval(timer_pb_".$id.");
+                                                        }
+                                                        if ('". $ays_pb_check_anim_speed ."' && typeof close_sound_src !== 'undefined' && '". $ays_pb_check_sound ."' === 'on'){
+                                                            if(checkAnimSpeed !== 0){
+                                                                $('#ays_pb_close_sound_".$id."').get(0).play();
+                                                                if(ays_pb_effectOut_".$id." != 'none'){
+                                                                    setTimeout(function(){
+                                                                        $(document).find('.ays-pb-modal_".$id."').css('display', 'none');
+                                                                        ays_flag = true;
+                                                                            var audio = $('#ays_pb_close_sound_".$id."').get(0);
+                                                                            audio.pause();
+                                                                            audio.currentTime = 0;
+                                                                            clearInterval(timer_pb_".$id.");
+                                                                    }, ays_pb_animation_close_speed);
+                                                                }else{
+                                                                    $(document).find('.ays-pb-modal_".$id."').css('display', 'none');
+                                                                        ays_flag = true;
+                                                                        var audio = $('#ays_pb_close_sound_".$id."').get(0);
+                                                                        audio.pause();
+                                                                        audio.currentTime = 0;
+                                                                }
+                                                            }
+                                                        }
                                                     }
+                                                    $(document).find('.ays-pb-modal-close_".$id."').one('click', function(){
+                                                        if (pbViewsFlag_".$id.") {
+                                                            var pb_id = ".$id.";
+
+                                                            $.ajax({
+                                                                url: pbLocalizeObj.ajax,
+                                                                method: 'POST',
+                                                                dataType: 'text',
+                                                                data: {
+                                                                    id: pb_id,
+                                                                    action: 'ays_increment_pb_views',
+                                                                },
+                                                            });
+
+                                                            pbViewsFlag_".$id." = false;
+                                                        }
+                                                        $(document).find('.av_pop_modals_".$id."').css('pointer-events', 'none');
+                                                        $(document).find('.ays-pb-modal_".$id."').attr('class', '".$modal_class." ays-pb-modal_".$id." ".$ays_pb_show_scrollbar_class."  ".$custom_class." ays-pb-border-mobile_".$id." '+ays_pb_effectOut_".$id.");
+                                                        $(this).parents('.ays-pb-modals').find('iframe').each(function(){
+                                                            var key = /https:\/\/www.youtube.com/;
+                                                            var src = $(this).attr('src');
+                                                            $(this).attr('src', $(this).attr('src'));
+                                                        });
+                                                        $(this).parents('.ays-pb-modals').find('video.wp-video-shortcode').each(function(){
+                                                            if(typeof $(this).get(0) != 'undefined'){
+                                                                if ( ! $(this).get(0).paused ) {
+                                                                    $(this).get(0).pause();
+                                                                }
+
+                                                            }
+                                                        });
+                                                        $(this).parents('.ays-pb-modals').find('audio.wp-audio-shortcode').each(function(){
+                                                            if(typeof $(this).get(0) != 'undefined'){
+                                                                if ( ! $(this).get(0).paused ) {
+                                                                    $(this).get(0).pause();
+                                                                }
+
+                                                            }
+                                                        });
+                                                        $modal_close_additional_js
+                                                        if(ays_pb_effectOut_".$id." != 'none'){
+                                                            setTimeout(function(){ 
+                                                                $(document).find('.ays-pb-modal_".$id."').css('display', 'none'); 
+                                                                ays_flag = true;
+                                                            }, ays_pb_animation_close_speed);  
+                                                        }else{
+                                                            $(document).find('.ays-pb-modal_".$id."').css('display', 'none'); 
+                                                            ays_flag = true;
+                                                        }
+                                                        $(document).find('#ays-pb-screen-shade_".$id."').css({'opacity': '0', 'display': 'none'});
+                                                        clearInterval(timer_pb_".$id.");
+                                                    });
+
+                                                    var ays_pb_flag =  true;
+                                                    $(document).on('keydown', function(event) { 
+                                                        if('".$close_popup_esc_flag."' && ays_pb_flag){
+                                                            var escClosingPopups = $(document).find('.ays-pb-close-popup-with-esc:visible');
+                                                            if (event.keyCode == 27) {
+                                                                var topmostPopup = escClosingPopups.last();
+                                                                topmostPopup.find('.ays-pb-modal-close_".$id."').trigger('click');
+                                                                ays_pb_flag = false;
+                                                                if ('". $ays_pb_check_sound ."' === 'on' && typeof sound_src !== 'undefined'){
+                                                                    var audio = $('#ays_pb_sound_".$id."').get(0);
+                                                                    audio.pause();
+                                                                    audio.currentTime = 0;
+                                                                    clearInterval(timer_pb_".$id.");
+                                                                }
+                                                                if(checkAnimSpeed && typeof close_sound_src !== 'undefined' && '". $ays_pb_check_sound ."' === 'on'){
+                                                                    if(checkAnimSpeed !== 0){
+                                                                        $('#ays_pb_close_sound_".$id."').get(0).play();
+                                                                        if(ays_pb_effectOut_".$id." != 'none'){
+                                                                            setTimeout(function(){
+                                                                                $(document).find('.ays-pb-modal_".$id."').css('display', 'none');
+                                                                                    var audio = $('#ays_pb_close_sound_".$id."').get(0);
+                                                                                    audio.pause();
+                                                                                    audio.currentTime = 0;
+                                                                                    clearInterval(timer_pb_".$id.");
+                                                                            }, ays_pb_animation_close_speed);
+                                                                        }else{
+                                                                            $(document).find('.ays-pb-modal_".$id."').css('display', 'none');
+                                                                            var audio = $('#ays_pb_close_sound_".$id."').get(0);
+                                                                            audio.pause();
+                                                                            audio.currentTime = 0;
+                                                                            clearInterval(timer_pb_".$id.");
+                                                                        }
+                                                                    }
+                                                                }
+                                                            } 
+                                                        } else {
+                                                            ays_pb_flag = true;
+                                                        }
+                                                    });
+                                                }, 1000);
+                                                if('".$ays_pb_action_buttons_type."' != 'both'){
+                                                    if(closePopupOverlay && '".$popupbox['onoffoverlay']."' == 'On'){
+                                                        $(document).find('#ays-pb-screen-shade_".$id."').on('click', function() {
+                                                            var pb_parent_div = $(this).find('.ays-pb-modals');
+                                                            var pb_div = $(this).parents('.ays-pb-modals').find('.ays-pb-modal_".$id."');
+                                                            if (!pb_parent_div.is(pb_div) && pb_parent_div.has(pb_div).length === 0){
+                                                                $(document).find('.ays-pb-modal-close_".$id."').click();
+                                                                if ('". $ays_pb_check_sound ."' === 'on' && typeof sound_src !== 'undefined'){
+                                                                    var audio = $('#ays_pb_sound_".$id."').get(0);
+                                                                    audio.pause();
+                                                                    audio.currentTime = 0;
+                                                                    clearInterval(timer_pb_".$id.");
+                                                                }
+                                                                if(checkAnimSpeed && typeof close_sound_src !== 'undefined' && '". $ays_pb_check_sound ."' === 'on'){
+                                                                    if(checkAnimSpeed !== 0){
+                                                                        $('#ays_pb_close_sound_".$id."').get(0).play();
+                                                                        if(ays_pb_effectOut_".$id." != 'none'){
+                                                                            setTimeout(function(){
+                                                                                $(document).find('.ays-pb-modal_".$id."').css('display', 'none');
+                                                                                    var audio = $('#ays_pb_close_sound_".$id."').get(0);
+                                                                                    audio.pause();
+                                                                                    audio.currentTime = 0;
+                                                                            }, ays_pb_animation_close_speed);
+                                                                        }else{
+                                                                            $(document).find('.ays-pb-modal_".$id."').css('display', 'none');
+                                                                            var audio = $('#ays_pb_close_sound_".$id."').get(0);
+                                                                            audio.pause();
+                                                                            audio.currentTime = 0;
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        });
+                                                    }
+                                                }else{
+                                                    if(closePopupOverlay && '".$popupbox['onoffoverlay']."' == 'On'){
+                                                        $(document).find('.av_pop_modals_".$id."').on('click', function(e) {
+                                                            var pb_parent_div = $(this);
+                                                            var pb_div = $(this).find('.ays-pb-modal_".$id."');
+                                                            if (!pb_div.is(e.target) && pb_div.has(e.target).length === 0){
+                                                                $(document).find('.ays-pb-modal-close_".$id."').click();
+                                                                if ('". $ays_pb_check_sound ."' === 'on' && typeof sound_src !== 'undefined'){
+                                                                    var audio = $('#ays_pb_sound_".$id."').get(0);
+                                                                    audio.pause();
+                                                                    audio.currentTime = 0;
+                                                                    clearInterval(timer_pb_".$id.");
+                                                                }
+                                                                if(checkAnimSpeed && typeof close_sound_src !== 'undefined' && '". $ays_pb_check_sound ."' === 'on'){
+                                                                    if(checkAnimSpeed !== 0){
+                                                                        $('#ays_pb_close_sound_".$id."').get(0).play();
+                                                                        if(ays_pb_effectOut_".$id." != 'none'){
+                                                                            setTimeout(function(){
+                                                                                $(document).find('.ays-pb-modal_".$id."').css('display', 'none');
+                                                                                    var audio = $('#ays_pb_close_sound_".$id."').get(0);
+                                                                                    audio.pause();
+                                                                                    audio.currentTime = 0;
+                                                                                    clearInterval(timer_pb_".$id.");
+                                                                            }, ays_pb_animation_close_speed);
+                                                                        }else{
+                                                                            $(document).find('.ays-pb-modal_".$id."').css('display', 'none');
+                                                                            var audio = $('#ays_pb_close_sound_".$id."').get(0);
+                                                                            audio.pause();
+                                                                            audio.currentTime = 0;
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        });
+                                                    }
+                                                }
+                                            } else {
+                                                $(document).find('.ays_pb_timer_".$id."').css('display','none');
+                                                $(document).find('.ays-pb-modal_".$id."').css({
+                                                    'animation-duration': ays_pb_animation_close_seconds + 's'
+                                                }); 
+                                                $(document).find('.ays-pb-modal-close_".$id."').one('click', function(){
+                                                    if (pbViewsFlag_".$id.") {
+                                                        var pb_id = ".$id.";
+
+                                                        $.ajax({
+                                                            url: pbLocalizeObj.ajax,
+                                                            method: 'POST',
+                                                            dataType: 'text',
+                                                            data: {
+                                                                id: pb_id,
+                                                                action: 'ays_increment_pb_views',
+                                                            },
+                                                        });
+
+                                                        pbViewsFlag_".$id." = false;
+                                                    }
+                                                    $(document).find('.av_pop_modals_".$id."').css('pointer-events', 'none');
+                                                    $(document).find('.ays-pb-modal_".$id."').attr('class', '".$modal_class." ".$ays_pb_show_scrollbar_class." ays-pb-modal_".$id." ".$custom_class." ays-pb-border-mobile_".$id." '+ays_pb_effectOut_".$id.");
+                                                    $(this).parents('.ays-pb-modals').find('iframe').each(function(){
+                                                        var key = /https:\/\/www.youtube.com/;
+                                                        var src = $(this).attr('src');
+                                                        $(this).attr('src', $(this).attr('src'));
+                                                    });
+                                                    $(this).parents('.ays-pb-modals').find('video.wp-video-shortcode').each(function(){
+                                                        if(typeof $(this).get(0) != 'undefined'){
+                                                            if ( ! $(this).get(0).paused ) {
+                                                                $(this).get(0).pause();
+                                                            }
+
+                                                        }
+                                                    });
+                                                    $(this).parents('.ays-pb-modals').find('audio.wp-audio-shortcode').each(function(){
+                                                        if(typeof $(this).get(0) != 'undefined'){
+                                                            if ( ! $(this).get(0).paused ) {
+                                                                $(this).get(0).pause();
+                                                            }
+
+                                                        }
+                                                    });
+                                                    if(ays_pb_effectOut_".$id." != 'none'){
+                                                        setTimeout(function(){
+                                                            $(document).find('.ays-pb-modal_".$id."').css('display', 'none');
+                                                            $(document).find('.av_pop_modals_".$id."').css('display', 'none');
+                                                            ays_flag = true;
+                                                        }, ays_pb_animation_close_speed);  
+                                                    }else{
+                                                        $(document).find('.ays-pb-modal_".$id."').css('display', 'none');
+                                                        $(document).find('.av_pop_modals_".$id."').css('display', 'none');
+                                                        ays_flag = true;
+                                                    }
+                                                    $modal_close_additional_js
+                                                    $(document).find('#ays-pb-screen-shade_".$id."').css({'opacity': '0', 'display': 'none'});
+                                                    });
+                                                }
+                                            }
+
+
+                                            if(isPageScrollDisabled){
+                                                $(document).find('body').addClass('pb_disable_scroll_".$id."');
+                                                $(document).find('html').addClass('pb_disable_scroll_".$id."');
+
+                                                jQuery(document).on('click', '.ays-pb-modal-close_".$id."', function() {
+                                                    $(document).find('body').removeClass('pb_disable_scroll_".$id."');
+                                                    $(document).find('html').removeClass('pb_disable_scroll_".$id."');
+                                                });
+                                            }
+
+                                            if ('".$popupbox['onoffoverlay']."' != 'On'){
+                                                $(document).find('#ays-pb-screen-shade_".$id."').css({'opacity': '0', 'display': 'none !important', 'pointer-events': 'none'});
+                                                $(document).find('.ays-pb-modal_".$id."').css('pointer-events', 'auto');
+                                                $(document).find('.av_pop_modals_".$id."').css('pointer-events','none');
+                                            };
+                                            if('".$enable_close_button_delay_for_mobile."' == 'true' && window.innerWidth < 768){
+                                                if(".$close_button_delay_for_mobile." != 0 && '".$closeButton."' != 'on'){
+                                                    $(document).find('.ays-pb-modal-close_".$id."').css({'display': 'none'});
+                                                    setTimeout(function(){ 
+                                                        $(document).find('.ays-pb-modal-close_".$id."').css({'display': 'block'});
+                                                    },". $close_button_delay_for_mobile .");
+                                                }
+                                            }
+                                            else{
+                                                if(".$close_button_delay." != 0 && '".$closeButton."' != 'on'){
+                                                    $(document).find('.ays-pb-modal-close_".$id."').css({'display': 'none'});
+                                                    setTimeout(function(){ 
+                                                        $(document).find('.ays-pb-modal-close_".$id."').css({'display': 'block'});
+                                                    },". $close_button_delay .");
                                                 }
                                             }
                                         }
-                                        $(document).find('.ays-pb-modal-close_".$id."').one('click', function(){
-                                            if (pbViewsFlag_".$id.") {
-                                                var pb_id = ".$id.";
-
-                                                $.ajax({
-                                                    url: pbLocalizeObj.ajax,
-                                                    method: 'POST',
-                                                    dataType: 'text',
-                                                    data: {
-                                                        id: pb_id,
-                                                        action: 'ays_increment_pb_views',
-                                                    },
-                                                });
-
-                                                pbViewsFlag_".$id." = false;
-                                            }
-                                            $(document).find('.av_pop_modals_".$id."').css('pointer-events', 'none');
-                                            $(document).find('.ays-pb-modal_".$id."').attr('class', '".$modal_class." ays-pb-modal_".$id." ".$ays_pb_show_scrollbar_class."  ".$custom_class." ays-pb-border-mobile_".$id." '+ays_pb_effectOut_".$id.");
-                                            $(this).parents('.ays-pb-modals').find('iframe').each(function(){
-                                                var key = /https:\/\/www.youtube.com/;
-                                                var src = $(this).attr('src');
-                                                $(this).attr('src', $(this).attr('src'));
-                                            });
-                                            $(this).parents('.ays-pb-modals').find('video.wp-video-shortcode').each(function(){
-                                                if(typeof $(this).get(0) != 'undefined'){
-                                                    if ( ! $(this).get(0).paused ) {
-                                                        $(this).get(0).pause();
-                                                    }
-
+                                    // if(".$ays_pb_autoclose." == 0){
+                                        if(closePopupOverlay && '".$popupbox['onoffoverlay']."' == 'On'){
+                                            $(document).find('.av_pop_modals_".$id."').on('click', function(e) {
+                                                var pb_parent = $(this);
+                                                var pb_div = $(this).find('.ays-pb-modal_".$id."');
+                                                if (!pb_div.is(e.target) && pb_div.has(e.target).length === 0){
+                                                    $(document).find('.ays-pb-modal-close_".$id."').click();
                                                 }
                                             });
-                                            $(this).parents('.ays-pb-modals').find('audio.wp-audio-shortcode').each(function(){
-                                                if(typeof $(this).get(0) != 'undefined'){
-                                                    if ( ! $(this).get(0).paused ) {
-                                                        $(this).get(0).pause();
-                                                    }
-
-                                                }
-                                            });
-                                            $modal_close_additional_js
-                                            if(ays_pb_effectOut_".$id." != 'none'){
-                                                setTimeout(function(){ 
-                                                    $(document).find('.ays-pb-modal_".$id."').css('display', 'none'); 
-                                                    ays_flag = true;
-                                                }, ays_pb_animation_close_speed);  
-                                            }else{
-                                                $(document).find('.ays-pb-modal_".$id."').css('display', 'none'); 
-                                                ays_flag = true;
-                                            }
-                                            $(document).find('#ays-pb-screen-shade_".$id."').css({'opacity': '0', 'display': 'none'});
-                                            clearInterval(timer_pb_".$id.");
-                                        });
-                                        
-                                        var ays_pb_flag =  true;
+                                        }
+                                        var ays_pb_flag = true;
                                         $(document).on('keydown', function(event) { 
                                             if('".$close_popup_esc_flag."' && ays_pb_flag){
                                                 var escClosingPopups = $(document).find('.ays-pb-close-popup-with-esc:visible');
@@ -2513,274 +2725,60 @@ class Ays_Pb_Public {
                                                     var topmostPopup = escClosingPopups.last();
                                                     topmostPopup.find('.ays-pb-modal-close_".$id."').trigger('click');
                                                     ays_pb_flag = false;
-                                                    if ('". $ays_pb_check_sound ."' === 'on' && typeof sound_src !== 'undefined'){
-                                                        var audio = $('#ays_pb_sound_".$id."').get(0);
-                                                        audio.pause();
-                                                        audio.currentTime = 0;
-                                                        clearInterval(timer_pb_".$id.");
-                                                    }
-                                                    if(checkAnimSpeed && typeof close_sound_src !== 'undefined' && '". $ays_pb_check_sound ."' === 'on'){
-                                                        if(checkAnimSpeed !== 0){
-                                                            $('#ays_pb_close_sound_".$id."').get(0).play();
-                                                            if(ays_pb_effectOut_".$id." != 'none'){
-                                                                setTimeout(function(){
-                                                                    $(document).find('.ays-pb-modal_".$id."').css('display', 'none');
-                                                                        var audio = $('#ays_pb_close_sound_".$id."').get(0);
-                                                                        audio.pause();
-                                                                        audio.currentTime = 0;
-                                                                        clearInterval(timer_pb_".$id.");
-                                                                }, ays_pb_animation_close_speed);
-                                                            }else{
-                                                                $(document).find('.ays-pb-modal_".$id."').css('display', 'none');
-                                                                var audio = $('#ays_pb_close_sound_".$id."').get(0);
-                                                                audio.pause();
-                                                                audio.currentTime = 0;
-                                                                clearInterval(timer_pb_".$id.");
-                                                            }
-                                                        }
-                                                    }
-                                                } 
+                                                }
                                             } else {
                                                 ays_pb_flag = true;
                                             }
                                         });
-                                    }, 1000);
-                                    if('".$ays_pb_action_buttons_type."' != 'both'){
-                                        if(closePopupOverlay && '".$popupbox['onoffoverlay']."' == 'On'){
-                                            $(document).find('#ays-pb-screen-shade_".$id."').on('click', function() {
-                                                var pb_parent_div = $(this).find('.ays-pb-modals');
-                                                var pb_div = $(this).parents('.ays-pb-modals').find('.ays-pb-modal_".$id."');
-                                                if (!pb_parent_div.is(pb_div) && pb_parent_div.has(pb_div).length === 0){
-                                                    $(document).find('.ays-pb-modal-close_".$id."').click();
-                                                    if ('". $ays_pb_check_sound ."' === 'on' && typeof sound_src !== 'undefined'){
-                                                        var audio = $('#ays_pb_sound_".$id."').get(0);
-                                                        audio.pause();
-                                                        audio.currentTime = 0;
-                                                        clearInterval(timer_pb_".$id.");
-                                                    }
-                                                    if(checkAnimSpeed && typeof close_sound_src !== 'undefined' && '". $ays_pb_check_sound ."' === 'on'){
-                                                        if(checkAnimSpeed !== 0){
-                                                            $('#ays_pb_close_sound_".$id."').get(0).play();
-                                                            if(ays_pb_effectOut_".$id." != 'none'){
-                                                                setTimeout(function(){
-                                                                    $(document).find('.ays-pb-modal_".$id."').css('display', 'none');
-                                                                        var audio = $('#ays_pb_close_sound_".$id."').get(0);
-                                                                        audio.pause();
-                                                                        audio.currentTime = 0;
-                                                                }, ays_pb_animation_close_speed);
-                                                            }else{
-                                                                $(document).find('.ays-pb-modal_".$id."').css('display', 'none');
-                                                                var audio = $('#ays_pb_close_sound_".$id."').get(0);
-                                                                audio.pause();
-                                                                audio.currentTime = 0;
-                                                            }
-                                                        }
-                                                    }
-                                                }
-                                            });
-                                        }
-                                    }else{
-                                        if(closePopupOverlay && '".$popupbox['onoffoverlay']."' == 'On'){
-                                            $(document).find('.av_pop_modals_".$id."').on('click', function(e) {
-                                                var pb_parent_div = $(this);
-                                                var pb_div = $(this).find('.ays-pb-modal_".$id."');
-                                                if (!pb_div.is(e.target) && pb_div.has(e.target).length === 0){
-                                                    $(document).find('.ays-pb-modal-close_".$id."').click();
-                                                    if ('". $ays_pb_check_sound ."' === 'on' && typeof sound_src !== 'undefined'){
-                                                        var audio = $('#ays_pb_sound_".$id."').get(0);
-                                                        audio.pause();
-                                                        audio.currentTime = 0;
-                                                        clearInterval(timer_pb_".$id.");
-                                                    }
-                                                    if(checkAnimSpeed && typeof close_sound_src !== 'undefined' && '". $ays_pb_check_sound ."' === 'on'){
-                                                        if(checkAnimSpeed !== 0){
-                                                            $('#ays_pb_close_sound_".$id."').get(0).play();
-                                                            if(ays_pb_effectOut_".$id." != 'none'){
-                                                                setTimeout(function(){
-                                                                    $(document).find('.ays-pb-modal_".$id."').css('display', 'none');
-                                                                        var audio = $('#ays_pb_close_sound_".$id."').get(0);
-                                                                        audio.pause();
-                                                                        audio.currentTime = 0;
-                                                                        clearInterval(timer_pb_".$id.");
-                                                                }, ays_pb_animation_close_speed);
-                                                            }else{
-                                                                $(document).find('.ays-pb-modal_".$id."').css('display', 'none');
-                                                                var audio = $('#ays_pb_close_sound_".$id."').get(0);
-                                                                audio.pause();
-                                                                audio.currentTime = 0;
-                                                            }
-                                                        }
-                                                    }
-                                                }
-                                            });
-                                        }
-                                    }   
-                                } else {
-                                     $(document).find('.ays_pb_timer_".$id."').css('display','none');
-                                     $(document).find('.ays-pb-modal_".$id."').css({
-                                        'animation-duration': ays_pb_animation_close_seconds + 's'
-                                     }); 
-                                     $(document).find('.ays-pb-modal-close_".$id."').one('click', function(){
-                                        if (pbViewsFlag_".$id.") {
-                                            var pb_id = ".$id.";
-
-                                            $.ajax({
-                                                url: pbLocalizeObj.ajax,
-                                                method: 'POST',
-                                                dataType: 'text',
-                                                data: {
-                                                    id: pb_id,
-                                                    action: 'ays_increment_pb_views',
-                                                },
-                                            });
-
-                                            pbViewsFlag_".$id." = false;
-                                        }
-                                        $(document).find('.av_pop_modals_".$id."').css('pointer-events', 'none');
-                                        $(document).find('.ays-pb-modal_".$id."').attr('class', '".$modal_class." ".$ays_pb_show_scrollbar_class." ays-pb-modal_".$id." ".$custom_class." ays-pb-border-mobile_".$id." '+ays_pb_effectOut_".$id.");
-                                        $(this).parents('.ays-pb-modals').find('iframe').each(function(){
-                                            var key = /https:\/\/www.youtube.com/;
-                                            var src = $(this).attr('src');
-                                            $(this).attr('src', $(this).attr('src'));
-                                        });
-                                        $(this).parents('.ays-pb-modals').find('video.wp-video-shortcode').each(function(){
-                                            if(typeof $(this).get(0) != 'undefined'){
-                                                if ( ! $(this).get(0).paused ) {
-                                                    $(this).get(0).pause();
-                                                }
-
-                                            }
-                                        });
-                                        $(this).parents('.ays-pb-modals').find('audio.wp-audio-shortcode').each(function(){
-                                            if(typeof $(this).get(0) != 'undefined'){
-                                                if ( ! $(this).get(0).paused ) {
-                                                    $(this).get(0).pause();
-                                                }
-
-                                            }
-                                        });
-                                        if(ays_pb_effectOut_".$id." != 'none'){
-                                            setTimeout(function(){
-                                                $(document).find('.ays-pb-modal_".$id."').css('display', 'none');
-                                                $(document).find('.av_pop_modals_".$id."').css('display', 'none');
-                                                ays_flag = true;
-                                            }, ays_pb_animation_close_speed);  
-                                        }else{
-                                            $(document).find('.ays-pb-modal_".$id."').css('display', 'none');
-                                            $(document).find('.av_pop_modals_".$id."').css('display', 'none');
-                                            ays_flag = true;
-                                        }
-                                        $modal_close_additional_js
-                                        $(document).find('#ays-pb-screen-shade_".$id."').css({'opacity': '0', 'display': 'none'});
-                                        });
-                                    }
-                                }
-
-
-                                if(isPageScrollDisabled){
-                                    $(document).find('body').addClass('pb_disable_scroll_".$id."');
-                                    $(document).find('html').addClass('pb_disable_scroll_".$id."');
-
-                                    jQuery(document).on('click', '.ays-pb-modal-close_".$id."', function() {
-                                        $(document).find('body').removeClass('pb_disable_scroll_".$id."');
-                                        $(document).find('html').removeClass('pb_disable_scroll_".$id."');
-                                    });
-                                }
-
+                                    // }
+                                });
                                 if ('".$popupbox['onoffoverlay']."' != 'On'){
                                     $(document).find('#ays-pb-screen-shade_".$id."').css({'opacity': '0', 'display': 'none !important', 'pointer-events': 'none'});
                                     $(document).find('.ays-pb-modal_".$id."').css('pointer-events', 'auto');
                                     $(document).find('.av_pop_modals_".$id."').css('pointer-events','none');
                                 };
-                                if('".$enable_close_button_delay_for_mobile."' == 'true' && window.innerWidth < 768){
-                                    if(".$close_button_delay_for_mobile." != 0 && '".$closeButton."' != 'on'){
-                                        $(document).find('.ays-pb-modal-close_".$id."').css({'display': 'none'});
-                                        setTimeout(function(){ 
-                                            $(document).find('.ays-pb-modal-close_".$id."').css({'display': 'block'});
-                                        },". $close_button_delay_for_mobile .");
-                                    }
-                                }
-                                else{
-                                    if(".$close_button_delay." != 0 && '".$closeButton."' != 'on'){
-                                        $(document).find('.ays-pb-modal-close_".$id."').css({'display': 'none'});
-                                        setTimeout(function(){ 
-                                            $(document).find('.ays-pb-modal-close_".$id."').css({'display': 'block'});
-                                        },". $close_button_delay .");
-                                    }
-                                }
-                              }
-                            // if(".$ays_pb_autoclose." == 0){
-                                if(closePopupOverlay && '".$popupbox['onoffoverlay']."' == 'On'){
-                                    $(document).find('.av_pop_modals_".$id."').on('click', function(e) {
-                                        var pb_parent = $(this);
-                                        var pb_div = $(this).find('.ays-pb-modal_".$id."');
-                                        if (!pb_div.is(e.target) && pb_div.has(e.target).length === 0){
-                                            $(document).find('.ays-pb-modal-close_".$id."').click();
-                                        }
-                                    });
-                                }
-                                var ays_pb_flag = true;
-                                $(document).on('keydown', function(event) { 
-                                    if('".$close_popup_esc_flag."' && ays_pb_flag){
-                                        var escClosingPopups = $(document).find('.ays-pb-close-popup-with-esc:visible');
-                                        if (event.keyCode == 27) {
-                                            var topmostPopup = escClosingPopups.last();
-                                            topmostPopup.find('.ays-pb-modal-close_".$id."').trigger('click');
-                                            ays_pb_flag = false;
-                                        }
-                                    } else {
-                                        ays_pb_flag = true;
-                                    }
-                                });
-                            // }
-                            });
-                            if ('".$popupbox['onoffoverlay']."' != 'On'){
-                                $(document).find('#ays-pb-screen-shade_".$id."').css({'opacity': '0', 'display': 'none !important', 'pointer-events': 'none'});
-                                $(document).find('.ays-pb-modal_".$id."').css('pointer-events', 'auto');
-                                $(document).find('.av_pop_modals_".$id."').css('pointer-events','none');
-                            };
-                            if('".$ays_pb_action_buttons_type."' != 'both'){
-                                if($(document).find('.ays-pb-modals video').hasClass('wp-video-shortcode')){
-                                    var videoWidth  = $(document).find('.ays-pb-modals video.wp-video-shortcode').attr('width');
-                                    var videoHeight = $(document).find('.ays-pb-modals video.wp-video-shortcode').attr('height');
-                                    setTimeout(function(){
-                                        $(document).find('.ays-pb-modals .wp-video').removeAttr('style');
-                                        $(document).find('.ays-pb-modals .mejs-container').removeAttr('style');
-                                        $(document).find('.ays-pb-modals video.wp-video-shortcode').removeAttr('style');
+                                if('".$ays_pb_action_buttons_type."' != 'both'){
+                                    if($(document).find('.ays-pb-modals video').hasClass('wp-video-shortcode')){
+                                        var videoWidth  = $(document).find('.ays-pb-modals video.wp-video-shortcode').attr('width');
+                                        var videoHeight = $(document).find('.ays-pb-modals video.wp-video-shortcode').attr('height');
+                                        setTimeout(function(){
+                                            $(document).find('.ays-pb-modals .wp-video').removeAttr('style');
+                                            $(document).find('.ays-pb-modals .mejs-container').removeAttr('style');
+                                            $(document).find('.ays-pb-modals video.wp-video-shortcode').removeAttr('style');
 
-                                        $(document).find('.ays-pb-modals .wp-video').css({'width': '100%'});
-                                        $(document).find('.ays-pb-modals .mejs-container').css({'width': '100%','height': videoHeight + 'px'});
-                                        $(document).find('.ays-pb-modals video.wp-video-shortcode').css({'width': '100%','height': videoHeight + 'px'});
-                                    },1000);
+                                            $(document).find('.ays-pb-modals .wp-video').css({'width': '100%'});
+                                            $(document).find('.ays-pb-modals .mejs-container').css({'width': '100%','height': videoHeight + 'px'});
+                                            $(document).find('.ays-pb-modals video.wp-video-shortcode').css({'width': '100%','height': videoHeight + 'px'});
+                                        },1000);
+                                    }
+                                    if($(document).find('.ays-pb-modals iframe').attr('style') != ''){
+                                        setTimeout(function(){
+                                            $(document).find('.ays-pb-modals iframe').removeAttr('style');
+                                        },500);
+                                    }
                                 }
-                                if($(document).find('.ays-pb-modals iframe').attr('style') != ''){
-                                    setTimeout(function(){
-                                        $(document).find('.ays-pb-modals iframe').removeAttr('style');
-                                    },500);
+                                if('".$autoclose_on_video_completion."' == 'on') {
+                                    var video = $(document).find('video.wp-video-shortcode');
+                                    for (let i = 0; i < video.length; i++) {
+                                        video[i].addEventListener('ended', function() {
+                                            if ($(this).next().val() === 'on') {
+                                                $(this).parents('.ays_video_window').find('.close-image-btn').trigger('click');
+                                            }
+                                        });
+                                    }
                                 }
-                            }
-                            if('".$autoclose_on_video_completion."' == 'on') {
-                                var video = $(document).find('video.wp-video-shortcode');
-                                for (let i = 0; i < video.length; i++) {
-                                    video[i].addEventListener('ended', function() {
-                                        if ($(this).next().val() === 'on') {
-                                            $(this).parents('.ays_video_window').find('.close-image-btn').trigger('click');
-                                        }
-                                    });
-                                }
-                            }
+                            })( jQuery );
                         });
-                    })( jQuery );
-                </script>";
+                    </script>";
             }
 
             if ($popupbox['onoffoverlay'] != 'On'){
                 $popupbox_view .= "<script>
-                    jQuery(document).ready(function() {
+                    document.addEventListener('DOMContentLoaded', function() {
                         jQuery(document).find('#ays-pb-screen-shade_".$id."').css({'opacity': '0', 'display': 'none !important', 'pointer-events': 'none'});
                         jQuery(document).find('.ays-pb-modal_".$id."').css('pointer-events', 'auto');
                         jQuery(document).find('.av_pop_modals_".$id."').css('pointer-events','none');
-                    })
+                    });
                 </script>";
             }
 
@@ -2788,7 +2786,7 @@ class Ays_Pb_Public {
                 
                 $popupbox_view .= "
                 <script>
-                    jQuery(document).ready(function() {
+                    document.addEventListener('DOMContentLoaded', function() {
                         var closeBtnDelay = ".$close_button_delay.";
                         var openDelay = ".$ays_pb_delay.";
                         var scrollTop = ".$ays_pb_scroll_top.";
@@ -2811,14 +2809,14 @@ class Ays_Pb_Public {
                                 jQuery(document).find('.ays-pb-modal-close_".$id."').css({'display': 'block'});
                             }, closeBtnDelay);
                         }
-                    })
+                    });
                 </script>";
             }
 
             if($ays_pb_hover_show_close_btn){
                 $popupbox_view .= "
                 <script>
-                    jQuery(document).ready(function() {
+                    document.addEventListener('DOMContentLoaded', function() {
                         modernMinimal = jQuery(document).find('.ays-pb-modal_".$id."').data('name');
                         if(modernMinimal != 'modern_minimal'){
                             jQuery(document).find('.ays-pb-modal-close_".$id."').hide();
@@ -2838,7 +2836,7 @@ class Ays_Pb_Public {
                                 jQuery(document).find('.ays-pb-modal_".$id." .ays_ubuntu_close').hide();
                             });
                         }
-                    })
+                    });
                 </script>";
             }
 
