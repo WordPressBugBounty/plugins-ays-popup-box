@@ -880,7 +880,10 @@ div[class*=ays-pb-modal_].ays_minimal_window {
 .ays_pb_notification_logo {
     max-width: 10%;
     width: 100%;
+    height: 100%;
     text-align: center;
+    display: flex;
+    justify-content: center;
 }
 
 .ays_pb_notification_logo a {

@@ -439,6 +439,7 @@ class Popup_Categories_List_Table extends WP_List_Table {
 
         if (!empty($_REQUEST['orderby'])) {
             $order_by = ( isset($_REQUEST['orderby']) && sanitize_text_field($_REQUEST['orderby']) != '' ) ? sanitize_text_field($_REQUEST['orderby']) : 'id';
+            $order_by .= ' ';
             $order_by .= ( !empty($_REQUEST['order']) && strtolower($_REQUEST['order']) == 'asc' ) ? 'ASC' : 'DESC';
 
             $sql_orderby = sanitize_sql_orderby($order_by);

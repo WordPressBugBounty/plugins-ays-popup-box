@@ -673,6 +673,7 @@ class Ays_PopupBox_List_Table extends WP_List_Table {
 
         if (!empty($_REQUEST['orderby'])) {
             $order_by = ( isset($_REQUEST['orderby']) && sanitize_text_field($_REQUEST['orderby']) != '' ) ? sanitize_text_field($_REQUEST['orderby']) : 'id';
+            $order_by .= ' ';
             $order_by .= ( !empty($_REQUEST['order']) && strtolower($_REQUEST['order']) == 'asc' ) ? 'ASC' : 'DESC';
 
             $sql_orderby = sanitize_sql_orderby($order_by);
@@ -1500,8 +1501,17 @@ class Ays_PopupBox_List_Table extends WP_List_Table {
         // Display Content | Show description mobile
         $show_popup_desc_mobile = (isset($_POST['show_popup_desc_mobile']) && $_POST['show_popup_desc_mobile'] == 'on') ? 'On' : 'Off';
 
-        // Width
-		$width = ( isset( $_POST['ays-pb']["width"] ) && $_POST['ays-pb']["width"] != '' ) ? absint( intval( $_POST['ays-pb']["width"] ) ) : '';
+        // Width | On desktop
+		$width = (isset($_POST['ays-pb']['width']) && $_POST['ays-pb']['width'] != '') ? absint( intval($_POST['ays-pb']['width']) ) : '';
+
+        // Width | On desktop | Measurement unit
+        $popup_width_by_percentage_px = (isset($_POST['ays_popup_width_by_percentage_px']) && $_POST['ays_popup_width_by_percentage_px'] != '') ? stripslashes( sanitize_text_field($_POST['ays_popup_width_by_percentage_px']) ) : 'pixels';
+
+        // Width | On mobile
+        $mobile_width = (isset($_POST['ays_pb_mobile_width']) && $_POST['ays_pb_mobile_width'] != '') ? abs( intval($_POST['ays_pb_mobile_width']) )  : '';
+
+        // Width | On mobile | Measurement unit
+        $popup_width_by_percentage_px_mobile = (isset($_POST['ays_popup_width_by_percentage_px_mobile']) && $_POST['ays_popup_width_by_percentage_px_mobile'] != '') ? stripslashes( sanitize_text_field($_POST['ays_popup_width_by_percentage_px_mobile']) ) : 'percentage';
 
         // Height
         $default_height = $view_type == 'notification' ? 100 : 500;
@@ -1663,9 +1673,6 @@ class Ays_PopupBox_List_Table extends WP_List_Table {
         //Hide popup on mobile
         $pb_mobile = (isset($_POST['ays_pb_mobile']) && $_POST['ays_pb_mobile'] == 'on') ? 'on' : 'off';
 
-        // PopupBox width for mobile option
-        $mobile_width = (isset($_POST['ays_pb_mobile_width']) && $_POST['ays_pb_mobile_width'] != "") ?abs(intval($_POST['ays_pb_mobile_width']))  : '';
-
         // PopupBox max-width for mobile option
         $mobile_max_width = (isset($_POST['ays_pb_mobile_max_width']) && $_POST['ays_pb_mobile_max_width'] != "") ? abs(intval($_POST['ays_pb_mobile_max_width']))  : '';
 
@@ -1674,12 +1681,6 @@ class Ays_PopupBox_List_Table extends WP_List_Table {
 
         //Show PopupBox only once
         $show_only_once = (isset($_POST['ays_pb_show_only_once']) && $_POST['ays_pb_show_only_once'] == 'on') ? 'on' : 'off';
-
-        //popup width with percentage
-        $popup_width_by_percentage_px = (isset($_POST['ays_popup_width_by_percentage_px']) && $_POST['ays_popup_width_by_percentage_px'] != '') ? stripslashes( sanitize_text_field($_POST['ays_popup_width_by_percentage_px']) ) : 'pixels';
-
-        //popup width with percentage mobile
-        $popup_width_by_percentage_px_mobile = (isset($_POST['ays_popup_width_by_percentage_px_mobile']) && $_POST['ays_popup_width_by_percentage_px_mobile'] != '') ? stripslashes( sanitize_text_field($_POST['ays_popup_width_by_percentage_px_mobile']) ) : 'percentage';
 
         //popup padding with percentage
         $popup_padding_by_percentage_px = (isset($_POST['ays_popup_padding_by_percentage_px']) && $_POST['ays_popup_padding_by_percentage_px'] != '') ? stripslashes( sanitize_text_field($_POST['ays_popup_padding_by_percentage_px']) ) : 'pixels';

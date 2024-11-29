@@ -1515,6 +1515,7 @@ class Ays_Pb_Public {
                             min-width: " . $notification_logo_min_width . ";
                             max-height: " . $notification_logo_max_height . ";
                             min-height: " . $notification_logo_min_height . ";
+                            object-fit: cover;
                         }
 
                         .ays_notification_window.ays-pb-modal_".$id." div.ays_pb_notification_button_1 button {
