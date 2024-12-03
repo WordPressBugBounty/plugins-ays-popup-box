@@ -507,10 +507,10 @@ class Ays_Pb_Data {
                                 $content[] = '</div>';
 
                                 $content[] = '<div id="ays-pb-countdown-content" class="emoji">';
-                                    $content[] = '<span></span>';
-                                    $content[] = '<span></span>';
-                                    $content[] = '<span></span>';
-                                    $content[] = '<span></span>';
+                                    $content[] = '<span>🚀</span>';
+                                    $content[] = '<span>⌛</span>';
+                                    $content[] = '<span>🔥</span>';
+                                    $content[] = '<span>💣</span>';
                                 $content[] = '</div>';
 
                             $content[] = '</div>';
@@ -522,14 +522,14 @@ class Ays_Pb_Data {
                         $content[] = '<div>';
 
                             $content[] = '<span class="ays-pb-black-friday-bundle-title">';
-                                $content[] = __( "<span><a href='https://ays-pro.com/wordpress/popup-box?utm_source=dashboard&utm_medium=popup-free&utm_campaign=black-friday-sale-banner' class='ays-pb-black-friday-bundle-title-link' target='_blank'>Black Friday Sale</a></span>", "ays-popup-box" );
+                                $content[] = __( "<span><a href='https://ays-pro.com/christmas-bundle?utm_source=dashboard&utm_medium=popup-free&utm_campaign=black-friday-engagement-bundle-sale-banner' class='ays-pb-black-friday-bundle-title-link' target='_blank'>Black Friday Sale</a></span>", "ays-popup-box" );
                             $content[] = '</span>';
 
                             $content[] = '</br>';
 
                             $content[] = '<span class="ays-pb-black-friday-bundle-desc">';
-                                $content[] = '<a class="ays-pb-black-friday-bundle-desc" href="https://ays-pro.com/wordpress/popup-box?utm_source=dashboard&utm_medium=popup-free&utm_campaign=black-friday-sale-banner" class="ays-pb-black-friday-bundle-title-link" target="_blank">';
-                                    $content[] = __( "20% OFF", "ays-popup-box" );
+                                $content[] = '<a class="ays-pb-black-friday-bundle-desc" href="https://ays-pro.com/christmas-bundle?utm_source=dashboard&utm_medium=popup-free&utm_campaign=black-friday-engagement-bundle-sale-banner" class="ays-pb-black-friday-bundle-title-link" target="_blank">';
+                                    $content[] = __( "50% OFF", "ays-popup-box" );
                                 $content[] = '</a>';
                             $content[] = '</span>';
                         $content[] = '</div>';
@@ -549,18 +549,16 @@ class Ays_Pb_Data {
 
                     $content[] = '</div>';
 
-                    $content[] = '<div class="ays-pb-dicount-wrap-box ays-pb-black-friday-bundle-coupon-text-box">';
-                        $content[] = '<div class="ays-pb-black-friday-bundle-coupon-row">';
-                            $content[] = 'bfdeal20off';
-                        $content[] = '</div>';
-
-                        $content[] = '<div class="ays-pb-black-friday-bundle-text-row">';
-                            $content[] = __( '20% Extra Discount Coupon', "ays-popup-box" );
-                        $content[] = '</div>';
+                    $content[] = '<div class="ays-pb-dicount-wrap-box ays-pb-dicount-wrap-text-box">';
+                        $content[] = '<span class="ays-pb-black-friday-bundle-title">';
+                            $content[] = '<a class="ays-pb-black-friday-bundle-title-link" href="https://ays-pro.com/christmas-bundle?utm_source=dashboard&utm_medium=popup-free&utm_campaign=black-friday-engagement-bundle-sale-banner" target="_blank">';
+                                $content[] = __( 'Engagement Bundle', "ays-popup-box" );
+                            $content[] = '</a>';
+                        $content[] = '</span>';
                     $content[] = '</div>';
 
                     $content[] = '<div class="ays-pb-dicount-wrap-box ays-pb-dicount-wrap-button-box">';
-                        $content[] = '<a href="https://ays-pro.com/wordpress/popup-box?utm_source=dashboard&utm_medium=pobup-free&utm_campaign=black-friday-sale-banner" class="button button-primary ays-button" id="ays-button-top-buy-now" target="_blank">' . __( 'Get Your Deal', "ays-popup-box" ) . '</a>';
+                        $content[] = '<a href="https://ays-pro.com/christmas-bundle?utm_source=dashboard&utm_medium=popup-free&utm_campaign=black-friday-engagement-bundle-sale-banner" class="button button-primary ays-button" id="ays-button-top-buy-now" target="_blank">' . __( 'Get Your Deal', "ays-popup-box" ) . '</a>';
                         $content[] = '<span class="ays-pb-dicount-one-time-text">';
                             $content[] = __( "One-time payment", "ays-popup-box" );
                         $content[] = '</span>';

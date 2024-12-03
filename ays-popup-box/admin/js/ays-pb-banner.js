@@ -38,7 +38,7 @@
                 day = hour * 24;
 
             // var countdownEndTime = pb.pbBannerDate
-            var countdownEndTime = "NOV 29, 2024 23:59:59";
+            var countdownEndTime = "DEC 09, 2024 23:59:59";
             var countDown = new Date(countdownEndTime).getTime();
 
             if ( isNaN(countDown) || isFinite(countDown) == false ) {
