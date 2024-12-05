@@ -1404,6 +1404,9 @@ class Ays_Pb_Public {
             // Notification type | Logo min-height
             $notification_logo_min_height = (isset($options['notification_logo_min_height']) && $options['notification_logo_min_height'] != '') ? absint( esc_attr($options['notification_logo_min_height']) ) . 'px' : 'auto';
 
+            // Notification type | Logo min-height
+            $notification_logo_image_sizing = (isset($options['notification_logo_image_sizing']) && $options['notification_logo_image_sizing'] != '') ? stripslashes( esc_attr($options['notification_logo_image_sizing']) ) : 'cover';
+
             // Notification type | Button 1 background color
             $notification_button_1_bg_color = (isset($options['notification_button_1_bg_color']) && $options['notification_button_1_bg_color'] != '') ? stripslashes( esc_attr($options['notification_button_1_bg_color']) ) : '#F66123';
 
@@ -1515,7 +1518,7 @@ class Ays_Pb_Public {
                             min-width: " . $notification_logo_min_width . ";
                             max-height: " . $notification_logo_max_height . ";
                             min-height: " . $notification_logo_min_height . ";
-                            object-fit: cover;
+                            object-fit: " . $notification_logo_image_sizing . ";
                         }
 
                         .ays_notification_window.ays-pb-modal_".$id." div.ays_pb_notification_button_1 button {

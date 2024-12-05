@@ -1041,6 +1041,9 @@ class Ays_PopupBox_List_Table extends WP_List_Table {
         // Author
         $author = (isset($_POST['ays_pb_author']) && $_POST['ays_pb_author'] != '') ? stripcslashes( sanitize_text_field($_POST['ays_pb_author']) ) : '';
 
+        // Popup type
+		$modal_content = (isset($_POST['ays-pb']['modal_content']) && $_POST['ays-pb']['modal_content'] != '') ? wp_unslash( sanitize_text_field($_POST['ays-pb']['modal_content']) ) : '';
+
         // Popup title
 		$title = (isset($_POST['ays-pb']['popup_title']) && $_POST['ays-pb']['popup_title'] != '') ? wp_unslash( sanitize_text_field($_POST['ays-pb']['popup_title']) ) : 'Demo Title';
 
@@ -1142,6 +1145,9 @@ class Ays_PopupBox_List_Table extends WP_List_Table {
 
         // Notification type | Logo min-height
         $notification_logo_min_height = (isset($_POST['ays_pb_notification_logo_min_height']) && $_POST['ays_pb_notification_logo_min_height'] != '') ? absint( intval($_POST['ays_pb_notification_logo_min_height']) ) : '';
+
+        // Notification type | Logo image sizing
+        $notification_logo_image_sizing = (isset($_POST['ays_pb_notification_logo_image_sizing']) && $_POST['ays_pb_notification_logo_image_sizing'] != '') ? stripslashes( sanitize_text_field($_POST['ays_pb_notification_logo_image_sizing']) ) : 'cover';
 
         // Notification type | Main content
         $notification_main_content = (isset($_POST['ays_pb_notification_main_content']) && $_POST['ays_pb_notification_main_content'] != '') ? wp_kses_post($_POST['ays_pb_notification_main_content']) : '';
@@ -1513,21 +1519,40 @@ class Ays_PopupBox_List_Table extends WP_List_Table {
         // Width | On mobile | Measurement unit
         $popup_width_by_percentage_px_mobile = (isset($_POST['ays_popup_width_by_percentage_px_mobile']) && $_POST['ays_popup_width_by_percentage_px_mobile'] != '') ? stripslashes( sanitize_text_field($_POST['ays_popup_width_by_percentage_px_mobile']) ) : 'percentage';
 
-        // Height
+        // Max-width for mobile
+        $mobile_max_width = (isset($_POST['ays_pb_mobile_max_width']) && $_POST['ays_pb_mobile_max_width'] != '') ? abs(intval($_POST['ays_pb_mobile_max_width'])) : '';
+
+        // Height | On desktop
         $default_height = $view_type == 'notification' ? 100 : 500;
-		$height = ( isset( $_POST['ays-pb']["height"] ) && $_POST['ays-pb']["height"] ) ? absint( intval( $_POST['ays-pb']["height"] ) ) : $default_height;
+		$height = (isset($_POST['ays-pb']['height']) && $_POST['ays-pb']['height']) ? absint( intval($_POST['ays-pb']['height']) ) : $default_height;
 
-        // Max-Height
-        $pb_max_height = ( isset($_POST['ays_pb_max_height']) && $_POST['ays_pb_max_height'] != '' ) ? absint( intval($_POST['ays_pb_max_height']) ) : '';
+        // Height | On mobile
+        $mobile_height = (isset($_POST['ays_pb_mobile_height']) && $_POST['ays_pb_mobile_height'] != '') ? abs( intval($_POST['ays_pb_mobile_height']) ) : '';
 
-        // Max-Height Measurement Unit
-        $popup_max_height_by_percentage_px = ( isset($_POST['ays_popup_max_height_by_percentage_px']) && $_POST['ays_popup_max_height_by_percentage_px'] != '' ) ? stripslashes( sanitize_text_field($_POST['ays_popup_max_height_by_percentage_px']) ) : 'pixels';
+        // Popup max-height | On desktop
+        $pb_max_height = (isset($_POST['ays_pb_max_height']) && $_POST['ays_pb_max_height'] != '') ? absint( intval($_POST['ays_pb_max_height']) ) : '';
 
-        // Max-Height Mobile
-        $pb_max_height_mobile = ( isset($_POST['ays_pb_max_height_mobile']) && $_POST['ays_pb_max_height_mobile'] != '' ) ? absint( intval($_POST['ays_pb_max_height_mobile']) ) : '';
+        // Popup max-height | On desktop | Measurement unit
+        $popup_max_height_by_percentage_px = (isset($_POST['ays_popup_max_height_by_percentage_px']) && $_POST['ays_popup_max_height_by_percentage_px'] != '') ? stripslashes( sanitize_text_field($_POST['ays_popup_max_height_by_percentage_px']) ) : 'pixels';
 
-        // Max-Height Measurement Unit Mobile
-        $popup_max_height_by_percentage_px_mobile = ( isset($_POST['ays_popup_max_height_by_percentage_px_mobile']) && $_POST['ays_popup_max_height_by_percentage_px_mobile'] != '' ) ? stripslashes( sanitize_text_field($_POST['ays_popup_max_height_by_percentage_px_mobile']) ) : 'pixels';
+        // Popup max-height | On mobile
+        $pb_max_height_mobile = (isset($_POST['ays_pb_max_height_mobile']) && $_POST['ays_pb_max_height_mobile'] != '') ? absint( intval($_POST['ays_pb_max_height_mobile']) ) : '';
+
+        // Popup max-height | On mobile | Measurement unit
+        $popup_max_height_by_percentage_px_mobile = (isset($_POST['ays_popup_max_height_by_percentage_px_mobile']) && $_POST['ays_popup_max_height_by_percentage_px_mobile'] != '') ? stripslashes( sanitize_text_field($_POST['ays_popup_max_height_by_percentage_px_mobile']) ) : 'pixels';
+
+        // Popup min-height
+        $pb_min_height = (isset($_POST['ays_pb_min_height']) && $_POST['ays_pb_min_height'] != '') ? absint( intval($_POST['ays_pb_min_height']) ) : '';
+
+        // Full-screen mode
+        $enable_pb_fullscreen = (isset($_POST['enable_pb_fullscreen']) && $_POST['enable_pb_fullscreen'] == 'on') ? 'on' : 'off';
+
+        // Content padding
+        $default_padding = ($view_type == "minimal" || $modal_content == 'image_type') ? 0 : 20;
+        $padding = (isset($_POST['ays_popup_content_padding']) && $_POST['ays_popup_content_padding'] != '') ? absint( intval($_POST['ays_popup_content_padding']) ) : $default_padding;
+
+        // Content padding | Measurement unit
+        $popup_padding_by_percentage_px = (isset($_POST['ays_popup_padding_by_percentage_px']) && $_POST['ays_popup_padding_by_percentage_px'] != '') ? stripslashes( sanitize_text_field($_POST['ays_popup_padding_by_percentage_px']) ) : 'pixels';
 
         //Show once per session
 		$cookie = ( isset( $_POST['ays-pb']["cookie"] ) && $_POST['ays-pb']["cookie"] != '' ) ? absint( intval( $_POST['ays-pb']["cookie"] ) ) : 0;
@@ -1593,9 +1618,6 @@ class Ays_PopupBox_List_Table extends WP_List_Table {
 
         //Animate Out Mobile
         $animate_out_mobile = ( isset($_POST['ays_pb_animate_out_mobile']) && $_POST['ays_pb_animate_out_mobile'] != '' ) ? wp_unslash( sanitize_text_field($_POST['ays_pb_animate_out_mobile']) ) : 0;
-
-        //Modal Content
-		$modal_content = ( isset( $_POST['ays-pb']["modal_content"] ) && $_POST['ays-pb']["modal_content"] != '' ) ? wp_unslash(sanitize_text_field( $_POST['ays-pb']["modal_content"] )) : '';
 
         //Header BgColor
         $header_bgcolor = ( isset( $_POST['ays-pb']["header_bgcolor"] ) && $_POST['ays-pb']["header_bgcolor"] != '' ) ? wp_unslash(sanitize_text_field( $_POST['ays-pb']["header_bgcolor"] )) : '#ffffff';
@@ -1673,27 +1695,11 @@ class Ays_PopupBox_List_Table extends WP_List_Table {
         //Hide popup on mobile
         $pb_mobile = (isset($_POST['ays_pb_mobile']) && $_POST['ays_pb_mobile'] == 'on') ? 'on' : 'off';
 
-        // PopupBox max-width for mobile option
-        $mobile_max_width = (isset($_POST['ays_pb_mobile_max_width']) && $_POST['ays_pb_mobile_max_width'] != "") ? abs(intval($_POST['ays_pb_mobile_max_width']))  : '';
-
-        // PopupBox height for mobile option
-        $mobile_height = (isset($_POST['ays_pb_mobile_height']) && $_POST['ays_pb_mobile_height'] != "") ? abs(intval($_POST['ays_pb_mobile_height']))  : '';
-
         //Show PopupBox only once
         $show_only_once = (isset($_POST['ays_pb_show_only_once']) && $_POST['ays_pb_show_only_once'] == 'on') ? 'on' : 'off';
 
-        //popup padding with percentage
-        $popup_padding_by_percentage_px = (isset($_POST['ays_popup_padding_by_percentage_px']) && $_POST['ays_popup_padding_by_percentage_px'] != '') ? stripslashes( sanitize_text_field($_POST['ays_popup_padding_by_percentage_px']) ) : 'pixels';
-
-        // Padding
-        $default_padding = ($view_type == "minimal" || $modal_content == 'image_type') ? 0 : 20;
-        $padding = ( isset($_POST['ays_popup_content_padding']) && $_POST['ays_popup_content_padding'] != '' ) ? absint( intval( $_POST['ays_popup_content_padding'] ) ) : $default_padding;
-
         //font-family
         $pb_font_family = (isset($_POST['ays_pb_font_family']) && $_POST['ays_pb_font_family'] != '') ? stripslashes( sanitize_text_field($_POST['ays_pb_font_family']) ) : 'inherit';
-
-        //open full screen
-        $enable_pb_fullscreen = (isset($_POST['enable_pb_fullscreen']) && $_POST['enable_pb_fullscreen'] == 'on') ? 'on' : 'off';
 
         //close button_size
         $close_button_size = (isset($_POST['ays_pb_close_button_size']) && $_POST['ays_pb_close_button_size'] != '' ) ? abs(sanitize_text_field($_POST['ays_pb_close_button_size'])) : '';
@@ -1709,9 +1715,6 @@ class Ays_PopupBox_List_Table extends WP_List_Table {
 
         //Border style mobile
         $border_style_mobile = ( isset($_POST['ays_pb_border_style_mobile']) && $_POST['ays_pb_border_style_mobile'] !== '' ) ? stripslashes( sanitize_text_field($_POST['ays_pb_border_style_mobile']) ) : '';
-
-        // Min Height
-        $pb_min_height = (isset($_POST['ays_pb_min_height']) && $_POST['ays_pb_min_height'] != '') ? absint(intval($_POST['ays_pb_min_height'])) : '';
 
         //Font size
         $pb_font_size = (isset($_POST['ays_pb_font_size']) && $_POST['ays_pb_font_size'] != '') ? absint($_POST['ays_pb_font_size']) : 16;
@@ -1940,6 +1943,7 @@ class Ays_PopupBox_List_Table extends WP_List_Table {
             'notification_logo_min_width_measurement_unit_mobile' => $notification_logo_min_width_measurement_unit_mobile,
             'notification_logo_max_height' => $notification_logo_max_height,
             'notification_logo_min_height' => $notification_logo_min_height,
+            'notification_logo_image_sizing' => $notification_logo_image_sizing,
             'notification_main_content' => $notification_main_content,
             'notification_button_1_text' => $notification_button_1_text,
             'notification_button_1_hover_text' => $notification_button_1_hover_text,

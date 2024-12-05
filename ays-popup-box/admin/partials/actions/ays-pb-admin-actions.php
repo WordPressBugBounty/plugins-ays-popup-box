@@ -71,6 +71,13 @@ $social_links_default = array(
     'behance_link' => '',
 );
 
+$image_sizing_options = array(
+    'cover' => __('Cover', "ays-popup-box"),
+    'contain' => __('Contain', "ays-popup-box"),
+    'none' => __('None', "ays-popup-box"),
+    'unset' => __('Unset', "ays-popup-box"),
+);
+
 $text_transform_options = array(
     'none' => __('None', "ays-popup-box"),
     'capitalize' => __('Capitalize', "ays-popup-box"),
@@ -158,6 +165,7 @@ $options = array(
     'notification_logo_min_width_measurement_unit_mobile' => 'pixels',
     'notification_logo_max_height' => '',
     'notification_logo_min_height' => '',
+    'notification_logo_image_sizing' => 'cover',
     'notification_main_content' => 'Write the custom notification banner text here.',
     'notification_button_1_text' => 'Click!',
     'notification_button_1_hover_text' => 'Click!',
@@ -557,6 +565,9 @@ $notification_logo_max_height = (isset($options['notification_logo_max_height'])
 // Notification type | Logo min-height
 $notification_logo_min_height = (isset($options['notification_logo_min_height']) && $options['notification_logo_min_height'] != '') ? absint( esc_attr($options['notification_logo_min_height']) ) : '';
 
+// Notification type | Logo image sizing
+$notification_logo_image_sizing = (isset($options['notification_logo_image_sizing']) && $options['notification_logo_image_sizing'] != '') ? stripslashes( esc_attr($options['notification_logo_image_sizing']) ) : 'cover';
+
 // Notification type | Main content
 $notification_main_content = (isset($options['notification_main_content']) && $options['notification_main_content'] != '') ? stripslashes($options['notification_main_content']) : 'Write the custom notification banner text here.';
 
@@ -951,7 +962,7 @@ $height = (isset($popupbox['height']) && $popupbox['height'] != '') ? abs( intva
 // Height | On mobile
 $mobile_height = (isset($options['mobile_height']) && $options['mobile_height'] != '') ? abs( intval($options['mobile_height']) ) : '';
 
-// Popup max-height | On desktop |
+// Popup max-height | On desktop
 $popup_max_height = (isset($options['pb_max_height']) && $options['pb_max_height'] != '' && $options['pb_max_height'] != 0) ? absint( intval($options['pb_max_height']) ) : '';
 
 // Popup max-height | On desktop | Measurement unit
@@ -2174,6 +2185,34 @@ $ays_users_roles = $wp_roles->roles;
                                                 </div>
                                             </div>
                                             <span style="display:block;" class="ays-pb-small-hint-text"><?php echo __("For auto leave blank", "ays-popup-box");?></span>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="form-group row">
+                                        <div class="col-sm-3">
+                                            <label for="ays_pb_notification_logo_image_sizing">
+                                                <?php  echo __('Logo image sizing', "ays-popup-box" ) ?>
+                                                <a class="ays_help" data-toggle="tooltip" title="<?php echo __('Define the logo image size if needed.', "ays-popup-box"); ?>" >
+                                                    <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                                </a>
+                                            </label>
+                                        </div>
+                                        <div class="col-sm-9">
+                                            <select name="ays_pb_notification_logo_image_sizing" id="ays_pb_notification_logo_image_sizing" class="ays_pb_aysDropdown">
+                                                <?php
+                                                    foreach ($image_sizing_options as $key => $image_size) {
+                                                        $selected = '';
+                                                        if ($key == $notification_logo_image_sizing) {
+                                                            $selected = 'selected';
+                                                        }
+                                                ?>
+                                                <option value="<?php echo $key ;?>" <?php echo $selected ;?>>
+                                                    <?php echo $image_size; ?>
+                                                </option>
+                                                <?php
+                                                    }
+                                                ?>
+                                            </select>
                                         </div>
                                     </div>
                                 </div>
