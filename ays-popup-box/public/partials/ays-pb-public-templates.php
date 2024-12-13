@@ -83,38 +83,6 @@ class Ays_Pb_Public_Templates {
         //close button hover text
         $ays_pb_close_button_hover_text = (isset($options->close_button_hover_text) && $options->close_button_hover_text != '') ? stripslashes( esc_attr($options->close_button_hover_text) ) : "";
 
-        //Bg image position
-        $pb_bg_image_position = (isset($options->pb_bg_image_position) && $options->pb_bg_image_position != "") ? str_ireplace('-', ' ', $options->pb_bg_image_position) : 'center center';
-
-        $pb_bg_image_sizing = (isset($options->pb_bg_image_sizing) && $options->pb_bg_image_sizing != "") ? stripslashes( esc_attr($options->pb_bg_image_sizing) ) : 'cover';
-
-        //Background Gradient
-        $background_gradient = (!isset($options->enable_background_gradient)) ? 'off' : stripslashes( esc_attr($options->enable_background_gradient) );
-        $pb_gradient_direction = (!isset($options->pb_gradient_direction)) ? 'horizontal' : stripslashes( esc_attr($options->pb_gradient_direction) );
-        $background_gradient_color_1 = (!isset($options->background_gradient_color_1)) ? "#000000" : stripslashes( esc_attr($options->background_gradient_color_1) );
-        $background_gradient_color_2 = (!isset($options->background_gradient_color_2)) ? "#fff" : stripslashes( esc_attr($options->background_gradient_color_2) );
-        switch($pb_gradient_direction) {
-            case "horizontal":
-                $pb_gradient_direction = "to right";
-                break;
-            case "diagonal_left_to_right":
-                $pb_gradient_direction = "to bottom right";
-                break;
-            case "diagonal_right_to_left":
-                $pb_gradient_direction = "to bottom left";
-                break;
-            default:
-                $pb_gradient_direction = "to bottom";
-        }
-        if($popup['ays_pb_bg_image'] !== ''){
-            $popup['ays_pb_bg_image'] = 'background-image: url('.$popup['ays_pb_bg_image'].');
-                                background-repeat: no-repeat;
-                                background-size: '.$pb_bg_image_sizing.';
-                                background-position: '. $pb_bg_image_position .';';
-        } elseif ($background_gradient == 'on' && $popup['ays_pb_bg_image'] == '') {
-            $popup['ays_pb_bg_image'] = "background-image: linear-gradient(".$pb_gradient_direction.",".$background_gradient_color_1.",".$background_gradient_color_2.");";
-        }
-
         //popup full screen
         $ays_pb_full_screen  = (isset($options->enable_pb_fullscreen) && $options->enable_pb_fullscreen == 'on') ? 'on' : 'off';
 
@@ -341,7 +309,7 @@ class Ays_Pb_Public_Templates {
         }
 
         $popupbox_view = "
-                <div class='ays-pb-modal ays-pb-modal_".$popup['id']." ".$popup['custom_class']." ".$ays_pb_disable_scroll_on_popup_class." ".$ays_pb_show_scrollbar_class." ays-popup-box-main-box ays-pb-bg-styles-mobile_".$popup['id']." ays-pb-border-mobile_".$popup['id']."' {$ays_pb_flag} style='".$popup['ays_pb_bg_image'].";width: {$pb_width}; height: {$pb_height}; background-color:" .  $popup['ays_pb_bgcolor'] . "; color: " . $popup['ays_pb_textcolor'] . " !important; border: ".$popup['ays_pb_bordersize']."px  $border_style " .$popup['ays_pb_bordercolor']. "; border-radius: ".$popup['ays_pb_border_radius']."px;font-family:{$ays_pb_font_family};{$box_shadow};' >
+                <div class='ays-pb-modal ays-pb-modal_".$popup['id']." ".$popup['custom_class']." ".$ays_pb_disable_scroll_on_popup_class." ".$ays_pb_show_scrollbar_class." ays-popup-box-main-box ays-pb-bg-styles_".$popup['id']." ays-pb-border-mobile_".$popup['id']."' {$ays_pb_flag} style='width: {$pb_width}; height: {$pb_height}; background-color:" .  $popup['ays_pb_bgcolor'] . "; color: " . $popup['ays_pb_textcolor'] . " !important; border: ".$popup['ays_pb_bordersize']."px  $border_style " .$popup['ays_pb_bordercolor']. "; border-radius: ".$popup['ays_pb_border_radius']."px;font-family:{$ays_pb_font_family};{$box_shadow};' >
                     $ays_pb_sound_mute
                     " . $popup['ays_pb_title'] . "
                     " . $popup['ays_pb_description'] . "
@@ -386,38 +354,6 @@ class Ays_Pb_Public_Templates {
 
         // Font Size 
         $pb_font_size = (isset($options->pb_font_size) && $options->pb_font_size != '') ? absint($options->pb_font_size) : 13;
-        
-        //Bg image position
-        $pb_bg_image_position = (isset($options->pb_bg_image_position) && $options->pb_bg_image_position != "") ? str_ireplace('-', ' ', $options->pb_bg_image_position) : 'center center';
-
-        $pb_bg_image_sizing = (isset($options->pb_bg_image_sizing) && $options->pb_bg_image_sizing != "") ? stripslashes( esc_attr($options->pb_bg_image_sizing) ) : 'cover';
-
-        //Background Gradient
-        $background_gradient = (!isset($options->enable_background_gradient)) ? 'off' : stripslashes( esc_attr($options->enable_background_gradient) );
-        $pb_gradient_direction = (!isset($options->pb_gradient_direction)) ? 'horizontal' : stripslashes( esc_attr($options->pb_gradient_direction) );
-        $background_gradient_color_1 = (!isset($options->background_gradient_color_1)) ? "#000000" : stripslashes( esc_attr($options->background_gradient_color_1) );
-        $background_gradient_color_2 = (!isset($options->background_gradient_color_2)) ? "#fff" : stripslashes( esc_attr($options->background_gradient_color_2) );
-        switch($pb_gradient_direction) {
-            case "horizontal":
-                $pb_gradient_direction = "to right";
-                break;
-            case "diagonal_left_to_right":
-                $pb_gradient_direction = "to bottom right";
-                break;
-            case "diagonal_right_to_left":
-                $pb_gradient_direction = "to bottom left";
-                break;
-            default:
-                $pb_gradient_direction = "to bottom";
-        }
-        if($popup['ays_pb_bg_image'] !== ''){
-            $popup['ays_pb_bg_image'] = 'background-image: url('.$popup['ays_pb_bg_image'].');
-                                background-repeat: no-repeat;
-                                background-size: '.$pb_bg_image_sizing.';
-                                background-position: '. $pb_bg_image_position .';';
-        } elseif ($background_gradient == 'on' && $popup['ays_pb_bg_image'] == '') {
-            $popup['ays_pb_bg_image'] = "background-image: linear-gradient(".$pb_gradient_direction.",".$background_gradient_color_1.",".$background_gradient_color_2.");";
-        }
 
         //Show Popup Title
         $show_popup_title = $popup['show_title'] == "On" ? 'block' : 'none';
@@ -637,7 +573,7 @@ class Ays_Pb_Public_Templates {
             $ays_pb_show_scrollbar_class = 'ays-pb-show-scrollbar';
         }
 
-        $mac_view = "<div class='ays_window ays-pb-modal_".$popup['id']." ".$popup['custom_class']." ".$ays_pb_disable_scroll_on_popup_class." ".$ays_pb_show_scrollbar_class." ays-pb-bg-styles-mobile_".$popup['id']." ays-pb-border-mobile_".$popup['id']."' {$ays_pb_flag} style='width: {$pb_width}; height: {$pb_height}; ".$popup['ays_pb_bg_image']."; background-color: ".$popup['ays_pb_bgcolor']."; color: ".$popup['ays_pb_textcolor']." !important; border: ".$popup['ays_pb_bordersize']."px $border_style ".$popup['ays_pb_bordercolor']."; border-radius: ".$popup['ays_pb_border_radius']."px;font-family:{$ays_pb_font_family};{$box_shadow}'>
+        $mac_view = "<div class='ays_window ays-pb-modal_".$popup['id']." ".$popup['custom_class']." ".$ays_pb_disable_scroll_on_popup_class." ".$ays_pb_show_scrollbar_class." ays-pb-bg-styles_".$popup['id']." ays-pb-border-mobile_".$popup['id']."' {$ays_pb_flag} style='width: {$pb_width}; height: {$pb_height}; background-color: ".$popup['ays_pb_bgcolor']."; color: ".$popup['ays_pb_textcolor']." !important; border: ".$popup['ays_pb_bordersize']."px $border_style ".$popup['ays_pb_bordercolor']."; border-radius: ".$popup['ays_pb_border_radius']."px;font-family:{$ays_pb_font_family};{$box_shadow}'>
                          <div class='ays_topBar'>
                             <div class='".$popup['closeButton']."' data-toggle='tooltip' title='" . $ays_pb_close_button_hover_text . "'>
                                 <div class='ays-pb-modal-close ays_close ays-pb-modal-close_".$popup['id']." ays-pb-close-button-delay ays_pb_pause_sound_".$popup['id']."'></div>
@@ -715,37 +651,6 @@ class Ays_Pb_Public_Templates {
 
         // Font Size 
         $pb_font_size = (isset($options->pb_font_size) && $options->pb_font_size != '') ? absint($options->pb_font_size) : 13;
-        //Bg image position
-        $pb_bg_image_position = (isset($options->pb_bg_image_position) && $options->pb_bg_image_position != "") ? str_ireplace('-', ' ', $options->pb_bg_image_position) : 'center center';
-
-        $pb_bg_image_sizing = (isset($options->pb_bg_image_sizing) && $options->pb_bg_image_sizing != "") ? stripslashes( esc_attr($options->pb_bg_image_sizing) ) : 'cover';
-
-        //Background Gradient
-        $background_gradient = (!isset($options->enable_background_gradient)) ? 'off' : stripslashes( esc_attr($options->enable_background_gradient) );
-        $pb_gradient_direction = (!isset($options->pb_gradient_direction)) ? 'horizontal' : stripslashes( esc_attr($options->pb_gradient_direction) );
-        $background_gradient_color_1 = (!isset($options->background_gradient_color_1)) ? "#000000" : stripslashes( esc_attr($options->background_gradient_color_1) );
-        $background_gradient_color_2 = (!isset($options->background_gradient_color_2)) ? "#fff" : stripslashes( esc_attr($options->background_gradient_color_2) );
-        switch($pb_gradient_direction) {
-            case "horizontal":
-                $pb_gradient_direction = "to right";
-                break;
-            case "diagonal_left_to_right":
-                $pb_gradient_direction = "to bottom right";
-                break;
-            case "diagonal_right_to_left":
-                $pb_gradient_direction = "to bottom left";
-                break;
-            default:
-                $pb_gradient_direction = "to bottom";
-        }
-        if($popup['ays_pb_bg_image'] !== ''){
-            $popup['ays_pb_bg_image'] = 'background-image: url('.$popup['ays_pb_bg_image'].');
-                                background-repeat: no-repeat;
-                                background-size: '.$pb_bg_image_sizing.';
-                                background-position: '. $pb_bg_image_position .';';
-        } elseif ($background_gradient == 'on' && $popup['ays_pb_bg_image'] == '') {
-            $popup['ays_pb_bg_image'] = "background-image: linear-gradient(".$pb_gradient_direction.",".$background_gradient_color_1.",".$background_gradient_color_2.");";
-        }
 
         //Show Popup Title
         $show_popup_title = $popup['show_title'] == "On" ? 'block' : 'none';
@@ -969,7 +874,7 @@ class Ays_Pb_Public_Templates {
             $ays_pb_show_scrollbar_class = 'ays-pb-show-scrollbar';
         }
 
-        $cmd_view = "<div class='ays_cmd_window ays-pb-modal_".$popup['id']." ".$popup['custom_class']." ".$ays_pb_disable_scroll_on_popup_class." ".$ays_pb_show_scrollbar_class." ays-pb-bg-styles-mobile_".$popup['id']." ays-pb-border-mobile_".$popup['id']."' {$ays_pb_flag} style='width: {$pb_width}; height: {$pb_height}; background-color: ".$popup['ays_pb_bgcolor']."; ".$popup['ays_pb_bg_image'].";  color: ".$popup['ays_pb_textcolor']." !important; border: ".$popup['ays_pb_bordersize']."px $border_style ".$popup['ays_pb_bordercolor']."; border-radius: ".$popup['ays_pb_border_radius']."px;font-family:{$ays_pb_font_family};{$box_shadow}'>
+        $cmd_view = "<div class='ays_cmd_window ays-pb-modal_".$popup['id']." ".$popup['custom_class']." ".$ays_pb_disable_scroll_on_popup_class." ".$ays_pb_show_scrollbar_class." ays-pb-bg-styles_".$popup['id']." ays-pb-border-mobile_".$popup['id']."' {$ays_pb_flag} style='width: {$pb_width}; height: {$pb_height}; background-color: ".$popup['ays_pb_bgcolor']."; color: ".$popup['ays_pb_textcolor']." !important; border: ".$popup['ays_pb_bordersize']."px $border_style ".$popup['ays_pb_bordercolor']."; border-radius: ".$popup['ays_pb_border_radius']."px;font-family:{$ays_pb_font_family};{$box_shadow}'>
                         <header class='ays_cmd_window-header'>
                             <div class='ays_cmd_window_title'>".$popup['ays_pb_title']."</div>
                             <nav class='ays_cmd_window-controls'>
@@ -1074,37 +979,6 @@ class Ays_Pb_Public_Templates {
 
         // Font Size 
         $pb_font_size = (isset($options->pb_font_size) && $options->pb_font_size != '') ? absint($options->pb_font_size) : 13;
-        //Bg image position
-        $pb_bg_image_position = (isset($options->pb_bg_image_position) && $options->pb_bg_image_position != "") ? str_ireplace('-', ' ', $options->pb_bg_image_position) : 'center center';
-
-        $pb_bg_image_sizing = (isset($options->pb_bg_image_sizing) && $options->pb_bg_image_sizing != "") ? stripslashes( esc_attr($options->pb_bg_image_sizing) ) : 'cover';
-
-        //Background Gradient
-        $background_gradient = (!isset($options->enable_background_gradient)) ? 'off' : stripslashes( esc_attr($options->enable_background_gradient) );
-        $pb_gradient_direction = (!isset($options->pb_gradient_direction)) ? 'horizontal' : stripslashes( esc_attr($options->pb_gradient_direction) );
-        $background_gradient_color_1 = (!isset($options->background_gradient_color_1)) ? "#000000" : stripslashes( esc_attr($options->background_gradient_color_1) );
-        $background_gradient_color_2 = (!isset($options->background_gradient_color_2)) ? "#fff" : stripslashes( esc_attr($options->background_gradient_color_2) );
-        switch($pb_gradient_direction) {
-            case "horizontal":
-                $pb_gradient_direction = "to right";
-                break;
-            case "diagonal_left_to_right":
-                $pb_gradient_direction = "to bottom right";
-                break;
-            case "diagonal_right_to_left":
-                $pb_gradient_direction = "to bottom left";
-                break;
-            default:
-                $pb_gradient_direction = "to bottom";
-        }
-        if($popup['ays_pb_bg_image'] !== ''){
-            $popup['ays_pb_bg_image'] = 'background-image: url('.$popup['ays_pb_bg_image'].');
-                                background-repeat: no-repeat;
-                                background-size: '.$pb_bg_image_sizing.';
-                                background-position: '. $pb_bg_image_position .';';
-        } elseif ($background_gradient == 'on' && $popup['ays_pb_bg_image'] == '') {
-            $popup['ays_pb_bg_image'] = "background-image: linear-gradient(".$pb_gradient_direction.",".$background_gradient_color_1.",".$background_gradient_color_2.");";
-        }
 
         //Show Popup Title
         $show_popup_title = $popup['show_title'] == "On" ? 'block' : 'none';
@@ -1323,7 +1197,7 @@ class Ays_Pb_Public_Templates {
             $ays_pb_show_scrollbar_class = 'ays-pb-show-scrollbar';
         }
 
-        $ubuntu_view = "<div class='ays_ubuntu_window ays-pb-modal_".$popup['id']." ".$popup['custom_class']." ".$ays_pb_disable_scroll_on_popup_class." ".$ays_pb_show_scrollbar_class." ays-pb-bg-styles-mobile_".$popup['id']." ays-pb-border-mobile_".$popup['id']."' {$ays_pb_flag} style='width: {$pb_width}; height: {$pb_height}; ".$popup['ays_pb_bg_image'].";  background-color: ".$popup['ays_pb_bgcolor']."; color: ".$popup['ays_pb_textcolor']." !important; border: ".$popup['ays_pb_bordersize']."px $border_style ".$popup['ays_pb_bordercolor']."; border-radius: ".$popup['ays_pb_border_radius']."px;font-family:{$ays_pb_font_family};{$box_shadow}'>
+        $ubuntu_view = "<div class='ays_ubuntu_window ays-pb-modal_".$popup['id']." ".$popup['custom_class']." ".$ays_pb_disable_scroll_on_popup_class." ".$ays_pb_show_scrollbar_class." ays-pb-bg-styles_".$popup['id']." ays-pb-border-mobile_".$popup['id']."' {$ays_pb_flag} style='width: {$pb_width}; height: {$pb_height}; background-color: ".$popup['ays_pb_bgcolor']."; color: ".$popup['ays_pb_textcolor']." !important; border: ".$popup['ays_pb_bordersize']."px $border_style ".$popup['ays_pb_bordercolor']."; border-radius: ".$popup['ays_pb_border_radius']."px;font-family:{$ays_pb_font_family};{$box_shadow}'>
                       <div class='ays_ubuntu_topbar'>
                         <div class='ays_ubuntu_icons'>
                             <div class='ays_ubuntu_close  ".$popup['closeButton']." ays-pb-close-button-delay' data-toggle='tooltip' title='" . $ays_pb_close_button_hover_text . "'>
@@ -1411,37 +1285,6 @@ class Ays_Pb_Public_Templates {
 
         // Font Size 
         $pb_font_size = (isset($options->pb_font_size) && $options->pb_font_size != '') ? absint($options->pb_font_size) : 13;
-        //Bg image position
-        $pb_bg_image_position = (isset($options->pb_bg_image_position) && $options->pb_bg_image_position != "") ? str_ireplace('-', ' ', $options->pb_bg_image_position) : 'center center';
-
-        $pb_bg_image_sizing = (isset($options->pb_bg_image_sizing) && $options->pb_bg_image_sizing != "") ? stripslashes( esc_attr($options->pb_bg_image_sizing) ) : 'cover';
-
-        //Background Gradient
-        $background_gradient = (!isset($options->enable_background_gradient)) ? 'off' : stripslashes( esc_attr($options->enable_background_gradient) );
-        $pb_gradient_direction = (!isset($options->pb_gradient_direction)) ? 'horizontal' : stripslashes( esc_attr($options->pb_gradient_direction) );
-        $background_gradient_color_1 = (!isset($options->background_gradient_color_1)) ? "#000000" : stripslashes( esc_attr($options->background_gradient_color_1) );
-        $background_gradient_color_2 = (!isset($options->background_gradient_color_2)) ? "#fff" : stripslashes( esc_attr($options->background_gradient_color_2) );
-        switch($pb_gradient_direction) {
-            case "horizontal":
-                $pb_gradient_direction = "to right";
-                break;
-            case "diagonal_left_to_right":
-                $pb_gradient_direction = "to bottom right";
-                break;
-            case "diagonal_right_to_left":
-                $pb_gradient_direction = "to bottom left";
-                break;
-            default:
-                $pb_gradient_direction = "to bottom";
-        }
-        if($popup['ays_pb_bg_image'] !== ''){
-            $popup['ays_pb_bg_image'] = 'background-image: url('.$popup['ays_pb_bg_image'].');
-                                background-repeat: no-repeat;
-                                background-size: '.$pb_bg_image_sizing.';
-                                background-position: '. $pb_bg_image_position .';';
-        } elseif ($background_gradient == 'on' && $popup['ays_pb_bg_image'] == '') {
-            $popup['ays_pb_bg_image'] = "background-image: linear-gradient(".$pb_gradient_direction.",".$background_gradient_color_1.",".$background_gradient_color_2.");";
-        }
 
         //Show Popup Title
         $show_popup_title = $popup['show_title'] == "On" ? 'block' : 'none';
@@ -1674,7 +1517,7 @@ class Ays_Pb_Public_Templates {
                                 </div>
                                 <div class='ays_winxp_title-bar-min'></div>
                             </div>
-                            <div class='ays_winxp_content ays-pb-bg-styles-mobile_".$popup['id']."' style='background-color: ".$popup['ays_pb_bgcolor']."; ".$popup['ays_pb_bg_image']."; '>
+                            <div class='ays_winxp_content ays-pb-bg-styles_".$popup['id']."' style='background-color: ".$popup['ays_pb_bgcolor'].";'>
                                 $ays_pb_sound_mute
                                 <div>
                                     ".$popup['ays_pb_description']."
@@ -1740,38 +1583,6 @@ class Ays_Pb_Public_Templates {
 
         // Font Size 
         $pb_font_size = (isset($options->pb_font_size) && $options->pb_font_size != '') ? absint($options->pb_font_size) : 13;
-
-        //Bg image position
-        $pb_bg_image_position = (isset($options->pb_bg_image_position) && $options->pb_bg_image_position != "") ? str_ireplace('-', ' ', $options->pb_bg_image_position) : 'center center';
-
-        $pb_bg_image_sizing = (isset($options->pb_bg_image_sizing) && $options->pb_bg_image_sizing != "") ? stripslashes( esc_attr($options->pb_bg_image_sizing) ) : 'cover';
-
-        //Background Gradient
-        $background_gradient = (!isset($options->enable_background_gradient)) ? 'off' : stripslashes( esc_attr($options->enable_background_gradient) );
-        $pb_gradient_direction = (!isset($options->pb_gradient_direction)) ? 'horizontal' : stripslashes( esc_attr($options->pb_gradient_direction) );
-        $background_gradient_color_1 = (!isset($options->background_gradient_color_1)) ? "#000000" : stripslashes( esc_attr($options->background_gradient_color_1) );
-        $background_gradient_color_2 = (!isset($options->background_gradient_color_2)) ? "#fff" : stripslashes( esc_attr($options->background_gradient_color_2) );
-        switch($pb_gradient_direction) {
-            case "horizontal":
-                $pb_gradient_direction = "to right";
-                break;
-            case "diagonal_left_to_right":
-                $pb_gradient_direction = "to bottom right";
-                break;
-            case "diagonal_right_to_left":
-                $pb_gradient_direction = "to bottom left";
-                break;
-            default:
-                $pb_gradient_direction = "to bottom";
-        }
-        if($popup['ays_pb_bg_image'] !== ''){
-            $popup['ays_pb_bg_image'] = 'background-image: url('.$popup['ays_pb_bg_image'].');
-                                background-repeat: no-repeat;
-                                background-size: '.$pb_bg_image_sizing.';
-                                background-position: '. $pb_bg_image_position .';';
-        } elseif ($background_gradient == 'on' && $popup['ays_pb_bg_image'] == '') {
-            $popup['ays_pb_bg_image'] = "background-image: linear-gradient(".$pb_gradient_direction.",".$background_gradient_color_1.",".$background_gradient_color_2.");";
-        }
 
         //Show Popup Title
         $show_popup_title = $popup['show_title'] == "On" ? 'block' : 'none';
@@ -1990,8 +1801,8 @@ class Ays_Pb_Public_Templates {
             $ays_pb_show_scrollbar_class = 'ays-pb-show-scrollbar';
         }
 
-        $ubuntu_view = "<div class='ays_win98_window ays-pb-modal_".$popup['id']." ".$popup['custom_class']." ".$ays_pb_disable_scroll_on_popup_class." ".$ays_pb_show_scrollbar_class." ays-pb-bg-styles-mobile_".$popup['id']." ays-pb-border-mobile_".$popup['id']."' {$ays_pb_flag} style='width: {$pb_width}; height: {$pb_height}; padding: {$pb_padding}; background-color: ".$popup['ays_pb_bgcolor']."; ".$popup['ays_pb_bg_image'].";  color: ".$popup['ays_pb_textcolor']." !important; border: ".$popup['ays_pb_bordersize']."px $border_style ".$popup['ays_pb_bordercolor']."; border-radius: ".$popup['ays_pb_border_radius']."px;font-family:{$ays_pb_font_family};{$box_shadow};'>
-                            <header class='ays_win98_head ays-pb-bg-styles-mobile_".$popup['id']."' style='background-color: ".$popup['ays_pb_bgcolor'].";'>
+        $ubuntu_view = "<div class='ays_win98_window ays-pb-modal_".$popup['id']." ".$popup['custom_class']." ".$ays_pb_disable_scroll_on_popup_class." ".$ays_pb_show_scrollbar_class." ays-pb-bg-styles_".$popup['id']." ays-pb-border-mobile_".$popup['id']."' {$ays_pb_flag} style='width: {$pb_width}; height: {$pb_height}; padding: {$pb_padding}; background-color: ".$popup['ays_pb_bgcolor']."; color: ".$popup['ays_pb_textcolor']." !important; border: ".$popup['ays_pb_bordersize']."px $border_style ".$popup['ays_pb_bordercolor']."; border-radius: ".$popup['ays_pb_border_radius']."px;font-family:{$ays_pb_font_family};{$box_shadow};'>
+                            <header class='ays_win98_head' style='background-color: ".$popup['ays_pb_bgcolor'].";'>
                                 <div class='ays_win98_header'>
                                     <div class='ays_win98_title'>
                                         ".$popup['ays_pb_title']."
@@ -2043,41 +1854,6 @@ class Ays_Pb_Public_Templates {
 
         //close button hover text
         $ays_pb_close_button_hover_text = (isset($options->close_button_hover_text) && $options->close_button_hover_text != '') ? stripslashes( esc_attr($options->close_button_hover_text) ) : "";
-
-        //Bg image position
-        $pb_bg_image_position = (isset($options->pb_bg_image_position) && $options->pb_bg_image_position != "") ? str_ireplace('-', ' ', $options->pb_bg_image_position) : 'center center';
-
-        $pb_bg_image_sizing = (isset($options->pb_bg_image_sizing) && $options->pb_bg_image_sizing != "") ? stripslashes( esc_attr($options->pb_bg_image_sizing) ) : 'cover';
-
-        //Background Gradient
-        $background_gradient = (!isset($options->enable_background_gradient)) ? 'off' : stripslashes( esc_attr($options->enable_background_gradient) );
-        $pb_gradient_direction = (!isset($options->pb_gradient_direction)) ? 'horizontal' : stripslashes( esc_attr($options->pb_gradient_direction) );
-        $background_gradient_color_1 = (!isset($options->background_gradient_color_1)) ? "#000000" : stripslashes( esc_attr($options->background_gradient_color_1) );
-        $background_gradient_color_2 = (!isset($options->background_gradient_color_2)) ? "#fff" : stripslashes( esc_attr($options->background_gradient_color_2) );
-        switch($pb_gradient_direction) {
-            case "horizontal":
-                $pb_gradient_direction = "to right";
-                break;
-            case "diagonal_left_to_right":
-                $pb_gradient_direction = "to bottom right";
-                break;
-            case "diagonal_right_to_left":
-                $pb_gradient_direction = "to bottom left";
-                break;
-            default:
-                $pb_gradient_direction = "to bottom";
-        }
-        if($popup['ays_pb_bg_image'] !== ''){
-            $popup['ays_pb_bg_image'] = 'background-image: url('.$popup['ays_pb_bg_image'].');
-                                background-repeat: no-repeat;
-                                background-size: '.$pb_bg_image_sizing.';
-                                background-position: '. $pb_bg_image_position .';';
-        }elseif ($background_gradient == 'on' && $popup['ays_pb_bg_image'] == '') {
-            $popup['ays_pb_bg_image'] = "background-image: linear-gradient(".$pb_gradient_direction.",".$background_gradient_color_1.",".$background_gradient_color_2.");";
-        }
-        else{
-            $popup['ays_pb_bg_image'] = '';
-        }
 
         //popup full screen 
         $ays_pb_full_screen  = (isset($options->enable_pb_fullscreen) && $options->enable_pb_fullscreen == 'on') ? 'on' : 'off';
@@ -2303,7 +2079,7 @@ class Ays_Pb_Public_Templates {
             $ays_pb_show_scrollbar_class = 'ays-pb-show-scrollbar';
         }
 
-        $ubuntu_view = "    <div class='ays_lil_window ays-pb-modal_".$popup['id']." ".$popup['custom_class']." ".$ays_pb_disable_scroll_on_popup_class." ".$ays_pb_show_scrollbar_class." ays-pb-bg-styles-mobile_".$popup['id']." ays-pb-border-mobile_".$popup['id']."' {$ays_pb_flag} style='width: {$pb_width}; height: {$pb_height}; background-color: ".$popup['ays_pb_bgcolor']."; color: ".$popup['ays_pb_textcolor']." !important; border: ".$popup['ays_pb_bordersize']."px $border_style ".$popup['ays_pb_bordercolor']."; border-radius: ".$popup['ays_pb_border_radius']."px;font-family:{$ays_pb_font_family};".$popup['ays_pb_bg_image'].";{$box_shadow};'>
+        $ubuntu_view = "    <div class='ays_lil_window ays-pb-modal_".$popup['id']." ".$popup['custom_class']." ".$ays_pb_disable_scroll_on_popup_class." ".$ays_pb_show_scrollbar_class." ays-pb-bg-styles_".$popup['id']." ays-pb-border-mobile_".$popup['id']."' {$ays_pb_flag} style='width: {$pb_width}; height: {$pb_height}; background-color: ".$popup['ays_pb_bgcolor']."; color: ".$popup['ays_pb_textcolor']." !important; border: ".$popup['ays_pb_bordersize']."px $border_style ".$popup['ays_pb_bordercolor']."; border-radius: ".$popup['ays_pb_border_radius']."px;font-family:{$ays_pb_font_family}; {$box_shadow};'>
                                  <header class='ays_lil_head' style='background-color: ".(($popup['show_title'] !== "On") ?  "" :  $popup['ays_pb_header_bgcolor']).";'>
                                     $ays_pb_sound_mute
                                     <div class='ays_lil_header'>
@@ -2362,36 +2138,6 @@ class Ays_Pb_Public_Templates {
         
         //close button hover text
         $ays_pb_close_button_hover_text = (isset($options->close_button_hover_text) && $options->close_button_hover_text != '') ? stripslashes( esc_attr($options->close_button_hover_text) ) : "";
-
-        //Bg image position
-        $pb_bg_image_position = (isset($options->pb_bg_image_position) && $options->pb_bg_image_position != "") ? str_ireplace('-', ' ', $options->pb_bg_image_position) : 'center center';
-
-        $pb_bg_image_sizing = (isset($options->pb_bg_image_sizing) && $options->pb_bg_image_sizing != "") ? stripslashes( esc_attr($options->pb_bg_image_sizing) ) : 'cover';
-
-        //Background Gradient
-        $background_gradient = (!isset($options->enable_background_gradient)) ? 'off' : stripslashes( esc_attr($options->enable_background_gradient) );
-        $pb_gradient_direction = (!isset($options->pb_gradient_direction)) ? 'horizontal' : stripslashes( esc_attr($options->pb_gradient_direction) );
-        $background_gradient_color_1 = (!isset($options->background_gradient_color_1)) ? "#000000" : stripslashes( esc_attr($options->background_gradient_color_1) );
-        $background_gradient_color_2 = (!isset($options->background_gradient_color_2)) ? "#fff" : stripslashes( esc_attr($options->background_gradient_color_2) );
-        switch($pb_gradient_direction) {
-            case "horizontal":
-                $pb_gradient_direction = "to right";
-                break;
-            case "diagonal_left_to_right":
-                $pb_gradient_direction = "to bottom right";
-                break;
-            case "diagonal_right_to_left":
-                $pb_gradient_direction = "to bottom left";
-                break;
-            default:
-                $pb_gradient_direction = "to bottom";
-        }
-        if($popup['ays_pb_bg_image'] !== '' && $popup['ays_pb_bg_image'] != $ays_pb_bg_image_template_default){
-            $popup['ays_pb_bg_image'] = 'background-image: url('.$popup['ays_pb_bg_image'].');
-                                background-repeat: no-repeat;';
-        }else{
-            $popup['ays_pb_bg_image'] = $ays_pb_bg_image_template_default;
-        }
 
         //popup full screen
         $ays_pb_full_screen  = (isset($options->enable_pb_fullscreen) && $options->enable_pb_fullscreen == 'on') ? 'on' : 'off';
@@ -2623,7 +2369,7 @@ class Ays_Pb_Public_Templates {
             $ays_pb_show_scrollbar_class = 'ays-pb-show-scrollbar';
         }
 
-        $ubuntu_view .= "   <div class='ays_image_window ays-pb-modal_".$popup['id']." ".$popup['custom_class']." ays-pb-bg-styles-mobile_".$popup['id']." ays-pb-border-mobile_".$popup['id']."' {$ays_pb_flag} style='width: {$pb_width}; height: {$pb_height}; background-color: ".$popup['ays_pb_bgcolor']."; color: ".$popup['ays_pb_textcolor']." !important;font-family:{$ays_pb_font_family}; border: ".$popup['ays_pb_bordersize']."px $border_style ".$popup['ays_pb_bordercolor']."; border-radius: ".$popup['ays_pb_border_radius']."px; ".$popup['ays_pb_bg_image']."; background-size: {$pb_bg_image_sizing}; background-position: {$pb_bg_image_position};{$box_shadow}; animation-fill-mode: forwards;' data-name='modern_minimal'>
+        $ubuntu_view .= "   <div class='ays_image_window ays-pb-modal_".$popup['id']." ".$popup['custom_class']." ays-pb-bg-styles_".$popup['id']." ays-pb-border-mobile_".$popup['id']."' {$ays_pb_flag} style='width: {$pb_width}; height: {$pb_height}; background-color: ".$popup['ays_pb_bgcolor']."; color: ".$popup['ays_pb_textcolor']." !important;font-family:{$ays_pb_font_family}; border: ".$popup['ays_pb_bordersize']."px $border_style ".$popup['ays_pb_bordercolor']."; border-radius: ".$popup['ays_pb_border_radius']."px; {$box_shadow}; animation-fill-mode: forwards;' data-name='modern_minimal'>
                                 <header class='ays_image_head' style='{$image_header_height}'>
                                     <div class='ays_image_header'>
                                         $ays_pb_sound_mute
@@ -2681,45 +2427,8 @@ class Ays_Pb_Public_Templates {
         // Font Size 
         $pb_font_size = (isset($options->pb_font_size) && $options->pb_font_size != '') ? absint($options->pb_font_size) : 13;
 
-        //Bg image position
-        $pb_bg_image_position = (isset($options->pb_bg_image_position) && $options->pb_bg_image_position != "") ? str_ireplace('-', ' ', $options->pb_bg_image_position) : 'center center';
-        
-        $pb_bg_image_sizing = (isset($options->pb_bg_image_sizing) && $options->pb_bg_image_sizing != "") ? stripslashes( esc_attr($options->pb_bg_image_sizing) ) : 'cover';
-
-        //Background Gradient
-        $background_gradient = (!isset($options->enable_background_gradient)) ? 'off' : stripslashes( esc_attr($options->enable_background_gradient) );
-        $pb_gradient_direction = (!isset($options->pb_gradient_direction)) ? 'horizontal' : stripslashes( esc_attr($options->pb_gradient_direction) );
-        $background_gradient_color_1 = (!isset($options->background_gradient_color_1)) ? "#000000" : stripslashes( esc_attr($options->background_gradient_color_1) );
-        $background_gradient_color_2 = (!isset($options->background_gradient_color_2)) ? "#fff" : stripslashes( esc_attr($options->background_gradient_color_2) );
-        switch($pb_gradient_direction) {
-            case "horizontal":
-                $pb_gradient_direction = "to right";
-                break;
-            case "diagonal_left_to_right":
-                $pb_gradient_direction = "to bottom right";
-                break;
-            case "diagonal_right_to_left":
-                $pb_gradient_direction = "to bottom left";
-                break;
-            default:
-                $pb_gradient_direction = "to bottom";
-        }
-        if($popup['ays_pb_bg_image'] !== '' && $popup['ays_pb_bg_image'] != $ays_pb_bg_image_template_default){
-            $popup['ays_pb_bg_image'] = 'background-image: url('.$popup['ays_pb_bg_image'].');
-                                background-repeat: no-repeat;
-                                background-size: cover;';
-        }
-
         //close button hover text
         $ays_pb_close_button_hover_text = (isset($options->close_button_hover_text) && $options->close_button_hover_text != '') ? stripslashes( esc_attr($options->close_button_hover_text) ) : "";
-
-
-        if ($background_gradient == 'on') {
-            $bg_gradient_container = "background-image: linear-gradient(".$pb_gradient_direction.",".$background_gradient_color_1.",".$background_gradient_color_2.");";
-            $popup['ays_pb_bgcolor'] = "transparent";
-        } else {
-            $bg_gradient_container = "unset";
-        }
 
         //Show Popup Title
         $show_popup_title = $popup['show_title'] == "On" ? 'block' : 'none';
@@ -2953,7 +2662,7 @@ class Ays_Pb_Public_Templates {
             $ays_pb_show_scrollbar_class = 'ays-pb-show-scrollbar';
         }
 
-        $ubuntu_view = "   <div class='ays_template_window ".$ays_pb_disable_scroll_on_popup_class." ays-pb-modal_".$popup['id']." ".$popup['custom_class']." ".$ays_pb_show_scrollbar_class." ays-pb-border-mobile_".$popup['id']."' {$ays_pb_flag} style='width: {$pb_width};  height: {$pb_height}; color: ".$popup['ays_pb_textcolor']." !important; font-family:{$ays_pb_font_family}; border: ".$popup['ays_pb_bordersize']."px $border_style ".$popup['ays_pb_bordercolor'].";{$bg_gradient_container}; border-radius: ".$popup['ays_pb_border_radius']."px; {$box_shadow};'>
+        $ubuntu_view = "   <div class='ays_template_window ".$ays_pb_disable_scroll_on_popup_class." ays-pb-modal_".$popup['id']." ".$popup['custom_class']." ".$ays_pb_show_scrollbar_class." ays-pb-border-mobile_".$popup['id']."' {$ays_pb_flag} style='width: {$pb_width};  height: {$pb_height}; color: ".$popup['ays_pb_textcolor']." !important; font-family:{$ays_pb_font_family}; border: ".$popup['ays_pb_bordersize']."px $border_style ".$popup['ays_pb_bordercolor']."; border-radius: ".$popup['ays_pb_border_radius']."px; {$box_shadow};'>
                                  <header class='ays_template_head' style='{$header_height};background-color: {$ays_template_header_bgcolor}'>
                                     <div class='ays_template_header'>
                                         <div class='ays_template_title'>
@@ -2966,8 +2675,8 @@ class Ays_Pb_Public_Templates {
                                         </div>
                                     </div>
                                 </header>
-                                <footer class='ays_template_footer ays-pb-bg-styles-mobile_".$popup['id']."' style='background-color: ".$popup['ays_pb_bgcolor']."; {$calck_template_fotter} '>
-                                    <div class='ays_bg_image_box' style='".$popup['ays_pb_bg_image']." background-size: {$pb_bg_image_sizing}; background-position: {$pb_bg_image_position}'></div>
+                                <footer class='ays_template_footer ays-pb-bg-styles_".$popup['id']."' style='background-color: ".$popup['ays_pb_bgcolor']."; {$calck_template_fotter} '>
+                                    <div class='ays_bg_image_box'></div>
                                     <div class='ays_template_content ' style=''>
                                         $ays_pb_sound_mute
                                         ".$popup['ays_pb_description']."
@@ -3010,41 +2719,6 @@ class Ays_Pb_Public_Templates {
 
         //close button hover text
         $ays_pb_close_button_hover_text = (isset($options->close_button_hover_text) && $options->close_button_hover_text != '') ? stripslashes( esc_attr($options->close_button_hover_text) ) : "";
-
-        //Bg image position
-        $pb_bg_image_position = (isset($options->pb_bg_image_position) && $options->pb_bg_image_position != "") ? str_ireplace('-', ' ', $options->pb_bg_image_position) : 'center center';
-
-        $pb_bg_image_sizing = (isset($options->pb_bg_image_sizing) && $options->pb_bg_image_sizing != "") ? stripslashes( esc_attr($options->pb_bg_image_sizing) ) : 'cover';
-        
-
-        //Background Gradient
-        $background_gradient = (!isset($options->enable_background_gradient)) ? 'off' : stripslashes( esc_attr($options->enable_background_gradient) );
-        $pb_gradient_direction = (!isset($options->pb_gradient_direction)) ? 'horizontal' : stripslashes( esc_attr($options->pb_gradient_direction) );
-        $background_gradient_color_1 = (!isset($options->background_gradient_color_1)) ? "#000000" : stripslashes( esc_attr($options->background_gradient_color_1) );
-        $background_gradient_color_2 = (!isset($options->background_gradient_color_2)) ? "#fff" : stripslashes( esc_attr($options->background_gradient_color_2) );
-        switch($pb_gradient_direction) {
-            case "horizontal":
-                $pb_gradient_direction = "to right";
-                break;
-            case "diagonal_left_to_right":
-                $pb_gradient_direction = "to bottom right";
-                break;
-            case "diagonal_right_to_left":
-                $pb_gradient_direction = "to bottom left";
-                break;
-            default:
-                $pb_gradient_direction = "to bottom";
-        }
-        if($popup['ays_pb_bg_image'] !== ''){
-            $popup['ays_pb_bg_image'] = 'background-image: url('.$popup['ays_pb_bg_image'].');
-                                background-repeat: no-repeat;
-                                background-size: '. $pb_bg_image_sizing .';
-                                background-position: '. $pb_bg_image_position .';';
-        }elseif ($background_gradient == 'on' && $popup['ays_pb_bg_image'] == '') {
-            $popup['ays_pb_bg_image'] = "background-image: linear-gradient(".$pb_gradient_direction.",".$background_gradient_color_1.",".$background_gradient_color_2.");";
-        } else {
-            $popup['ays_pb_bg_image'] = '';
-        }
 
         // Popup full screen
         $ays_pb_full_screen  = (isset($options->enable_pb_fullscreen) && $options->enable_pb_fullscreen == 'on') ? 'on' : 'off';
@@ -3276,7 +2950,7 @@ class Ays_Pb_Public_Templates {
             $ays_pb_show_scrollbar_class = 'ays-pb-show-scrollbar';
         }
 
-        $ubuntu_view .= "   <div class='ays_minimal_window ays-pb-modal_".$popup['id']." ".$popup['custom_class']." ays-pb-bg-styles-mobile_".$popup['id']." ays-pb-border-mobile_".$popup['id']."' {$ays_pb_flag} style='width: {$pb_width}; height: {$pb_height}; background-color: ".$popup['ays_pb_bgcolor']."; color: ".$popup['ays_pb_textcolor']." !important;font-family:{$ays_pb_font_family}; border: ".$popup['ays_pb_bordersize']."px $border_style ".$popup['ays_pb_bordercolor']."; border-radius: ".$popup['ays_pb_border_radius']."px; ".$popup['ays_pb_bg_image'].";{$box_shadow};' data-name='modern_minimal'>
+        $ubuntu_view .= "   <div class='ays_minimal_window ays-pb-modal_".$popup['id']." ".$popup['custom_class']." ays-pb-bg-styles_".$popup['id']." ays-pb-border-mobile_".$popup['id']."' {$ays_pb_flag} style='width: {$pb_width}; height: {$pb_height}; background-color: ".$popup['ays_pb_bgcolor']."; color: ".$popup['ays_pb_textcolor']." !important;font-family:{$ays_pb_font_family}; border: ".$popup['ays_pb_bordersize']."px $border_style ".$popup['ays_pb_bordercolor']."; border-radius: ".$popup['ays_pb_border_radius']."px; {$box_shadow};' data-name='modern_minimal'>
                                 <header class='ays_minimal_head' style='{$image_header_height}'>
                                     <div class='ays_minimal_header'>
                                         $ays_pb_sound_mute
@@ -3335,30 +3009,6 @@ class Ays_Pb_Public_Templates {
 
         //close button hover text
         $ays_pb_close_button_hover_text = (isset($options->close_button_hover_text) && $options->close_button_hover_text != '') ? stripslashes( esc_attr($options->close_button_hover_text) ) : "";
-        
-        //Bg image position
-        $pb_bg_image_position = (isset($options->pb_bg_image_position) && $options->pb_bg_image_position != "") ? str_ireplace('-', ' ', $options->pb_bg_image_position) : 'center center';
-
-        $pb_bg_image_sizing = (isset($options->pb_bg_image_sizing) && $options->pb_bg_image_sizing != "") ? stripslashes( esc_attr($options->pb_bg_image_sizing) ) : 'cover';
-
-        //Background Gradient
-        $background_gradient = (!isset($options->enable_background_gradient)) ? 'off' : stripslashes( esc_attr($options->enable_background_gradient) );
-        $pb_gradient_direction = (!isset($options->pb_gradient_direction)) ? 'horizontal' : stripslashes( esc_attr($options->pb_gradient_direction) );
-        $background_gradient_color_1 = (!isset($options->background_gradient_color_1)) ? "#000000" : stripslashes( esc_attr($options->background_gradient_color_1) );
-        $background_gradient_color_2 = (!isset($options->background_gradient_color_2)) ? "#fff" : stripslashes( esc_attr($options->background_gradient_color_2) );
-        switch($pb_gradient_direction) {
-            case "horizontal":
-                $pb_gradient_direction = "to right";
-                break;
-            case "diagonal_left_to_right":
-                $pb_gradient_direction = "to bottom right";
-                break;
-            case "diagonal_right_to_left":
-                $pb_gradient_direction = "to bottom left";
-                break;
-            default:
-                $pb_gradient_direction = "to bottom";
-        }
 
         //popup full screen
         $ays_pb_full_screen  = (isset($options->enable_pb_fullscreen) && $options->enable_pb_fullscreen == 'on') ? 'on' : 'off';
@@ -3556,7 +3206,7 @@ class Ays_Pb_Public_Templates {
             $ays_pb_video_src = AYS_PB_ADMIN_URL.'/videos/video_theme.mp4';
         }
 
-        $ubuntu_view .= "   <div class='ays_video_window ays-pb-modal_".$popup['id']." ".$popup['custom_class']." ays-pb-bg-styles-mobile_".$popup['id']." ays-pb-border-mobile_".$popup['id']."' {$ays_pb_flag} style='width: {$pb_width}; height: {$pb_height}; background-color: ".$popup['ays_pb_bgcolor']."; color: ".$popup['ays_pb_textcolor']." !important;font-family:{$ays_pb_font_family}; border: ".$popup['ays_pb_bordersize']."px $border_style ".$popup['ays_pb_bordercolor']."; border-radius: ".$popup['ays_pb_border_radius']."px; {$box_shadow}; ' data-name='modern_video'>
+        $ubuntu_view .= "   <div class='ays_video_window ays-pb-modal_".$popup['id']." ".$popup['custom_class']." ays-pb-border-mobile_".$popup['id']."' {$ays_pb_flag} style='width: {$pb_width}; height: {$pb_height}; background-color: ".$popup['ays_pb_bgcolor']."; color: ".$popup['ays_pb_textcolor']." !important;font-family:{$ays_pb_font_family}; border: ".$popup['ays_pb_bordersize']."px $border_style ".$popup['ays_pb_bordercolor']."; border-radius: ".$popup['ays_pb_border_radius']."px; {$box_shadow}; ' data-name='modern_video'>
                                  <header class='ays_video_head'>
                                     <div class='ays_video_header'>
                                         $ays_pb_sound_mute
@@ -3587,38 +3237,6 @@ class Ays_Pb_Public_Templates {
 
         //close button hover text
         $ays_pb_close_button_hover_text = (isset($options->close_button_hover_text) && $options->close_button_hover_text != '') ? stripslashes( esc_attr($options->close_button_hover_text) ) : "";
-
-        //Bg image position
-        $pb_bg_image_position = (isset($options->pb_bg_image_position) && $options->pb_bg_image_position != "") ? str_ireplace('-', ' ', $options->pb_bg_image_position) : 'center center';
-
-        $pb_bg_image_sizing = (isset($options->pb_bg_image_sizing) && $options->pb_bg_image_sizing != "") ? stripslashes( esc_attr($options->pb_bg_image_sizing) ) : 'cover';
-
-        //Background Gradient
-        $background_gradient = (!isset($options->enable_background_gradient)) ? 'off' : stripslashes( esc_attr($options->enable_background_gradient) );
-        $pb_gradient_direction = (!isset($options->pb_gradient_direction)) ? 'horizontal' : stripslashes( esc_attr($options->pb_gradient_direction) );
-        $background_gradient_color_1 = (!isset($options->background_gradient_color_1)) ? "#000000" : stripslashes( esc_attr($options->background_gradient_color_1) );
-        $background_gradient_color_2 = (!isset($options->background_gradient_color_2)) ? "#fff" : stripslashes( esc_attr($options->background_gradient_color_2) );
-        switch($pb_gradient_direction) {
-            case "horizontal":
-                $pb_gradient_direction = "to right";
-                break;
-            case "diagonal_left_to_right":
-                $pb_gradient_direction = "to bottom right";
-                break;
-            case "diagonal_right_to_left":
-                $pb_gradient_direction = "to bottom left";
-                break;
-            default:
-                $pb_gradient_direction = "to bottom";
-        }
-        if($popup['ays_pb_bg_image'] !== ''){
-            $popup['ays_pb_bg_image'] = 'background-image: url('.$popup['ays_pb_bg_image'].');
-                                background-repeat: no-repeat;
-                                background-size: '.$pb_bg_image_sizing.';
-                                background-position: '. $pb_bg_image_position .';';
-        } elseif ($background_gradient == 'on' && $popup['ays_pb_bg_image'] == '') {
-            $popup['ays_pb_bg_image'] = "background-image: linear-gradient(".$pb_gradient_direction.",".$background_gradient_color_1.",".$background_gradient_color_2.");";
-        }
 
         //popup full screen
         $ays_pb_full_screen  = (isset($options->enable_pb_fullscreen) && $options->enable_pb_fullscreen == 'on') ? 'on' : 'off';
@@ -3762,7 +3380,7 @@ class Ays_Pb_Public_Templates {
         }
 
         $popupbox_view = "
-                <div class='ays-pb-modal ays-pb-modal-image-type-img ays-pb-modal_".$popup['id']." ".$popup['custom_class']." ".$ays_pb_disable_scroll_on_popup_class." ".$ays_pb_show_scrollbar_class." ays-popup-box-main-box ays-pb-bg-styles-mobile_".$popup['id']." ays-pb-border-mobile_".$popup['id']."' {$ays_pb_flag} style='".$popup['ays_pb_bg_image'].";width: {$pb_width}; height: {$pb_height}; background-color:" .  $popup['ays_pb_bgcolor'] . "; color: " . $popup['ays_pb_textcolor'] . " !important; border: ".$popup['ays_pb_bordersize']."px  $border_style " .$popup['ays_pb_bordercolor']. "; border-radius: ".$popup['ays_pb_border_radius']."px;{$box_shadow};' >
+                <div class='ays-pb-modal ays-pb-modal-image-type-img ays-pb-modal_".$popup['id']." ".$popup['custom_class']." ".$ays_pb_disable_scroll_on_popup_class." ".$ays_pb_show_scrollbar_class." ays-popup-box-main-box ays-pb-bg-styles_".$popup['id']." ays-pb-border-mobile_".$popup['id']."' {$ays_pb_flag} style='width: {$pb_width}; height: {$pb_height}; background-color:" .  $popup['ays_pb_bgcolor'] . "; color: " . $popup['ays_pb_textcolor'] . " !important; border: ".$popup['ays_pb_bordersize']."px  $border_style " .$popup['ays_pb_bordercolor']. "; border-radius: ".$popup['ays_pb_border_radius']."px;{$box_shadow};' >
                     " . $ays_pb_sound_mute . "
                     <div class='ays_content_box' style='padding: {$pb_padding}'>
                         " . $main_image . "
@@ -3807,38 +3425,6 @@ class Ays_Pb_Public_Templates {
 
         //close button hover text
         $ays_pb_close_button_hover_text = (isset($options->close_button_hover_text) && $options->close_button_hover_text != '') ? stripslashes( esc_attr($options->close_button_hover_text) ) : "";
-
-        //Bg image position
-        $pb_bg_image_position = (isset($options->pb_bg_image_position) && $options->pb_bg_image_position != "") ? str_ireplace('-', ' ', $options->pb_bg_image_position) : 'center center';
-
-        $pb_bg_image_sizing = (isset($options->pb_bg_image_sizing) && $options->pb_bg_image_sizing != "") ? stripslashes( esc_attr($options->pb_bg_image_sizing) ) : 'cover';
-
-        //Background Gradient
-        $background_gradient = (!isset($options->enable_background_gradient)) ? 'off' : stripslashes( esc_attr($options->enable_background_gradient) );
-        $pb_gradient_direction = (!isset($options->pb_gradient_direction)) ? 'horizontal' : stripslashes( esc_attr($options->pb_gradient_direction) );
-        $background_gradient_color_1 = (!isset($options->background_gradient_color_1)) ? "#000000" : stripslashes( esc_attr($options->background_gradient_color_1) );
-        $background_gradient_color_2 = (!isset($options->background_gradient_color_2)) ? "#fff" : stripslashes( esc_attr($options->background_gradient_color_2) );
-        switch($pb_gradient_direction) {
-            case "horizontal":
-                $pb_gradient_direction = "to right";
-                break;
-            case "diagonal_left_to_right":
-                $pb_gradient_direction = "to bottom right";
-                break;
-            case "diagonal_right_to_left":
-                $pb_gradient_direction = "to bottom left";
-                break;
-            default:
-                $pb_gradient_direction = "to bottom";
-        }
-        if($popup['ays_pb_bg_image'] !== ''){
-            $popup['ays_pb_bg_image'] = 'background-image: url('.$popup['ays_pb_bg_image'].');
-                                background-repeat: no-repeat;
-                                background-size: '.$pb_bg_image_sizing.';
-                                background-position: '. $pb_bg_image_position .';';
-        } elseif ($background_gradient == 'on' && $popup['ays_pb_bg_image'] == '') {
-            $popup['ays_pb_bg_image'] = "background-image: linear-gradient(".$pb_gradient_direction.",".$background_gradient_color_1.",".$background_gradient_color_2.");";
-        }
 
         //popup full screen
         $ays_pb_full_screen  = (isset($options->enable_pb_fullscreen) && $options->enable_pb_fullscreen == 'on') ? 'on' : 'off';
@@ -4015,7 +3601,7 @@ class Ays_Pb_Public_Templates {
         }
 
         $popupbox_view = "
-                <div class='ays-pb-modal ays_facebook_window ays-pb-modal_".$popup['id']." ".$popup['custom_class']." ".$ays_pb_disable_scroll_on_popup_class." ".$ays_pb_show_scrollbar_class." ays-popup-box-main-box ays-pb-bg-styles-mobile_".$popup['id']." ays-pb-border-mobile_".$popup['id']."' {$ays_pb_flag} style='".$popup['ays_pb_bg_image'].";width: {$pb_width}; height: {$pb_height}; background-color:" .  $popup['ays_pb_bgcolor'] . "; color: " . $popup['ays_pb_textcolor'] . " !important; border: ".$popup['ays_pb_bordersize']."px  $border_style " .$popup['ays_pb_bordercolor']. "; border-radius: ".$popup['ays_pb_border_radius']."px;font-family:{$ays_pb_font_family};{$box_shadow};' >
+                <div class='ays-pb-modal ays_facebook_window ays-pb-modal_".$popup['id']." ".$popup['custom_class']." ".$ays_pb_disable_scroll_on_popup_class." ".$ays_pb_show_scrollbar_class." ays-popup-box-main-box ays-pb-bg-styles_".$popup['id']." ays-pb-border-mobile_".$popup['id']."' {$ays_pb_flag} style='width: {$pb_width}; height: {$pb_height}; background-color:" .  $popup['ays_pb_bgcolor'] . "; color: " . $popup['ays_pb_textcolor'] . " !important; border: ".$popup['ays_pb_bordersize']."px  $border_style " .$popup['ays_pb_bordercolor']. "; border-radius: ".$popup['ays_pb_border_radius']."px;font-family:{$ays_pb_font_family};{$box_shadow};' >
                     $ays_pb_sound_mute
                     " . $popup['ays_pb_title'] . "
                     " . $popup['ays_pb_description'] . "
@@ -4057,38 +3643,6 @@ class Ays_Pb_Public_Templates {
 
         // Popup box font-family
         $ays_pb_font_family  = (isset($options->pb_font_family) && $options->pb_font_family != '') ? stripslashes( esc_attr($options->pb_font_family) ) : '';
-
-        //Bg image position
-        $pb_bg_image_position = (isset($options->pb_bg_image_position) && $options->pb_bg_image_position != "") ? str_ireplace('-', ' ', $options->pb_bg_image_position) : 'center center';
-
-        $pb_bg_image_sizing = (isset($options->pb_bg_image_sizing) && $options->pb_bg_image_sizing != "") ? stripslashes( esc_attr($options->pb_bg_image_sizing) ) : 'cover';
-
-        //Background Gradient
-        $background_gradient = (!isset($options->enable_background_gradient)) ? 'off' : stripslashes( esc_attr($options->enable_background_gradient) );
-        $pb_gradient_direction = (!isset($options->pb_gradient_direction)) ? 'horizontal' : stripslashes( esc_attr($options->pb_gradient_direction) );
-        $background_gradient_color_1 = (!isset($options->background_gradient_color_1)) ? "#000000" : stripslashes( esc_attr($options->background_gradient_color_1) );
-        $background_gradient_color_2 = (!isset($options->background_gradient_color_2)) ? "#fff" : stripslashes( esc_attr($options->background_gradient_color_2) );
-        switch($pb_gradient_direction) {
-            case "horizontal":
-                $pb_gradient_direction = "to right";
-                break;
-            case "diagonal_left_to_right":
-                $pb_gradient_direction = "to bottom right";
-                break;
-            case "diagonal_right_to_left":
-                $pb_gradient_direction = "to bottom left";
-                break;
-            default:
-                $pb_gradient_direction = "to bottom";
-        }
-        if($popup['ays_pb_bg_image'] !== ''){
-            $popup['ays_pb_bg_image'] = 'background-image: url('.$popup['ays_pb_bg_image'].');
-                                background-repeat: no-repeat;
-                                background-size: '.$pb_bg_image_sizing.';
-                                background-position: '. $pb_bg_image_position .';';
-        } elseif ($background_gradient == 'on' && $popup['ays_pb_bg_image'] == '') {
-            $popup['ays_pb_bg_image'] = "background-image: linear-gradient(".$pb_gradient_direction.",".$background_gradient_color_1.",".$background_gradient_color_2.");";
-        }
 
         // Box shadow
         $box_shadow = $this->ays_pb_generate_box_shadow_styles($options);
@@ -4235,7 +3789,7 @@ class Ays_Pb_Public_Templates {
                 </div>",
         );
 
-        $popupbox_view = "<div class='ays_notification_window ays-pb-modal_" . $popup['id'] . " " . $popup['custom_class'] . "ays-pb-bg-styles-mobile_" . $popup['id'] . " ays-pb-border-mobile_" . $popup['id'] . "' data-ays-flag='false' style='" . $popup['ays_pb_bg_image']."; height: {$pb_height}; background-color:" .  $popup['ays_pb_bgcolor'] . "; color: " . $popup['ays_pb_textcolor'] . " !important; border: ".$popup['ays_pb_bordersize']."px  $border_style " . $popup['ays_pb_bordercolor'] . "; border-radius: " . $popup['ays_pb_border_radius'] . "px;font-family:{$ays_pb_font_family};{$box_shadow};' >
+        $popupbox_view = "<div class='ays_notification_window ays-pb-modal_" . $popup['id'] . " " . $popup['custom_class'] . "ays-pb-bg-styles_" . $popup['id'] . " ays-pb-border-mobile_" . $popup['id'] . "' data-ays-flag='false' style='height: {$pb_height}; background-color:" .  $popup['ays_pb_bgcolor'] . "; color: " . $popup['ays_pb_textcolor'] . " !important; border: ".$popup['ays_pb_bordersize']."px  $border_style " . $popup['ays_pb_bordercolor'] . "; border-radius: " . $popup['ays_pb_border_radius'] . "px;font-family:{$ays_pb_font_family};{$box_shadow};' >
             <div class='ays_notification_content_box ays_content_box " . $notification_with_logo_class . "' style='padding: {$pb_padding}'>";
 
         foreach($notification_type_components_order as $key) {

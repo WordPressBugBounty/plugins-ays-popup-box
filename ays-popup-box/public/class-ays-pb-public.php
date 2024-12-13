@@ -388,6 +388,8 @@ class Ays_Pb_Public {
             //Enable Display Content Mobile
             $enable_display_content_mobile = ( isset($options["enable_display_content_mobile"]) && $options["enable_display_content_mobile"] == 'on' ) ? true : false;
 
+			$ays_pb_template = ($popupbox["view_type"] == false || $popupbox["view_type"] == '') ? 'default' : stripslashes( esc_attr($popupbox["view_type"]) );
+
             //Show Popup Title Mobile
             //Show Popup Description Mobile
             if ($enable_display_content_mobile) {
@@ -418,8 +420,71 @@ class Ays_Pb_Public {
                 $ays_pb_bgcolor_mobile = $ays_pb_bgcolor;
             }
 
-            // Popup Background Image
+            // Background Image
             $ays_pb_bg_image = ( isset($popupbox['bg_image']) && $popupbox['bg_image'] !== '' ) ? esc_url($popupbox['bg_image']) : '';
+
+            // Background Image Position
+            $pb_bg_image_position = isset($options["pb_bg_image_position"]) && $options["pb_bg_image_position"] != "" ? str_ireplace('-', ' ', esc_attr($options["pb_bg_image_position"])) : 'center center';
+
+            // Background Image Sizing
+            $pb_bg_image_sizing = isset($options["pb_bg_image_sizing"]) && $options["pb_bg_image_sizing"] != "" ? stripslashes( esc_attr($options["pb_bg_image_sizing"]) ) : 'cover';
+
+            // Enable Popup Background Gradient
+            $background_gradient = isset($options["enable_background_gradient"]) && $options["enable_background_gradient"] != '' ? stripslashes( esc_attr($options["enable_background_gradient"]) ) : 'off';
+
+            // Background Gradient
+            $pb_gradient_direction = (!isset($options->pb_gradient_direction)) ? 'horizontal' : stripslashes( esc_attr($options->pb_gradient_direction) );
+
+            // Background Gradient Direction
+            $pb_gradient_direction = isset($options["pb_gradient_direction"]) && $options["pb_gradient_direction"] != '' ? stripslashes( esc_attr($options["pb_gradient_direction"]) ) : 'horizontal';
+            switch($pb_gradient_direction) {
+                case "horizontal":
+                    $pb_gradient_direction = "to right";
+                    break;
+                case "diagonal_left_to_right":
+                    $pb_gradient_direction = "to bottom right";
+                    break;
+                case "diagonal_right_to_left":
+                    $pb_gradient_direction = "to bottom left";
+                    break;
+                default:
+                    $pb_gradient_direction = "to bottom";
+            }
+
+            // Background Gradient Color 1
+            $background_gradient_color_1 = isset($options["background_gradient_color_1"]) && $options["background_gradient_color_1"] != '' ? stripslashes( esc_attr($options["background_gradient_color_1"]) ) : "#000000";
+
+            // Popup Background Gradient Color 2
+            $background_gradient_color_2 = isset($options["background_gradient_color_2"]) && $options["background_gradient_color_2"] != '' ? stripslashes( esc_attr($options["background_gradient_color_2"]) ) : "#fff";
+
+            $ays_pb_bg_image_styles = '';
+            $template_bg_gradient_styles = '';
+            $ays_pb_bg_image_template_elefante_default = 'background-image: url("https://quiz-plugin.com/wp-content/uploads/2020/02/elefante.jpg");
+                                                          background-repeat: no-repeat;
+                                                          background-size: cover;';
+            $ays_pb_bg_image_template_girl_scaled_default = 'background-image: url("https://quiz-plugin.com/wp-content/uploads/2020/02/girl-scaled.jpg");
+                                                             background-repeat: no-repeat;
+                                                             background-size: cover;';
+            if($ays_pb_bg_image !== ''){
+                $ays_pb_bg_image_styles = 'background-image: url(' . $ays_pb_bg_image . ') !important;
+                                    background-repeat: no-repeat !important;
+                                    background-size: ' . $pb_bg_image_sizing . ' !important;
+                                    background-position: ' . $pb_bg_image_position . ' !important;';
+            } elseif ($ays_pb_bg_image == '' && ($ays_pb_template == 'image' || $ays_pb_template == 'template')) {
+                if ($ays_pb_template == 'image') {
+                    $ays_pb_bg_image_styles = $ays_pb_bg_image_template_elefante_default;
+                } else {
+                    if ($background_gradient == 'on') {
+                        $template_bg_gradient_styles = "background-image: linear-gradient(".$pb_gradient_direction.",".$background_gradient_color_1.",".$background_gradient_color_2.");";
+                        $ays_pb_bgcolor = 'transparent';
+                    } else {
+                        $ays_pb_bg_image_styles = $ays_pb_bg_image_template_girl_scaled_default;
+                        $template_bg_gradient_styles = "unset";
+                    }
+                }
+            } elseif ($background_gradient == 'on' && $ays_pb_bg_image == '') {
+                $ays_pb_bg_image_styles = "background-image: linear-gradient(" . $pb_gradient_direction . "," . $background_gradient_color_1 ." ," . $background_gradient_color_2 . ") !important;";
+            }
 
             // Enable Popup Background Image Mobile
             $enable_bg_image_mobile = ( isset($options["enable_bg_image_mobile"]) && $options["enable_bg_image_mobile"] == 'on' ) ? true : false;
@@ -431,9 +496,6 @@ class Ays_Pb_Public {
                 $ays_pb_bg_image_mobile = $ays_pb_bg_image;
             }
 
-            // Popup Background Image Position
-            $pb_bg_image_position = isset($options["pb_bg_image_position"]) && $options["pb_bg_image_position"] != "" ? str_ireplace('-', ' ', esc_attr($options["pb_bg_image_position"])) : 'center center';
-
             // Enable Popup Background Image Position Mobile
             $enable_pb_bg_image_position_mobile = ( isset($options["enable_pb_bg_image_position_mobile"]) && $options["enable_pb_bg_image_position_mobile"] == 'on' ) ? true : false;
 
@@ -443,9 +505,6 @@ class Ays_Pb_Public {
             } else {
                 $pb_bg_image_position_mobile = $pb_bg_image_position;
             }
-
-            // Popup Background Image Sizing
-            $pb_bg_image_sizing = isset($options["pb_bg_image_sizing"]) && $options["pb_bg_image_sizing"] != "" ? stripslashes( esc_attr($options["pb_bg_image_sizing"]) ) : 'cover';
 
             // Enable Popup Background Image Sizing Mobile
             $enable_pb_bg_image_sizing_mobile = ( isset($options["enable_pb_bg_image_sizing_mobile"]) && $options["enable_pb_bg_image_sizing_mobile"] == 'on' ) ? true : false;
@@ -457,9 +516,6 @@ class Ays_Pb_Public {
                 $pb_bg_image_sizing_mobile = $pb_bg_image_sizing;
             }
 
-            // Enable Popup Background Gradient
-            $background_gradient = isset($options["enable_background_gradient"]) && $options["enable_background_gradient"] != '' ? stripslashes( esc_attr($options["enable_background_gradient"]) ) : 'off';
-
             $isset_background_gradient_mobile = false;
             if ( isset($options['enable_background_gradient_mobile']) ) {
                 $isset_background_gradient_mobile = true;
@@ -467,9 +523,6 @@ class Ays_Pb_Public {
             } else {
                 $background_gradient_mobile = $background_gradient;
             }
-            
-            // Popup Background Gradient Color 1
-            $background_gradient_color_1 = isset($options["background_gradient_color_1"]) && $options["background_gradient_color_1"] != '' ? stripslashes( esc_attr($options["background_gradient_color_1"]) ) : "#000000";
 
             // Popup Background Gradient Color 1 Mobile
             if ( isset($options["background_gradient_color_1_mobile"]) ) {
@@ -478,18 +531,12 @@ class Ays_Pb_Public {
                 $background_gradient_color_1_mobile = $background_gradient_color_1;
             }
 
-            // Popup Background Gradient Color 2
-            $background_gradient_color_2 = isset($options["background_gradient_color_2"]) && $options["background_gradient_color_2"] != '' ? stripslashes( esc_attr($options["background_gradient_color_2"]) ) : "#fff";
-
             // Popup Background Gradient Color 2 Mobile
             if ( isset($options["background_gradient_color_2_mobile"]) ) {
                 $background_gradient_color_2_mobile = $options["background_gradient_color_2_mobile"] != '' ? stripslashes( esc_attr($options["background_gradient_color_2_mobile"]) ) : "#000000";
             } else {
                 $background_gradient_color_2_mobile = $background_gradient_color_2;
             }
-
-            // Popup Background Gradient Direction
-            $pb_gradient_direction = isset($options["pb_gradient_direction"]) && $options["pb_gradient_direction"] != '' ? stripslashes( esc_attr($options["pb_gradient_direction"]) ) : 'horizontal';
 
             // Popup Background Gradient Color 2 Mobile
             if ( isset($options["pb_gradient_direction_mobile"]) ) {
@@ -512,20 +559,35 @@ class Ays_Pb_Public {
                     $pb_gradient_direction_mobile = "to bottom";
             }
 
-            $ays_pb_bg_image_mobile_styles = '';
+            $ays_pb_bg_image_styles_mobile = '';
+            $template_bg_gradient_styles_mobile = '';
             if ($ays_pb_bg_image_mobile !== '') {
-                $ays_pb_bg_image_mobile_styles = 'background-image: url('.$ays_pb_bg_image_mobile.') !important;
+                $ays_pb_bg_image_styles_mobile = 'background-image: url('.$ays_pb_bg_image_mobile.') !important;
                                     background-repeat: no-repeat !important;
                                     background-size: '.$pb_bg_image_sizing_mobile.' !important;
                                     background-position: '. $pb_bg_image_position_mobile .' !important;';
+            } elseif ($ays_pb_bg_image_mobile == '' && ($ays_pb_template == 'image' || $ays_pb_template == 'template')) {
+                if ($ays_pb_template == 'image') {
+                    $ays_pb_bg_image_styles_mobile = $ays_pb_bg_image_template_elefante_default;
+                } else {
+                    if ($background_gradient_mobile == 'on') {
+                        $template_bg_gradient_styles_mobile = "background-image: linear-gradient(".$pb_gradient_direction_mobile.",".$background_gradient_color_1_mobile.",".$background_gradient_color_2_mobile.");";
+                        $ays_pb_bgcolor = 'transparent';
+                    } else {
+                        $ays_pb_bg_image_styles_mobile = $ays_pb_bg_image_template_girl_scaled_default;
+                        if ($isset_background_gradient_mobile) {
+                            $template_bg_gradient_styles_mobile = "unset";
+                        }
+                    }
+                }
             } else {
                 if ($background_gradient_mobile == 'on') {
-                    $ays_pb_bg_image_mobile_styles = "background-image: linear-gradient(".$pb_gradient_direction_mobile.",".$background_gradient_color_1_mobile.",".$background_gradient_color_2_mobile.") !important;";
+                    $ays_pb_bg_image_styles_mobile = "background-image: linear-gradient(".$pb_gradient_direction_mobile.",".$background_gradient_color_1_mobile.",".$background_gradient_color_2_mobile.") !important;";
                 } else {
                     if ($isset_background_gradient_mobile) {
-                        $ays_pb_bg_image_mobile_styles = 'background-image: unset !important';
+                        $ays_pb_bg_image_styles_mobile = 'background-image: unset !important';
                     } else {
-                        $ays_pb_bg_image_mobile_styles = "";
+                        $ays_pb_bg_image_styles_mobile = "";
                     }
                 }
             }
@@ -533,7 +595,6 @@ class Ays_Pb_Public {
 			$ays_pb_header_bgcolor = stripslashes( esc_attr($popupbox["header_bgcolor"]) );
 			$ays_pb_animate_in = stripslashes( esc_attr($popupbox["animate_in"]) );
 			$ays_pb_animate_out = stripslashes( esc_attr($popupbox["animate_out"]) );
-			$ays_pb_template = ($popupbox["view_type"] == false || $popupbox["view_type"] == '') ? 'default' : stripslashes( esc_attr($popupbox["view_type"]) );
 			$ays_pb_custom_css = wp_unslash( stripslashes( htmlspecialchars_decode( $popupbox["custom_css"] ) ) );
 			$ays_pb_custom_html = $popupbox["custom_html"];
 			$ays_pb_delay = ($popupbox["delay"] == false) ? 0 : intval($popupbox["delay"]);
@@ -1541,6 +1602,16 @@ class Ays_Pb_Public {
                             color: " . $notification_button_1_text_hover_color . ";
                         }
 
+                        .ays-pb-modal_" . $id . ".ays-pb-bg-styles_".$id.":not(.ays_winxp_window, .ays_template_window),
+                        .ays_winxp_content.ays-pb-bg-styles_".$id.",
+                        footer.ays_template_footer.ays-pb-bg-styles_".$id." div.ays_bg_image_box {
+                            " . $ays_pb_bg_image_styles . "
+                        }
+
+                        .ays-pb-modal_" . $id . ".ays_template_window {
+                            " . $template_bg_gradient_styles ."
+                        }
+
                         .ays_cmd_window {
                             background-color: ".$ays_pb_bgcolor_rgba.";
                         }
@@ -1672,12 +1743,17 @@ class Ays_Pb_Public {
                                 background: ".$ays_pb_overlay_color_mobile.";
                             }
 
-                            .ays-pb-modal_" . $id . ".ays-pb-bg-styles-mobile_".$id.",
-                            footer.ays_template_footer.ays-pb-bg-styles-mobile_".$id." div.ays_bg_image_box {
-                                " . $ays_pb_bg_image_mobile_styles . "
+                            .ays-pb-modal_" . $id . ".ays-pb-bg-styles_".$id.":not(.ays_winxp_window, .ays_template_window),
+                            .ays_winxp_content.ays-pb-bg-styles_".$id.",
+                            footer.ays_template_footer.ays-pb-bg-styles_".$id." div.ays_bg_image_box {
+                                " . $ays_pb_bg_image_styles_mobile . "
                             }
 
-                            .ays-pb-bg-styles-mobile_" . $id . " {
+                            .ays-pb-modal_" . $id . ".ays_template_window {
+                                " . $template_bg_gradient_styles ."
+                            }
+
+                            .ays-pb-bg-styles_" . $id . " {
                                 background-color: " . $ays_pb_bgcolor_mobile . " !important;
                             }
 
@@ -1835,7 +1911,7 @@ class Ays_Pb_Public {
                                             $(document).find('.ays_pb_timer_".$id." span').text(newTime_pb_".$id.");
                                             if(newTime_pb_".$id." <= 0){
                                                 $(document).find('.ays-pb-modal-close_".$id."').trigger('click');
-                                                $(document).find('.ays-pb-modal_".$id."').attr('class', '".$modal_class." ays-pb-modal_".$id." ".$custom_class." ays-pb-border-mobile_".$id." '+ays_pb_effectOut_".$id.");
+                                                $(document).find('.ays-pb-modal_".$id."').attr('class', '".$modal_class." ays-pb-modal_".$id." ".$custom_class." ays-pb-bg-styles_" . $id . " ays-pb-border-mobile_".$id." '+ays_pb_effectOut_".$id.");
                                                 if(ays_pb_effectOut_".$id." != 'none'){
                                                     setTimeout(function(){ 
                                                         $(document).find('.ays-pb-modal_".$id."').css('display', 'none');
@@ -1865,7 +1941,7 @@ class Ays_Pb_Public {
                                                     pbViewsFlag_".$id." = false;
                                                 }
                                                 $(document).find('.av_pop_modals_".$id."').css('pointer-events', 'none');
-                                                $(document).find('.ays-pb-modal_".$id."').attr('class', '".$modal_class." ".$ays_pb_show_scrollbar_class." ays-pb-modal_".$id." ".$custom_class." ays-pb-border-mobile_".$id." '+ays_pb_effectOut_".$id.");
+                                                $(document).find('.ays-pb-modal_".$id."').attr('class', '".$modal_class." ".$ays_pb_show_scrollbar_class." ays-pb-modal_".$id." ".$custom_class." ays-pb-bg-styles_" . $id . " ays-pb-border-mobile_".$id." '+ays_pb_effectOut_".$id.");
                                                 $(this).parents('.ays-pb-modals').find('iframe').each(function(){
                                                     var key = /https:\/\/www.youtube.com/;
                                                     var src = $(this).attr('src');
@@ -1974,7 +2050,7 @@ class Ays_Pb_Public {
                                             pbViewsFlag_".$id." = false;
                                         }
                                         $(document).find('.av_pop_modals_".$id."').css('pointer-events', 'none');
-                                        $(document).find('.ays-pb-modal_".$id."').attr('class', '".$modal_class." ".$ays_pb_show_scrollbar_class."  ays-pb-modal_".$id." ".$custom_class." ays-pb-border-mobile_".$id." '+ays_pb_effectOut_".$id.");
+                                        $(document).find('.ays-pb-modal_".$id."').attr('class', '".$modal_class." ".$ays_pb_show_scrollbar_class."  ays-pb-modal_".$id." ".$custom_class." ays-pb-bg-styles_" . $id . " ays-pb-border-mobile_".$id." '+ays_pb_effectOut_".$id.");
                                         $(this).parents('.ays-pb-modals').find('iframe').each(function(){
                                             var key = /https:\/\/www.youtube.com/;
                                             var src = $(this).attr('src');
@@ -2124,7 +2200,7 @@ class Ays_Pb_Public {
                                                         pbViewsFlag_".$id." = false;
                                                     }
                                                     $(document).find('.av_pop_modals_".$id."').css('pointer-events', 'none');
-                                                    $(document).find('.ays-pb-modal_".$id."').attr('class', '".$modal_class." ".$ays_pb_show_scrollbar_class." ays-pb-modal_".$id."  ".$custom_class." ays-pb-border-mobile_".$id." '+ays_pb_effectOut_".$id.");
+                                                    $(document).find('.ays-pb-modal_".$id."').attr('class', '".$modal_class." ".$ays_pb_show_scrollbar_class." ays-pb-modal_".$id."  ".$custom_class." ays-pb-bg-styles_" . $id . " ays-pb-border-mobile_".$id." '+ays_pb_effectOut_".$id.");
                                                     $(this).parents('.ays-pb-modals').find('iframe').each(function(){
                                                         var key = /https:\/\/www.youtube.com/;
                                                         var src = $(this).attr('src');
@@ -2487,7 +2563,7 @@ class Ays_Pb_Public {
                                                             pbViewsFlag_".$id." = false;
                                                         }
                                                         $(document).find('.av_pop_modals_".$id."').css('pointer-events', 'none');
-                                                        $(document).find('.ays-pb-modal_".$id."').attr('class', '".$modal_class." ays-pb-modal_".$id." ".$ays_pb_show_scrollbar_class."  ".$custom_class." ays-pb-border-mobile_".$id." '+ays_pb_effectOut_".$id.");
+                                                        $(document).find('.ays-pb-modal_".$id."').attr('class', '".$modal_class." ays-pb-modal_".$id." ".$ays_pb_show_scrollbar_class."  ".$custom_class." ays-pb-bg-styles_" . $id . " ays-pb-border-mobile_".$id." '+ays_pb_effectOut_".$id.");
                                                         $(this).parents('.ays-pb-modals').find('iframe').each(function(){
                                                             var key = /https:\/\/www.youtube.com/;
                                                             var src = $(this).attr('src');
@@ -2655,7 +2731,7 @@ class Ays_Pb_Public {
                                                         pbViewsFlag_".$id." = false;
                                                     }
                                                     $(document).find('.av_pop_modals_".$id."').css('pointer-events', 'none');
-                                                    $(document).find('.ays-pb-modal_".$id."').attr('class', '".$modal_class." ".$ays_pb_show_scrollbar_class." ays-pb-modal_".$id." ".$custom_class." ays-pb-border-mobile_".$id." '+ays_pb_effectOut_".$id.");
+                                                    $(document).find('.ays-pb-modal_".$id."').attr('class', '".$modal_class." ".$ays_pb_show_scrollbar_class." ays-pb-modal_".$id." ".$custom_class." ays-pb-bg-styles_" . $id . " ays-pb-border-mobile_".$id." '+ays_pb_effectOut_".$id.");
                                                     $(this).parents('.ays-pb-modals').find('iframe').each(function(){
                                                         var key = /https:\/\/www.youtube.com/;
                                                         var src = $(this).attr('src');
