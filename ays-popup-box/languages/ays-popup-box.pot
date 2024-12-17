@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Popup box\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-12-09 17:00+0400\n"
+"POT-Creation-Date: 2024-12-13 17:01+0400\n"
 "PO-Revision-Date: 2018-07-13 11:50+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -220,7 +220,7 @@ msgstr ""
 msgid "If you love our plugin, please do big favor and rate us on"
 msgstr ""
 
-#: ../admin/class-ays-pb-admin.php:916
+#: ../admin/class-ays-pb-admin.php:916 ../includes/class-ays-pb-data.php:719
 msgid "Buy Now"
 msgstr ""
 
@@ -548,32 +548,32 @@ msgstr ""
 #: ../admin/partials/actions/ays-pb-admin-actions.php:878
 #: ../admin/partials/actions/ays-pb-admin-actions.php:890
 #: ../includes/class-ays-pb-data.php:468
-#: ../public/partials/ays-pb-public-templates.php:317
-#: ../public/partials/ays-pb-public-templates.php:323
-#: ../public/partials/ays-pb-public-templates.php:620
-#: ../public/partials/ays-pb-public-templates.php:626
-#: ../public/partials/ays-pb-public-templates.php:952
-#: ../public/partials/ays-pb-public-templates.php:958
-#: ../public/partials/ays-pb-public-templates.php:1306
-#: ../public/partials/ays-pb-public-templates.php:1312
-#: ../public/partials/ays-pb-public-templates.php:1642
-#: ../public/partials/ays-pb-public-templates.php:1648
-#: ../public/partials/ays-pb-public-templates.php:1973
-#: ../public/partials/ays-pb-public-templates.php:1979
-#: ../public/partials/ays-pb-public-templates.php:2283
-#: ../public/partials/ays-pb-public-templates.php:2289
-#: ../public/partials/ays-pb-public-templates.php:2606
-#: ../public/partials/ays-pb-public-templates.php:2612
+#: ../public/partials/ays-pb-public-templates.php:285
+#: ../public/partials/ays-pb-public-templates.php:291
+#: ../public/partials/ays-pb-public-templates.php:556
+#: ../public/partials/ays-pb-public-templates.php:562
+#: ../public/partials/ays-pb-public-templates.php:857
+#: ../public/partials/ays-pb-public-templates.php:863
+#: ../public/partials/ays-pb-public-templates.php:1180
+#: ../public/partials/ays-pb-public-templates.php:1186
+#: ../public/partials/ays-pb-public-templates.php:1485
+#: ../public/partials/ays-pb-public-templates.php:1491
+#: ../public/partials/ays-pb-public-templates.php:1784
+#: ../public/partials/ays-pb-public-templates.php:1790
+#: ../public/partials/ays-pb-public-templates.php:2059
+#: ../public/partials/ays-pb-public-templates.php:2065
+#: ../public/partials/ays-pb-public-templates.php:2352
+#: ../public/partials/ays-pb-public-templates.php:2358
+#: ../public/partials/ays-pb-public-templates.php:2642
+#: ../public/partials/ays-pb-public-templates.php:2648
 #: ../public/partials/ays-pb-public-templates.php:2933
 #: ../public/partials/ays-pb-public-templates.php:2939
-#: ../public/partials/ays-pb-public-templates.php:3259
-#: ../public/partials/ays-pb-public-templates.php:3265
-#: ../public/partials/ays-pb-public-templates.php:3723
-#: ../public/partials/ays-pb-public-templates.php:3729
-#: ../public/partials/ays-pb-public-templates.php:3964
-#: ../public/partials/ays-pb-public-templates.php:3970
-#: ../public/partials/ays-pb-public-templates.php:4123
-#: ../public/partials/ays-pb-public-templates.php:4129
+#: ../public/partials/ays-pb-public-templates.php:3341
+#: ../public/partials/ays-pb-public-templates.php:3347
+#: ../public/partials/ays-pb-public-templates.php:3550
+#: ../public/partials/ays-pb-public-templates.php:3556
+#: ../public/partials/ays-pb-public-templates.php:3677
+#: ../public/partials/ays-pb-public-templates.php:3683
 msgid "Dismiss ad"
 msgstr ""
 
@@ -2599,10 +2599,10 @@ msgid "Here can be custom HTML or shortcode"
 msgstr ""
 
 #: ../admin/partials/actions/ays-pb-admin-actions.php:7013
-#: ../public/partials/ays-pb-public-templates.php:4414
-#: ../public/partials/ays-pb-public-templates.php:4416
-#: ../public/partials/ays-pb-public-templates.php:4418
-#: ../public/partials/ays-pb-public-templates.php:4420
+#: ../public/partials/ays-pb-public-templates.php:3968
+#: ../public/partials/ays-pb-public-templates.php:3970
+#: ../public/partials/ays-pb-public-templates.php:3972
+#: ../public/partials/ays-pb-public-templates.php:3974
 msgid "This will close in "
 msgstr ""
 
@@ -3800,7 +3800,7 @@ msgid "Hurry up! <a href='https://ays-pro.com/wordpress/popup-box' target='_blan
 msgstr ""
 
 #: ../includes/class-ays-pb-data.php:659
-msgid "Limited Time 20% SALE on <span><a href='https://ays-pro.com/wordpress/popup-box?utm_source=dashboard&utm_medium=popup-free&utm_campaign=sale-banner' target='_blank' style='color:#ffffff; text-decoration: underline;'>Popup Box</a></span>"
+msgid "Limited Time 30% SALE on <span><a href='https://ays-pro.com/wordpress/popup-box?utm_source=dashboard&utm_medium=popup-free&utm_campaign=sale-banner' target='_blank' style='color:#ffffff; text-decoration: underline;'>Popup Box</a></span>"
 msgstr ""
 
 #: ../includes/class-ays-pb-data.php:667
@@ -3809,10 +3809,6 @@ msgstr ""
 
 #: ../includes/class-ays-pb-data.php:695 ../includes/class-ays-pb-data.php:781
 msgid "Offer ends in:"
-msgstr ""
-
-#: ../includes/class-ays-pb-data.php:719
-msgid "Learn More"
 msgstr ""
 
 #: ../includes/class-ays-pb-integrations.php:137
@@ -4083,7 +4079,7 @@ msgstr ""
 
 #: ../includes/lists/class-ays-pb-list-table.php:309
 #: ../includes/lists/class-ays-pb-popup-categories-list-table.php:258
-#: ../public/partials/ays-pb-public-templates.php:1340
+#: ../public/partials/ays-pb-public-templates.php:1214
 msgid "Edit"
 msgstr ""
 
@@ -4164,34 +4160,34 @@ msgstr ""
 msgid "Popups Count"
 msgstr ""
 
-#: ../public/partials/ays-pb-public-templates.php:1339
+#: ../public/partials/ays-pb-public-templates.php:1213
 msgid "File"
 msgstr ""
 
-#: ../public/partials/ays-pb-public-templates.php:1341
+#: ../public/partials/ays-pb-public-templates.php:1215
 msgid "Go"
 msgstr ""
 
-#: ../public/partials/ays-pb-public-templates.php:1342
+#: ../public/partials/ays-pb-public-templates.php:1216
 msgid "Bookmarks"
 msgstr ""
 
-#: ../public/partials/ays-pb-public-templates.php:1343
+#: ../public/partials/ays-pb-public-templates.php:1217
 msgid "Tools"
 msgstr ""
 
-#: ../public/partials/ays-pb-public-templates.php:1344
+#: ../public/partials/ays-pb-public-templates.php:1218
 msgid "Help"
 msgstr ""
 
-#: ../public/partials/ays-pb-public-templates.php:4330
+#: ../public/partials/ays-pb-public-templates.php:3884
 msgid "Popup link"
 msgstr ""
 
-#: ../public/partials/ays-pb-public-templates.php:4414
-#: ../public/partials/ays-pb-public-templates.php:4416
-#: ../public/partials/ays-pb-public-templates.php:4418
-#: ../public/partials/ays-pb-public-templates.php:4420
+#: ../public/partials/ays-pb-public-templates.php:3968
+#: ../public/partials/ays-pb-public-templates.php:3970
+#: ../public/partials/ays-pb-public-templates.php:3972
+#: ../public/partials/ays-pb-public-templates.php:3974
 msgid " seconds"
 msgstr ""
 

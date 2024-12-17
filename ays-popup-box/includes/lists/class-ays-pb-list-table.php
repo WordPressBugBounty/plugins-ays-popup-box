@@ -1554,6 +1554,48 @@ class Ays_PopupBox_List_Table extends WP_List_Table {
         // Content padding | Measurement unit
         $popup_padding_by_percentage_px = (isset($_POST['ays_popup_padding_by_percentage_px']) && $_POST['ays_popup_padding_by_percentage_px'] != '') ? stripslashes( sanitize_text_field($_POST['ays_popup_padding_by_percentage_px']) ) : 'pixels';
 
+        // Text color
+		$textcolor = (isset($_POST['ays-pb']['ays_pb_textcolor']) && $_POST['ays-pb']['ays_pb_textcolor'] != '') ? wp_unslash( sanitize_text_field($_POST['ays-pb']['ays_pb_textcolor']) ) : '#000000';
+
+        // Font family
+        $pb_font_family = (isset($_POST['ays_pb_font_family']) && $_POST['ays_pb_font_family'] != '') ? stripslashes( sanitize_text_field($_POST['ays_pb_font_family']) ) : 'inherit';
+
+        // Description font size | On desktop
+        $pb_font_size = (isset($_POST['ays_pb_font_size']) && $_POST['ays_pb_font_size'] != '') ? absint($_POST['ays_pb_font_size']) : 16;
+
+        // Description font size | On mobile
+        $pb_font_size_for_mobile = (isset($_POST['ays_pb_font_size_for_mobile']) && $_POST['ays_pb_font_size_for_mobile'] != '') ? absint($_POST['ays_pb_font_size_for_mobile']) : 16;
+
+        // Title text shadow | On desktop
+        $enable_pb_title_text_shadow = (isset($_POST['ays_enable_title_text_shadow']) && $_POST['ays_enable_title_text_shadow'] != '') ? 'on' : 'off';
+
+        // Title text shadow | On desktop | Color
+        $pb_title_text_shadow = (isset($_POST['ays_title_text_shadow_color']) && $_POST['ays_title_text_shadow_color'] != '') ? sanitize_text_field($_POST['ays_title_text_shadow_color']) : 'rgba(255,255,255,0)';
+
+        // Title text shadow | On desktop | X
+        $pb_title_text_shadow_x_offset = (isset($_POST['ays_pb_title_text_shadow_x_offset']) && $_POST['ays_pb_title_text_shadow_x_offset'] != '') ? intval($_POST['ays_pb_title_text_shadow_x_offset']) : 2;
+
+        // Title text shadow | On desktop | Y
+        $pb_title_text_shadow_y_offset = (isset($_POST['ays_pb_title_text_shadow_y_offset']) && $_POST['ays_pb_title_text_shadow_y_offset'] != '') ? intval($_POST['ays_pb_title_text_shadow_y_offset']) : 2;
+
+        // Title text shadow | On desktop | Z
+        $pb_title_text_shadow_z_offset = (isset($_POST['ays_pb_title_text_shadow_z_offset']) && $_POST['ays_pb_title_text_shadow_z_offset'] != '') ? intval($_POST['ays_pb_title_text_shadow_z_offset']) : 0;
+
+        // Title text shadow | On mobile
+        $enable_pb_title_text_shadow_mobile = (isset($_POST['ays_enable_title_text_shadow_mobile']) && $_POST['ays_enable_title_text_shadow_mobile'] != '') ? 'on' : 'off';
+
+        // Title text shadow | On mobile | Color
+        $pb_title_text_shadow_mobile = (isset($_POST['ays_title_text_shadow_color_mobile']) && $_POST['ays_title_text_shadow_color_mobile'] != '') ? sanitize_text_field($_POST['ays_title_text_shadow_color_mobile']) : 'rgba(255,255,255,0)';
+        
+        // Title text shadow | On mobile | X
+        $pb_title_text_shadow_x_offset_mobile = (isset($_POST['ays_pb_title_text_shadow_x_offset_mobile']) && $_POST['ays_pb_title_text_shadow_x_offset_mobile'] != '') ? intval($_POST['ays_pb_title_text_shadow_x_offset_mobile']) : 2;
+
+        // Title text shadow | On mobile | Y
+        $pb_title_text_shadow_y_offset_mobile = (isset($_POST['ays_pb_title_text_shadow_y_offset_mobile']) && $_POST['ays_pb_title_text_shadow_y_offset_mobile'] != '') ? intval($_POST['ays_pb_title_text_shadow_y_offset_mobile']) : 2;
+
+        // Title text shadow | On mobile | Z
+        $pb_title_text_shadow_z_offset_mobile = (isset($_POST['ays_pb_title_text_shadow_z_offset_mobile']) && $_POST['ays_pb_title_text_shadow_z_offset_mobile'] != '') ? intval($_POST['ays_pb_title_text_shadow_z_offset_mobile']) : 0;
+        
         //Show once per session
 		$cookie = ( isset( $_POST['ays-pb']["cookie"] ) && $_POST['ays-pb']["cookie"] != '' ) ? absint( intval( $_POST['ays-pb']["cookie"] ) ) : 0;
 
@@ -1565,9 +1607,6 @@ class Ays_PopupBox_List_Table extends WP_List_Table {
 
         //Background Color Mobile
         $bgcolor_mobile = ( isset($_POST['ays_pb_bgcolor_mobile']) && $_POST['ays_pb_bgcolor_mobile'] != '' ) ? wp_unslash( sanitize_text_field($_POST['ays_pb_bgcolor_mobile']) ) : '#FFFFFF';
-
-        //Text Color
-		$textcolor = ( isset( $_POST['ays-pb']["ays_pb_textcolor"] ) && $_POST['ays-pb']["ays_pb_textcolor"] != '' ) ? wp_unslash(sanitize_text_field( $_POST['ays-pb']["ays_pb_textcolor"] )) : '#000000';
 
         //Border Size
         $default_bordersize = $view_type == 'notification' ? 0 : 1;
@@ -1698,9 +1737,6 @@ class Ays_PopupBox_List_Table extends WP_List_Table {
         //Show PopupBox only once
         $show_only_once = (isset($_POST['ays_pb_show_only_once']) && $_POST['ays_pb_show_only_once'] == 'on') ? 'on' : 'off';
 
-        //font-family
-        $pb_font_family = (isset($_POST['ays_pb_font_family']) && $_POST['ays_pb_font_family'] != '') ? stripslashes( sanitize_text_field($_POST['ays_pb_font_family']) ) : 'inherit';
-
         //close button_size
         $close_button_size = (isset($_POST['ays_pb_close_button_size']) && $_POST['ays_pb_close_button_size'] != '' ) ? abs(sanitize_text_field($_POST['ays_pb_close_button_size'])) : '';
        
@@ -1715,41 +1751,6 @@ class Ays_PopupBox_List_Table extends WP_List_Table {
 
         //Border style mobile
         $border_style_mobile = ( isset($_POST['ays_pb_border_style_mobile']) && $_POST['ays_pb_border_style_mobile'] !== '' ) ? stripslashes( sanitize_text_field($_POST['ays_pb_border_style_mobile']) ) : '';
-
-        //Font size
-        $pb_font_size = (isset($_POST['ays_pb_font_size']) && $_POST['ays_pb_font_size'] != '') ? absint($_POST['ays_pb_font_size']) : 16;
-        //Font size
-        $pb_font_size_for_mobile = (isset($_POST['ays_pb_font_size_for_mobile']) && $_POST['ays_pb_font_size_for_mobile'] != '') ? absint($_POST['ays_pb_font_size_for_mobile']) : 16;
-
-        //Title Text Shadow
-        $enable_pb_title_text_shadow = (isset($_POST['ays_enable_title_text_shadow']) && $_POST['ays_enable_title_text_shadow'] != '') ? 'on' : 'off';
-
-        //Title Text Shadow Color
-        $pb_title_text_shadow = (isset($_POST['ays_title_text_shadow_color']) && $_POST['ays_title_text_shadow_color'] != '') ? sanitize_text_field($_POST['ays_title_text_shadow_color']) : 'rgba(255,255,255,0)';
-        
-        //Title Text Shadow X Offset
-        $pb_title_text_shadow_x_offset = (isset($_POST['ays_pb_title_text_shadow_x_offset']) && $_POST['ays_pb_title_text_shadow_x_offset'] != '') ? intval( $_POST['ays_pb_title_text_shadow_x_offset'] )  : 2;
-
-        //Title Text Shadow Y Offset
-        $pb_title_text_shadow_y_offset = (isset($_POST['ays_pb_title_text_shadow_y_offset']) && $_POST['ays_pb_title_text_shadow_y_offset'] != '') ? intval( $_POST['ays_pb_title_text_shadow_y_offset'] ) : 2;
-
-        //Title Text Shadow Z Offset
-        $pb_title_text_shadow_z_offset = (isset($_POST['ays_pb_title_text_shadow_z_offset']) && $_POST['ays_pb_title_text_shadow_z_offset'] != '') ? intval( $_POST['ays_pb_title_text_shadow_z_offset'] ) : 0;
-
-        //Title Text Shadow Mobile
-        $enable_pb_title_text_shadow_mobile = (isset($_POST['ays_enable_title_text_shadow_mobile']) && $_POST['ays_enable_title_text_shadow_mobile'] != '') ? 'on' : 'off';
-
-        //Title Text Shadow Color Mobile
-        $pb_title_text_shadow_mobile = (isset($_POST['ays_title_text_shadow_color_mobile']) && $_POST['ays_title_text_shadow_color_mobile'] != '') ? sanitize_text_field($_POST['ays_title_text_shadow_color_mobile']) : 'rgba(255,255,255,0)';
-        
-        //Title Text Shadow X Offset Mobile
-        $pb_title_text_shadow_x_offset_mobile = (isset($_POST['ays_pb_title_text_shadow_x_offset_mobile']) && $_POST['ays_pb_title_text_shadow_x_offset_mobile'] != '') ? intval( $_POST['ays_pb_title_text_shadow_x_offset_mobile'] )  : 2;
-
-        //Title Text Shadow Y Offset Mobile
-        $pb_title_text_shadow_y_offset_mobile = (isset($_POST['ays_pb_title_text_shadow_y_offset_mobile']) && $_POST['ays_pb_title_text_shadow_y_offset_mobile'] != '') ? intval( $_POST['ays_pb_title_text_shadow_y_offset_mobile'] ) : 2;
-
-        //Title Text Shadow Z Offset Mobile
-        $pb_title_text_shadow_z_offset_mobile = (isset($_POST['ays_pb_title_text_shadow_z_offset_mobile']) && $_POST['ays_pb_title_text_shadow_z_offset_mobile'] != '') ? intval( $_POST['ays_pb_title_text_shadow_z_offset_mobile'] ) : 0;
 
        // --------- Check & get post type-----------         
             $post_type_for_allfeld = array();

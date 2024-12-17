@@ -689,6 +689,10 @@
         $(document).on('click', '.ays-pb-accordion-arrow-box', function() {
             toggleOptionsAccordion($(this));
         });
+
+        $(document).on('click', '.ays-pb-accordion-header', function() {
+            toggleOptionsAccordion($(this).find('.ays-pb-accordion-arrow-box'));
+        });
         // Options accordion effect end
 
         // Toggle mobile settings start

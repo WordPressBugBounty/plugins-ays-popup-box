@@ -1755,6 +1755,7 @@ span.ays-pb-small-hint-text.ays-pb-show-only-for-author-hint-text {
     justify-content: flex-start;
     align-items: center;
     padding-top: 30px;
+    cursor: pointer;
 }
 
 .ays-pb-accordion-header p.ays-subtitle {
