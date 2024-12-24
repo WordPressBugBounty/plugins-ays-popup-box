@@ -166,6 +166,7 @@ $options = array(
     'notification_logo_max_height' => '',
     'notification_logo_min_height' => '',
     'notification_logo_image_sizing' => 'cover',
+    'notification_logo_image_sizing' => 'rectangle',
     'notification_main_content' => 'Write the custom notification banner text here.',
     'notification_button_1_text' => 'Click!',
     'notification_button_1_hover_text' => 'Click!',
@@ -567,6 +568,9 @@ $notification_logo_min_height = (isset($options['notification_logo_min_height'])
 
 // Notification type | Logo image sizing
 $notification_logo_image_sizing = (isset($options['notification_logo_image_sizing']) && $options['notification_logo_image_sizing'] != '') ? stripslashes( esc_attr($options['notification_logo_image_sizing']) ) : 'cover';
+
+// Notification type | Logo image shape
+$notification_logo_image_shape = (isset($options['notification_logo_image_shape']) && $options['notification_logo_image_shape'] != '') ? stripslashes( esc_attr($options['notification_logo_image_shape']) ) : 'rectangle';
 
 // Notification type | Main content
 $notification_main_content = (isset($options['notification_main_content']) && $options['notification_main_content'] != '') ? stripslashes($options['notification_main_content']) : 'Write the custom notification banner text here.';
@@ -2212,6 +2216,23 @@ $ays_users_roles = $wp_roles->roles;
                                                 <?php
                                                     }
                                                 ?>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="form-group row">
+                                        <div class="col-sm-3">
+                                            <label for="ays_pb_notification_logo_image_shape">
+                                                <?php  echo __('Logo Image Shape', "ays-popup-box" ) ?>
+                                                <a class="ays_help" data-toggle="tooltip" title="<?php echo __('Select the desired shape for the logo image', "ays-popup-box"); ?>" >
+                                                    <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                                </a>
+                                            </label>
+                                        </div>
+                                        <div class="col-sm-9">
+                                            <select name="ays_pb_notification_logo_image_shape" id="ays_pb_notification_logo_image_shape" class="ays_pb_aysDropdown">
+                                                <option <?php echo 'rectangle' == $notification_logo_image_shape ? 'selected' : ''; ?> value="rectangle"><?php echo __('Rectangle'); ?></option>
+                                                <option <?php echo 'circle' == $notification_logo_image_shape ? 'selected' : ''; ?> value="circle"><?php echo __('Circle'); ?></option>
                                             </select>
                                         </div>
                                     </div>

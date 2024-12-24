@@ -1149,6 +1149,9 @@ class Ays_PopupBox_List_Table extends WP_List_Table {
         // Notification type | Logo image sizing
         $notification_logo_image_sizing = (isset($_POST['ays_pb_notification_logo_image_sizing']) && $_POST['ays_pb_notification_logo_image_sizing'] != '') ? stripslashes( sanitize_text_field($_POST['ays_pb_notification_logo_image_sizing']) ) : 'cover';
 
+        // Notification type | Logo image shape
+        $notification_logo_image_shape = (isset($_POST['ays_pb_notification_logo_image_shape']) && $_POST['ays_pb_notification_logo_image_shape'] != '') ? stripslashes( sanitize_text_field($_POST['ays_pb_notification_logo_image_shape']) ) : 'rectangle';
+
         // Notification type | Main content
         $notification_main_content = (isset($_POST['ays_pb_notification_main_content']) && $_POST['ays_pb_notification_main_content'] != '') ? wp_kses_post($_POST['ays_pb_notification_main_content']) : '';
 
@@ -1945,6 +1948,7 @@ class Ays_PopupBox_List_Table extends WP_List_Table {
             'notification_logo_max_height' => $notification_logo_max_height,
             'notification_logo_min_height' => $notification_logo_min_height,
             'notification_logo_image_sizing' => $notification_logo_image_sizing,
+            'notification_logo_image_shape' => $notification_logo_image_shape,
             'notification_main_content' => $notification_main_content,
             'notification_button_1_text' => $notification_button_1_text,
             'notification_button_1_hover_text' => $notification_button_1_hover_text,

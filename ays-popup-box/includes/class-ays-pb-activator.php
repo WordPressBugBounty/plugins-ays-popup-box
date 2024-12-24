@@ -367,6 +367,7 @@ class Ays_Pb_Activator {
             'notification_logo_max_height' => '',
             'notification_logo_min_height' => '',
             'notification_logo_image_sizing' => 'cover',
+            'notification_logo_image_shape' => 'rectangle',
             'notification_main_content' => '',
             'notification_button_1_text' => 'Click!',
             'notification_button_1_hover_text' => '',
