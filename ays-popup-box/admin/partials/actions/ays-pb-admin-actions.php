@@ -261,6 +261,7 @@ $options = array(
     'pb_min_height' => '',
     'enable_pb_fullscreen' => 'off',
     'popup_content_padding' => 20,
+    'popup_content_padding_mobile' => 20,
     'popup_padding_by_percentage_px' => 'pixels',
     'pb_font_family' => 'inherit',
     'pb_font_size' => 13,
@@ -995,9 +996,15 @@ $ays_enable_pb_fullscreen = (isset($options['enable_pb_fullscreen']) && $options
 // Content padding
 $default_padding_value = ($view_type == 'minimal' || $modal_content == 'image_type') ? 0 : 20;
 $padding = isset($options['popup_content_padding']) && ($options['popup_content_padding']) >= 0 ? abs( intval($options['popup_content_padding']) ) : $default_padding_value;
+$options['popup_content_padding_mobile'] = isset($options['popup_content_padding_mobile']) ? $options['popup_content_padding_mobile'] : $padding;
+$padding_mobile = isset($options['popup_content_padding_mobile']) && ($options['popup_content_padding_mobile']) >= 0 ? abs( intval($options['popup_content_padding_mobile']) ) : $default_padding_value;
+$enable_padding_mobile = (isset($options['enable_padding_mobile']) && $options['enable_padding_mobile'] == 'on') ? true : false;
 
 // Content padding | Measurement unit
 $popup_padding_by_percentage_px = (isset($options['popup_padding_by_percentage_px']) && $options['popup_padding_by_percentage_px'] != '') ? esc_attr( stripslashes($options['popup_padding_by_percentage_px']) ) : 'pixels';
+// Content padding | Measurement unit mobile
+$options['popup_padding_by_percentage_px_mobile'] = isset($options['popup_padding_by_percentage_px_mobile']) ? $options['popup_padding_by_percentage_px_mobile'] : $popup_padding_by_percentage_px; 
+$popup_padding_by_percentage_px_mobile = (isset($options['popup_padding_by_percentage_px_mobile']) && $options['popup_padding_by_percentage_px_mobile'] != '') ? esc_attr( stripslashes($options['popup_padding_by_percentage_px_mobile']) ) : 'pixels';
 
 // Text color
 $textcolor = (isset($popupbox['textcolor']) && $popupbox['textcolor'] != '') ? esc_attr( stripslashes($popupbox['textcolor']) ) : '#000000';
@@ -5150,23 +5157,56 @@ $ays_users_roles = $wp_roles->roles;
                                             </a>
                                         </label>
                                     </div>
-                                    <div class="col-sm-6 ays-pb-padding-content ays_divider_left ays-pb-padding-content-default">
-                                        <div style="max-width: 225px; margin-top: 2px;">
-                                            <input type="number" id="ays_popup_content_padding"  class="ays-pb-text-input ays-pb-text-input-short ays_pb_padding"  name="ays_popup_content_padding" value="<?php echo $padding; ?>"/>
-                                            <p style="font-weight: 600;" class="ays-pb-small-hint-text">
-                                                <?php echo __("Default value = ", "ays-popup-box");?>
-                                                <span class="ays-pb-padding-default-value" style="font-weight: 800;"><?php echo $default_padding_value; ?></span>
-                                            </p>
-                                        </div>
-                                        <div class="ays_pb_padding_by_percentage_px_box">
-                                            <select name="ays_popup_padding_by_percentage_px" id="ays_popup_padding_by_percentage_px" class="ays_pb_aysDropdown ays-pb-percent">
-                                                <option value="pixels" <?php echo $popup_padding_by_percentage_px == "pixels" ? "selected" : ""; ?>>
-                                                    <?php echo __( "px", "ays-popup-box" ); ?>
-                                                </option>
-                                                <option value="percentage" <?php echo $popup_padding_by_percentage_px == "percentage" ? "selected" : ""; ?>>
-                                                    <?php echo __( "%", "ays-popup-box" ); ?>
-                                                </option>
-                                            </select>
+                                    <div class="col-sm-8 ays-pb-padding-content ays_divider_left ays-pb-padding-content-default">
+                                        <div class="ays_toggle_parent">
+                                            <div>
+                                                <div class="ays_pb_current_device_name ays_pb_current_device_name_pc show ays_toggle_target" style="<?php echo ($enable_padding_mobile) ? '' : 'display: none;' ?> text-align: center; margin-bottom: 10px; max-width: 225px;"><?php echo __('Desktop', "ays-popup-box") ?></div>
+                                                <div style="display: flex; gap: 10px">
+                                                    <div style="max-width: 225px; margin-top: 2px;">
+                                                        <input type="number" id="ays_popup_content_padding"  class="ays-pb-text-input ays-pb-text-input-short ays_pb_padding"  name="ays_popup_content_padding" value="<?php echo $padding; ?>"/>
+                                                        <p style="font-weight: 600;" class="ays-pb-small-hint-text">
+                                                            <?php echo __("Default value = ", "ays-popup-box");?>
+                                                            <span class="ays-pb-padding-default-value" style="font-weight: 800;"><?php echo $default_padding_value; ?></span>
+                                                        </p>
+                                                    </div>
+                                                    <div class="ays_pb_padding_by_percentage_px_box">
+                                                        <select name="ays_popup_padding_by_percentage_px" id="ays_popup_padding_by_percentage_px" class="ays_pb_aysDropdown ays-pb-percent">
+                                                            <option value="pixels" <?php echo $popup_padding_by_percentage_px == "pixels" ? "selected" : ""; ?>>
+                                                                <?php echo __( "px", "ays-popup-box" ); ?>
+                                                            </option>
+                                                            <option value="percentage" <?php echo $popup_padding_by_percentage_px == "percentage" ? "selected" : ""; ?>>
+                                                                <?php echo __( "%", "ays-popup-box" ); ?>
+                                                            </option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="ays_toggle_target ays_pb_padding_mobile_container" style=" <?php echo ( $enable_padding_mobile ) ? '' : 'display:none'; ?>">
+                                                <div class="ays_pb_current_device_name show" style="text-align: center; margin-bottom: 10px; max-width: 225px;"><?php echo __('Mobile', "ays-popup-box") ?></div>
+                                                <div style="display: flex; gap: 10px">
+                                                    <div style="max-width: 225px; margin-top: 2px;">
+                                                        <input type="number" id="ays_popup_content_padding_mobile"  class="ays-pb-text-input ays-pb-text-input-short ays_pb_padding"  name="ays_popup_content_padding_mobile" value="<?php echo $padding_mobile; ?>"/>
+                                                        <p style="font-weight: 600;" class="ays-pb-small-hint-text">
+                                                            <?php echo __("Default value = ", "ays-popup-box");?>
+                                                            <span class="ays-pb-padding-default-value" style="font-weight: 800;"><?php echo $default_padding_value; ?></span>
+                                                        </p>
+                                                    </div>
+                                                    <div class="ays_pb_padding_by_percentage_px_box">
+                                                        <select name="ays_popup_padding_by_percentage_px_mobile" id="ays_popup_padding_by_percentage_px_mobile" class="ays_pb_aysDropdown ays-pb-percent">
+                                                            <option value="pixels" <?php echo $popup_padding_by_percentage_px_mobile == "pixels" ? "selected" : ""; ?>>
+                                                                <?php echo __( "px", "ays-popup-box" ); ?>
+                                                            </option>
+                                                            <option value="percentage" <?php echo $popup_padding_by_percentage_px_mobile == "percentage" ? "selected" : ""; ?>>
+                                                                <?php echo __( "%", "ays-popup-box" ); ?>
+                                                            </option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="ays_pb_mobile_settings_container">
+                                                <input type="checkbox" class="ays_toggle_checkbox ays-pb-onoffswitch-checkbox" id="ays_pb_enable_padding_mobile" name="ays_pb_enable_padding_mobile" <?php echo $enable_padding_mobile ? 'checked' : '' ?>>
+                                                <label for="ays_pb_enable_padding_mobile" class="<?php echo $enable_padding_mobile ? 'active' : '' ?>" ><?php echo __('Use a different setting for Mobile', "ays-popup-box") ?></label>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>

@@ -1155,6 +1155,24 @@ class Ays_Pb_Public {
                 $mobile_height = $popupbox["height"];
             }
 
+            $ays_pb_padding_mobile = (isset($options['popup_content_padding_mobile']) && $options['popup_content_padding_mobile'] != '') ? $options['popup_content_padding_mobile'] : '20';
+            $enable_padding_mobile = (isset($options['enable_padding_mobile']) && $options['enable_padding_mobile'] == 'on') ? true : false;
+            //popup padding percentage
+            $popup_padding_by_percentage_px_mobile = (isset($options['popup_padding_by_percentage_px_mobile']) && $options['popup_padding_by_percentage_px_mobile'] != '') ? stripslashes( esc_attr($options['popup_padding_by_percentage_px_mobile']) ) : 'pixels';
+            if(isset($ays_pb_padding_mobile) && $ays_pb_padding_mobile != ''){
+                if ($popup_padding_by_percentage_px_mobile && $popup_padding_by_percentage_px_mobile == 'percentage') {
+                    if (absint(intval($ays_pb_padding_mobile)) > 100 ) {
+                        $pb_padding_mobile = '100%';
+                    }else{
+                        $pb_padding_mobile = $ays_pb_padding_mobile . '%';
+                    }
+                }else{
+                    $pb_padding_mobile = $ays_pb_padding_mobile . 'px';
+                }
+            }else{
+                $pb_padding_mobile = '20px';
+            }
+
             //Overlay Opacity 
             $overlay_opacity = ($popupbox['onoffoverlay'] == 'On' && isset($popupbox['overlay_opacity'])) ? esc_attr($popupbox['overlay_opacity']) : 0.5;
             $enable_overlay_text_mobile = isset($options['enable_overlay_text_mobile']) && $options['enable_overlay_text_mobile'] == 'on' ? 'true' : 'false';
@@ -1717,7 +1735,13 @@ class Ays_Pb_Public {
                             visibility: hidden;
                         }
 
-                        @media screen and (max-width: 768px){
+                        @media screen and (max-width: 768px){";
+                            if($enable_padding_mobile){
+                                $popupbox_view .= " .ays_content_box{
+                                    padding: ".$pb_padding_mobile." !important;
+                                }";
+                            }
+                            $popupbox_view .= "
                             .ays-pb-modal_".$id."{
                                 width: $mobile_width !important;
                                 max-width: $mobile_max_width !important;

@@ -497,6 +497,7 @@
                     $(document).find('#ays_pb_hide_timer_popup').hide(250);
 
                     $(document).find('input#ays_popup_content_padding').val(0);
+                    $(document).find('input#ays_popup_content_padding_mobile').val(0);
                     $(document).find('span.ays-pb-padding-default-value').text(0);
 
                     $(document).find('input#image_type_img_theme_view_type').prop('checked',true);
@@ -1426,6 +1427,7 @@
             $form.find('input#ays_pb_enable_animate_out_mobile').prop('checked', defaultValues.enableCloseAnimMobile).change();
             $form.find('select#ays-pb-animate_out_mobile').parent('div.ays_pb_aysDropdown').find('div.text').text(defaultValues.closeAnimTextMobile).change();
             $form.find('div.ays_pb_animate_out_mobile_container').css('display', 'none').change();
+            $form.find('div.ays_pb_padding_mobile_container').css('display', 'none').change();
 
             $form.find('select#ays-pb-animate_in').val(defaultValues.openAnim).change();
             $form.find('select#ays-pb-animate_in').parent('div.ays_pb_aysDropdown').find('div.text').text(defaultValues.openAnimText).change();

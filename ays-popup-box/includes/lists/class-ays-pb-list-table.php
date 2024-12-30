@@ -1553,9 +1553,14 @@ class Ays_PopupBox_List_Table extends WP_List_Table {
         // Content padding
         $default_padding = ($view_type == "minimal" || $modal_content == 'image_type') ? 0 : 20;
         $padding = (isset($_POST['ays_popup_content_padding']) && $_POST['ays_popup_content_padding'] != '') ? absint( intval($_POST['ays_popup_content_padding']) ) : $default_padding;
+        $padding_mobile = (isset($_POST['ays_popup_content_padding_mobile']) && $_POST['ays_popup_content_padding_mobile'] != '') ? absint( intval($_POST['ays_popup_content_padding_mobile']) ) : $default_padding;
 
         // Content padding | Measurement unit
         $popup_padding_by_percentage_px = (isset($_POST['ays_popup_padding_by_percentage_px']) && $_POST['ays_popup_padding_by_percentage_px'] != '') ? stripslashes( sanitize_text_field($_POST['ays_popup_padding_by_percentage_px']) ) : 'pixels';
+        // Content padding | Measurement unit mobile
+        $popup_padding_by_percentage_px_mobile = (isset($_POST['ays_popup_padding_by_percentage_px_mobile']) && $_POST['ays_popup_padding_by_percentage_px_mobile'] != '') ? stripslashes( sanitize_text_field($_POST['ays_popup_padding_by_percentage_px_mobile']) ) : 'pixels';
+        //Enable Padding mobile
+        $enable_padding_mobile = ( isset($_POST['ays_pb_enable_padding_mobile']) && $_POST['ays_pb_enable_padding_mobile'] == 'on' ) ? 'on' : 'off';
 
         // Text color
 		$textcolor = (isset($_POST['ays-pb']['ays_pb_textcolor']) && $_POST['ays-pb']['ays_pb_textcolor'] != '') ? wp_unslash( sanitize_text_field($_POST['ays-pb']['ays_pb_textcolor']) ) : '#000000';
@@ -1890,7 +1895,10 @@ class Ays_PopupBox_List_Table extends WP_List_Table {
             'popup_width_by_percentage_px' => $popup_width_by_percentage_px,
             'popup_width_by_percentage_px_mobile' => $popup_width_by_percentage_px_mobile,
             'popup_content_padding' => $padding,
+            'popup_content_padding_mobile' => $padding_mobile,
             'popup_padding_by_percentage_px' => $popup_padding_by_percentage_px,
+            'popup_padding_by_percentage_px_mobile' => $popup_padding_by_percentage_px_mobile,
+            'enable_padding_mobile' => $enable_padding_mobile,
             'pb_font_family' => $pb_font_family,
             'close_popup_overlay' => $close_popup_overlay,
             'close_popup_overlay_mobile' => $close_popup_overlay_mobile,

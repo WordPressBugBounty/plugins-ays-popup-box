@@ -470,6 +470,7 @@ class Ays_Pb_Activator {
             'pb_min_height' => '',
             'enable_pb_fullscreen' => 'off',
             'popup_content_padding' => 20,
+            'popup_content_padding_mobile' => 20,
             'popup_padding_by_percentage_px' => 'pixels',
             'pb_font_family' => 'inherit',
             'pb_font_size' => 13,
