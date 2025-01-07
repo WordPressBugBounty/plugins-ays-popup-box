@@ -773,13 +773,17 @@ class Ays_Pb_Data {
                         $content[] = '<div>';
 
                             $content[] = '<span class="ays-pb-christmas-top-bundle-title">';
-                                $content[] = __( "<span><a href='https://ays-pro.com/wordpress/popup-box?utm_source=dashboard&utm_medium=popup-free&utm_campaign=christmas-sale-banner' class='ays-pb-christmas-top-bundle-title-link' target='_blank'>Christmas Sale</a></span>", "ays-popup-box" );
+                                $content[] = '<span>';
+                                    $content[] = sprintf('<a href="https://ays-pro.com/wordpress/popup-box?utm_source=dashboard&utm_medium=popup-free&utm_campaign=christmas-sale-banner%s" class="ays-pb-christmas-top-bundle-title-link" target="_blank">', AYS_PB_NAME_VERSION);
+                                        $content[] = __( "Christmas Sale", "ays-popup-box" );
+                                    $content[] = '</a>';
+                                $content[] = '</span>';
                             $content[] = '</span>';
 
                             $content[] = '</br>';
 
                             $content[] = '<span class="ays-pb-christmas-top-bundle-desc">';
-                                $content[] = '<a class="ays-pb-christmas-top-bundle-desc" href="https://ays-pro.com/wordpress/popup-box?utm_source=dashboard&utm_medium=popup-free&utm_campaign=christmas-sale-banner" class="ays-pb-christmas-top-bundle-title-link" target="_blank">';
+                                $content[] = sprintf('<a class="ays-pb-christmas-top-bundle-desc" href="https://ays-pro.com/wordpress/popup-box?utm_source=dashboard&utm_medium=popup-free&utm_campaign=christmas-sale-banner%s" class="ays-pb-christmas-top-bundle-title-link" target="_blank">', AYS_PB_NAME_VERSION);
                                     $content[] = __( "20% Extra OFF", "ays-popup-box" );
                                 $content[] = '</a>';
                             $content[] = '</span>';
@@ -811,7 +815,9 @@ class Ays_Pb_Data {
                     $content[] = '</div>';
 
                     $content[] = '<div class="ays-pb-dicount-wrap-box ays-pb-dicount-wrap-button-box">';
-                        $content[] = '<a href="https://ays-pro.com/wordpress/popup-box?utm_source=dashboard&utm_medium=popup-free&utm_campaign=christmas-sale-banner" class="button button-primary ays-button" id="ays-button-top-buy-now" target="_blank">' . __( 'Get Your Deal', "ays-popup-box" ) . '</a>';
+                        $content[] = sprintf('<a href="https://ays-pro.com/wordpress/popup-box?utm_source=dashboard&utm_medium=popup-free&utm_campaign=christmas-sale-banner%s" class="button button-primary ays-button" id="ays-button-top-buy-now" target="_blank">', AYS_PB_NAME_VERSION);
+                            $content[] =  __( 'Get Your Deal', "ays-popup-box" );
+                        $content[] =  '</a>';
                         $content[] = '<span class="ays-pb-dicount-one-time-text">';
                             $content[] = __( "One-time payment", "ays-popup-box" );
                         $content[] = '</span>';

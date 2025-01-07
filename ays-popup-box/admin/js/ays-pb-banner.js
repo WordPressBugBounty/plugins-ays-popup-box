@@ -38,7 +38,7 @@
                 day = hour * 24;
 
             // var countdownEndTime = pb.pbBannerDate
-            var countdownEndTime = "JAN 6, 2025 23:59:59";
+            var countdownEndTime = "JAN 15, 2025 23:59:59";
             var countDown = new Date(countdownEndTime).getTime();
 
             if ( isNaN(countDown) || isFinite(countDown) == false ) {

@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Popup box\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-12-13 17:01+0400\n"
+"POT-Creation-Date: 2025-01-07 10:26+0400\n"
 "PO-Revision-Date: 2018-07-13 11:50+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -11,19 +11,19 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION\n"
-"X-Generator: Poedit 3.5\n"
+"X-Generator: Poedit 2.2.4\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;_n_noop:1,2;_x\n"
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SearchPath-0: ..\n"
 
 #: ../admin/class-ays-pb-admin.php:132
-#: ../admin/partials/actions/ays-pb-admin-actions.php:7514
+#: ../admin/partials/actions/ays-pb-admin-actions.php:7575
 msgid "Are you sure you want to go to the next popup page?"
 msgstr ""
 
 #: ../admin/class-ays-pb-admin.php:133
-#: ../admin/partials/actions/ays-pb-admin-actions.php:7505
+#: ../admin/partials/actions/ays-pb-admin-actions.php:7566
 msgid "Are you sure you want to go to the previous popup page?"
 msgstr ""
 
@@ -36,22 +36,22 @@ msgid "Edit Video"
 msgstr ""
 
 #: ../admin/class-ays-pb-admin.php:138
-#: ../admin/partials/actions/ays-pb-admin-actions.php:1714
-#: ../admin/partials/actions/ays-pb-admin-actions.php:1741
-#: ../admin/partials/actions/ays-pb-admin-actions.php:1893
-#: ../admin/partials/actions/ays-pb-admin-actions.php:5911
-#: ../admin/partials/actions/ays-pb-admin-actions.php:5927
-#: ../admin/partials/actions/ays-pb-admin-actions.php:6565
+#: ../admin/partials/actions/ays-pb-admin-actions.php:1725
+#: ../admin/partials/actions/ays-pb-admin-actions.php:1752
+#: ../admin/partials/actions/ays-pb-admin-actions.php:1904
+#: ../admin/partials/actions/ays-pb-admin-actions.php:5972
+#: ../admin/partials/actions/ays-pb-admin-actions.php:5988
+#: ../admin/partials/actions/ays-pb-admin-actions.php:6626
 msgid "Add Image"
 msgstr ""
 
 #: ../admin/class-ays-pb-admin.php:139
-#: ../admin/partials/actions/ays-pb-admin-actions.php:1714
-#: ../admin/partials/actions/ays-pb-admin-actions.php:1741
-#: ../admin/partials/actions/ays-pb-admin-actions.php:1893
-#: ../admin/partials/actions/ays-pb-admin-actions.php:5911
-#: ../admin/partials/actions/ays-pb-admin-actions.php:5927
-#: ../admin/partials/actions/ays-pb-admin-actions.php:6565
+#: ../admin/partials/actions/ays-pb-admin-actions.php:1725
+#: ../admin/partials/actions/ays-pb-admin-actions.php:1752
+#: ../admin/partials/actions/ays-pb-admin-actions.php:1904
+#: ../admin/partials/actions/ays-pb-admin-actions.php:5972
+#: ../admin/partials/actions/ays-pb-admin-actions.php:5988
+#: ../admin/partials/actions/ays-pb-admin-actions.php:6626
 msgid "Edit Image"
 msgstr ""
 
@@ -84,8 +84,8 @@ msgid "Clear color"
 msgstr ""
 
 #: ../admin/class-ays-pb-admin.php:151
-#: ../admin/partials/actions/ays-pb-admin-actions.php:4415
-#: ../admin/partials/actions/ays-pb-admin-actions.php:4423
+#: ../admin/partials/actions/ays-pb-admin-actions.php:4443
+#: ../admin/partials/actions/ays-pb-admin-actions.php:4451
 #: ../includes/lists/class-ays-pb-list-table.php:473
 #: ../includes/lists/class-ays-pb-list-table.php:503
 msgid "Default"
@@ -138,9 +138,9 @@ msgid "Export/Import"
 msgstr ""
 
 #: ../admin/class-ays-pb-admin.php:326 ../admin/class-ays-pb-admin.php:327
-#: ../admin/partials/actions/ays-pb-admin-actions.php:1610
-#: ../admin/partials/actions/ays-pb-admin-actions.php:3803
-#: ../admin/partials/actions/ays-pb-admin-actions.php:3805
+#: ../admin/partials/actions/ays-pb-admin-actions.php:1621
+#: ../admin/partials/actions/ays-pb-admin-actions.php:3831
+#: ../admin/partials/actions/ays-pb-admin-actions.php:3833
 #: ../admin/partials/settings/popup-box-settings.php:106
 msgid "General Settings"
 msgstr ""
@@ -191,7 +191,7 @@ msgid "Popup Box plugin Premium version:"
 msgstr ""
 
 #: ../admin/class-ays-pb-admin.php:595
-#: ../admin/partials/actions/ays-pb-admin-actions.php:1601
+#: ../admin/partials/actions/ays-pb-admin-actions.php:1612
 msgid "Settings"
 msgstr ""
 
@@ -220,7 +220,7 @@ msgstr ""
 msgid "If you love our plugin, please do big favor and rate us on"
 msgstr ""
 
-#: ../admin/class-ays-pb-admin.php:916 ../includes/class-ays-pb-data.php:719
+#: ../admin/class-ays-pb-admin.php:916 ../includes/class-ays-pb-data.php:720
 msgid "Buy Now"
 msgstr ""
 
@@ -321,30 +321,30 @@ msgid "Button"
 msgstr ""
 
 #: ../admin/partials/actions/ays-pb-admin-actions.php:75
-#: ../admin/partials/actions/ays-pb-admin-actions.php:6020
-#: ../admin/partials/actions/ays-pb-admin-actions.php:6030
+#: ../admin/partials/actions/ays-pb-admin-actions.php:6081
+#: ../admin/partials/actions/ays-pb-admin-actions.php:6091
 msgid "Cover"
 msgstr ""
 
 #: ../admin/partials/actions/ays-pb-admin-actions.php:76
-#: ../admin/partials/actions/ays-pb-admin-actions.php:6021
-#: ../admin/partials/actions/ays-pb-admin-actions.php:6031
+#: ../admin/partials/actions/ays-pb-admin-actions.php:6082
+#: ../admin/partials/actions/ays-pb-admin-actions.php:6092
 msgid "Contain"
 msgstr ""
 
 #: ../admin/partials/actions/ays-pb-admin-actions.php:77
 #: ../admin/partials/actions/ays-pb-admin-actions.php:82
 #: ../admin/partials/actions/ays-pb-admin-actions.php:89
-#: ../admin/partials/actions/ays-pb-admin-actions.php:5523
-#: ../admin/partials/actions/ays-pb-admin-actions.php:5540
-#: ../admin/partials/actions/ays-pb-admin-actions.php:6022
-#: ../admin/partials/actions/ays-pb-admin-actions.php:6032
+#: ../admin/partials/actions/ays-pb-admin-actions.php:5584
+#: ../admin/partials/actions/ays-pb-admin-actions.php:5601
+#: ../admin/partials/actions/ays-pb-admin-actions.php:6083
+#: ../admin/partials/actions/ays-pb-admin-actions.php:6093
 msgid "None"
 msgstr ""
 
 #: ../admin/partials/actions/ays-pb-admin-actions.php:78
-#: ../admin/partials/actions/ays-pb-admin-actions.php:6023
-#: ../admin/partials/actions/ays-pb-admin-actions.php:6033
+#: ../admin/partials/actions/ays-pb-admin-actions.php:6084
+#: ../admin/partials/actions/ays-pb-admin-actions.php:6094
 msgid "Unset"
 msgstr ""
 
@@ -373,7 +373,7 @@ msgid "Underline"
 msgstr ""
 
 #: ../admin/partials/actions/ays-pb-admin-actions.php:96
-#: ../admin/partials/actions/ays-pb-admin-actions.php:5439
+#: ../admin/partials/actions/ays-pb-admin-actions.php:5500
 msgid "Normal"
 msgstr ""
 
@@ -426,7 +426,7 @@ msgid "Inherit"
 msgstr ""
 
 #: ../admin/partials/actions/ays-pb-admin-actions.php:124
-#: ../admin/partials/actions/ays-pb-admin-actions.php:5422
+#: ../admin/partials/actions/ays-pb-admin-actions.php:5483
 msgid "Arial"
 msgstr ""
 
@@ -478,11 +478,11 @@ msgstr ""
 msgid "Times New Roman"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:434
-#: ../admin/partials/actions/ays-pb-admin-actions.php:454
-#: ../admin/partials/actions/ays-pb-admin-actions.php:1673
-#: ../admin/partials/actions/ays-pb-admin-actions.php:7544
-#: ../admin/partials/actions/ays-pb-admin-actions.php:7940
+#: ../admin/partials/actions/ays-pb-admin-actions.php:436
+#: ../admin/partials/actions/ays-pb-admin-actions.php:456
+#: ../admin/partials/actions/ays-pb-admin-actions.php:1684
+#: ../admin/partials/actions/ays-pb-admin-actions.php:7605
+#: ../admin/partials/actions/ays-pb-admin-actions.php:8001
 #: ../admin/partials/how-to-use/ays-pb-how-to-use.php:27
 #: ../admin/partials/settings/popup-box-settings.php:465
 #: ../admin/partials/settings/popup-box-settings.php:471
@@ -491,9 +491,9 @@ msgstr ""
 msgid "Custom Content"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:437
-#: ../admin/partials/actions/ays-pb-admin-actions.php:7565
-#: ../admin/partials/actions/ays-pb-admin-actions.php:7934
+#: ../admin/partials/actions/ays-pb-admin-actions.php:439
+#: ../admin/partials/actions/ays-pb-admin-actions.php:7626
+#: ../admin/partials/actions/ays-pb-admin-actions.php:7995
 #: ../admin/partials/how-to-use/ays-pb-how-to-use.php:28
 #: ../admin/partials/settings/popup-box-settings.php:427
 #: ../admin/partials/settings/popup-box-settings.php:445
@@ -501,53 +501,53 @@ msgstr ""
 msgid "Shortcode"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:438
+#: ../admin/partials/actions/ays-pb-admin-actions.php:440
 msgid "Watch how to add a shortcode popup"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:441
-#: ../admin/partials/actions/ays-pb-admin-actions.php:1705
-#: ../admin/partials/actions/ays-pb-admin-actions.php:4547
-#: ../admin/partials/actions/ays-pb-admin-actions.php:4555
-#: ../admin/partials/actions/ays-pb-admin-actions.php:7586
-#: ../admin/partials/actions/ays-pb-admin-actions.php:7946
+#: ../admin/partials/actions/ays-pb-admin-actions.php:443
+#: ../admin/partials/actions/ays-pb-admin-actions.php:1716
+#: ../admin/partials/actions/ays-pb-admin-actions.php:4575
+#: ../admin/partials/actions/ays-pb-admin-actions.php:4583
+#: ../admin/partials/actions/ays-pb-admin-actions.php:7647
+#: ../admin/partials/actions/ays-pb-admin-actions.php:8007
 #: ../admin/partials/how-to-use/ays-pb-how-to-use.php:29
 #: ../includes/lists/class-ays-pb-list-table.php:442
 msgid "Video"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:442
+#: ../admin/partials/actions/ays-pb-admin-actions.php:444
 msgid "Watch how to add a video popup"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:445
-#: ../admin/partials/actions/ays-pb-admin-actions.php:7607
-#: ../admin/partials/actions/ays-pb-admin-actions.php:7952
+#: ../admin/partials/actions/ays-pb-admin-actions.php:447
+#: ../admin/partials/actions/ays-pb-admin-actions.php:7668
+#: ../admin/partials/actions/ays-pb-admin-actions.php:8013
 #: ../admin/partials/how-to-use/ays-pb-how-to-use.php:30
 #: ../includes/lists/class-ays-pb-list-table.php:216
 #: ../includes/lists/class-ays-pb-list-table.php:445
 msgid "Image"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:448
-#: ../admin/partials/actions/ays-pb-admin-actions.php:7628
-#: ../admin/partials/actions/ays-pb-admin-actions.php:7958
+#: ../admin/partials/actions/ays-pb-admin-actions.php:450
+#: ../admin/partials/actions/ays-pb-admin-actions.php:7689
+#: ../admin/partials/actions/ays-pb-admin-actions.php:8019
 #: ../admin/partials/how-to-use/ays-pb-how-to-use.php:31
 #: ../includes/lists/class-ays-pb-list-table.php:448
 msgid "Facebook"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:451
-#: ../admin/partials/actions/ays-pb-admin-actions.php:7649
-#: ../admin/partials/actions/ays-pb-admin-actions.php:7964
+#: ../admin/partials/actions/ays-pb-admin-actions.php:453
+#: ../admin/partials/actions/ays-pb-admin-actions.php:7710
+#: ../admin/partials/actions/ays-pb-admin-actions.php:8025
 #: ../admin/partials/how-to-use/ays-pb-how-to-use.php:32
 #: ../includes/lists/class-ays-pb-list-table.php:451
 msgid "Notification"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:878
-#: ../admin/partials/actions/ays-pb-admin-actions.php:890
-#: ../includes/class-ays-pb-data.php:468
+#: ../admin/partials/actions/ays-pb-admin-actions.php:883
+#: ../admin/partials/actions/ays-pb-admin-actions.php:895
+#: ../includes/class-ays-pb-data.php:469 ../includes/class-ays-pb-data.php:797
 #: ../public/partials/ays-pb-public-templates.php:285
 #: ../public/partials/ays-pb-public-templates.php:291
 #: ../public/partials/ays-pb-public-templates.php:556
@@ -577,50 +577,50 @@ msgstr ""
 msgid "Dismiss ad"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:1407
-#: ../admin/partials/actions/ays-pb-admin-actions.php:1409
+#: ../admin/partials/actions/ays-pb-admin-actions.php:1418
+#: ../admin/partials/actions/ays-pb-admin-actions.php:1420
 msgid "This will close in"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:1407
-#: ../admin/partials/actions/ays-pb-admin-actions.php:1409
-#: ../admin/partials/actions/ays-pb-admin-actions.php:7013
+#: ../admin/partials/actions/ays-pb-admin-actions.php:1418
+#: ../admin/partials/actions/ays-pb-admin-actions.php:1420
+#: ../admin/partials/actions/ays-pb-admin-actions.php:7074
 msgid "seconds"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:1414
+#: ../admin/partials/actions/ays-pb-admin-actions.php:1425
 msgid "Windows 10"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:1415
+#: ../admin/partials/actions/ays-pb-admin-actions.php:1426
 msgid "Windows 7"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:1416
+#: ../admin/partials/actions/ays-pb-admin-actions.php:1427
 msgid "Mac OS X"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:1417
+#: ../admin/partials/actions/ays-pb-admin-actions.php:1428
 msgid "Linux"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:1422
+#: ../admin/partials/actions/ays-pb-admin-actions.php:1433
 msgid "Chrome"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:1423
+#: ../admin/partials/actions/ays-pb-admin-actions.php:1434
 msgid "Firefox"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:1424
+#: ../admin/partials/actions/ays-pb-admin-actions.php:1435
 msgid "Safari"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:1425
+#: ../admin/partials/actions/ays-pb-admin-actions.php:1436
 msgid "Opera"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:1525
+#: ../admin/partials/actions/ays-pb-admin-actions.php:1536
 #: ../admin/partials/actions/ays-pb-categories-actions.php:70
 #: ../admin/partials/ays-pb-admin-display.php:36
 #: ../admin/partials/ays-pb-categories-display.php:18
@@ -629,885 +629,906 @@ msgstr ""
 msgid "View Documentation"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:1541
-#: ../admin/partials/actions/ays-pb-admin-actions.php:7490
+#: ../admin/partials/actions/ays-pb-admin-actions.php:1552
+#: ../admin/partials/actions/ays-pb-admin-actions.php:7551
 #: ../admin/partials/actions/ays-pb-categories-actions.php:192
 msgid "Save and close"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:1542
-#: ../admin/partials/actions/ays-pb-admin-actions.php:7491
+#: ../admin/partials/actions/ays-pb-admin-actions.php:1553
+#: ../admin/partials/actions/ays-pb-admin-actions.php:7552
 #: ../admin/partials/actions/ays-pb-categories-actions.php:193
 msgid "Save"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:1544
-#: ../admin/partials/actions/ays-pb-admin-actions.php:7493
+#: ../admin/partials/actions/ays-pb-admin-actions.php:1555
+#: ../admin/partials/actions/ays-pb-admin-actions.php:7554
 msgid "Cancel"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:1582
+#: ../admin/partials/actions/ays-pb-admin-actions.php:1593
 msgid "Please Note: "
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:1583
+#: ../admin/partials/actions/ays-pb-admin-actions.php:1594
 msgid "If you have a cache plugin, clear the caches and exclude the link where the popup is enabled to see immediate front-end changes"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:1600
-#: ../admin/partials/actions/ays-pb-admin-actions.php:1878
-#: ../admin/partials/actions/ays-pb-admin-actions.php:2238
+#: ../admin/partials/actions/ays-pb-admin-actions.php:1611
+#: ../admin/partials/actions/ays-pb-admin-actions.php:1889
+#: ../admin/partials/actions/ays-pb-admin-actions.php:2266
 #: ../admin/partials/settings/popup-box-settings.php:90
 msgid "General"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:1602
-#: ../admin/partials/actions/ays-pb-admin-actions.php:1939
+#: ../admin/partials/actions/ays-pb-admin-actions.php:1613
+#: ../admin/partials/actions/ays-pb-admin-actions.php:1950
 #: ../admin/partials/features/popup-box-pro-features-display.php:267
 #: ../admin/partials/features/popup-box-pro-features-display.php:272
 msgid "Styles"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:1603
+#: ../admin/partials/actions/ays-pb-admin-actions.php:1614
 msgid "Limitation Users"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:1604
-#: ../admin/partials/actions/ays-pb-admin-actions.php:7460
+#: ../admin/partials/actions/ays-pb-admin-actions.php:1615
+#: ../admin/partials/actions/ays-pb-admin-actions.php:7521
 #: ../admin/partials/settings/popup-box-settings.php:93
 #: ../admin/partials/settings/popup-box-settings.php:285
 msgid "Integrations"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:1616
+#: ../admin/partials/actions/ays-pb-admin-actions.php:1627
 msgid "Popup title"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:1618
-#: ../admin/partials/actions/ays-pb-admin-actions.php:2763
+#: ../admin/partials/actions/ays-pb-admin-actions.php:1629
+#: ../admin/partials/actions/ays-pb-admin-actions.php:2791
 msgid "The option is not being displayed on the front-end by default. Please activate it from the Styles tab."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:1633
+#: ../admin/partials/actions/ays-pb-admin-actions.php:1644
 msgid "Enable popup"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:1635
+#: ../admin/partials/actions/ays-pb-admin-actions.php:1646
 msgid "Turn on the popup for the website based on your configured options."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:1644
+#: ../admin/partials/actions/ays-pb-admin-actions.php:1655
 msgid "ON"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:1645
+#: ../admin/partials/actions/ays-pb-admin-actions.php:1656
 msgid "OFF"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:1656
+#: ../admin/partials/actions/ays-pb-admin-actions.php:1667
 msgid "Shortcode "
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:1657
+#: ../admin/partials/actions/ays-pb-admin-actions.php:1668
 msgid "You can pop up any form by inserting its shortcode. Please copy and paste the shortcode from another plugin to display it in a popup. For example, Contact forms, surveys, polls, quizzes, Google map, etc."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:1674
+#: ../admin/partials/actions/ays-pb-admin-actions.php:1685
 msgid "Create fully customized popup content with the help of HTML."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:1681
+#: ../admin/partials/actions/ays-pb-admin-actions.php:1692
 msgid "What is a Custom Content Popup?"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:1694
+#: ../admin/partials/actions/ays-pb-admin-actions.php:1705
 msgid "To track conversions for this popup, add the class 'asypb-cta' to any element you want to count as a conversion. When a visitor clicks on an element with this class, it will be recorded as a conversion."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:1707
+#: ../admin/partials/actions/ays-pb-admin-actions.php:1718
 msgid "Add video to the popup."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:1732
+#: ../admin/partials/actions/ays-pb-admin-actions.php:1743
 msgid "Main Image"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:1733
+#: ../admin/partials/actions/ays-pb-admin-actions.php:1744
 msgid "Add image to the popup."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:1756
-#: ../admin/partials/actions/ays-pb-admin-actions.php:1909
-#: ../admin/partials/actions/ays-pb-admin-actions.php:2273
+#: ../admin/partials/actions/ays-pb-admin-actions.php:1767
+#: ../admin/partials/actions/ays-pb-admin-actions.php:1920
+#: ../admin/partials/actions/ays-pb-admin-actions.php:2301
 msgid "Redirect URL"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:1757
+#: ../admin/partials/actions/ays-pb-admin-actions.php:1768
 msgid "The URL for redirecting after the user clicks on the image."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:1771
-#: ../admin/partials/actions/ays-pb-admin-actions.php:1923
-#: ../admin/partials/actions/ays-pb-admin-actions.php:2287
+#: ../admin/partials/actions/ays-pb-admin-actions.php:1782
+#: ../admin/partials/actions/ays-pb-admin-actions.php:1934
+#: ../admin/partials/actions/ays-pb-admin-actions.php:2315
 msgid "Redirect to the new tab"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:1772
-#: ../admin/partials/actions/ays-pb-admin-actions.php:1924
-#: ../admin/partials/actions/ays-pb-admin-actions.php:2288
+#: ../admin/partials/actions/ays-pb-admin-actions.php:1783
+#: ../admin/partials/actions/ays-pb-admin-actions.php:1935
+#: ../admin/partials/actions/ays-pb-admin-actions.php:2316
 msgid "Tick this option to redirect to another tab."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:1790
+#: ../admin/partials/actions/ays-pb-admin-actions.php:1801
 msgid "Facebook page url"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:1791
+#: ../admin/partials/actions/ays-pb-admin-actions.php:1802
 msgid "With the help of this insert field, it notes Facebook URL address seen in PopupBox"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:1806
+#: ../admin/partials/actions/ays-pb-admin-actions.php:1817
 msgid "Hide FB page cover photo"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:1807
+#: ../admin/partials/actions/ays-pb-admin-actions.php:1818
 msgid "Select this option if you want to hide the cover photo of your Facebook page when it is displayed in the popup."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:1822
+#: ../admin/partials/actions/ays-pb-admin-actions.php:1833
 msgid "Use small header"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:1823
+#: ../admin/partials/actions/ays-pb-admin-actions.php:1834
 msgid "Select this option if you want to use a smaller header for your Facebook page when it is displayed in the popup."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:1885
+#: ../admin/partials/actions/ays-pb-admin-actions.php:1896
 msgid "Banner logo"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:1886
+#: ../admin/partials/actions/ays-pb-admin-actions.php:1897
 msgid "Add a logo for the notification banner."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:1910
+#: ../admin/partials/actions/ays-pb-admin-actions.php:1921
 msgid "The URL for redirecting after the user clicks on the logo."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:1946
-#: ../admin/partials/actions/ays-pb-admin-actions.php:4869
+#: ../admin/partials/actions/ays-pb-admin-actions.php:1957
+#: ../admin/partials/actions/ays-pb-admin-actions.php:4897
 msgid "Width"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:1947
+#: ../admin/partials/actions/ays-pb-admin-actions.php:1958
 msgid "Specify the width of the logo."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:1956
-#: ../admin/partials/actions/ays-pb-admin-actions.php:2024
-#: ../admin/partials/actions/ays-pb-admin-actions.php:2092
-#: ../admin/partials/actions/ays-pb-admin-actions.php:2439
-#: ../admin/partials/actions/ays-pb-admin-actions.php:2479
-#: ../admin/partials/actions/ays-pb-admin-actions.php:2519
+#: ../admin/partials/actions/ays-pb-admin-actions.php:1967
+#: ../admin/partials/actions/ays-pb-admin-actions.php:2035
+#: ../admin/partials/actions/ays-pb-admin-actions.php:2103
+#: ../admin/partials/actions/ays-pb-admin-actions.php:2467
+#: ../admin/partials/actions/ays-pb-admin-actions.php:2507
+#: ../admin/partials/actions/ays-pb-admin-actions.php:2547
 msgid "On Desktop"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:1957
+#: ../admin/partials/actions/ays-pb-admin-actions.php:1968
 msgid "Specify the width of the logo for desktop devices."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:1970
-#: ../admin/partials/actions/ays-pb-admin-actions.php:1998
-#: ../admin/partials/actions/ays-pb-admin-actions.php:2038
-#: ../admin/partials/actions/ays-pb-admin-actions.php:2066
-#: ../admin/partials/actions/ays-pb-admin-actions.php:2106
-#: ../admin/partials/actions/ays-pb-admin-actions.php:2134
-#: ../admin/partials/actions/ays-pb-admin-actions.php:4894
-#: ../admin/partials/actions/ays-pb-admin-actions.php:4923
-#: ../admin/partials/actions/ays-pb-admin-actions.php:5042
-#: ../admin/partials/actions/ays-pb-admin-actions.php:5073
-#: ../admin/partials/actions/ays-pb-admin-actions.php:5143
+#: ../admin/partials/actions/ays-pb-admin-actions.php:1981
+#: ../admin/partials/actions/ays-pb-admin-actions.php:2009
+#: ../admin/partials/actions/ays-pb-admin-actions.php:2049
+#: ../admin/partials/actions/ays-pb-admin-actions.php:2077
+#: ../admin/partials/actions/ays-pb-admin-actions.php:2117
+#: ../admin/partials/actions/ays-pb-admin-actions.php:2145
+#: ../admin/partials/actions/ays-pb-admin-actions.php:4922
+#: ../admin/partials/actions/ays-pb-admin-actions.php:4951
+#: ../admin/partials/actions/ays-pb-admin-actions.php:5070
+#: ../admin/partials/actions/ays-pb-admin-actions.php:5101
+#: ../admin/partials/actions/ays-pb-admin-actions.php:5175
+#: ../admin/partials/actions/ays-pb-admin-actions.php:5197
 msgid "px"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:1973
-#: ../admin/partials/actions/ays-pb-admin-actions.php:2001
-#: ../admin/partials/actions/ays-pb-admin-actions.php:2041
-#: ../admin/partials/actions/ays-pb-admin-actions.php:2069
-#: ../admin/partials/actions/ays-pb-admin-actions.php:2109
-#: ../admin/partials/actions/ays-pb-admin-actions.php:2137
-#: ../admin/partials/actions/ays-pb-admin-actions.php:4897
-#: ../admin/partials/actions/ays-pb-admin-actions.php:4926
-#: ../admin/partials/actions/ays-pb-admin-actions.php:5045
-#: ../admin/partials/actions/ays-pb-admin-actions.php:5076
-#: ../admin/partials/actions/ays-pb-admin-actions.php:5146
+#: ../admin/partials/actions/ays-pb-admin-actions.php:1984
+#: ../admin/partials/actions/ays-pb-admin-actions.php:2012
+#: ../admin/partials/actions/ays-pb-admin-actions.php:2052
+#: ../admin/partials/actions/ays-pb-admin-actions.php:2080
+#: ../admin/partials/actions/ays-pb-admin-actions.php:2120
+#: ../admin/partials/actions/ays-pb-admin-actions.php:2148
+#: ../admin/partials/actions/ays-pb-admin-actions.php:4925
+#: ../admin/partials/actions/ays-pb-admin-actions.php:4954
+#: ../admin/partials/actions/ays-pb-admin-actions.php:5073
+#: ../admin/partials/actions/ays-pb-admin-actions.php:5104
+#: ../admin/partials/actions/ays-pb-admin-actions.php:5178
+#: ../admin/partials/actions/ays-pb-admin-actions.php:5200
 msgid "%"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:1984
-#: ../admin/partials/actions/ays-pb-admin-actions.php:2052
-#: ../admin/partials/actions/ays-pb-admin-actions.php:2120
-#: ../admin/partials/actions/ays-pb-admin-actions.php:2453
-#: ../admin/partials/actions/ays-pb-admin-actions.php:2493
-#: ../admin/partials/actions/ays-pb-admin-actions.php:2547
-#: ../admin/partials/actions/ays-pb-admin-actions.php:4909
-#: ../admin/partials/actions/ays-pb-admin-actions.php:4993
-#: ../admin/partials/actions/ays-pb-admin-actions.php:5256
+#: ../admin/partials/actions/ays-pb-admin-actions.php:1995
+#: ../admin/partials/actions/ays-pb-admin-actions.php:2063
+#: ../admin/partials/actions/ays-pb-admin-actions.php:2131
+#: ../admin/partials/actions/ays-pb-admin-actions.php:2481
+#: ../admin/partials/actions/ays-pb-admin-actions.php:2521
+#: ../admin/partials/actions/ays-pb-admin-actions.php:2575
+#: ../admin/partials/actions/ays-pb-admin-actions.php:4937
+#: ../admin/partials/actions/ays-pb-admin-actions.php:5021
+#: ../admin/partials/actions/ays-pb-admin-actions.php:5317
 msgid "On mobile"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:1985
+#: ../admin/partials/actions/ays-pb-admin-actions.php:1996
 msgid "Specify the width of the logo for mobile devices."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:2014
+#: ../admin/partials/actions/ays-pb-admin-actions.php:2025
 msgid "Max-width"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:2015
+#: ../admin/partials/actions/ays-pb-admin-actions.php:2026
 msgid "Specify the max-width of the logo."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:2025
+#: ../admin/partials/actions/ays-pb-admin-actions.php:2036
 msgid "Specify the max-width of the logo for desktop devices."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:2053
+#: ../admin/partials/actions/ays-pb-admin-actions.php:2064
 msgid "Specify the max-width of the logo for mobile devices."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:2082
+#: ../admin/partials/actions/ays-pb-admin-actions.php:2093
 msgid "Min-width"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:2083
+#: ../admin/partials/actions/ays-pb-admin-actions.php:2094
 msgid "Specify the min-width of the logo."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:2093
+#: ../admin/partials/actions/ays-pb-admin-actions.php:2104
 msgid "Specify the min-width of the logo for desktop devices."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:2121
+#: ../admin/partials/actions/ays-pb-admin-actions.php:2132
 msgid "Specify the min-width of the logo for mobile devices."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:2150
+#: ../admin/partials/actions/ays-pb-admin-actions.php:2161
 msgid "Max-height"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:2151
+#: ../admin/partials/actions/ays-pb-admin-actions.php:2162
 msgid "Specify the max-height of the logo in pixels. "
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:2165
-#: ../admin/partials/actions/ays-pb-admin-actions.php:2187
-#: ../admin/partials/actions/ays-pb-admin-actions.php:5050
-#: ../admin/partials/actions/ays-pb-admin-actions.php:5081
+#: ../admin/partials/actions/ays-pb-admin-actions.php:2176
+#: ../admin/partials/actions/ays-pb-admin-actions.php:2198
+#: ../admin/partials/actions/ays-pb-admin-actions.php:5078
+#: ../admin/partials/actions/ays-pb-admin-actions.php:5109
 msgid "For auto leave blank"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:2172
+#: ../admin/partials/actions/ays-pb-admin-actions.php:2183
 msgid "Min-height"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:2173
+#: ../admin/partials/actions/ays-pb-admin-actions.php:2184
 msgid "Specify the min-height of the logo in pixels. "
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:2194
+#: ../admin/partials/actions/ays-pb-admin-actions.php:2205
 msgid "Logo image sizing"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:2195
+#: ../admin/partials/actions/ays-pb-admin-actions.php:2206
 msgid "Define the logo image size if needed."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:2245
+#: ../admin/partials/actions/ays-pb-admin-actions.php:2233
+msgid "Logo Image Shape"
+msgstr ""
+
+#: ../admin/partials/actions/ays-pb-admin-actions.php:2234
+msgid "Select the desired shape for the logo image"
+msgstr ""
+
+#: ../admin/partials/actions/ays-pb-admin-actions.php:2241
+msgid "Rectangle"
+msgstr ""
+
+#: ../admin/partials/actions/ays-pb-admin-actions.php:2242
+msgid "Circle"
+msgstr ""
+
+#: ../admin/partials/actions/ays-pb-admin-actions.php:2273
 msgid "Button text"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:2246
+#: ../admin/partials/actions/ays-pb-admin-actions.php:2274
 msgid "Define the notification button text. Default value is 'Click!'"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:2259
+#: ../admin/partials/actions/ays-pb-admin-actions.php:2287
 msgid "Button hover text"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:2260
+#: ../admin/partials/actions/ays-pb-admin-actions.php:2288
 msgid "Displays text when cursor is placed over the button."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:2274
+#: ../admin/partials/actions/ays-pb-admin-actions.php:2302
 msgid "The URL for redirecting after the user clicks on the button."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:2302
+#: ../admin/partials/actions/ays-pb-admin-actions.php:2330
 msgid "Background styles"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:2309
-#: ../admin/partials/actions/ays-pb-admin-actions.php:5869
+#: ../admin/partials/actions/ays-pb-admin-actions.php:2337
+#: ../admin/partials/actions/ays-pb-admin-actions.php:5930
 msgid "Background color"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:2310
+#: ../admin/partials/actions/ays-pb-admin-actions.php:2338
 msgid "Specify the background color of the button."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:2323
+#: ../admin/partials/actions/ays-pb-admin-actions.php:2351
 msgid "Background hover color"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:2324
+#: ../admin/partials/actions/ays-pb-admin-actions.php:2352
 msgid "Specify the background color of the button on hover."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:2338
+#: ../admin/partials/actions/ays-pb-admin-actions.php:2366
 msgid "Font styles"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:2345
-#: ../admin/partials/actions/ays-pb-admin-actions.php:5167
+#: ../admin/partials/actions/ays-pb-admin-actions.php:2373
+#: ../admin/partials/actions/ays-pb-admin-actions.php:5228
 msgid "Text color"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:2346
+#: ../admin/partials/actions/ays-pb-admin-actions.php:2374
 msgid "Specify the text color of the button."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:2359
+#: ../admin/partials/actions/ays-pb-admin-actions.php:2387
 msgid "Text hover color"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:2360
+#: ../admin/partials/actions/ays-pb-admin-actions.php:2388
 msgid "Specify the text color of the button on hover."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:2373
+#: ../admin/partials/actions/ays-pb-admin-actions.php:2401
 msgid "Text transformation"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:2374
+#: ../admin/partials/actions/ays-pb-admin-actions.php:2402
 msgid "Specify how the text appears in all-uppercase or all-lowercase, or with each word capitalized."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:2401
-#: ../admin/partials/actions/ays-pb-admin-actions.php:5531
+#: ../admin/partials/actions/ays-pb-admin-actions.php:2429
+#: ../admin/partials/actions/ays-pb-admin-actions.php:5592
 msgid "Text decoration"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:2402
+#: ../admin/partials/actions/ays-pb-admin-actions.php:2430
 msgid "Choose the line position for the button on the front end. Note: It is set as None by default."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:2429
+#: ../admin/partials/actions/ays-pb-admin-actions.php:2457
 msgid "Letter spacing"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:2430
+#: ../admin/partials/actions/ays-pb-admin-actions.php:2458
 msgid "Define the space between the letters of the button in pixels."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:2440
+#: ../admin/partials/actions/ays-pb-admin-actions.php:2468
 msgid "Define the space between the letters of the button in pixels for desktop devices."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:2454
+#: ../admin/partials/actions/ays-pb-admin-actions.php:2482
 msgid "Define the space between the letters of the button in pixels for mobile devices."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:2469
+#: ../admin/partials/actions/ays-pb-admin-actions.php:2497
 msgid "Font size (px)"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:2470
+#: ../admin/partials/actions/ays-pb-admin-actions.php:2498
 msgid "Define the font size of the button text in pixels."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:2480
+#: ../admin/partials/actions/ays-pb-admin-actions.php:2508
 msgid "Define the font size of the button text in pixels for desktop devices."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:2494
+#: ../admin/partials/actions/ays-pb-admin-actions.php:2522
 msgid "Define the font size of the button text in pixels for mobile devices."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:2509
-#: ../admin/partials/actions/ays-pb-admin-actions.php:5430
+#: ../admin/partials/actions/ays-pb-admin-actions.php:2537
+#: ../admin/partials/actions/ays-pb-admin-actions.php:5491
 msgid "Font weight"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:2510
+#: ../admin/partials/actions/ays-pb-admin-actions.php:2538
 msgid "Specify the font weight for the button. Note: By default, it is set as Normal."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:2520
+#: ../admin/partials/actions/ays-pb-admin-actions.php:2548
 msgid "Specify the font weight for the button for desktop devices."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:2548
+#: ../admin/partials/actions/ays-pb-admin-actions.php:2576
 msgid "Specify the font weight for the button for mobile devices."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:2578
+#: ../admin/partials/actions/ays-pb-admin-actions.php:2606
 msgid "Border styles"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:2585
-#: ../admin/partials/actions/ays-pb-admin-actions.php:6355
+#: ../admin/partials/actions/ays-pb-admin-actions.php:2613
+#: ../admin/partials/actions/ays-pb-admin-actions.php:6416
 msgid "Border radius"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:2586
+#: ../admin/partials/actions/ays-pb-admin-actions.php:2614
 msgid "Specify the radius of the border. Allows adding rounded corners to the button."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:2599
+#: ../admin/partials/actions/ays-pb-admin-actions.php:2627
 msgid "Border width"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:2600
+#: ../admin/partials/actions/ays-pb-admin-actions.php:2628
 msgid "Specify the border size of the button in pixels."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:2613
-#: ../admin/partials/actions/ays-pb-admin-actions.php:6323
+#: ../admin/partials/actions/ays-pb-admin-actions.php:2641
+#: ../admin/partials/actions/ays-pb-admin-actions.php:6384
 msgid "Border color"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:2614
+#: ../admin/partials/actions/ays-pb-admin-actions.php:2642
 msgid "Specify the border color of the button."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:2628
-#: ../admin/partials/actions/ays-pb-admin-actions.php:6208
-#: ../admin/partials/actions/ays-pb-admin-actions.php:6246
+#: ../admin/partials/actions/ays-pb-admin-actions.php:2656
+#: ../admin/partials/actions/ays-pb-admin-actions.php:6269
+#: ../admin/partials/actions/ays-pb-admin-actions.php:6307
 msgid "Border style"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:2629
-#: ../admin/partials/actions/ays-pb-admin-actions.php:6247
+#: ../admin/partials/actions/ays-pb-admin-actions.php:2657
+#: ../admin/partials/actions/ays-pb-admin-actions.php:6308
 msgid "Choose your preferred style of the border."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:2659
+#: ../admin/partials/actions/ays-pb-admin-actions.php:2687
 msgid "Container styles"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:2667
+#: ../admin/partials/actions/ays-pb-admin-actions.php:2695
 msgid "Padding"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:2668
+#: ../admin/partials/actions/ays-pb-admin-actions.php:2696
 msgid "Padding of button."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:2676
-#: ../admin/partials/actions/ays-pb-admin-actions.php:6523
+#: ../admin/partials/actions/ays-pb-admin-actions.php:2704
+#: ../admin/partials/actions/ays-pb-admin-actions.php:6584
 msgid "Left / Right"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:2680
-#: ../admin/partials/actions/ays-pb-admin-actions.php:6527
+#: ../admin/partials/actions/ays-pb-admin-actions.php:2708
+#: ../admin/partials/actions/ays-pb-admin-actions.php:6588
 msgid "Top / Bottom"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:2689
+#: ../admin/partials/actions/ays-pb-admin-actions.php:2717
 msgid "Transition"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:2690
+#: ../admin/partials/actions/ays-pb-admin-actions.php:2718
 msgid "Set the button's transition duration in seconds. This controls the time it takes for the button's style changes, such as hover effects, to animate smoothly."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:2711
-#: ../admin/partials/actions/ays-pb-admin-actions.php:6646
+#: ../admin/partials/actions/ays-pb-admin-actions.php:2739
+#: ../admin/partials/actions/ays-pb-admin-actions.php:6707
 msgid "Box shadow"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:2712
+#: ../admin/partials/actions/ays-pb-admin-actions.php:2740
 msgid "Allow button box shadow."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:2726
+#: ../admin/partials/actions/ays-pb-admin-actions.php:2754
 msgid "Box shadow color"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:2727
+#: ../admin/partials/actions/ays-pb-admin-actions.php:2755
 msgid "The color of the shadow of the button"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:2737
-#: ../admin/partials/actions/ays-pb-admin-actions.php:5313
-#: ../admin/partials/actions/ays-pb-admin-actions.php:5358
-#: ../admin/partials/actions/ays-pb-admin-actions.php:6683
-#: ../admin/partials/actions/ays-pb-admin-actions.php:6728
+#: ../admin/partials/actions/ays-pb-admin-actions.php:2765
+#: ../admin/partials/actions/ays-pb-admin-actions.php:5374
+#: ../admin/partials/actions/ays-pb-admin-actions.php:5419
+#: ../admin/partials/actions/ays-pb-admin-actions.php:6744
+#: ../admin/partials/actions/ays-pb-admin-actions.php:6789
 msgid "X"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:2741
-#: ../admin/partials/actions/ays-pb-admin-actions.php:5317
-#: ../admin/partials/actions/ays-pb-admin-actions.php:5362
-#: ../admin/partials/actions/ays-pb-admin-actions.php:6687
-#: ../admin/partials/actions/ays-pb-admin-actions.php:6732
+#: ../admin/partials/actions/ays-pb-admin-actions.php:2769
+#: ../admin/partials/actions/ays-pb-admin-actions.php:5378
+#: ../admin/partials/actions/ays-pb-admin-actions.php:5423
+#: ../admin/partials/actions/ays-pb-admin-actions.php:6748
+#: ../admin/partials/actions/ays-pb-admin-actions.php:6793
 msgid "Y"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:2745
-#: ../admin/partials/actions/ays-pb-admin-actions.php:5321
-#: ../admin/partials/actions/ays-pb-admin-actions.php:5366
-#: ../admin/partials/actions/ays-pb-admin-actions.php:6691
-#: ../admin/partials/actions/ays-pb-admin-actions.php:6736
+#: ../admin/partials/actions/ays-pb-admin-actions.php:2773
+#: ../admin/partials/actions/ays-pb-admin-actions.php:5382
+#: ../admin/partials/actions/ays-pb-admin-actions.php:5427
+#: ../admin/partials/actions/ays-pb-admin-actions.php:6752
+#: ../admin/partials/actions/ays-pb-admin-actions.php:6797
 msgid "Z"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:2762
+#: ../admin/partials/actions/ays-pb-admin-actions.php:2790
 msgid "Popup description"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:2769
+#: ../admin/partials/actions/ays-pb-admin-actions.php:2797
 msgid "This option is currently unavailable as the 'Show Description' option is disabled."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:2787
+#: ../admin/partials/actions/ays-pb-admin-actions.php:2815
 msgid "Show popup only for author"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:2788
+#: ../admin/partials/actions/ays-pb-admin-actions.php:2816
 msgid "If this option is enabled only the author of the popup will be able to see it."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:2792
+#: ../admin/partials/actions/ays-pb-admin-actions.php:2820
 msgid "For testing"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:2803
+#: ../admin/partials/actions/ays-pb-admin-actions.php:2831
 msgid "Display"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:2806
+#: ../admin/partials/actions/ays-pb-admin-actions.php:2834
 msgid "Define the pages your popup will be loaded on."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:2813
+#: ../admin/partials/actions/ays-pb-admin-actions.php:2841
 #: ../admin/partials/actions/ays-pb-categories-actions.php:132
 msgid "All pages"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:2816
+#: ../admin/partials/actions/ays-pb-admin-actions.php:2844
 #: ../admin/partials/actions/ays-pb-categories-actions.php:135
 msgid "Except"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:2819
+#: ../admin/partials/actions/ays-pb-admin-actions.php:2847
 #: ../admin/partials/actions/ays-pb-categories-actions.php:138
 msgid "Include"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:2824
+#: ../admin/partials/actions/ays-pb-admin-actions.php:2852
 #: ../admin/partials/actions/ays-pb-categories-actions.php:143
 msgid "Choose the method of calculation."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:2826
+#: ../admin/partials/actions/ays-pb-admin-actions.php:2854
 #: ../admin/partials/actions/ays-pb-categories-actions.php:145
 msgid "All pages - The popup will display on all pages."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:2827
+#: ../admin/partials/actions/ays-pb-admin-actions.php:2855
 #: ../admin/partials/actions/ays-pb-categories-actions.php:146
 msgid "Except - Choose the post/page and post/page types excluding the popup."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:2828
+#: ../admin/partials/actions/ays-pb-admin-actions.php:2856
 #: ../admin/partials/actions/ays-pb-categories-actions.php:147
 msgid "Include - Choose the post/page and post/page types including the popup."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:2839
+#: ../admin/partials/actions/ays-pb-admin-actions.php:2867
 msgid "Post type"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:2841
+#: ../admin/partials/actions/ays-pb-admin-actions.php:2869
 msgid "Select post types."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:2864
+#: ../admin/partials/actions/ays-pb-admin-actions.php:2892
 msgid "Posts"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:2866
+#: ../admin/partials/actions/ays-pb-admin-actions.php:2894
 msgid "Select posts."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:2907
+#: ../admin/partials/actions/ays-pb-admin-actions.php:2935
 msgid "Show on Home page"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:2908
+#: ../admin/partials/actions/ays-pb-admin-actions.php:2936
 msgid "If the checkbox is ticked, then the popup will be loaded on the Home page too, in addition to the values given above."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:2920
+#: ../admin/partials/actions/ays-pb-admin-actions.php:2948
 msgid "How to Create Homepage Popup"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:2931
+#: ../admin/partials/actions/ays-pb-admin-actions.php:2959
 #: ../admin/partials/how-to-use/ays-pb-how-to-use.php:36
 msgid "Popup trigger"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:2934
+#: ../admin/partials/actions/ays-pb-admin-actions.php:2962
 msgid "Choose the trigger causing the popup to open on certain events."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:2936
-#: ../admin/partials/actions/ays-pb-admin-actions.php:2949
+#: ../admin/partials/actions/ays-pb-admin-actions.php:2964
+#: ../admin/partials/actions/ays-pb-admin-actions.php:2977
 msgid "Onload"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:2937
+#: ../admin/partials/actions/ays-pb-admin-actions.php:2965
 msgid "Onclick"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:2938
+#: ../admin/partials/actions/ays-pb-admin-actions.php:2966
 msgid "Both(On page load & On click)"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:2948
+#: ../admin/partials/actions/ays-pb-admin-actions.php:2976
 msgid "Both (On page load & On click)"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:2950
+#: ../admin/partials/actions/ays-pb-admin-actions.php:2978
 msgid "On Click"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:2951
+#: ../admin/partials/actions/ays-pb-admin-actions.php:2979
 msgid "On hover (Pro)"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:2952
+#: ../admin/partials/actions/ays-pb-admin-actions.php:2980
 msgid "Exit Intent (Pro)"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:2953
+#: ../admin/partials/actions/ays-pb-admin-actions.php:2981
 msgid "After visiting x pages (Pro)"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:2954
+#: ../admin/partials/actions/ays-pb-admin-actions.php:2982
 msgid "Inactivity (Pro)"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:2955
+#: ../admin/partials/actions/ays-pb-admin-actions.php:2983
 msgid "Scrolling to element (Pro)"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:2969
+#: ../admin/partials/actions/ays-pb-admin-actions.php:2997
 msgid "View how to make popup on button click"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:2976
+#: ../admin/partials/actions/ays-pb-admin-actions.php:3004
 msgid "How to Set Popup Triggers with WordPress Popup Plugin (PRO)"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:2987
+#: ../admin/partials/actions/ays-pb-admin-actions.php:3015
 #: ../admin/partials/how-to-use/ays-pb-how-to-use.php:39
 msgid "CSS selector(s) for trigger click"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:2988
+#: ../admin/partials/actions/ays-pb-admin-actions.php:3016
 msgid "Add your preferred CSS selector(s) if you have given “On click” or “Both” value to the “Popup trigger” option. For example #mybutton or .mybutton."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:2996
+#: ../admin/partials/actions/ays-pb-admin-actions.php:3024
 msgid "Enter the class starting with a “ . ” and id with a “ # ”"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:3004
+#: ../admin/partials/actions/ays-pb-admin-actions.php:3032
 #: ../admin/partials/features/popup-box-pro-features-display.php:323
 #: ../admin/partials/features/popup-box-pro-features-display.php:328
 msgid "Popup position"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:3005
+#: ../admin/partials/actions/ays-pb-admin-actions.php:3033
 msgid "Specify the position of the popup on the screen. "
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:3013
-#: ../admin/partials/actions/ays-pb-admin-actions.php:3106
-#: ../admin/partials/actions/ays-pb-admin-actions.php:3161
-#: ../admin/partials/actions/ays-pb-admin-actions.php:3237
-#: ../admin/partials/actions/ays-pb-admin-actions.php:3389
-#: ../admin/partials/actions/ays-pb-admin-actions.php:3438
-#: ../admin/partials/actions/ays-pb-admin-actions.php:3505
-#: ../admin/partials/actions/ays-pb-admin-actions.php:3552
-#: ../admin/partials/actions/ays-pb-admin-actions.php:3601
-#: ../admin/partials/actions/ays-pb-admin-actions.php:3715
-#: ../admin/partials/actions/ays-pb-admin-actions.php:3770
-#: ../admin/partials/actions/ays-pb-admin-actions.php:4276
-#: ../admin/partials/actions/ays-pb-admin-actions.php:4329
+#: ../admin/partials/actions/ays-pb-admin-actions.php:3041
+#: ../admin/partials/actions/ays-pb-admin-actions.php:3134
+#: ../admin/partials/actions/ays-pb-admin-actions.php:3189
+#: ../admin/partials/actions/ays-pb-admin-actions.php:3265
+#: ../admin/partials/actions/ays-pb-admin-actions.php:3417
+#: ../admin/partials/actions/ays-pb-admin-actions.php:3466
+#: ../admin/partials/actions/ays-pb-admin-actions.php:3533
+#: ../admin/partials/actions/ays-pb-admin-actions.php:3580
+#: ../admin/partials/actions/ays-pb-admin-actions.php:3629
+#: ../admin/partials/actions/ays-pb-admin-actions.php:3743
+#: ../admin/partials/actions/ays-pb-admin-actions.php:3798
+#: ../admin/partials/actions/ays-pb-admin-actions.php:4304
 #: ../admin/partials/actions/ays-pb-admin-actions.php:4357
-#: ../admin/partials/actions/ays-pb-admin-actions.php:4839
-#: ../admin/partials/actions/ays-pb-admin-actions.php:5574
-#: ../admin/partials/actions/ays-pb-admin-actions.php:5692
-#: ../admin/partials/actions/ays-pb-admin-actions.php:5810
-#: ../admin/partials/actions/ays-pb-admin-actions.php:5840
-#: ../admin/partials/actions/ays-pb-admin-actions.php:5879
-#: ../admin/partials/actions/ays-pb-admin-actions.php:5909
-#: ../admin/partials/actions/ays-pb-admin-actions.php:5958
-#: ../admin/partials/actions/ays-pb-admin-actions.php:6018
-#: ../admin/partials/actions/ays-pb-admin-actions.php:6187
-#: ../admin/partials/actions/ays-pb-admin-actions.php:6226
-#: ../admin/partials/actions/ays-pb-admin-actions.php:6256
-#: ../admin/partials/actions/ays-pb-admin-actions.php:6333
-#: ../admin/partials/actions/ays-pb-admin-actions.php:6365
+#: ../admin/partials/actions/ays-pb-admin-actions.php:4385
+#: ../admin/partials/actions/ays-pb-admin-actions.php:4867
+#: ../admin/partials/actions/ays-pb-admin-actions.php:5163
+#: ../admin/partials/actions/ays-pb-admin-actions.php:5635
+#: ../admin/partials/actions/ays-pb-admin-actions.php:5753
+#: ../admin/partials/actions/ays-pb-admin-actions.php:5871
+#: ../admin/partials/actions/ays-pb-admin-actions.php:5901
+#: ../admin/partials/actions/ays-pb-admin-actions.php:5940
+#: ../admin/partials/actions/ays-pb-admin-actions.php:5970
+#: ../admin/partials/actions/ays-pb-admin-actions.php:6019
+#: ../admin/partials/actions/ays-pb-admin-actions.php:6079
+#: ../admin/partials/actions/ays-pb-admin-actions.php:6248
+#: ../admin/partials/actions/ays-pb-admin-actions.php:6287
+#: ../admin/partials/actions/ays-pb-admin-actions.php:6317
+#: ../admin/partials/actions/ays-pb-admin-actions.php:6394
+#: ../admin/partials/actions/ays-pb-admin-actions.php:6426
 msgid "Desktop"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:3034
-#: ../admin/partials/actions/ays-pb-admin-actions.php:3136
-#: ../admin/partials/actions/ays-pb-admin-actions.php:3190
-#: ../admin/partials/actions/ays-pb-admin-actions.php:3415
-#: ../admin/partials/actions/ays-pb-admin-actions.php:3462
-#: ../admin/partials/actions/ays-pb-admin-actions.php:3531
-#: ../admin/partials/actions/ays-pb-admin-actions.php:3637
-#: ../admin/partials/actions/ays-pb-admin-actions.php:3749
-#: ../admin/partials/actions/ays-pb-admin-actions.php:4309
-#: ../admin/partials/actions/ays-pb-admin-actions.php:4859
-#: ../admin/partials/actions/ays-pb-admin-actions.php:5672
-#: ../admin/partials/actions/ays-pb-admin-actions.php:5790
-#: ../admin/partials/actions/ays-pb-admin-actions.php:5820
-#: ../admin/partials/actions/ays-pb-admin-actions.php:5850
-#: ../admin/partials/actions/ays-pb-admin-actions.php:5889
-#: ../admin/partials/actions/ays-pb-admin-actions.php:5940
-#: ../admin/partials/actions/ays-pb-admin-actions.php:6002
-#: ../admin/partials/actions/ays-pb-admin-actions.php:6038
-#: ../admin/partials/actions/ays-pb-admin-actions.php:6197
-#: ../admin/partials/actions/ays-pb-admin-actions.php:6236
-#: ../admin/partials/actions/ays-pb-admin-actions.php:6312
-#: ../admin/partials/actions/ays-pb-admin-actions.php:6343
-#: ../admin/partials/actions/ays-pb-admin-actions.php:6375
+#: ../admin/partials/actions/ays-pb-admin-actions.php:3062
+#: ../admin/partials/actions/ays-pb-admin-actions.php:3164
+#: ../admin/partials/actions/ays-pb-admin-actions.php:3218
+#: ../admin/partials/actions/ays-pb-admin-actions.php:3443
+#: ../admin/partials/actions/ays-pb-admin-actions.php:3490
+#: ../admin/partials/actions/ays-pb-admin-actions.php:3559
+#: ../admin/partials/actions/ays-pb-admin-actions.php:3665
+#: ../admin/partials/actions/ays-pb-admin-actions.php:3777
+#: ../admin/partials/actions/ays-pb-admin-actions.php:4337
+#: ../admin/partials/actions/ays-pb-admin-actions.php:4887
+#: ../admin/partials/actions/ays-pb-admin-actions.php:5208
+#: ../admin/partials/actions/ays-pb-admin-actions.php:5733
+#: ../admin/partials/actions/ays-pb-admin-actions.php:5851
+#: ../admin/partials/actions/ays-pb-admin-actions.php:5881
+#: ../admin/partials/actions/ays-pb-admin-actions.php:5911
+#: ../admin/partials/actions/ays-pb-admin-actions.php:5950
+#: ../admin/partials/actions/ays-pb-admin-actions.php:6001
+#: ../admin/partials/actions/ays-pb-admin-actions.php:6063
+#: ../admin/partials/actions/ays-pb-admin-actions.php:6099
+#: ../admin/partials/actions/ays-pb-admin-actions.php:6258
+#: ../admin/partials/actions/ays-pb-admin-actions.php:6297
+#: ../admin/partials/actions/ays-pb-admin-actions.php:6373
+#: ../admin/partials/actions/ays-pb-admin-actions.php:6404
+#: ../admin/partials/actions/ays-pb-admin-actions.php:6436
 msgid "Use a different setting for Mobile"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:3039
-#: ../admin/partials/actions/ays-pb-admin-actions.php:3119
-#: ../admin/partials/actions/ays-pb-admin-actions.php:3173
-#: ../admin/partials/actions/ays-pb-admin-actions.php:3243
-#: ../admin/partials/actions/ays-pb-admin-actions.php:3402
-#: ../admin/partials/actions/ays-pb-admin-actions.php:3450
-#: ../admin/partials/actions/ays-pb-admin-actions.php:3518
-#: ../admin/partials/actions/ays-pb-admin-actions.php:3558
-#: ../admin/partials/actions/ays-pb-admin-actions.php:3619
-#: ../admin/partials/actions/ays-pb-admin-actions.php:3732
-#: ../admin/partials/actions/ays-pb-admin-actions.php:3776
-#: ../admin/partials/actions/ays-pb-admin-actions.php:4292
-#: ../admin/partials/actions/ays-pb-admin-actions.php:4335
+#: ../admin/partials/actions/ays-pb-admin-actions.php:3067
+#: ../admin/partials/actions/ays-pb-admin-actions.php:3147
+#: ../admin/partials/actions/ays-pb-admin-actions.php:3201
+#: ../admin/partials/actions/ays-pb-admin-actions.php:3271
+#: ../admin/partials/actions/ays-pb-admin-actions.php:3430
+#: ../admin/partials/actions/ays-pb-admin-actions.php:3478
+#: ../admin/partials/actions/ays-pb-admin-actions.php:3546
+#: ../admin/partials/actions/ays-pb-admin-actions.php:3586
+#: ../admin/partials/actions/ays-pb-admin-actions.php:3647
+#: ../admin/partials/actions/ays-pb-admin-actions.php:3760
+#: ../admin/partials/actions/ays-pb-admin-actions.php:3804
+#: ../admin/partials/actions/ays-pb-admin-actions.php:4320
 #: ../admin/partials/actions/ays-pb-admin-actions.php:4363
-#: ../admin/partials/actions/ays-pb-admin-actions.php:4849
-#: ../admin/partials/actions/ays-pb-admin-actions.php:5623
-#: ../admin/partials/actions/ays-pb-admin-actions.php:5741
-#: ../admin/partials/actions/ays-pb-admin-actions.php:5815
-#: ../admin/partials/actions/ays-pb-admin-actions.php:5845
-#: ../admin/partials/actions/ays-pb-admin-actions.php:5884
-#: ../admin/partials/actions/ays-pb-admin-actions.php:5925
-#: ../admin/partials/actions/ays-pb-admin-actions.php:5979
-#: ../admin/partials/actions/ays-pb-admin-actions.php:6028
-#: ../admin/partials/actions/ays-pb-admin-actions.php:6192
-#: ../admin/partials/actions/ays-pb-admin-actions.php:6231
-#: ../admin/partials/actions/ays-pb-admin-actions.php:6284
-#: ../admin/partials/actions/ays-pb-admin-actions.php:6338
-#: ../admin/partials/actions/ays-pb-admin-actions.php:6370
+#: ../admin/partials/actions/ays-pb-admin-actions.php:4391
+#: ../admin/partials/actions/ays-pb-admin-actions.php:4877
+#: ../admin/partials/actions/ays-pb-admin-actions.php:5185
+#: ../admin/partials/actions/ays-pb-admin-actions.php:5684
+#: ../admin/partials/actions/ays-pb-admin-actions.php:5802
+#: ../admin/partials/actions/ays-pb-admin-actions.php:5876
+#: ../admin/partials/actions/ays-pb-admin-actions.php:5906
+#: ../admin/partials/actions/ays-pb-admin-actions.php:5945
+#: ../admin/partials/actions/ays-pb-admin-actions.php:5986
+#: ../admin/partials/actions/ays-pb-admin-actions.php:6040
+#: ../admin/partials/actions/ays-pb-admin-actions.php:6089
+#: ../admin/partials/actions/ays-pb-admin-actions.php:6253
+#: ../admin/partials/actions/ays-pb-admin-actions.php:6292
+#: ../admin/partials/actions/ays-pb-admin-actions.php:6345
+#: ../admin/partials/actions/ays-pb-admin-actions.php:6399
+#: ../admin/partials/actions/ays-pb-admin-actions.php:6431
 msgid "Mobile"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:3067
+#: ../admin/partials/actions/ays-pb-admin-actions.php:3095
 msgid "Popup margin(px)"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:3068
+#: ../admin/partials/actions/ays-pb-admin-actions.php:3096
 msgid "Specify the popup margin in pixels. It accepts only numerical values."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:3083
+#: ../admin/partials/actions/ays-pb-admin-actions.php:3111
 msgid "Popup opening"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:3091
+#: ../admin/partials/actions/ays-pb-admin-actions.php:3119
 msgid "Open Delay "
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:3092
+#: ../admin/partials/actions/ays-pb-admin-actions.php:3120
 msgid "Open the popup when a visitor has viewed your website content for a specified period of time (in milliseconds). To disable the option leave it blank or set it to 0."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:3104
-#: ../admin/partials/actions/ays-pb-admin-actions.php:3117
-#: ../admin/partials/actions/ays-pb-admin-actions.php:3607
-#: ../admin/partials/actions/ays-pb-admin-actions.php:3625
+#: ../admin/partials/actions/ays-pb-admin-actions.php:3132
+#: ../admin/partials/actions/ays-pb-admin-actions.php:3145
+#: ../admin/partials/actions/ays-pb-admin-actions.php:3635
+#: ../admin/partials/actions/ays-pb-admin-actions.php:3653
 msgid "1 sec = 1000 ms"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:3130
+#: ../admin/partials/actions/ays-pb-admin-actions.php:3158
 msgid "How to Show Popup after a Time Delay"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:3147
+#: ../admin/partials/actions/ays-pb-admin-actions.php:3175
 msgid "Open by Scrolling Down"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:3148
+#: ../admin/partials/actions/ays-pb-admin-actions.php:3176
 msgid "Define the scroll length by pixels to open the popup when scrolling. To disable the option leave it blank or set it to 0."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:3184
+#: ../admin/partials/actions/ays-pb-admin-actions.php:3212
 msgid "How to Create a Login Form Popup"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:3202
+#: ../admin/partials/actions/ays-pb-admin-actions.php:3230
 msgid "Popup Closing"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:3210
+#: ../admin/partials/actions/ays-pb-admin-actions.php:3238
 msgid "Close by pressing ESC"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:3211
+#: ../admin/partials/actions/ays-pb-admin-actions.php:3239
 msgid "If the option is enabled, the user can close the popup by pressing the ESC button from the keyboard."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:3228
+#: ../admin/partials/actions/ays-pb-admin-actions.php:3256
 msgid "Close by clicking outside the box"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:3229
+#: ../admin/partials/actions/ays-pb-admin-actions.php:3257
 msgid "If the option is enabled, the user can close the popup by clicking outside the box.  Notice: This option works only if the “Enable Overlay”option is ticked."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:3252
+#: ../admin/partials/actions/ays-pb-admin-actions.php:3280
 msgid "How to close Popup by clicking outside the box"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:3270
-#: ../admin/partials/actions/ays-pb-admin-actions.php:3307
+#: ../admin/partials/actions/ays-pb-admin-actions.php:3298
+#: ../admin/partials/actions/ays-pb-admin-actions.php:3335
 #: ../admin/partials/settings/popup-box-settings.php:249
 msgid "Watch video"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:3277
-#: ../admin/partials/actions/ays-pb-admin-actions.php:3314
-#: ../admin/partials/actions/ays-pb-admin-actions.php:4034
-#: ../admin/partials/actions/ays-pb-admin-actions.php:4128
-#: ../admin/partials/actions/ays-pb-admin-actions.php:5383
-#: ../admin/partials/actions/ays-pb-admin-actions.php:5392
-#: ../admin/partials/actions/ays-pb-admin-actions.php:6406
-#: ../admin/partials/actions/ays-pb-admin-actions.php:6426
-#: ../admin/partials/actions/ays-pb-admin-actions.php:7270
-#: ../admin/partials/actions/ays-pb-admin-actions.php:7323
-#: ../admin/partials/actions/ays-pb-admin-actions.php:7388
-#: ../admin/partials/actions/ays-pb-admin-actions.php:7431
+#: ../admin/partials/actions/ays-pb-admin-actions.php:3305
+#: ../admin/partials/actions/ays-pb-admin-actions.php:3342
+#: ../admin/partials/actions/ays-pb-admin-actions.php:4062
+#: ../admin/partials/actions/ays-pb-admin-actions.php:4156
+#: ../admin/partials/actions/ays-pb-admin-actions.php:5444
+#: ../admin/partials/actions/ays-pb-admin-actions.php:5453
+#: ../admin/partials/actions/ays-pb-admin-actions.php:6467
+#: ../admin/partials/actions/ays-pb-admin-actions.php:6487
+#: ../admin/partials/actions/ays-pb-admin-actions.php:7331
+#: ../admin/partials/actions/ays-pb-admin-actions.php:7384
+#: ../admin/partials/actions/ays-pb-admin-actions.php:7449
+#: ../admin/partials/actions/ays-pb-admin-actions.php:7492
 #: ../admin/partials/actions/ays-pb-categories-actions.php:113
 #: ../admin/partials/attributes/actions/ays-pb-attributes-actions.php:20
 #: ../admin/partials/attributes/actions/ays-pb-attributes-actions.php:28
@@ -1539,1066 +1560,1067 @@ msgstr ""
 msgid "Upgrade"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:3284
+#: ../admin/partials/actions/ays-pb-admin-actions.php:3312
 msgid "Close the popup on scroll"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:3285
+#: ../admin/partials/actions/ays-pb-admin-actions.php:3313
 msgid "Define the scroll length by pixels to close the popup when scrolling."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:3321
+#: ../admin/partials/actions/ays-pb-admin-actions.php:3349
 msgid "Close by classname (onclick)"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:3322
+#: ../admin/partials/actions/ays-pb-admin-actions.php:3350
 msgid "Copy the given classname, assign it to any tag in the content as well as inside the popup. And the popup will close when the user clicks on the classname.Note: Save your popup before copying the given classname."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:3345
+#: ../admin/partials/actions/ays-pb-admin-actions.php:3373
 msgid "Hide close button"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:3346
+#: ../admin/partials/actions/ays-pb-admin-actions.php:3374
 msgid "If the option is enabled, the close button of the popup will be disappeared. "
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:3361
+#: ../admin/partials/actions/ays-pb-admin-actions.php:3389
 msgid "Activate Close button while hovering on popup"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:3362
+#: ../admin/partials/actions/ays-pb-admin-actions.php:3390
 msgid "Enable this option to close the popup by hovering over the popup container."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:3377
+#: ../admin/partials/actions/ays-pb-admin-actions.php:3405
 msgid "Close button position"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:3378
+#: ../admin/partials/actions/ays-pb-admin-actions.php:3406
 msgid "Select the place of the popup close button. "
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:3392
-#: ../admin/partials/actions/ays-pb-admin-actions.php:3405
+#: ../admin/partials/actions/ays-pb-admin-actions.php:3420
+#: ../admin/partials/actions/ays-pb-admin-actions.php:3433
 msgid "Right Top"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:3393
-#: ../admin/partials/actions/ays-pb-admin-actions.php:3406
+#: ../admin/partials/actions/ays-pb-admin-actions.php:3421
+#: ../admin/partials/actions/ays-pb-admin-actions.php:3434
 msgid "Left Top"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:3394
-#: ../admin/partials/actions/ays-pb-admin-actions.php:3407
+#: ../admin/partials/actions/ays-pb-admin-actions.php:3422
+#: ../admin/partials/actions/ays-pb-admin-actions.php:3435
 msgid "Left Bottom"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:3395
-#: ../admin/partials/actions/ays-pb-admin-actions.php:3408
+#: ../admin/partials/actions/ays-pb-admin-actions.php:3423
+#: ../admin/partials/actions/ays-pb-admin-actions.php:3436
 msgid "Right Bottom"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:3426
+#: ../admin/partials/actions/ays-pb-admin-actions.php:3454
 msgid "Close button text"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:3427
+#: ../admin/partials/actions/ays-pb-admin-actions.php:3455
 msgid "Define the close button text. The default value is “✕”."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:3473
+#: ../admin/partials/actions/ays-pb-admin-actions.php:3501
 msgid "Close button hover text"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:3474
+#: ../admin/partials/actions/ays-pb-admin-actions.php:3502
 msgid "Displays text when cursor is placed over the close button"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:3493
+#: ../admin/partials/actions/ays-pb-admin-actions.php:3521
 msgid "Autoclose Delay (in seconds)"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:3494
+#: ../admin/partials/actions/ays-pb-admin-actions.php:3522
 msgid "Close the popup after a specified time delay (in seconds). To disable the option leave it blank or set it to 0."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:3542
+#: ../admin/partials/actions/ays-pb-admin-actions.php:3570
 msgid "Hide timer"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:3544
+#: ../admin/partials/actions/ays-pb-admin-actions.php:3572
 msgid "Hide the timer when the Autoclose Delay option is enabled."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:3572
+#: ../admin/partials/actions/ays-pb-admin-actions.php:3600
 msgid "Autoclose on video completion"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:3574
+#: ../admin/partials/actions/ays-pb-admin-actions.php:3602
 msgid "Automatically close the popup after a video completion."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:3588
+#: ../admin/partials/actions/ays-pb-admin-actions.php:3616
 msgid "Close button delay"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:3589
+#: ../admin/partials/actions/ays-pb-admin-actions.php:3617
 msgid " Set delay in milliseconds for displaying the popup close button. To disable the option leave it blank or set it to 0."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:3648
+#: ../admin/partials/actions/ays-pb-admin-actions.php:3676
 msgid "Advanced Settings"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:3655
+#: ../admin/partials/actions/ays-pb-admin-actions.php:3683
 msgid "Popup name"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:3656
+#: ../admin/partials/actions/ays-pb-admin-actions.php:3684
 msgid "Write the name of the particular Popup. The name will be shown in the Popup list table."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:3669
+#: ../admin/partials/actions/ays-pb-admin-actions.php:3697
 msgid "Popup category"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:3670
+#: ../admin/partials/actions/ays-pb-admin-actions.php:3698
 msgid "Categorize your popup selecting from the premade categories."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:3696
+#: ../admin/partials/actions/ays-pb-admin-actions.php:3724
 msgid "Enable Overlay"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:3697
+#: ../admin/partials/actions/ays-pb-admin-actions.php:3725
 msgid "Enable to show the overlay outside the popup."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:3720
-#: ../admin/partials/actions/ays-pb-admin-actions.php:3737
+#: ../admin/partials/actions/ays-pb-admin-actions.php:3748
+#: ../admin/partials/actions/ays-pb-admin-actions.php:3765
 msgid "Opacity:"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:3761
+#: ../admin/partials/actions/ays-pb-admin-actions.php:3789
 msgid "Enable blured overlay"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:3762
+#: ../admin/partials/actions/ays-pb-admin-actions.php:3790
 msgid "Enable blurred overlay of the popup."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:3790
+#: ../admin/partials/actions/ays-pb-admin-actions.php:3818
 msgid "Enable popup sound"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:3791
+#: ../admin/partials/actions/ays-pb-admin-actions.php:3819
 msgid "In case of enabling this option, insert and select the sound from the General Settings of Popup Box navigation menu. Note: This function only works with “On Click” or “Both” trigger types."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:3803
+#: ../admin/partials/actions/ays-pb-admin-actions.php:3831
 msgid "Sounds are selected. For change sounds go to"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:3803
-#: ../admin/partials/actions/ays-pb-admin-actions.php:3805
+#: ../admin/partials/actions/ays-pb-admin-actions.php:3831
+#: ../admin/partials/actions/ays-pb-admin-actions.php:3833
 msgid "page"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:3805
+#: ../admin/partials/actions/ays-pb-admin-actions.php:3833
 msgid "Sounds are not selected. For selecting sounds go to"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:3815
+#: ../admin/partials/actions/ays-pb-admin-actions.php:3843
 msgid "Enable Social Media links"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:3816
+#: ../admin/partials/actions/ays-pb-admin-actions.php:3844
 msgid "Display social media links at the bottom of your popup container."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:3830
+#: ../admin/partials/actions/ays-pb-admin-actions.php:3858
 msgid "Heading for share buttons"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:3831
+#: ../admin/partials/actions/ays-pb-admin-actions.php:3859
 msgid "Text that will be displayed over share buttons."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:3849
+#: ../admin/partials/actions/ays-pb-admin-actions.php:3877
 msgid "LinkedIn link"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:3850
+#: ../admin/partials/actions/ays-pb-admin-actions.php:3878
 msgid "LinkedIn profile or page link for showing at the end of the popup."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:3864
+#: ../admin/partials/actions/ays-pb-admin-actions.php:3892
 msgid "Facebook link"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:3865
+#: ../admin/partials/actions/ays-pb-admin-actions.php:3893
 msgid "Facebook profile or page link for showing at the end of the popup."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:3879
+#: ../admin/partials/actions/ays-pb-admin-actions.php:3907
 msgid "X link"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:3880
+#: ../admin/partials/actions/ays-pb-admin-actions.php:3908
 msgid "X profile or page link for showing at the end of the popup."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:3894
+#: ../admin/partials/actions/ays-pb-admin-actions.php:3922
 msgid "VKontakte link"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:3895
+#: ../admin/partials/actions/ays-pb-admin-actions.php:3923
 msgid "VKontakte profile or page link for showing at the end of the popup."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:3909
+#: ../admin/partials/actions/ays-pb-admin-actions.php:3937
 msgid "Youtube link"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:3910
+#: ../admin/partials/actions/ays-pb-admin-actions.php:3938
 msgid "YouTube page link for showing at the end of the popup."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:3924
+#: ../admin/partials/actions/ays-pb-admin-actions.php:3952
 msgid "Instagram link"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:3925
+#: ../admin/partials/actions/ays-pb-admin-actions.php:3953
 msgid "Instagram page link for showing at the end of the popup."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:3939
+#: ../admin/partials/actions/ays-pb-admin-actions.php:3967
 msgid "Behance link"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:3940
+#: ../admin/partials/actions/ays-pb-admin-actions.php:3968
 msgid "Behance page link for showing at the end of the popup."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:3958
+#: ../admin/partials/actions/ays-pb-admin-actions.php:3986
 msgid "Schedule the popup"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:3960
+#: ../admin/partials/actions/ays-pb-admin-actions.php:3988
 msgid "Define the period of time when the popup will be active."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:3977
-#: ../admin/partials/actions/ays-pb-admin-actions.php:4060
-#: ../admin/partials/actions/ays-pb-admin-actions.php:4083
+#: ../admin/partials/actions/ays-pb-admin-actions.php:4005
+#: ../admin/partials/actions/ays-pb-admin-actions.php:4088
+#: ../admin/partials/actions/ays-pb-admin-actions.php:4111
 msgid "Start date:"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:3996
-#: ../admin/partials/actions/ays-pb-admin-actions.php:4069
-#: ../admin/partials/actions/ays-pb-admin-actions.php:4092
+#: ../admin/partials/actions/ays-pb-admin-actions.php:4024
+#: ../admin/partials/actions/ays-pb-admin-actions.php:4097
+#: ../admin/partials/actions/ays-pb-admin-actions.php:4120
 msgid "End date:"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:4027
-#: ../admin/partials/actions/ays-pb-admin-actions.php:4121
-#: ../admin/partials/actions/ays-pb-admin-actions.php:6398
-#: ../admin/partials/actions/ays-pb-admin-actions.php:6419
-#: ../admin/partials/actions/ays-pb-admin-actions.php:7263
-#: ../admin/partials/actions/ays-pb-admin-actions.php:7316
-#: ../admin/partials/actions/ays-pb-admin-actions.php:7381
-#: ../admin/partials/actions/ays-pb-admin-actions.php:7424
+#: ../admin/partials/actions/ays-pb-admin-actions.php:4055
+#: ../admin/partials/actions/ays-pb-admin-actions.php:4149
+#: ../admin/partials/actions/ays-pb-admin-actions.php:6459
+#: ../admin/partials/actions/ays-pb-admin-actions.php:6480
+#: ../admin/partials/actions/ays-pb-admin-actions.php:7324
+#: ../admin/partials/actions/ays-pb-admin-actions.php:7377
+#: ../admin/partials/actions/ays-pb-admin-actions.php:7442
+#: ../admin/partials/actions/ays-pb-admin-actions.php:7485
 msgid "Watch Video"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:4041
+#: ../admin/partials/actions/ays-pb-admin-actions.php:4069
 msgid "Multiple Scheduling"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:4043
+#: ../admin/partials/actions/ays-pb-admin-actions.php:4071
 msgid "The period of time when Popup will be active"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:4135
+#: ../admin/partials/actions/ays-pb-admin-actions.php:4163
 msgid " Actions while clicking on the popup"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:4136
+#: ../admin/partials/actions/ays-pb-admin-actions.php:4164
 msgid "Enable closing the popup and/or redirecting to the custom URL in case of clicking on any area of the popup container."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:4152
+#: ../admin/partials/actions/ays-pb-admin-actions.php:4180
 msgid "Enable closing"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:4153
+#: ../admin/partials/actions/ays-pb-admin-actions.php:4181
 msgid "If the option is enabled, then the popup will be closed if the user clicks on any area inside it."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:4170
+#: ../admin/partials/actions/ays-pb-admin-actions.php:4198
 msgid "Enable redirection"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:4171
+#: ../admin/partials/actions/ays-pb-admin-actions.php:4199
 msgid "Enable redirection to the custom URL when the user clicks on any area inside the popup."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:4182
+#: ../admin/partials/actions/ays-pb-admin-actions.php:4210
 msgid "Redirection URL"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:4183
+#: ../admin/partials/actions/ays-pb-admin-actions.php:4211
 msgid "Provide the redirection URL."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:4194
+#: ../admin/partials/actions/ays-pb-admin-actions.php:4222
 msgid "Open in new tab"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:4195
+#: ../admin/partials/actions/ays-pb-admin-actions.php:4223
 msgid "If the option is enabled, then the system will redirect the URL in a separate new tab."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:4215
+#: ../admin/partials/actions/ays-pb-admin-actions.php:4243
 msgid "Change the popup creation date"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:4216
+#: ../admin/partials/actions/ays-pb-admin-actions.php:4244
 msgid "Change the popup creation date to the preferred date."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:4236
+#: ../admin/partials/actions/ays-pb-admin-actions.php:4264
 msgid "Change the popup author"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:4237
+#: ../admin/partials/actions/ays-pb-admin-actions.php:4265
 msgid "Change the popup author to the preferred one. Write the User ID in the field. To find the ID, go to the WordPress User's section and hover on the user. You can find the user ID in the link below. Please note, that in case you write an ID, by which there are no users found, the changes will not be applied and the previous author will remain the same."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:4244
+#: ../admin/partials/actions/ays-pb-admin-actions.php:4272
 msgid "Select User"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:4264
+#: ../admin/partials/actions/ays-pb-admin-actions.php:4292
 msgid "Enable dismiss ad"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:4265
+#: ../admin/partials/actions/ays-pb-admin-actions.php:4293
 msgid "After enabling this option the dismiss ad button will be displayed in the popup. After clicking on the button the ads will be dismissed for 1 month."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:4280
-#: ../admin/partials/actions/ays-pb-admin-actions.php:4296
+#: ../admin/partials/actions/ays-pb-admin-actions.php:4308
+#: ../admin/partials/actions/ays-pb-admin-actions.php:4324
 msgid "Dismiss ad text"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:4281
-#: ../admin/partials/actions/ays-pb-admin-actions.php:4297
+#: ../admin/partials/actions/ays-pb-admin-actions.php:4309
+#: ../admin/partials/actions/ays-pb-admin-actions.php:4325
 msgid "Write the text that you want to be displayed on the dismiss ad button."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:4320
+#: ../admin/partials/actions/ays-pb-admin-actions.php:4348
 msgid "Disable page scrolling"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:4321
+#: ../admin/partials/actions/ays-pb-admin-actions.php:4349
 msgid "The page will not be scrolled while the popup is displaying. Note: When the option is enabled, the system hides the scrolling of the HTML tag. As the scrolling is hidden, it is automatically scrolling the popup to the top and the plugin doesn't have a connection to this. "
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:4348
+#: ../admin/partials/actions/ays-pb-admin-actions.php:4376
 msgid "Disable popup scrolling"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:4349
+#: ../admin/partials/actions/ays-pb-admin-actions.php:4377
 msgid "After enabling this option the content in the popup will not be scrolled."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:4376
+#: ../admin/partials/actions/ays-pb-admin-actions.php:4404
 msgid "Show scrollbar"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:4377
+#: ../admin/partials/actions/ays-pb-admin-actions.php:4405
 msgid "Enable this option to display the popup scrollbar."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:4394
+#: ../admin/partials/actions/ays-pb-admin-actions.php:4422
 #: ../includes/lists/class-ays-pb-list-table.php:220
 msgid "Template"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:4441
-#: ../admin/partials/actions/ays-pb-admin-actions.php:4450
+#: ../admin/partials/actions/ays-pb-admin-actions.php:4469
+#: ../admin/partials/actions/ays-pb-admin-actions.php:4478
 #: ../includes/lists/class-ays-pb-list-table.php:476
 msgid "Red"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:4468
-#: ../admin/partials/actions/ays-pb-admin-actions.php:4476
+#: ../admin/partials/actions/ays-pb-admin-actions.php:4496
+#: ../admin/partials/actions/ays-pb-admin-actions.php:4504
 #: ../includes/lists/class-ays-pb-list-table.php:479
 msgid "Modern"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:4494
-#: ../admin/partials/actions/ays-pb-admin-actions.php:4502
+#: ../admin/partials/actions/ays-pb-admin-actions.php:4522
+#: ../admin/partials/actions/ays-pb-admin-actions.php:4530
 #: ../includes/lists/class-ays-pb-list-table.php:482
 msgid "Minimal"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:4520
-#: ../admin/partials/actions/ays-pb-admin-actions.php:4528
-#: ../admin/partials/actions/ays-pb-admin-actions.php:4585
-#: ../admin/partials/actions/ays-pb-admin-actions.php:4601
-#: ../includes/class-ays-pb-data.php:429
+#: ../admin/partials/actions/ays-pb-admin-actions.php:4548
+#: ../admin/partials/actions/ays-pb-admin-actions.php:4556
+#: ../admin/partials/actions/ays-pb-admin-actions.php:4613
+#: ../admin/partials/actions/ays-pb-admin-actions.php:4629
+#: ../includes/class-ays-pb-data.php:430
 #: ../includes/lists/class-ays-pb-list-table.php:485
 msgid "Sale"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:4576
+#: ../admin/partials/actions/ays-pb-admin-actions.php:4604
 msgid "Peachy"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:4592
+#: ../admin/partials/actions/ays-pb-admin-actions.php:4620
 msgid "Yellowish"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:4608
-#: ../admin/partials/actions/ays-pb-admin-actions.php:4617
+#: ../admin/partials/actions/ays-pb-admin-actions.php:4636
+#: ../admin/partials/actions/ays-pb-admin-actions.php:4645
 msgid "Coral"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:4625
-#: ../admin/partials/actions/ays-pb-admin-actions.php:4634
+#: ../admin/partials/actions/ays-pb-admin-actions.php:4653
+#: ../admin/partials/actions/ays-pb-admin-actions.php:4662
 msgid "Frozen"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:4641
-#: ../admin/partials/actions/ays-pb-admin-actions.php:4650
+#: ../admin/partials/actions/ays-pb-admin-actions.php:4669
+#: ../admin/partials/actions/ays-pb-admin-actions.php:4678
 msgid "Food"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:4657
-#: ../admin/partials/actions/ays-pb-admin-actions.php:4666
+#: ../admin/partials/actions/ays-pb-admin-actions.php:4685
+#: ../admin/partials/actions/ays-pb-admin-actions.php:4694
 msgid "Forest"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:4695
+#: ../admin/partials/actions/ays-pb-admin-actions.php:4723
 msgid "MacOS window"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:4703
+#: ../admin/partials/actions/ays-pb-admin-actions.php:4731
 msgid "MacOS "
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:4721
-#: ../admin/partials/actions/ays-pb-admin-actions.php:4729
+#: ../admin/partials/actions/ays-pb-admin-actions.php:4749
+#: ../admin/partials/actions/ays-pb-admin-actions.php:4757
 #: ../includes/lists/class-ays-pb-list-table.php:491
 msgid "Ubuntu"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:4748
-#: ../admin/partials/actions/ays-pb-admin-actions.php:4756
+#: ../admin/partials/actions/ays-pb-admin-actions.php:4776
+#: ../admin/partials/actions/ays-pb-admin-actions.php:4784
 #: ../includes/lists/class-ays-pb-list-table.php:494
 msgid "Windows XP"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:4775
-#: ../admin/partials/actions/ays-pb-admin-actions.php:4783
+#: ../admin/partials/actions/ays-pb-admin-actions.php:4803
+#: ../admin/partials/actions/ays-pb-admin-actions.php:4811
 #: ../includes/lists/class-ays-pb-list-table.php:497
 msgid "Windows 98"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:4801
-#: ../admin/partials/actions/ays-pb-admin-actions.php:4809
+#: ../admin/partials/actions/ays-pb-admin-actions.php:4829
+#: ../admin/partials/actions/ays-pb-admin-actions.php:4837
 msgid "Command prompt"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:4823
+#: ../admin/partials/actions/ays-pb-admin-actions.php:4851
 msgid "Popup Dimensions"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:4830
+#: ../admin/partials/actions/ays-pb-admin-actions.php:4858
 msgid "Display Content"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:4831
+#: ../admin/partials/actions/ays-pb-admin-actions.php:4859
 msgid "Show Popup head information - Enable to show the title and(or) the description inside the popup."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:4840
-#: ../admin/partials/actions/ays-pb-admin-actions.php:4850
+#: ../admin/partials/actions/ays-pb-admin-actions.php:4868
+#: ../admin/partials/actions/ays-pb-admin-actions.php:4878
 msgid "Show title"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:4843
-#: ../admin/partials/actions/ays-pb-admin-actions.php:4853
+#: ../admin/partials/actions/ays-pb-admin-actions.php:4871
+#: ../admin/partials/actions/ays-pb-admin-actions.php:4881
 msgid "Show description"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:4870
+#: ../admin/partials/actions/ays-pb-admin-actions.php:4898
 msgid "Specify the width of the popup in pixels."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:4880
-#: ../admin/partials/actions/ays-pb-admin-actions.php:4972
-#: ../admin/partials/actions/ays-pb-admin-actions.php:5028
-#: ../admin/partials/actions/ays-pb-admin-actions.php:5241
-#: ../admin/partials/actions/ays-pb-admin-actions.php:5288
-#: ../admin/partials/actions/ays-pb-admin-actions.php:6057
-#: ../admin/partials/actions/ays-pb-admin-actions.php:6657
+#: ../admin/partials/actions/ays-pb-admin-actions.php:4908
+#: ../admin/partials/actions/ays-pb-admin-actions.php:5000
+#: ../admin/partials/actions/ays-pb-admin-actions.php:5056
+#: ../admin/partials/actions/ays-pb-admin-actions.php:5302
+#: ../admin/partials/actions/ays-pb-admin-actions.php:5349
+#: ../admin/partials/actions/ays-pb-admin-actions.php:6118
+#: ../admin/partials/actions/ays-pb-admin-actions.php:6718
 msgid "On desktop"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:4889
-#: ../admin/partials/actions/ays-pb-admin-actions.php:4918
-#: ../admin/partials/actions/ays-pb-admin-actions.php:4949
-#, no-php-format
+#: ../admin/partials/actions/ays-pb-admin-actions.php:4917
+#: ../admin/partials/actions/ays-pb-admin-actions.php:4946
+#: ../admin/partials/actions/ays-pb-admin-actions.php:4977
+#, php-format
 msgid "For 100% leave blank"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:4940
+#: ../admin/partials/actions/ays-pb-admin-actions.php:4968
 msgid "Max-width for mobile"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:4941
+#: ../admin/partials/actions/ays-pb-admin-actions.php:4969
 msgid "Specify the max-width of the popup for mobile in percentage. Note: This option works for screens with less than 768 pixels width."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:4961
+#: ../admin/partials/actions/ays-pb-admin-actions.php:4989
 msgid "Height"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:4962
+#: ../admin/partials/actions/ays-pb-admin-actions.php:4990
 msgid "Specify the height of the popup in pixels."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:5017
+#: ../admin/partials/actions/ays-pb-admin-actions.php:5045
 msgid "Popup max-height"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:5018
+#: ../admin/partials/actions/ays-pb-admin-actions.php:5046
 msgid "Specify the max height of the popup in pixels and percentages."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:5059
-#: ../admin/partials/actions/ays-pb-admin-actions.php:5333
-#: ../admin/partials/actions/ays-pb-admin-actions.php:6108
-#: ../admin/partials/actions/ays-pb-admin-actions.php:6702
+#: ../admin/partials/actions/ays-pb-admin-actions.php:5087
+#: ../admin/partials/actions/ays-pb-admin-actions.php:5394
+#: ../admin/partials/actions/ays-pb-admin-actions.php:6169
+#: ../admin/partials/actions/ays-pb-admin-actions.php:6763
 msgid "On Mobile"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:5092
+#: ../admin/partials/actions/ays-pb-admin-actions.php:5120
 msgid "Popup min-height"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:5093
+#: ../admin/partials/actions/ays-pb-admin-actions.php:5121
 msgid "Define the popup's minimal height in pixels."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:5112
+#: ../admin/partials/actions/ays-pb-admin-actions.php:5140
 msgid "Full-screen mode"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:5113
+#: ../admin/partials/actions/ays-pb-admin-actions.php:5141
 msgid "Enable this option to display the popup on a full screen."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:5126
+#: ../admin/partials/actions/ays-pb-admin-actions.php:5154
 msgid "Content padding"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:5127
+#: ../admin/partials/actions/ays-pb-admin-actions.php:5155
 msgid "Specify the padding of the popup in pixels. It accepts only numerical values and you can choose whether to define the value by percentage or in pixels."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:5136
+#: ../admin/partials/actions/ays-pb-admin-actions.php:5168
+#: ../admin/partials/actions/ays-pb-admin-actions.php:5190
 msgid "Default value = "
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:5158
+#: ../admin/partials/actions/ays-pb-admin-actions.php:5219
 msgid "Text style"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:5168
+#: ../admin/partials/actions/ays-pb-admin-actions.php:5229
 msgid "Specify the text color written inside the popup."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:5184
-#: ../admin/partials/actions/ays-pb-admin-actions.php:5413
+#: ../admin/partials/actions/ays-pb-admin-actions.php:5245
+#: ../admin/partials/actions/ays-pb-admin-actions.php:5474
 msgid "Font family"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:5185
+#: ../admin/partials/actions/ays-pb-admin-actions.php:5246
 msgid "Choose the popup text font family."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:5231
+#: ../admin/partials/actions/ays-pb-admin-actions.php:5292
 msgid "Description font size"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:5232
+#: ../admin/partials/actions/ays-pb-admin-actions.php:5293
 msgid "Define the font size of the popup description in pixels."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:5276
+#: ../admin/partials/actions/ays-pb-admin-actions.php:5337
 msgid "Title text shadow"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:5277
+#: ../admin/partials/actions/ays-pb-admin-actions.php:5338
 msgid "Add text shadow to the popup title."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:5280
+#: ../admin/partials/actions/ays-pb-admin-actions.php:5341
 msgid "This option is not available currently as the Show title Option is disable."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:5289
+#: ../admin/partials/actions/ays-pb-admin-actions.php:5350
 msgid "Define the title text shadow for desktop devices."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:5302
-#: ../admin/partials/actions/ays-pb-admin-actions.php:5347
-#: ../admin/partials/actions/ays-pb-admin-actions.php:6672
-#: ../admin/partials/actions/ays-pb-admin-actions.php:6717
+#: ../admin/partials/actions/ays-pb-admin-actions.php:5363
+#: ../admin/partials/actions/ays-pb-admin-actions.php:5408
+#: ../admin/partials/actions/ays-pb-admin-actions.php:6733
+#: ../admin/partials/actions/ays-pb-admin-actions.php:6778
 msgid "Color"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:5303
-#: ../admin/partials/actions/ays-pb-admin-actions.php:5348
+#: ../admin/partials/actions/ays-pb-admin-actions.php:5364
+#: ../admin/partials/actions/ays-pb-admin-actions.php:5409
 msgid "Specify text shadow color."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:5334
+#: ../admin/partials/actions/ays-pb-admin-actions.php:5395
 msgid "Define the title text shadow for mobile devices."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:5399
+#: ../admin/partials/actions/ays-pb-admin-actions.php:5460
 #: ../admin/partials/features/popup-box-pro-features-display.php:771
 #: ../admin/partials/features/popup-box-pro-features-display.php:776
 msgid "Title style"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:5400
+#: ../admin/partials/actions/ays-pb-admin-actions.php:5461
 msgid "Enable the option to customize the style of the popup title."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:5414
+#: ../admin/partials/actions/ays-pb-admin-actions.php:5475
 msgid "Choose your preferred font family from the suggested variants for the popup title."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:5431
+#: ../admin/partials/actions/ays-pb-admin-actions.php:5492
 msgid "Define the boldness of the popup title."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:5447
+#: ../admin/partials/actions/ays-pb-admin-actions.php:5508
 msgid "Font size(px)"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:5448
+#: ../admin/partials/actions/ays-pb-admin-actions.php:5509
 msgid "Define the font size of the popup title in pixels."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:5460
+#: ../admin/partials/actions/ays-pb-admin-actions.php:5521
 msgid "Letter spacing(px)"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:5461
+#: ../admin/partials/actions/ays-pb-admin-actions.php:5522
 msgid "Define the space between characters in a text of the popup title in pixels."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:5473
+#: ../admin/partials/actions/ays-pb-admin-actions.php:5534
 msgid "Line height"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:5474
+#: ../admin/partials/actions/ays-pb-admin-actions.php:5535
 msgid "Define the height of a line of the popup title."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:5486
+#: ../admin/partials/actions/ays-pb-admin-actions.php:5547
 msgid "Text alignment"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:5487
+#: ../admin/partials/actions/ays-pb-admin-actions.php:5548
 msgid "Choose the horizontal alignment of the text of the popup title."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:5495
+#: ../admin/partials/actions/ays-pb-admin-actions.php:5556
 msgid "Center"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:5503
+#: ../admin/partials/actions/ays-pb-admin-actions.php:5564
 msgid "Text transform"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:5505
+#: ../admin/partials/actions/ays-pb-admin-actions.php:5566
 msgid "Choose the capitalization of the text of the popup title. "
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:5507
+#: ../admin/partials/actions/ays-pb-admin-actions.php:5568
 msgid " None - No capitalization. The text renders as it is."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:5509
+#: ../admin/partials/actions/ays-pb-admin-actions.php:5570
 msgid "Capitalize - Transforms the first character of each word to uppercase."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:5511
+#: ../admin/partials/actions/ays-pb-admin-actions.php:5572
 msgid "Uppercase - Transforms all characters to uppercase."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:5513
+#: ../admin/partials/actions/ays-pb-admin-actions.php:5574
 msgid " Lowercase - Transforms all characters to lowercase."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:5532
+#: ../admin/partials/actions/ays-pb-admin-actions.php:5593
 msgid "Choose the kind of decoration added to text of the popup title."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:5556
+#: ../admin/partials/actions/ays-pb-admin-actions.php:5617
 msgid "Opening and Closing effects"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:5564
+#: ../admin/partials/actions/ays-pb-admin-actions.php:5625
 msgid "Opening animation"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:5565
+#: ../admin/partials/actions/ays-pb-admin-actions.php:5626
 msgid "Choose the entry effect for the popup opening."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:5682
+#: ../admin/partials/actions/ays-pb-admin-actions.php:5743
 msgid "Closing animation"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:5683
+#: ../admin/partials/actions/ays-pb-admin-actions.php:5744
 msgid "Choose the exit effect for the popup closing."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:5800
+#: ../admin/partials/actions/ays-pb-admin-actions.php:5861
 msgid "Opening animation speed"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:5801
+#: ../admin/partials/actions/ays-pb-admin-actions.php:5862
 msgid "Specify the entry effect speed of the popup in seconds."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:5830
+#: ../admin/partials/actions/ays-pb-admin-actions.php:5891
 msgid "Closing animation speed"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:5831
+#: ../admin/partials/actions/ays-pb-admin-actions.php:5892
 msgid "Specify the ending animation speed of the popup in seconds."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:5861
+#: ../admin/partials/actions/ays-pb-admin-actions.php:5922
 msgid "Background style"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:5870
+#: ../admin/partials/actions/ays-pb-admin-actions.php:5931
 msgid "Specify the background color of the popup."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:5898
+#: ../admin/partials/actions/ays-pb-admin-actions.php:5959
 msgid "Background Image"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:5900
+#: ../admin/partials/actions/ays-pb-admin-actions.php:5961
 msgid "Add a background image to the popup. Note: If you want to apply background color, remove the image or don't add it."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:5949
+#: ../admin/partials/actions/ays-pb-admin-actions.php:6010
 msgid "Background image position"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:5950
+#: ../admin/partials/actions/ays-pb-admin-actions.php:6011
 msgid "Select the position of the background image of the popup."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:6010
+#: ../admin/partials/actions/ays-pb-admin-actions.php:6071
 msgid "Background image sizing"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:6011
+#: ../admin/partials/actions/ays-pb-admin-actions.php:6072
 msgid "Define the background image size if needed."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:6046
+#: ../admin/partials/actions/ays-pb-admin-actions.php:6107
 msgid "Background gradient"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:6047
+#: ../admin/partials/actions/ays-pb-admin-actions.php:6108
 msgid "Add background gradient for the popup, choose gradient color stops and direction."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:6058
+#: ../admin/partials/actions/ays-pb-admin-actions.php:6119
 msgid "Define the background gradient for desktop devices."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:6071
-#: ../admin/partials/actions/ays-pb-admin-actions.php:6122
+#: ../admin/partials/actions/ays-pb-admin-actions.php:6132
+#: ../admin/partials/actions/ays-pb-admin-actions.php:6183
 msgid "Color 1"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:6072
-#: ../admin/partials/actions/ays-pb-admin-actions.php:6123
+#: ../admin/partials/actions/ays-pb-admin-actions.php:6133
+#: ../admin/partials/actions/ays-pb-admin-actions.php:6184
 msgid "Select the first color stop."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:6080
-#: ../admin/partials/actions/ays-pb-admin-actions.php:6131
+#: ../admin/partials/actions/ays-pb-admin-actions.php:6141
+#: ../admin/partials/actions/ays-pb-admin-actions.php:6192
 msgid "Color 2"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:6081
-#: ../admin/partials/actions/ays-pb-admin-actions.php:6132
+#: ../admin/partials/actions/ays-pb-admin-actions.php:6142
+#: ../admin/partials/actions/ays-pb-admin-actions.php:6193
 msgid "Select the second color stop."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:6089
-#: ../admin/partials/actions/ays-pb-admin-actions.php:6140
+#: ../admin/partials/actions/ays-pb-admin-actions.php:6150
+#: ../admin/partials/actions/ays-pb-admin-actions.php:6201
 msgid "Gradient direction"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:6090
-#: ../admin/partials/actions/ays-pb-admin-actions.php:6141
+#: ../admin/partials/actions/ays-pb-admin-actions.php:6151
+#: ../admin/partials/actions/ays-pb-admin-actions.php:6202
 msgid "The direction of the color gradient"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:6095
-#: ../admin/partials/actions/ays-pb-admin-actions.php:6146
+#: ../admin/partials/actions/ays-pb-admin-actions.php:6156
+#: ../admin/partials/actions/ays-pb-admin-actions.php:6207
 msgid "Vertical"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:6096
-#: ../admin/partials/actions/ays-pb-admin-actions.php:6147
+#: ../admin/partials/actions/ays-pb-admin-actions.php:6157
+#: ../admin/partials/actions/ays-pb-admin-actions.php:6208
 msgid "Horizontal"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:6097
-#: ../admin/partials/actions/ays-pb-admin-actions.php:6148
+#: ../admin/partials/actions/ays-pb-admin-actions.php:6158
+#: ../admin/partials/actions/ays-pb-admin-actions.php:6209
 msgid "Diagonal left to right"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:6098
-#: ../admin/partials/actions/ays-pb-admin-actions.php:6149
+#: ../admin/partials/actions/ays-pb-admin-actions.php:6159
+#: ../admin/partials/actions/ays-pb-admin-actions.php:6210
 msgid "Diagonal right to left"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:6109
+#: ../admin/partials/actions/ays-pb-admin-actions.php:6170
 msgid "Define the background gradient for mobile devices."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:6161
+#: ../admin/partials/actions/ays-pb-admin-actions.php:6222
 msgid "Header background color"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:6162
+#: ../admin/partials/actions/ays-pb-admin-actions.php:6223
 msgid "Specify the background color of the box's header. Note: It works with the following themes: Red, Sale."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:6177
+#: ../admin/partials/actions/ays-pb-admin-actions.php:6238
 msgid "Overlay color"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:6178
+#: ../admin/partials/actions/ays-pb-admin-actions.php:6239
 msgid "Specify the overlay color."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:6216
+#: ../admin/partials/actions/ays-pb-admin-actions.php:6277
 msgid "Border Width"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:6217
+#: ../admin/partials/actions/ays-pb-admin-actions.php:6278
 msgid "Specify the border size of the popup in pixels."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:6324
+#: ../admin/partials/actions/ays-pb-admin-actions.php:6385
 msgid "Specify the border color of the popup."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:6356
+#: ../admin/partials/actions/ays-pb-admin-actions.php:6417
 msgid "Specify the radius of the border. Allows adding rounded corners to the popup."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:6387
+#: ../admin/partials/actions/ays-pb-admin-actions.php:6448
 msgid "Button Style"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:6435
+#: ../admin/partials/actions/ays-pb-admin-actions.php:6496
 msgid "Button size"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:6436
+#: ../admin/partials/actions/ays-pb-admin-actions.php:6497
 msgid "The default sizes of buttons."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:6444
+#: ../admin/partials/actions/ays-pb-admin-actions.php:6505
 msgid "Small"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:6447
+#: ../admin/partials/actions/ays-pb-admin-actions.php:6508
 msgid "Medium"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:6450
+#: ../admin/partials/actions/ays-pb-admin-actions.php:6511
 msgid "Large"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:6459
+#: ../admin/partials/actions/ays-pb-admin-actions.php:6520
 msgid "Button text color"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:6460
+#: ../admin/partials/actions/ays-pb-admin-actions.php:6521
 msgid "Specify the text color of buttons inside the popup."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:6473
+#: ../admin/partials/actions/ays-pb-admin-actions.php:6534
 msgid "Button background color"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:6474
+#: ../admin/partials/actions/ays-pb-admin-actions.php:6535
 msgid "Specify the backgound color of buttons inside the popup."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:6486
+#: ../admin/partials/actions/ays-pb-admin-actions.php:6547
 msgid "Button font-size"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:6487
+#: ../admin/partials/actions/ays-pb-admin-actions.php:6548
 msgid "The font size of the buttons in pixels in the popup. It accepts only numeric values."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:6500
+#: ../admin/partials/actions/ays-pb-admin-actions.php:6561
 msgid "Button width"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:6501
+#: ../admin/partials/actions/ays-pb-admin-actions.php:6562
 msgid "Set the button width in pixels. For an initial width, leave the field blank."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:6508
+#: ../admin/partials/actions/ays-pb-admin-actions.php:6569
 msgid "For an initial width, leave the field blank."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:6515
+#: ../admin/partials/actions/ays-pb-admin-actions.php:6576
 msgid "Button padding"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:6516
+#: ../admin/partials/actions/ays-pb-admin-actions.php:6577
 msgid "Padding of buttons."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:6536
+#: ../admin/partials/actions/ays-pb-admin-actions.php:6597
 msgid "Button border-radius"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:6537
+#: ../admin/partials/actions/ays-pb-admin-actions.php:6598
 msgid "Popup buttons border-radius in pixels. It accepts only numeric values."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:6555
+#: ../admin/partials/actions/ays-pb-admin-actions.php:6616
 msgid "Close button image"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:6556
+#: ../admin/partials/actions/ays-pb-admin-actions.php:6617
 msgid "Add an image which will be displayed instead of the close button."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:6585
+#: ../admin/partials/actions/ays-pb-admin-actions.php:6646
 msgid "Close button color"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:6586
+#: ../admin/partials/actions/ays-pb-admin-actions.php:6647
 msgid "Define the close button color."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:6603
+#: ../admin/partials/actions/ays-pb-admin-actions.php:6664
 msgid "Close button hover color"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:6604
+#: ../admin/partials/actions/ays-pb-admin-actions.php:6665
 msgid "Define the close button color on hover."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:6621
+#: ../admin/partials/actions/ays-pb-admin-actions.php:6682
 msgid "Close button size"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:6622
+#: ../admin/partials/actions/ays-pb-admin-actions.php:6683
 msgid "Define the close button size in pixels."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:6639
+#: ../admin/partials/actions/ays-pb-admin-actions.php:6700
 msgid "Advanced style"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:6647
+#: ../admin/partials/actions/ays-pb-admin-actions.php:6708
 msgid "Allow popup container box shadow."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:6658
+#: ../admin/partials/actions/ays-pb-admin-actions.php:6719
 msgid "Define the box shadow for desktop devices."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:6673
-#: ../admin/partials/actions/ays-pb-admin-actions.php:6718
+#: ../admin/partials/actions/ays-pb-admin-actions.php:6734
+#: ../admin/partials/actions/ays-pb-admin-actions.php:6779
 msgid "The color of the shadow of the popup container"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:6703
+#: ../admin/partials/actions/ays-pb-admin-actions.php:6764
 msgid "Define the box shadow for mobile devices."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:6748
+#: ../admin/partials/actions/ays-pb-admin-actions.php:6809
 msgid "Background image style on mobile"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:6749
+#: ../admin/partials/actions/ays-pb-admin-actions.php:6810
 msgid "On mobile mode the background image will change it style and it will be displayed at the top of the text. Note: It will work only for the Sale template."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:6762
+#: ../admin/partials/actions/ays-pb-admin-actions.php:6823
 msgid "Custom class for popup container "
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:6763
+#: ../admin/partials/actions/ays-pb-admin-actions.php:6824
 msgid "Use your custom HTML class for adding your custom styles to popup container."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:6775
+#: ../admin/partials/actions/ays-pb-admin-actions.php:6836
 msgid "Custom CSS"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:6776
+#: ../admin/partials/actions/ays-pb-admin-actions.php:6837
 msgid "Field for entering your own CSS code."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:6786
+#: ../admin/partials/actions/ays-pb-admin-actions.php:6847
 msgid "Reset styles"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:6787
+#: ../admin/partials/actions/ays-pb-admin-actions.php:6848
 msgid "Reset popup styles to default values"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:6801
+#: ../admin/partials/actions/ays-pb-admin-actions.php:6862
 msgid "See PopupBox in live preview"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:6821
-#: ../admin/partials/actions/ays-pb-admin-actions.php:6836
-#: ../admin/partials/actions/ays-pb-admin-actions.php:6859
-#: ../admin/partials/actions/ays-pb-admin-actions.php:6887
-#: ../admin/partials/actions/ays-pb-admin-actions.php:6907
-#: ../admin/partials/actions/ays-pb-admin-actions.php:6924
-#: ../admin/partials/actions/ays-pb-admin-actions.php:6941
-#: ../admin/partials/actions/ays-pb-admin-actions.php:6957
-#: ../admin/partials/actions/ays-pb-admin-actions.php:6979
-#: ../admin/partials/actions/ays-pb-admin-actions.php:6997
+#: ../admin/partials/actions/ays-pb-admin-actions.php:6882
+#: ../admin/partials/actions/ays-pb-admin-actions.php:6897
+#: ../admin/partials/actions/ays-pb-admin-actions.php:6920
+#: ../admin/partials/actions/ays-pb-admin-actions.php:6948
+#: ../admin/partials/actions/ays-pb-admin-actions.php:6968
+#: ../admin/partials/actions/ays-pb-admin-actions.php:6985
+#: ../admin/partials/actions/ays-pb-admin-actions.php:7002
+#: ../admin/partials/actions/ays-pb-admin-actions.php:7018
+#: ../admin/partials/actions/ays-pb-admin-actions.php:7040
+#: ../admin/partials/actions/ays-pb-admin-actions.php:7058
 msgid "Here can be custom HTML or shortcode"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:7013
+#: ../admin/partials/actions/ays-pb-admin-actions.php:7074
 #: ../public/partials/ays-pb-public-templates.php:3968
 #: ../public/partials/ays-pb-public-templates.php:3970
 #: ../public/partials/ays-pb-public-templates.php:3972
@@ -2606,229 +2628,229 @@ msgstr ""
 msgid "This will close in "
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:7066
+#: ../admin/partials/actions/ays-pb-admin-actions.php:7127
 msgid "Limitation of Users"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:7074
+#: ../admin/partials/actions/ays-pb-admin-actions.php:7135
 msgid "Display popup once per user"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:7075
+#: ../admin/partials/actions/ays-pb-admin-actions.php:7136
 msgid "Enable this option to display the popup once per visitor."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:7093
-#: ../admin/partials/actions/ays-pb-admin-actions.php:7121
+#: ../admin/partials/actions/ays-pb-admin-actions.php:7154
+#: ../admin/partials/actions/ays-pb-admin-actions.php:7182
 msgid "Note: This option works via cookies. If you are using a plugin that disables cookies, there may be a conflict leading to the incorrect operation of this feature."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:7104
+#: ../admin/partials/actions/ays-pb-admin-actions.php:7165
 msgid "Display once per session"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:7105
+#: ../admin/partials/actions/ays-pb-admin-actions.php:7166
 msgid "Define the interval between the popup sessions in minutes. To disable the option, set 0. E.g. set it to 1440 to show the popup once a day to each user."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:7132
+#: ../admin/partials/actions/ays-pb-admin-actions.php:7193
 msgid "Display for logged-in users"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:7134
+#: ../admin/partials/actions/ays-pb-admin-actions.php:7195
 msgid "Enable this option to display the popup for logged-in users."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:7148
+#: ../admin/partials/actions/ays-pb-admin-actions.php:7209
 msgid "Display for certain user roles"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:7150
+#: ../admin/partials/actions/ays-pb-admin-actions.php:7211
 msgid "Show the popup only to certain user role(s) mentioned in the list. Leave it blank for showing the popup to all user roles."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:7188
+#: ../admin/partials/actions/ays-pb-admin-actions.php:7249
 msgid "Display for guests"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:7190
+#: ../admin/partials/actions/ays-pb-admin-actions.php:7251
 msgid "Enable this option to display the popup for guest visitors."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:7205
+#: ../admin/partials/actions/ays-pb-admin-actions.php:7266
 msgid "Hide popup on mobile"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:7207
+#: ../admin/partials/actions/ays-pb-admin-actions.php:7268
 msgid "Disable the popup on mobile devices."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:7222
+#: ../admin/partials/actions/ays-pb-admin-actions.php:7283
 msgid "Hide popup on desktop"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:7224
+#: ../admin/partials/actions/ays-pb-admin-actions.php:7285
 msgid "Disable the popup on desktop."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:7239
+#: ../admin/partials/actions/ays-pb-admin-actions.php:7300
 msgid "Hide popup on tablets"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:7241
+#: ../admin/partials/actions/ays-pb-admin-actions.php:7302
 msgid "Disable the popup on tablets."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:7277
+#: ../admin/partials/actions/ays-pb-admin-actions.php:7338
 msgid "Disable by view count"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:7278
+#: ../admin/partials/actions/ays-pb-admin-actions.php:7339
 msgid "Disable the popup after certain views."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:7290
+#: ../admin/partials/actions/ays-pb-admin-actions.php:7351
 msgid "Count"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:7291
+#: ../admin/partials/actions/ays-pb-admin-actions.php:7352
 msgid "Specify the count of views."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:7330
+#: ../admin/partials/actions/ays-pb-admin-actions.php:7391
 msgid "Display for certain OS"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:7332
+#: ../admin/partials/actions/ays-pb-admin-actions.php:7393
 msgid "Set on which operating systems your popup will be displayed."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:7351
+#: ../admin/partials/actions/ays-pb-admin-actions.php:7412
 msgid "Display for certain browser"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:7353
-#: ../admin/partials/actions/ays-pb-admin-actions.php:7397
+#: ../admin/partials/actions/ays-pb-admin-actions.php:7414
+#: ../admin/partials/actions/ays-pb-admin-actions.php:7458
 msgid "Show the popup only to visitors using certain browser(s) mentioned in the list. Leave it blank for showing the popup to all browsers users."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:7395
+#: ../admin/partials/actions/ays-pb-admin-actions.php:7456
 #: ../admin/partials/features/popup-box-pro-features-display.php:435
 #: ../admin/partials/features/popup-box-pro-features-display.php:440
 msgid "Limit by country"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:7438
+#: ../admin/partials/actions/ays-pb-admin-actions.php:7499
 msgid "Dismiss by closing"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:7440
+#: ../admin/partials/actions/ays-pb-admin-actions.php:7501
 msgid "After clicking on the x button the popup will not be displayed for the user."
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:7465
+#: ../admin/partials/actions/ays-pb-admin-actions.php:7526
 #: ../admin/partials/settings/popup-box-settings.php:288
 msgid "The Integrations tab works only with Contact Form, Subscription and Send File after subscription types"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:7507
+#: ../admin/partials/actions/ays-pb-admin-actions.php:7568
 msgid "Prev popup"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:7516
+#: ../admin/partials/actions/ays-pb-admin-actions.php:7577
 msgid "Next Popup"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:7531
+#: ../admin/partials/actions/ays-pb-admin-actions.php:7592
 msgid "Choose Your Popup Type"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:7547
-#: ../admin/partials/actions/ays-pb-admin-actions.php:7568
-#: ../admin/partials/actions/ays-pb-admin-actions.php:7589
-#: ../admin/partials/actions/ays-pb-admin-actions.php:7676
-#: ../admin/partials/actions/ays-pb-admin-actions.php:7699
-#: ../admin/partials/actions/ays-pb-admin-actions.php:7721
-#: ../admin/partials/actions/ays-pb-admin-actions.php:7743
-#: ../admin/partials/actions/ays-pb-admin-actions.php:7765
-#: ../admin/partials/actions/ays-pb-admin-actions.php:7787
-#: ../admin/partials/actions/ays-pb-admin-actions.php:7809
-#: ../admin/partials/actions/ays-pb-admin-actions.php:7831
-#: ../admin/partials/actions/ays-pb-admin-actions.php:7853
-#: ../admin/partials/actions/ays-pb-admin-actions.php:7894
-#: ../admin/partials/actions/ays-pb-admin-actions.php:7916
+#: ../admin/partials/actions/ays-pb-admin-actions.php:7608
+#: ../admin/partials/actions/ays-pb-admin-actions.php:7629
+#: ../admin/partials/actions/ays-pb-admin-actions.php:7650
+#: ../admin/partials/actions/ays-pb-admin-actions.php:7737
+#: ../admin/partials/actions/ays-pb-admin-actions.php:7760
+#: ../admin/partials/actions/ays-pb-admin-actions.php:7782
+#: ../admin/partials/actions/ays-pb-admin-actions.php:7804
+#: ../admin/partials/actions/ays-pb-admin-actions.php:7826
+#: ../admin/partials/actions/ays-pb-admin-actions.php:7848
+#: ../admin/partials/actions/ays-pb-admin-actions.php:7870
+#: ../admin/partials/actions/ays-pb-admin-actions.php:7892
+#: ../admin/partials/actions/ays-pb-admin-actions.php:7914
+#: ../admin/partials/actions/ays-pb-admin-actions.php:7955
+#: ../admin/partials/actions/ays-pb-admin-actions.php:7977
 msgid "View demo"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:7549
-#: ../admin/partials/actions/ays-pb-admin-actions.php:7570
-#: ../admin/partials/actions/ays-pb-admin-actions.php:7591
-#: ../admin/partials/actions/ays-pb-admin-actions.php:7612
-#: ../admin/partials/actions/ays-pb-admin-actions.php:7633
-#: ../admin/partials/actions/ays-pb-admin-actions.php:7653
+#: ../admin/partials/actions/ays-pb-admin-actions.php:7610
+#: ../admin/partials/actions/ays-pb-admin-actions.php:7631
+#: ../admin/partials/actions/ays-pb-admin-actions.php:7652
+#: ../admin/partials/actions/ays-pb-admin-actions.php:7673
+#: ../admin/partials/actions/ays-pb-admin-actions.php:7694
+#: ../admin/partials/actions/ays-pb-admin-actions.php:7714
 msgid "Select"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:7668
+#: ../admin/partials/actions/ays-pb-admin-actions.php:7729
 msgid "Subscription"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:7673
-#: ../admin/partials/actions/ays-pb-admin-actions.php:7696
-#: ../admin/partials/actions/ays-pb-admin-actions.php:7718
-#: ../admin/partials/actions/ays-pb-admin-actions.php:7740
-#: ../admin/partials/actions/ays-pb-admin-actions.php:7762
-#: ../admin/partials/actions/ays-pb-admin-actions.php:7784
-#: ../admin/partials/actions/ays-pb-admin-actions.php:7806
-#: ../admin/partials/actions/ays-pb-admin-actions.php:7828
-#: ../admin/partials/actions/ays-pb-admin-actions.php:7850
-#: ../admin/partials/actions/ays-pb-admin-actions.php:7872
-#: ../admin/partials/actions/ays-pb-admin-actions.php:7891
-#: ../admin/partials/actions/ays-pb-admin-actions.php:7913
+#: ../admin/partials/actions/ays-pb-admin-actions.php:7734
+#: ../admin/partials/actions/ays-pb-admin-actions.php:7757
+#: ../admin/partials/actions/ays-pb-admin-actions.php:7779
+#: ../admin/partials/actions/ays-pb-admin-actions.php:7801
+#: ../admin/partials/actions/ays-pb-admin-actions.php:7823
+#: ../admin/partials/actions/ays-pb-admin-actions.php:7845
+#: ../admin/partials/actions/ays-pb-admin-actions.php:7867
+#: ../admin/partials/actions/ays-pb-admin-actions.php:7889
+#: ../admin/partials/actions/ays-pb-admin-actions.php:7911
+#: ../admin/partials/actions/ays-pb-admin-actions.php:7933
+#: ../admin/partials/actions/ays-pb-admin-actions.php:7952
+#: ../admin/partials/actions/ays-pb-admin-actions.php:7974
 msgid "Upgrade Now"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:7691
+#: ../admin/partials/actions/ays-pb-admin-actions.php:7752
 msgid "Yes or No"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:7713
+#: ../admin/partials/actions/ays-pb-admin-actions.php:7774
 msgid "Embed( Iframe )"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:7735
+#: ../admin/partials/actions/ays-pb-admin-actions.php:7796
 msgid "Contact form"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:7757
+#: ../admin/partials/actions/ays-pb-admin-actions.php:7818
 msgid "Subscribe and get file"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:7779
+#: ../admin/partials/actions/ays-pb-admin-actions.php:7840
 msgid "Coupon"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:7801
+#: ../admin/partials/actions/ays-pb-admin-actions.php:7862
 msgid "Countdown"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:7823
+#: ../admin/partials/actions/ays-pb-admin-actions.php:7884
 msgid "Accept Cookie"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:7845
+#: ../admin/partials/actions/ays-pb-admin-actions.php:7906
 msgid "Download"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:7867
+#: ../admin/partials/actions/ays-pb-admin-actions.php:7928
 msgid "WooCommerce"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:7886
+#: ../admin/partials/actions/ays-pb-admin-actions.php:7947
 msgid "Login Form"
 msgstr ""
 
-#: ../admin/partials/actions/ays-pb-admin-actions.php:7908
+#: ../admin/partials/actions/ays-pb-admin-actions.php:7969
 msgid "Google Map"
 msgstr ""
 
@@ -3005,7 +3027,8 @@ msgstr ""
 #: ../admin/partials/features/popup-box-pro-features-display.php:59
 #: ../admin/partials/features/popup-box-pro-features-display.php:946
 #: ../admin/partials/features/popup-box-pro-features-display.php:952
-#: ../ays-pb.php:114 ../includes/class-ays-pb-data.php:721
+#: ../ays-pb.php:114 ../includes/class-ays-pb-data.php:722
+#: ../includes/class-ays-pb-data.php:822
 msgid "One-time payment"
 msgstr ""
 
@@ -3702,21 +3725,21 @@ msgstr ""
 msgid "Documentation"
 msgstr ""
 
-#: ../includes/class-ays-pb-data.php:213
+#: ../includes/class-ays-pb-data.php:214
 msgid "Limited Time <span class='ays-pb-dicount-wrap-color'>50%</span> SALE on <br><span><a href='https://ays-pro.com/winter-bundle' target='_blank' class='ays-pb-dicount-wrap-color ays-pb-dicount-wrap-text-decoration' style='display:block;'>Winter Bundle</a></span> (Copy + Popup + Survey)!"
 msgstr ""
 
-#: ../includes/class-ays-pb-data.php:219
+#: ../includes/class-ays-pb-data.php:220
 msgid "Hurry up! Ending on. <a href='https://ays-pro.com/winter-bundle' target='_blank'>Check it out!</a>"
 msgstr ""
 
-#: ../includes/class-ays-pb-data.php:256 ../includes/class-ays-pb-data.php:328
-#: ../includes/class-ays-pb-data.php:394 ../includes/class-ays-pb-data.php:639
-#: ../includes/class-ays-pb-data.php:805
+#: ../includes/class-ays-pb-data.php:257 ../includes/class-ays-pb-data.php:329
+#: ../includes/class-ays-pb-data.php:395 ../includes/class-ays-pb-data.php:640
+#: ../includes/class-ays-pb-data.php:906
 msgid "Buy Now !"
 msgstr ""
 
-#: ../includes/class-ays-pb-data.php:277
+#: ../includes/class-ays-pb-data.php:278
 msgid ""
 "Spring is here! \n"
 "                                                    <span class='ays-pb-dicount-wrap-color'>50%</span> \n"
@@ -3731,7 +3754,7 @@ msgid ""
 "                                                    </span>"
 msgstr ""
 
-#: ../includes/class-ays-pb-data.php:346
+#: ../includes/class-ays-pb-data.php:347
 msgid ""
 "Limited Time \n"
 "                            <span class='ays-pb-dicount-wrap-color-helloween' style='color:#b2ff00;'>20%</span> \n"
@@ -3746,7 +3769,7 @@ msgid ""
 "                            </span>"
 msgstr ""
 
-#: ../includes/class-ays-pb-data.php:359
+#: ../includes/class-ays-pb-data.php:360
 msgid ""
 "Hurry up! \n"
 "                                                <a href='https://ays-pro.com/wordpress/popup-box?utm_source=dashboard&utm_medium=popup-free&utm_campaign=helloween-sale-banner' target='_blank' style='color:#ffc700;'>\n"
@@ -3754,61 +3777,74 @@ msgid ""
 "                                                </a>"
 msgstr ""
 
-#: ../includes/class-ays-pb-data.php:429
+#: ../includes/class-ays-pb-data.php:430
 msgid "Limited Time"
 msgstr ""
 
-#: ../includes/class-ays-pb-data.php:430
+#: ../includes/class-ays-pb-data.php:431
 msgid "Essential Bundle"
 msgstr ""
 
-#: ../includes/class-ays-pb-data.php:430
+#: ../includes/class-ays-pb-data.php:431
 msgid "( Quiz + Form + Popup )"
 msgstr ""
 
-#: ../includes/class-ays-pb-data.php:434
-#, no-php-format
+#: ../includes/class-ays-pb-data.php:435
+#, php-format
 msgid "50% off"
 msgstr ""
 
-#: ../includes/class-ays-pb-data.php:442
+#: ../includes/class-ays-pb-data.php:443 ../includes/class-ays-pb-data.php:753
 msgid "Days"
 msgstr ""
 
-#: ../includes/class-ays-pb-data.php:443
+#: ../includes/class-ays-pb-data.php:444 ../includes/class-ays-pb-data.php:754
 msgid "Hours"
 msgstr ""
 
-#: ../includes/class-ays-pb-data.php:444
+#: ../includes/class-ays-pb-data.php:445 ../includes/class-ays-pb-data.php:755
 msgid "Minutes"
 msgstr ""
 
-#: ../includes/class-ays-pb-data.php:445
+#: ../includes/class-ays-pb-data.php:446 ../includes/class-ays-pb-data.php:756
 msgid "Seconds"
 msgstr ""
 
-#: ../includes/class-ays-pb-data.php:459
+#: ../includes/class-ays-pb-data.php:460 ../includes/class-ays-pb-data.php:819
 msgid "Get Your Deal"
 msgstr ""
 
-#: ../includes/class-ays-pb-data.php:592
+#: ../includes/class-ays-pb-data.php:593
 msgid "Limited Time <span style='color:#E85011;'>20%</span> SALE on <span><a href='https://ays-pro.com/wordpress/popup-box' target='_blank' style='color:#E85011; text-decoration: underline;'>Popup Box</a></span>"
 msgstr ""
 
-#: ../includes/class-ays-pb-data.php:598
+#: ../includes/class-ays-pb-data.php:599
 msgid "Hurry up! <a href='https://ays-pro.com/wordpress/popup-box' target='_blank'>Check it out!</a>"
 msgstr ""
 
-#: ../includes/class-ays-pb-data.php:659
+#: ../includes/class-ays-pb-data.php:660
 msgid "Limited Time 30% SALE on <span><a href='https://ays-pro.com/wordpress/popup-box?utm_source=dashboard&utm_medium=popup-free&utm_campaign=sale-banner' target='_blank' style='color:#ffffff; text-decoration: underline;'>Popup Box</a></span>"
 msgstr ""
 
-#: ../includes/class-ays-pb-data.php:667
+#: ../includes/class-ays-pb-data.php:668
 msgid "30 Day Money Back Guarantee"
 msgstr ""
 
-#: ../includes/class-ays-pb-data.php:695 ../includes/class-ays-pb-data.php:781
+#: ../includes/class-ays-pb-data.php:696 ../includes/class-ays-pb-data.php:749
+#: ../includes/class-ays-pb-data.php:882
 msgid "Offer ends in:"
+msgstr ""
+
+#: ../includes/class-ays-pb-data.php:778
+msgid "Christmas Sale"
+msgstr ""
+
+#: ../includes/class-ays-pb-data.php:787
+msgid "20% Extra OFF"
+msgstr ""
+
+#: ../includes/class-ays-pb-data.php:813
+msgid "20% Extra Discount Coupon"
 msgstr ""
 
 #: ../includes/class-ays-pb-integrations.php:137
