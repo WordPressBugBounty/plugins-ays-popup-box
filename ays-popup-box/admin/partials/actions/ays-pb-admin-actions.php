@@ -1522,9 +1522,9 @@ global $wp_roles;
 $ays_users_roles = $wp_roles->roles;
 
 ?>
-<div class="wrap">
+<div class="wrap ays-pb-dashboard-main-wrap">
     <div class="container-fluid">
-        <form method="post" name="popup_attributes" id="ays_pb_form">
+        <form method="post" name="popup_attributes" id="ays_pb_form" class="ays-pb-main-form">
             <input type="hidden" name="ays_pb_tab" value="<?php echo esc_attr($ays_pb_tab); ?>">
             <input type="hidden" class="pb_wp_editor_height" value="<?php echo $pb_wp_editor_height; ?>">
             <input type="hidden" name="ays_pb_create_date" value="<?php echo $pb_create_date; ?>">
@@ -1540,23 +1540,6 @@ $ays_users_roles = $wp_roles->roles;
             <h1 class="wp-heading-inline" style="display:flex; flex-wrap: wrap;">
                 <?php echo $heading ?>
             </h1>
-            <div class="ays-pb-heading-buttons">
-            <?php
-                $save_attributes = array(
-                    'id' => 'ays-button-top-apply',
-                    'title' => 'Ctrl + s',
-                    'data-toggle' => 'tooltip',
-                    'data-delay'=> '{"show":"300"}'
-                );
-                $save_close_attributes = array('id' => 'ays-button-top');
-                submit_button(__('Save and close', "ays-popup-box"), 'primary', 'ays_submit_top', false, $save_close_attributes);
-                submit_button(__('Save', "ays-popup-box"), '', 'ays_apply_top', false, $save_attributes);
-            ?>
-                <a href="<?php echo $ays_pb_page_url; ?>" class="button"><?php echo __('Cancel',"ays-popup-box");?></a>
-                <?php
-                    echo $loader_image;
-                ?>
-            </div>
             <div>
                 <div class="ays-pb-subtitle-main-box">
                     <p class="ays_pb_subtitle">
@@ -1604,18 +1587,37 @@ $ays_users_roles = $wp_roles->roles;
                 </p>
             </div>
             <hr>
-            <div class="ays-pb-top-menu-wrapper">
-                <div class="ays_pb_menu_left" data-scroll="0"><img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/angle-left.svg"?>"></div>
-                <div class="ays-pb-top-menu">
-                    <div class="nav-tab-wrapper ays-pb-top-tab-wrapper">
-                        <a href="#tab1" data-tab="tab1" class="nav-tab <?php echo ($ays_pb_tab == 'tab1') ? 'nav-tab-active' : ''; ?>"><?php echo __("General", "ays-popup-box"); ?></a>
-                        <a href="#tab2" data-tab="tab2" class="nav-tab <?php echo ($ays_pb_tab == 'tab2') ? 'nav-tab-active' : ''; ?>"><?php echo __("Settings", "ays-popup-box"); ?></a>
-                        <a href="#tab3" data-tab="tab3" class="nav-tab <?php echo ($ays_pb_tab == 'tab3') ? 'nav-tab-active' : ''; ?>"><?php echo __("Styles", "ays-popup-box"); ?></a>
-                        <a href="#tab4" data-tab="tab4" class="nav-tab <?php echo ($ays_pb_tab == 'tab4') ? 'nav-tab-active' : ''; ?>"><?php echo __("Limitation Users", "ays-popup-box"); ?></a>
-                        <a href="#tab5" data-tab="tab5" class="nav-tab <?php echo ($ays_pb_tab == 'tab5') ? 'nav-tab-active' : ''; ?>"><?php echo __("Integrations", "ays-popup-box"); ?></a>
+            <div class="ays-top-menu-container-wrapper">
+                <div class="ays-pb-top-menu-wrapper">
+                    <div class="ays_pb_menu_left" data-scroll="0"><img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/angle-left.svg"?>"></div>
+                    <div class="ays-pb-top-menu">
+                        <div class="nav-tab-wrapper ays-pb-top-tab-wrapper">
+                            <a href="#tab1" data-tab="tab1" class="nav-tab <?php echo ($ays_pb_tab == 'tab1') ? 'nav-tab-active' : ''; ?>"><?php echo __("General", "ays-popup-box"); ?></a>
+                            <a href="#tab2" data-tab="tab2" class="nav-tab <?php echo ($ays_pb_tab == 'tab2') ? 'nav-tab-active' : ''; ?>"><?php echo __("Settings", "ays-popup-box"); ?></a>
+                            <a href="#tab3" data-tab="tab3" class="nav-tab <?php echo ($ays_pb_tab == 'tab3') ? 'nav-tab-active' : ''; ?>"><?php echo __("Styles", "ays-popup-box"); ?></a>
+                            <a href="#tab4" data-tab="tab4" class="nav-tab <?php echo ($ays_pb_tab == 'tab4') ? 'nav-tab-active' : ''; ?>"><?php echo __("Limitation Users", "ays-popup-box"); ?></a>
+                            <a href="#tab5" data-tab="tab5" class="nav-tab <?php echo ($ays_pb_tab == 'tab5') ? 'nav-tab-active' : ''; ?>"><?php echo __("Integrations", "ays-popup-box"); ?></a>
+                        </div>
                     </div>
+                    <div class="ays_pb_menu_right" data-scroll="-1"><img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/angle-right.svg"?>"></div>
                 </div>
-                <div class="ays_pb_menu_right" data-scroll="-1"><img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/angle-right.svg"?>"></div>
+                <div class="ays-pb-add-new-button-box ays-pb-add-new-button-pb-edit-box top-menu-buttons-container">
+                <?php 
+                    $save_attributes = array(
+                        'id' => 'ays-button-top-apply',
+                        'title' => 'Ctrl + s',
+                        'data-toggle' => 'tooltip',
+                        'data-delay'=> '{"show":"300"}'
+                    );
+                    $save_close_attributes = array('id' => 'ays-button-top');
+                    submit_button(__('Save', "ays-popup-box"), 'primary ays-pb-loader-banner', 'ays_apply_top', false, $save_attributes);
+                    submit_button(__('Save and close', "ays-popup-box"), 'ays-pb-loader-banner ays-pb-submit-button-margin-unset', 'ays_submit_top', false, $save_close_attributes);
+                ?>
+                    <a href="<?php echo $ays_pb_page_url; ?>" class="button ays-pb-loader-banner"><?php echo __('Cancel',"ays-popup-box");?></a>
+                    <?php
+                        echo $loader_image;
+                    ?>
+                </div>
             </div>
             <div id="tab1" class="ays-pb-tab-content  <?php echo ($ays_pb_tab == 'tab1') ? 'ays-pb-tab-content-active' : ''; ?>">
                 <p class="ays-subtitle"><?php echo  __('General Settings', "ays-popup-box") ?></p>
@@ -7537,7 +7539,7 @@ $ays_users_roles = $wp_roles->roles;
             </div>
             <div style="clear:both;" ></div>
             <hr/>
-            <div class="ays-pb-bottom-buttons-content">      
+            <div class="ays-pb-bottom-buttons-content ays_save_buttons_content  ays_save_buttons_bottom_content">      
                 <h1 style="display:flex">
                     <?php
                     wp_nonce_field('pb_action', 'pb_action');
@@ -7548,8 +7550,8 @@ $ays_users_roles = $wp_roles->roles;
                         'data-toggle' => 'tooltip',
                         'data-delay'=> '{"show":"300"}'
                     );
-                    submit_button(__('Save and close', "ays-popup-box"), 'primary', 'ays_submit', false, $save_close_bottom_attributes);
-                    submit_button(__('Save', "ays-popup-box"), '', 'ays_apply', false, $save_bottom_attributes);
+                    submit_button(__('Save', "ays-popup-box"), 'primary ays-save-buttons-just-save-button', 'ays_apply', false, $save_bottom_attributes);
+                    submit_button(__('Save and close', "ays-popup-box"), 'ays-save-buttons-just-save-button', 'ays_submit', false, $save_close_bottom_attributes);
                     ?>
                     <a href="<?php echo $ays_pb_page_url; ?>" class="button" style="margin-left:10px;" ><?php echo __('Cancel',"ays-popup-box");?></a>
                     <?php
@@ -7565,7 +7567,7 @@ $ays_users_roles = $wp_roles->roles;
                                 'href' => sprintf( '?page=%s&action=%s&popupbox=%d', esc_attr( $_REQUEST['page'] ), 'edit', absint( $prev_popup_id ) ),
                                 'data-message' => __( 'Are you sure you want to go to the previous popup page?', "ays-popup-box"),
                             );
-                            submit_button(__('Prev popup', "ays-popup-box"), 'button button-primary ays-button ays-popup-prev-popup-button', 'ays_popup_prev_button', false, $other_attributes);
+                            submit_button(__('Prev popup', "ays-popup-box"), 'button ays-button ays-popup-prev-popup-button', 'ays_popup_prev_button', false, $other_attributes);
                         }
                         if ( $next_popup_id != "" && !is_null( $next_popup_id ) ) {
                         
