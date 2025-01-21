@@ -3108,6 +3108,17 @@ $ays_users_roles = $wp_roles->roles;
             </div>
             <div id="tab2" class="ays-pb-tab-content  <?php echo ($ays_pb_tab == 'tab2') ? 'ays-pb-tab-content-active' : ''; ?>">
                 <div class="ays-pb-accordion-options-main-container">
+                    <div class="d-flex justify-content-end align-items-center">
+                        <div class="d-flex justify-content-between align-items-center" style="gap: 5px; font-size: 13px">
+                            <div>
+                                <a href="javascript:void(0);" class="ays-pb-collapse-all-options"><?php echo __("Collapse All", "survey-maker"); ?></a>
+                            </div>    
+                            |               
+                            <div>
+                                <a href="javascript:void(0);" class="ays-pb-expand-all-options"><?php echo __("Expand All", "survey-maker"); ?></a>
+                            </div>                   
+                        </div>
+                    </div>
                     <div class="ays-pb-accordion-header ays_pb_hide_for_notification_type <?php echo ($modal_content == 'notification_type') ? 'display_none' : ''; ?>">
                         <?php echo $pb_acordion_svg_html; ?>
                         <p class="ays-subtitle"><?php echo  __('Popup opening', "ays-popup-box") ?></p>
@@ -4417,8 +4428,20 @@ $ays_users_roles = $wp_roles->roles;
                 </div>
             </div>
             <div id="tab3" class="ays-pb-tab-content  <?php echo ($ays_pb_tab == 'tab3') ? 'ays-pb-tab-content-active' : ''; ?>">
+                <div class="d-flex justify-content-end align-items-center">
+                    <div class="d-flex justify-content-between align-items-center" style="gap: 5px; font-size: 13px">
+                        <div>
+                            <a href="javascript:void(0);" class="ays-pb-collapse-all-options"><?php echo __("Collapse All", "survey-maker"); ?></a>
+                        </div>    
+                        |               
+                        <div>
+                            <a href="javascript:void(0);" class="ays-pb-expand-all-options"><?php echo __("Expand All", "survey-maker"); ?></a>
+                        </div>                   
+                    </div>
+                </div>
                 <div class="ays_pb_themes ays_pb_hide_for_video_type ays_pb_hide_for_image_type ays_pb_hide_for_facebook_type ays_pb_hide_for_notification_type <?php echo ($modal_content == 'video_type' || $modal_content == 'image_type' || $modal_content == 'facebook_type' || $modal_content == 'notification_type') ? 'display_none' : ''; ?>">
                     <div class="ays-pb-accordion-options-main-container">
+                        
                         <div class="ays-pb-accordion-header">
                             <?php echo $pb_acordion_svg_html; ?>
                             <p class="ays-subtitle"><?php echo  __('Template', "ays-popup-box") ?></p>
@@ -7124,6 +7147,17 @@ $ays_users_roles = $wp_roles->roles;
             <!-- Limitation user start -->
             <div id="tab4" class="ays-pb-tab-content  <?php echo ($ays_pb_tab == 'tab4') ? 'ays-pb-tab-content-active' : ''; ?>">
                 <div class="ays-pb-accordion-options-main-container">
+                    <div class="d-flex justify-content-end align-items-center">
+                        <div class="d-flex justify-content-between align-items-center" style="gap: 5px; font-size: 13px">
+                            <div>
+                                <a href="javascript:void(0);" class="ays-pb-collapse-all-options"><?php echo __("Collapse All", "survey-maker"); ?></a>
+                            </div>    
+                            |               
+                            <div>
+                                <a href="javascript:void(0);" class="ays-pb-expand-all-options"><?php echo __("Expand All", "survey-maker"); ?></a>
+                            </div>                   
+                        </div>
+                    </div>
                     <div class="ays-pb-accordion-header">
                         <?php echo $pb_acordion_svg_html; ?>
                         <p class="ays-subtitle"><?php echo __('Limitation of Users', "ays-popup-box") ?></p>
@@ -7518,6 +7552,17 @@ $ays_users_roles = $wp_roles->roles;
             <!-- Integrations start -->
             <div id="tab5" class="ays-pb-tab-content  <?php echo ($ays_pb_tab == 'tab5') ? 'ays-pb-tab-content-active' : ''; ?>">
                 <div class="ays-pb-accordion-options-main-container">
+                    <div class="d-flex justify-content-end align-items-center">
+                        <div class="d-flex justify-content-between align-items-center" style="gap: 5px; font-size: 13px">
+                            <div>
+                                <a href="javascript:void(0);" class="ays-pb-collapse-all-options"><?php echo __("Collapse All", "survey-maker"); ?></a>
+                            </div>    
+                            |               
+                            <div>
+                                <a href="javascript:void(0);" class="ays-pb-expand-all-options"><?php echo __("Expand All", "survey-maker"); ?></a>
+                            </div>                   
+                        </div>
+                    </div>
                     <div class="ays-pb-accordion-header">
                         <?php echo $pb_acordion_svg_html; ?>
                         <p class="ays-subtitle"><?php echo  __('Integrations', "ays-popup-box") ?></p>

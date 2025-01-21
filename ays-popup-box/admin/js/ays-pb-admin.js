@@ -687,12 +687,33 @@
         // Close cache note start
 
         // Options accordion effect start
-        $(document).on('click', '.ays-pb-accordion-arrow-box', function() {
-            toggleOptionsAccordion($(this));
-        });
+        // $(document).on('click', '.ays-pb-accordion-arrow-box', function() {
+        //     toggleOptionsAccordion($(this));
+        // });
 
         $(document).on('click', '.ays-pb-accordion-header', function() {
             toggleOptionsAccordion($(this).find('.ays-pb-accordion-arrow-box'));
+        });
+
+        $(document).on('click', '.ays-pb-collapse-all-options', function(){
+            var $thisMainParent = $(this).parents('.ays-pb-tab-content');
+
+            var arrowBtn = $thisMainParent.find('.ays-pb-accordion-arrow-box');
+            var arrowSvg = arrowBtn.find('svg');
+            var accordionMainContainer = arrowBtn.parents('.ays-pb-accordion-options-main-container');
+            var accordionBody = accordionMainContainer.find('.ays-pb-accordion-body');
+            arrowSvg.removeClass('ays-pb-accordion-arrow-active');
+            accordionBody.slideUp();
+        });
+
+        $(document).on('click', '.ays-pb-expand-all-options', function(){
+            var $thisMainParent = $(this).parents('.ays-pb-tab-content');
+            var arrowBtn = $thisMainParent.find('.ays-pb-accordion-arrow-box');
+            var arrowSvg = arrowBtn.find('svg');
+            var accordionMainContainer = arrowBtn.parents('.ays-pb-accordion-options-main-container');
+            var accordionBody = accordionMainContainer.find('.ays-pb-accordion-body');    
+            arrowSvg.addClass('ays-pb-accordion-arrow-active');
+            accordionBody.slideDown();
         });
         // Options accordion effect end
 
