@@ -1573,6 +1573,11 @@ class Ays_Pb_Public {
                 $notification_button_1_box_shadow = $notification_button_1_box_shadow_x_offset . 'px ' . $notification_button_1_box_shadow_y_offset . 'px ' . $notification_button_1_box_shadow_z_offset . 'px ' . $notification_button_1_box_shadow_color;
             }
 
+            // Header bg color mobile
+            $options['header_bgcolor_mobile'] = isset($options['header_bgcolor_mobile']) ? $options['header_bgcolor_mobile'] : $ays_pb_header_bgcolor;
+            $header_bgcolor_mobile = (isset($options['header_bgcolor_mobile']) && $options['header_bgcolor_mobile'] != '') ? stripslashes( esc_attr($options['header_bgcolor_mobile']) ) : '#ffffff';
+
+
             $popupbox_view .= "$screen_shade
                         <input type='hidden' class='ays_pb_delay_".$id."' value='".$ays_pb_delay."'/>
                         <input type='hidden' class='ays_pb_delay_mobile_".$id."' value='".$ays_pb_open_delay_mobile."'/>
@@ -1761,6 +1766,10 @@ class Ays_Pb_Public {
                                 font-size: " . $notification_button_1_font_size_mobile . ";
                                 font-weight: " . $notification_button_1_font_weight_mobile . ";
                                 letter-spacing: " . $notification_button_1_letter_spacing_mobile . ";
+                            }
+
+                            .ays_template_head,.ays_lil_head{
+                                background-color: " . $header_bgcolor_mobile . " !important;
                             }
 
                             .ays_cmd_window {

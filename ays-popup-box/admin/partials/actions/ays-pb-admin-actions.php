@@ -287,6 +287,8 @@ $options = array(
     'enable_close_animation_speed_mobile' => 'off',
     'close_animation_speed_mobile' => 1,
     'enable_bgcolor_mobile' => 'off',
+    'enable_header_bgcolor_mobile' => 'off',
+    'header_bgcolor_mobile' => '#ffffff',
     'bgcolor_mobile' => '#ffffff',
     'enable_bg_image_mobile' => 'off',
     'bg_image_mobile' => '',
@@ -1132,6 +1134,9 @@ $bgcolor = (isset($popupbox['bgcolor']) && $popupbox['bgcolor'] != '') ? esc_att
 // Enable different background color mobile
 $enable_bgcolor_mobile = (isset($options['enable_bgcolor_mobile']) && $options['enable_bgcolor_mobile'] == 'on') ? true : false;
 
+// Enable different header background color mobile
+$enable_header_bgcolor_mobile = (isset($options['enable_header_bgcolor_mobile']) && $options['enable_header_bgcolor_mobile'] == 'on') ? true : false;
+
 // Background color mobile
 if (isset($options['bgcolor_mobile'])) {
     $bgcolor_mobile = $options['bgcolor_mobile'] !== '' ? esc_attr( stripslashes($options['bgcolor_mobile']) ) : '';
@@ -1230,6 +1235,9 @@ if (isset($options['pb_gradient_direction_mobile'])) {
 
 // Header background color
 $header_bgcolor = (isset($popupbox['header_bgcolor']) && $popupbox['header_bgcolor'] != '') ? esc_attr( stripslashes($popupbox['header_bgcolor']) ) : '#ffffff';
+// Header background color mobile
+$options['header_bgcolor_mobile'] = (isset($options['header_bgcolor_mobile'])) ? $options['header_bgcolor_mobile'] : $header_bgcolor;
+$header_bgcolor_mobile = (isset($options['header_bgcolor_mobile']) && $options['header_bgcolor_mobile'] != '') ? esc_attr( stripslashes($options['header_bgcolor_mobile']) ) : '#ffffff';
 
 // Overlay color
 $overlay_color = (isset($options['overlay_color']) && $options['overlay_color'] != '') ? esc_attr( stripslashes($options['overlay_color']) ) : '#000';
@@ -6251,8 +6259,22 @@ $ays_users_roles = $wp_roles->roles;
                                             </span>
                                         </label>
                                     </div>
-                                    <div class="col-sm-6 ays_divider_left">
-                                        <input type="text" id="<?php echo $this->plugin_name; ?>-header_bgcolor"  data-alpha="true" class="ays_pb_color_input ays_pb_header_bgcolor_change" name="<?php echo $this->plugin_name; ?>[header_bgcolor]" value="<?php echo $header_bgcolor; ?>"  Fdata-default-color="#FFFFF"/>
+                                    <div class="col-sm-8 ays_divider_left">
+                                        <div class="ays_toggle_parent">
+                                            <div>
+                                                <div class="ays_pb_current_device_name ays_pb_current_device_name_pc show ays_toggle_target" style="<?php echo ($enable_bgcolor_mobile) ? '' : 'display: none;' ?> text-align: center; margin-bottom: 10px; max-width: 110px;"><?php echo __('Desktop', "ays-popup-box") ?></div>
+                                                <input type="text" id="<?php echo $this->plugin_name; ?>-header_bgcolor"  data-alpha="true" class="ays_pb_color_input ays_pb_header_bgcolor_change" name="<?php echo $this->plugin_name; ?>[header_bgcolor]" value="<?php echo $header_bgcolor; ?>"  Fdata-default-color="#FFFFF"/>
+                                            </div>
+                                            <div class="ays_toggle_target ays_pb_bgcolor_mobile_container" style=" <?php echo ( $enable_bgcolor_mobile ) ? '' : 'display:none'; ?>">
+                                                <hr>
+                                                <div class="ays_pb_current_device_name show" style="text-align: center; margin-bottom: 10px; max-width: 110px;"><?php echo __('Mobile', "ays-popup-box") ?></div>
+                                                <input type="text" id="<?php echo $this->plugin_name; ?>-header_bgcolor_mobile"  data-alpha="true" class="ays_pb_color_input ays_pb_header_bgcolor_change" name="<?php echo $this->plugin_name; ?>[header_bgcolor_mobile]" value="<?php echo $header_bgcolor_mobile; ?>"  Fdata-default-color="#FFFFF"/>
+                                            </div>
+                                            <div class="ays_pb_mobile_settings_container">
+                                                <input type="checkbox" class="ays_toggle_checkbox ays-pb-onoffswitch-checkbox" id="ays_pb_enable_header_bgcolor_mobile" name="ays_pb_enable_header_bgcolor_mobile" <?php echo $enable_header_bgcolor_mobile ? 'checked' : '' ?>>
+                                                <label for="ays_pb_enable_header_bgcolor_mobile" class="<?php echo $enable_header_bgcolor_mobile ? 'active' : '' ?>" ><?php echo __('Use a different setting for Mobile', "ays-popup-box") ?></label>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                                 <hr class="ays_pb_hide_for_notification_type <?php echo $modal_content == 'notification_type' ? 'display_none' : ''; ?>">

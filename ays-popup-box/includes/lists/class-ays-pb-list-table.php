@@ -1668,6 +1668,8 @@ class Ays_PopupBox_List_Table extends WP_List_Table {
 
         //Header BgColor
         $header_bgcolor = ( isset( $_POST['ays-pb']["header_bgcolor"] ) && $_POST['ays-pb']["header_bgcolor"] != '' ) ? wp_unslash(sanitize_text_field( $_POST['ays-pb']["header_bgcolor"] )) : '#ffffff';
+        //Header BgColor mobile
+        $header_bgcolor_mobile = ( isset( $_POST['ays-pb']["header_bgcolor_mobile"] ) && $_POST['ays-pb']["header_bgcolor_mobile"] != '' ) ? wp_unslash(sanitize_text_field( $_POST['ays-pb']["header_bgcolor_mobile"] )) : '#ffffff';
 
         // Background Image
         $bg_image = ( isset( $_POST['ays_pb_bg_image'] ) && $_POST['ays_pb_bg_image'] != '' ) ? sanitize_url( $_POST['ays_pb_bg_image'] ) : '';
@@ -2051,6 +2053,7 @@ class Ays_PopupBox_List_Table extends WP_List_Table {
             'bordersize_mobile' => $bordersize_mobile,
             'enable_border_radius_mobile' => $enable_border_radius_mobile,
             'border_radius_mobile' => $border_radius_mobile,
+            'header_bgcolor_mobile' => $header_bgcolor_mobile,
         );
 
         $submit_type = (isset($_POST['submit_type'])) ?  $_POST['submit_type'] : '';

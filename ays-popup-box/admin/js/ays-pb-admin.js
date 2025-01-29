@@ -1504,7 +1504,7 @@
             $form.find('select#ays_pb_gradient_direction_mobile').val(defaultValues.bgGradDirMobile).change();
             $form.find('select#ays_pb_gradient_direction_mobile').parent('div.ays_pb_aysDropdown').find('div.text').text(defaultValues.bgGradDirTextMobile).change();
 
-            $form.find('input#ays-pb-header_bgcolor').wpColorPicker('color', defaultValues.headerBgColor).change();
+            $form.find('input#ays-pb-header_bgcolor,input#ays-pb-header_bgcolor_mobile').wpColorPicker('color', defaultValues.headerBgColor).change();
 
             $form.find('input.ays_pb_overlay_color_change').wpColorPicker('color', defaultValues.overlayColor).change();
             $form.find('input#ays_pb_enable_overlay_color_mobile').prop('checked', defaultValues.enableOverlayColorMobile).change();
