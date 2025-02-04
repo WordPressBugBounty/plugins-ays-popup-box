@@ -392,5 +392,11 @@
     }
 }
 
+@media screen and (max-width: 640px) {
+    .ays-pb-prev-next-button-content{
+        margin-top: 10px;
+    }
+}
+
 /*Dashboard Redesign | End*/
 
