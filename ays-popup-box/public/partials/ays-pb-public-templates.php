@@ -193,13 +193,13 @@ class Ays_Pb_Public_Templates {
             $social_link_arr = $social_links;
         }
 
-        $linkedin_link = isset($social_link_arr['linkedin_link']) && $social_link_arr['linkedin_link'] != '' ? $social_link_arr['linkedin_link'] : '';
-        $facebook_link = isset($social_link_arr['facebook_link']) && $social_link_arr['facebook_link'] != '' ? $social_link_arr['facebook_link'] : '';
-        $twitter_link = isset($social_link_arr['twitter_link']) && $social_link_arr['twitter_link'] != '' ? $social_link_arr['twitter_link'] : '';
-        $vkontakte_link = isset($social_link_arr['vkontakte_link']) && $social_link_arr['vkontakte_link'] != '' ? $social_link_arr['vkontakte_link'] : '';
-        $youtube_link = isset($social_link_arr['youtube_link']) && $social_link_arr['youtube_link'] != '' ? $social_link_arr['youtube_link'] : '';
-        $instagram_link = isset($social_link_arr['instagram_link']) && $social_link_arr['instagram_link'] != '' ? $social_link_arr['instagram_link'] : '';
-        $behance_link = isset($social_link_arr['behance_link']) && $social_link_arr['behance_link'] != '' ? $social_link_arr['behance_link'] : '';
+        $linkedin_link = isset($social_link_arr['linkedin_link']) && $social_link_arr['linkedin_link'] != '' ? esc_url($social_link_arr['linkedin_link']) : '';
+        $facebook_link = isset($social_link_arr['facebook_link']) && $social_link_arr['facebook_link'] != '' ? esc_url($social_link_arr['facebook_link']) : '';
+        $twitter_link = isset($social_link_arr['twitter_link']) && $social_link_arr['twitter_link'] != '' ? esc_url($social_link_arr['twitter_link']) : '';
+        $vkontakte_link = isset($social_link_arr['vkontakte_link']) && $social_link_arr['vkontakte_link'] != '' ? esc_url($social_link_arr['vkontakte_link']) : '';
+        $youtube_link = isset($social_link_arr['youtube_link']) && $social_link_arr['youtube_link'] != '' ? esc_url($social_link_arr['youtube_link']) : '';
+        $instagram_link = isset($social_link_arr['instagram_link']) && $social_link_arr['instagram_link'] != '' ? esc_url($social_link_arr['instagram_link']) : '';
+        $behance_link = isset($social_link_arr['behance_link']) && $social_link_arr['behance_link'] != '' ? esc_url($social_link_arr['behance_link']) : '';
 
         if($linkedin_link != ''){
             $ays_social_links_array['Linkedin']['link'] = $linkedin_link;
@@ -466,13 +466,13 @@ class Ays_Pb_Public_Templates {
             $social_link_arr = $social_links;
         }
 
-        $linkedin_link = isset($social_link_arr['linkedin_link']) && $social_link_arr['linkedin_link'] != '' ? $social_link_arr['linkedin_link'] : '';
-        $facebook_link = isset($social_link_arr['facebook_link']) && $social_link_arr['facebook_link'] != '' ? $social_link_arr['facebook_link'] : '';
-        $twitter_link = isset($social_link_arr['twitter_link']) && $social_link_arr['twitter_link'] != '' ? $social_link_arr['twitter_link'] : '';
-        $vkontakte_link = isset($social_link_arr['vkontakte_link']) && $social_link_arr['vkontakte_link'] != '' ? $social_link_arr['vkontakte_link'] : '';
-        $youtube_link = isset($social_link_arr['youtube_link']) && $social_link_arr['youtube_link'] != '' ? $social_link_arr['youtube_link'] : '';
-        $instagram_link = isset($social_link_arr['instagram_link']) && $social_link_arr['instagram_link'] != '' ? $social_link_arr['instagram_link'] : '';
-        $behance_link = isset($social_link_arr['behance_link']) && $social_link_arr['behance_link'] != '' ? $social_link_arr['behance_link'] : '';
+        $linkedin_link = isset($social_link_arr['linkedin_link']) && $social_link_arr['linkedin_link'] != '' ? esc_url($social_link_arr['linkedin_link']) : '';
+        $facebook_link = isset($social_link_arr['facebook_link']) && $social_link_arr['facebook_link'] != '' ? esc_url($social_link_arr['facebook_link']) : '';
+        $twitter_link = isset($social_link_arr['twitter_link']) && $social_link_arr['twitter_link'] != '' ? esc_url($social_link_arr['twitter_link']) : '';
+        $vkontakte_link = isset($social_link_arr['vkontakte_link']) && $social_link_arr['vkontakte_link'] != '' ? esc_url($social_link_arr['vkontakte_link']) : '';
+        $youtube_link = isset($social_link_arr['youtube_link']) && $social_link_arr['youtube_link'] != '' ? esc_url($social_link_arr['youtube_link']) : '';
+        $instagram_link = isset($social_link_arr['instagram_link']) && $social_link_arr['instagram_link'] != '' ? esc_url($social_link_arr['instagram_link']) : '';
+        $behance_link = isset($social_link_arr['behance_link']) && $social_link_arr['behance_link'] != '' ? esc_url($social_link_arr['behance_link']) : '';
         
         if($linkedin_link != ''){
             $ays_social_links_array['Linkedin']['link'] = $linkedin_link;
@@ -763,13 +763,13 @@ class Ays_Pb_Public_Templates {
             $social_link_arr = $social_links;
         }
 
-        $linkedin_link = isset($social_link_arr['linkedin_link']) && $social_link_arr['linkedin_link'] != '' ? $social_link_arr['linkedin_link'] : '';
-        $facebook_link = isset($social_link_arr['facebook_link']) && $social_link_arr['facebook_link'] != '' ? $social_link_arr['facebook_link'] : '';
-        $twitter_link = isset($social_link_arr['twitter_link']) && $social_link_arr['twitter_link'] != '' ? $social_link_arr['twitter_link'] : '';
-        $vkontakte_link = isset($social_link_arr['vkontakte_link']) && $social_link_arr['vkontakte_link'] != '' ? $social_link_arr['vkontakte_link'] : '';
-        $youtube_link = isset($social_link_arr['youtube_link']) && $social_link_arr['youtube_link'] != '' ? $social_link_arr['youtube_link'] : '';
-        $instagram_link = isset($social_link_arr['instagram_link']) && $social_link_arr['instagram_link'] != '' ? $social_link_arr['instagram_link'] : '';
-        $behance_link = isset($social_link_arr['behance_link']) && $social_link_arr['behance_link'] != '' ? $social_link_arr['behance_link'] : '';
+        $linkedin_link = isset($social_link_arr['linkedin_link']) && $social_link_arr['linkedin_link'] != '' ? esc_url($social_link_arr['linkedin_link']) : '';
+        $facebook_link = isset($social_link_arr['facebook_link']) && $social_link_arr['facebook_link'] != '' ? esc_url($social_link_arr['facebook_link']) : '';
+        $twitter_link = isset($social_link_arr['twitter_link']) && $social_link_arr['twitter_link'] != '' ? esc_url($social_link_arr['twitter_link']) : '';
+        $vkontakte_link = isset($social_link_arr['vkontakte_link']) && $social_link_arr['vkontakte_link'] != '' ? esc_url($social_link_arr['vkontakte_link']) : '';
+        $youtube_link = isset($social_link_arr['youtube_link']) && $social_link_arr['youtube_link'] != '' ? esc_url($social_link_arr['youtube_link']) : '';
+        $instagram_link = isset($social_link_arr['instagram_link']) && $social_link_arr['instagram_link'] != '' ? esc_url($social_link_arr['instagram_link']) : '';
+        $behance_link = isset($social_link_arr['behance_link']) && $social_link_arr['behance_link'] != '' ? esc_url($social_link_arr['behance_link']) : '';
         
         if($linkedin_link != ''){
             $ays_social_links_array['Linkedin']['link'] = $linkedin_link;
@@ -1089,13 +1089,13 @@ class Ays_Pb_Public_Templates {
             $social_link_arr = $social_links;
         }
 
-        $linkedin_link = isset($social_link_arr['linkedin_link']) && $social_link_arr['linkedin_link'] != '' ? $social_link_arr['linkedin_link'] : '';
-        $facebook_link = isset($social_link_arr['facebook_link']) && $social_link_arr['facebook_link'] != '' ? $social_link_arr['facebook_link'] : '';
-        $twitter_link = isset($social_link_arr['twitter_link']) && $social_link_arr['twitter_link'] != '' ? $social_link_arr['twitter_link'] : '';
-        $vkontakte_link = isset($social_link_arr['vkontakte_link']) && $social_link_arr['vkontakte_link'] != '' ? $social_link_arr['vkontakte_link'] : '';
-        $youtube_link = isset($social_link_arr['youtube_link']) && $social_link_arr['youtube_link'] != '' ? $social_link_arr['youtube_link'] : '';
-        $instagram_link = isset($social_link_arr['instagram_link']) && $social_link_arr['instagram_link'] != '' ? $social_link_arr['instagram_link'] : '';
-        $behance_link = isset($social_link_arr['behance_link']) && $social_link_arr['behance_link'] != '' ? $social_link_arr['behance_link'] : '';
+        $linkedin_link = isset($social_link_arr['linkedin_link']) && $social_link_arr['linkedin_link'] != '' ? esc_url($social_link_arr['linkedin_link']) : '';
+        $facebook_link = isset($social_link_arr['facebook_link']) && $social_link_arr['facebook_link'] != '' ? esc_url($social_link_arr['facebook_link']) : '';
+        $twitter_link = isset($social_link_arr['twitter_link']) && $social_link_arr['twitter_link'] != '' ? esc_url($social_link_arr['twitter_link']) : '';
+        $vkontakte_link = isset($social_link_arr['vkontakte_link']) && $social_link_arr['vkontakte_link'] != '' ? esc_url($social_link_arr['vkontakte_link']) : '';
+        $youtube_link = isset($social_link_arr['youtube_link']) && $social_link_arr['youtube_link'] != '' ? esc_url($social_link_arr['youtube_link']) : '';
+        $instagram_link = isset($social_link_arr['instagram_link']) && $social_link_arr['instagram_link'] != '' ? esc_url($social_link_arr['instagram_link']) : '';
+        $behance_link = isset($social_link_arr['behance_link']) && $social_link_arr['behance_link'] != '' ? esc_url($social_link_arr['behance_link']) : '';
         
         if($linkedin_link != ''){
             $ays_social_links_array['Linkedin']['link'] = $linkedin_link;
@@ -1395,13 +1395,13 @@ class Ays_Pb_Public_Templates {
             $social_link_arr = $social_links;
         }
 
-        $linkedin_link = isset($social_link_arr['linkedin_link']) && $social_link_arr['linkedin_link'] != '' ? $social_link_arr['linkedin_link'] : '';
-        $facebook_link = isset($social_link_arr['facebook_link']) && $social_link_arr['facebook_link'] != '' ? $social_link_arr['facebook_link'] : '';
-        $twitter_link = isset($social_link_arr['twitter_link']) && $social_link_arr['twitter_link'] != '' ? $social_link_arr['twitter_link'] : '';
-        $vkontakte_link = isset($social_link_arr['vkontakte_link']) && $social_link_arr['vkontakte_link'] != '' ? $social_link_arr['vkontakte_link'] : '';
-        $youtube_link = isset($social_link_arr['youtube_link']) && $social_link_arr['youtube_link'] != '' ? $social_link_arr['youtube_link'] : '';
-        $instagram_link = isset($social_link_arr['instagram_link']) && $social_link_arr['instagram_link'] != '' ? $social_link_arr['instagram_link'] : '';
-        $behance_link = isset($social_link_arr['behance_link']) && $social_link_arr['behance_link'] != '' ? $social_link_arr['behance_link'] : '';
+        $linkedin_link = isset($social_link_arr['linkedin_link']) && $social_link_arr['linkedin_link'] != '' ? esc_url($social_link_arr['linkedin_link']) : '';
+        $facebook_link = isset($social_link_arr['facebook_link']) && $social_link_arr['facebook_link'] != '' ? esc_url($social_link_arr['facebook_link']) : '';
+        $twitter_link = isset($social_link_arr['twitter_link']) && $social_link_arr['twitter_link'] != '' ? esc_url($social_link_arr['twitter_link']) : '';
+        $vkontakte_link = isset($social_link_arr['vkontakte_link']) && $social_link_arr['vkontakte_link'] != '' ? esc_url($social_link_arr['vkontakte_link']) : '';
+        $youtube_link = isset($social_link_arr['youtube_link']) && $social_link_arr['youtube_link'] != '' ? esc_url($social_link_arr['youtube_link']) : '';
+        $instagram_link = isset($social_link_arr['instagram_link']) && $social_link_arr['instagram_link'] != '' ? esc_url($social_link_arr['instagram_link']) : '';
+        $behance_link = isset($social_link_arr['behance_link']) && $social_link_arr['behance_link'] != '' ? esc_url($social_link_arr['behance_link']) : '';
         
         if($linkedin_link != ''){
             $ays_social_links_array['Linkedin']['link'] = $linkedin_link;
@@ -1695,13 +1695,13 @@ class Ays_Pb_Public_Templates {
             $social_link_arr = $social_links;
         }
 
-        $linkedin_link = isset($social_link_arr['linkedin_link']) && $social_link_arr['linkedin_link'] != '' ? $social_link_arr['linkedin_link'] : '';
-        $facebook_link = isset($social_link_arr['facebook_link']) && $social_link_arr['facebook_link'] != '' ? $social_link_arr['facebook_link'] : '';
-        $twitter_link = isset($social_link_arr['twitter_link']) && $social_link_arr['twitter_link'] != '' ? $social_link_arr['twitter_link'] : '';
-        $vkontakte_link = isset($social_link_arr['vkontakte_link']) && $social_link_arr['vkontakte_link'] != '' ? $social_link_arr['vkontakte_link'] : '';
-        $youtube_link = isset($social_link_arr['youtube_link']) && $social_link_arr['youtube_link'] != '' ? $social_link_arr['youtube_link'] : '';
-        $instagram_link = isset($social_link_arr['instagram_link']) && $social_link_arr['instagram_link'] != '' ? $social_link_arr['instagram_link'] : '';
-        $behance_link = isset($social_link_arr['behance_link']) && $social_link_arr['behance_link'] != '' ? $social_link_arr['behance_link'] : '';
+        $linkedin_link = isset($social_link_arr['linkedin_link']) && $social_link_arr['linkedin_link'] != '' ? esc_url($social_link_arr['linkedin_link']) : '';
+        $facebook_link = isset($social_link_arr['facebook_link']) && $social_link_arr['facebook_link'] != '' ? esc_url($social_link_arr['facebook_link']) : '';
+        $twitter_link = isset($social_link_arr['twitter_link']) && $social_link_arr['twitter_link'] != '' ? esc_url($social_link_arr['twitter_link']) : '';
+        $vkontakte_link = isset($social_link_arr['vkontakte_link']) && $social_link_arr['vkontakte_link'] != '' ? esc_url($social_link_arr['vkontakte_link']) : '';
+        $youtube_link = isset($social_link_arr['youtube_link']) && $social_link_arr['youtube_link'] != '' ? esc_url($social_link_arr['youtube_link']) : '';
+        $instagram_link = isset($social_link_arr['instagram_link']) && $social_link_arr['instagram_link'] != '' ? esc_url($social_link_arr['instagram_link']) : '';
+        $behance_link = isset($social_link_arr['behance_link']) && $social_link_arr['behance_link'] != '' ? esc_url($social_link_arr['behance_link']) : '';
         
         if($linkedin_link != ''){
             $ays_social_links_array['Linkedin']['link'] = $linkedin_link;
@@ -1970,13 +1970,13 @@ class Ays_Pb_Public_Templates {
             $social_link_arr = $social_links;
         }
 
-        $linkedin_link = isset($social_link_arr['linkedin_link']) && $social_link_arr['linkedin_link'] != '' ? $social_link_arr['linkedin_link'] : '';
-        $facebook_link = isset($social_link_arr['facebook_link']) && $social_link_arr['facebook_link'] != '' ? $social_link_arr['facebook_link'] : '';
-        $twitter_link = isset($social_link_arr['twitter_link']) && $social_link_arr['twitter_link'] != '' ? $social_link_arr['twitter_link'] : '';
-        $vkontakte_link = isset($social_link_arr['vkontakte_link']) && $social_link_arr['vkontakte_link'] != '' ? $social_link_arr['vkontakte_link'] : '';
-        $youtube_link = isset($social_link_arr['youtube_link']) && $social_link_arr['youtube_link'] != '' ? $social_link_arr['youtube_link'] : '';
-        $instagram_link = isset($social_link_arr['instagram_link']) && $social_link_arr['instagram_link'] != '' ? $social_link_arr['instagram_link'] : '';
-        $behance_link = isset($social_link_arr['behance_link']) && $social_link_arr['behance_link'] != '' ? $social_link_arr['behance_link'] : '';
+        $linkedin_link = isset($social_link_arr['linkedin_link']) && $social_link_arr['linkedin_link'] != '' ? esc_url($social_link_arr['linkedin_link']) : '';
+        $facebook_link = isset($social_link_arr['facebook_link']) && $social_link_arr['facebook_link'] != '' ? esc_url($social_link_arr['facebook_link']) : '';
+        $twitter_link = isset($social_link_arr['twitter_link']) && $social_link_arr['twitter_link'] != '' ? esc_url($social_link_arr['twitter_link']) : '';
+        $vkontakte_link = isset($social_link_arr['vkontakte_link']) && $social_link_arr['vkontakte_link'] != '' ? esc_url($social_link_arr['vkontakte_link']) : '';
+        $youtube_link = isset($social_link_arr['youtube_link']) && $social_link_arr['youtube_link'] != '' ? esc_url($social_link_arr['youtube_link']) : '';
+        $instagram_link = isset($social_link_arr['instagram_link']) && $social_link_arr['instagram_link'] != '' ? esc_url($social_link_arr['instagram_link']) : '';
+        $behance_link = isset($social_link_arr['behance_link']) && $social_link_arr['behance_link'] != '' ? esc_url($social_link_arr['behance_link']) : '';
         
         if($linkedin_link != ''){
             $ays_social_links_array['Linkedin']['link'] = $linkedin_link;
@@ -2263,13 +2263,13 @@ class Ays_Pb_Public_Templates {
             $social_link_arr = $social_links;
         }
 
-        $linkedin_link = isset($social_link_arr['linkedin_link']) && $social_link_arr['linkedin_link'] != '' ? $social_link_arr['linkedin_link'] : '';
-        $facebook_link = isset($social_link_arr['facebook_link']) && $social_link_arr['facebook_link'] != '' ? $social_link_arr['facebook_link'] : '';
-        $twitter_link = isset($social_link_arr['twitter_link']) && $social_link_arr['twitter_link'] != '' ? $social_link_arr['twitter_link'] : '';
-        $vkontakte_link = isset($social_link_arr['vkontakte_link']) && $social_link_arr['vkontakte_link'] != '' ? $social_link_arr['vkontakte_link'] : '';
-        $youtube_link = isset($social_link_arr['youtube_link']) && $social_link_arr['youtube_link'] != '' ? $social_link_arr['youtube_link'] : '';
-        $instagram_link = isset($social_link_arr['instagram_link']) && $social_link_arr['instagram_link'] != '' ? $social_link_arr['instagram_link'] : '';
-        $behance_link = isset($social_link_arr['behance_link']) && $social_link_arr['behance_link'] != '' ? $social_link_arr['behance_link'] : '';
+        $linkedin_link = isset($social_link_arr['linkedin_link']) && $social_link_arr['linkedin_link'] != '' ? esc_url($social_link_arr['linkedin_link']) : '';
+        $facebook_link = isset($social_link_arr['facebook_link']) && $social_link_arr['facebook_link'] != '' ? esc_url($social_link_arr['facebook_link']) : '';
+        $twitter_link = isset($social_link_arr['twitter_link']) && $social_link_arr['twitter_link'] != '' ? esc_url($social_link_arr['twitter_link']) : '';
+        $vkontakte_link = isset($social_link_arr['vkontakte_link']) && $social_link_arr['vkontakte_link'] != '' ? esc_url($social_link_arr['vkontakte_link']) : '';
+        $youtube_link = isset($social_link_arr['youtube_link']) && $social_link_arr['youtube_link'] != '' ? esc_url($social_link_arr['youtube_link']) : '';
+        $instagram_link = isset($social_link_arr['instagram_link']) && $social_link_arr['instagram_link'] != '' ? esc_url($social_link_arr['instagram_link']) : '';
+        $behance_link = isset($social_link_arr['behance_link']) && $social_link_arr['behance_link'] != '' ? esc_url($social_link_arr['behance_link']) : '';
         
         if($linkedin_link != ''){
             $ays_social_links_array['Linkedin']['link'] = $linkedin_link;
@@ -2544,13 +2544,13 @@ class Ays_Pb_Public_Templates {
             $social_link_arr = $social_links;
         }
 
-        $linkedin_link = isset($social_link_arr['linkedin_link']) && $social_link_arr['linkedin_link'] != '' ? $social_link_arr['linkedin_link'] : '';
-        $facebook_link = isset($social_link_arr['facebook_link']) && $social_link_arr['facebook_link'] != '' ? $social_link_arr['facebook_link'] : '';
-        $twitter_link = isset($social_link_arr['twitter_link']) && $social_link_arr['twitter_link'] != '' ? $social_link_arr['twitter_link'] : '';
-        $vkontakte_link = isset($social_link_arr['vkontakte_link']) && $social_link_arr['vkontakte_link'] != '' ? $social_link_arr['vkontakte_link'] : '';
-        $youtube_link = isset($social_link_arr['youtube_link']) && $social_link_arr['youtube_link'] != '' ? $social_link_arr['youtube_link'] : '';
-        $behance_link = isset($social_link_arr['behance_link']) && $social_link_arr['behance_link'] != '' ? $social_link_arr['behance_link'] : '';
-        $instagram_link = isset($social_link_arr['instagram_link']) && $social_link_arr['instagram_link'] != '' ? $social_link_arr['instagram_link'] : '';
+        $linkedin_link = isset($social_link_arr['linkedin_link']) && $social_link_arr['linkedin_link'] != '' ? esc_url($social_link_arr['linkedin_link']) : '';
+        $facebook_link = isset($social_link_arr['facebook_link']) && $social_link_arr['facebook_link'] != '' ? esc_url($social_link_arr['facebook_link']) : '';
+        $twitter_link = isset($social_link_arr['twitter_link']) && $social_link_arr['twitter_link'] != '' ? esc_url($social_link_arr['twitter_link']) : '';
+        $vkontakte_link = isset($social_link_arr['vkontakte_link']) && $social_link_arr['vkontakte_link'] != '' ? esc_url($social_link_arr['vkontakte_link']) : '';
+        $youtube_link = isset($social_link_arr['youtube_link']) && $social_link_arr['youtube_link'] != '' ? esc_url($social_link_arr['youtube_link']) : '';
+        $behance_link = isset($social_link_arr['behance_link']) && $social_link_arr['behance_link'] != '' ? esc_url($social_link_arr['behance_link']) : '';
+        $instagram_link = isset($social_link_arr['instagram_link']) && $social_link_arr['instagram_link'] != '' ? esc_url($social_link_arr['instagram_link']) : '';
         
         if($linkedin_link != ''){
             $ays_social_links_array['Linkedin']['link'] = $linkedin_link;
@@ -2844,13 +2844,13 @@ class Ays_Pb_Public_Templates {
             $social_link_arr = $social_links;
         }
 
-        $linkedin_link = isset($social_link_arr['linkedin_link']) && $social_link_arr['linkedin_link'] != '' ? $social_link_arr['linkedin_link'] : '';
-        $facebook_link = isset($social_link_arr['facebook_link']) && $social_link_arr['facebook_link'] != '' ? $social_link_arr['facebook_link'] : '';
-        $twitter_link = isset($social_link_arr['twitter_link']) && $social_link_arr['twitter_link'] != '' ? $social_link_arr['twitter_link'] : '';
-        $vkontakte_link = isset($social_link_arr['vkontakte_link']) && $social_link_arr['vkontakte_link'] != '' ? $social_link_arr['vkontakte_link'] : '';
-        $youtube_link = isset($social_link_arr['youtube_link']) && $social_link_arr['youtube_link'] != '' ? $social_link_arr['youtube_link'] : '';
-        $instagram_link = isset($social_link_arr['instagram_link']) && $social_link_arr['instagram_link'] != '' ? $social_link_arr['instagram_link'] : '';
-        $behance_link = isset($social_link_arr['behance_link']) && $social_link_arr['behance_link'] != '' ? $social_link_arr['behance_link'] : '';
+        $linkedin_link = isset($social_link_arr['linkedin_link']) && $social_link_arr['linkedin_link'] != '' ? esc_url($social_link_arr['linkedin_link']) : '';
+        $facebook_link = isset($social_link_arr['facebook_link']) && $social_link_arr['facebook_link'] != '' ? esc_url($social_link_arr['facebook_link']) : '';
+        $twitter_link = isset($social_link_arr['twitter_link']) && $social_link_arr['twitter_link'] != '' ? esc_url($social_link_arr['twitter_link']) : '';
+        $vkontakte_link = isset($social_link_arr['vkontakte_link']) && $social_link_arr['vkontakte_link'] != '' ? esc_url($social_link_arr['vkontakte_link']) : '';
+        $youtube_link = isset($social_link_arr['youtube_link']) && $social_link_arr['youtube_link'] != '' ? esc_url($social_link_arr['youtube_link']) : '';
+        $instagram_link = isset($social_link_arr['instagram_link']) && $social_link_arr['instagram_link'] != '' ? esc_url($social_link_arr['instagram_link']) : '';
+        $behance_link = isset($social_link_arr['behance_link']) && $social_link_arr['behance_link'] != '' ? esc_url($social_link_arr['behance_link']) : '';
         
         if($linkedin_link != ''){
             $ays_social_links_array['Linkedin']['link'] = $linkedin_link;
@@ -3121,13 +3121,13 @@ class Ays_Pb_Public_Templates {
             $social_link_arr = $social_links;
         }
 
-        $linkedin_link = isset($social_link_arr['linkedin_link']) && $social_link_arr['linkedin_link'] != '' ? $social_link_arr['linkedin_link'] : '';
-        $facebook_link = isset($social_link_arr['facebook_link']) && $social_link_arr['facebook_link'] != '' ? $social_link_arr['facebook_link'] : '';
-        $twitter_link = isset($social_link_arr['twitter_link']) && $social_link_arr['twitter_link'] != '' ? $social_link_arr['twitter_link'] : '';
-        $vkontakte_link = isset($social_link_arr['vkontakte_link']) && $social_link_arr['vkontakte_link'] != '' ? $social_link_arr['vkontakte_link'] : '';
-        $youtube_link = isset($social_link_arr['youtube_link']) && $social_link_arr['youtube_link'] != '' ? $social_link_arr['youtube_link'] : '';
-        $instagram_link = isset($social_link_arr['instagram_link']) && $social_link_arr['instagram_link'] != '' ? $social_link_arr['instagram_link'] : '';
-        $behance_link = isset($social_link_arr['behance_link']) && $social_link_arr['behance_link'] != '' ? $social_link_arr['behance_link'] : '';
+        $linkedin_link = isset($social_link_arr['linkedin_link']) && $social_link_arr['linkedin_link'] != '' ? esc_url($social_link_arr['linkedin_link']) : '';
+        $facebook_link = isset($social_link_arr['facebook_link']) && $social_link_arr['facebook_link'] != '' ? esc_url($social_link_arr['facebook_link']) : '';
+        $twitter_link = isset($social_link_arr['twitter_link']) && $social_link_arr['twitter_link'] != '' ? esc_url($social_link_arr['twitter_link']) : '';
+        $vkontakte_link = isset($social_link_arr['vkontakte_link']) && $social_link_arr['vkontakte_link'] != '' ? esc_url($social_link_arr['vkontakte_link']) : '';
+        $youtube_link = isset($social_link_arr['youtube_link']) && $social_link_arr['youtube_link'] != '' ? esc_url($social_link_arr['youtube_link']) : '';
+        $instagram_link = isset($social_link_arr['instagram_link']) && $social_link_arr['instagram_link'] != '' ? esc_url($social_link_arr['instagram_link']) : '';
+        $behance_link = isset($social_link_arr['behance_link']) && $social_link_arr['behance_link'] != '' ? esc_url($social_link_arr['behance_link']) : '';
         
         if($linkedin_link != ''){
             $ays_social_links_array['Linkedin']['link'] = $linkedin_link;

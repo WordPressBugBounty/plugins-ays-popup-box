@@ -250,7 +250,9 @@ class Popup_Categories_List_Table extends WP_List_Table {
 
         $categories_title_length = intval($this->title_length);
 
-        $restitle = Ays_Pb_Admin::ays_pb_restriction_string("word", $item["title"], $categories_title_length);
+        $popup_title = (isset($item['title']) && $item['title'] != "") ? esc_attr(stripcslashes($item['title'])) : "";
+
+        $restitle = Ays_Pb_Admin::ays_pb_restriction_string("word", $popup_title, $categories_title_length);
 
         $title = sprintf('<a href="?page=%s&action=%s&popup_category=%d" title="%s"><strong>%s</strong></a>', esc_attr($_REQUEST['page']), 'edit', absint($item['id']), esc_attr($item['title']) ,$restitle);
 
