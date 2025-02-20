@@ -384,6 +384,9 @@ $popupbox = array(
     'active_date_check' => 'off',
     'activeInterval' => '',
     'deactiveInterval' => '',
+    'active_time_check' => 'off',
+    'active_time_start' => '',
+    'active_time_end' => '',
     'pb_position' => 'center-center',
     'pb_margin' => 0,
     'views' => 0,
@@ -873,6 +876,16 @@ if ($active_date_check) {
     $deactivePopup = current_time('mysql');
 }
 
+// Schedule the popup by time
+$popupbox['active_time_check'] = (isset($popupbox['active_time_check']) && $popupbox['active_time_check'] != '') ? esc_attr( stripslashes($popupbox['active_time_check']) ) : 'off';
+$active_time_check = (isset($popupbox['active_time_check']) && $popupbox['active_time_check'] == 'on') ? true : false;
+if ($active_time_check) {
+    $activeTime = $popupbox['active_time_start'];
+    $deactiveTime = $popupbox['active_time_end'];
+}else{
+    $activeTime = date('H:i:s', strtotime(current_time('mysql')));
+    $deactiveTime = date('H:i:s', strtotime(current_time('mysql')));
+}
 // Change the popup author
 $change_pb_create_author = (isset($options['create_author']) && $options['create_author'] != '') ? absint( sanitize_text_field($options['create_author']) ) : $user_id;
 $get_current_popup_author_data = get_userdata($change_pb_create_author);
@@ -4063,6 +4076,68 @@ $ays_users_roles = $wp_roles->roles;
                             </div>
                         </div>
                         <!-- scedule end -->
+                        <hr>
+                        <!-- schedule by time start -->
+                        <div class="form-group row">
+                            <div class="col-sm-3">
+                                <label for="active_time_check">
+                                    <?php echo __('Popup Display Hours', "ays-popup-box"); ?>
+                                    <a class="ays_help" data-toggle="tooltip"
+                                        title="<?php echo __('Specify the hours of the day when the popup should be displayed.', "ays-popup-box") ?>">
+                                        <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                    </a>
+                                </label>
+                            </div>
+                            <div class="col-sm-9 ays_toggle_parent">
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <input id="active_time_check" type="checkbox" class="active_time_check ays_toggle_checkbox"
+                                                name="active_time_check" <?php echo $active_time_check ? 'checked' : '' ?>>
+                                    </div>
+                                    <div class="col-sm-9 ays_toggle_target ays_divider_left active_time" style="<?php echo $active_time_check ? '' : 'display:none' ?>">
+                                        <!-- -1- -->
+                                        <div class="form-group">
+                                                <div class="row"> 
+                                                <div class="col-sm-3">
+                                                    <label class="form-check-label" for="ays-active-time"> <?php echo __('Start time:', "ays-popup-box"); ?> </label>
+                                                </div>
+                                                <div class="col-sm-9">
+                                                    <div class="input-group mb-3">
+                                                        <input type="time" step="any" class="ays-text-input ays-pb-text-input ays-pb-text-input-short" id="ays-active-time" name="ays-active-time"
+                                                            value="<?php echo $activeTime; ?>">
+                                                        <div class="input-group-append">
+                                                            <label id="ays-active-time-label" for="ays-active-time" class="input-group-text">
+                                                                <span><img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/clock-circle.svg"?>"></span>
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- -2- -->
+                                        <div class="form-group">
+                                                <div class="row"> 
+                                                <div class="col-sm-3">
+                                                    <label class="form-check-label" for="ays-deactive-time"> <?php echo __('End time:', "ays-popup-box"); ?> </label>
+                                                </div>
+                                                <div class="col-sm-9">
+                                                    <div class="input-group mb-3">
+                                                        <input type="time" step="any" class="ays-text-input ays-pb-text-input ays-pb-text-input-short" id="ays-deactive-time" name="ays-deactive-time"
+                                                            value="<?php echo $deactiveTime; ?>">
+                                                        <div class="input-group-append">
+                                                            <label id="ays-deactive-time-label" for="ays-deactive-time" class="input-group-text">
+                                                                <span><img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/clock-circle.svg"?>"></span>
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- schedule by time end -->
                         <hr>
                         <div class="col-sm-12 ays-pro-features-v2-main-box">
                             <div class="ays-pro-features-v2-small-buttons-box">

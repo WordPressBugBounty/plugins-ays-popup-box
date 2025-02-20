@@ -933,6 +933,9 @@ class Ays_PopupBox_List_Table extends WP_List_Table {
                 "active_date_check" => stripslashes( sanitize_text_field($popup['active_date_check']) ),
                 "activeInterval" => sanitize_text_field($popup['activeInterval']),
                 "deactiveInterval" => sanitize_text_field($popup['deactiveInterval']),
+                "active_time_check" => stripslashes( sanitize_text_field($popup['active_time_check']) ),
+                "active_time_start" => stripslashes( sanitize_text_field($popup['active_time_start']) ),
+                "active_time_end" => stripslashes( sanitize_text_field($popup['active_time_end']) ),
                 "pb_position" => stripslashes( sanitize_text_field($popup['pb_position']) ),
                 "pb_margin" => absint( intval($popup['pb_margin']) ),
                 "options" => json_encode($options)
@@ -980,6 +983,9 @@ class Ays_PopupBox_List_Table extends WP_List_Table {
                 '%s', // active_date_check
                 '%s', // activeInterval
                 '%s', // deactiveInterval
+                '%s', // active_time_check
+                '%s', // active_time_start
+                '%s', // active_time_end
                 '%s', // pb_position
                 '%d', // pb_margin
                 '%s', // options
@@ -1443,6 +1449,15 @@ class Ays_PopupBox_List_Table extends WP_List_Table {
 
         // Schedule the popup | End date
         $deactiveInterval = (isset($_POST['ays-deactive']) && $_POST['ays-deactive'] != '') ? sanitize_text_field($_POST['ays-deactive']) : '';
+        
+        //Schedule the popup by time
+        $active_time_check = (isset($_POST['active_time_check']) && $_POST['active_time_check'] == 'on') ? 'on' : 'off';
+
+        // Schedule the popup | Start time
+        $active_time_start = (isset($_POST['ays-active-time']) && $_POST['ays-active-time'] != '') ? sanitize_text_field($_POST['ays-active-time']) : '';
+
+        // Schedule the popup | End time
+        $active_time_end = (isset($_POST['ays-deactive-time']) && $_POST['ays-deactive-time'] != '') ? sanitize_text_field($_POST['ays-deactive-time']) : '';
 
         // Change the popup creation date
         $pb_create_date = (isset($_POST['ays_pb_change_creation_date']) && $_POST['ays_pb_change_creation_date'] != '') ? sanitize_text_field($_POST['ays_pb_change_creation_date']) : current_time('mysql');
@@ -2103,6 +2118,9 @@ class Ays_PopupBox_List_Table extends WP_List_Table {
                     'active_date_check'             => $active_date_check,
                     'activeInterval'                => $activeInterval,
                     'deactiveInterval'              => $deactiveInterval,
+                    'active_time_check'             => $active_time_check,
+                    'active_time_start'             => $active_time_start,
+                    'active_time_end'               => $active_time_end,
                     "pb_position"                   => $pb_position,
                     "pb_margin"                     => $pb_margin,
                     "users_role"                    => $JSON_user_role,
@@ -2150,6 +2168,9 @@ class Ays_PopupBox_List_Table extends WP_List_Table {
                 '%s',   // active_date_check
                 '%s',   // activeInterval
                 '%s',   // deactiveInterval
+                '%s',   // active_time_check
+                '%s',   // active_time_start
+                '%s',   // active_time_end
                 '%s',   // pb_position
                 '%d',   // pb_margin
                 '%s',   // users_roles
@@ -2202,6 +2223,9 @@ class Ays_PopupBox_List_Table extends WP_List_Table {
                     'active_date_check'             => $active_date_check,
                     'activeInterval'                => $activeInterval,
                     'deactiveInterval'              => $deactiveInterval,
+                    'active_time_check'             => $active_time_check,
+                    'active_time_start'             => $active_time_start,
+                    'active_time_end'               => $active_time_end,
                     "pb_position"                   => $pb_position,
                     "pb_margin"                     => $pb_margin,
                     "users_role"                    => $JSON_user_role,
@@ -2250,6 +2274,9 @@ class Ays_PopupBox_List_Table extends WP_List_Table {
                 '%s',   // active_date_check
                 '%s',   // activeInterval
                 '%s',   // deactiveInterval
+                '%s',   // active_time_check
+                '%s',   // active_time_start
+                '%s',   // active_time_end
                 '%s',   // pb_position
                 '%d',   // pb_margin
                 '%s',   // users_roles

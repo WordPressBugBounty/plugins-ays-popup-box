@@ -1,6 +1,6 @@
 <?php
 global $ays_pb_db_version;
-$ays_pb_db_version = '1.6.2';
+$ays_pb_db_version = '1.6.3';
 /**
  * Fired during plugin activation
  *
@@ -85,6 +85,9 @@ class Ays_Pb_Activator {
                       `active_date_check` VARCHAR(20) DEFAULT 'off',
                       `activeInterval` VARCHAR(20) DEFAULT '',
                       `deactiveInterval` VARCHAR(20) DEFAULT '',
+                      `active_time_check` VARCHAR(20) DEFAULT 'off',
+                      `active_time_start` VARCHAR(20) DEFAULT '',
+                      `active_time_end` VARCHAR(20) DEFAULT '',
                       `pb_position` VARCHAR(30) NOT NULL,
                       `pb_margin` INT NOT NULL,
                       `views` INT NOT NULL,

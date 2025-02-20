@@ -1619,6 +1619,27 @@
         });
         // Background music | Remove music end
 
+        // Active time start
+        $('#ays-deactive-time-label').on('click', function() {
+            let $timeInput = $('#ays-deactive-time')[0]; 
+    
+            if ($timeInput.showPicker) {
+                $timeInput.showPicker(); 
+            } else {
+                $timeInput.focus(); 
+            }
+        });
+        $('#ays-active-time-label').on('click', function() {
+            let $timeInput = $('#ays-active-time')[0]; 
+        
+            if ($timeInput.showPicker) {
+                $timeInput.showPicker(); 
+            } else {
+                $timeInput.focus(); 
+            }
+        });        
+        // Active time end
+
         // Pro features start
         $(document).find('.ays-pro-features-v2-upgrade-button:not(.ays-pro-features-v2-upgrade-button-view-demo)').hover(
             function() {

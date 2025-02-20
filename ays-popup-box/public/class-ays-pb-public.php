@@ -263,6 +263,18 @@ class Ays_Pb_Public {
             }
         }
 
+        if (isset($popupbox['active_time_check']) && $popupbox['active_time_check'] == "on") {
+            if (isset($popupbox['active_time_start']) && isset($popupbox['active_time_end'])) {
+                $current_time = strtotime(current_time("H:i:s"));
+                $start_time = strtotime($popupbox['active_time_start']);
+                $end_time = strtotime($popupbox['active_time_end']);
+
+                if ($start_time >= $current_time || $end_time <= $current_time) {
+                    $popupbox['onoffswitch'] = "Off";
+                }
+            }
+        }
+
         /*******************************************************************************************************/
         // Roles limitations start
         global $wp_roles;

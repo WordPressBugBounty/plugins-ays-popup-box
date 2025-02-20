@@ -1838,6 +1838,12 @@ a.ays_pb_plus_schedule:hover {
     align-items: center;
 }
 
+#ays-active-time::-webkit-calendar-picker-indicator,
+#ays-deactive-time::-webkit-calendar-picker-indicator {
+    display: none;
+}
+
+
 #ays_pb_change_creation_date.ays-pb-date-create {
     height: 40px !important;
     margin-right: 3px;
