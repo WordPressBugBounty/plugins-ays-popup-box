@@ -976,6 +976,125 @@ class Popup_Box_Integrations {
 
     // ===== MailerLite Settings end =====
 
+    // reCAPTCHA integration in popup page content
+    public function ays_popup_page_recaptcha_content( $integrations, $args ){
+
+            $icon  = AYS_PB_ADMIN_URL .'/images/integrations/recaptcha_logo.png';
+            $title = __('reCAPTCHA Settings',"ays-popup-box");
+
+            $content = '';
+            $content .= '<div class="form-group row" style="margin:0px;">';
+            $content .= '<div class="col-sm-12 ays-pro-features-v2-main-box">';
+            $content .= '<div class="ays-pro-features-v2-small-buttons-box">';
+                $content .= '';
+                    $content .= '<a href="https://ays-pro.com/wordpress/popup-box" target="_blank" class="ays-pro-features-v2-upgrade-button">';
+                        $content .= '<div class="ays-pro-features-v2-upgrade-icon" style="background-image: url('.esc_attr(AYS_PB_ADMIN_URL).'/images/icons/pro-features-icons/Locked_24x24.svg);" data-img-src="'.esc_attr(AYS_PB_ADMIN_URL).'/images/icons/pro-features-icons/Locked_24x24.svg"></div>';
+                        $content .= '<div class="ays-pro-features-v2-upgrade-text">';
+                            $content .= __("Upgrade" , "ays-popup-box");
+                        $content .= '</div>';
+                    $content .= '</a>';
+                $content .= '</div>';
+                    $content .= '<hr/>';
+                    $content .= '<div class="form-group row">
+                                    <div class="col-sm-4">
+                                        <label for="ays_popup_enable_recaptcha">'. __('Enable reCAPTCHA', "ays-popup-box") .'</label>
+                                    </div>
+                                    <div class="col-sm-1">
+                                        <input type="checkbox" class="ays-enable-timer1">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>';
+
+            $integrations['recaptcha'] = array(
+                'content' => $content,
+                'icon' => $icon,
+                'title' => $title,
+            );
+
+            return $integrations;
+        }
+    // reCAPTCHA integration / settings page
+
+    // reCAPTCHA integration in General settings page content
+    public function ays_settings_page_recaptcha_content( $integrations, $args ){
+
+        $actions = $this->settings_obj;
+
+        $icon  = AYS_PB_ADMIN_URL . '/images/integrations/recaptcha_logo.png';
+        $title = __( 'reCAPTCHA', "ays-popup-box" );
+
+        $content = '';
+        $content .= '<div class="form-group row" style="margin:0px;">';
+        $content .= '<div class="col-sm-12 ays-pro-features-v2-main-box">';
+        $content .= '<div class="ays-pro-features-v2-small-buttons-box">';
+            $content .= '';
+                $content .= '<a href="https://ays-pro.com/wordpress/popup-box" target="_blank" class="ays-pro-features-v2-upgrade-button">';
+                    $content .= '<div class="ays-pro-features-v2-upgrade-icon" style="background-image: url('.esc_attr(AYS_PB_ADMIN_URL).'/images/icons/pro-features-icons/Locked_24x24.svg);" data-img-src="'.esc_attr(AYS_PB_ADMIN_URL).'/images/icons/pro-features-icons/Locked_24x24.svg"></div>';
+                    $content .= '<div class="ays-pro-features-v2-upgrade-text">';
+                        $content .= __("Upgrade" , "ays-popup-box");
+                    $content .= '</div>';
+                $content .= '</a>';
+            $content .= '</div>';
+            $content .= '<div class="form-group row">
+                            <div class="col-sm-12">
+                                <div class="form-group row">
+                                    <div class="col-sm-3">
+                                        <label for="ays_popup_recaptcha_site_key">'. __('reCAPTCHA v2 Site Key', "ays-popup-box") .'</label>
+                                    </div>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="ays-text-input">
+                                    </div>
+                                </div>
+                                <hr/>
+                                <div class="form-group row">
+                                    <div class="col-sm-3">
+                                        <label for="ays_popup_recaptcha_secret_key">'. __('reCAPTCHA v2 Secret Key', "ays-popup-box") .'</label>
+                                    </div>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="ays-text-input">
+                                    </div>
+                                </div>
+                                <hr/>
+                                <div class="form-group row">
+                                    <div class="col-sm-3">
+                                        <label for="ays_popup_recaptcha_language">'. __('reCAPTCHA Language', "ays-popup-box") .'</label>
+                                    </div>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="ays-text-input">
+                                    </div>
+                                </div>
+                                <hr/>
+                                <div class="form-group row">
+                                    <div class="col-sm-3">
+                                        <label for="ays_popup_recaptcha_theme">'. __('reCAPTCHA Theme', "ays-popup-box") .'</label>
+                                    </div>
+                                    <div class="col-sm-9">
+                                        <select class="ays-text-input">
+                                            <option value="light">'. __('Light', "ays-popup-box") .'</option>
+                                            <option value="dark">'. __('Dark', "ays-popup-box") .'</option>
+                                        </select>
+                                    </div>
+                                </div>';
+                $content .= '<blockquote>';
+                $content .= sprintf( __( "You need to set up reCAPTCHA in your Google account to generate the required keys and get them by %s Google's reCAPTCHA admin console %s.", "ays-popup-box" ), "<a href='https://www.google.com/recaptcha/admin/create' target='_blank'>", "</a>");
+                $content .= '</blockquote>';
+                $content .= '
+                            </div>
+                        </div>';
+            $content .= '
+                    </div>
+                </div>';
+
+        $integrations['recaptcha'] = array(
+            'content' => $content,
+            'icon' => $icon,
+            'title' => $title,
+        );
+
+        return $integrations;
+    }
+
     ////////////////////////////////////////////////////////////////////////////////////////
     //====================================================================================//
     ////////////////////////////////////////////////////////////////////////////////////////
