@@ -282,13 +282,13 @@ class Ays_Pb_Public_Templates {
         }
 
         //Dismiss ad text
-        $enable_dismiss_text = (isset($options->enable_dismiss_text) && $options->enable_dismiss_text != "") ? esc_html( stripslashes($options->enable_dismiss_text) ) : __("Dismiss ad", "ays-popup-box");
+        $enable_dismiss_text = (isset($options->enable_dismiss_text) && $options->enable_dismiss_text != "") ? esc_html( stripslashes($options->enable_dismiss_text) ) : esc_html__("Dismiss ad", "ays-popup-box");
         
         //Dismiss ad text mobile
         if ( ( !isset($options->enable_dismiss_mobile) ) || (isset($options->enable_dismiss_mobile) && $options->enable_dismiss_mobile == 'off' ) ) {
             $enable_dismiss_text_mobile = $enable_dismiss_text;
         } else {
-            $enable_dismiss_text_mobile = (isset($options->enable_dismiss_text_mobile) && $options->enable_dismiss_text_mobile != "") ? esc_html( stripslashes($options->enable_dismiss_text_mobile) ) : __("Dismiss ad", "ays-popup-box");
+            $enable_dismiss_text_mobile = (isset($options->enable_dismiss_text_mobile) && $options->enable_dismiss_text_mobile != "") ? esc_html( stripslashes($options->enable_dismiss_text_mobile) ) : esc_html__("Dismiss ad", "ays-popup-box");
         }
 
         //Close button color
@@ -553,13 +553,13 @@ class Ays_Pb_Public_Templates {
         }
 
         //Dismiss ad text
-        $enable_dismiss_text = (isset($options->enable_dismiss_text) && $options->enable_dismiss_text != "") ? esc_html( stripslashes($options->enable_dismiss_text) ) : __("Dismiss ad", "ays-popup-box");
+        $enable_dismiss_text = (isset($options->enable_dismiss_text) && $options->enable_dismiss_text != "") ? esc_html( stripslashes($options->enable_dismiss_text) ) : esc_html__("Dismiss ad", "ays-popup-box");
         
         //Dismiss ad text mobile
         if ( ( !isset($options->enable_dismiss_mobile) ) || (isset($options->enable_dismiss_mobile) && $options->enable_dismiss_mobile == 'off' ) ) {
             $enable_dismiss_text_mobile = $enable_dismiss_text;
         } else {
-            $enable_dismiss_text_mobile = (isset($options->enable_dismiss_text_mobile) && $options->enable_dismiss_text_mobile != "") ? esc_html( stripslashes($options->enable_dismiss_text_mobile) ) : __("Dismiss ad", "ays-popup-box");
+            $enable_dismiss_text_mobile = (isset($options->enable_dismiss_text_mobile) && $options->enable_dismiss_text_mobile != "") ? esc_html( stripslashes($options->enable_dismiss_text_mobile) ) : esc_html__("Dismiss ad", "ays-popup-box");
         }
 
         //Show scrollbar
@@ -854,13 +854,13 @@ class Ays_Pb_Public_Templates {
         }
 
         //Dismiss ad text
-        $enable_dismiss_text = (isset($options->enable_dismiss_text) && $options->enable_dismiss_text != "") ? esc_html( stripslashes($options->enable_dismiss_text) ) : __("Dismiss ad", "ays-popup-box");
+        $enable_dismiss_text = (isset($options->enable_dismiss_text) && $options->enable_dismiss_text != "") ? esc_html( stripslashes($options->enable_dismiss_text) ) : esc_html__("Dismiss ad", "ays-popup-box");
                 
         //Dismiss ad text mobile
         if ( ( !isset($options->enable_dismiss_mobile) ) || (isset($options->enable_dismiss_mobile) && $options->enable_dismiss_mobile == 'off' ) ) {
             $enable_dismiss_text_mobile = $enable_dismiss_text;
         } else {
-            $enable_dismiss_text_mobile = (isset($options->enable_dismiss_text_mobile) && $options->enable_dismiss_text_mobile != "") ? esc_html( stripslashes($options->enable_dismiss_text_mobile) ) : __("Dismiss ad", "ays-popup-box");
+            $enable_dismiss_text_mobile = (isset($options->enable_dismiss_text_mobile) && $options->enable_dismiss_text_mobile != "") ? esc_html( stripslashes($options->enable_dismiss_text_mobile) ) : esc_html__("Dismiss ad", "ays-popup-box");
         }
 
         //Show scrollbar
@@ -1177,13 +1177,13 @@ class Ays_Pb_Public_Templates {
         }
 
         //Dismiss ad text
-        $enable_dismiss_text = (isset($options->enable_dismiss_text) && $options->enable_dismiss_text != "") ? esc_html( stripslashes($options->enable_dismiss_text) ) : __("Dismiss ad", "ays-popup-box");
+        $enable_dismiss_text = (isset($options->enable_dismiss_text) && $options->enable_dismiss_text != "") ? esc_html( stripslashes($options->enable_dismiss_text) ) : esc_html__("Dismiss ad", "ays-popup-box");
         
         //Dismiss ad text mobile
         if ( ( !isset($options->enable_dismiss_mobile) ) || (isset($options->enable_dismiss_mobile) && $options->enable_dismiss_mobile == 'off' ) ) {
             $enable_dismiss_text_mobile = $enable_dismiss_text;
         } else {
-            $enable_dismiss_text_mobile = (isset($options->enable_dismiss_text_mobile) && $options->enable_dismiss_text_mobile != "") ? esc_html( stripslashes($options->enable_dismiss_text_mobile) ) : __("Dismiss ad", "ays-popup-box");
+            $enable_dismiss_text_mobile = (isset($options->enable_dismiss_text_mobile) && $options->enable_dismiss_text_mobile != "") ? esc_html( stripslashes($options->enable_dismiss_text_mobile) ) : esc_html__("Dismiss ad", "ays-popup-box");
         }
 
         //Show scrollbar
@@ -1210,12 +1210,12 @@ class Ays_Pb_Public_Templates {
                       </div>
                       <div class='ays_ubuntu_tools'>
                         <ul>
-                            <li>".__("File")."</li>
-                            <li>".__("Edit", "ays-popup-box")."</li>
-                            <li>".__("Go", "ays-popup-box")."</li>
-                            <li>".__("Bookmarks", "ays-popup-box")."</li>
-                            <li>".__("Tools", "ays-popup-box")."</li>
-                            <li>".__("Help", "ays-popup-box")."</li>
+                            <li>".esc_html__("File", "ays-popup-box")."</li>
+                            <li>".esc_html__("Edit", "ays-popup-box")."</li>
+                            <li>".esc_html__("Go", "ays-popup-box")."</li>
+                            <li>".esc_html__("Bookmarks", "ays-popup-box")."</li>
+                            <li>".esc_html__("Tools", "ays-popup-box")."</li>
+                            <li>".esc_html__("Help", "ays-popup-box")."</li>
                         </ul>
                       </div>
                       $ays_pb_sound_mute
@@ -1482,13 +1482,13 @@ class Ays_Pb_Public_Templates {
         }
 
         //Dismiss ad text
-        $enable_dismiss_text = (isset($options->enable_dismiss_text) && $options->enable_dismiss_text != "") ? esc_html( stripslashes($options->enable_dismiss_text) ) : __("Dismiss ad", "ays-popup-box");
+        $enable_dismiss_text = (isset($options->enable_dismiss_text) && $options->enable_dismiss_text != "") ? esc_html( stripslashes($options->enable_dismiss_text) ) : esc_html__("Dismiss ad", "ays-popup-box");
         
         //Dismiss ad text mobile
         if ( ( !isset($options->enable_dismiss_mobile) ) || (isset($options->enable_dismiss_mobile) && $options->enable_dismiss_mobile == 'off' ) ) {
             $enable_dismiss_text_mobile = $enable_dismiss_text;
         } else {
-            $enable_dismiss_text_mobile = (isset($options->enable_dismiss_text_mobile) && $options->enable_dismiss_text_mobile != "") ? esc_html( stripslashes($options->enable_dismiss_text_mobile) ) : __("Dismiss ad", "ays-popup-box");
+            $enable_dismiss_text_mobile = (isset($options->enable_dismiss_text_mobile) && $options->enable_dismiss_text_mobile != "") ? esc_html( stripslashes($options->enable_dismiss_text_mobile) ) : esc_html__("Dismiss ad", "ays-popup-box");
         }
 
         $x_close_button = '<svg xmlns="https://www.w3.org/2000/svg" height="24px" viewBox="0 0 32 32" width="24px" fill="#ffffff" alt="Pop-up Close"><path d="M0 0h24v24H0z" fill="none"/><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>';
@@ -1781,13 +1781,13 @@ class Ays_Pb_Public_Templates {
         }
 
         //Dismiss ad text
-        $enable_dismiss_text = (isset($options->enable_dismiss_text) && $options->enable_dismiss_text != "") ? esc_html( stripslashes($options->enable_dismiss_text) ) : __("Dismiss ad", "ays-popup-box");
+        $enable_dismiss_text = (isset($options->enable_dismiss_text) && $options->enable_dismiss_text != "") ? esc_html( stripslashes($options->enable_dismiss_text) ) : esc_html__("Dismiss ad", "ays-popup-box");
         
         //Dismiss ad text mobile
         if ( ( !isset($options->enable_dismiss_mobile) ) || (isset($options->enable_dismiss_mobile) && $options->enable_dismiss_mobile == 'off' ) ) {
             $enable_dismiss_text_mobile = $enable_dismiss_text;
         } else {
-            $enable_dismiss_text_mobile = (isset($options->enable_dismiss_text_mobile) && $options->enable_dismiss_text_mobile != "") ? esc_html( stripslashes($options->enable_dismiss_text_mobile) ) : __("Dismiss ad", "ays-popup-box");
+            $enable_dismiss_text_mobile = (isset($options->enable_dismiss_text_mobile) && $options->enable_dismiss_text_mobile != "") ? esc_html( stripslashes($options->enable_dismiss_text_mobile) ) : esc_html__("Dismiss ad", "ays-popup-box");
         }
 
         //Show scrollbar
@@ -2056,13 +2056,13 @@ class Ays_Pb_Public_Templates {
         }
 
         //Dismiss ad text
-        $enable_dismiss_text = (isset($options->enable_dismiss_text) && $options->enable_dismiss_text != "") ? esc_html( stripslashes($options->enable_dismiss_text) ) : __("Dismiss ad", "ays-popup-box");
+        $enable_dismiss_text = (isset($options->enable_dismiss_text) && $options->enable_dismiss_text != "") ? esc_html( stripslashes($options->enable_dismiss_text) ) : esc_html__("Dismiss ad", "ays-popup-box");
         
         //Dismiss ad text mobile
         if ( ( !isset($options->enable_dismiss_mobile) ) || (isset($options->enable_dismiss_mobile) && $options->enable_dismiss_mobile == 'off' ) ) {
             $enable_dismiss_text_mobile = $enable_dismiss_text;
         } else {
-            $enable_dismiss_text_mobile = (isset($options->enable_dismiss_text_mobile) && $options->enable_dismiss_text_mobile != "") ? esc_html( stripslashes($options->enable_dismiss_text_mobile) ) : __("Dismiss ad", "ays-popup-box");
+            $enable_dismiss_text_mobile = (isset($options->enable_dismiss_text_mobile) && $options->enable_dismiss_text_mobile != "") ? esc_html( stripslashes($options->enable_dismiss_text_mobile) ) : esc_html__("Dismiss ad", "ays-popup-box");
         }
         
         //Close button color
@@ -2349,13 +2349,13 @@ class Ays_Pb_Public_Templates {
         }
 
         //Dismiss ad text
-        $enable_dismiss_text = (isset($options->enable_dismiss_text) && $options->enable_dismiss_text != "") ? esc_html( stripslashes($options->enable_dismiss_text) ) : __("Dismiss ad", "ays-popup-box");
+        $enable_dismiss_text = (isset($options->enable_dismiss_text) && $options->enable_dismiss_text != "") ? esc_html( stripslashes($options->enable_dismiss_text) ) : esc_html__("Dismiss ad", "ays-popup-box");
         
         //Dismiss ad text mobile
         if ( ( !isset($options->enable_dismiss_mobile) ) || (isset($options->enable_dismiss_mobile) && $options->enable_dismiss_mobile == 'off' ) ) {
             $enable_dismiss_text_mobile = $enable_dismiss_text;
         } else {
-            $enable_dismiss_text_mobile = (isset($options->enable_dismiss_text_mobile) && $options->enable_dismiss_text_mobile != "") ? esc_html( stripslashes($options->enable_dismiss_text_mobile) ) : __("Dismiss ad", "ays-popup-box");
+            $enable_dismiss_text_mobile = (isset($options->enable_dismiss_text_mobile) && $options->enable_dismiss_text_mobile != "") ? esc_html( stripslashes($options->enable_dismiss_text_mobile) ) : esc_html__("Dismiss ad", "ays-popup-box");
         }
 
         //Show scrollbar
@@ -2639,13 +2639,13 @@ class Ays_Pb_Public_Templates {
         }
 
         //Dismiss ad text
-        $enable_dismiss_text = (isset($options->enable_dismiss_text) && $options->enable_dismiss_text != "") ? esc_html( stripslashes($options->enable_dismiss_text) ) : __("Dismiss ad", "ays-popup-box");
+        $enable_dismiss_text = (isset($options->enable_dismiss_text) && $options->enable_dismiss_text != "") ? esc_html( stripslashes($options->enable_dismiss_text) ) : esc_html__("Dismiss ad", "ays-popup-box");
         
         //Dismiss ad text mobile
         if ( ( !isset($options->enable_dismiss_mobile) ) || (isset($options->enable_dismiss_mobile) && $options->enable_dismiss_mobile == 'off' ) ) {
             $enable_dismiss_text_mobile = $enable_dismiss_text;
         } else {
-            $enable_dismiss_text_mobile = (isset($options->enable_dismiss_text_mobile) && $options->enable_dismiss_text_mobile != "") ? esc_html( stripslashes($options->enable_dismiss_text_mobile) ) : __("Dismiss ad", "ays-popup-box");
+            $enable_dismiss_text_mobile = (isset($options->enable_dismiss_text_mobile) && $options->enable_dismiss_text_mobile != "") ? esc_html( stripslashes($options->enable_dismiss_text_mobile) ) : esc_html__("Dismiss ad", "ays-popup-box");
         }
         
         //Close button color
@@ -2930,13 +2930,13 @@ class Ays_Pb_Public_Templates {
         }
 
         //Dismiss ad text
-        $enable_dismiss_text = (isset($options->enable_dismiss_text) && $options->enable_dismiss_text != "") ? esc_html( stripslashes($options->enable_dismiss_text) ) : __("Dismiss ad", "ays-popup-box");
+        $enable_dismiss_text = (isset($options->enable_dismiss_text) && $options->enable_dismiss_text != "") ? esc_html( stripslashes($options->enable_dismiss_text) ) : esc_html__("Dismiss ad", "ays-popup-box");
         
         //Dismiss ad text mobile
         if ( ( !isset($options->enable_dismiss_mobile) ) || (isset($options->enable_dismiss_mobile) && $options->enable_dismiss_mobile == 'off' ) ) {
             $enable_dismiss_text_mobile = $enable_dismiss_text;
         } else {
-            $enable_dismiss_text_mobile = (isset($options->enable_dismiss_text_mobile) && $options->enable_dismiss_text_mobile != "") ? esc_html( stripslashes($options->enable_dismiss_text_mobile) ) : __("Dismiss ad", "ays-popup-box");
+            $enable_dismiss_text_mobile = (isset($options->enable_dismiss_text_mobile) && $options->enable_dismiss_text_mobile != "") ? esc_html( stripslashes($options->enable_dismiss_text_mobile) ) : esc_html__("Dismiss ad", "ays-popup-box");
         }
 
         //Show scrollbar
@@ -3338,13 +3338,13 @@ class Ays_Pb_Public_Templates {
         }
 
         //Dismiss ad text
-        $enable_dismiss_text = (isset($options->enable_dismiss_text) && $options->enable_dismiss_text != "") ? esc_html( stripslashes($options->enable_dismiss_text) ) : __("Dismiss ad", "ays-popup-box");
+        $enable_dismiss_text = (isset($options->enable_dismiss_text) && $options->enable_dismiss_text != "") ? esc_html( stripslashes($options->enable_dismiss_text) ) : esc_html__("Dismiss ad", "ays-popup-box");
         
         //Dismiss ad text mobile
         if ( ( !isset($options->enable_dismiss_mobile) ) || (isset($options->enable_dismiss_mobile) && $options->enable_dismiss_mobile == 'off' ) ) {
             $enable_dismiss_text_mobile = $enable_dismiss_text;
         } else {
-            $enable_dismiss_text_mobile = (isset($options->enable_dismiss_text_mobile) && $options->enable_dismiss_text_mobile != "") ? esc_html( stripslashes($options->enable_dismiss_text_mobile) ) : __("Dismiss ad", "ays-popup-box");
+            $enable_dismiss_text_mobile = (isset($options->enable_dismiss_text_mobile) && $options->enable_dismiss_text_mobile != "") ? esc_html( stripslashes($options->enable_dismiss_text_mobile) ) : esc_html__("Dismiss ad", "ays-popup-box");
         }
 
         //Close button color
@@ -3547,13 +3547,13 @@ class Ays_Pb_Public_Templates {
         }
 
         //Dismiss ad text
-        $enable_dismiss_text = (isset($options->enable_dismiss_text) && $options->enable_dismiss_text != "") ? esc_html( stripslashes($options->enable_dismiss_text) ) : __("Dismiss ad", "ays-popup-box");
+        $enable_dismiss_text = (isset($options->enable_dismiss_text) && $options->enable_dismiss_text != "") ? esc_html( stripslashes($options->enable_dismiss_text) ) : esc_html__("Dismiss ad", "ays-popup-box");
         
         //Dismiss ad text mobile
         if ( ( !isset($options->enable_dismiss_mobile) ) || (isset($options->enable_dismiss_mobile) && $options->enable_dismiss_mobile == 'off' ) ) {
             $enable_dismiss_text_mobile = $enable_dismiss_text;
         } else {
-            $enable_dismiss_text_mobile = (isset($options->enable_dismiss_text_mobile) && $options->enable_dismiss_text_mobile != "") ? esc_html( stripslashes($options->enable_dismiss_text_mobile) ) : __("Dismiss ad", "ays-popup-box");
+            $enable_dismiss_text_mobile = (isset($options->enable_dismiss_text_mobile) && $options->enable_dismiss_text_mobile != "") ? esc_html( stripslashes($options->enable_dismiss_text_mobile) ) : esc_html__("Dismiss ad", "ays-popup-box");
         }
 
         //Close button color
@@ -3674,13 +3674,13 @@ class Ays_Pb_Public_Templates {
         }
 
         //Dismiss ad text
-        $enable_dismiss_text = (isset($options->enable_dismiss_text) && $options->enable_dismiss_text != "") ? esc_html( stripslashes($options->enable_dismiss_text) ) : __("Dismiss ad", "ays-popup-box");
+        $enable_dismiss_text = (isset($options->enable_dismiss_text) && $options->enable_dismiss_text != "") ? esc_html( stripslashes($options->enable_dismiss_text) ) : esc_html__("Dismiss ad", "ays-popup-box");
         
         //Dismiss ad text mobile
         if ( ( !isset($options->enable_dismiss_mobile) ) || (isset($options->enable_dismiss_mobile) && $options->enable_dismiss_mobile == 'off' ) ) {
             $enable_dismiss_text_mobile = $enable_dismiss_text;
         } else {
-            $enable_dismiss_text_mobile = (isset($options->enable_dismiss_text_mobile) && $options->enable_dismiss_text_mobile != "") ? esc_html( stripslashes($options->enable_dismiss_text_mobile) ) : __("Dismiss ad", "ays-popup-box");
+            $enable_dismiss_text_mobile = (isset($options->enable_dismiss_text_mobile) && $options->enable_dismiss_text_mobile != "") ? esc_html( stripslashes($options->enable_dismiss_text_mobile) ) : esc_html__("Dismiss ad", "ays-popup-box");
         }
 
         if ( $popup['closeButton'] == "on" ){
@@ -3881,7 +3881,7 @@ class Ays_Pb_Public_Templates {
 
         $ays_pb_protocol = ((!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') || $_SERVER['SERVER_PORT'] == 443) ? "https://" : "http://";         
         $current_popup_page_link = esc_url( $ays_pb_protocol . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'] );
-        $popup_current_page_link_html = "<a href='" . esc_sql( $current_popup_page_link ) . "' target='_blank'>". __( "Popup link", "ays-popup-box" ) ."</a>";
+        $popup_current_page_link_html = "<a href='" . esc_sql( $current_popup_page_link ) . "' target='_blank'>". esc_html__( "Popup link", "ays-popup-box" ) ."</a>";
 
         $creation_date = ( isset( $popup_options->create_date ) && $popup_options->create_date != "" ) ? date_i18n( get_option( 'date_format' ), strtotime( $popup_options->create_date ) ) : '';
 
@@ -3965,13 +3965,13 @@ class Ays_Pb_Public_Templates {
         }
 
         if ($template == 'image' || $template == 'minimal') {
-            $ays_pb_timer_desc = "<p class='ays_pb_timer " . $ays_pb_hide_timer_mobile_class . " " . $hide_timer_pc_class . " ays_pb_timer_".$popup['id']."' style='bottom:". (-30 - $popup['ays_pb_bordersize']) ."px'>".__("This will close in ", "ays-popup-box")." <span data-seconds='".$popup['ays_pb_autoclose']."' data-ays-seconds='{$attr["autoclose"]}' data-ays-mobile-seconds='{$pb_autoclose_mobile}'>".$popup['ays_pb_autoclose']."</span>".__(" seconds", "ays-popup-box")."</p>";
+            $ays_pb_timer_desc = "<p class='ays_pb_timer " . $ays_pb_hide_timer_mobile_class . " " . $hide_timer_pc_class . " ays_pb_timer_".$popup['id']."' style='bottom:". (-30 - $popup['ays_pb_bordersize']) ."px'>".esc_html__("This will close in ", "ays-popup-box")." <span data-seconds='".$popup['ays_pb_autoclose']."' data-ays-seconds='{$attr["autoclose"]}' data-ays-mobile-seconds='{$pb_autoclose_mobile}'>".$popup['ays_pb_autoclose']."</span>".esc_html__(" seconds", "ays-popup-box")."</p>";
         } else if ($template == 'video') {
-            $ays_pb_timer_desc = "<p class='ays_pb_timer " . $ays_pb_hide_timer_mobile_class . " " . $hide_timer_pc_class . " ays_pb_timer_".$popup['id']."' style=' position: absolute; right: 0; left: 0; margin: auto; bottom:". ($popup['ays_pb_bordersize'] - 50) ."px'>".__("This will close in ", "ays-popup-box")." <span data-seconds='".$popup['ays_pb_autoclose']."' data-ays-seconds='{$attr["autoclose"]}' data-ays-mobile-seconds='{$pb_autoclose_mobile}'>".$popup['ays_pb_autoclose']."</span>".__(" seconds", "ays-popup-box")."</p>";
+            $ays_pb_timer_desc = "<p class='ays_pb_timer " . $ays_pb_hide_timer_mobile_class . " " . $hide_timer_pc_class . " ays_pb_timer_".$popup['id']."' style=' position: absolute; right: 0; left: 0; margin: auto; bottom:". ($popup['ays_pb_bordersize'] - 50) ."px'>".esc_html__("This will close in ", "ays-popup-box")." <span data-seconds='".$popup['ays_pb_autoclose']."' data-ays-seconds='{$attr["autoclose"]}' data-ays-mobile-seconds='{$pb_autoclose_mobile}'>".$popup['ays_pb_autoclose']."</span>".esc_html__(" seconds", "ays-popup-box")."</p>";
         } else if ($template == 'notification') {
-            $ays_pb_timer_desc = "<p class='ays_pb_timer ays_pb_hide_timer_on_pc ays_pb_hide_timer_on_mobile ays_pb_timer_".$popup['id']."' style='display:none'>".__("This will close in ", "ays-popup-box")." <span data-seconds='0' data-ays-seconds='0' data-ays-mobile-seconds='0'>0</span>".__(" seconds", "ays-popup-box")."</p>";
+            $ays_pb_timer_desc = "<p class='ays_pb_timer ays_pb_hide_timer_on_pc ays_pb_hide_timer_on_mobile ays_pb_timer_".$popup['id']."' style='display:none'>".esc_html__("This will close in ", "ays-popup-box")." <span data-seconds='0' data-ays-seconds='0' data-ays-mobile-seconds='0'>0</span>".esc_html__(" seconds", "ays-popup-box")."</p>";
         } else {
-            $ays_pb_timer_desc = "<p class='ays_pb_timer " . $ays_pb_hide_timer_mobile_class . " " . $hide_timer_pc_class . " ays_pb_timer_".$popup['id']."'>".__("This will close in ", "ays-popup-box")." <span data-seconds='".$popup['ays_pb_autoclose']."' data-ays-seconds='{$attr["autoclose"]}' data-ays-mobile-seconds='{$pb_autoclose_mobile}'>".$popup['ays_pb_autoclose']."</span>".__(" seconds", "ays-popup-box")."</p>";
+            $ays_pb_timer_desc = "<p class='ays_pb_timer " . $ays_pb_hide_timer_mobile_class . " " . $hide_timer_pc_class . " ays_pb_timer_".$popup['id']."'>".esc_html__("This will close in ", "ays-popup-box")." <span data-seconds='".$popup['ays_pb_autoclose']."' data-ays-seconds='{$attr["autoclose"]}' data-ays-mobile-seconds='{$pb_autoclose_mobile}'>".$popup['ays_pb_autoclose']."</span>".esc_html__(" seconds", "ays-popup-box")."</p>";
         }
 
         return $ays_pb_timer_desc;
