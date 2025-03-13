@@ -787,7 +787,7 @@ class Ays_Pb_Admin {
                     <span class="ays-pb-footer-link-row"><a href="https://ays-demo.com/popup-box-plugin-survey/" target="_blank"><?php echo esc_html__( "Suggest a Feature", "ays-popup-box"); ?></a></span>
                 </div>
                 <p style="font-size:13px;text-align:center;font-style:italic;">
-                    <span style="margin-left:0px;margin-right:10px;" class="ays_heart_beat"><img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/hearth.svg"?>"></span>
+                    <span style="margin-left:0px;margin-right:10px;" class="ays_heart_beat"><img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/hearth.svg"?>"></span>
                     <span><?php echo esc_html__( "If you love our plugin, please do big favor and rate us on", "ays-popup-box"); ?></span> 
                     <a target="_blank" href='https://wordpress.org/support/plugin/ays-popup-box/reviews/?rate=5#new-post'>WordPress.org</a>
                     <a target="_blank" class="ays-rated-link" href='http://bit.ly/3kYanHL'>
@@ -797,7 +797,7 @@ class Ays_Pb_Admin {
                     	<span class="ays-dashicons ays-dashicons-star-empty"></span>
                     	<span class="ays-dashicons ays-dashicons-star-empty"></span>
                     </a>
-                    <span class="ays_heart_beat"><img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/hearth.svg"?>"></span>
+                    <span class="ays_heart_beat"><img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/hearth.svg"?>"></span>
                 </p>
             <?php
             }
@@ -885,6 +885,44 @@ class Ays_Pb_Admin {
             $plugin_not_activated = !isset($plugin_data['status_class']) || $plugin_data['status_class'] !== 'status-active';
             $plugin_action_class = ( isset($plugin_data['action_class']) && esc_attr($plugin_data['action_class']) != "" ) ? esc_attr($plugin_data['action_class']) : "";
             $plugin_action_class_disbaled = strpos($plugin_action_class, 'status-active') !== false ? "disbaled='true'" : "";
+            $allow_tags = array(
+                'div' => array(
+                    'class' => array(),
+                ),
+                'img' => array(
+                    'class' => array(),
+                    'src' => array(),
+                    'alt' => array(),
+                ),
+                'h5' => array(
+                    'class' => array(),
+                ),
+                'p' => array(
+                    'class' => array(),
+                ),
+                'span' => array(
+                    'class' => array(),
+                    'aria-hidden' => array(),
+                ),
+                'button' => array(
+                    'class' => array(),
+                    'data-plugin' => array(),
+                    'data-type' => array(),
+                    'disabled' => array(),
+                ),
+                'a' => array(
+                    'href' => array(),
+                    'target' => array(),
+                    'rel' => array(),
+                    'class' => array(),
+                ),
+                'input' => array(
+                    'type' => array(),
+                    'id' => array(),
+                    'name' => array(),
+                    'value' => array(),
+                ),
+            );
 
             $content .= '
                 <div class="ays-pb-card">
@@ -923,7 +961,7 @@ class Ays_Pb_Admin {
         $content.= '<input type="hidden" id="ays_pb_ajax_install_plugin_nonce" name="ays_pb_ajax_install_plugin_nonce" value="' . $install_plugin_nonce . '">';
         $content.= '</div>';
 
-        echo $content;
+        echo wp_kses($content,$allow_tags);
     }
 
     /**

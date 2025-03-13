@@ -16,7 +16,7 @@ ob_start();
  * Plugin Name:       Popup Box
  * Plugin URI:        http://ays-pro.com/wordpress/popup-box
  * Description:       Pop up anything you want! Create informative and promotional popups all in one plugin. Boost your website traffic with eye-catching popups. 
- * Version:           5.1.9
+ * Version:           5.2.0
  * Author:            Popup Box Team
  * Author URI:        http://ays-pro.com/
  * License:           GPL-2.0+
@@ -35,7 +35,7 @@ if ( ! defined( 'WPINC' ) ) {
  * Start at version 1.0.0 and use SemVer - https://semver.org
  * Rename this for your plugin and update it as you release new versions.
  */
-define( 'AYS_PB_NAME_VERSION', '5.1.9' );
+define( 'AYS_PB_NAME_VERSION', '5.2.0' );
 define( 'AYS_PB_NAME', 'ays-pb' );
 
 if( ! defined( 'AYS_PB_ADMIN_URL' ) ) {
@@ -108,7 +108,7 @@ function general_ays_pb_admin_notice() {
                     </a>
                     <div>
                         <a href="https://ays-pro.com/wordpress/popup-box?utm_source=dashboard&utm_medium=popup-free&utm_campaign=popup-top-banner-upgrade-button" target="_blank" class="popup-box-upgrade-to-pro">
-                            <img src="<?php echo AYS_PB_ADMIN_URL . '/images/icons/lightning-white.svg' ?>" class="popup-box-upgrade-white-icon">
+                            <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . '/images/icons/lightning-white.svg' ?>" class="popup-box-upgrade-white-icon">
                             <span><?php echo esc_html__( "Upgrade", "ays-popup-box" ); ?></span>
                         </a>
                         <div class="popup-box-notice-one-time">(<?php echo esc_html__("One-time payment", "ays-popup-box"); ?>)</div>
@@ -120,7 +120,7 @@ function general_ays_pb_admin_notice() {
                     <li class="modile-ddmenu-xs ays-pb-take-survey"><a class="ays-btn" href="https://ays-demo.com/popup-box-plugin-survey/" target="_blank"><?php echo esc_html__("Make a Suggestion", "ays-popup-box"); ?></a></li>
                     <li class="modile-ddmenu-lg"><a class="ays-btn" href="https://wordpress.org/support/plugin/ays-popup-box" target="_blank"><?php echo esc_html__("Contact us", "ays-popup-box"); ?></a></li>
                     <li class="modile-ddmenu-md">
-                        <a class="toggle_ddmenu toggle-ddmenu-bttn" href="javascript:void(0);"><img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/ellipsis.svg" ?>"></a>
+                        <a class="toggle_ddmenu toggle-ddmenu-bttn" href="javascript:void(0);"><img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/ellipsis.svg" ?>"></a>
                         <ul class="ddmenu" data-expanded="false">
                             <li><a class="ays-btn" href="https://ays-pro.com/wordpress-popup-box-plugin-user-manual" target="_blank"><?php echo esc_html__("Documentation", "ays-popup-box"); ?></a></li>
                             <li><a class="ays-btn" href="https://ays-demo.com/popup-box-plugin-free-demo/" target="_blank"><?php echo esc_html__("Demo", "ays-popup-box"); ?></a></li>
@@ -129,7 +129,7 @@ function general_ays_pb_admin_notice() {
                         </ul>
                     </li>
                     <li class="modile-ddmenu-sm">
-                        <a class="toggle_ddmenu toggle-ddmenu-bttn" href="javascript:void(0);"><img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/ellipsis.svg" ?>"></a>
+                        <a class="toggle_ddmenu toggle-ddmenu-bttn" href="javascript:void(0);"><img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/ellipsis.svg" ?>"></a>
                         <ul class="ddmenu" data-expanded="false">
                             <li><a class="ays-btn" href="https://ays-pro.com/wordpress-popup-box-plugin-user-manual" target="_blank"><?php echo esc_html__("Documentation", "ays-popup-box"); ?></a></li>
                             <li><a class="ays-btn" href="https://ays-demo.com/popup-box-plugin-free-demo/" target="_blank"><?php echo esc_html__("Demo", "ays-popup-box"); ?></a></li>

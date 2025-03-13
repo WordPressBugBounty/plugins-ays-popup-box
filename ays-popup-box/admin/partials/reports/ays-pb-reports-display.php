@@ -29,7 +29,7 @@
                     </div>
                 </a>
             </div>
-            <img src="<?php echo AYS_PB_ADMIN_URL . '/images/features/popup-reports-pro.png'?>" alt="PopupBox Reports" style="width:100%;">
+            <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . '/images/features/popup-reports-pro.png'?>" alt="PopupBox Reports" style="width:100%;">
         </div>
     </div>
     <div id="tab2" class="ays-pb-tab-content" style="margin-top:15px;">
@@ -50,7 +50,7 @@
                     </div>
                 </a>
             </div>
-            <img src="<?php echo AYS_PB_ADMIN_URL . '/images/features/statistics-pro.png'?>" alt="PopupBox Statistics" style="width:100%;" >
+            <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . '/images/features/statistics-pro.png'?>" alt="PopupBox Statistics" style="width:100%;" >
         </div>
     </div>
 </div>

@@ -28,7 +28,7 @@
                     </div>
                 </a>
             </div>
-            <img src="<?php echo AYS_PB_ADMIN_URL . '/images/features/popup-subscribes-pro.png'?>" alt="PopupBox Submissions" style="width:100%;">
+            <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . '/images/features/popup-subscribes-pro.png'?>" alt="PopupBox Submissions" style="width:100%;">
         </div>
     </div>
 </div>

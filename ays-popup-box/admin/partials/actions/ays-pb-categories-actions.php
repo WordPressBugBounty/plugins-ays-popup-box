@@ -66,7 +66,7 @@ if (isset($id) && !is_null($id)) {
         <div class="ays-pb-heading-box">
             <div class="ays-pb-wordpress-user-manual-box">
                 <a href="https://ays-pro.com/wordpress-popup-box-plugin-user-manual" target="_blank">
-                    <img src="<?php echo AYS_PB_ADMIN_URL . '/images/icons/text-file.svg' ?>">
+                    <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . '/images/icons/text-file.svg' ?>">
                     <span><?php echo esc_html__("View Documentation", "ays-popup-box"); ?></span>
                 </a>
             </div>
@@ -80,7 +80,7 @@ if (isset($id) && !is_null($id)) {
                     <label for='ays-title'>
                         <?php echo esc_html__('Category name', "ays-popup-box"); ?>
                         <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__('Define the category name.',"ays-popup-box")?>">
-                            <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                            <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                         </a>
                     </label>
                 </div>
@@ -94,7 +94,7 @@ if (isset($id) && !is_null($id)) {
                 <label for='ays-description'>
                     <?php echo esc_html__('Description', "ays-popup-box"); ?>
                     <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__('Write category description if necessary.',"ays-popup-box")?>">
-                        <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                        <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                     </a>
                 </label>
                 <?php
@@ -119,7 +119,7 @@ if (isset($id) && !is_null($id)) {
                         <label for="ays_show_random_posts_category">
                             <?php echo esc_html__('Show random popup by category', "ays-popup-box")?>
                             <a class="ays_help ays-pb-help-pro" data-toggle="tooltip" title="<?php echo esc_html__('If this option is enabled a random popup will be displayed from the selected category based on the chosen post.',"ays-popup-box"); ?>">
-                                <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                             </a>
                         </label>
                     </div>
@@ -147,7 +147,7 @@ if (isset($id) && !is_null($id)) {
                                             "<li>". esc_html__('Include - Choose the post/page and post/page types including the popup.',"ays-popup-box") ."</li>".
                                         "</ul>";
                                     ?>">
-                                    <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                    <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                 </a>
                             </div>
                         </div>
@@ -160,7 +160,7 @@ if (isset($id) && !is_null($id)) {
                     <label>
                         <?php echo esc_html__('Category status', "ays-popup-box"); ?>
                         <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__('Select whether or not to display the new category in the settings.',"ays-popup-box")?>">
-                            <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                            <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                         </a>
                     </label>
                 </div>

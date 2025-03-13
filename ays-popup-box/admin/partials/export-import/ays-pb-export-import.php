@@ -37,7 +37,7 @@
                         <label>
                             <?php echo esc_html__('Select popups', "ays-popup-box"); ?>
                             <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__('Specify the popup boxes which must be exported. If you want to export all popup boxes just leave blank.',"ays-popup-box")?>">
-                                <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                             </a>
                         </label>
                     </div>

@@ -20,6 +20,30 @@ $heading = '';
 $loader_image  = "<span class='display_none'><img width='20' height='20' src=" . AYS_PB_ADMIN_URL . "/images/loaders/loading.gif></span>";
 $ays_pb_page_url = sprintf('?page=%s', 'ays-pb');
 
+$allow_tags_acordion_arrow = array(
+    'div' => array(
+        'class' => array()
+    ),
+    'svg' => array(
+        'class' => array(),
+        'version' => array(),
+        'xmlns' => array(),
+        'xmlns:xlink' => array(), 
+        'overflow' => array(),
+        'preserveAspectRatio' => array(),
+        'viewBox' => array(),
+        'width' => array(),
+        'height' => array()
+    ),
+    'g' => array(),
+    'path' => array(
+        'xmlns:default' => array(),
+        'd' => array(),
+        'fill' => array(),
+        'vector-effect' => array()
+    )
+);
+
 $pb_acordion_svg_html = '
 <div class="ays-pb-accordion-arrow-box">
     <svg class="ays-pb-accordion-arrow ays-pb-accordion-arrow-active" version="1.2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" overflow="visible" preserveAspectRatio="none" viewBox="0 0 24 24" width="32" height="32">
@@ -1522,18 +1546,18 @@ $show_popup_triggers_tooltip = array(
 
 <style>
     .ays_image_window p.ays_pb_timer{
-        bottom: <?php echo $ays_pb_timer_position; ?>;
+        bottom: <?php echo esc_attr($ays_pb_timer_position); ?>;
     }
 
     .ays-pb-live-container .ays-close-button-text, 
     .ays-pb-live-container.ays_image_window header .ays-close-button-text,
     .ays-pb-live-container.ays_template_window header .ays-close-button-text{
-        transform:scale(<?php echo $ays_close_button_size; ?>);
-        color:<?php echo $close_button_color; ?>;
+        transform:scale(<?php echo esc_attr($ays_close_button_size); ?>);
+        color:<?php echo esc_attr($close_button_color); ?>;
     }
 
     .close-lil-btn:hover{
-        transform: rotate(180deg) scale(<?php echo $ays_close_button_size; ?>)
+        transform: rotate(180deg) scale(<?php echo esc_attr($ays_close_button_size); ?>)
     }
 
 </style>
@@ -1547,25 +1571,25 @@ $ays_users_roles = $wp_roles->roles;
     <div class="container-fluid">
         <form method="post" name="popup_attributes" id="ays_pb_form" class="ays-pb-main-form">
             <input type="hidden" name="ays_pb_tab" value="<?php echo esc_attr($ays_pb_tab); ?>">
-            <input type="hidden" class="pb_wp_editor_height" value="<?php echo $pb_wp_editor_height; ?>">
-            <input type="hidden" name="ays_pb_create_date" value="<?php echo $pb_create_date; ?>">
+            <input type="hidden" class="pb_wp_editor_height" value="<?php echo esc_attr($pb_wp_editor_height); ?>">
+            <input type="hidden" name="ays_pb_create_date" value="<?php echo esc_attr($pb_create_date); ?>">
             <input type="hidden" name="ays_pb_author" value="<?php echo esc_attr(json_encode($pb_author, JSON_UNESCAPED_SLASHES)); ?>">
             <div class="ays-pb-heading-box">
                 <div class="ays-pb-wordpress-user-manual-box">
                     <a href="https://ays-pro.com/wordpress-popup-box-plugin-user-manual" target="_blank">
-                        <img src="<?php echo AYS_PB_ADMIN_URL . '/images/icons/text-file.svg' ?>">
+                        <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . '/images/icons/text-file.svg' ?>">
                         <span><?php echo esc_html__("View Documentation", "ays-popup-box"); ?></span>
                     </a>
                 </div>
             </div>
             <h1 class="wp-heading-inline" style="display:flex; flex-wrap: wrap;">
-                <?php echo $heading ?>
+                <?php echo esc_html($heading); ?>
             </h1>
             <div>
                 <div class="ays-pb-subtitle-main-box">
                     <p class="ays_pb_subtitle">
                         <?php if(isset($id) && count($get_all_popups) > 1):?>
-                            <img class="ays-pb-open-popups-list" src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/angle-down.svg"?>">
+                            <img class="ays-pb-open-popups-list" src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/angle-down.svg"?>">
                         <?php endif; ?>
                         <strong class="ays_pb_title_in_top"><?php echo esc_html( $title ); ?></strong>
                     </p>
@@ -1592,25 +1616,25 @@ $ays_users_roles = $wp_roles->roles;
                 <?php if ($show_warning_note): ?>
                 <div class="ays-pb-cache-warning-note-container">
                     <div class="ays-pb-cache-warning-note">
-                        <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/warning.svg"?>">
+                        <img src="<?php echo esc_url(AYS_PB_ADMIN_URL . "/images/icons/warning.svg"); ?>">
                         <p>
                             <span><?php echo esc_html__("Please Note: ", "ays-popup-box"); ?></span>
                             <span><?php echo esc_html__("If you have a cache plugin, clear the caches and exclude the link where the popup is enabled to see immediate front-end changes", "ays-popup-box"); ?></span>
                         </p>
                     </div>
                     <div class="ays-pb-cache-warning-note-close-container">
-                        <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/close-warning-note.svg"?>"class="ays-pb-cache-warning-note-close">
+                        <img src="<?php echo esc_url(AYS_PB_ADMIN_URL . "/images/icons/close-warning-note.svg"); ?>" class="ays-pb-cache-warning-note-close">
                     </div>
                 </div>
                 <?php endif; ?>
                 <p class="ays-pb-type-video">
-                   <?php echo $video_tutorial;?>
+                   <?php echo wp_kses($video_tutorial, array('a' => array('href' => array()))); ?>
                 </p>
             </div>
             <hr>
             <div class="ays-top-menu-container-wrapper">
                 <div class="ays-pb-top-menu-wrapper">
-                    <div class="ays_pb_menu_left" data-scroll="0"><img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/angle-left.svg"?>"></div>
+                    <div class="ays_pb_menu_left" data-scroll="0"><img src="<?php echo esc_url(AYS_PB_ADMIN_URL . "/images/icons/angle-left.svg"); ?>"></div>
                     <div class="ays-pb-top-menu">
                         <div class="nav-tab-wrapper ays-pb-top-tab-wrapper">
                             <a href="#tab1" data-tab="tab1" class="nav-tab <?php echo ($ays_pb_tab == 'tab1') ? 'nav-tab-active' : ''; ?>"><?php echo esc_html__("General", "ays-popup-box"); ?></a>
@@ -1620,7 +1644,7 @@ $ays_users_roles = $wp_roles->roles;
                             <a href="#tab5" data-tab="tab5" class="nav-tab <?php echo ($ays_pb_tab == 'tab5') ? 'nav-tab-active' : ''; ?>"><?php echo esc_html__("Integrations", "ays-popup-box"); ?></a>
                         </div>
                     </div>
-                    <div class="ays_pb_menu_right" data-scroll="-1"><img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/angle-right.svg"?>"></div>
+                    <div class="ays_pb_menu_right" data-scroll="-1"><img src="<?php echo esc_url(AYS_PB_ADMIN_URL . "/images/icons/angle-right.svg"); ?>"></div>
                 </div>
                 <div class="ays-pb-add-new-button-box ays-pb-add-new-button-pb-edit-box top-menu-buttons-container">
                 <?php 
@@ -1634,9 +1658,9 @@ $ays_users_roles = $wp_roles->roles;
                     submit_button(esc_html__('Save', "ays-popup-box"), 'primary ays-pb-loader-banner', 'ays_apply_top', false, $save_attributes);
                     submit_button(esc_html__('Save and close', "ays-popup-box"), 'ays-pb-loader-banner ays-pb-submit-button-margin-unset', 'ays_submit_top', false, $save_close_attributes);
                 ?>
-                    <a href="<?php echo $ays_pb_page_url; ?>" class="button ays-pb-loader-banner"><?php echo esc_html__('Cancel',"ays-popup-box");?></a>
+                    <a href="<?php echo esc_url($ays_pb_page_url); ?>" class="button ays-pb-loader-banner"><?php echo esc_html__('Cancel',"ays-popup-box");?></a>
                     <?php
-                        echo $loader_image;
+                        echo wp_kses_post($loader_image);
                     ?>
                 </div>
             </div>
@@ -1646,16 +1670,16 @@ $ays_users_roles = $wp_roles->roles;
                 <!-- Popup title start -->
                 <div class="form-group row">
                     <div class="col-sm-3">
-                        <label for="<?php echo $this->plugin_name; ?>-popup_title">
+                        <label for="<?php echo esc_attr($this->plugin_name); ?>-popup_title">
                             <span><?php echo esc_html__('Popup title', "ays-popup-box"); ?></span>
                             <a class="ays_help" data-toggle="tooltip"
                                title="<?php echo esc_html__('The option is not being displayed on the front-end by default. Please activate it from the Styles tab.', "ays-popup-box") ?>">
-                               <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                               <img src="<?php echo esc_url(AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"); ?>">
                             </a>
                         </label>
                     </div>
                     <div class="col-sm-9">
-                        <input type="text" id="<?php echo $this->plugin_name; ?>-popup_title"  class="ays-text-input" name="<?php echo $this->plugin_name; ?>[popup_title]" value="<?php echo $title ?>" />
+                        <input type="text" id="<?php echo esc_attr($this->plugin_name); ?>-popup_title"  class="ays-text-input" name="<?php echo esc_attr($this->plugin_name); ?>[popup_title]" value="<?php echo esc_attr($title) ?>" />
                     </div>
                 </div>
                 <!-- Popup title end -->
@@ -1663,17 +1687,17 @@ $ays_users_roles = $wp_roles->roles;
                 <!-- Enable popup start-->
                 <div class="form-group row">
                     <div class="col-sm-3">
-                        <label for="<?php echo $this->plugin_name; ?>-onoffswitch">
+                        <label for="<?php echo esc_attr($this->plugin_name); ?>-onoffswitch">
                             <span><?php echo esc_html__('Enable popup', "ays-popup-box"); ?></span>
                             <a class="ays_help" data-toggle="tooltip"
                                 title="<?php echo esc_html__('Turn on the popup for the website based on your configured options.', "ays-popup-box") ?>">
-                                <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                <img src="<?php echo esc_url(AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"); ?>">
                             </a>
                         </label>
                     </div>
                     <div class="col-sm-9">
                         <label class="ays-pb-enable-switch">
-                            <input type="checkbox" name="<?php echo $this->plugin_name; ?>[onoffswitch]" class="ays-pb-onoffswitch-checkbox" id="<?php echo $this->plugin_name; ?>-onoffswitch" <?php if($onoffswitch == 'On'){ echo 'checked';} else { echo '';} ?>>
+                            <input type="checkbox" name="<?php echo esc_attr($this->plugin_name); ?>[onoffswitch]" class="ays-pb-onoffswitch-checkbox" id="<?php echo esc_attr($this->plugin_name); ?>-onoffswitch" <?php if($onoffswitch == 'On'){ echo 'checked';} else { echo '';} ?>>
                             <div class="ays-pb-enable-switch-slider ays-pb-enable-switch-round">
                                 <span class="ays-pb-enable-switch-on"><?php echo esc_html__( 'ON', "ays-popup-box" ); ?></span>
                                 <span class="ays-pb-enable-switch-off"><?php echo esc_html__( 'OFF', "ays-popup-box" ); ?></span>
@@ -1686,15 +1710,15 @@ $ays_users_roles = $wp_roles->roles;
                 <!-- Shortcode start -->
                 <div class="form-group row <?php echo $modal_content == 'shortcode' ? '' : 'display_none'; ?>" id="ays_shortcode">
                     <div class="col-sm-3">
-                        <label for="<?php echo $this->plugin_name; ?>-shortcode">
+                        <label for="<?php echo esc_attr($this->plugin_name); ?>-shortcode">
                             <span><?php echo esc_html__('Shortcode ', "ays-popup-box"); ?></span>
                             <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__('You can pop up any form by inserting its shortcode. Please copy and paste the shortcode from another plugin to display it in a popup. For example, Contact forms, surveys, polls, quizzes, Google map, etc.', "ays-popup-box"); ?>">
-                                <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                <img src="<?php echo esc_url(AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"); ?>">
                             </a>
                         </label>
                     </div>
                     <div class="col-sm-9">
-                        <input type="text" id="<?php echo $this->plugin_name; ?>-shortcode" name="<?php echo $this->plugin_name; ?>[shortcode]"  class="ays-text-input" value="<?php echo $shortcode; ?>" />
+                        <input type="text" id="<?php echo esc_attr($this->plugin_name); ?>-shortcode" name="<?php echo esc_attr($this->plugin_name); ?>[shortcode]"  class="ays-text-input" value="<?php echo esc_attr($shortcode); ?>" />
                     </div>
                 </div>
                 <!-- Shortcode end -->
@@ -1706,7 +1730,7 @@ $ays_users_roles = $wp_roles->roles;
                             <span>
                                 <span><?php echo esc_html__('Custom Content', "ays-popup-box"); ?></span>
                                 <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__("Create fully customized popup content with the help of HTML.", "ays-popup-box"); ?>">
-                                    <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                    <img src="<?php echo esc_url(AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"); ?>">
                                 </a>
                             </span>
                         </label>
@@ -1739,7 +1763,7 @@ $ays_users_roles = $wp_roles->roles;
                             <?php echo esc_html__('Video', "ays-popup-box"); ?>
                             <a class="ays_help" data-toggle="tooltip" data-placement="top"
                                 title="<?php echo esc_html__("Add video to the popup.", "ays-popup-box"); ?>">
-                                    <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                    <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                             </a>
                         </label>
                     </div>
@@ -1750,8 +1774,8 @@ $ays_users_roles = $wp_roles->roles;
                         <div class="<?php echo $ays_video_theme_bg != '' ? '' : 'display_none'; ?> ays-pb-bg-video-container-main">
                             <div class="ays-pb-bg-video-container">
                                 <span class="ays-remove-bg-video"></span>
-                                <video src="<?php echo $ays_video_theme_bg?>" id="ays_pb_video_theme_video"></video>
-                                <input type="hidden" name="ays_video_theme_url" id="ays_pb_video_theme" value="<?php echo $ays_video_theme_bg ; ?>"/>
+                                <video src="<?php echo esc_url($ays_video_theme_bg); ?>" id="ays_pb_video_theme_video"></video>
+                                <input type="hidden" name="ays_video_theme_url" id="ays_pb_video_theme" value="<?php echo esc_url($ays_video_theme_bg); ?>"/>
                             </div>
                         </div>
                     </div>
@@ -1765,7 +1789,7 @@ $ays_users_roles = $wp_roles->roles;
                             <span style="font-weight: 600;">
                                 <?php echo esc_html__('Main Image', "ays-popup-box"); ?>
                                 <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__("Add image to the popup.", "ays-popup-box"); ?>">
-                                    <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                    <img src="<?php echo esc_url(AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"); ?>">
                                 </a>
                             </span>
                         </label>
@@ -1777,8 +1801,8 @@ $ays_users_roles = $wp_roles->roles;
                         <div class="<?php echo $image_type_img_src != '' ? '' : 'display_none'; ?> ays-pb-image-type-img-container-main">
                             <div class="ays-pb-image-type-img-container">
                                 <span class="ays-remove-image-type-img"></span>
-                                <img src="<?php echo $image_type_img_src ?>" id="ays_pb_image_type_img">
-                                <input type="hidden" name="ays_pb_image_type_img_src" id="ays_pb_image_type_img_src" value="<?php echo $image_type_img_src ; ?>"/>
+                                <img src="<?php echo esc_url($image_type_img_src); ?>" id="ays_pb_image_type_img">
+                                <input type="hidden" name="ays_pb_image_type_img_src" id="ays_pb_image_type_img_src" value="<?php echo esc_url($image_type_img_src); ?>"/>
                             </div>
                         </div>
                         <div class="ays-pb-image-type-img-settings-container <?php echo $image_type_img_src != ''  ? '' : 'display_none'; ?>">
@@ -1789,7 +1813,7 @@ $ays_users_roles = $wp_roles->roles;
                                         <span>
                                             <?php echo esc_html__('Redirect URL', "ays-popup-box"); ?>
                                             <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__("The URL for redirecting after the user clicks on the image.", "ays-popup-box"); ?>">
-                                                <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                                <img src="<?php echo esc_url(AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"); ?>">
                                             </a>
                                         </span>
                                     </label>
@@ -1804,7 +1828,7 @@ $ays_users_roles = $wp_roles->roles;
                                     <label for="ays_pb_image_type_img_redirect_to_new_tab">
                                         <?php  echo esc_html__('Redirect to the new tab', "ays-popup-box" ) ?>
                                         <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__( "Tick this option to redirect to another tab.", "ays-popup-box"); ?>" >
-                                            <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                            <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                         </a>
                                     </label>
                                 </div>
@@ -1823,7 +1847,7 @@ $ays_users_roles = $wp_roles->roles;
                         <label for="ays_pb_facebook_page_url">
                             <?php  echo esc_html__('Facebook page url', "ays-popup-box" ) ?>
                             <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__( "With the help of this insert field, it notes Facebook URL address seen in PopupBox", "ays-popup-box"); ?>" >
-                                <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                <img src="<?php echo esc_url(AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"); ?>">
                             </a>
                         </label>
                     </div>
@@ -1839,7 +1863,7 @@ $ays_users_roles = $wp_roles->roles;
                         <label for="ays_pb_hide_fb_page_cover_photo">
                             <?php  echo esc_html__('Hide FB page cover photo', "ays-popup-box" ) ?>
                             <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__( "Select this option if you want to hide the cover photo of your Facebook page when it is displayed in the popup.", "ays-popup-box"); ?>" >
-                                <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                <img src="<?php echo esc_url(AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"); ?>">
                             </a>
                         </label>
                     </div>
@@ -1855,7 +1879,7 @@ $ays_users_roles = $wp_roles->roles;
                         <label for="ays_pb_use_small_fb_header">
                             <?php  echo esc_html__('Use small header', "ays-popup-box" ) ?>
                             <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__( "Select this option if you want to use a smaller header for your Facebook page when it is displayed in the popup.", "ays-popup-box"); ?>" >
-                                <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                <img src="<?php echo esc_url(AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"); ?>">
                             </a>
                         </label>
                     </div>
@@ -1886,19 +1910,19 @@ $ays_users_roles = $wp_roles->roles;
                             ?>
                                     <li class="ui-state-default">
                                         <div class="toggle_component_options open_component_options" data-open="<?php echo $key ?>">
-                                            <img class="open_component_img" src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/edit-component.svg"?>">
-                                            <img class="close_component_img display_none" src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/close-component.svg"?>">
+                                            <img class="open_component_img" src="<?php echo esc_url(AYS_PB_ADMIN_URL . "/images/icons/edit-component.svg"); ?>">
+                                            <img class="close_component_img display_none" src="<?php echo esc_url(AYS_PB_ADMIN_URL . "/images/icons/close-component.svg"); ?>">
                                         </div>
                                         <input type="hidden" value="<?php echo $key; ?>" name="ays_notification_type_components_order[<?php echo $key; ?>]"/>
                                         <?php
                                             if($key != 'main_content' && $key != 'button_1'):
                                         ?>
-                                        <input type="checkbox" id="ays_show_<?php echo $key; ?>" name="ays_notification_type_components[<?php echo $key; ?>]" <?php echo $checked; ?>/>
+                                        <input type="checkbox" id="ays_show_<?php echo esc_attr($key); ?>" name="ays_notification_type_components[<?php echo esc_attr($key); ?>]" <?php echo esc_attr($checked); ?>/>
                                         <?php 
                                             endif;
                                         ?>
-                                        <label for="ays_show_<?php echo $key; ?>">
-                                            <?php echo $default_notification_type_component_names_label; ?>
+                                        <label for="ays_show_<?php echo esc_attr($key); ?>">
+                                            <?php echo esc_html($default_notification_type_component_names_label); ?>
                                         </label>
                                     </li>
                             <?php
@@ -1908,7 +1932,7 @@ $ays_users_roles = $wp_roles->roles;
                         <div class="ays_pb_component_option" style="display: none;" data-window="logo">
                             <div class="ays-pb-accordion-options-main-container">
                                 <div class="ays-pb-accordion-header">
-                                    <?php echo $pb_acordion_svg_html; ?>
+                                    <?php echo wp_kses($pb_acordion_svg_html, $allow_tags_acordion_arrow); ?>
                                     <p class="ays-subtitle"><?php echo  esc_html__('General', "ays-popup-box") ?></p>
                                 </div>
                                 <hr class="ays-pb-bolder-hr"/>
@@ -1918,7 +1942,7 @@ $ays_users_roles = $wp_roles->roles;
                                             <label for="ays_pb_notification_logo_image">
                                                 <?php  echo esc_html__('Banner logo', "ays-popup-box" ) ?>
                                                 <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__( "Add a logo for the notification banner.", "ays-popup-box"); ?>" >
-                                                    <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                                    <img src="<?php echo esc_url(AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"); ?>">
                                                 </a>
                                             </label>
                                         </div>
@@ -1942,7 +1966,7 @@ $ays_users_roles = $wp_roles->roles;
                                                 <label for="ays_pb_notification_logo_redirect_url">
                                                     <?php  echo esc_html__('Redirect URL', "ays-popup-box" ) ?>
                                                     <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__( "The URL for redirecting after the user clicks on the logo.", "ays-popup-box"); ?>" >
-                                                        <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                                        <img src="<?php echo esc_url(AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"); ?>">
                                                     </a>
                                                 </label>
                                             </div>
@@ -1956,7 +1980,7 @@ $ays_users_roles = $wp_roles->roles;
                                                 <label for="ays_pb_notification_logo_redirect_to_new_tab">
                                                     <?php  echo esc_html__('Redirect to the new tab', "ays-popup-box" ) ?>
                                                     <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__( "Tick this option to redirect to another tab.", "ays-popup-box"); ?>" >
-                                                        <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                                        <img src="<?php echo esc_url(AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"); ?>">
                                                     </a>
                                                 </label>
                                             </div>
@@ -1969,7 +1993,7 @@ $ays_users_roles = $wp_roles->roles;
                             </div>
                             <div class="ays-pb-accordion-options-main-container">
                                 <div class="ays-pb-accordion-header">
-                                    <?php echo $pb_acordion_svg_html; ?>
+                                    <?php echo wp_kses($pb_acordion_svg_html, $allow_tags_acordion_arrow); ?>
                                     <p class="ays-subtitle"><?php echo  esc_html__('Styles', "ays-popup-box") ?></p>
                                 </div>
                                 <hr class="ays-pb-bolder-hr"/>
@@ -1979,7 +2003,7 @@ $ays_users_roles = $wp_roles->roles;
                                             <label for="ays_pb_notification_logo_width">
                                                 <?php  echo esc_html__('Width', "ays-popup-box" ) ?>
                                                 <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__('Specify the width of the logo.', "ays-popup-box"); ?>" >
-                                                    <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                                    <img src="<?php echo esc_url(AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"); ?>">
                                                 </a>
                                             </label>
                                         </div>
@@ -1989,7 +2013,7 @@ $ays_users_roles = $wp_roles->roles;
                                                     <label for='ays_pb_notification_logo_width'>
                                                         <?php echo esc_html__('On Desktop', "ays-popup-box"); ?>
                                                         <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__('Specify the width of the logo for desktop devices.',"ays-popup-box")?>">
-                                                            <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                                            <img src="<?php echo esc_url(AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"); ?>">
                                                         </a>
                                                     </label>
                                                 </div>
@@ -2017,7 +2041,7 @@ $ays_users_roles = $wp_roles->roles;
                                                     <label for='ays_pb_notification_logo_width_mobile'>
                                                         <?php echo esc_html__('On mobile', "ays-popup-box"); ?>
                                                         <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__('Specify the width of the logo for mobile devices.',"ays-popup-box")?>">
-                                                            <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                                            <img src="<?php echo esc_url(AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"); ?>">
                                                         </a>
                                                     </label>
                                                 </div>
@@ -2047,7 +2071,7 @@ $ays_users_roles = $wp_roles->roles;
                                             <label for="ays_pb_notification_logo_max_width">
                                                 <?php  echo esc_html__('Max-width', "ays-popup-box" ) ?>
                                                 <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__('Specify the max-width of the logo.', "ays-popup-box"); ?>" >
-                                                    <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                                    <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"; ?>">
                                                 </a>
                                             </label>
                                         </div>
@@ -2057,7 +2081,7 @@ $ays_users_roles = $wp_roles->roles;
                                                     <label for='ays_pb_notification_logo_max_width'>
                                                         <?php echo esc_html__('On Desktop', "ays-popup-box"); ?>
                                                         <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__('Specify the max-width of the logo for desktop devices.',"ays-popup-box")?>">
-                                                            <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                                            <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                                         </a>
                                                     </label>
                                                 </div>
@@ -2085,7 +2109,7 @@ $ays_users_roles = $wp_roles->roles;
                                                     <label for='ays_pb_notification_logo_max_width_mobile'>
                                                         <?php echo esc_html__('On mobile', "ays-popup-box"); ?>
                                                         <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__('Specify the max-width of the logo for mobile devices.',"ays-popup-box")?>">
-                                                            <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                                            <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                                         </a>
                                                     </label>
                                                 </div>
@@ -2115,7 +2139,7 @@ $ays_users_roles = $wp_roles->roles;
                                             <label for="ays_pb_notification_logo_min_width">
                                                 <?php  echo esc_html__('Min-width', "ays-popup-box" ) ?>
                                                 <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__('Specify the min-width of the logo.', "ays-popup-box"); ?>" >
-                                                    <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                                    <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                                 </a>
                                             </label>
                                         </div>
@@ -2125,7 +2149,7 @@ $ays_users_roles = $wp_roles->roles;
                                                     <label for='ays_pb_notification_logo_min_width'>
                                                         <?php echo esc_html__('On Desktop', "ays-popup-box"); ?>
                                                         <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__('Specify the min-width of the logo for desktop devices.',"ays-popup-box")?>">
-                                                            <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                                            <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                                         </a>
                                                     </label>
                                                 </div>
@@ -2153,7 +2177,7 @@ $ays_users_roles = $wp_roles->roles;
                                                     <label for='ays_pb_notification_logo_min_width_mobile'>
                                                         <?php echo esc_html__('On mobile', "ays-popup-box"); ?>
                                                         <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__('Specify the min-width of the logo for mobile devices.',"ays-popup-box")?>">
-                                                            <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                                            <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                                         </a>
                                                     </label>
                                                 </div>
@@ -2183,7 +2207,7 @@ $ays_users_roles = $wp_roles->roles;
                                             <label for="ays_pb_notification_logo_max_height">
                                                 <?php  echo esc_html__('Max-height', "ays-popup-box" ) ?>
                                                 <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__('Specify the max-height of the logo in pixels. ', "ays-popup-box"); ?>" >
-                                                    <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                                    <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                                 </a>
                                             </label>
                                         </div>
@@ -2205,7 +2229,7 @@ $ays_users_roles = $wp_roles->roles;
                                             <label for="ays_pb_notification_logo_min_height">
                                                 <?php  echo esc_html__('Min-height', "ays-popup-box" ) ?>
                                                 <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__('Specify the min-height of the logo in pixels. ', "ays-popup-box"); ?>" >
-                                                    <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                                    <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                                 </a>
                                             </label>
                                         </div>
@@ -2227,7 +2251,7 @@ $ays_users_roles = $wp_roles->roles;
                                             <label for="ays_pb_notification_logo_image_sizing">
                                                 <?php  echo esc_html__('Logo image sizing', "ays-popup-box" ) ?>
                                                 <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__('Define the logo image size if needed.', "ays-popup-box"); ?>" >
-                                                    <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                                    <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                                 </a>
                                             </label>
                                         </div>
@@ -2255,7 +2279,7 @@ $ays_users_roles = $wp_roles->roles;
                                             <label for="ays_pb_notification_logo_image_shape">
                                                 <?php  echo esc_html__('Logo Image Shape', "ays-popup-box" ) ?>
                                                 <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__('Select the desired shape for the logo image', "ays-popup-box"); ?>" >
-                                                    <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                                    <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                                 </a>
                                             </label>
                                         </div>
@@ -2285,7 +2309,7 @@ $ays_users_roles = $wp_roles->roles;
                         <div class="ays_pb_component_option" style="display: none;" data-window="button_1">
                             <div class="ays-pb-accordion-options-main-container">
                                 <div class="ays-pb-accordion-header">
-                                    <?php echo $pb_acordion_svg_html; ?>
+                                    <?php echo wp_kses($pb_acordion_svg_html, $allow_tags_acordion_arrow); ?>
                                     <p class="ays-subtitle"><?php echo  esc_html__('General', "ays-popup-box") ?></p>
                                 </div>
                                 <hr class="ays-pb-bolder-hr"/>
@@ -2295,7 +2319,7 @@ $ays_users_roles = $wp_roles->roles;
                                             <label for="ays_pb_notification_button_1_text">
                                                 <?php  echo esc_html__('Button text', "ays-popup-box" ) ?>
                                                 <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__( "Define the notification button text. Default value is 'Click!'", "ays-popup-box"); ?>" >
-                                                    <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                                    <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                                 </a>
                                             </label>
                                         </div>
@@ -2309,7 +2333,7 @@ $ays_users_roles = $wp_roles->roles;
                                             <label for="ays_pb_notification_button_1_hover_text">
                                                 <?php  echo esc_html__('Button hover text', "ays-popup-box" ) ?>
                                                 <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__( "Displays text when cursor is placed over the button.", "ays-popup-box"); ?>" >
-                                                    <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                                    <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                                 </a>
                                             </label>
                                         </div>
@@ -2323,7 +2347,7 @@ $ays_users_roles = $wp_roles->roles;
                                             <label for="ays_pb_notification_button_1_redirect_url">
                                                 <?php  echo esc_html__('Redirect URL', "ays-popup-box" ) ?>
                                                 <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__( "The URL for redirecting after the user clicks on the button.", "ays-popup-box"); ?>" >
-                                                    <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                                    <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                                 </a>
                                             </label>
                                         </div>
@@ -2337,7 +2361,7 @@ $ays_users_roles = $wp_roles->roles;
                                             <label for="ays_pb_notification_button_1_redirect_to_new_tab">
                                                 <?php  echo esc_html__('Redirect to the new tab', "ays-popup-box" ) ?>
                                                 <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__( "Tick this option to redirect to another tab.", "ays-popup-box"); ?>" >
-                                                    <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                                    <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                                 </a>
                                             </label>
                                         </div>
@@ -2349,7 +2373,7 @@ $ays_users_roles = $wp_roles->roles;
                             </div>
                             <div class="ays-pb-accordion-options-main-container">
                                 <div class="ays-pb-accordion-header">
-                                    <?php echo $pb_acordion_svg_html; ?>
+                                    <?php echo wp_kses($pb_acordion_svg_html, $allow_tags_acordion_arrow); ?>
                                     <p class="ays-subtitle"><?php echo  esc_html__('Background styles', "ays-popup-box") ?></p>
                                 </div>
                                 <hr class="ays-pb-bolder-hr"/>
@@ -2359,7 +2383,7 @@ $ays_users_roles = $wp_roles->roles;
                                             <label for="ays_pb_notification_button_1_bg_color">
                                                 <?php  echo esc_html__('Background color', "ays-popup-box" ) ?>
                                                 <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__("Specify the background color of the button.", "ays-popup-box"); ?>" >
-                                                    <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                                    <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                                 </a>
                                             </label>
                                         </div>
@@ -2373,7 +2397,7 @@ $ays_users_roles = $wp_roles->roles;
                                             <label for="ays_pb_notification_button_1_bg_hover_color">
                                                 <?php  echo esc_html__('Background hover color', "ays-popup-box" ) ?>
                                                 <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__("Specify the background color of the button on hover.", "ays-popup-box"); ?>" >
-                                                    <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                                    <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                                 </a>
                                             </label>
                                         </div>
@@ -2385,7 +2409,7 @@ $ays_users_roles = $wp_roles->roles;
                             </div>
                             <div class="ays-pb-accordion-options-main-container">
                                 <div class="ays-pb-accordion-header">
-                                    <?php echo $pb_acordion_svg_html; ?>
+                                    <?php echo wp_kses($pb_acordion_svg_html, $allow_tags_acordion_arrow); ?>
                                     <p class="ays-subtitle"><?php echo  esc_html__('Font styles', "ays-popup-box") ?></p>
                                 </div>
                                 <hr class="ays-pb-bolder-hr"/>
@@ -2395,7 +2419,7 @@ $ays_users_roles = $wp_roles->roles;
                                             <label for="ays_pb_notification_button_1_text_color">
                                                 <?php  echo esc_html__('Text color', "ays-popup-box" ) ?>
                                                 <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__( "Specify the text color of the button.", "ays-popup-box"); ?>" >
-                                                    <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                                    <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                                 </a>
                                             </label>
                                         </div>
@@ -2409,7 +2433,7 @@ $ays_users_roles = $wp_roles->roles;
                                             <label for="ays_pb_notification_button_1_text_hover_color">
                                                 <?php  echo esc_html__('Text hover color', "ays-popup-box") ?>
                                                 <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__( "Specify the text color of the button on hover.", "ays-popup-box"); ?>" >
-                                                    <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                                    <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                                 </a>
                                             </label>
                                         </div>
@@ -2423,7 +2447,7 @@ $ays_users_roles = $wp_roles->roles;
                                             <label for="ays_pb_notification_button_1_text_transformation">
                                                 <?php  echo esc_html__('Text transformation', "ays-popup-box") ?>
                                                 <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__( "Specify how the text appears in all-uppercase or all-lowercase, or with each word capitalized.", "ays-popup-box"); ?>" >
-                                                    <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                                    <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                                 </a>
                                             </label>
                                         </div>
@@ -2451,7 +2475,7 @@ $ays_users_roles = $wp_roles->roles;
                                             <label for="ays_pb_notification_button_1_text_decoration">
                                                 <?php  echo esc_html__('Text decoration', "ays-popup-box") ?>
                                                 <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__( "Choose the line position for the button on the front end. Note: It is set as None by default.", "ays-popup-box"); ?>" >
-                                                    <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                                    <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                                 </a>
                                             </label>
                                         </div>
@@ -2479,7 +2503,7 @@ $ays_users_roles = $wp_roles->roles;
                                             <label for="ays_pb_notification_button_1_letter_spacing">
                                                 <?php  echo esc_html__('Letter spacing', "ays-popup-box" ) ?>
                                                 <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__( "Define the space between the letters of the button in pixels.", "ays-popup-box"); ?>" >
-                                                    <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                                    <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                                 </a>
                                             </label>
                                         </div>
@@ -2489,7 +2513,7 @@ $ays_users_roles = $wp_roles->roles;
                                                     <label for='ays_pb_notification_button_1_letter_spacing'>
                                                         <?php echo esc_html__('On Desktop', "ays-popup-box"); ?>
                                                         <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__('Define the space between the letters of the button in pixels for desktop devices.',"ays-popup-box")?>">
-                                                            <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                                            <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                                         </a>
                                                     </label>
                                                 </div>
@@ -2503,7 +2527,7 @@ $ays_users_roles = $wp_roles->roles;
                                                     <label for='ays_pb_notification_button_1_letter_spacing_mobile'>
                                                         <?php echo esc_html__('On mobile', "ays-popup-box"); ?>
                                                         <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__('Define the space between the letters of the button in pixels for mobile devices.',"ays-popup-box")?>">
-                                                            <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                                            <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                                         </a>
                                                     </label>
                                                 </div>
@@ -2519,7 +2543,7 @@ $ays_users_roles = $wp_roles->roles;
                                             <label for="ays_pb_notification_button_1_font_size">
                                                 <?php  echo esc_html__('Font size (px)', "ays-popup-box" ) ?>
                                                 <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__( "Define the font size of the button text in pixels.", "ays-popup-box"); ?>" >
-                                                    <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                                    <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                                 </a>
                                             </label>
                                         </div>
@@ -2529,7 +2553,7 @@ $ays_users_roles = $wp_roles->roles;
                                                     <label for='ays_pb_notification_button_1_font_size'>
                                                         <?php echo esc_html__('On Desktop', "ays-popup-box"); ?>
                                                         <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__('Define the font size of the button text in pixels for desktop devices.',"ays-popup-box")?>">
-                                                            <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                                            <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                                         </a>
                                                     </label>
                                                 </div>
@@ -2543,7 +2567,7 @@ $ays_users_roles = $wp_roles->roles;
                                                     <label for='ays_pb_notification_button_1_font_size_mobile'>
                                                         <?php echo esc_html__('On mobile', "ays-popup-box"); ?>
                                                         <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__('Define the font size of the button text in pixels for mobile devices.',"ays-popup-box")?>">
-                                                            <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                                            <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                                         </a>
                                                     </label>
                                                 </div>
@@ -2559,7 +2583,7 @@ $ays_users_roles = $wp_roles->roles;
                                             <label for="ays_pb_notification_button_1_font_weight">
                                                 <?php echo esc_html__('Font weight', "ays-popup-box") ?>
                                                 <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__( "Specify the font weight for the button. Note: By default, it is set as Normal.", "ays-popup-box"); ?>" >
-                                                    <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                                    <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                                 </a>
                                             </label>
                                         </div>
@@ -2569,7 +2593,7 @@ $ays_users_roles = $wp_roles->roles;
                                                     <label for='ays_pb_notification_button_1_font_weight'>
                                                         <?php echo esc_html__('On Desktop', "ays-popup-box"); ?>
                                                         <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__('Specify the font weight for the button for desktop devices.',"ays-popup-box")?>">
-                                                            <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                                            <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                                         </a>
                                                     </label>
                                                 </div>
@@ -2597,7 +2621,7 @@ $ays_users_roles = $wp_roles->roles;
                                                     <label for='ays_pb_notification_button_1_font_weight_mobile'>
                                                         <?php echo esc_html__('On mobile', "ays-popup-box"); ?>
                                                         <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__('Specify the font weight for the button for mobile devices.',"ays-popup-box")?>">
-                                                            <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                                            <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                                         </a>
                                                     </label>
                                                 </div>
@@ -2625,7 +2649,7 @@ $ays_users_roles = $wp_roles->roles;
                             </div>
                             <div class="ays-pb-accordion-options-main-container">
                                 <div class="ays-pb-accordion-header">
-                                    <?php echo $pb_acordion_svg_html; ?>
+                                    <?php echo wp_kses($pb_acordion_svg_html, $allow_tags_acordion_arrow); ?>
                                     <p class="ays-subtitle"><?php echo  esc_html__('Border styles', "ays-popup-box") ?></p>
                                 </div>
                                 <hr class="ays-pb-bolder-hr"/>
@@ -2635,7 +2659,7 @@ $ays_users_roles = $wp_roles->roles;
                                             <label for="ays_pb_notification_button_1_border_radius">
                                                 <?php  echo esc_html__('Border radius', "ays-popup-box" ) ?>
                                                 <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__( "Specify the radius of the border. Allows adding rounded corners to the button.", "ays-popup-box"); ?>" >
-                                                    <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                                    <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                                 </a>
                                             </label>
                                         </div>
@@ -2649,7 +2673,7 @@ $ays_users_roles = $wp_roles->roles;
                                             <label for="ays_pb_notification_button_1_border_width">
                                                 <?php  echo esc_html__('Border width', "ays-popup-box" ) ?>
                                                 <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__( "Specify the border size of the button in pixels.", "ays-popup-box"); ?>" >
-                                                    <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                                    <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                                 </a>
                                             </label>
                                         </div>
@@ -2663,7 +2687,7 @@ $ays_users_roles = $wp_roles->roles;
                                             <label for="ays_pb_notification_button_1_border_color">
                                                 <?php  echo esc_html__('Border color', "ays-popup-box" ) ?>
                                                 <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__( "Specify the border color of the button.", "ays-popup-box"); ?>" >
-                                                    <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                                    <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                                 </a>
                                             </label>
                                         </div>
@@ -2678,7 +2702,7 @@ $ays_users_roles = $wp_roles->roles;
                                                 <span>
                                                     <?php echo  esc_html__('Border style',"ays-popup-box") ?>
                                                     <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__("Choose your preferred style of the border.", "ays-popup-box"); ?>">
-                                                        <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                                        <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                                     </a>
                                                 </span>
                                             </label>
@@ -2706,7 +2730,7 @@ $ays_users_roles = $wp_roles->roles;
                             </div>
                             <div class="ays-pb-accordion-options-main-container">
                                 <div class="ays-pb-accordion-header">
-                                    <?php echo $pb_acordion_svg_html; ?>
+                                    <?php echo wp_kses($pb_acordion_svg_html, $allow_tags_acordion_arrow); ?>
                                     <p class="ays-subtitle"><?php echo  esc_html__('Container styles', "ays-popup-box") ?></p>
                                 </div>
                                 <hr class="ays-pb-bolder-hr"/>
@@ -2717,7 +2741,7 @@ $ays_users_roles = $wp_roles->roles;
                                                 <span>
                                                     <?php echo  esc_html__('Padding',"ays-popup-box") ?>
                                                     <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__("Padding of button.", "ays-popup-box"); ?>">
-                                                        <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                                        <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                                     </a>
                                                 </span>
                                             </label>
@@ -2739,7 +2763,7 @@ $ays_users_roles = $wp_roles->roles;
                                             <label for="ays_pb_notification_button_1_transition">
                                                 <?php  echo esc_html__('Transition', "ays-popup-box" ) ?>
                                                 <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__( "Set the button's transition duration in seconds. This controls the time it takes for the button's style changes, such as hover effects, to animate smoothly.", "ays-popup-box"); ?>" >
-                                                    <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                                    <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                                 </a>
                                             </label>
                                         </div>
@@ -2761,7 +2785,7 @@ $ays_users_roles = $wp_roles->roles;
                                                 <span>
                                                     <?php echo esc_html__('Box shadow',"ays-popup-box"); ?>
                                                     <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__('Allow button box shadow.',"ays-popup-box")?>">
-                                                        <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                                        <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                                     </a>
                                                 </span>
                                             </label>
@@ -2776,7 +2800,7 @@ $ays_users_roles = $wp_roles->roles;
                                                             <label for="ays_pb_notification_button_1_box_shadow_color">
                                                                 <?php echo esc_html__('Box shadow color',"ays-popup-box")?>
                                                                 <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__('The color of the shadow of the button',"ays-popup-box" ); ?>">
-                                                                    <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                                                    <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                                                 </a>
                                                             </label>
                                                             <input type="text" class="ays_pb_color_input" id='ays_pb_notification_button_1_box_shadow_color' name='ays_pb_notification_button_1_box_shadow_color' data-alpha="true" data-default-color="#000000" value="<?php echo $notification_button_1_box_shadow_color; ?>"/>
@@ -2812,7 +2836,7 @@ $ays_users_roles = $wp_roles->roles;
                         <label for="<?php echo $this->plugin_name; ?>-popup_description">
                             <span><?php echo esc_html__('Popup description', "ays-popup-box"); ?></span>
                             <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__("The option is not being displayed on the front-end by default. Please activate it from the Styles tab.", "ays-popup-box"); ?>">
-                                <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                             </a>
                         </label>
                         <div class="ays-pb-description-small-hint <?php echo $show_popup_desc == 'On' ? 'display_none' : ''; ?>">
@@ -2837,7 +2861,7 @@ $ays_users_roles = $wp_roles->roles;
                         <label for="ays_pb_show_popup_only_for_author">
                             <span><?php echo esc_html__('Show popup only for author', "ays-popup-box"); ?></span>
                             <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__('If this option is enabled only the author of the popup will be able to see it.', "ays-popup-box") ?>"> 
-                                <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                             </a>
                         </label>
                         <span class="ays-pb-small-hint-text ays-pb-show-only-for-author-hint-text"><?php echo esc_html__("For testing", "ays-popup-box");?></span>
@@ -2856,7 +2880,7 @@ $ays_users_roles = $wp_roles->roles;
                                 title="<?php
                                     echo esc_html__('Define the pages your popup will be loaded on.',"ays-popup-box");
                                 ?>">
-                                <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                             </a>
                         </label>
                     </div>
@@ -2879,7 +2903,7 @@ $ays_users_roles = $wp_roles->roles;
                                     "<li>". esc_html__('Include - Choose the post/page and post/page types including the popup.',"ays-popup-box") ."</li>".
                                 "</ul>";
                             ?>">
-                            <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                            <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                         </a>
                     </div>
                 </div>
@@ -2890,7 +2914,7 @@ $ays_users_roles = $wp_roles->roles;
                             <label for="ays_pb_post_types"><?php echo esc_html__("Post type", "ays-popup-box"); ?></label>
                             <a class="ays_help" data-toggle="tooltip"
                                title="<?php echo esc_html__('Select post types.', "ays-popup-box") ?>">
-                               <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                               <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                             </a>
                         </div>
                         <div class="col-sm-9">
@@ -2915,7 +2939,7 @@ $ays_users_roles = $wp_roles->roles;
                             <label for="ays_pb_posts"><?php echo esc_html__("Posts", "ays-popup-box"); ?></label>
                             <a class="ays_help" data-toggle="tooltip"
                                title="<?php echo esc_html__('Select posts.', "ays-popup-box") ?>">
-                               <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                               <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                             </a>
                         </div>
                         <div class="col-sm-9">
@@ -2957,7 +2981,7 @@ $ays_users_roles = $wp_roles->roles;
                             <label for="ays_pb_show_on_home_page" style="margin-bottom:0px;">
                                 <span><?php echo esc_html__('Show on Home page', "ays-popup-box"); ?></span>
                                 <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__('If the checkbox is ticked, then the popup will be loaded on the Home page too, in addition to the values given above.', "ays-popup-box"); ?>">
-                                    <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                    <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                 </a>
                             </label>
                         </div>
@@ -2990,7 +3014,7 @@ $ays_users_roles = $wp_roles->roles;
                                     "</ul>"
                                     );
                                 ?>">
-                                <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                             </a>
                         </label>
                     </div>
@@ -3012,7 +3036,7 @@ $ays_users_roles = $wp_roles->roles;
                                 }
                             }
                         ?>">
-                            <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                            <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                         </a>
                         <div class="ays-pb-youtube-video-link">
                             <div class="ays-pb-small-hint-text">
@@ -3037,7 +3061,7 @@ $ays_users_roles = $wp_roles->roles;
                     <span>
                         <?php echo esc_html__('CSS selector(s) for trigger click', "ays-popup-box"); ?>
                         <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__("Add your preferred CSS selector(s) if you have given “On click” or “Both” value to the “Popup trigger” option. For example #mybutton or .mybutton.", "ays-popup-box"); ?>">
-                            <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                            <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                         </a>
                     </span>
                         </label>
@@ -3054,7 +3078,7 @@ $ays_users_roles = $wp_roles->roles;
                             <label for="<?php echo $this->plugin_name; ?>-position">
                                 <span><?php echo esc_html__('Popup position', "ays-popup-box"); ?></span>
                                 <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__("Specify the position of the popup on the screen. ", "ays-popup-box"); ?>">
-                                    <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                    <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                 </a>
                             </label>
                         </div>
@@ -3117,7 +3141,7 @@ $ays_users_roles = $wp_roles->roles;
                             <label for="<?php echo $this->plugin_name; ?>-pb_margin">
                                 <span><?php echo esc_html__('Popup margin(px)', "ays-popup-box"); ?></span>
                                 <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__("Specify the popup margin in pixels. It accepts only numerical values.", "ays-popup-box"); ?>">
-                                    <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                    <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                 </a>
                             </label>
                         </div>
@@ -3141,7 +3165,7 @@ $ays_users_roles = $wp_roles->roles;
                         </div>
                     </div>
                     <div class="ays-pb-accordion-header ays_pb_hide_for_notification_type <?php echo ($modal_content == 'notification_type') ? 'display_none' : ''; ?>">
-                        <?php echo $pb_acordion_svg_html; ?>
+                        <?php echo wp_kses($pb_acordion_svg_html, $allow_tags_acordion_arrow); ?>
                         <p class="ays-subtitle"><?php echo  esc_html__('Popup opening', "ays-popup-box") ?></p>
                     </div>
                     <hr class="ays-pb-bolder-hr ays_pb_hide_for_notification_type <?php echo ($modal_content == 'notification_type') ? 'display_none' : ''; ?>">
@@ -3152,7 +3176,7 @@ $ays_users_roles = $wp_roles->roles;
                                 <label for="<?php echo $this->plugin_name; ?>-delay" style="margin-bottom:0px;">
                                     <span><?php echo esc_html__('Open Delay ', "ays-popup-box"); ?></span>
                                     <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__("Open the popup when a visitor has viewed your website content for a specified period of time (in milliseconds). To disable the option leave it blank or set it to 0.", "ays-popup-box"); ?>">
-                                        <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                        <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                     </a>
                                 </label>
                             </div>
@@ -3208,7 +3232,7 @@ $ays_users_roles = $wp_roles->roles;
                                 <label for="<?php echo $this->plugin_name; ?>-scroll_top">
                                     <span><?php echo esc_html__('Open by Scrolling Down', "ays-popup-box"); ?></span>
                                      <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__("Define the scroll length by pixels to open the popup when scrolling. To disable the option leave it blank or set it to 0.", "ays-popup-box"); ?>">
-                                        <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                        <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                     </a>
                                 </label>
                             </div>
@@ -3260,7 +3284,7 @@ $ays_users_roles = $wp_roles->roles;
                 </div>
                 <div class="ays-pb-accordion-options-main-container">
                     <div class="ays-pb-accordion-header">
-                        <?php echo $pb_acordion_svg_html; ?>
+                        <?php echo wp_kses($pb_acordion_svg_html, $allow_tags_acordion_arrow); ?>
                         <p class="ays-subtitle"><?php echo  esc_html__('Popup Closing', "ays-popup-box") ?></p>
                     </div>
                     <hr class="ays-pb-bolder-hr"/>
@@ -3271,7 +3295,7 @@ $ays_users_roles = $wp_roles->roles;
                                 <label for="ays_close_popup_esc">
                                     <span><?php echo esc_html__('Close by pressing ESC', "ays-popup-box"); ?></span>
                                     <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__("If the option is enabled, the user can close the popup by pressing the ESC button from the keyboard.", "ays-popup-box"); ?>">
-                                        <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                        <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                     </a>
                                 </label>
                             </div>
@@ -3289,7 +3313,7 @@ $ays_users_roles = $wp_roles->roles;
                                 <label for="ays_close_popup_overlay" style="margin-bottom:0px;">
                                     <span><?php echo esc_html__('Close by clicking outside the box', "ays-popup-box"); ?></span>
                                     <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__("If the option is enabled, the user can close the popup by clicking outside the box.  Notice: This option works only if the “Enable Overlay”option is ticked.", "ays-popup-box"); ?>">
-                                        <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                        <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                     </a>
                                 </label>
                             </div>
@@ -3325,8 +3349,8 @@ $ays_users_roles = $wp_roles->roles;
                                 <div>
                                     <a href="https://youtu.be/6TVU_KYDE8Q" target="_blank" class="ays-pro-features-v2-video-button">
                                         <div>
-                                            <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/pro-features-icons/Video_24x24.svg" ?>">
-                                            <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/pro-features-icons/Video_24x24_Hover.svg" ?>" class="ays-pb-new-video-button-hover">
+                                            <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/pro-features-icons/Video_24x24.svg" ?>">
+                                            <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/pro-features-icons/Video_24x24_Hover.svg" ?>" class="ays-pb-new-video-button-hover">
                                         </div>
                                         <div class="ays-pro-features-v2-video-text">
                                             <?php echo esc_html__("Watch video" , "ays-popup-box"); ?>
@@ -3345,7 +3369,7 @@ $ays_users_roles = $wp_roles->roles;
                                     <label for="ays_close_popup_scroll" style="line-height: 50px;">
                                         <span><?php echo esc_html__('Close the popup on scroll', "ays-popup-box"); ?></span>
                                         <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__("Define the scroll length by pixels to close the popup when scrolling.", "ays-popup-box"); ?>">
-                                            <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                            <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                         </a>
                                     </label>
                                 </div>
@@ -3362,8 +3386,8 @@ $ays_users_roles = $wp_roles->roles;
                                 <div>
                                     <a href="https://www.youtube.com/watch?v=z6TfjOR2CVM" target="_blank" class="ays-pro-features-v2-video-button">
                                         <div>
-                                            <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/pro-features-icons/Video_24x24.svg" ?>">
-                                            <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/pro-features-icons/Video_24x24_Hover.svg" ?>" class="ays-pb-new-video-button-hover">
+                                            <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/pro-features-icons/Video_24x24.svg" ?>">
+                                            <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/pro-features-icons/Video_24x24_Hover.svg" ?>" class="ays-pb-new-video-button-hover">
                                         </div>
                                         <div class="ays-pro-features-v2-video-text">
                                             <?php echo esc_html__("Watch video" , "ays-popup-box"); ?>
@@ -3382,7 +3406,7 @@ $ays_users_roles = $wp_roles->roles;
                                     <label for="ays_close_popup_by_classname">
                                         <?php echo esc_html__('Close by classname (onclick)', "ays-popup-box")?>
                                         <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__('Copy the given classname, assign it to any tag in the content as well as inside the popup. And the popup will close when the user clicks on the classname.Note: Save your popup before copying the given classname.',"ays-popup-box")?>">
-                                            <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                            <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                         </a>
                                     </label>
                                 </div>
@@ -3406,7 +3430,7 @@ $ays_users_roles = $wp_roles->roles;
                                 <label for="<?php echo $this->plugin_name; ?>-close-button">
                                     <span> <?php echo esc_html__('Hide close button', "ays-popup-box"); ?></span>
                                     <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__("If the option is enabled, the close button of the popup will be disappeared. ", "ays-popup-box"); ?>">
-                                        <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                        <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                     </a>
                                 </label>
                             </div>
@@ -3422,7 +3446,7 @@ $ays_users_roles = $wp_roles->roles;
                                 <label for="ays_pb_show_close_btn_hover_container">
                                     <span> <?php echo esc_html__('Activate Close button while hovering on popup', "ays-popup-box"); ?></span>
                                     <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__("Enable this option to close the popup by hovering over the popup container.", "ays-popup-box"); ?>">
-                                        <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                        <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                     </a>
                                 </label>
                             </div>
@@ -3438,7 +3462,7 @@ $ays_users_roles = $wp_roles->roles;
                                 <label for="ays-pb-close-button-position">
                                     <span> <?php echo esc_html__('Close button position', "ays-popup-box"); ?></span>
                                     <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__("Select the place of the popup close button. ", "ays-popup-box"); ?>">
-                                        <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                        <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                     </a>
                                 </label>
                             </div>
@@ -3487,7 +3511,7 @@ $ays_users_roles = $wp_roles->roles;
                                 <label for="ays-pb-close-button-text">
                                     <span><?php echo esc_html__('Close button text', "ays-popup-box"); ?></span>
                                     <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__("Define the close button text. The default value is “✕”.", "ays-popup-box"); ?>">
-                                        <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                        <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                     </a>
                                 </label>
                             </div>
@@ -3534,7 +3558,7 @@ $ays_users_roles = $wp_roles->roles;
                                 <label for="ays-pb-close-button-hover-text">
                                     <span><?php echo esc_html__('Close button hover text', "ays-popup-box"); ?></span>
                                     <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__("Displays text when cursor is placed over the close button", "ays-popup-box"); ?>">
-                                        <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                        <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                     </a>
                                 </label>
                             </div>
@@ -3554,7 +3578,7 @@ $ays_users_roles = $wp_roles->roles;
                                 <label for="<?php echo $this->plugin_name; ?>-autoclose">
                                     <span><?php echo esc_html__('Autoclose Delay (in seconds)', "ays-popup-box"); ?></span>
                                     <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__("Close the popup after a specified time delay (in seconds). To disable the option leave it blank or set it to 0.", "ays-popup-box"); ?>">
-                                        <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                        <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                     </a>
                                 </label>
                             </div>
@@ -3604,7 +3628,7 @@ $ays_users_roles = $wp_roles->roles;
                                     <?php echo esc_html__('Hide timer', "ays-popup-box"); ?>
                                     <a class="ays_help" data-toggle="tooltip"
                                        title="<?php echo esc_html__('Hide the timer when the Autoclose Delay option is enabled.', "ays-popup-box") ?>">
-                                        <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                        <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                     </a>
                                 </label>
                             </div>
@@ -3634,7 +3658,7 @@ $ays_users_roles = $wp_roles->roles;
                                     <?php echo esc_html__('Autoclose on video completion', "ays-popup-box"); ?>
                                     <a class="ays_help" data-toggle="tooltip"
                                        title="<?php echo esc_html__('Automatically close the popup after a video completion.', "ays-popup-box") ?>">
-                                        <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                        <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                     </a>
                                 </label>
                             </div>
@@ -3649,7 +3673,7 @@ $ays_users_roles = $wp_roles->roles;
                                 <label for="<?php echo $this->plugin_name; ?>-close_button_delay">
                                     <span><?php echo esc_html__('Close button delay', "ays-popup-box"); ?></span>
                                     <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__(" Set delay in milliseconds for displaying the popup close button. To disable the option leave it blank or set it to 0.", "ays-popup-box"); ?>">
-                                        <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                        <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                     </a>
                                 </label>
                             </div>
@@ -3706,7 +3730,7 @@ $ays_users_roles = $wp_roles->roles;
                 </div>
                 <div class="ays-pb-accordion-options-main-container">
                     <div class="ays-pb-accordion-header">
-                        <?php echo $pb_acordion_svg_html; ?>
+                        <?php echo wp_kses($pb_acordion_svg_html, $allow_tags_acordion_arrow); ?>
                         <p class="ays-subtitle"><?php echo  esc_html__('Advanced Settings', "ays-popup-box") ?></p>
                     </div>
                     <hr class="ays-pb-bolder-hr"/>
@@ -3716,7 +3740,7 @@ $ays_users_roles = $wp_roles->roles;
                                 <label for="ays_pb_popup_name">
                                     <?php echo esc_html__('Popup name', "ays-popup-box"); ?>
                                     <a class="ays_help ays-pb-help-pro" data-toggle="tooltip" title="<?php echo esc_html__('Write the name of the particular Popup. The name will be shown in the Popup list table.',"ays-popup-box");?>">
-                                        <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                        <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                     </a>
                                 </label>
                             </div>
@@ -3730,7 +3754,7 @@ $ays_users_roles = $wp_roles->roles;
                                 <label for="ays-category">
                                     <?php echo esc_html__('Popup category', "ays-popup-box"); ?>
                                     <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__('Categorize your popup selecting from the premade categories.',"ays-popup-box")?>">
-                                        <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                        <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                     </a>
                                 </label>
                             </div>
@@ -3757,7 +3781,7 @@ $ays_users_roles = $wp_roles->roles;
                                 <label for="<?php echo $this->plugin_name; ?>-onoffoverlay">
                                     <span><?php echo esc_html__('Enable Overlay', "ays-popup-box"); ?></span>
                                     <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__("Enable to show the overlay outside the popup.", "ays-popup-box"); ?>">
-                                        <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                        <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                     </a>
                                 </label>
                             </div>
@@ -3822,7 +3846,7 @@ $ays_users_roles = $wp_roles->roles;
                                 <label for="ays_pb_blured_overlay">
                                     <span><?php echo esc_html__('Enable blured overlay', "ays-popup-box"); ?></span>
                                     <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__("Enable blurred overlay of the popup.", "ays-popup-box"); ?>">
-                                        <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                        <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                     </a>
                                 </label>
                             </div>
@@ -3851,7 +3875,7 @@ $ays_users_roles = $wp_roles->roles;
                                 <label for="ays_enable_pb_sound">
                                     <?php echo esc_html__('Enable popup sound',"ays-popup-box")?>
                                     <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__('In case of enabling this option, insert and select the sound from the General Settings of Popup Box navigation menu. Note: This function only works with “On Click” or “Both” trigger types.',"ays-popup-box")?>">
-                                        <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                        <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                     </a>
                                 </label>
                             </div>
@@ -3876,7 +3900,7 @@ $ays_users_roles = $wp_roles->roles;
                                 <label for="ays_pb_enable_social_links">
                                     <?php echo esc_html__('Enable Social Media links',"ays-popup-box")?>
                                     <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__('Display social media links at the bottom of your popup container.',"ays-popup-box")?>">
-                                        <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                        <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                     </a>
                                 </label>
                             </div>
@@ -3891,7 +3915,7 @@ $ays_users_roles = $wp_roles->roles;
                                         <label>
                                             <?php echo esc_html__('Heading for share buttons',"ays-popup-box")?>
                                             <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__('Text that will be displayed over share buttons.',"ays-popup-box"); ?>">
-                                                <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                                <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                             </a>
                                         </label>
                                     </div>
@@ -3910,7 +3934,7 @@ $ays_users_roles = $wp_roles->roles;
                                         <label for="ays_pb_linkedin_link">
                                             <?php echo esc_html__('LinkedIn link',"ays-popup-box")?>
                                             <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__('LinkedIn profile or page link for showing at the end of the popup.',"ays-popup-box")?>">
-                                                <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                                <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                             </a>
                                         </label>
                                     </div>
@@ -3925,7 +3949,7 @@ $ays_users_roles = $wp_roles->roles;
                                         <label for="ays_pb_facebook_link">
                                             <?php echo esc_html__('Facebook link',"ays-popup-box")?>
                                             <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__('Facebook profile or page link for showing at the end of the popup.',"ays-popup-box")?>">
-                                                <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                                <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                             </a>
                                         </label>
                                     </div>
@@ -3940,7 +3964,7 @@ $ays_users_roles = $wp_roles->roles;
                                         <label for="ays_pb_twitter_link">
                                             <?php echo esc_html__('X link',"ays-popup-box")?>
                                             <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__('X profile or page link for showing at the end of the popup.',"ays-popup-box")?>">
-                                                <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                                <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                             </a>
                                         </label>
                                     </div>
@@ -3955,7 +3979,7 @@ $ays_users_roles = $wp_roles->roles;
                                         <label for="ays_pb_vkontakte_link">
                                             <?php echo esc_html__('VKontakte link',"ays-popup-box")?>
                                             <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__('VKontakte profile or page link for showing at the end of the popup.',"ays-popup-box")?>">
-                                                <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                                <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                             </a>
                                         </label>
                                     </div>
@@ -3970,7 +3994,7 @@ $ays_users_roles = $wp_roles->roles;
                                         <label for="ays_pb_youtube_link">
                                             <?php echo esc_html__('Youtube link',"ays-popup-box")?>
                                             <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__('YouTube page link for showing at the end of the popup.',"ays-popup-box")?>">
-                                                <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                                <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                             </a>
                                         </label>
                                     </div>
@@ -3985,7 +4009,7 @@ $ays_users_roles = $wp_roles->roles;
                                         <label for="ays_pb_instagram_link">
                                             <?php echo esc_html__('Instagram link',"ays-popup-box")?>
                                             <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__('Instagram page link for showing at the end of the popup.',"ays-popup-box")?>">
-                                                <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                                <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                             </a>
                                         </label>
                                     </div>
@@ -4000,7 +4024,7 @@ $ays_users_roles = $wp_roles->roles;
                                         <label for="ays_pb_behance_link">
                                             <?php echo esc_html__('Behance link',"ays-popup-box")?>
                                             <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__('Behance page link for showing at the end of the popup.',"ays-popup-box")?>">
-                                                <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                                <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                             </a>
                                         </label>
                                     </div>
@@ -4020,7 +4044,7 @@ $ays_users_roles = $wp_roles->roles;
                                     <?php echo esc_html__('Schedule the popup', "ays-popup-box"); ?>
                                     <a class="ays_help" data-toggle="tooltip"
                                         title="<?php echo esc_html__('Define the period of time when the popup will be active.', "ays-popup-box") ?>">
-                                        <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                        <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                     </a>
                                 </label>
                             </div>
@@ -4044,7 +4068,7 @@ $ays_users_roles = $wp_roles->roles;
                                                             value="<?php echo $activePopup; ?>" placeholder="<?php echo current_time( 'mysql' ); ?>">
                                                         <div class="input-group-append">
                                                             <label for="ays-active" class="input-group-text">
-                                                                <span><img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/calendar.svg"?>"></span>
+                                                                <span><img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/calendar.svg"?>"></span>
                                                             </label>
                                                         </div>
                                                     </div>
@@ -4063,7 +4087,7 @@ $ays_users_roles = $wp_roles->roles;
                                                             value="<?php echo $deactivePopup; ?>" placeholder="<?php echo current_time( 'mysql' ); ?>">
                                                         <div class="input-group-append">
                                                             <label for="ays-deactive" class="input-group-text">
-                                                                <span><img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/calendar.svg"?>"></span>
+                                                                <span><img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/calendar.svg"?>"></span>
                                                             </label>
                                                         </div>
                                                     </div>
@@ -4084,7 +4108,7 @@ $ays_users_roles = $wp_roles->roles;
                                     <?php echo esc_html__('Popup Display Hours', "ays-popup-box"); ?>
                                     <a class="ays_help" data-toggle="tooltip"
                                         title="<?php echo esc_html__('Specify the hours of the day when the popup should be displayed.', "ays-popup-box") ?>">
-                                        <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                        <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                     </a>
                                 </label>
                             </div>
@@ -4107,7 +4131,7 @@ $ays_users_roles = $wp_roles->roles;
                                                             value="<?php echo $activeTime; ?>">
                                                         <div class="input-group-append">
                                                             <label id="ays-active-time-label" for="ays-active-time" class="input-group-text">
-                                                                <span><img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/clock-circle.svg"?>"></span>
+                                                                <span><img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/clock-circle.svg"?>"></span>
                                                             </label>
                                                         </div>
                                                     </div>
@@ -4126,7 +4150,7 @@ $ays_users_roles = $wp_roles->roles;
                                                             value="<?php echo $deactiveTime; ?>">
                                                         <div class="input-group-append">
                                                             <label id="ays-deactive-time-label" for="ays-deactive-time" class="input-group-text">
-                                                                <span><img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/clock-circle.svg"?>"></span>
+                                                                <span><img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/clock-circle.svg"?>"></span>
                                                             </label>
                                                         </div>
                                                     </div>
@@ -4144,8 +4168,8 @@ $ays_users_roles = $wp_roles->roles;
                                 <div>
                                     <a href="https://youtu.be/_5GYMSWSBm4" target="_blank" class="ays-pro-features-v2-video-button">
                                         <div>
-                                            <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/pro-features-icons/Video_24x24.svg" ?>">
-                                            <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/pro-features-icons/Video_24x24_Hover.svg" ?>" class="ays-pb-new-video-button-hover">
+                                            <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/pro-features-icons/Video_24x24.svg" ?>">
+                                            <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/pro-features-icons/Video_24x24_Hover.svg" ?>" class="ays-pb-new-video-button-hover">
                                         </div>
                                         <div class="ays-pro-features-v2-video-text">
                                             <?php echo esc_html__("Watch Video" , "ays-popup-box"); ?>
@@ -4165,7 +4189,7 @@ $ays_users_roles = $wp_roles->roles;
                                         <?php echo esc_html__('Multiple Scheduling', "ays-popup-box"); ?>
                                         <a class="ays_help ays-pb-help-pro" data-toggle="tooltip"
                                         title="<?php echo esc_html__('The period of time when Popup will be active', "ays-popup-box") ?>">
-                                            <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                            <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                         </a>
                                     </label>
                                 </div>
@@ -4173,7 +4197,7 @@ $ays_users_roles = $wp_roles->roles;
                                     <div class="active_date_check_header">
                                         <input id="" type="checkbox" class="active_date_check ays_toggle_checkbox" checked>
                                         <a href="javascript:void(0)" class="ays_pb_plus_schedule ays_toggle_target ays_divider_left active_date">
-                                            <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/plus-square.svg"?>">
+                                            <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/plus-square.svg"?>">
                                         </a>
                                     </div>
                                     <div class="form-group ays_toggle_target ays_divider_left active_date">
@@ -4185,7 +4209,7 @@ $ays_users_roles = $wp_roles->roles;
                                                         <div class="input-group-append">
                                                             <input type="text"class="ays_pb_act_dect">           
                                                             <label style="padding: 0 12px;" class="input-group-text">
-                                                                <span><img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/calendar.svg"?>"></span>
+                                                                <span><img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/calendar.svg"?>"></span>
                                                             </label>
                                                         </div>
                                                     </label>
@@ -4194,12 +4218,12 @@ $ays_users_roles = $wp_roles->roles;
                                                         <div class="input-group-append">
                                                             <input type="text" class="ays_pb_act_dect">
                                                             <label style="padding: 0 12px;" class="input-group-text">
-                                                                <span><img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/calendar.svg"?>"></span>
+                                                                <span><img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/calendar.svg"?>"></span>
                                                             </label>
                                                         </div>
                                                     </label>
                                                     <a href="javascript:void(0)" class="ays_pb_delete_schedule">
-                                                        <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/times.svg"?>">
+                                                        <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/times.svg"?>">
                                                     </a>                                        
                                                 </div>
                                                 <div class="form-group ays_schedule_form">
@@ -4208,7 +4232,7 @@ $ays_users_roles = $wp_roles->roles;
                                                         <div class="input-group-append">
                                                             <input type="text"class="ays_pb_act_dect">           
                                                             <label style="padding: 0 12px;" class="input-group-text">
-                                                                <span><img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/calendar.svg"?>"></span>
+                                                                <span><img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/calendar.svg"?>"></span>
                                                             </label>
                                                         </div>
                                                     </label>
@@ -4217,12 +4241,12 @@ $ays_users_roles = $wp_roles->roles;
                                                         <div class="input-group-append">
                                                             <input type="text" class="ays_pb_act_dect">
                                                             <label style="padding: 0 12px;" class="input-group-text">
-                                                                <span><img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/calendar.svg"?>"></span>
+                                                                <span><img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/calendar.svg"?>"></span>
                                                             </label>
                                                         </div>
                                                     </label>
                                                     <a href="javascript:void(0)" class="ays_pb_delete_schedule">
-                                                        <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/times.svg"?>">
+                                                        <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/times.svg"?>">
                                                     </a>                                        
                                                 </div>
                                             </div>
@@ -4238,8 +4262,8 @@ $ays_users_roles = $wp_roles->roles;
                                 <div>
                                     <a href="https://youtu.be/El-xx0SgDfw" target="_blank" class="ays-pro-features-v2-video-button">
                                         <div>
-                                            <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/pro-features-icons/Video_24x24.svg" ?>">
-                                            <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/pro-features-icons/Video_24x24_Hover.svg" ?>" class="ays-pb-new-video-button-hover">
+                                            <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/pro-features-icons/Video_24x24.svg" ?>">
+                                            <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/pro-features-icons/Video_24x24_Hover.svg" ?>" class="ays-pb-new-video-button-hover">
                                         </div>
                                         <div class="ays-pro-features-v2-video-text">
                                             <?php echo esc_html__("Watch Video" , "ays-popup-box"); ?>
@@ -4258,7 +4282,7 @@ $ays_users_roles = $wp_roles->roles;
                                     <label for="ays_content_click">
                                         <?php echo esc_html__(' Actions while clicking on the popup',"ays-popup-box")?>
                                         <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__('Enable closing the popup and/or redirecting to the custom URL in case of clicking on any area of the popup container.',"ays-popup-box")?>">
-                                            <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                            <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                         </a>
                                     </label>
                                 </div>
@@ -4275,7 +4299,7 @@ $ays_users_roles = $wp_roles->roles;
                                                 <label for="ays_close_pb_content_click">
                                                     <?php echo esc_html__('Enable closing',"ays-popup-box")?>
                                                     <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__('If the option is enabled, then the popup will be closed if the user clicks on any area inside it.',"ays-popup-box")?>">
-                                                        <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                                        <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                                     </a>
                                                 </label>
                                             </div>
@@ -4293,7 +4317,7 @@ $ays_users_roles = $wp_roles->roles;
                                                 <label for="ays_redirect_content_click">
                                                     <?php echo esc_html__('Enable redirection',"ays-popup-box")?>
                                                     <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__('Enable redirection to the custom URL when the user clicks on any area inside the popup.',"ays-popup-box")?>">
-                                                        <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                                        <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                                     </a>
                                                 </label>
                                             </div>
@@ -4305,7 +4329,7 @@ $ays_users_roles = $wp_roles->roles;
                                                     <div class="col-sm-6">
                                                         <label for="ays_redirect_url_content_click"> <?php echo esc_html__('Redirection URL',"ays-popup-box")?>
                                                             <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__('Provide the redirection URL.',"ays-popup-box")?>">
-                                                                <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                                                <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                                             </a>
                                                         </label>
                                                     </div>
@@ -4317,7 +4341,7 @@ $ays_users_roles = $wp_roles->roles;
                                                     <div class="col-sm-6">
                                                         <label for="ays_new_tab_content_click"> <?php echo esc_html__('Open in new tab',"ays-popup-box")?>
                                                             <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__('If the option is enabled, then the system will redirect the URL in a separate new tab.',"ays-popup-box")?>">
-                                                                <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                                                <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                                             </a>
                                                         </label>
                                                     </div>
@@ -4338,7 +4362,7 @@ $ays_users_roles = $wp_roles->roles;
                                 <label>
                                     <?php echo esc_html__('Change the popup creation date',"ays-popup-box"); ?>
                                     <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__('Change the popup creation date to the preferred date.',"ays-popup-box"); ?>">
-                                        <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                        <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                     </a>
                                 </label>
                             </div>
@@ -4347,7 +4371,7 @@ $ays_users_roles = $wp_roles->roles;
                                     <input type="text" class="ays-text-input ays-pb-text-input ays-pb-text-input-short ays-pb-date-create" id="ays_pb_change_creation_date" name="ays_pb_change_creation_date" value="<?php echo $pb_create_date; ?>" placeholder="<?php echo current_time( 'mysql' ); ?>">
                                     <div class="input-group-append">
                                         <label for="ays_pb_change_creation_date" class="input-group-text ays_pb_change_creation_date_icon">
-                                            <span><img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/calendar.svg"?>"></span>
+                                            <span><img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/calendar.svg"?>"></span>
                                         </label>
                                     </div>
                                 </div>
@@ -4359,7 +4383,7 @@ $ays_users_roles = $wp_roles->roles;
                                 <label for="ays_pb_create_author">
                                     <?php echo esc_html__('Change the popup author',"ays-popup-box"); ?>
                                     <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__("Change the popup author to the preferred one. Write the User ID in the field. To find the ID, go to the WordPress User's section and hover on the user. You can find the user ID in the link below. Please note, that in case you write an ID, by which there are no users found, the changes will not be applied and the previous author will remain the same.","ays-popup-box"); ?>">
-                                        <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                        <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                     </a>
                                 </label>
                             </div>
@@ -4387,7 +4411,7 @@ $ays_users_roles = $wp_roles->roles;
                                     <label for="ays_pb_enable_dismiss">
                                     <span><?php echo esc_html__('Enable dismiss ad', "ays-popup-box"); ?></span>
                                     <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__("After enabling this option the dismiss ad button will be displayed in the popup. After clicking on the button the ads will be dismissed for 1 month.", "ays-popup-box"); ?>">
-                                        <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                        <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                     </a>
                                 </label>
                             </div>
@@ -4403,7 +4427,7 @@ $ays_users_roles = $wp_roles->roles;
                                                 <label for="ays_pb_enable_dismiss_text">
                                                     <span><?php echo esc_html__('Dismiss ad text', "ays-popup-box"); ?></span>
                                                     <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__("Write the text that you want to be displayed on the dismiss ad button.", "ays-popup-box"); ?>">
-                                                        <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                                        <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                                     </a>
                                                 </label>
                                             </div>
@@ -4419,7 +4443,7 @@ $ays_users_roles = $wp_roles->roles;
                                                     <label for="ays_pb_enable_dismiss_text_mobile">
                                                         <span><?php echo esc_html__('Dismiss ad text', "ays-popup-box"); ?></span>
                                                         <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__("Write the text that you want to be displayed on the dismiss ad button.", "ays-popup-box"); ?>">
-                                                            <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                                            <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                                         </a>
                                                     </label>
                                                 </div>
@@ -4443,7 +4467,7 @@ $ays_users_roles = $wp_roles->roles;
                                     <label for="ays_pb_disable_scroll">
                                     <span><?php echo esc_html__('Disable page scrolling', "ays-popup-box"); ?></span>
                                     <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__("The page will not be scrolled while the popup is displaying. Note: When the option is enabled, the system hides the scrolling of the HTML tag. As the scrolling is hidden, it is automatically scrolling the popup to the top and the plugin doesn't have a connection to this. ", "ays-popup-box"); ?>">
-                                        <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                        <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                     </a>
                                 </label>
                             </div>
@@ -4471,7 +4495,7 @@ $ays_users_roles = $wp_roles->roles;
                                     <label for="ays_pb_disable_scroll_on_popup">
                                     <span><?php echo esc_html__('Disable popup scrolling', "ays-popup-box"); ?></span>
                                     <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__("After enabling this option the content in the popup will not be scrolled.", "ays-popup-box"); ?>">
-                                        <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                        <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                     </a>
                                 </label>
                             </div>
@@ -4499,7 +4523,7 @@ $ays_users_roles = $wp_roles->roles;
                                     <label for="ays_pb_show_scrollbar">
                                     <span><?php echo esc_html__('Show scrollbar', "ays-popup-box"); ?></span>
                                     <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__("Enable this option to display the popup scrollbar.", "ays-popup-box"); ?>">
-                                        <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                        <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                     </a>
                                 </label>
                             </div>
@@ -4526,7 +4550,7 @@ $ays_users_roles = $wp_roles->roles;
                     <div class="ays-pb-accordion-options-main-container">
                         
                         <div class="ays-pb-accordion-header">
-                            <?php echo $pb_acordion_svg_html; ?>
+                            <?php echo wp_kses($pb_acordion_svg_html, $allow_tags_acordion_arrow); ?>
                             <p class="ays-subtitle"><?php echo  esc_html__('Template', "ays-popup-box") ?></p>
                         </div>
                         <hr class="ays-pb-bolder-hr"/>
@@ -4556,7 +4580,7 @@ $ays_users_roles = $wp_roles->roles;
                                         </div>
                                         <div class="pb_theme_image_div col">
                                             <div class="ays-pb-template-img">
-                                                <img src="<?php echo AYS_PB_ADMIN_URL . '/images/themes/word-press-popup-maker-template-default-min.png' ?>" alt="<?php echo esc_html__('Default', "ays-popup-box") ?>">
+                                                <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . '/images/themes/word-press-popup-maker-template-default-min.png' ?>" alt="<?php echo esc_html__('Default', "ays-popup-box") ?>">
                                             </div>
                                         </div>
                                     </div>
@@ -4582,7 +4606,7 @@ $ays_users_roles = $wp_roles->roles;
                                         </div>
                                         <div class="pb_theme_image_div col">
                                             <div class="ays-pb-template-img">
-                                            <img src="<?php echo AYS_PB_ADMIN_URL . '/images/themes/word-press-popup-maker-template-red-min.png' ?>"
+                                            <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . '/images/themes/word-press-popup-maker-template-red-min.png' ?>"
                                                     alt="<?php echo esc_html__('Red', "ays-popup-box") ?>">
                                             </div>
                                         </div>
@@ -4609,7 +4633,7 @@ $ays_users_roles = $wp_roles->roles;
                                         </div>
                                         <div class="pb_theme_image_div col">
                                             <div class="ays-pb-template-img">
-                                                <img src="<?php echo AYS_PB_ADMIN_URL . '/images/themes/word-press-popup-maker-template-modern-min.png' ?>" alt="<?php echo esc_html__('Modern', "ays-popup-box") ?>">
+                                                <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . '/images/themes/word-press-popup-maker-template-modern-min.png' ?>" alt="<?php echo esc_html__('Modern', "ays-popup-box") ?>">
                                             </div>
                                         </div>
                                     </div>
@@ -4635,7 +4659,7 @@ $ays_users_roles = $wp_roles->roles;
                                         </div>
                                         <div class="pb_theme_image_div col">
                                             <div class="ays-pb-template-img">
-                                            <img src="<?php echo AYS_PB_ADMIN_URL . '/images/themes/word-press-popup-maker-template-minimal.png' ?>" alt="<?php echo esc_html__('Minimal', "ays-popup-box") ?>">
+                                            <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . '/images/themes/word-press-popup-maker-template-minimal.png' ?>" alt="<?php echo esc_html__('Minimal', "ays-popup-box") ?>">
                                             </div>
                                         </div>
                                     </div> 
@@ -4661,7 +4685,7 @@ $ays_users_roles = $wp_roles->roles;
                                         </div>
                                         <div class="pb_theme_image_div col">
                                             <div class="ays-pb-template-img">
-                                            <img src="<?php echo AYS_PB_ADMIN_URL . '/images/themes/word-press-popup-maker-template-sale-min.png' ?>" alt="<?php echo esc_html__('Sale', "ays-popup-box") ?>">
+                                            <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . '/images/themes/word-press-popup-maker-template-sale-min.png' ?>" alt="<?php echo esc_html__('Sale', "ays-popup-box") ?>">
                                             </div>
                                         </div>
                                     </div>
@@ -4688,7 +4712,7 @@ $ays_users_roles = $wp_roles->roles;
                                         </div>
                                         <div class="pb_theme_image_div col">
                                             <div class="ays-pb-template-img">
-                                            <img src="<?php echo AYS_PB_ADMIN_URL . '/images/themes/video_theme.png' ?>" alt="<?php echo esc_html__('Video', "ays-popup-box") ?>">
+                                            <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . '/images/themes/video_theme.png' ?>" alt="<?php echo esc_html__('Video', "ays-popup-box") ?>">
                                             </div>
                                         </div>
                                     </div>
@@ -4718,7 +4742,7 @@ $ays_users_roles = $wp_roles->roles;
                                         </div>
                                         <div class="pb_theme_image_div col">
                                             <div class="ays-pb-template-img">
-                                                <img src="<?php echo AYS_PB_ADMIN_URL . '/images/themes/word-press-popup-maker-template-peachy-min.png' ?>" alt="<?php echo esc_html__('Sale', "ays-popup-box") ?>">
+                                                <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . '/images/themes/word-press-popup-maker-template-peachy-min.png' ?>" alt="<?php echo esc_html__('Sale', "ays-popup-box") ?>">
                                             </div>
                                         </div>
                                     </div>
@@ -4734,7 +4758,7 @@ $ays_users_roles = $wp_roles->roles;
                                         </div>
                                         <div class="pb_theme_image_div col">
                                             <div class="ays-pb-template-img">
-                                                <img src="<?php echo AYS_PB_ADMIN_URL . '/images/themes/word-press-popup-maker-template-yellowish-min.png' ?>" alt="<?php echo esc_html__('Sale', "ays-popup-box") ?>">
+                                                <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . '/images/themes/word-press-popup-maker-template-yellowish-min.png' ?>" alt="<?php echo esc_html__('Sale', "ays-popup-box") ?>">
                                             </div>
                                         </div>
                                     </div>
@@ -4750,7 +4774,7 @@ $ays_users_roles = $wp_roles->roles;
                                         </div>
                                         <div class="pb_theme_image_div col">
                                             <div class="ays-pb-template-img">
-                                                <img src="<?php echo AYS_PB_ADMIN_URL . '/images/themes/word-press-popup-maker-template-coral-min.png' ?>" alt="<?php echo esc_html__('Coral', "ays-popup-box") ?>">
+                                                <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . '/images/themes/word-press-popup-maker-template-coral-min.png' ?>" alt="<?php echo esc_html__('Coral', "ays-popup-box") ?>">
                                             </div>
                                         </div>
                                     </div>
@@ -4767,7 +4791,7 @@ $ays_users_roles = $wp_roles->roles;
                                         </div>
                                         <div class="pb_theme_image_div col">
                                             <div class="ays-pb-template-img">
-                                                <img src="<?php echo AYS_PB_ADMIN_URL . '/images/themes/word-press-popup-maker-template-frozen-min.png' ?>" alt="<?php echo esc_html__('Frozen', "ays-popup-box") ?>">
+                                                <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . '/images/themes/word-press-popup-maker-template-frozen-min.png' ?>" alt="<?php echo esc_html__('Frozen', "ays-popup-box") ?>">
                                             </div>
                                         </div>
                                     </div>
@@ -4783,7 +4807,7 @@ $ays_users_roles = $wp_roles->roles;
                                         </div>
                                         <div class="pb_theme_image_div col">
                                             <div class="ays-pb-template-img">
-                                                <img src="<?php echo AYS_PB_ADMIN_URL . '/images/themes/word-press-popup-maker-template-food-min.png' ?>" alt="<?php echo esc_html__('Food', "ays-popup-box") ?>">
+                                                <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . '/images/themes/word-press-popup-maker-template-food-min.png' ?>" alt="<?php echo esc_html__('Food', "ays-popup-box") ?>">
                                             </div>
                                         </div>
                                     </div>
@@ -4799,7 +4823,7 @@ $ays_users_roles = $wp_roles->roles;
                                         </div>
                                         <div class="pb_theme_image_div col">
                                             <div class="ays-pb-template-img">
-                                                <img src="<?php echo AYS_PB_ADMIN_URL . '/images/themes/word-press-popup-maker-template-forest-min.png' ?>" alt="<?php echo esc_html__('Forest', "ays-popup-box") ?>">
+                                                <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . '/images/themes/word-press-popup-maker-template-forest-min.png' ?>" alt="<?php echo esc_html__('Forest', "ays-popup-box") ?>">
                                             </div>
                                         </div>
                                     </div>
@@ -4836,7 +4860,7 @@ $ays_users_roles = $wp_roles->roles;
                                         </div>
                                         <div class="pb_theme_image_div col">
                                             <div class="ays-pb-template-img">
-                                                <img src="<?php echo AYS_PB_ADMIN_URL . '/images/themes/word-press-popup-maker-template-default.png' ?>" alt="<?php echo esc_html__('MacOS ', "ays-popup-box") ?>">
+                                                <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . '/images/themes/word-press-popup-maker-template-default.png' ?>" alt="<?php echo esc_html__('MacOS ', "ays-popup-box") ?>">
                                             </div>
                                         </div>
                                     </div>
@@ -4862,7 +4886,7 @@ $ays_users_roles = $wp_roles->roles;
                                         </div>
                                         <div class="pb_theme_image_div col">
                                             <div class="ays-pb-template-img">
-                                                <img src="<?php echo AYS_PB_ADMIN_URL . '/images/themes/word-press-popup-maker-template-ubuntu-min.png' ?>" alt="<?php echo esc_html__('Ubuntu', "ays-popup-box") ?>">
+                                                <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . '/images/themes/word-press-popup-maker-template-ubuntu-min.png' ?>" alt="<?php echo esc_html__('Ubuntu', "ays-popup-box") ?>">
                                             </div>
                                         </div>
                                     </div>
@@ -4889,7 +4913,7 @@ $ays_users_roles = $wp_roles->roles;
                                         </div>
                                         <div class="pb_theme_image_div col">
                                             <div class="ays-pb-template-img">
-                                                <img src="<?php echo AYS_PB_ADMIN_URL . '/images/themes/word-press-popup-maker-template-windowsxp.png' ?>" alt="<?php echo esc_html__('Windows XP', "ays-popup-box") ?>">
+                                                <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . '/images/themes/word-press-popup-maker-template-windowsxp.png' ?>" alt="<?php echo esc_html__('Windows XP', "ays-popup-box") ?>">
                                             </div>
                                         </div>
                                     </div>
@@ -4916,7 +4940,7 @@ $ays_users_roles = $wp_roles->roles;
                                         </div>
                                         <div class="pb_theme_image_div col">
                                             <div class="ays-pb-template-img">
-                                                <img src="<?php echo AYS_PB_ADMIN_URL . '/images/themes/word-press-popup-maker-template-windows-98.png' ?>" alt="<?php echo esc_html__('Windows 98', "ays-popup-box") ?>">
+                                                <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . '/images/themes/word-press-popup-maker-template-windows-98.png' ?>" alt="<?php echo esc_html__('Windows 98', "ays-popup-box") ?>">
                                             </div>
                                         </div>
                                     </div>
@@ -4942,7 +4966,7 @@ $ays_users_roles = $wp_roles->roles;
                                         </div>
                                         <div class="pb_theme_image_div col">
                                             <div class="ays-pb-template-img">
-                                                <img src="<?php echo AYS_PB_ADMIN_URL . '/images/themes/word-press-popup-maker-template-command-prompt.png' ?>" alt="<?php echo esc_html__('Command prompt', "ays-popup-box") ?>">
+                                                <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . '/images/themes/word-press-popup-maker-template-command-prompt.png' ?>" alt="<?php echo esc_html__('Command prompt', "ays-popup-box") ?>">
                                             </div>
                                         </div>
                                     </div>
@@ -4955,7 +4979,7 @@ $ays_users_roles = $wp_roles->roles;
                     <div class="col-sm-12 <?php echo $modal_content == 'facebook_type' || $modal_content == 'notification_type' ? 'col-md-12' : 'col-md-6'; ?> ays_pb_styles_tab_options">
                         <div class="ays-pb-accordion-options-main-container">
                             <div class="ays-pb-accordion-header">
-                                <?php echo $pb_acordion_svg_html; ?>
+                                <?php echo wp_kses($pb_acordion_svg_html, $allow_tags_acordion_arrow); ?>
                                 <p class="ays-subtitle"><?php echo  esc_html__('Popup Dimensions', "ays-popup-box") ?></p>
                             </div>
                             <hr class="ays-pb-bolder-hr"/>
@@ -4965,7 +4989,7 @@ $ays_users_roles = $wp_roles->roles;
                                         <label>
                                             <?php echo esc_html__("Display Content", "ays-popup-box");?>
                                             <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__("Show Popup head information - Enable to show the title and(or) the description inside the popup.", "ays-popup-box"); ?>">
-                                                <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                                <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                             </a>
                                         </label>
                                     </div>
@@ -5004,7 +5028,7 @@ $ays_users_roles = $wp_roles->roles;
                                         <label for='<?php echo $this->plugin_name; ?>-width'>
                                             <?php echo esc_html__('Width', "ays-popup-box"); ?>
                                             <a class="ays_help" data-toggle="tooltip" title="" data-original-title="<?php echo esc_html__('Specify the width of the popup in pixels.',"ays-popup-box")?>">
-                                                <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                                <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                             </a>
                                         </label>
                                     </div>
@@ -5015,7 +5039,7 @@ $ays_users_roles = $wp_roles->roles;
                                                 <label for="<?php echo $this->plugin_name; ?>-width">
                                                     <?php echo  esc_html__('On desktop',"ays-popup-box") ?>
                                                     <a class="ays_help" data-toggle="tooltip" title="" data-original-title="Define the width for desktop devices. If you put 0 or leave it blank, the width will be 100%. It accepts only numerical values and you can choose whether to define the value by percentage or in pixels.">
-                                                        <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                                        <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                                     </a>
                                                 </label>
                                             </div>
@@ -5044,7 +5068,7 @@ $ays_users_roles = $wp_roles->roles;
                                                 <label for="ays-pb-mobile-width">
                                                     <?php echo  esc_html__('On mobile',"ays-popup-box") ?>
                                                     <a class="ays_help" data-toggle="tooltip" title="" data-original-title="Define the width for mobile devices in percentage. Note: This option works for the screens with less than 768 pixels width.">
-                                                        <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                                        <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                                     </a>
                                                 </label>
                                             </div>
@@ -5075,7 +5099,7 @@ $ays_users_roles = $wp_roles->roles;
                                         <label for="ays-pb-mobile-max-width">
                                             <?php echo  esc_html__('Max-width for mobile',"ays-popup-box") ?>
                                             <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__("Specify the max-width of the popup for mobile in percentage. Note: This option works for screens with less than 768 pixels width.", "ays-popup-box"); ?>">
-                                                <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                                <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                             </a>
                                         </label>
                                     </div>
@@ -5096,7 +5120,7 @@ $ays_users_roles = $wp_roles->roles;
                                         <label for="<?php echo $this->plugin_name; ?>-height">
                                             <span><?php echo esc_html__('Height', "ays-popup-box"); ?></span>
                                             <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__('Specify the height of the popup in pixels.',"ays-popup-box")?>">
-                                                <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                                <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                             </a>
                                         </label>
                                     </div>
@@ -5107,7 +5131,7 @@ $ays_users_roles = $wp_roles->roles;
                                                 <label for="<?php echo $this->plugin_name; ?>-height">
                                                     <?php echo  esc_html__('On desktop',"ays-popup-box") ?>
                                                     <a class="ays_help" data-toggle="tooltip" title="" data-original-title="Define the height for desktop devices. Leave it blank or put 0 to select the default theme value.">
-                                                        <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                                        <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                                     </a>
                                                 </label>
                                             </div>
@@ -5128,7 +5152,7 @@ $ays_users_roles = $wp_roles->roles;
                                                 <label for="ays_pb_mobile_height">
                                                     <?php echo  esc_html__('On mobile',"ays-popup-box") ?>
                                                     <a class="ays_help" data-toggle="tooltip" title="" data-original-title="Specify popup height for mobile in pixels. Note: This option works for the screens with less than 768 pixels width.">
-                                                        <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                                        <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                                     </a>
                                                 </label>
                                             </div>
@@ -5152,7 +5176,7 @@ $ays_users_roles = $wp_roles->roles;
                                         <label for="">
                                             <span><?php echo esc_html__('Popup max-height', "ays-popup-box"); ?></span>
                                             <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__('Specify the max height of the popup in pixels and percentages.',"ays-popup-box")?>">
-                                                <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                                <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                             </a>
                                         </label>
                                     </div>
@@ -5163,7 +5187,7 @@ $ays_users_roles = $wp_roles->roles;
                                                 <label for="ays-pb-max-height">
                                                     <?php echo  esc_html__('On desktop',"ays-popup-box") ?>
                                                     <a class="ays_help" data-toggle="tooltip" data-original-title="Define the max height for desktop devices.">
-                                                        <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                                        <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                                     </a>
                                                 </label>
                                             </div>
@@ -5194,7 +5218,7 @@ $ays_users_roles = $wp_roles->roles;
                                                 <label for="ays-pb-max-height-mobile">
                                                     <?php echo  esc_html__('On Mobile',"ays-popup-box") ?>
                                                     <a class="ays_help" data-toggle="tooltip" data-original-title="Define the max height for Mobile devices.">
-                                                        <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                                        <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                                     </a>
                                                 </label>
                                             </div>
@@ -5227,7 +5251,7 @@ $ays_users_roles = $wp_roles->roles;
                                         <label for='ays_pb_min_height'>
                                             <?php echo esc_html__('Popup min-height', "ays-popup-box"); ?>
                                             <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__("Define the popup's minimal height in pixels.","ays-popup-box")?>">
-                                                <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                                <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                             </a>
                                         </label>
                                     </div>
@@ -5247,7 +5271,7 @@ $ays_users_roles = $wp_roles->roles;
                                         <label for="open_pb_fullscreen">
                                             <span><?php echo esc_html__('Full-screen mode', "ays-popup-box"); ?></span>
                                             <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__('Enable this option to display the popup on a full screen.',"ays-popup-box")?>">
-                                                <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                                <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                             </a>
                                         </label>
                                     </div>
@@ -5261,7 +5285,7 @@ $ays_users_roles = $wp_roles->roles;
                                         <label for='ays_popup_content_padding'>
                                             <?php echo esc_html__('Content padding', "ays-popup-box"); ?>
                                             <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__('Specify the padding of the popup in pixels. It accepts only numerical values and you can choose whether to define the value by percentage or in pixels.',"ays-popup-box")?>">
-                                                <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                                <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                             </a>
                                         </label>
                                     </div>
@@ -5323,7 +5347,7 @@ $ays_users_roles = $wp_roles->roles;
                         </div>
                         <div class="ays-pb-accordion-options-main-container">
                             <div class="ays-pb-accordion-header">
-                                <?php echo $pb_acordion_svg_html; ?>
+                                <?php echo wp_kses($pb_acordion_svg_html, $allow_tags_acordion_arrow); ?>
                                 <p class="ays-subtitle"><?php echo  esc_html__('Text style', "ays-popup-box") ?></p>
                             </div>
                             <hr class="ays-pb-bolder-hr"/>
@@ -5335,7 +5359,7 @@ $ays_users_roles = $wp_roles->roles;
                                             <span>
                                                 <?php echo  esc_html__('Text color',"ays-popup-box") ?>
                                                 <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__("Specify the text color written inside the popup.", "ays-popup-box"); ?>">
-                                                    <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                                    <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                                 </a>
                                             </span>
                                         </label>
@@ -5352,7 +5376,7 @@ $ays_users_roles = $wp_roles->roles;
                                         <label for="ays_pb_font_family">
                                             <?php echo  esc_html__('Font family',"ays-popup-box") ?>
                                             <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__("Choose the popup text font family.", "ays-popup-box"); ?>">
-                                               <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                               <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                             </a>
                                         </label>
                                     </div>
@@ -5399,7 +5423,7 @@ $ays_users_roles = $wp_roles->roles;
                                         <label for="ays_pb_font_size">
                                             <?php echo  esc_html__('Description font size',"ays-popup-box") ?>
                                             <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__("Define the font size of the popup description in pixels.", "ays-popup-box"); ?>">
-                                               <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                               <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                             </a>
                                         </label>
                                     </div>
@@ -5409,7 +5433,7 @@ $ays_users_roles = $wp_roles->roles;
                                                 <label for="ays_pb_font_size_for_pc">
                                                     <?php echo  esc_html__('On desktop',"ays-popup-box") ?>  
                                                         <a class="ays_help" data-toggle="tooltip" title="" data-original-title="Define the font size for desktop devices.">
-                                                            <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                                            <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                                         </a>
                                                     </label>
                                                 </label>
@@ -5424,7 +5448,7 @@ $ays_users_roles = $wp_roles->roles;
                                                 <label for="ays_pb_font_size_for_mobile">
                                                     <?php echo  esc_html__('On mobile',"ays-popup-box") ?>  
                                                         <a class="ays_help" data-toggle="tooltip" title="" data-original-title="Define the font size for mobile devices.">
-                                                            <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                                            <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                                         </a>
                                                     </label>
                                                 </label>
@@ -5444,7 +5468,7 @@ $ays_users_roles = $wp_roles->roles;
                                         <label for="ays_enable_title_text_shadow">
                                             <?php echo esc_html__('Title text shadow',"ays-popup-box")?>
                                             <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__('Add text shadow to the popup title.',"ays-popup-box")?>">
-                                                <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                                <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                             </a>
                                             <span style="<?php if($show_popup_title == 'On'){ echo 'display:none';} else { echo '';} ?>" class="ays-pb-small-hint-text ays-pb-title-shadow-small-hint"><?php echo esc_html__("This option is not available currently as the Show title Option is disable.", "ays-popup-box");?></span>
                                         </label>
@@ -5456,7 +5480,7 @@ $ays_users_roles = $wp_roles->roles;
                                                     <label for="ays_enable_title_text_shadow">
                                                         <?php echo  esc_html__('On desktop',"ays-popup-box") ?>
                                                         <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__('Define the title text shadow for desktop devices.',"ays-popup-box")?>">
-                                                            <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                                            <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                                         </a>
                                                     </label>
                                                 </div>
@@ -5470,7 +5494,7 @@ $ays_users_roles = $wp_roles->roles;
                                                     <label for='ays_title_text_shadow_color'>
                                                         <?php echo esc_html__('Color', "ays-popup-box"); ?>
                                                         <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__('Specify text shadow color.',"ays-popup-box")?>">
-                                                            <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                                            <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                                         </a>
                                                     </label>
                                                     <input type="text" class="ays-text-input" id='ays_title_text_shadow_color' data-alpha="true" name='ays_title_text_shadow_color' value="<?php echo $pb_title_text_shadow; ?>"/>
@@ -5501,7 +5525,7 @@ $ays_users_roles = $wp_roles->roles;
                                                     <label for="ays_enable_title_text_shadow_mobile">
                                                         <?php echo  esc_html__('On Mobile',"ays-popup-box") ?>
                                                         <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__('Define the title text shadow for mobile devices.',"ays-popup-box")?>">
-                                                            <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                                            <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                                         </a>
                                                     </label>
                                                 </div>
@@ -5515,7 +5539,7 @@ $ays_users_roles = $wp_roles->roles;
                                                     <label for='ays_title_text_shadow_color_mobile'>
                                                         <?php echo esc_html__('Color', "ays-popup-box"); ?>
                                                         <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__('Specify text shadow color.',"ays-popup-box")?>">
-                                                            <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                                            <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                                         </a>
                                                     </label>
                                                     <input type="text" class="ays-text-input" id='ays_title_text_shadow_color_mobile' data-alpha="true" name='ays_title_text_shadow_color_mobile' value="<?php echo $pb_title_text_shadow_mobile; ?>"/>
@@ -5567,7 +5591,7 @@ $ays_users_roles = $wp_roles->roles;
                                             <label for="ays_enable_title_styles">
                                                 <?php echo esc_html__('Title style',"ays-popup-box")?>
                                                 <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__('Enable the option to customize the style of the popup title.',"ays-popup-box");?>">
-                                                    <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                                    <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                                 </a>
                                             </label>
                                         </div>
@@ -5581,7 +5605,7 @@ $ays_users_roles = $wp_roles->roles;
                                                         <label for='ays_title_font_family'>
                                                             <?php echo esc_html__('Font family', "ays-popup-box"); ?>
                                                             <a class="ays_help ays-pb-help-pro" data-toggle="tooltip" title="<?php echo esc_html__('Choose your preferred font family from the suggested variants for the popup title.',"ays-popup-box")?>">
-                                                                <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                                                <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                                             </a>
                                                         </label>
                                                     </div>
@@ -5598,7 +5622,7 @@ $ays_users_roles = $wp_roles->roles;
                                                         <label for='ays_title_font_weight'>
                                                             <?php echo esc_html__('Font weight', "ays-popup-box"); ?>
                                                             <a class="ays_help ays-pb-help-pro" data-toggle="tooltip" title="<?php echo esc_html__('Define the boldness of the popup title.',"ays-popup-box")?>">
-                                                                <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                                                <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                                             </a>
                                                         </label>
                                                     </div>
@@ -5615,7 +5639,7 @@ $ays_users_roles = $wp_roles->roles;
                                                         <label for='ays_title_font_size'>
                                                             <?php echo esc_html__('Font size(px)', "ays-popup-box"); ?>
                                                             <a class="ays_help ays-pb-help-pro" data-toggle="tooltip" title="<?php echo esc_html__('Define the font size of the popup title in pixels.',"ays-popup-box")?>">
-                                                                <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                                                <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                                             </a>
                                                         </label>
                                                     </div>
@@ -5628,7 +5652,7 @@ $ays_users_roles = $wp_roles->roles;
                                                         <label for='ays_title_letter_spacing'>
                                                             <?php echo esc_html__('Letter spacing(px)', "ays-popup-box"); ?>
                                                             <a class="ays_help ays-pb-help-pro" data-toggle="tooltip" title="<?php echo esc_html__('Define the space between characters in a text of the popup title in pixels.',"ays-popup-box")?>">
-                                                                <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                                                <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                                             </a>
                                                         </label>
                                                     </div>
@@ -5641,7 +5665,7 @@ $ays_users_roles = $wp_roles->roles;
                                                         <label for='ays_title_line_height'>
                                                             <?php echo esc_html__('Line height', "ays-popup-box"); ?>
                                                             <a class="ays_help ays-pb-help-pro" data-toggle="tooltip" title="<?php echo esc_html__('Define the height of a line of the popup title.',"ays-popup-box")?>">
-                                                                <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                                                <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                                             </a>
                                                         </label>
                                                     </div>
@@ -5654,7 +5678,7 @@ $ays_users_roles = $wp_roles->roles;
                                                         <label for='ays_title_text_alignment'>
                                                             <?php echo esc_html__('Text alignment', "ays-popup-box"); ?>
                                                             <a class="ays_help ays-pb-help-pro" data-toggle="tooltip" title="<?php echo esc_html__('Choose the horizontal alignment of the text of the popup title.',"ays-popup-box")?>">
-                                                                <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                                                <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                                             </a>
                                                         </label>
                                                     </div>
@@ -5682,7 +5706,7 @@ $ays_users_roles = $wp_roles->roles;
                                                             esc_html__(' Lowercase - Transforms all characters to lowercase.',"ays-popup-box"). "</p>" ?>" 
                     
                                                             >
-                                                                <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                                                <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                                             </a>
                                                         </label>
                                                     </div>
@@ -5699,7 +5723,7 @@ $ays_users_roles = $wp_roles->roles;
                                                         <label for='ays_title_text_transform'>
                                                             <?php echo esc_html__('Text decoration', "ays-popup-box"); ?>
                                                             <a class="ays_help ays-pb-help-pro" data-toggle="tooltip" title="<?php echo esc_html__('Choose the kind of decoration added to text of the popup title.',"ays-popup-box")?>">
-                                                                <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                                                <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                                             </a>
                                                         </label>
                                                     </div>
@@ -5721,7 +5745,7 @@ $ays_users_roles = $wp_roles->roles;
                         </div>
                         <div class="ays-pb-accordion-options-main-container">
                             <div class="ays-pb-accordion-header ays_pb_hide_for_notification_type <?php echo ($modal_content == 'notification_type') ? 'display_none' : ''; ?>">
-                                <?php echo $pb_acordion_svg_html; ?>
+                                <?php echo wp_kses($pb_acordion_svg_html, $allow_tags_acordion_arrow); ?>
                                 <p class="ays-subtitle"><?php echo  esc_html__('Opening and Closing effects', "ays-popup-box") ?></p>
                             </div>
                             <hr class="ays-pb-bolder-hr ays_pb_hide_for_notification_type <?php echo ($modal_content == 'notification_type') ? 'display_none' : ''; ?>"/>
@@ -5732,7 +5756,7 @@ $ays_users_roles = $wp_roles->roles;
                                             <span>
                                                 <?php echo  esc_html__('Opening animation',"ays-popup-box") ?>
                                                 <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__("Choose the entry effect for the popup opening.", "ays-popup-box"); ?>">
-                                                    <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                                    <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                                 </a>
                                             </span>
                                         </label>
@@ -5850,7 +5874,7 @@ $ays_users_roles = $wp_roles->roles;
                                             <span>
                                                 <?php echo  esc_html__('Closing animation',"ays-popup-box") ?>
                                                 <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__("Choose the exit effect for the popup closing.", "ays-popup-box"); ?>">
-                                                    <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                                    <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                                 </a>
                                             </span>
                                         </label>
@@ -5968,7 +5992,7 @@ $ays_users_roles = $wp_roles->roles;
                                             <span>
                                                 <?php echo  esc_html__('Opening animation speed',"ays-popup-box") ?>
                                                 <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__("Specify the entry effect speed of the popup in seconds.", "ays-popup-box"); ?>">
-                                                    <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                                    <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                                 </a>
                                             </span>
                                         </label>
@@ -5998,7 +6022,7 @@ $ays_users_roles = $wp_roles->roles;
                                             <span>
                                                 <?php echo  esc_html__('Closing animation speed',"ays-popup-box") ?>
                                                 <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__("Specify the ending animation speed of the popup in seconds.", "ays-popup-box"); ?>">
-                                                    <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                                    <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                                 </a>
                                             </span>
                                         </label>
@@ -6026,7 +6050,7 @@ $ays_users_roles = $wp_roles->roles;
                         </div>
                         <div class="ays-pb-accordion-options-main-container">
                             <div class="ays-pb-accordion-header">
-                                <?php echo $pb_acordion_svg_html; ?>
+                                <?php echo wp_kses($pb_acordion_svg_html, $allow_tags_acordion_arrow); ?>
                                 <p class="ays-subtitle"><?php echo  esc_html__('Background style', "ays-popup-box") ?></p>
                             </div>
                             <hr class="ays-pb-bolder-hr"/>
@@ -6037,7 +6061,7 @@ $ays_users_roles = $wp_roles->roles;
                                             <span>
                                                 <?php echo esc_html__('Background color', "ays-popup-box"); ?>
                                                 <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__("Specify the background color of the popup.", "ays-popup-box"); ?>">
-                                                    <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                                    <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                                 </a>
                                             </span>
                                         </label>
@@ -6067,7 +6091,7 @@ $ays_users_roles = $wp_roles->roles;
                                             <?php echo esc_html__('Background Image', "ays-popup-box"); ?>
                                             <a class="ays_help" data-toggle="tooltip" data-placement="top"
                                             title="<?php echo esc_html__("Add a background image to the popup. Note: If you want to apply background color, remove the image or don't add it.", "ays-popup-box"); ?>">
-                                                <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                                <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                             </a>
                                         </label>
                                     </div>
@@ -6117,7 +6141,7 @@ $ays_users_roles = $wp_roles->roles;
                                         <label for="ays_pb_bg_image_position">
                                             <?php echo esc_html__( "Background image position", "ays-popup-box" ); ?>
                                             <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__('Select the position of the background image of the popup.',"ays-popup-box")?>">
-                                                <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                                <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                             </a>
                                         </label>
                                     </div>
@@ -6178,7 +6202,7 @@ $ays_users_roles = $wp_roles->roles;
                                         <label for="ays_pb_bg_image_sizing">
                                             <?php echo esc_html__('Background image sizing', "ays-popup-box" ); ?>
                                             <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__('Define the background image size if needed.',"ays-popup-box")?>">
-                                                <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                                <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                             </a>
                                         </label>
                                     </div>
@@ -6214,7 +6238,7 @@ $ays_users_roles = $wp_roles->roles;
                                         <label for="ays-enable-background-gradient">
                                             <?php echo esc_html__('Background gradient',"ays-popup-box")?>
                                             <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__('Add background gradient for the popup, choose gradient color stops and direction.',"ays-popup-box")?>">
-                                                <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                                <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                             </a>
                                         </label>
                                     </div>
@@ -6225,7 +6249,7 @@ $ays_users_roles = $wp_roles->roles;
                                                     <label for="ays-enable-background-gradient">
                                                         <?php echo  esc_html__('On desktop',"ays-popup-box") ?>
                                                         <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__('Define the background gradient for desktop devices.',"ays-popup-box")?>">
-                                                            <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                                            <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                                         </a>
                                                     </label>
                                                 </div>
@@ -6239,7 +6263,7 @@ $ays_users_roles = $wp_roles->roles;
                                                     <label for='ays-background-gradient-color-1'>
                                                         <?php echo esc_html__('Color 1', "ays-popup-box"); ?>
                                                         <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__('Select the first color stop.',"ays-popup-box")?>">
-                                                            <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                                            <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                                         </a>
                                                     </label>
                                                     <input type="text" class="ays-text-input" id='ays-background-gradient-color-1' data-alpha="true" name='ays_background_gradient_color_1' value="<?php echo $background_gradient_color_1; ?>"/>
@@ -6248,7 +6272,7 @@ $ays_users_roles = $wp_roles->roles;
                                                     <label for='ays-background-gradient-color-2'>
                                                         <?php echo esc_html__('Color 2', "ays-popup-box"); ?>
                                                         <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__('Select the second color stop.',"ays-popup-box")?>">
-                                                            <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                                            <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                                         </a>
                                                     </label>
                                                     <input type="text" class="ays-text-input" id='ays-background-gradient-color-2' data-alpha="true" name='ays_background_gradient_color_2' value="<?php echo $background_gradient_color_2; ?>"/>
@@ -6257,7 +6281,7 @@ $ays_users_roles = $wp_roles->roles;
                                                     <label for="ays_pb_gradient_direction">
                                                         <?php echo esc_html__('Gradient direction',"ays-popup-box")?>
                                                         <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__('The direction of the color gradient',"ays-popup-box")?>">
-                                                            <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                                            <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                                         </a>
                                                     </label>
                                                     <select id="ays_pb_gradient_direction" name="ays_pb_gradient_direction" class="ays-text-input ays_pb_aysDropdown">
@@ -6276,7 +6300,7 @@ $ays_users_roles = $wp_roles->roles;
                                                     <label for="ays-enable-background-gradient-mobile">
                                                         <?php echo  esc_html__('On Mobile',"ays-popup-box") ?>
                                                         <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__('Define the background gradient for mobile devices.',"ays-popup-box")?>">
-                                                            <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                                            <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                                         </a>
                                                     </label>
                                                 </div>
@@ -6290,7 +6314,7 @@ $ays_users_roles = $wp_roles->roles;
                                                     <label for='ays-background-gradient-color-1-mobile'>
                                                         <?php echo esc_html__('Color 1', "ays-popup-box"); ?>
                                                         <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__('Select the first color stop.',"ays-popup-box")?>">
-                                                            <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                                            <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                                         </a>
                                                     </label>
                                                     <input type="text" class="ays-text-input" id='ays-background-gradient-color-1-mobile' data-alpha="true" name='ays_background_gradient_color_1_mobile' value="<?php echo $background_gradient_color_1_mobile; ?>"/>
@@ -6299,7 +6323,7 @@ $ays_users_roles = $wp_roles->roles;
                                                     <label for='ays-background-gradient-color-2-mobile'>
                                                         <?php echo esc_html__('Color 2', "ays-popup-box"); ?>
                                                         <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__('Select the second color stop.',"ays-popup-box")?>">
-                                                            <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                                            <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                                         </a>
                                                     </label>
                                                     <input type="text" class="ays-text-input" id='ays-background-gradient-color-2-mobile' data-alpha="true" name='ays_background_gradient_color_2_mobile' value="<?php echo $background_gradient_color_2_mobile; ?>"/>
@@ -6308,7 +6332,7 @@ $ays_users_roles = $wp_roles->roles;
                                                     <label for="ays_pb_gradient_direction_mobile">
                                                         <?php echo esc_html__('Gradient direction',"ays-popup-box")?>
                                                         <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__('The direction of the color gradient',"ays-popup-box")?>">
-                                                            <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                                            <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                                         </a>
                                                     </label>
                                                     <select id="ays_pb_gradient_direction_mobile" name="ays_pb_gradient_direction_mobile" class="ays-text-input ays_pb_aysDropdown">
@@ -6329,7 +6353,7 @@ $ays_users_roles = $wp_roles->roles;
                                             <span>
                                                 <?php echo esc_html__('Header background color', "ays-popup-box"); ?>
                                                 <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__("Specify the background color of the box's header. Note: It works with the following themes: Red, Sale.", "ays-popup-box"); ?>">
-                                                    <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                                    <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                                 </a>
                                             </span>
                                         </label>
@@ -6359,7 +6383,7 @@ $ays_users_roles = $wp_roles->roles;
                                             <span>
                                                 <?php echo  esc_html__('Overlay color',"ays-popup-box") ?>
                                                 <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__("Specify the overlay color.", "ays-popup-box"); ?>">
-                                                    <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                                    <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                                 </a>
                                             </span>
                                         </label>
@@ -6387,7 +6411,7 @@ $ays_users_roles = $wp_roles->roles;
                         </div>
                         <div class="ays-pb-accordion-options-main-container">
                             <div class="ays-pb-accordion-header">
-                                <?php echo $pb_acordion_svg_html; ?>
+                                <?php echo wp_kses($pb_acordion_svg_html, $allow_tags_acordion_arrow); ?>
                                 <p class="ays-subtitle"><?php echo  esc_html__('Border style', "ays-popup-box") ?></p>
                             </div>
                             <hr class="ays-pb-bolder-hr"/>
@@ -6398,7 +6422,7 @@ $ays_users_roles = $wp_roles->roles;
                                             <span>
                                                 <?php echo  esc_html__('Border Width',"ays-popup-box") ?>
                                                 <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__("Specify the border size of the popup in pixels.", "ays-popup-box"); ?>">
-                                                    <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                                    <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                                 </a>
                                             </span>
                                         </label>
@@ -6428,7 +6452,7 @@ $ays_users_roles = $wp_roles->roles;
                                             <span>
                                                 <?php echo  esc_html__('Border style',"ays-popup-box") ?>
                                                 <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__("Choose your preferred style of the border.", "ays-popup-box"); ?>">
-                                                    <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                                    <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                                 </a>
                                             </span>
                                         </label>
@@ -6505,7 +6529,7 @@ $ays_users_roles = $wp_roles->roles;
                                             <span>
                                                 <?php echo  esc_html__('Border color',"ays-popup-box") ?>
                                                 <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__("Specify the border color of the popup.", "ays-popup-box"); ?>">
-                                                    <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                                    <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                                 </a>
                                             </span>
                                         </label>
@@ -6537,7 +6561,7 @@ $ays_users_roles = $wp_roles->roles;
                                             <span>
                                                 <?php echo  esc_html__('Border radius',"ays-popup-box") ?>
                                                 <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__("Specify the radius of the border. Allows adding rounded corners to the popup.", "ays-popup-box"); ?>">
-                                                    <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                                    <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                                 </a>
                                             </span>
                                         </label>
@@ -6566,7 +6590,7 @@ $ays_users_roles = $wp_roles->roles;
                         </div>
                         <div class="ays-pb-accordion-options-main-container">
                             <div class="ays-pb-accordion-header">
-                                <?php echo $pb_acordion_svg_html; ?>
+                                <?php echo wp_kses($pb_acordion_svg_html, $allow_tags_acordion_arrow); ?>
                                 <p class="ays-subtitle"><?php echo  esc_html__('Button Style', "ays-popup-box") ?></p>
                             </div>
                             <hr class="ays-pb-bolder-hr"/>
@@ -6595,8 +6619,8 @@ $ays_users_roles = $wp_roles->roles;
                                         <!-- <div>
                                             <a href="https://youtu.be/BdwSmLbsCC4?list=PL4ufu1uAjjWQTYn0O_72TLzmqgmVIYKI2" target="_blank" class="ays-pro-features-v2-video-button">
                                                 <div>
-                                                    <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/pro-features-icons/Video_24x24.svg" ?>">
-                                                    <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/pro-features-icons/Video_24x24_Hover.svg" ?>" class="ays-pb-new-video-button-hover">
+                                                    <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/pro-features-icons/Video_24x24.svg" ?>">
+                                                    <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/pro-features-icons/Video_24x24_Hover.svg" ?>" class="ays-pb-new-video-button-hover">
                                                 </div>
                                                 <div class="ays-pro-features-v2-video-text">
                                                     <?php echo esc_html__("Watch Video" , "ays-popup-box"); ?>
@@ -6617,7 +6641,7 @@ $ays_users_roles = $wp_roles->roles;
                                                 <label for="ays_pb_buttons_size">
                                                     <?php echo esc_html__('Button size',"ays-popup-box")?>
                                                     <a class="ays_help ays-pb-help-pro" data-toggle="tooltip" title="<?php echo esc_html__('The default sizes of buttons.',"ays-popup-box")?>">
-                                                        <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                                        <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                                     </a>
                                                 </label>
                                             </div>
@@ -6641,7 +6665,7 @@ $ays_users_roles = $wp_roles->roles;
                                                 <label for='ays_pb_button_text_color'>
                                                     <?php echo esc_html__('Button text color', "ays-popup-box"); ?>
                                                     <a class="ays_help ays-pb-help-pro" data-toggle="tooltip" title="<?php echo esc_html__('Specify the text color of buttons inside the popup.',"ays-popup-box")?>">
-                                                        <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                                        <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                                     </a>
                                                 </label>
                                             </div>
@@ -6655,7 +6679,7 @@ $ays_users_roles = $wp_roles->roles;
                                                 <label for='ays_pb_button_background_color'>
                                                     <?php echo esc_html__('Button background color', "ays-popup-box"); ?>
                                                     <a class="ays_help ays-pb-help-pro" data-toggle="tooltip" title="<?php echo esc_html__('Specify the backgound color of buttons inside the popup.',"ays-popup-box")?>">
-                                                        <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                                        <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                                     </a>
                                                 </label>
                                             </div>
@@ -6668,7 +6692,7 @@ $ays_users_roles = $wp_roles->roles;
                                                 <label for='ays_pb_buttons_font_size'>
                                                     <?php echo esc_html__('Button font-size', "ays-popup-box"); ?> (px)
                                                     <a class="ays_help ays-pb-help-pro" data-toggle="tooltip" title="<?php echo esc_html__('The font size of the buttons in pixels in the popup. It accepts only numeric values.',"ays-popup-box")?>">
-                                                        <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                                        <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                                     </a>
                                                 </label>
                                             </div>
@@ -6682,7 +6706,7 @@ $ays_users_roles = $wp_roles->roles;
                                                 <label for='ays_pb_buttons_width'>
                                                     <?php echo esc_html__('Button width', "ays-popup-box"); ?> (px)
                                                     <a class="ays_help ays-pb-help-pro" data-toggle="tooltip" title="<?php echo esc_html__('Set the button width in pixels. For an initial width, leave the field blank.', "ays-popup-box"); ?>">
-                                                        <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                                        <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                                     </a>
                                                 </label>
                                             </div>
@@ -6697,7 +6721,7 @@ $ays_users_roles = $wp_roles->roles;
                                                 <label for="ays_pb_buttons_padding">
                                                     <?php echo esc_html__('Button padding',"ays-popup-box")?> (px)
                                                     <a class="ays_help ays-pb-help-pro" data-toggle="tooltip" title="<?php echo esc_html__('Padding of buttons.',"ays-popup-box")?>">
-                                                        <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                                        <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                                     </a>
                                                 </label>
                                             </div>
@@ -6718,7 +6742,7 @@ $ays_users_roles = $wp_roles->roles;
                                                 <label for="ays_pb_buttons_border_radius">
                                                     <?php echo esc_html__('Button border-radius', "ays-popup-box"); ?> (px)
                                                     <a class="ays_help ays-pb-help-pro" data-toggle="tooltip" title="<?php echo esc_html__('Popup buttons border-radius in pixels. It accepts only numeric values.',"ays-popup-box")?>">
-                                                        <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                                        <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                                     </a>
                                                 </label>
                                             </div>
@@ -6737,7 +6761,7 @@ $ays_users_roles = $wp_roles->roles;
                                             <span>
                                                 <?php echo  esc_html__('Close button image',"ays-popup-box") ?>
                                                 <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__("Add an image which will be displayed instead of the close button.", "ays-popup-box"); ?>">
-                                                    <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                                    <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                                 </a>
                                             </span>
                                         </label>
@@ -6767,7 +6791,7 @@ $ays_users_roles = $wp_roles->roles;
                                             <span>
                                                 <?php echo  esc_html__('Close button color',"ays-popup-box") ?>
                                                 <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__("Define the close button color.", "ays-popup-box"); ?>">
-                                                    <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                                    <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                                 </a>
                                             </span>
                                         </label>
@@ -6785,7 +6809,7 @@ $ays_users_roles = $wp_roles->roles;
                                             <span>
                                                 <?php echo  esc_html__('Close button hover color',"ays-popup-box") ?>
                                                 <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__("Define the close button color on hover.", "ays-popup-box"); ?>">
-                                                    <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                                    <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                                 </a>
                                             </span>
                                         </label>
@@ -6803,7 +6827,7 @@ $ays_users_roles = $wp_roles->roles;
                                             <span>
                                                 <?php echo  esc_html__('Close button size',"ays-popup-box") ?>
                                                 <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__("Define the close button size in pixels.", "ays-popup-box"); ?>">
-                                                    <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                                    <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                                 </a>
                                             </span>
                                         </label>
@@ -6818,7 +6842,7 @@ $ays_users_roles = $wp_roles->roles;
                         </div>
                         <div class="ays-pb-accordion-options-main-container">
                             <div class="ays-pb-accordion-header">
-                                <?php echo $pb_acordion_svg_html; ?>
+                                <?php echo wp_kses($pb_acordion_svg_html, $allow_tags_acordion_arrow); ?>
                                 <p class="ays-subtitle"><?php echo  esc_html__('Advanced style', "ays-popup-box") ?></p>
                             </div>
                             <hr class="ays-pb-bolder-hr"/>
@@ -6828,7 +6852,7 @@ $ays_users_roles = $wp_roles->roles;
                                         <label for="ays_pb_enable_box_shadow">
                                             <?php echo esc_html__('Box shadow',"ays-popup-box"); ?>
                                             <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__('Allow popup container box shadow.',"ays-popup-box")?>">
-                                                <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                                <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                             </a>
                                         </label>
                                     </div>
@@ -6839,7 +6863,7 @@ $ays_users_roles = $wp_roles->roles;
                                                     <label for="ays_pb_enable_box_shadow">
                                                         <?php echo  esc_html__('On desktop',"ays-popup-box") ?>
                                                         <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__('Define the box shadow for desktop devices.',"ays-popup-box")?>">
-                                                            <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                                            <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                                         </a>
                                                     </label>
                                                 </div>
@@ -6854,7 +6878,7 @@ $ays_users_roles = $wp_roles->roles;
                                                         <label for="ays_pb_box_shadow_color">
                                                             <?php echo esc_html__('Color',"ays-popup-box")?>
                                                             <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__('The color of the shadow of the popup container',"ays-popup-box" ); ?>">
-                                                                <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                                                <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                                             </a>
                                                         </label>
                                                         <input type="text" class="ays-text-input" id='ays_pb_box_shadow_color' name='ays_pb_box_shadow_color' data-alpha="true" data-default-color="#000000" value="<?php echo $box_shadow_color; ?>"/>
@@ -6884,7 +6908,7 @@ $ays_users_roles = $wp_roles->roles;
                                                     <label for="ays_pb_enable_box_shadow_mobile">
                                                         <?php echo  esc_html__('On Mobile',"ays-popup-box") ?>
                                                         <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__('Define the box shadow for mobile devices.',"ays-popup-box")?>">
-                                                            <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                                            <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                                         </a>
                                                     </label>
                                                 </div>
@@ -6899,7 +6923,7 @@ $ays_users_roles = $wp_roles->roles;
                                                         <label for="ays_pb_box_shadow_color_mobile">
                                                             <?php echo esc_html__('Color',"ays-popup-box")?>
                                                             <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__('The color of the shadow of the popup container',"ays-popup-box" ); ?>">
-                                                                <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                                                <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                                             </a>
                                                         </label>
                                                         <input type="text" class="ays-text-input" id='ays_pb_box_shadow_color_mobile' name='ays_pb_box_shadow_color_mobile' data-alpha="true" data-default-color="#000000" value="<?php echo $box_shadow_color_mobile; ?>"/>
@@ -6930,7 +6954,7 @@ $ays_users_roles = $wp_roles->roles;
                                         <label for="ays_pb_bg_image_direction_on_mobile">
                                             <?php echo esc_html__('Background image style on mobile',"ays-popup-box"); ?>
                                             <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__('On mobile mode the background image will change it style and it will be displayed at the top of the text. Note: It will work only for the Sale template.',"ays-popup-box")?>">
-                                                <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                                <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                             </a>
                                         </label>
                                     </div>
@@ -6944,7 +6968,7 @@ $ays_users_roles = $wp_roles->roles;
                                         <label for="custom_class">
                                             <?php echo esc_html__('Custom class for popup container ',"ays-popup-box")?>
                                             <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__('Use your custom HTML class for adding your custom styles to popup container.',"ays-popup-box")?>">
-                                                <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                                <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                             </a>
                                         </label>
                                     </div>
@@ -6957,7 +6981,7 @@ $ays_users_roles = $wp_roles->roles;
                                     <label for="<?php echo $this->plugin_name; ?>-custom-css">
                                         <span><?php echo esc_html__('Custom CSS', "ays-popup-box"); ?></span>
                                         <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__('Field for entering your own CSS code.',  "ays-popup-box")?>">
-                                            <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                            <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                         </a>
                                     </label>
                                     <textarea id="<?php echo $this->plugin_name; ?>-custom-css"  class="ays-textarea" name="<?php echo  $this->plugin_name; ?>[custom-css]"><?php echo $custom_css; ?></textarea>
@@ -6968,7 +6992,7 @@ $ays_users_roles = $wp_roles->roles;
                                         <label for="custom_class">
                                             <?php echo esc_html__('Reset styles',"ays-popup-box")?>
                                             <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__('Reset popup styles to default values',"ays-popup-box")?>">
-                                                <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                                <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                             </a>
                                         </label>
                                     </div>
@@ -7006,7 +7030,7 @@ $ays_users_roles = $wp_roles->roles;
                                 </div>
                                 <div class='ays-pb-live-container ays-pb-live-container-main ays_window ays_bg_image_box <?php echo ($view_type == 'mac') ? 'ays_active' : 'display_none'; ?>'>
                                     <div class='ays_topBar'>
-                                        <label class='ays-pb-modal-close ays_close ays-close-button-on-off <?php $close_button == 'on' ? 'display_none_important' : ''; ?>'><img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/times-2x.svg"?>"></label>
+                                        <label class='ays-pb-modal-close ays_close ays-close-button-on-off <?php $close_button == 'on' ? 'display_none_important' : ''; ?>'><img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/times-2x.svg"?>"></label>
                                         <a class='ays_hide'></a>
                                         <a class='ays_fullScreen'></a>
                                         <h2 class="ays_title" style='<?php echo $hide_title ;?>'></h2>
@@ -7195,7 +7219,7 @@ $ays_users_roles = $wp_roles->roles;
                                     <div class="ays_pb_timer_container">
                                         <p class='ays_pb_timer'><?php echo esc_html__("This will close in ", "ays-popup-box"); ?><span data-seconds='20'>20</span> <?php echo esc_html__("seconds", "ays-popup-box"); ?></p>
                                     </div>
-                                    <input type="hidden" value="<?php echo AYS_PB_ADMIN_URL.'/videos/video_theme.mp4'; ?>">
+                                    <input type="hidden" value="<?php echo esc_url(AYS_PB_ADMIN_URL.'/videos/video_theme.mp4'); ?>">
                                 </div>
                                 <!-- Video type | Video theme end -->
                                 <!-- Image type | image theme start -->
@@ -7256,7 +7280,7 @@ $ays_users_roles = $wp_roles->roles;
                         </div>
                     </div>
                     <div class="ays-pb-accordion-header">
-                        <?php echo $pb_acordion_svg_html; ?>
+                        <?php echo wp_kses($pb_acordion_svg_html, $allow_tags_acordion_arrow); ?>
                         <p class="ays-subtitle"><?php echo esc_html__('Limitation of Users', "ays-popup-box") ?></p>
                     </div>
                     <hr class="ays-pb-bolder-hr"/>
@@ -7267,7 +7291,7 @@ $ays_users_roles = $wp_roles->roles;
                                     <label for="ays_pb_show_only_once">
                                         <span><?php echo esc_html__('Display popup once per user', "ays-popup-box"); ?></span>
                                         <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__('Enable this option to display the popup once per visitor.', "ays-popup-box"); ?>">
-                                            <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                            <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                         </a>
                                     </label>
                                 </div>
@@ -7280,7 +7304,7 @@ $ays_users_roles = $wp_roles->roles;
                             <div class="ays_toggle_target" style="<?php echo ($show_only_once == 'on') ? '' : 'display:none;' ?>">
                                 <div class="ays_pb_cookie_warning_message_container">
                                     <div class="ays_pb_cookie_warning_message_image_content">
-                                        <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/warning.svg"?>">
+                                        <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/warning.svg"?>">
                                     </div>
                                     <div class="ays_pb_cookie_warning_message_text_content">
                                         <p>
@@ -7297,7 +7321,7 @@ $ays_users_roles = $wp_roles->roles;
                                     <label for="<?php echo $this->plugin_name; ?>-ays_pb_cookie">
                                         <span style="font-size: 15px;"><?php echo esc_html__("Display once per session", "ays-popup-box"); ?></span>
                                         <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__('Define the interval between the popup sessions in minutes. To disable the option, set 0. E.g. set it to 1440 to show the popup once a day to each user.', "ays-popup-box"); ?>">
-                                            <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                            <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                         </a>
                                     </label>
                                 </div>
@@ -7308,7 +7332,7 @@ $ays_users_roles = $wp_roles->roles;
                             <div class="ays_toggle_target" style="<?php echo ($cookie > 0) ? '' : 'display:none;' ?>">
                                 <div class="ays_pb_cookie_warning_message_container">
                                     <div class="ays_pb_cookie_warning_message_image_content">
-                                        <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/warning.svg"?>">
+                                        <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/warning.svg"?>">
                                     </div>
                                     <div class="ays_pb_cookie_warning_message_text_content">
                                         <p>
@@ -7326,7 +7350,7 @@ $ays_users_roles = $wp_roles->roles;
                                         <span><?php echo esc_html__('Display for logged-in users', "ays-popup-box"); ?></span>
                                         <a class="ays_help" data-toggle="tooltip"
                                            title="<?php echo esc_html__('Enable this option to display the popup for logged-in users.', "ays-popup-box") ?>">
-                                            <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                            <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                         </a>
                                     </label>
                                 </div>
@@ -7342,7 +7366,7 @@ $ays_users_roles = $wp_roles->roles;
                                                         <span><?php echo esc_html__('Display for certain user roles', "ays-popup-box"); ?></span>
                                                         <a class="ays_help" data-toggle="tooltip"
                                                         title="<?php echo esc_html__('Show the popup only to certain user role(s) mentioned in the list. Leave it blank for showing the popup to all user roles.', "ays-popup-box") ?>">
-                                                            <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                                            <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                                         </a>
                                                     </label>
                                                 </div>
@@ -7382,7 +7406,7 @@ $ays_users_roles = $wp_roles->roles;
                                     <span><?php echo esc_html__('Display for guests', "ays-popup-box"); ?></span>
                                     <a class="ays_help" data-toggle="tooltip"
                                        title="<?php echo esc_html__('Enable this option to display the popup for guest visitors.', "ays-popup-box") ?>">
-                                        <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                        <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                     </a>
                                 </label>
                             </div>
@@ -7399,7 +7423,7 @@ $ays_users_roles = $wp_roles->roles;
                                     <span><?php echo esc_html__('Hide popup on mobile', "ays-popup-box"); ?></span>
                                     <a class="ays_help" data-toggle="tooltip"
                                        title="<?php echo esc_html__('Disable the popup on mobile devices.', "ays-popup-box") ?>">
-                                        <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                        <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                     </a>
                                 </label>
                             </div>
@@ -7416,7 +7440,7 @@ $ays_users_roles = $wp_roles->roles;
                                     <span><?php echo esc_html__('Hide popup on desktop', "ays-popup-box"); ?></span>
                                     <a class="ays_help" data-toggle="tooltip"
                                        title="<?php echo esc_html__('Disable the popup on desktop.', "ays-popup-box") ?>">
-                                        <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                        <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                     </a>
                                 </label>
                             </div>
@@ -7433,7 +7457,7 @@ $ays_users_roles = $wp_roles->roles;
                                     <span><?php echo esc_html__('Hide popup on tablets', "ays-popup-box"); ?></span>
                                     <a class="ays_help" data-toggle="tooltip"
                                        title="<?php echo esc_html__('Disable the popup on tablets.', "ays-popup-box") ?>">
-                                        <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                        <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                     </a>
                                 </label>
                             </div>
@@ -7450,8 +7474,8 @@ $ays_users_roles = $wp_roles->roles;
                                     <!-- <div>
                                         <a href="https://youtu.be/aFrtPsznVx4?list=PL4ufu1uAjjWQTYn0O_72TLzmqgmVIYKI2" target="_blank" class="ays-pro-features-v2-video-button">
                                             <div>
-                                                <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/pro-features-icons/Video_24x24.svg" ?>">
-                                                <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/pro-features-icons/Video_24x24_Hover.svg" ?>" class="ays-pb-new-video-button-hover">
+                                                <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/pro-features-icons/Video_24x24.svg" ?>">
+                                                <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/pro-features-icons/Video_24x24_Hover.svg" ?>" class="ays-pb-new-video-button-hover">
                                             </div>
                                             <div class="ays-pro-features-v2-video-text">
                                                 <?php echo esc_html__("Watch Video" , "ays-popup-box"); ?>
@@ -7470,7 +7494,7 @@ $ays_users_roles = $wp_roles->roles;
                                         <label for="ays_enable_tackers_count">
                                             <?php echo esc_html__('Disable by view count', "ays-popup-box")?>
                                             <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__('Disable the popup after certain views.',"ays-popup-box")?>">
-                                                <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                                <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                             </a>
                                         </label>
                                     </div>
@@ -7483,7 +7507,7 @@ $ays_users_roles = $wp_roles->roles;
                                                 <label for="ays_tackers_count">
                                                     <?php echo esc_html__('Count',"ays-popup-box")?>
                                                     <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__('Specify the count of views.',"ays-popup-box")?>">
-                                                        <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                                        <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                                     </a>
                                                 </label>
                                             </div>
@@ -7503,8 +7527,8 @@ $ays_users_roles = $wp_roles->roles;
                                     <!-- <div>
                                         <a href="https://youtu.be/UCk-qohzhIU?list=PL4ufu1uAjjWQTYn0O_72TLzmqgmVIYKI2" target="_blank" class="ays-pro-features-v2-video-button">
                                             <div>
-                                                <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/pro-features-icons/Video_24x24.svg" ?>">
-                                                <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/pro-features-icons/Video_24x24_Hover.svg" ?>" class="ays-pb-new-video-button-hover">
+                                                <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/pro-features-icons/Video_24x24.svg" ?>">
+                                                <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/pro-features-icons/Video_24x24_Hover.svg" ?>" class="ays-pb-new-video-button-hover">
                                             </div>
                                             <div class="ays-pro-features-v2-video-text">
                                                 <?php echo esc_html__("Watch Video" , "ays-popup-box"); ?>
@@ -7524,7 +7548,7 @@ $ays_users_roles = $wp_roles->roles;
                                             <span><?php echo esc_html__('Display for certain OS', "ays-popup-box"); ?></span>
                                             <a class="ays_help" data-toggle="tooltip"
                                                title="<?php echo esc_html__('Set on which operating systems your popup will be displayed.', "ays-popup-box") ?>">
-                                                <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                                <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                             </a>
                                         </label>
                                     </div>
@@ -7545,7 +7569,7 @@ $ays_users_roles = $wp_roles->roles;
                                             <span><?php echo esc_html__('Display for certain browser', "ays-popup-box"); ?></span>
                                             <a class="ays_help ays-pb-help-pro" data-toggle="tooltip"
                                                title="<?php echo esc_html__('Show the popup only to visitors using certain browser(s) mentioned in the list. Leave it blank for showing the popup to all browsers users.', "ays-popup-box") ?>">
-                                                <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                                <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                             </a>
                                         </label>
                                     </div>
@@ -7568,8 +7592,8 @@ $ays_users_roles = $wp_roles->roles;
                                     <!-- <div>
                                         <a href="https://youtu.be/q6ai1WhpLfc?list=PL4ufu1uAjjWQTYn0O_72TLzmqgmVIYKI2" target="_blank" class="ays-pro-features-v2-video-button">
                                             <div>
-                                                <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/pro-features-icons/Video_24x24.svg" ?>">
-                                                <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/pro-features-icons/Video_24x24_Hover.svg" ?>" class="ays-pb-new-video-button-hover">
+                                                <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/pro-features-icons/Video_24x24.svg" ?>">
+                                                <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/pro-features-icons/Video_24x24_Hover.svg" ?>" class="ays-pb-new-video-button-hover">
                                             </div>
                                             <div class="ays-pro-features-v2-video-text">
                                                 <?php echo esc_html__("Watch Video" , "ays-popup-box"); ?>
@@ -7589,7 +7613,7 @@ $ays_users_roles = $wp_roles->roles;
                                             <?php echo esc_html__('Limit by country', "ays-popup-box"); ?> 
                                                 <a class="ays_help" data-toggle="tooltip"
                                                     title="<?php echo esc_html__('Show the popup only to visitors using certain browser(s) mentioned in the list. Leave it blank for showing the popup to all browsers users.', "ays-popup-box") ?>">
-                                                    <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                                    <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                                 </a>
                                         </label>
                                     </div>
@@ -7611,8 +7635,8 @@ $ays_users_roles = $wp_roles->roles;
                                     <!-- <div>
                                         <a href="https://youtu.be/q6ai1WhpLfc?list=PL4ufu1uAjjWQTYn0O_72TLzmqgmVIYKI2" target="_blank" class="ays-pro-features-v2-video-button">
                                             <div>
-                                                <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/pro-features-icons/Video_24x24.svg" ?>">
-                                                <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/pro-features-icons/Video_24x24_Hover.svg" ?>" class="ays-pb-new-video-button-hover">
+                                                <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/pro-features-icons/Video_24x24.svg" ?>">
+                                                <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/pro-features-icons/Video_24x24_Hover.svg" ?>" class="ays-pb-new-video-button-hover">
                                             </div>
                                             <div class="ays-pro-features-v2-video-text">
                                                 <?php echo esc_html__("Watch Video" , "ays-popup-box"); ?>
@@ -7632,7 +7656,7 @@ $ays_users_roles = $wp_roles->roles;
                                             <?php echo esc_html__('Dismiss by closing', "ays-popup-box"); ?> 
                                                 <a class="ays_help" data-toggle="tooltip"
                                                     title="<?php echo esc_html__('After clicking on the x button the popup will not be displayed for the user.', "ays-popup-box") ?>">
-                                                    <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/info-circle.svg"?>">
+                                                    <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                                 </a>
                                         </label>
                                     </div>
@@ -7661,7 +7685,7 @@ $ays_users_roles = $wp_roles->roles;
                         </div>
                     </div>
                     <div class="ays-pb-accordion-header">
-                        <?php echo $pb_acordion_svg_html; ?>
+                        <?php echo wp_kses($pb_acordion_svg_html, $allow_tags_acordion_arrow); ?>
                         <p class="ays-subtitle"><?php echo  esc_html__('Integrations', "ays-popup-box") ?></p>
                     </div>
                     <hr class="ays-pb-bolder-hr"/>
@@ -7729,7 +7753,7 @@ $ays_users_roles = $wp_roles->roles;
                         <div class="ays_pb_layer_box">
                             <div class="ays-pb-close-type">
                                 <a href="?page=ays-pb">
-                                    <img src="<?php echo AYS_PB_ADMIN_URL; ?>/images/icons/cross.png">
+                                    <img src="<?php echo esc_url(AYS_PB_ADMIN_URL); ?>/images/icons/cross.png">
                                 </a>
                             </div>
                             <div class="ays-pb-choose-type">
@@ -7741,7 +7765,7 @@ $ays_users_roles = $wp_roles->roles;
                                     <div class="ays_pb_layer_item">
                                         <div class="ays_pb_layer_item_logo">
                                             <div class="ays_pb_layer_item_logo_overlay">
-                                                <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/file-code.svg"?>">
+                                                <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/file-code.svg"?>">
                                             </div>
                                         </div>
                                         <div class="ays_pb_layer_item_title">
@@ -7783,7 +7807,7 @@ $ays_users_roles = $wp_roles->roles;
                                     <div class="ays_pb_layer_item">
                                         <div class="ays_pb_layer_item_logo">
                                             <div class="ays_pb_layer_item_logo_overlay">
-                                                <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/video.svg"?>">
+                                                <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/video.svg"?>">
                                             </div>
                                         </div>
                                         <div class="ays_pb_layer_item_title">
@@ -7804,7 +7828,7 @@ $ays_users_roles = $wp_roles->roles;
                                     <div class="ays_pb_layer_item">
                                         <div class="ays_pb_layer_item_logo">
                                             <div class="ays_pb_layer_item_logo_overlay">
-                                                <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/popup-image-type.svg"?>">
+                                                <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/popup-image-type.svg"?>">
                                             </div>
                                         </div>
                                         <div class="ays_pb_layer_item_title">
@@ -7825,7 +7849,7 @@ $ays_users_roles = $wp_roles->roles;
                                     <div class="ays_pb_layer_item">
                                         <div class="ays_pb_layer_item_logo">
                                             <div class="ays_pb_layer_item_logo_overlay">
-                                                <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/popup-facebook-type.svg"?>">
+                                                <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/popup-facebook-type.svg"?>">
                                             </div>
                                         </div>
                                         <div class="ays_pb_layer_item_title">
@@ -7846,7 +7870,7 @@ $ays_users_roles = $wp_roles->roles;
                                     <div class="ays_pb_layer_item">
                                         <div class="ays_pb_layer_item_logo">
                                             <div class="ays_pb_layer_item_logo_overlay">
-                                                <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/popup-notification-type.svg"?>">
+                                                <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/popup-notification-type.svg"?>">
                                             </div>
                                         </div>
                                         <div class="ays_pb_layer_item_title">
@@ -7865,7 +7889,7 @@ $ays_users_roles = $wp_roles->roles;
                                     <div class="ays_pb_layer_item ays_pb_layer_item_pro">
                                         <div class="ays_pb_layer_item_logo">
                                             <div class="ays_pb_layer_item_logo_overlay">
-                                                <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/envelope.svg"?>">
+                                                <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/envelope.svg"?>">
                                             </div>
                                         </div>
                                         <div class="ays_pb_layer_item_title">
@@ -7873,8 +7897,8 @@ $ays_users_roles = $wp_roles->roles;
                                                 <p style="margin:0px; font-size:19px;"><?php echo  esc_html__('Subscription', "ays-popup-box") ?></p>
                                             </div>
                                             <a href="https://ays-pro.com/wordpress/popup-box" target="_blank" class="ays-pb-select-type-pro">
-                                                <img src="<?php echo AYS_PB_ADMIN_URL ?>/images/icons/pro-features-icons/Locked_24x24.svg" class="ays-pb-locked-img">
-                                                <img src="<?php echo AYS_PB_ADMIN_URL ?>/images/icons/pro-features-icons/Unlocked_24_24.svg" class="ays-pb-unlocked-img">
+                                                <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) ?>/images/icons/pro-features-icons/Locked_24x24.svg" class="ays-pb-locked-img">
+                                                <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) ?>/images/icons/pro-features-icons/Unlocked_24_24.svg" class="ays-pb-unlocked-img">
                                                 <p><?php echo esc_html__('Upgrade Now', 'ays-popup-box') ?></p>
                                             </a>
                                             <div class="ays-pb-view-demo-content">
@@ -7888,7 +7912,7 @@ $ays_users_roles = $wp_roles->roles;
                                     <div class="ays_pb_layer_item ays_pb_layer_item_pro">
                                         <div class="ays_pb_layer_item_logo">
                                                 <div class="ays_pb_layer_item_logo_overlay">
-                                                <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/check.svg"?>">
+                                                <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/check.svg"?>">
                                             </div>
                                         </div>
                                         <div class="ays_pb_layer_item_title">
@@ -7896,8 +7920,8 @@ $ays_users_roles = $wp_roles->roles;
                                                 <p style="margin:0px; font-size:19px;"><?php echo  esc_html__('Yes or No', "ays-popup-box") ?></p>
                                             </div>
                                             <a href="https://ays-pro.com/wordpress/popup-box" target="_blank" class="ays-pb-select-type-pro">
-                                                <img src="<?php echo AYS_PB_ADMIN_URL ?>/images/icons/pro-features-icons/Locked_24x24.svg" class="ays-pb-locked-img">
-                                                <img src="<?php echo AYS_PB_ADMIN_URL ?>/images/icons/pro-features-icons/Unlocked_24_24.svg" class="ays-pb-unlocked-img">
+                                                <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) ?>/images/icons/pro-features-icons/Locked_24x24.svg" class="ays-pb-locked-img">
+                                                <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) ?>/images/icons/pro-features-icons/Unlocked_24_24.svg" class="ays-pb-unlocked-img">
                                                 <p><?php echo esc_html__('Upgrade Now', 'ays-popup-box') ?></p>
                                             </a>
                                             <div class="ays-pb-view-demo-content">
@@ -7910,7 +7934,7 @@ $ays_users_roles = $wp_roles->roles;
                                     <div class="ays_pb_layer_item ays_pb_layer_item_pro">
                                         <div class="ays_pb_layer_item_logo">
                                             <div class="ays_pb_layer_item_logo_overlay">
-                                                <img src="<?php echo AYS_PB_ADMIN_URL; ?>/images/icons/coding.png">
+                                                <img src="<?php echo esc_url(AYS_PB_ADMIN_URL); ?>/images/icons/coding.png">
                                             </div>
                                         </div>
                                         <div class="ays_pb_layer_item_title">
@@ -7918,8 +7942,8 @@ $ays_users_roles = $wp_roles->roles;
                                                 <p style="margin:0px; font-size:19px;"><?php echo  esc_html__('Embed( Iframe )', "ays-popup-box") ?></p>
                                             </div>
                                             <a href="https://ays-pro.com/wordpress/popup-box" target="_blank" class="ays-pb-select-type-pro">
-                                                <img src="<?php echo AYS_PB_ADMIN_URL ?>/images/icons/pro-features-icons/Locked_24x24.svg" class="ays-pb-locked-img">
-                                                <img src="<?php echo AYS_PB_ADMIN_URL ?>/images/icons/pro-features-icons/Unlocked_24_24.svg" class="ays-pb-unlocked-img">
+                                                <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) ?>/images/icons/pro-features-icons/Locked_24x24.svg" class="ays-pb-locked-img">
+                                                <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) ?>/images/icons/pro-features-icons/Unlocked_24_24.svg" class="ays-pb-unlocked-img">
                                                 <p><?php echo esc_html__('Upgrade Now', 'ays-popup-box') ?></p>
                                             </a>
                                             <div class="ays-pb-view-demo-content">
@@ -7932,7 +7956,7 @@ $ays_users_roles = $wp_roles->roles;
                                     <div class="ays_pb_layer_item ays_pb_layer_item_pro">
                                         <div class="ays_pb_layer_item_logo">
                                             <div class="ays_pb_layer_item_logo_overlay">
-                                                <img src="<?php echo AYS_PB_ADMIN_URL; ?>/images/icons/comments.svg">
+                                                <img src="<?php echo esc_url(AYS_PB_ADMIN_URL); ?>/images/icons/comments.svg">
                                             </div>
                                         </div>
                                         <div class="ays_pb_layer_item_title">
@@ -7940,8 +7964,8 @@ $ays_users_roles = $wp_roles->roles;
                                                 <p style="margin:0px; font-size:19px;"><?php echo  esc_html__('Contact form', "ays-popup-box") ?></p>
                                             </div>
                                             <a href="https://ays-pro.com/wordpress/popup-box" target="_blank" class="ays-pb-select-type-pro">
-                                                <img src="<?php echo AYS_PB_ADMIN_URL ?>/images/icons/pro-features-icons/Locked_24x24.svg" class="ays-pb-locked-img">
-                                                <img src="<?php echo AYS_PB_ADMIN_URL ?>/images/icons/pro-features-icons/Unlocked_24_24.svg" class="ays-pb-unlocked-img">
+                                                <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) ?>/images/icons/pro-features-icons/Locked_24x24.svg" class="ays-pb-locked-img">
+                                                <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) ?>/images/icons/pro-features-icons/Unlocked_24_24.svg" class="ays-pb-unlocked-img">
                                                 <p><?php echo esc_html__('Upgrade Now', 'ays-popup-box') ?></p>
                                             </a>
                                             <div class="ays-pb-view-demo-content">
@@ -7954,7 +7978,7 @@ $ays_users_roles = $wp_roles->roles;
                                     <div class="ays_pb_layer_item ays_pb_layer_item_pro">
                                         <div class="ays_pb_layer_item_logo">
                                             <div class="ays_pb_layer_item_logo_overlay">
-                                                <img src="<?php echo AYS_PB_ADMIN_URL; ?>/images/icons/file-upload.svg">
+                                                <img src="<?php echo esc_url(AYS_PB_ADMIN_URL); ?>/images/icons/file-upload.svg">
                                             </div>
                                         </div>
                                         <div class="ays_pb_layer_item_title">
@@ -7962,8 +7986,8 @@ $ays_users_roles = $wp_roles->roles;
                                                 <p style="margin:0px; font-size:19px;"><?php echo  esc_html__('Subscribe and get file', "ays-popup-box") ?></p>
                                             </div>
                                             <a href="https://ays-pro.com/wordpress/popup-box" target="_blank" class="ays-pb-select-type-pro">
-                                                <img src="<?php echo AYS_PB_ADMIN_URL ?>/images/icons/pro-features-icons/Locked_24x24.svg" class="ays-pb-locked-img">
-                                                <img src="<?php echo AYS_PB_ADMIN_URL ?>/images/icons/pro-features-icons/Unlocked_24_24.svg" class="ays-pb-unlocked-img">
+                                                <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) ?>/images/icons/pro-features-icons/Locked_24x24.svg" class="ays-pb-locked-img">
+                                                <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) ?>/images/icons/pro-features-icons/Unlocked_24_24.svg" class="ays-pb-unlocked-img">
                                                 <p><?php echo esc_html__('Upgrade Now', 'ays-popup-box') ?></p>
                                             </a>
                                             <div class="ays-pb-view-demo-content">
@@ -7976,7 +8000,7 @@ $ays_users_roles = $wp_roles->roles;
                                     <div class="ays_pb_layer_item ays_pb_layer_item_pro">
                                         <div class="ays_pb_layer_item_logo">
                                             <div class="ays_pb_layer_item_logo_overlay">
-                                                <img src= "<?php echo AYS_PB_ADMIN_URL ;?>/images/icons/coupon.svg" style="width:40px;height:40px;">
+                                                <img src= "<?php echo esc_url(AYS_PB_ADMIN_URL) ;?>/images/icons/coupon.svg" style="width:40px;height:40px;">
                                             </div>
                                         </div>
                                         <div class="ays_pb_layer_item_title">
@@ -7984,8 +8008,8 @@ $ays_users_roles = $wp_roles->roles;
                                                 <p style="margin:0px; font-size:19px;"><?php echo  esc_html__('Coupon', "ays-popup-box") ?></p>
                                             </div>
                                             <a href="https://ays-pro.com/wordpress/popup-box" target="_blank" class="ays-pb-select-type-pro">
-                                                <img src="<?php echo AYS_PB_ADMIN_URL ?>/images/icons/pro-features-icons/Locked_24x24.svg" class="ays-pb-locked-img">
-                                                <img src="<?php echo AYS_PB_ADMIN_URL ?>/images/icons/pro-features-icons/Unlocked_24_24.svg" class="ays-pb-unlocked-img">
+                                                <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) ?>/images/icons/pro-features-icons/Locked_24x24.svg" class="ays-pb-locked-img">
+                                                <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) ?>/images/icons/pro-features-icons/Unlocked_24_24.svg" class="ays-pb-unlocked-img">
                                                 <p><?php echo esc_html__('Upgrade Now', 'ays-popup-box') ?></p>
                                             </a>
                                             <div class="ays-pb-view-demo-content">
@@ -7998,7 +8022,7 @@ $ays_users_roles = $wp_roles->roles;
                                     <div class="ays_pb_layer_item ays_pb_layer_item_pro">
                                         <div class="ays_pb_layer_item_logo">
                                             <div class="ays_pb_layer_item_logo_overlay">
-                                                <img src= "<?php echo AYS_PB_ADMIN_URL ;?>/images/icons/countdown.svg">
+                                                <img src= "<?php echo esc_url(AYS_PB_ADMIN_URL); ?>/images/icons/countdown.svg">
                                             </div>
                                         </div>
                                         <div class="ays_pb_layer_item_title">
@@ -8006,8 +8030,8 @@ $ays_users_roles = $wp_roles->roles;
                                                 <p style="margin:0px; font-size:19px;"><?php echo  esc_html__('Countdown', "ays-popup-box") ?></p>
                                             </div>
                                             <a href="https://ays-pro.com/wordpress/popup-box" target="_blank" class="ays-pb-select-type-pro">
-                                                <img src="<?php echo AYS_PB_ADMIN_URL ?>/images/icons/pro-features-icons/Locked_24x24.svg" class="ays-pb-locked-img">
-                                                <img src="<?php echo AYS_PB_ADMIN_URL ?>/images/icons/pro-features-icons/Unlocked_24_24.svg" class="ays-pb-unlocked-img">
+                                                <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) ?>/images/icons/pro-features-icons/Locked_24x24.svg" class="ays-pb-locked-img">
+                                                <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) ?>/images/icons/pro-features-icons/Unlocked_24_24.svg" class="ays-pb-unlocked-img">
                                                 <p><?php echo esc_html__('Upgrade Now', 'ays-popup-box') ?></p>
                                             </a>
                                             <div class="ays-pb-view-demo-content">
@@ -8020,7 +8044,7 @@ $ays_users_roles = $wp_roles->roles;
                                     <div class="ays_pb_layer_item ays_pb_layer_item_pro">
                                         <div class="ays_pb_layer_item_logo">
                                             <div class="ays_pb_layer_item_logo_overlay">
-                                                <img src= "<?php echo AYS_PB_ADMIN_URL ;?>/images/icons/cookie.svg">
+                                                <img src= "<?php echo esc_url(AYS_PB_ADMIN_URL) ;?>/images/icons/cookie.svg">
                                             </div>
                                         </div>
                                         <div class="ays_pb_layer_item_title">
@@ -8028,8 +8052,8 @@ $ays_users_roles = $wp_roles->roles;
                                                 <p style="margin:0px; font-size:19px;"><?php echo  esc_html__('Accept Cookie', "ays-popup-box") ?></p>
                                             </div>
                                             <a href="https://ays-pro.com/wordpress/popup-box" target="_blank" class="ays-pb-select-type-pro">
-                                                <img src="<?php echo AYS_PB_ADMIN_URL ?>/images/icons/pro-features-icons/Locked_24x24.svg" class="ays-pb-locked-img">
-                                                <img src="<?php echo AYS_PB_ADMIN_URL ?>/images/icons/pro-features-icons/Unlocked_24_24.svg" class="ays-pb-unlocked-img">
+                                                <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) ?>/images/icons/pro-features-icons/Locked_24x24.svg" class="ays-pb-locked-img">
+                                                <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) ?>/images/icons/pro-features-icons/Unlocked_24_24.svg" class="ays-pb-unlocked-img">
                                                 <p><?php echo esc_html__('Upgrade Now', 'ays-popup-box') ?></p>
                                             </a>
                                             <div class="ays-pb-view-demo-content">
@@ -8042,7 +8066,7 @@ $ays_users_roles = $wp_roles->roles;
                                     <div class="ays_pb_layer_item ays_pb_layer_item_pro">
                                         <div class="ays_pb_layer_item_logo">
                                             <div class="ays_pb_layer_item_logo_overlay">
-                                                <img src= "<?php echo AYS_PB_ADMIN_URL ;?>/images/icons/download.svg">
+                                                <img src= "<?php echo esc_url(AYS_PB_ADMIN_URL) ;?>/images/icons/download.svg">
                                             </div>
                                         </div>
                                         <div class="ays_pb_layer_item_title">
@@ -8050,8 +8074,8 @@ $ays_users_roles = $wp_roles->roles;
                                                 <p style="margin:0px; font-size:19px;"><?php echo  esc_html__('Download', "ays-popup-box") ?></p>
                                             </div>
                                             <a href="https://ays-pro.com/wordpress/popup-box" target="_blank" class="ays-pb-select-type-pro">
-                                                <img src="<?php echo AYS_PB_ADMIN_URL ?>/images/icons/pro-features-icons/Locked_24x24.svg" class="ays-pb-locked-img">
-                                                <img src="<?php echo AYS_PB_ADMIN_URL ?>/images/icons/pro-features-icons/Unlocked_24_24.svg" class="ays-pb-unlocked-img">
+                                                <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) ?>/images/icons/pro-features-icons/Locked_24x24.svg" class="ays-pb-locked-img">
+                                                <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) ?>/images/icons/pro-features-icons/Unlocked_24_24.svg" class="ays-pb-unlocked-img">
                                                 <p><?php echo esc_html__('Upgrade Now', 'ays-popup-box') ?></p>
                                             </a>
                                             <div class="ays-pb-view-demo-content">
@@ -8064,7 +8088,7 @@ $ays_users_roles = $wp_roles->roles;
                                     <div class="ays_pb_layer_item ays_pb_layer_item_pro">
                                         <div class="ays_pb_layer_item_logo">
                                             <div class="ays_pb_layer_item_logo_overlay">
-                                                <img src= "<?php echo AYS_PB_ADMIN_URL ;?>/images/icons/woo.svg">
+                                                <img src= "<?php echo esc_url(AYS_PB_ADMIN_URL) ;?>/images/icons/woo.svg">
                                             </div>
                                         </div>
                                         <div class="ays_pb_layer_item_title">
@@ -8072,8 +8096,8 @@ $ays_users_roles = $wp_roles->roles;
                                                 <p style="margin:0px; font-size:19px;"><?php echo  esc_html__('WooCommerce', "ays-popup-box") ?></p>
                                             </div>
                                             <a href="https://ays-pro.com/wordpress/popup-box" target="_blank" class="ays-pb-select-type-pro">
-                                                <img src="<?php echo AYS_PB_ADMIN_URL ?>/images/icons/pro-features-icons/Locked_24x24.svg" class="ays-pb-locked-img">
-                                                <img src="<?php echo AYS_PB_ADMIN_URL ?>/images/icons/pro-features-icons/Unlocked_24_24.svg" class="ays-pb-unlocked-img">
+                                                <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) ?>/images/icons/pro-features-icons/Locked_24x24.svg" class="ays-pb-locked-img">
+                                                <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) ?>/images/icons/pro-features-icons/Unlocked_24_24.svg" class="ays-pb-unlocked-img">
                                                 <p><?php echo esc_html__('Upgrade Now', 'ays-popup-box') ?></p>
                                             </a>
                                         </div> 
@@ -8083,7 +8107,7 @@ $ays_users_roles = $wp_roles->roles;
                                     <div class="ays_pb_layer_item ays_pb_layer_item_pro">
                                         <div class="ays_pb_layer_item_logo">
                                             <div class="ays_pb_layer_item_logo_overlay">
-                                                <img src= "<?php echo AYS_PB_ADMIN_URL ;?>/images/icons/sign-in.svg">
+                                                <img src= "<?php echo esc_url(AYS_PB_ADMIN_URL) ;?>/images/icons/sign-in.svg">
                                             </div>
                                         </div>
                                         <div class="ays_pb_layer_item_title">
@@ -8091,8 +8115,8 @@ $ays_users_roles = $wp_roles->roles;
                                                 <p style="margin:0px; font-size:19px;"><?php echo  esc_html__('Login Form', "ays-popup-box") ?></p>
                                             </div>
                                             <a href="https://ays-pro.com/wordpress/popup-box" target="_blank" class="ays-pb-select-type-pro">
-                                                <img src="<?php echo AYS_PB_ADMIN_URL ?>/images/icons/pro-features-icons/Locked_24x24.svg" class="ays-pb-locked-img">
-                                                <img src="<?php echo AYS_PB_ADMIN_URL ?>/images/icons/pro-features-icons/Unlocked_24_24.svg" class="ays-pb-unlocked-img">
+                                                <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) ?>/images/icons/pro-features-icons/Locked_24x24.svg" class="ays-pb-locked-img">
+                                                <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) ?>/images/icons/pro-features-icons/Unlocked_24_24.svg" class="ays-pb-unlocked-img">
                                                 <p><?php echo esc_html__('Upgrade Now', 'ays-popup-box') ?></p>
                                             </a>
                                             <div class="ays-pb-view-demo-content">
@@ -8105,7 +8129,7 @@ $ays_users_roles = $wp_roles->roles;
                                     <div class="ays_pb_layer_item ays_pb_layer_item_pro">
                                         <div class="ays_pb_layer_item_logo">
                                             <div class="ays_pb_layer_item_logo_overlay">
-                                                <img src= "<?php echo AYS_PB_ADMIN_URL ;?>/images/icons/map-marker.svg">
+                                                <img src= "<?php echo esc_url(AYS_PB_ADMIN_URL) ;?>/images/icons/map-marker.svg">
                                             </div>
                                         </div>
                                         <div class="ays_pb_layer_item_title">
@@ -8113,8 +8137,8 @@ $ays_users_roles = $wp_roles->roles;
                                                 <p style="margin:0px; font-size:19px;"><?php echo  esc_html__('Google Map', "ays-popup-box") ?></p>
                                             </div>
                                             <a href="https://ays-pro.com/wordpress/popup-box" target="_blank" class="ays-pb-select-type-pro">
-                                                <img src="<?php echo AYS_PB_ADMIN_URL ?>/images/icons/pro-features-icons/Locked_24x24.svg" class="ays-pb-locked-img">
-                                                <img src="<?php echo AYS_PB_ADMIN_URL ?>/images/icons/pro-features-icons/Unlocked_24_24.svg" class="ays-pb-unlocked-img">
+                                                <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) ?>/images/icons/pro-features-icons/Locked_24x24.svg" class="ays-pb-locked-img">
+                                                <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) ?>/images/icons/pro-features-icons/Unlocked_24_24.svg" class="ays-pb-unlocked-img">
                                                 <p><?php echo esc_html__('Upgrade Now', 'ays-popup-box') ?></p>
                                             </a>
                                             <div class="ays-pb-view-demo-content">
@@ -8459,7 +8483,7 @@ $ays_users_roles = $wp_roles->roles;
                             $(document).find(ays_pb_view_type + ' .ays_title').html( pbTitle );
                             $(document).find("#ays-pb-close-button-text").on('change', function () {
                                 if($("#ays-pb-close-button-text").val() == '✕'){
-                                     $(ays_pb_view_type + ' .ays-close-button-text').html("<img src='<?php echo AYS_PB_ADMIN_URL ?>" + "/images/icons/times-2x.svg'>");
+                                     $(ays_pb_view_type + ' .ays-close-button-text').html("<img src='<?php echo esc_url(AYS_PB_ADMIN_URL) ?>" + "/images/icons/times-2x.svg'>");
                                 }else{
                                     $(ays_pb_view_type + ' .ays-close-button-text').html($("#ays-pb-close-button-text").val());
                                 }
@@ -8755,7 +8779,7 @@ $ays_users_roles = $wp_roles->roles;
 
                             $(document).find("#ays-pb-close-button-text").on('change', function () {
                                 if($("#ays-pb-close-button-text").val() == '✕'){
-                                     $(ays_pb_view_type + ' .ays-close-button-text').html("<img src='<?php echo AYS_PB_ADMIN_URL ?>" + "/images/icons/times-circle.svg'>");
+                                     $(ays_pb_view_type + ' .ays-close-button-text').html("<img src='<?php echo esc_url(AYS_PB_ADMIN_URL) ?>" + "/images/icons/times-circle.svg'>");
                                 }else{
                                     $(ays_pb_view_type + ' .ays-close-button-text').html($("#ays-pb-close-button-text").val());
                                 }
@@ -8940,13 +8964,13 @@ $ays_users_roles = $wp_roles->roles;
                         }
                     }
                     if($("#ays-pb-close-button-text").val() == '✕'){
-                          $(document).find('.ays_minimal_window .ays-close-button-text').html("<img src='<?php echo AYS_PB_ADMIN_URL ?>" + "/images/icons/times-circle.svg'>");
+                          $(document).find('.ays_minimal_window .ays-close-button-text').html("<img src='<?php echo esc_url(AYS_PB_ADMIN_URL) ?>" + "/images/icons/times-circle.svg'>");
                     }else{
                          $(document).find('.ays_minimal_window .ays-close-button-text').html($("#ays-pb-close-button-text").val());
                     }
 
                     if($("#ays-pb-close-button-text").val() == '✕'){
-                         $(document).find('.ays-pb-modal .ays-close-button-text').html("<img src='<?php echo AYS_PB_ADMIN_URL ?>" + "/images/icons/times-2x.svg'>");
+                         $(document).find('.ays-pb-modal .ays-close-button-text').html("<img src='<?php echo esc_url(AYS_PB_ADMIN_URL) ?>" + "/images/icons/times-2x.svg'>");
                     }else{
                          $(document).find('.ays-pb-modal .ays-close-button-text').html($("#ays-pb-close-button-text").val());
                     }

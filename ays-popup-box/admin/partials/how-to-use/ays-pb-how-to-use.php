@@ -6,7 +6,7 @@
 <div class="wrap">
     <div class="ays-pb-heart-beat-main-heading ays-pb-heart-beat-main-heading-container">
         <h1 class="ays-popup-box-wrapper ays_heart_beat">
-            <?php echo esc_html(get_admin_page_title()); ?> <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/hearth-black.svg"?>">
+            <?php echo esc_html(get_admin_page_title()); ?> <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/hearth-black.svg"?>">
         </h1>
     </div>
     <div class="ays-pb-faq-main">
@@ -57,7 +57,7 @@
         <div class="ays-pb-community-container">
             <div class="ays-pb-community-item">
                 <a href="https://www.youtube.com/channel/UC-1vioc90xaKjE7stq30wmA" target="_blank" class="ays-pb-community-item-cover" style="display:flex;align-items:center;justify-content:center;">
-                    <img src="<?php echo AYS_PB_ADMIN_URL . '/images/icons/youtube-community.svg'; ?>">
+                    <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . '/images/icons/youtube-community.svg'; ?>">
                 </a>
                 <h3 class="ays-pb-community-item-title"><?php echo esc_html__("YouTube community", "ays-popup-box"); ?></h3>
                 <p class="ays-pb-community-item-desc"><?php echo esc_html__("Our YouTube community guides you to step by step tutorials about our products and not only...", "ays-popup-box"); ?></p>
@@ -67,7 +67,7 @@
             </div>
             <div class="ays-pb-community-item">
                 <a href="https://wordpress.org/support/plugin/ays-popup-box/" target="_blank" class="ays-pb-community-item-cover" style="display:flex;align-items:center;justify-content:center;">
-                    <img src="<?php echo AYS_PB_ADMIN_URL . '/images/icons/wordpress-community.svg'; ?>">
+                    <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . '/images/icons/wordpress-community.svg'; ?>">
                 </a>
                 <h3 class="ays-pb-community-item-title"><?php echo esc_html__("Best Free Support", "ays-popup-box"); ?></h3>
                 <p class="ays-pb-community-item-desc"><?php echo esc_html__("With the Free version, you get a lifetime usage for the plugin, however, you will get new updates and support for only 1 month.", "ays-popup-box"); ?></p>
@@ -77,7 +77,7 @@
             </div>
             <div class="ays-pb-community-item">
                 <a href="https://ays-pro.com/contact" target="_blank" class="ays-pb-community-item-cover" style="display:flex;align-items:center;justify-content:center;">
-                    <img src="<?php echo AYS_PB_ADMIN_URL . "/images/icons/users.svg"?>">
+                    <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/users.svg"?>">
                 </a>
                 <h3 class="ays-pb-community-item-title"><?php echo esc_html__("Premium support", "ays-popup-box"); ?></h3>
                 <p class="ays-pb-community-item-desc"><?php echo esc_html__("Get 12 months updates and support for the Business package and lifetime updates and support for the Developer package.", "ays-popup-box"); ?></p>
