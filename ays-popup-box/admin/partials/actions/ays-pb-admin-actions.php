@@ -892,9 +892,9 @@ $popupbox['active_date_check'] = (isset($popupbox['active_date_check']) && $popu
 $active_date_check = (isset($popupbox['active_date_check']) && $popupbox['active_date_check'] == 'on') ? true : false;
 if ($active_date_check) {
     $activateTime = strtotime($popupbox['activeInterval']);
-    $activePopup = date('Y-m-d H:i:s', $activateTime);
+    $activePopup = gmdate('Y-m-d H:i:s', $activateTime);
     $deactivateTime = strtotime($popupbox['deactiveInterval']);
-    $deactivePopup = date('Y-m-d H:i:s', $deactivateTime);
+    $deactivePopup = gmdate('Y-m-d H:i:s', $deactivateTime);
 } else {
     $activePopup = current_time('mysql');
     $deactivePopup = current_time('mysql');
@@ -907,8 +907,8 @@ if ($active_time_check) {
     $activeTime = $popupbox['active_time_start'];
     $deactiveTime = $popupbox['active_time_end'];
 }else{
-    $activeTime = date('H:i:s', strtotime(current_time('mysql')));
-    $deactiveTime = date('H:i:s', strtotime(current_time('mysql')));
+    $activeTime = gmdate('H:i:s', strtotime(current_time('mysql')));
+    $deactiveTime = gmdate('H:i:s', strtotime(current_time('mysql')));
 }
 // Change the popup author
 $change_pb_create_author = (isset($options['create_author']) && $options['create_author'] != '') ? absint( sanitize_text_field($options['create_author']) ) : $user_id;
@@ -1600,7 +1600,7 @@ $ays_users_roles = $wp_roles->roles;
                                     <input type="radio" class="ays-pb-popups-each-data-checker" hidden id="ays_pb_message_var_count_<?php echo esc_attr($var_counter)?>" name="ays_pb_message_var_count">
                                     <div class="ays-pb-popups-each-data">
                                         <input type="hidden" class="ays-pb-popups-each-var" value="<?php echo esc_attr($var); ?>">
-                                        <a href="?page=ays-pb&action=edit&popupbox=<?php echo absint( intval($var_name['id']) ); ?>" target="_blank" class="ays-pb-go-to-popups"><span><?php echo stripslashes(esc_attr($var_name['title'])); ?></span></a>
+                                        <a href="?page=ays-pb&action=edit&popupbox=<?php echo absint( intval($var_name['id']) ); ?>" target="_blank" class="ays-pb-go-to-popups"><span><?php echo esc_attr(stripslashes($var_name['title'])); ?></span></a>
                                     </div>
                                 </label>              
                             <?php endforeach ?>
@@ -1819,7 +1819,7 @@ $ays_users_roles = $wp_roles->roles;
                                     </label>
                                 </div>
                                 <div class="col-sm-9">
-                                    <input type="text" id="ays_pb_image_type_img_redirect_url" name="ays_pb_image_type_img_redirect_url" class="ays-text-input" value="<?php echo $image_type_img_redirect_url; ?>" />
+                                    <input type="text" id="ays_pb_image_type_img_redirect_url" name="ays_pb_image_type_img_redirect_url" class="ays-text-input" value="<?php echo esc_url($image_type_img_redirect_url); ?>" />
                                 </div>
                             </div>
                             <hr>
@@ -1852,7 +1852,7 @@ $ays_users_roles = $wp_roles->roles;
                         </label>
                     </div>
                     <div class="col-sm-9">
-                        <input id="ays_pb_facebook_page_url" class="ays-text-input" name="ays_pb_facebook_page_url" type="text" value="<?php echo $facebook_page_url; ?>" />
+                        <input id="ays_pb_facebook_page_url" class="ays-text-input" name="ays_pb_facebook_page_url" type="text" value="<?php echo esc_url($facebook_page_url); ?>" />
                     </div>
                 </div>
                 <!-- Facebook page URL end -->
@@ -1909,11 +1909,11 @@ $ays_users_roles = $wp_roles->roles;
                                     }
                             ?>
                                     <li class="ui-state-default">
-                                        <div class="toggle_component_options open_component_options" data-open="<?php echo $key ?>">
+                                        <div class="toggle_component_options open_component_options" data-open="<?php echo esc_attr($key); ?>">
                                             <img class="open_component_img" src="<?php echo esc_url(AYS_PB_ADMIN_URL . "/images/icons/edit-component.svg"); ?>">
                                             <img class="close_component_img display_none" src="<?php echo esc_url(AYS_PB_ADMIN_URL . "/images/icons/close-component.svg"); ?>">
                                         </div>
-                                        <input type="hidden" value="<?php echo $key; ?>" name="ays_notification_type_components_order[<?php echo $key; ?>]"/>
+                                        <input type="hidden" value="<?php echo esc_attr($key); ?>" name="ays_notification_type_components_order[<?php echo esc_attr($key); ?>]"/>
                                         <?php
                                             if($key != 'main_content' && $key != 'button_1'):
                                         ?>
@@ -1953,8 +1953,8 @@ $ays_users_roles = $wp_roles->roles;
                                             <div class="<?php echo $notification_logo_image != '' ? '' : 'display_none'; ?> ays-pb-notification-logo-container-main">
                                                 <div class="ays-pb-notification-logo-container">
                                                     <span class="ays-remove-notification-type-logo-img"></span>
-                                                    <img src="<?php echo $notification_logo_image ?>" id="ays_pb_notification_logo">
-                                                    <input type="hidden" name="ays_pb_notification_logo_image" id="ays_pb_notification_logo_image" value="<?php echo $notification_logo_image ; ?>"/>
+                                                    <img src="<?php echo esc_url($notification_logo_image) ?>" id="ays_pb_notification_logo">
+                                                    <input type="hidden" name="ays_pb_notification_logo_image" id="ays_pb_notification_logo_image" value="<?php echo esc_url($notification_logo_image); ?>"/>
                                                 </div>
                                             </div>
                                         </div>
@@ -1971,7 +1971,7 @@ $ays_users_roles = $wp_roles->roles;
                                                 </label>
                                             </div>
                                             <div class="col-sm-9">
-                                                <input type="text" id="ays_pb_notification_logo_redirect_url" class="ays-text-input" name="ays_pb_notification_logo_redirect_url" value="<?php echo $notification_logo_redirect_url ?>" />
+                                                <input type="text" id="ays_pb_notification_logo_redirect_url" class="ays-text-input" name="ays_pb_notification_logo_redirect_url" value="<?php echo esc_url($notification_logo_redirect_url) ?>" />
                                             </div>
                                         </div>
                                         <hr>
@@ -2020,7 +2020,7 @@ $ays_users_roles = $wp_roles->roles;
                                                 <div class="col-sm-9">
                                                     <div style="display: flex; gap: 10px; align-items:center">
                                                         <div>
-                                                            <input type="number" id="ays_pb_notification_logo_width" class="ays-text-input" name="ays_pb_notification_logo_width" value="<?php echo $notification_logo_width ?>" />
+                                                            <input type="number" id="ays_pb_notification_logo_width" class="ays-text-input" name="ays_pb_notification_logo_width" value="<?php echo esc_attr($notification_logo_width); ?>" />
                                                         </div>
                                                         <div class="ays_pb_width_by_percentage_px_box">
                                                             <select name="ays_pb_notification_logo_width_measurement_unit" id="ays_pb_notification_logo_width_measurement_unit" class="ays_pb_aysDropdown ays-pb-percent">
@@ -2048,7 +2048,7 @@ $ays_users_roles = $wp_roles->roles;
                                                 <div class="col-sm-9">
                                                     <div style="display: flex; gap: 10px; align-items:center">
                                                         <div>
-                                                            <input type="number" id="ays_pb_notification_logo_width_mobile" class="ays-text-input" name="ays_pb_notification_logo_width_mobile" value="<?php echo $notification_logo_width_mobile ?>" />
+                                                            <input type="number" id="ays_pb_notification_logo_width_mobile" class="ays-text-input" name="ays_pb_notification_logo_width_mobile" value="<?php echo esc_attr($notification_logo_width_mobile); ?>" />
                                                         </div>
                                                         <div class="ays_pb_width_by_percentage_px_box">
                                                             <select name="ays_pb_notification_logo_width_measurement_unit_mobile" id="ays_pb_notification_logo_width_measurement_unit_mobile" class="ays_pb_aysDropdown ays-pb-percent">
@@ -2088,7 +2088,7 @@ $ays_users_roles = $wp_roles->roles;
                                                 <div class="col-sm-9">
                                                     <div style="display: flex; gap: 10px">
                                                         <div>
-                                                            <input type="number" id="ays_pb_notification_logo_max_width" class="ays-text-input" name="ays_pb_notification_logo_max_width" value="<?php echo $notification_logo_max_width ?>" />
+                                                            <input type="number" id="ays_pb_notification_logo_max_width" class="ays-text-input" name="ays_pb_notification_logo_max_width" value="<?php echo esc_attr($notification_logo_max_width); ?>" />
                                                         </div>
                                                         <div class="ays_pb_width_by_percentage_px_box">
                                                             <select name="ays_pb_notification_logo_max_width_measurement_unit" id="ays_pb_notification_logo_max_width_measurement_unit" class="ays_pb_aysDropdown ays-pb-percent">
@@ -2116,7 +2116,7 @@ $ays_users_roles = $wp_roles->roles;
                                                 <div class="col-sm-9">
                                                     <div style="display: flex; gap: 10px; align-items:center">
                                                         <div>
-                                                            <input type="number" id="ays_pb_notification_logo_max_width_mobile" class="ays-text-input" name="ays_pb_notification_logo_max_width_mobile" value="<?php echo $notification_logo_max_width_mobile ?>" />
+                                                            <input type="number" id="ays_pb_notification_logo_max_width_mobile" class="ays-text-input" name="ays_pb_notification_logo_max_width_mobile" value="<?php echo esc_attr($notification_logo_max_width_mobile); ?>" />
                                                         </div>
                                                         <div class="ays_pb_width_by_percentage_px_box">
                                                             <select name="ays_pb_notification_logo_max_width_measurement_unit_mobile" id="ays_pb_notification_logo_max_width_measurement_unit_mobile" class="ays_pb_aysDropdown ays-pb-percent">
@@ -2156,7 +2156,7 @@ $ays_users_roles = $wp_roles->roles;
                                                 <div class="col-sm-9">
                                                     <div style="display: flex; gap: 10px">
                                                         <div>
-                                                            <input type="number" id="ays_pb_notification_logo_min_width" class="ays-text-input" name="ays_pb_notification_logo_min_width" value="<?php echo $notification_logo_min_width ?>" />
+                                                            <input type="number" id="ays_pb_notification_logo_min_width" class="ays-text-input" name="ays_pb_notification_logo_min_width" value="<?php echo esc_attr($notification_logo_min_width); ?>" />
                                                         </div>
                                                         <div class="ays_pb_width_by_percentage_px_box">
                                                             <select name="ays_pb_notification_logo_min_width_measurement_unit" id="ays_pb_notification_logo_min_width_measurement_unit" class="ays_pb_aysDropdown ays-pb-percent">
@@ -2184,7 +2184,7 @@ $ays_users_roles = $wp_roles->roles;
                                                 <div class="col-sm-9">
                                                     <div style="display: flex; gap: 10px; align-items:center">
                                                         <div>
-                                                            <input type="number" id="ays_pb_notification_logo_min_width_mobile" class="ays-text-input" name="ays_pb_notification_logo_min_width_mobile" value="<?php echo $notification_logo_min_width_mobile ?>" />
+                                                            <input type="number" id="ays_pb_notification_logo_min_width_mobile" class="ays-text-input" name="ays_pb_notification_logo_min_width_mobile" value="<?php echo esc_attr($notification_logo_min_width_mobile); ?>" />
                                                         </div>
                                                         <div class="ays_pb_width_by_percentage_px_box">
                                                             <select name="ays_pb_notification_logo_min_width_measurement_unit_mobile" id="ays_pb_notification_logo_min_width_measurement_unit_mobile" class="ays_pb_aysDropdown ays-pb-percent">
@@ -2214,7 +2214,7 @@ $ays_users_roles = $wp_roles->roles;
                                         <div class="col-sm-9">
                                             <div style="display: flex; gap: 10px">
                                                 <div>
-                                                    <input type="number" id="ays_pb_notification_logo_max_height" class="ays-text-input" name="ays_pb_notification_logo_max_height" value="<?php echo $notification_logo_max_height ?>" />
+                                                    <input type="number" id="ays_pb_notification_logo_max_height" class="ays-text-input" name="ays_pb_notification_logo_max_height" value="<?php echo esc_attr($notification_logo_max_height); ?>" />
                                                 </div>
                                                 <div class="ays_dropdown_max_width">
                                                     <input type="text" value="px" class="ays-form-hint-for-size" disabled>
@@ -2236,7 +2236,7 @@ $ays_users_roles = $wp_roles->roles;
                                         <div class="col-sm-9">
                                             <div style="display: flex; gap: 10px">
                                                 <div>
-                                                    <input type="number" id="ays_pb_notification_logo_min_height" class="ays-text-input" name="ays_pb_notification_logo_min_height" value="<?php echo $notification_logo_min_height ?>" />
+                                                    <input type="number" id="ays_pb_notification_logo_min_height" class="ays-text-input" name="ays_pb_notification_logo_min_height" value="<?php echo esc_attr($notification_logo_min_height); ?>" />
                                                 </div>
                                                 <div class="ays_dropdown_max_width">
                                                     <input type="text" value="px" class="ays-form-hint-for-size" disabled>
@@ -2264,8 +2264,8 @@ $ays_users_roles = $wp_roles->roles;
                                                             $selected = 'selected';
                                                         }
                                                 ?>
-                                                <option value="<?php echo $key ;?>" <?php echo $selected ;?>>
-                                                    <?php echo $image_size; ?>
+                                                <option value="<?php echo esc_attr($key); ?>" <?php echo esc_attr($selected); ?>>
+                                                    <?php echo esc_html($image_size); ?>
                                                 </option>
                                                 <?php
                                                     }
@@ -2324,7 +2324,7 @@ $ays_users_roles = $wp_roles->roles;
                                             </label>
                                         </div>
                                         <div class="col-sm-9">
-                                            <input type="text" id="ays_pb_notification_button_1_text" class="ays-text-input" name="ays_pb_notification_button_1_text" value="<?php echo $notification_button_1_text ?>" />
+                                            <input type="text" id="ays_pb_notification_button_1_text" class="ays-text-input" name="ays_pb_notification_button_1_text" value="<?php echo esc_attr($notification_button_1_text); ?>" />
                                         </div>
                                     </div>
                                     <hr>
@@ -2338,7 +2338,7 @@ $ays_users_roles = $wp_roles->roles;
                                             </label>
                                         </div>
                                         <div class="col-sm-9">
-                                            <input type="text" id="ays_pb_notification_button_1_hover_text" class="ays-text-input" name="ays_pb_notification_button_1_hover_text" value="<?php echo $notification_button_1_hover_text ?>" />
+                                            <input type="text" id="ays_pb_notification_button_1_hover_text" class="ays-text-input" name="ays_pb_notification_button_1_hover_text" value="<?php echo esc_attr($notification_button_1_hover_text); ?>" />
                                         </div>
                                     </div>
                                     <hr>
@@ -2352,7 +2352,7 @@ $ays_users_roles = $wp_roles->roles;
                                             </label>
                                         </div>
                                         <div class="col-sm-9">
-                                            <input type="text" id="ays_pb_notification_button_1_redirect_url" class="ays-text-input" name="ays_pb_notification_button_1_redirect_url" value="<?php echo $notification_button_1_redirect_url ?>" />
+                                            <input type="text" id="ays_pb_notification_button_1_redirect_url" class="ays-text-input" name="ays_pb_notification_button_1_redirect_url" value="<?php echo esc_attr($notification_button_1_redirect_url); ?>" />
                                         </div>
                                     </div>
                                     <hr>
@@ -2366,7 +2366,7 @@ $ays_users_roles = $wp_roles->roles;
                                             </label>
                                         </div>
                                         <div class="col-sm-9">
-                                            <input type="checkbox" id="ays_pb_notification_button_1_redirect_to_new_tab" name="ays_pb_notification_button_1_redirect_to_new_tab" <?php echo $notification_button_1_redirect_to_new_tab ? 'checked' : ''; ?>>
+                                            <input type="checkbox" id="ays_pb_notification_button_1_redirect_to_new_tab" name="ays_pb_notification_button_1_redirect_to_new_tab" <?php echo esc_attr($notification_button_1_redirect_to_new_tab) ? 'checked' : ''; ?>>
                                         </div>
                                     </div>
                                 </div>
@@ -2388,7 +2388,7 @@ $ays_users_roles = $wp_roles->roles;
                                             </label>
                                         </div>
                                         <div class="col-sm-9">
-                                            <input type="text" id="ays_pb_notification_button_1_bg_color" class="ays_pb_color_input" name="ays_pb_notification_button_1_bg_color" value="<?php echo $notification_button_1_bg_color ?>" data-default-color="#F66123" data-alpha="true" />
+                                            <input type="text" id="ays_pb_notification_button_1_bg_color" class="ays_pb_color_input" name="ays_pb_notification_button_1_bg_color" value="<?php echo esc_attr($notification_button_1_bg_color); ?>" data-default-color="#F66123" data-alpha="true" />
                                         </div>
                                     </div>
                                     <hr>
@@ -2402,7 +2402,7 @@ $ays_users_roles = $wp_roles->roles;
                                             </label>
                                         </div>
                                         <div class="col-sm-9">
-                                            <input type="text" id="ays_pb_notification_button_1_bg_hover_color" class="ays_pb_color_input" name="ays_pb_notification_button_1_bg_hover_color" value="<?php echo $notification_button_1_bg_hover_color ?>" data-default-color="#F66123" data-alpha="true" />
+                                            <input type="text" id="ays_pb_notification_button_1_bg_hover_color" class="ays_pb_color_input" name="ays_pb_notification_button_1_bg_hover_color" value="<?php echo esc_attr($notification_button_1_bg_hover_color); ?>" data-default-color="#F66123" data-alpha="true" />
                                         </div>
                                     </div>
                                 </div>
@@ -2424,7 +2424,7 @@ $ays_users_roles = $wp_roles->roles;
                                             </label>
                                         </div>
                                         <div class="col-sm-9">
-                                            <input type="text" id="ays_pb_notification_button_1_text_color" class="ays_pb_color_input" name="ays_pb_notification_button_1_text_color" value="<?php echo $notification_button_1_text_color ?>" data-default-color="#FFFFFF" data-alpha="true" />
+                                            <input type="text" id="ays_pb_notification_button_1_text_color" class="ays_pb_color_input" name="ays_pb_notification_button_1_text_color" value="<?php echo esc_attr($notification_button_1_text_color); ?>" data-default-color="#FFFFFF" data-alpha="true" />
                                         </div>
                                     </div>
                                     <hr>
@@ -2438,7 +2438,7 @@ $ays_users_roles = $wp_roles->roles;
                                             </label>
                                         </div>
                                         <div class="col-sm-9">
-                                            <input type="text" id="ays_pb_notification_button_1_text_hover_color" class="ays_pb_color_input" name="ays_pb_notification_button_1_text_hover_color" value="<?php echo $notification_button_1_text_hover_color ?>" data-default-color="#FFFFFF" data-alpha="true" />
+                                            <input type="text" id="ays_pb_notification_button_1_text_hover_color" class="ays_pb_color_input" name="ays_pb_notification_button_1_text_hover_color" value="<?php echo esc_attr($notification_button_1_text_hover_color); ?>" data-default-color="#FFFFFF" data-alpha="true" />
                                         </div>
                                     </div>
                                     <hr>
@@ -2460,8 +2460,8 @@ $ays_users_roles = $wp_roles->roles;
                                                             $selected = 'selected';
                                                         }
                                                 ?>
-                                                <option value="<?php echo $key ;?>" <?php echo $selected ;?>>
-                                                    <?php echo $text_transform; ?>
+                                                <option value="<?php echo esc_attr($key); ?>" <?php echo esc_attr($selected); ?>>
+                                                    <?php echo esc_html($text_transform); ?>
                                                 </option>
                                                 <?php
                                                     }
@@ -2488,8 +2488,8 @@ $ays_users_roles = $wp_roles->roles;
                                                             $selected = 'selected';
                                                         }
                                                 ?>
-                                                <option value="<?php echo $key ;?>" <?php echo $selected ;?>>
-                                                    <?php echo $text_decoration; ?>
+                                                <option value="<?php echo esc_attr($key); ?>" <?php echo esc_attr($selected); ?>>
+                                                    <?php echo esc_html($text_decoration); ?>
                                                 </option>
                                                 <?php
                                                     }
@@ -2518,7 +2518,7 @@ $ays_users_roles = $wp_roles->roles;
                                                     </label>
                                                 </div>
                                                 <div class="col-sm-9">
-                                                    <input id="ays_pb_notification_button_1_letter_spacing" class="ays-pb-text-input ays-pb-text-input-short" name="ays_pb_notification_button_1_letter_spacing" type="number" value="<?php echo $notification_button_1_letter_spacing; ?>">
+                                                    <input id="ays_pb_notification_button_1_letter_spacing" class="ays-pb-text-input ays-pb-text-input-short" name="ays_pb_notification_button_1_letter_spacing" type="number" value="<?php echo esc_attr($notification_button_1_letter_spacing); ?>">
                                                 </div>
                                             </div>
                                             <hr>
@@ -2532,7 +2532,7 @@ $ays_users_roles = $wp_roles->roles;
                                                     </label>
                                                 </div>
                                                 <div class="col-sm-9">
-                                                    <input id="ays_pb_notification_button_1_letter_spacing_mobile" class="ays-pb-text-input ays-pb-text-input-short" name="ays_pb_notification_button_1_letter_spacing_mobile" type="number" value="<?php echo $notification_button_1_letter_spacing_mobile; ?>">
+                                                    <input id="ays_pb_notification_button_1_letter_spacing_mobile" class="ays-pb-text-input ays-pb-text-input-short" name="ays_pb_notification_button_1_letter_spacing_mobile" type="number" value="<?php echo esc_attr($notification_button_1_letter_spacing_mobile); ?>">
                                                 </div>
                                             </div>
                                         </div>
@@ -2558,7 +2558,7 @@ $ays_users_roles = $wp_roles->roles;
                                                     </label>
                                                 </div>
                                                 <div class="col-sm-9">
-                                                    <input id="ays_pb_notification_button_1_font_size" class="ays-pb-text-input ays-pb-text-input-short" name="ays_pb_notification_button_1_font_size" type="number" value="<?php echo $notification_button_1_font_size; ?>">
+                                                    <input id="ays_pb_notification_button_1_font_size" class="ays-pb-text-input ays-pb-text-input-short" name="ays_pb_notification_button_1_font_size" type="number" value="<?php echo esc_attr($notification_button_1_font_size); ?>">
                                                 </div>
                                             </div>
                                             <hr>
@@ -2572,7 +2572,7 @@ $ays_users_roles = $wp_roles->roles;
                                                     </label>
                                                 </div>
                                                 <div class="col-sm-9">
-                                                    <input id="ays_pb_notification_button_1_font_size_mobile" class="ays-pb-text-input ays-pb-text-input-short" name="ays_pb_notification_button_1_font_size_mobile" type="number" value="<?php echo $notification_button_1_font_size_mobile; ?>">
+                                                    <input id="ays_pb_notification_button_1_font_size_mobile" class="ays-pb-text-input ays-pb-text-input-short" name="ays_pb_notification_button_1_font_size_mobile" type="number" value="<?php echo esc_attr($notification_button_1_font_size_mobile); ?>">
                                                 </div>
                                             </div>
                                         </div>
@@ -2606,8 +2606,8 @@ $ays_users_roles = $wp_roles->roles;
                                                                     $selected = 'selected';
                                                                 }
                                                         ?>
-                                                        <option value="<?php echo $key ;?>" <?php echo $selected ;?>>
-                                                            <?php echo $font_weight; ?>
+                                                        <option value="<?php echo esc_attr($key); ?>" <?php echo esc_attr($selected); ?>>
+                                                            <?php echo esc_html($font_weight); ?>
                                                         </option>
                                                         <?php
                                                             }
@@ -2634,8 +2634,8 @@ $ays_users_roles = $wp_roles->roles;
                                                                     $selected = 'selected';
                                                                 }
                                                         ?>
-                                                        <option value="<?php echo $key ;?>" <?php echo $selected ;?>>
-                                                            <?php echo $font_weight; ?>
+                                                        <option value="<?php echo esc_attr($key); ?>" <?php echo esc_attr($selected); ?>>
+                                                            <?php echo esc_html($font_weight); ?>
                                                         </option>
                                                         <?php
                                                             }
@@ -2664,7 +2664,7 @@ $ays_users_roles = $wp_roles->roles;
                                             </label>
                                         </div>
                                         <div class="col-sm-9">
-                                            <input id="ays_pb_notification_button_1_border_radius" class="ays-pb-text-input ays-pb-text-input-short" name="ays_pb_notification_button_1_border_radius" type="number" value="<?php echo $notification_button_1_border_radius; ?>">
+                                            <input id="ays_pb_notification_button_1_border_radius" class="ays-pb-text-input ays-pb-text-input-short" name="ays_pb_notification_button_1_border_radius" type="number" value="<?php echo esc_attr($notification_button_1_border_radius); ?>">
                                         </div>
                                     </div>
                                     <hr>
@@ -2678,7 +2678,7 @@ $ays_users_roles = $wp_roles->roles;
                                             </label>
                                         </div>
                                         <div class="col-sm-9">
-                                            <input id="ays_pb_notification_button_1_border_width" class="ays-pb-text-input ays-pb-text-input-short" name="ays_pb_notification_button_1_border_width" type="number" value="<?php echo $notification_button_1_border_width; ?>">
+                                            <input id="ays_pb_notification_button_1_border_width" class="ays-pb-text-input ays-pb-text-input-short" name="ays_pb_notification_button_1_border_width" type="number" value="<?php echo esc_attr($notification_button_1_border_width); ?>">
                                         </div>
                                     </div>
                                     <hr>
@@ -2692,7 +2692,7 @@ $ays_users_roles = $wp_roles->roles;
                                             </label>
                                         </div>
                                         <div class="col-sm-9">
-                                            <input type="text" id="ays_pb_notification_button_1_border_color" class="ays_pb_color_input" name="ays_pb_notification_button_1_border_color" value="<?php echo $notification_button_1_border_color ?>" data-default-color="#FFFFFF" data-alpha="true" />
+                                            <input type="text" id="ays_pb_notification_button_1_border_color" class="ays_pb_color_input" name="ays_pb_notification_button_1_border_color" value="<?php echo esc_attr($notification_button_1_border_color); ?>" data-default-color="#FFFFFF" data-alpha="true" />
                                         </div>
                                     </div>
                                     <hr>
@@ -2717,8 +2717,8 @@ $ays_users_roles = $wp_roles->roles;
                                                             $selected = "selected";
                                                         }
                                                 ?>
-                                                <option value="<?php echo $key ;?>" <?php echo $selected ;?>>
-                                                    <?php echo $border_style; ?>
+                                                <option value="<?php echo esc_attr($key); ?>" <?php echo esc_attr($selected); ?>>
+                                                    <?php echo esc_html($border_style); ?>
                                                 </option>
                                                 <?php
                                                     }
@@ -2749,11 +2749,11 @@ $ays_users_roles = $wp_roles->roles;
                                         <div class="col-sm-9 ays_pb_notification_button_paddings_container">
                                             <div class="col-sm-4">
                                                 <span class="ays-pb-small-hint-text"><?php echo  esc_html__('Left / Right',"ays-popup-box") ?></span>
-                                                <input type="number" class="ays-pb-text-input ays-pb-text-input-short" id="ays_pb_notification_button_1_padding_left_right" name="ays_pb_notification_button_1_padding_left_right" style="width: 100px;" value="<?php echo $notification_button_1_padding_left_right; ?>">
+                                                <input type="number" class="ays-pb-text-input ays-pb-text-input-short" id="ays_pb_notification_button_1_padding_left_right" name="ays_pb_notification_button_1_padding_left_right" style="width: 100px;" value="<?php echo esc_attr($notification_button_1_padding_left_right); ?>">
                                             </div>
                                             <div class="col-sm-4 ays_divider_left">
                                                 <span class="ays-pb-small-hint-text"><?php echo  esc_html__('Top / Bottom',"ays-popup-box") ?></span>
-                                                <input type="number" class="ays-pb-text-input ays-pb-text-input-short" id="ays_pb_notification_button_1_padding_top_bottom" name="ays_pb_notification_button_1_padding_top_bottom" style="width: 100px;" value="<?php echo $notification_button_1_padding_top_bottom; ?>">
+                                                <input type="number" class="ays-pb-text-input ays-pb-text-input-short" id="ays_pb_notification_button_1_padding_top_bottom" name="ays_pb_notification_button_1_padding_top_bottom" style="width: 100px;" value="<?php echo esc_attr($notification_button_1_padding_top_bottom); ?>">
                                             </div>
                                         </div>
                                     </div>
@@ -2770,7 +2770,7 @@ $ays_users_roles = $wp_roles->roles;
                                         <div class="col-sm-9">
                                             <div style="display: flex; gap: 10px">
                                                 <div>
-                                                    <input id="ays_pb_notification_button_1_transition" class="ays-pb-text-input ays-pb-text-input-short" name="ays_pb_notification_button_1_transition" type="number" step="0.1" value="<?php echo $notification_button_1_transition; ?>">
+                                                    <input id="ays_pb_notification_button_1_transition" class="ays-pb-text-input ays-pb-text-input-short" name="ays_pb_notification_button_1_transition" type="number" step="0.1" value="<?php echo esc_attr($notification_button_1_transition); ?>">
                                                 </div>
                                                 <div class="ays_dropdown_max_width">
                                                     <input type="text" value="sec" class="ays-form-hint-for-size" disabled>
@@ -2803,22 +2803,22 @@ $ays_users_roles = $wp_roles->roles;
                                                                     <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                                                 </a>
                                                             </label>
-                                                            <input type="text" class="ays_pb_color_input" id='ays_pb_notification_button_1_box_shadow_color' name='ays_pb_notification_button_1_box_shadow_color' data-alpha="true" data-default-color="#000000" value="<?php echo $notification_button_1_box_shadow_color; ?>"/>
+                                                            <input type="text" class="ays_pb_color_input" id='ays_pb_notification_button_1_box_shadow_color' name='ays_pb_notification_button_1_box_shadow_color' data-alpha="true" data-default-color="#000000" value="<?php echo esc_attr($notification_button_1_box_shadow_color); ?>"/>
                                                         </div>
                                                     </div>
                                                     <hr>
                                                     <div class="form-group row">
                                                         <div class="col-sm-4 ays_pb_notification_button_offset_container">
                                                             <span class="ays_pb_small_hint_text"><?php echo esc_html__('X', "ays-popup-box"); ?></span>
-                                                            <input type="number" class="ays-text-input ays-text-input-90-width" id='ays_pb_notification_button_1_box_shadow_x_offset' name='ays_pb_notification_button_1_box_shadow_x_offset' value="<?php echo $notification_button_1_box_shadow_x_offset; ?>" />
+                                                            <input type="number" class="ays-text-input ays-text-input-90-width" id='ays_pb_notification_button_1_box_shadow_x_offset' name='ays_pb_notification_button_1_box_shadow_x_offset' value="<?php echo esc_attr($notification_button_1_box_shadow_x_offset); ?>" />
                                                         </div>
                                                         <div class="col-sm-4 ays_divider_left ays_pb_notification_button_offset_container">
                                                             <span class="ays_pb_small_hint_text"><?php echo esc_html__('Y', "ays-popup-box"); ?></span>
-                                                            <input type="number" class="ays-text-input ays-text-input-90-width" id='ays_pb_notification_button_1_box_shadow_y_offset' name='ays_pb_notification_button_1_box_shadow_y_offset' value="<?php echo $notification_button_1_box_shadow_y_offset; ?>" />
+                                                            <input type="number" class="ays-text-input ays-text-input-90-width" id='ays_pb_notification_button_1_box_shadow_y_offset' name='ays_pb_notification_button_1_box_shadow_y_offset' value="<?php echo esc_attr($notification_button_1_box_shadow_y_offset); ?>" />
                                                         </div>
                                                         <div class="col-sm-4 ays_divider_left ays_pb_notification_button_offset_container">
                                                             <span class="ays_pb_small_hint_text"><?php echo esc_html__('Z', "ays-popup-box"); ?></span>
-                                                            <input type="number" class="ays-text-input ays-text-input-90-width" id='ays_pb_notification_button_1_box_shadow_z_offset' name='ays_pb_notification_button_1_box_shadow_z_offset' value="<?php echo $notification_button_1_box_shadow_z_offset; ?>" />
+                                                            <input type="number" class="ays-text-input ays-text-input-90-width" id='ays_pb_notification_button_1_box_shadow_z_offset' name='ays_pb_notification_button_1_box_shadow_z_offset' value="<?php echo esc_attr($notification_button_1_box_shadow_z_offset); ?>" />
                                                         </div>
                                                     </div>
                                                 </div>
@@ -2833,7 +2833,7 @@ $ays_users_roles = $wp_roles->roles;
                 <hr class="ays_pb_hide_for_video_type ays_pb_hide_for_image_type ays_pb_hide_for_notification_type <?php echo ($modal_content == 'video_type' || $modal_content == 'image_type' || $modal_content == 'notification_type') ? 'display_none' : ''; ?>">
                 <div class="form-group row ays-field ays_pb_hide_for_video_type ays_pb_hide_for_image_type ays_pb_hide_for_notification_type <?php echo ($modal_content == 'video_type' || $modal_content == 'image_type' || $modal_content == 'notification_type') ? 'display_none' : ''; ?>" id="ays-popup-box-description">
                     <div class="col-sm-3">
-                        <label for="<?php echo $this->plugin_name; ?>-popup_description">
+                        <label for="<?php echo esc_attr($this->plugin_name); ?>-popup_description">
                             <span><?php echo esc_html__('Popup description', "ays-popup-box"); ?></span>
                             <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__("The option is not being displayed on the front-end by default. Please activate it from the Styles tab.", "ays-popup-box"); ?>">
                                 <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
@@ -2874,7 +2874,7 @@ $ays_users_roles = $wp_roles->roles;
                 <hr>
                 <div class="form-group row">
                     <div class="col-sm-3">
-                        <label for="<?php echo $this->plugin_name; ?>-show_all_yes">
+                        <label for="<?php echo esc_attr($this->plugin_name); ?>-show_all_yes">
                             <span><?php echo esc_html__('Display', "ays-popup-box"); ?></span>
                             <a class="ays_help" data-toggle="tooltip" data-html="true"
                                 title="<?php
@@ -2885,14 +2885,14 @@ $ays_users_roles = $wp_roles->roles;
                         </label>
                     </div>
                     <div class="col-sm-9">
-                        <label class="ays-pb-label-style" for="<?php echo $this->plugin_name; ?>-show_all_yes"><?php echo esc_html__("All pages", "ays-popup-box"); ?>
-                            <input type="radio" id="<?php echo $this->plugin_name; ?>-show_all_yes" name="<?php echo $this->plugin_name; ?>[show_all]" value="all" <?php echo $show_all == 'yes' || $show_all == 'all' ? 'checked' : ''; ?> />
+                        <label class="ays-pb-label-style" for="<?php echo esc_attr($this->plugin_name); ?>-show_all_yes"><?php echo esc_html__("All pages", "ays-popup-box"); ?>
+                            <input type="radio" id="<?php echo esc_attr($this->plugin_name); ?>-show_all_yes" name="<?php echo esc_attr($this->plugin_name); ?>[show_all]" value="all" <?php echo $show_all == 'yes' || $show_all == 'all' ? 'checked' : ''; ?> />
                         </label>
-                        <label class="ays-pb-label-style" for="<?php echo $this->plugin_name; ?>-show_all_except"><?php echo esc_html__("Except", "ays-popup-box"); ?>
-                            <input type="radio" id="<?php echo $this->plugin_name; ?>-show_all_except" name="<?php echo $this->plugin_name; ?>[show_all]" value="except" <?php echo $show_all == 'except' ? 'checked' : ''; ?>/>
+                        <label class="ays-pb-label-style" for="<?php echo esc_attr($this->plugin_name); ?>-show_all_except"><?php echo esc_html__("Except", "ays-popup-box"); ?>
+                            <input type="radio" id="<?php echo esc_attr($this->plugin_name); ?>-show_all_except" name="<?php echo esc_attr($this->plugin_name); ?>[show_all]" value="except" <?php echo $show_all == 'except' ? 'checked' : ''; ?>/>
                         </label>
-                        <label class="ays-pb-label-style" for="<?php echo $this->plugin_name; ?>-show_all_selected"><?php echo esc_html__("Include", "ays-popup-box"); ?>
-                            <input type="radio" id="<?php echo $this->plugin_name; ?>-show_all_selected" name="<?php echo $this->plugin_name; ?>[show_all]" value="selected" <?php echo $show_all == 'selected' || $show_all == 'no' ? 'checked' : ''; ?>/>
+                        <label class="ays-pb-label-style" for="<?php echo esc_attr($this->plugin_name); ?>-show_all_selected"><?php echo esc_html__("Include", "ays-popup-box"); ?>
+                            <input type="radio" id="<?php echo esc_attr($this->plugin_name); ?>-show_all_selected" name="<?php echo esc_attr($this->plugin_name); ?>[show_all]" value="selected" <?php echo $show_all == 'selected' || $show_all == 'no' ? 'checked' : ''; ?>/>
                         </label>
                         <a class="ays_help" style="font-size:15px;" data-toggle="tooltip" data-html="true"
                             title="<?php
@@ -2927,7 +2927,12 @@ $ays_users_roles = $wp_roles->roles;
                                         }else{
                                             $checked = "";
                                         }
-                                        echo "<option value='{$post_type->name}' {$checked}>{$post_type->label}</option>";
+                                        echo wp_kses("<option value='{$post_type->name}' {$checked}>{$post_type->label}</option>", array(
+                                            'option' => array(
+                                                'value' => array(),
+                                                'selected' => array()
+                                            )
+                                        ));
                                     }
                                 ?>
                             </select>
@@ -3002,7 +3007,7 @@ $ays_users_roles = $wp_roles->roles;
                 <hr class="ays_pb_hide_for_notification_type <?php echo ($modal_content == 'notification_type') ? 'display_none' : ''; ?>">
                 <div class="form-group row ays_pb_hide_for_notification_type <?php echo ($modal_content == 'notification_type') ? 'display_none' : ''; ?>">
                     <div class="col-sm-3">
-                        <label for="<?php echo $this->plugin_name; ?>-action_button_type">
+                        <label for="<?php echo esc_attr($this->plugin_name); ?>-action_button_type">
                             <span> <?php echo esc_html__('Popup trigger', "ays-popup-box"); ?></span>
                                 <a class="ays_help" data-toggle="tooltip" data-html="true"
                                 title="<?php
@@ -3019,7 +3024,7 @@ $ays_users_roles = $wp_roles->roles;
                         </label>
                     </div>
                     <div class="col-sm-9">
-                        <select id="<?php echo $this->plugin_name; ?>-action_button_type" class="ays_pb_aysDropdown" name="<?php echo $this->plugin_name; ?>[action_button_type]">
+                        <select id="<?php echo esc_attr($this->plugin_name); ?>-action_button_type" class="ays_pb_aysDropdown" name="<?php echo esc_attr($this->plugin_name); ?>[action_button_type]">
                             <option <?php if(!isset($action_button_type)){ echo 'selected'; } echo 'both' == $action_button_type ? 'selected' : ''; ?> value="both"><?php echo esc_html__('Both (On page load & On click)', "ays-popup-box"); ?></option>
                             <option <?php echo 'pageLoaded' == $action_button_type ? 'selected' : ''; ?> value="pageLoaded"><?php echo esc_html__('Onload', "ays-popup-box"); ?></option>
                             <option <?php echo 'clickSelector' == $action_button_type ? 'selected' : ''; ?> value="clickSelector"><?php echo esc_html__('On Click', "ays-popup-box"); ?></option>
@@ -3057,7 +3062,7 @@ $ays_users_roles = $wp_roles->roles;
                 <hr class="ays_pb_hide_for_notification_type <?php echo ($modal_content != 'notification_type' && ('clickSelector' == $action_button_type  || 'both' == $action_button_type))  ? '' : 'display_none'; ?>">
                 <div class="form-group row ays-pb-open-click-hover ays_pb_hide_for_notification_type <?php echo ($modal_content != 'notification_type' && ('clickSelector' == $action_button_type  || 'both' == $action_button_type))  ? '' : 'display_none'; ?>">
                     <div class="col-sm-3">
-                        <label for="<?php echo $this->plugin_name; ?>-action_button">
+                        <label for="<?php echo esc_attr($this->plugin_name); ?>-action_button">
                     <span>
                         <?php echo esc_html__('CSS selector(s) for trigger click', "ays-popup-box"); ?>
                         <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__("Add your preferred CSS selector(s) if you have given “On click” or “Both” value to the “Popup trigger” option. For example #mybutton or .mybutton.", "ays-popup-box"); ?>">
@@ -3067,7 +3072,7 @@ $ays_users_roles = $wp_roles->roles;
                         </label>
                     </div>
                     <div class="col-sm-9">
-                        <input type="text" id="<?php echo $this->plugin_name; ?>-action_button" name="<?php echo $this->plugin_name; ?>[action_button]"  class="ays-text-input" value="<?php echo $action_button; ?>" placeholder="#myButtonId, .myButtonClass, .myButton" />
+                        <input type="text" id="<?php echo esc_attr($this->plugin_name); ?>-action_button" name="<?php echo esc_attr($this->plugin_name); ?>[action_button]"  class="ays-text-input" value="<?php echo $action_button; ?>" placeholder="#myButtonId, .myButtonClass, .myButton" />
                         <span style="display:block;" class="ays-pb-small-hint-text"><?php echo esc_html__( 'Enter the class starting with a “ . ” and id with a “ # ”', "ays-popup-box" ); ?></span>
                     </div>
                 </div>
@@ -3075,7 +3080,7 @@ $ays_users_roles = $wp_roles->roles;
                 <div class="pb_position_block ays_pb_hide_for_notification_type <?php echo ($modal_content == 'notification_type') ? 'display_none' : ''; ?>">
                     <div class="form-group row">
                         <div class="col-sm-3">
-                            <label for="<?php echo $this->plugin_name; ?>-position">
+                            <label for="<?php echo esc_attr($this->plugin_name); ?>-position">
                                 <span><?php echo esc_html__('Popup position', "ays-popup-box"); ?></span>
                                 <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__("Specify the position of the popup on the screen. ", "ays-popup-box"); ?>">
                                     <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
@@ -3131,14 +3136,14 @@ $ays_users_roles = $wp_roles->roles;
                                     </table>
                                 </div>
                             </div>
-                            <input type="hidden" name="<?php echo $this->plugin_name; ?>[pb_position]" class="ays-pb-position-val-class" id="ays-pb-position-val" value="<?php echo $pb_position; ?>" >
+                            <input type="hidden" name="<?php echo esc_attr($this->plugin_name); ?>[pb_position]" class="ays-pb-position-val-class" id="ays-pb-position-val" value="<?php echo $pb_position; ?>" >
                             <input type="hidden" name="ays_pb_position_mobile" class="ays-pb-position-val-class-mobile" id="ays-pb-position-val-mobile" value="<?php echo $pb_position_mobile; ?>" >
                         </div>
                     </div>
                     <hr class="ays_pb_hr_hide" />
                     <div id="popupMargin" class="form-group row">
                         <div class="col-sm-3">
-                            <label for="<?php echo $this->plugin_name; ?>-pb_margin">
+                            <label for="<?php echo esc_attr($this->plugin_name); ?>-pb_margin">
                                 <span><?php echo esc_html__('Popup margin(px)', "ays-popup-box"); ?></span>
                                 <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__("Specify the popup margin in pixels. It accepts only numerical values.", "ays-popup-box"); ?>">
                                     <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
@@ -3146,7 +3151,7 @@ $ays_users_roles = $wp_roles->roles;
                             </label>
                         </div>
                         <div class="col-sm-9">
-                            <input type="number" id="<?php echo $this->plugin_name; ?>-pb_margin" name="<?php echo $this->plugin_name; ?>[pb_margin]"  class="ays-pb-text-input ays-pb-text-input-short"  value="<?php echo $pb_margin; ?>" />
+                            <input type="number" id="<?php echo esc_attr($this->plugin_name); ?>-pb_margin" name="<?php echo esc_attr($this->plugin_name); ?>[pb_margin]"  class="ays-pb-text-input ays-pb-text-input-short"  value="<?php echo $pb_margin; ?>" />
                         </div>
                     </div>
                 </div>
@@ -3173,7 +3178,7 @@ $ays_users_roles = $wp_roles->roles;
                         <!-- Opening delay starts -->
                         <div class="form-group row ays_pb_hide_for_notification_type <?php echo ($modal_content == 'notification_type') ? 'display_none' : ''; ?>">
                             <div class="col-sm-3">
-                                <label for="<?php echo $this->plugin_name; ?>-delay" style="margin-bottom:0px;">
+                                <label for="<?php echo esc_attr($this->plugin_name); ?>-delay" style="margin-bottom:0px;">
                                     <span><?php echo esc_html__('Open Delay ', "ays-popup-box"); ?></span>
                                     <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__("Open the popup when a visitor has viewed your website content for a specified period of time (in milliseconds). To disable the option leave it blank or set it to 0.", "ays-popup-box"); ?>">
                                         <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
@@ -3186,7 +3191,7 @@ $ays_users_roles = $wp_roles->roles;
                                         <!-- opening delay Desktop -->
                                         <div class="ays_popup_display_flex_width">
                                             <div>
-                                                <input type="number" id="<?php echo $this->plugin_name; ?>-delay" name="<?php echo $this->plugin_name; ?>[delay]"  class="ays-pb-text-input ays-pb-text-input-short"  value="<?php echo $open_delay; ?>">
+                                                <input type="number" id="<?php echo esc_attr($this->plugin_name); ?>-delay" name="<?php echo esc_attr($this->plugin_name); ?>[delay]"  class="ays-pb-text-input ays-pb-text-input-short"  value="<?php echo $open_delay; ?>">
                                                 <span style="display:block;" class="ays-pb-small-hint-text"><?php echo esc_html__( '1 sec = 1000 ms', "ays-popup-box" ); ?></span>
                                                 <div style="text-align: center;">
                                                     <span class="ays_pb_current_device_name <?php echo $enable_open_delay_mobile ? 'show' : '' ?>"><?php echo esc_html__('Desktop', "ays-popup-box") ?></span>
@@ -3199,7 +3204,7 @@ $ays_users_roles = $wp_roles->roles;
                                         <!-- opening delay Mobile -->
                                         <div class="ays_pb_option_for_mobile_device ays_popup_display_flex_width ays_divider_left <?php echo $enable_open_delay_mobile ? 'show' : '' ?>">
                                             <div>
-                                                <input type="number" id="<?php echo $this->plugin_name; ?>-delay-mobile" name="ays_pb_open_delay_mobile"  class="ays-pb-text-input ays-pb-text-input-short"  value="<?php echo $open_delay_mobile ?>">
+                                                <input type="number" id="<?php echo esc_attr($this->plugin_name); ?>-delay-mobile" name="ays_pb_open_delay_mobile"  class="ays-pb-text-input ays-pb-text-input-short"  value="<?php echo $open_delay_mobile ?>">
                                                 <span style="display:block;" class="ays-pb-small-hint-text"><?php echo esc_html__( '1 sec = 1000 ms', "ays-popup-box" ); ?></span>
                                                 <div style="text-align: center;">
                                                     <span class="ays_pb_current_device_name <?php echo $enable_open_delay_mobile ? 'show' : '' ?>"><?php echo esc_html__('Mobile', "ays-popup-box") ?></span>
@@ -3229,7 +3234,7 @@ $ays_users_roles = $wp_roles->roles;
                         <!-- Scroll from top starts -->
                         <div class="form-group row ays_pb_hide_for_notification_type <?php echo ($modal_content == 'notification_type') ? 'display_none' : ''; ?>">
                             <div class="col-sm-3">
-                                <label for="<?php echo $this->plugin_name; ?>-scroll_top">
+                                <label for="<?php echo esc_attr($this->plugin_name); ?>-scroll_top">
                                     <span><?php echo esc_html__('Open by Scrolling Down', "ays-popup-box"); ?></span>
                                      <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__("Define the scroll length by pixels to open the popup when scrolling. To disable the option leave it blank or set it to 0.", "ays-popup-box"); ?>">
                                         <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
@@ -3242,7 +3247,7 @@ $ays_users_roles = $wp_roles->roles;
                                         <!-- Scroll from top desktop -->
                                         <div class="ays_popup_display_flex_width">
                                             <div>
-                                                <input type="number" id="<?php echo $this->plugin_name; ?>-scroll_top" name="<?php echo $this->plugin_name; ?>[scroll_top]"  class="ays-pb-text-input ays-pb-text-input-short"  value="<?php echo $scroll_top; ?>">
+                                                <input type="number" id="<?php echo esc_attr($this->plugin_name); ?>-scroll_top" name="<?php echo esc_attr($this->plugin_name); ?>[scroll_top]"  class="ays-pb-text-input ays-pb-text-input-short"  value="<?php echo $scroll_top; ?>">
                                                 <div style="text-align: center;">
                                                     <span class="ays_pb_current_device_name <?php echo $enable_scroll_top_mobile ? 'show' : '' ?>"><?php echo esc_html__('Desktop', "ays-popup-box") ?></span>
                                                 </div>
@@ -3254,7 +3259,7 @@ $ays_users_roles = $wp_roles->roles;
                                         <!-- Scroll from top Mobile -->
                                         <div class="ays_pb_option_for_mobile_device ays_popup_display_flex_width ays_divider_left <?php echo $enable_scroll_top_mobile ? 'show' : '' ?>">
                                             <div>
-                                                <input type="number" id="<?php echo $this->plugin_name; ?>-scroll_top-mobile" name="ays_pb_scroll_top_mobile"  class="ays-pb-text-input ays-pb-text-input-short"  value="<?php echo $scroll_top_mobile ?>">
+                                                <input type="number" id="<?php echo esc_attr($this->plugin_name); ?>-scroll_top-mobile" name="ays_pb_scroll_top_mobile"  class="ays-pb-text-input ays-pb-text-input-short"  value="<?php echo $scroll_top_mobile ?>">
                                                 <div style="text-align: center;">
                                                     <span class="ays_pb_current_device_name <?php echo $enable_scroll_top_mobile ? 'show' : '' ?>"><?php echo esc_html__('Mobile', "ays-popup-box") ?></span>
                                                 </div>
@@ -3427,7 +3432,7 @@ $ays_users_roles = $wp_roles->roles;
                         <!-- Hide close button start -->
                         <div class="form-group row">
                             <div class="col-sm-3">
-                                <label for="<?php echo $this->plugin_name; ?>-close-button">
+                                <label for="<?php echo esc_attr($this->plugin_name); ?>-close-button">
                                     <span> <?php echo esc_html__('Hide close button', "ays-popup-box"); ?></span>
                                     <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__("If the option is enabled, the close button of the popup will be disappeared. ", "ays-popup-box"); ?>">
                                         <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
@@ -3435,7 +3440,7 @@ $ays_users_roles = $wp_roles->roles;
                                 </label>
                             </div>
                             <div class="col-sm-9">
-                                <input type="checkbox" id="<?php echo $this->plugin_name; ?>-close-button"  name="<?php echo $this->plugin_name; ?>[close_button]" class="ays-pb-onoffswitch-checkbox" <?php echo $close_button == 'on' ? 'checked' : ''; ?> />
+                                <input type="checkbox" id="<?php echo esc_attr($this->plugin_name); ?>-close-button"  name="<?php echo esc_attr($this->plugin_name); ?>[close_button]" class="ays-pb-onoffswitch-checkbox" <?php echo $close_button == 'on' ? 'checked' : ''; ?> />
                             </div>
                         </div>
                         <!-- Hide close button end -->
@@ -3575,7 +3580,7 @@ $ays_users_roles = $wp_roles->roles;
                         <!-- Autoclose Delay (in seconds) start -->
                         <div class="form-group row ays_pb_hide_for_notification_type <?php echo ($modal_content == 'notification_type') ? 'display_none' : ''; ?>" id="ays_pb_close_autoclose">
                             <div class="col-sm-3">
-                                <label for="<?php echo $this->plugin_name; ?>-autoclose">
+                                <label for="<?php echo esc_attr($this->plugin_name); ?>-autoclose">
                                     <span><?php echo esc_html__('Autoclose Delay (in seconds)', "ays-popup-box"); ?></span>
                                     <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__("Close the popup after a specified time delay (in seconds). To disable the option leave it blank or set it to 0.", "ays-popup-box"); ?>">
                                         <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
@@ -3592,7 +3597,7 @@ $ays_users_roles = $wp_roles->roles;
                                             </div>
                                             <div class="row">
                                                 <div class="col-sm-12">
-                                                    <input type="number" id="<?php echo $this->plugin_name; ?>-autoclose" name="<?php echo $this->plugin_name; ?>[autoclose]" class="ays-pb-text-input ays-pb-text-input-short" value="<?php echo $autoclose; ?>" />
+                                                    <input type="number" id="<?php echo esc_attr($this->plugin_name); ?>-autoclose" name="<?php echo esc_attr($this->plugin_name); ?>[autoclose]" class="ays-pb-text-input ays-pb-text-input-short" value="<?php echo $autoclose; ?>" />
                                                     <span style="display:block;" class="ays-pb-small-hint-text">Set 0 for disabling</span>
                                                 </div>
                                             </div>
@@ -3605,7 +3610,7 @@ $ays_users_roles = $wp_roles->roles;
                                             </div>
                                             <div class="row">
                                                 <div class="col-sm-12">
-                                                    <input type="number" id="<?php echo $this->plugin_name; ?>-autoclose-mobile" name="ays_pb_autoclose_mobile" class="ays-pb-text-input ays-pb-text-input-short" value="<?php echo $ays_pb_autoclose_mobile; ?>" />                                            
+                                                    <input type="number" id="<?php echo esc_attr($this->plugin_name); ?>-autoclose-mobile" name="ays_pb_autoclose_mobile" class="ays-pb-text-input ays-pb-text-input-short" value="<?php echo $ays_pb_autoclose_mobile; ?>" />                                            
                                                     <span style="display:block;" class="ays-pb-small-hint-text">Set 0 for disabling</span>
                                                 </div>
                                             </div>
@@ -3613,7 +3618,7 @@ $ays_users_roles = $wp_roles->roles;
                                         <!-- Autoclose Delay Mobile End-->
                                     </div>
                                     <div class="ays_pb_mobile_settings_container">
-                                        <input type="checkbox" class="ays_pb_different_settings_for_mobile <?php echo $this->plugin_name; ?>-autoclose-mobile-toggle" id="ays_pb_enable_autoclose_delay_text_mobile" name="ays_pb_enable_autoclose_delay_text_mobile" <?php echo $enable_autoclose_delay_text_mobile ? 'checked' : '' ?>>
+                                        <input type="checkbox" class="ays_pb_different_settings_for_mobile <?php echo esc_attr($this->plugin_name); ?>-autoclose-mobile-toggle" id="ays_pb_enable_autoclose_delay_text_mobile" name="ays_pb_enable_autoclose_delay_text_mobile" <?php echo $enable_autoclose_delay_text_mobile ? 'checked' : '' ?>>
                                         <label for="ays_pb_enable_autoclose_delay_text_mobile" class="<?php echo $enable_autoclose_delay_text_mobile ? 'active' : '' ?>" ><?php echo esc_html__('Use a different setting for Mobile', "ays-popup-box") ?></label>
                                     </div>
                                 </div>
@@ -3670,7 +3675,7 @@ $ays_users_roles = $wp_roles->roles;
                         <hr class="ays_pb_close_bttn_option <?php echo $close_button == 'on' ? 'display_none' : ''; ?>">
                         <div class="form-group row ays_pb_close_bttn_option <?php echo $close_button == 'on' ? 'display_none' : ''; ?>">
                             <div class="col-sm-3">
-                                <label for="<?php echo $this->plugin_name; ?>-close_button_delay">
+                                <label for="<?php echo esc_attr($this->plugin_name); ?>-close_button_delay">
                                     <span><?php echo esc_html__('Close button delay', "ays-popup-box"); ?></span>
                                     <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__(" Set delay in milliseconds for displaying the popup close button. To disable the option leave it blank or set it to 0.", "ays-popup-box"); ?>">
                                         <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
@@ -3689,7 +3694,7 @@ $ays_users_roles = $wp_roles->roles;
                                             <div class="row">
                                                 <div class="col-sm-12 ays_popup_display_flex_width">
                                                     <div>
-                                                        <input type="number" id="<?php echo $this->plugin_name; ?>-close_button_delay" name="ays_pb_close_button_delay"  class="ays-pb-text-input ays-pb-text-input-short"  value="<?php echo $close_button_delay; ?>" />
+                                                        <input type="number" id="<?php echo esc_attr($this->plugin_name); ?>-close_button_delay" name="ays_pb_close_button_delay"  class="ays-pb-text-input ays-pb-text-input-short"  value="<?php echo $close_button_delay; ?>" />
                                                         <span style="display:block;" class="ays-pb-small-hint-text"><?php echo esc_html__( '1 sec = 1000 ms', "ays-popup-box" ); ?></span>
                                                     </div>
                                                     <div class="ays_dropdown_max_width">
@@ -3707,7 +3712,7 @@ $ays_users_roles = $wp_roles->roles;
                                             <div class="row">
                                                 <div class="col-sm-12 ays_popup_display_flex_width">
                                                     <div>
-                                                        <input type="number" id="<?php echo $this->plugin_name; ?>-close_button_delay_for_mobile" name="ays_pb_close_button_delay_for_mobile"  class="ays-pb-text-input ays-pb-text-input-short"  value="<?php echo $close_button_delay_for_mobile; ?>" />
+                                                        <input type="number" id="<?php echo esc_attr($this->plugin_name); ?>-close_button_delay_for_mobile" name="ays_pb_close_button_delay_for_mobile"  class="ays-pb-text-input ays-pb-text-input-short"  value="<?php echo $close_button_delay_for_mobile; ?>" />
                                                         <span style="display:block;" class="ays-pb-small-hint-text"><?php echo esc_html__( '1 sec = 1000 ms', "ays-popup-box" ); ?></span>
                                                     </div>
                                                     <div class="ays_dropdown_max_width">
@@ -3778,7 +3783,7 @@ $ays_users_roles = $wp_roles->roles;
                         <hr class="ays_pb_hide_for_notification_type <?php echo ($modal_content == 'notification_type') ? 'display_none' : ''; ?>">
                         <div class="form-group row ays_pb_hide_for_notification_type <?php echo ($modal_content == 'notification_type') ? 'display_none' : ''; ?>">
                             <div class="col-sm-3">
-                                <label for="<?php echo $this->plugin_name; ?>-onoffoverlay">
+                                <label for="<?php echo esc_attr($this->plugin_name); ?>-onoffoverlay">
                                     <span><?php echo esc_html__('Enable Overlay', "ays-popup-box"); ?></span>
                                     <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__("Enable to show the overlay outside the popup.", "ays-popup-box"); ?>">
                                         <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
@@ -3789,7 +3794,7 @@ $ays_users_roles = $wp_roles->roles;
                                 <div class="row">
                                     <div class="col-sm-1">
                                         <p class="onoffswitch">
-                                            <input type="checkbox" name="<?php echo $this->plugin_name; ?>[onoffoverlay]" class="ays-pb-onoffswitch-checkbox ays_toggle_checkbox" id="<?php echo $this->plugin_name; ?>-onoffoverlay" <?php if($onoffoverlay == 'On'){ echo 'checked';} else { echo '';} ?> >
+                                            <input type="checkbox" name="<?php echo esc_attr($this->plugin_name); ?>[onoffoverlay]" class="ays-pb-onoffswitch-checkbox ays_toggle_checkbox" id="<?php echo esc_attr($this->plugin_name); ?>-onoffoverlay" <?php if($onoffoverlay == 'On'){ echo 'checked';} else { echo '';} ?> >
                                         </p>
                                     </div>
                                     <div class="col-sm-8 ays_toggle_target ays_divider_left opacity_box ays_pb_pc_and_mobile_container" style=" <?php echo ( $onoffoverlay == 'On' ) ? '' : 'display:none'; ?>">
@@ -3807,7 +3812,7 @@ $ays_users_roles = $wp_roles->roles;
                                                             </label>
                                                         </div>
                                                         <div class="col-sm-7 col-md-8">
-                                                            <input type="number" name="<?php echo $this->plugin_name; ?>[overlay_opacity]" id="ays-overlay-opacity" class="ays-text-input" value=<?php echo round($overlay_opacity, 1) ?> min="0" max="1" step="0.1">
+                                                            <input type="number" name="<?php echo esc_attr($this->plugin_name); ?>[overlay_opacity]" id="ays-overlay-opacity" class="ays-text-input" value=<?php echo round($overlay_opacity, 1) ?> min="0" max="1" step="0.1">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -4562,7 +4567,7 @@ $ays_users_roles = $wp_roles->roles;
                                             <div class="ays-pb-choose-template-div <?php echo ('default' != $view_type) ? 'display_none' : '' ?>">
                                                 <div class="ays-pb-template-checkbox">
                                                     <label class="ays-pb-template-checkbox-container">
-                                                        <input type="radio" name="<?php echo $this->plugin_name; ?>[view_type]"
+                                                        <input type="radio" name="<?php echo esc_attr($this->plugin_name); ?>[view_type]"
                                                                 value="default" <?php echo ('default' == $view_type) ? 'checked' : '' ?>>
                                                         <span class="ays-pb-checkmark"></span>
                                                     </label>
@@ -4589,7 +4594,7 @@ $ays_users_roles = $wp_roles->roles;
                                             <div class="ays-pb-choose-template-div <?php echo ('lil' != $view_type) ? 'display_none' : '' ?>">
                                                 <div class="ays-pb-template-checkbox">
                                                     <label class="ays-pb-template-checkbox-container">
-                                                        <input type="radio" name="<?php echo $this->plugin_name; ?>[view_type]" value="lil" <?php echo ('lil' == $view_type) ? 'checked' : '' ?>>
+                                                        <input type="radio" name="<?php echo esc_attr($this->plugin_name); ?>[view_type]" value="lil" <?php echo ('lil' == $view_type) ? 'checked' : '' ?>>
                                                         <span class="ays-pb-checkmark"></span>
                                                     </label>
                                                 </div>
@@ -4616,7 +4621,7 @@ $ays_users_roles = $wp_roles->roles;
                                             <div class="ays-pb-choose-template-div <?php echo ('image' != $view_type) ? 'display_none' : '' ?>">
                                                 <div class="ays-pb-template-checkbox">
                                                     <label class="ays-pb-template-checkbox-container">
-                                                        <input type="radio" name="<?php echo $this->plugin_name; ?>[view_type]" value="image" <?php echo ('image' == $view_type) ? 'checked' : '' ?>>
+                                                        <input type="radio" name="<?php echo esc_attr($this->plugin_name); ?>[view_type]" value="image" <?php echo ('image' == $view_type) ? 'checked' : '' ?>>
                                                         <span class="ays-pb-checkmark"></span>
                                                     </label>
                                                 </div>
@@ -4642,7 +4647,7 @@ $ays_users_roles = $wp_roles->roles;
                                             <div class="ays-pb-choose-template-div <?php echo ('minimal' != $view_type) ? 'display_none' : '' ?>">
                                                 <div class="ays-pb-template-checkbox">
                                                     <label class="ays-pb-template-checkbox-container">
-                                                        <input type="radio" name="<?php echo $this->plugin_name; ?>[view_type]" value="minimal" <?php echo ('minimal' == $view_type) ? 'checked' : '' ?>>
+                                                        <input type="radio" name="<?php echo esc_attr($this->plugin_name); ?>[view_type]" value="minimal" <?php echo ('minimal' == $view_type) ? 'checked' : '' ?>>
                                                         <span class="ays-pb-checkmark"></span>
                                                     </label>
                                                 </div>
@@ -4668,7 +4673,7 @@ $ays_users_roles = $wp_roles->roles;
                                             <div class="ays-pb-choose-template-div <?php echo ('template' != $view_type) ? 'display_none' : '' ?>">
                                                 <div class="ays-pb-template-checkbox">
                                                     <label class="ays-pb-template-checkbox-container">
-                                                        <input type="radio" name="<?php echo $this->plugin_name; ?>[view_type]" value="template" <?php echo ('template' == $view_type) ? 'checked' : '' ?>>
+                                                        <input type="radio" name="<?php echo esc_attr($this->plugin_name); ?>[view_type]" value="template" <?php echo ('template' == $view_type) ? 'checked' : '' ?>>
                                                         <span class="ays-pb-checkmark"></span>
                                                     </label>
                                                 </div>
@@ -4695,7 +4700,7 @@ $ays_users_roles = $wp_roles->roles;
                                             <div class="ays-pb-choose-template-div <?php echo ('video' != $view_type) ? 'display_none' : '' ?>">
                                                 <div class="ays-pb-template-checkbox">
                                                     <label class="ays-pb-template-checkbox-container">
-                                                        <input type="radio" id="video_theme_view_type" name="<?php echo $this->plugin_name; ?>[view_type]" value="video" <?php echo ($view_type == 'video') ? 'checked' : '' ?>>
+                                                        <input type="radio" id="video_theme_view_type" name="<?php echo esc_attr($this->plugin_name); ?>[view_type]" value="video" <?php echo ($view_type == 'video') ? 'checked' : '' ?>>
                                                         <span class="ays-pb-checkmark"></span>
                                                     </label>
                                                 </div>
@@ -4718,15 +4723,15 @@ $ays_users_roles = $wp_roles->roles;
                                     </div>
                                     <!-- Image theme -->
                                     <div class="ays-pb-template-content ays-pb-image-theme" style="display: none;">
-                                        <input type="radio" id="image_type_img_theme_view_type" name="<?php echo $this->plugin_name; ?>[view_type]" value="image_type_img_theme" <?php echo ($view_type == 'image_type_img_theme') ? 'checked' : '' ?>>
+                                        <input type="radio" id="image_type_img_theme_view_type" name="<?php echo esc_attr($this->plugin_name); ?>[view_type]" value="image_type_img_theme" <?php echo ($view_type == 'image_type_img_theme') ? 'checked' : '' ?>>
                                     </div>
                                     <!-- Facebook theme -->
                                     <div class="ays-pb-template-content ays-pb-facebook-theme" style="display: none;">
-                                        <input type="radio" id="facebook_theme_view_type" name="<?php echo $this->plugin_name; ?>[view_type]" value="facebook" <?php echo ($view_type == 'facebook') ? 'checked' : '' ?>>
+                                        <input type="radio" id="facebook_theme_view_type" name="<?php echo esc_attr($this->plugin_name); ?>[view_type]" value="facebook" <?php echo ($view_type == 'facebook') ? 'checked' : '' ?>>
                                     </div>
                                     <!-- Notification theme -->
                                     <div class="ays-pb-template-content ays-pb-notification-theme" style="display: none;">
-                                        <input type="radio" id="notification_theme_view_type" name="<?php echo $this->plugin_name; ?>[view_type]" value="notification" <?php echo ($view_type == 'notification') ? 'checked' : '' ?>>
+                                        <input type="radio" id="notification_theme_view_type" name="<?php echo esc_attr($this->plugin_name); ?>[view_type]" value="notification" <?php echo ($view_type == 'notification') ? 'checked' : '' ?>>
                                     </div>
                                 </div>
                                 <div class="ays-pb-template-pro-themes">
@@ -4842,7 +4847,7 @@ $ays_users_roles = $wp_roles->roles;
                                             <div class="ays-pb-choose-template-div <?php echo ('mac' != $view_type) ? 'display_none' : '' ?>">
                                                 <div class="ays-pb-template-checkbox">
                                                     <label class="ays-pb-template-checkbox-container">
-                                                        <input type="radio" name="<?php echo $this->plugin_name; ?>[view_type]"
+                                                        <input type="radio" name="<?php echo esc_attr($this->plugin_name); ?>[view_type]"
                                                         value="mac" <?php echo ('mac' == $view_type) ? 'checked' : '' ?>>
                                                         <span class="ays-pb-checkmark"></span>
                                                     </label>
@@ -4869,7 +4874,7 @@ $ays_users_roles = $wp_roles->roles;
                                             <div class="ays-pb-choose-template-div <?php echo ('ubuntu' != $view_type) ? 'display_none' : '' ?>">
                                                 <div class="ays-pb-template-checkbox">
                                                     <label class="ays-pb-template-checkbox-container">
-                                                    <input type="radio" name="<?php echo $this->plugin_name; ?>[view_type]" value="ubuntu" <?php echo ('ubuntu' == $view_type) ? 'checked' : '' ?>>
+                                                    <input type="radio" name="<?php echo esc_attr($this->plugin_name); ?>[view_type]" value="ubuntu" <?php echo ('ubuntu' == $view_type) ? 'checked' : '' ?>>
                                                         <span class="ays-pb-checkmark"></span>
                                                     </label>
                                                 </div>
@@ -4895,7 +4900,7 @@ $ays_users_roles = $wp_roles->roles;
                                             <div class="ays-pb-choose-template-div <?php echo ('winXP' != $view_type) ? 'display_none' : '' ?>">
                                                 <div class="ays-pb-template-checkbox">
                                                     <label class="ays-pb-template-checkbox-container">
-                                                        <input type="radio" name="<?php echo $this->plugin_name; ?>[view_type]"
+                                                        <input type="radio" name="<?php echo esc_attr($this->plugin_name); ?>[view_type]"
                                                         value="winXP" <?php echo ('winXP' == $view_type) ? 'checked' : '' ?>>
                                                         <span class="ays-pb-checkmark"></span>
                                                     </label>
@@ -4922,7 +4927,7 @@ $ays_users_roles = $wp_roles->roles;
                                             <div class="ays-pb-choose-template-div <?php echo ('win98' != $view_type) ? 'display_none' : '' ?>">
                                                 <div class="ays-pb-template-checkbox">
                                                     <label class="ays-pb-template-checkbox-container">
-                                                        <input type="radio" name="<?php echo $this->plugin_name; ?>[view_type]"
+                                                        <input type="radio" name="<?php echo esc_attr($this->plugin_name); ?>[view_type]"
                                                         value="win98" <?php echo ('win98' == $view_type) ? 'checked' : '' ?>>
                                                         <span class="ays-pb-checkmark"></span>
                                                     </label>
@@ -4949,7 +4954,7 @@ $ays_users_roles = $wp_roles->roles;
                                             <div class="ays-pb-choose-template-div <?php echo ('cmd' != $view_type) ? 'display_none' : '' ?>">
                                                 <div class="ays-pb-template-checkbox">
                                                     <label class="ays-pb-template-checkbox-container">
-                                                        <input type="radio" name="<?php echo $this->plugin_name; ?>[view_type]" value="cmd" <?php echo ('cmd' ==$view_type) ? 'checked' : '' ?>>
+                                                        <input type="radio" name="<?php echo esc_attr($this->plugin_name); ?>[view_type]" value="cmd" <?php echo ('cmd' ==$view_type) ? 'checked' : '' ?>>
                                                         <span class="ays-pb-checkmark"></span>
                                                     </label>
                                                 </div>
@@ -5025,7 +5030,7 @@ $ays_users_roles = $wp_roles->roles;
                                 <!-- popup width for desktop and mobile start -->
                                 <div class="form-group row ays_pb_hide_for_notification_type <?php echo $modal_content == 'notification_type' ? 'display_none' : ''; ?>">
                                     <div class="col-sm-4">
-                                        <label for='<?php echo $this->plugin_name; ?>-width'>
+                                        <label for='<?php echo esc_attr($this->plugin_name); ?>-width'>
                                             <?php echo esc_html__('Width', "ays-popup-box"); ?>
                                             <a class="ays_help" data-toggle="tooltip" title="" data-original-title="<?php echo esc_html__('Specify the width of the popup in pixels.',"ays-popup-box")?>">
                                                 <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
@@ -5036,7 +5041,7 @@ $ays_users_roles = $wp_roles->roles;
                                         <!-- width for desktop start -->
                                         <div class="form-group row">
                                             <div class="col-sm-3">
-                                                <label for="<?php echo $this->plugin_name; ?>-width">
+                                                <label for="<?php echo esc_attr($this->plugin_name); ?>-width">
                                                     <?php echo  esc_html__('On desktop',"ays-popup-box") ?>
                                                     <a class="ays_help" data-toggle="tooltip" title="" data-original-title="Define the width for desktop devices. If you put 0 or leave it blank, the width will be 100%. It accepts only numerical values and you can choose whether to define the value by percentage or in pixels.">
                                                         <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
@@ -5045,7 +5050,7 @@ $ays_users_roles = $wp_roles->roles;
                                             </div>
                                             <div class="col-sm-9">
                                                 <div>
-                                                    <input type="number" id="<?php echo $this->plugin_name; ?>-width"  class="ays-pb-text-input ays-pb-text-input-short ays_pb_width"  name="<?php echo $this->plugin_name; ?>[width]" value="<?php echo $width; ?>" <?php echo $disable_width; ?>/>
+                                                    <input type="number" id="<?php echo esc_attr($this->plugin_name); ?>-width"  class="ays-pb-text-input ays-pb-text-input-short ays_pb_width"  name="<?php echo esc_attr($this->plugin_name); ?>[width]" value="<?php echo $width; ?>" <?php echo $disable_width; ?>/>
                                                     <span style="display:block;" class="ays-pb-small-hint-text"><?php echo esc_html__("For 100% leave blank", "ays-popup-box");?></span>
                                                 </div>
                                                 <div class="ays_pb_width_by_percentage_px_box">
@@ -5117,7 +5122,7 @@ $ays_users_roles = $wp_roles->roles;
                                 <!-- popup height for desktop and mobile start -->
                                 <div class="form-group row">
                                     <div class="col-sm-4">
-                                        <label for="<?php echo $this->plugin_name; ?>-height">
+                                        <label for="<?php echo esc_attr($this->plugin_name); ?>-height">
                                             <span><?php echo esc_html__('Height', "ays-popup-box"); ?></span>
                                             <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__('Specify the height of the popup in pixels.',"ays-popup-box")?>">
                                                 <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
@@ -5128,7 +5133,7 @@ $ays_users_roles = $wp_roles->roles;
                                         <!-- heigh for desktop start -->
                                         <div class="form-group row">
                                             <div class="col-sm-3">
-                                                <label for="<?php echo $this->plugin_name; ?>-height">
+                                                <label for="<?php echo esc_attr($this->plugin_name); ?>-height">
                                                     <?php echo  esc_html__('On desktop',"ays-popup-box") ?>
                                                     <a class="ays_help" data-toggle="tooltip" title="" data-original-title="Define the height for desktop devices. Leave it blank or put 0 to select the default theme value.">
                                                         <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
@@ -5137,7 +5142,7 @@ $ays_users_roles = $wp_roles->roles;
                                             </div>
                                             <div class="col-sm-9">
                                                 <div>
-                                                    <input type="number" id="<?php echo $this->plugin_name; ?>-height"  class="ays-pb-text-input ays-pb-text-input-short ays_pb_height" name="<?php echo $this->plugin_name; ?>[height]" value="<?php echo $height; ?>" <?php echo $disable_height ;?>> 
+                                                    <input type="number" id="<?php echo esc_attr($this->plugin_name); ?>-height"  class="ays-pb-text-input ays-pb-text-input-short ays_pb_height" name="<?php echo esc_attr($this->plugin_name); ?>[height]" value="<?php echo $height; ?>" <?php echo $disable_height ;?>> 
                                                 </div>
                                                 <div class="ays_dropdown_max_width">
                                                     <input type="text" value="px" class="ays-form-hint-for-size" disabled>
@@ -5355,7 +5360,7 @@ $ays_users_roles = $wp_roles->roles;
                                 <!-- Text color start -->
                                 <div class="form-group row">
                                     <div class="col-sm-4">
-                                        <label for="<?php echo $this->plugin_name; ?>-ays_pb_textcolor">
+                                        <label for="<?php echo esc_attr($this->plugin_name); ?>-ays_pb_textcolor">
                                             <span>
                                                 <?php echo  esc_html__('Text color',"ays-popup-box") ?>
                                                 <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__("Specify the text color written inside the popup.", "ays-popup-box"); ?>">
@@ -5365,7 +5370,7 @@ $ays_users_roles = $wp_roles->roles;
                                         </label>
                                     </div>
                                     <div class="col-sm-6 ays_divider_left">
-                                        <input id="<?php echo $this->plugin_name; ?>-ays_pb_textcolor" type="text" class="ays_pb_color_input ays_pb_textcolor_change" name="<?php echo $this->plugin_name; ?>[ays_pb_textcolor]" value="<?php echo wp_unslash($textcolor); ?>" data-default-color="#000000" data-alpha="true">
+                                        <input id="<?php echo esc_attr($this->plugin_name); ?>-ays_pb_textcolor" type="text" class="ays_pb_color_input ays_pb_textcolor_change" name="<?php echo esc_attr($this->plugin_name); ?>[ays_pb_textcolor]" value="<?php echo wp_unslash($textcolor); ?>" data-default-color="#000000" data-alpha="true">
                                     </div>
                                 </div>
                                 <!-- Text color end -->
@@ -5752,7 +5757,7 @@ $ays_users_roles = $wp_roles->roles;
                             <div class="ays-pb-accordion-body ays_pb_hide_for_notification_type <?php echo ($modal_content == 'notification_type') ? 'display_none' : ''; ?>">
                                 <div class="form-group row ays_pb_hide_for_notification_type <?php echo ($modal_content == 'notification_type') ? 'display_none' : ''; ?>">
                                     <div class="col-sm-4">
-                                        <label for="<?php echo $this->plugin_name; ?>-animate_in">
+                                        <label for="<?php echo esc_attr($this->plugin_name); ?>-animate_in">
                                             <span>
                                                 <?php echo  esc_html__('Opening animation',"ays-popup-box") ?>
                                                 <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__("Choose the entry effect for the popup opening.", "ays-popup-box"); ?>">
@@ -5765,7 +5770,7 @@ $ays_users_roles = $wp_roles->roles;
                                         <div class="ays_toggle_parent">
                                             <div>
                                                 <div class="ays_pb_current_device_name ays_pb_current_device_name_pc show ays_toggle_target" style="<?php echo ($enable_animate_in_mobile) ? '' : 'display: none;' ?> text-align: center; margin-bottom: 10px; max-width: 225px;"><?php echo esc_html__('Desktop', "ays-popup-box") ?></div>
-                                                <select id="<?php echo $this->plugin_name; ?>-animate_in" class="ays-pb-text-input ays-pb-text-input-short ays_pb_aysDropdown" name="<?php echo $this->plugin_name; ?>[animate_in]">
+                                                <select id="<?php echo esc_attr($this->plugin_name); ?>-animate_in" class="ays-pb-text-input ays-pb-text-input-short ays_pb_aysDropdown" name="<?php echo esc_attr($this->plugin_name); ?>[animate_in]">
                                                     <optgroup label="Fading Entrances">
                                                         <option <?php echo 'fadeIn' == $animate_in ? 'selected' : ''; ?> value="fadeIn">Fade In</option>
                                                         <option <?php echo 'fadeInDown' == $animate_in ? 'selected' : ''; ?> value="fadeInDown">Fade In Down</option>
@@ -5814,7 +5819,7 @@ $ays_users_roles = $wp_roles->roles;
                                             <div class="ays_toggle_target ays_pb_animate_in_mobile_container" style=" <?php echo ( $enable_animate_in_mobile ) ? '' : 'display:none'; ?>">
                                                 <hr>
                                                 <div class="ays_pb_current_device_name show" style="text-align: center; margin-bottom: 10px; max-width: 225px;"><?php echo esc_html__('Mobile', "ays-popup-box") ?></div>
-                                                <select id="<?php echo $this->plugin_name; ?>-animate_in_mobile" class="ays-pb-text-input ays-pb-text-input-short ays_pb_aysDropdown" name="ays_pb_animate_in_mobile">
+                                                <select id="<?php echo esc_attr($this->plugin_name); ?>-animate_in_mobile" class="ays-pb-text-input ays-pb-text-input-short ays_pb_aysDropdown" name="ays_pb_animate_in_mobile">
                                                     <optgroup label="Fading Entrances">
                                                         <option <?php echo 'fadeIn' == $animate_in_mobile ? 'selected' : ''; ?> value="fadeIn">Fade In</option>
                                                         <option <?php echo 'fadeInDown' == $animate_in_mobile ? 'selected' : ''; ?> value="fadeInDown">Fade In Down</option>
@@ -5870,7 +5875,7 @@ $ays_users_roles = $wp_roles->roles;
                                 <hr class="ays_pb_hide_for_notification_type <?php echo ($modal_content == 'notification_type') ? 'display_none' : ''; ?>">
                                 <div class="form-group row ays_pb_hide_for_notification_type <?php echo ($modal_content == 'notification_type') ? 'display_none' : ''; ?>">
                                     <div class="col-sm-4">
-                                        <label for="<?php echo $this->plugin_name; ?>-animate_out">
+                                        <label for="<?php echo esc_attr($this->plugin_name); ?>-animate_out">
                                             <span>
                                                 <?php echo  esc_html__('Closing animation',"ays-popup-box") ?>
                                                 <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__("Choose the exit effect for the popup closing.", "ays-popup-box"); ?>">
@@ -5883,7 +5888,7 @@ $ays_users_roles = $wp_roles->roles;
                                         <div class="ays_toggle_parent">
                                             <div>
                                                 <div class="ays_pb_current_device_name ays_pb_current_device_name_pc show ays_toggle_target" style="<?php echo ($enable_animate_out_mobile) ? '' : 'display: none;' ?> text-align: center; margin-bottom: 10px; max-width: 225px;"><?php echo esc_html__('Desktop', "ays-popup-box") ?></div>
-                                                <select id="<?php echo $this->plugin_name; ?>-animate_out" class="ays-pb-text-input ays-pb-text-input-short ays_pb_aysDropdown" name="<?php echo $this->plugin_name; ?>[animate_out]">
+                                                <select id="<?php echo esc_attr($this->plugin_name); ?>-animate_out" class="ays-pb-text-input ays-pb-text-input-short ays_pb_aysDropdown" name="<?php echo esc_attr($this->plugin_name); ?>[animate_out]">
                                                     <optgroup label="Fading Exits">
                                                         <option <?php echo  $animate_out == 'fadeOut' ? 'selected' : ''; ?> value="fadeOut">Fade Out</option>
                                                         <option <?php echo  $animate_out == 'fadeOutDown' ? 'selected' : ''; ?> value="fadeOutDown">Fade Out Down</option>
@@ -5932,7 +5937,7 @@ $ays_users_roles = $wp_roles->roles;
                                             <div class="ays_toggle_target ays_pb_animate_out_mobile_container" style=" <?php echo ( $enable_animate_out_mobile ) ? '' : 'display:none'; ?>">
                                                 <hr>
                                                 <div class="ays_pb_current_device_name show" style="text-align: center; margin-bottom: 10px; max-width: 225px;"><?php echo esc_html__('Mobile', "ays-popup-box") ?></div>
-                                                <select id="<?php echo $this->plugin_name; ?>-animate_out_mobile" class="ays-pb-text-input ays-pb-text-input-short ays_pb_aysDropdown" name="ays_pb_animate_out_mobile">
+                                                <select id="<?php echo esc_attr($this->plugin_name); ?>-animate_out_mobile" class="ays-pb-text-input ays-pb-text-input-short ays_pb_aysDropdown" name="ays_pb_animate_out_mobile">
                                                     <optgroup label="Fading Exits">
                                                         <option <?php echo  $animate_out_mobile == 'fadeOut' ? 'selected' : ''; ?> value="fadeOut">Fade Out</option>
                                                         <option <?php echo  $animate_out_mobile == 'fadeOutDown' ? 'selected' : ''; ?> value="fadeOutDown">Fade Out Down</option>
@@ -6057,7 +6062,7 @@ $ays_users_roles = $wp_roles->roles;
                             <div class="ays-pb-accordion-body">
                                 <div class="form-group row">
                                     <div class="col-sm-4">
-                                        <label for="<?php echo $this->plugin_name; ?>-bgcolor">
+                                        <label for="<?php echo esc_attr($this->plugin_name); ?>-bgcolor">
                                             <span>
                                                 <?php echo esc_html__('Background color', "ays-popup-box"); ?>
                                                 <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__("Specify the background color of the popup.", "ays-popup-box"); ?>">
@@ -6070,12 +6075,12 @@ $ays_users_roles = $wp_roles->roles;
                                         <div class="ays_toggle_parent">
                                             <div>
                                                 <div class="ays_pb_current_device_name ays_pb_current_device_name_pc show ays_toggle_target" style="<?php echo ($enable_bgcolor_mobile) ? '' : 'display: none;' ?> text-align: center; margin-bottom: 10px; max-width: 110px;"><?php echo esc_html__('Desktop', "ays-popup-box") ?></div>
-                                                <input type="text" id="<?php echo $this->plugin_name; ?>-bgcolor"  data-alpha="true" class="ays_pb_color_input ays_pb_bgcolor_change ays_pb_background_color" name="<?php echo $this->plugin_name; ?>[bgcolor]" value="<?php echo $bgcolor; ?>"  data-default-color="#FFFFFF"/>
+                                                <input type="text" id="<?php echo esc_attr($this->plugin_name); ?>-bgcolor"  data-alpha="true" class="ays_pb_color_input ays_pb_bgcolor_change ays_pb_background_color" name="<?php echo esc_attr($this->plugin_name); ?>[bgcolor]" value="<?php echo $bgcolor; ?>"  data-default-color="#FFFFFF"/>
                                             </div>
                                             <div class="ays_toggle_target ays_pb_bgcolor_mobile_container" style=" <?php echo ( $enable_bgcolor_mobile ) ? '' : 'display:none'; ?>">
                                                 <hr>
                                                 <div class="ays_pb_current_device_name show" style="text-align: center; margin-bottom: 10px; max-width: 110px;"><?php echo esc_html__('Mobile', "ays-popup-box") ?></div>
-                                                <input type="text" id="<?php echo $this->plugin_name; ?>-bgcolor-mobile"  data-alpha="true" class="ays_pb_color_input ays_pb_background_color_mobile" name="ays_pb_bgcolor_mobile" value="<?php echo $bgcolor_mobile; ?>"  data-default-color="#FFFFFF"/>
+                                                <input type="text" id="<?php echo esc_attr($this->plugin_name); ?>-bgcolor-mobile"  data-alpha="true" class="ays_pb_color_input ays_pb_background_color_mobile" name="ays_pb_bgcolor_mobile" value="<?php echo $bgcolor_mobile; ?>"  data-default-color="#FFFFFF"/>
                                             </div>
                                             <div class="ays_pb_mobile_settings_container">
                                                 <input type="checkbox" class="ays_toggle_checkbox ays-pb-onoffswitch-checkbox" id="ays_pb_enable_bgcolor_mobile" name="ays_pb_enable_bgcolor_mobile" <?php echo $enable_bgcolor_mobile ? 'checked' : '' ?>>
@@ -6349,7 +6354,7 @@ $ays_users_roles = $wp_roles->roles;
                                 <hr class="ays_pb_hide_for_video_type ays_pb_hide_for_image_type ays_pb_hide_for_notification_type <?php echo ($modal_content == 'video_type' || $modal_content == 'image_type' || $modal_content == 'notification_type') ? 'display_none' : ''; ?>" />
                                 <div class="form-group row ays_pb_hide_for_video_type ays_pb_hide_for_image_type ays_pb_hide_for_notification_type <?php echo ($modal_content == 'video_type' || $modal_content == 'image_type' || $modal_content == 'notification_type') ? 'display_none' : ''; ?>" id="ays-popup-box-header-background-color-container">
                                     <div class="col-sm-4">
-                                        <label for="<?php echo $this->plugin_name; ?>-header_bgcolor">
+                                        <label for="<?php echo esc_attr($this->plugin_name); ?>-header_bgcolor">
                                             <span>
                                                 <?php echo esc_html__('Header background color', "ays-popup-box"); ?>
                                                 <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__("Specify the background color of the box's header. Note: It works with the following themes: Red, Sale.", "ays-popup-box"); ?>">
@@ -6362,12 +6367,12 @@ $ays_users_roles = $wp_roles->roles;
                                         <div class="ays_toggle_parent">
                                             <div>
                                                 <div class="ays_pb_current_device_name ays_pb_current_device_name_pc show ays_toggle_target" style="<?php echo ($enable_bgcolor_mobile) ? '' : 'display: none;' ?> text-align: center; margin-bottom: 10px; max-width: 110px;"><?php echo esc_html__('Desktop', "ays-popup-box") ?></div>
-                                                <input type="text" id="<?php echo $this->plugin_name; ?>-header_bgcolor"  data-alpha="true" class="ays_pb_color_input ays_pb_header_bgcolor_change" name="<?php echo $this->plugin_name; ?>[header_bgcolor]" value="<?php echo $header_bgcolor; ?>"  Fdata-default-color="#FFFFF"/>
+                                                <input type="text" id="<?php echo esc_attr($this->plugin_name); ?>-header_bgcolor"  data-alpha="true" class="ays_pb_color_input ays_pb_header_bgcolor_change" name="<?php echo esc_attr($this->plugin_name); ?>[header_bgcolor]" value="<?php echo $header_bgcolor; ?>"  Fdata-default-color="#FFFFF"/>
                                             </div>
                                             <div class="ays_toggle_target ays_pb_bgcolor_mobile_container" style=" <?php echo ( $enable_bgcolor_mobile ) ? '' : 'display:none'; ?>">
                                                 <hr>
                                                 <div class="ays_pb_current_device_name show" style="text-align: center; margin-bottom: 10px; max-width: 110px;"><?php echo esc_html__('Mobile', "ays-popup-box") ?></div>
-                                                <input type="text" id="<?php echo $this->plugin_name; ?>-header_bgcolor_mobile"  data-alpha="true" class="ays_pb_color_input ays_pb_header_bgcolor_change" name="<?php echo $this->plugin_name; ?>[header_bgcolor_mobile]" value="<?php echo $header_bgcolor_mobile; ?>"  Fdata-default-color="#FFFFF"/>
+                                                <input type="text" id="<?php echo esc_attr($this->plugin_name); ?>-header_bgcolor_mobile"  data-alpha="true" class="ays_pb_color_input ays_pb_header_bgcolor_change" name="<?php echo esc_attr($this->plugin_name); ?>[header_bgcolor_mobile]" value="<?php echo $header_bgcolor_mobile; ?>"  Fdata-default-color="#FFFFF"/>
                                             </div>
                                             <div class="ays_pb_mobile_settings_container">
                                                 <input type="checkbox" class="ays_toggle_checkbox ays-pb-onoffswitch-checkbox" id="ays_pb_enable_header_bgcolor_mobile" name="ays_pb_enable_header_bgcolor_mobile" <?php echo $enable_header_bgcolor_mobile ? 'checked' : '' ?>>
@@ -6379,7 +6384,7 @@ $ays_users_roles = $wp_roles->roles;
                                 <hr class="ays_pb_hide_for_notification_type <?php echo $modal_content == 'notification_type' ? 'display_none' : ''; ?>">
                                 <div class="form-group row ays_pb_hide_for_notification_type <?php echo $modal_content == 'notification_type' ? 'display_none' : ''; ?>">
                                     <div class="col-sm-4">
-                                        <label for="<?php echo $this->plugin_name; ?>-ays_pb_overlay_color">
+                                        <label for="<?php echo esc_attr($this->plugin_name); ?>-ays_pb_overlay_color">
                                             <span>
                                                 <?php echo  esc_html__('Overlay color',"ays-popup-box") ?>
                                                 <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__("Specify the overlay color.", "ays-popup-box"); ?>">
@@ -6392,12 +6397,12 @@ $ays_users_roles = $wp_roles->roles;
                                         <div class="ays_toggle_parent">
                                             <div>
                                                 <div class="ays_pb_current_device_name ays_pb_current_device_name_pc show ays_toggle_target" style="<?php echo ($enable_overlay_color_mobile) ? '' : 'display: none;' ?> text-align: center; margin-bottom: 10px; max-width: 110px;"><?php echo esc_html__('Desktop', "ays-popup-box") ?></div>
-                                                <input id="<?php echo $this->plugin_name; ?>-overlay_color" type="text" data-alpha="true" class="color-picker ays_pb_color_input ays_pb_overlay_color_change" name="ays_pb_overlay_color" value="<?php echo $overlay_color; ?>" data-default-color="#000">
+                                                <input id="<?php echo esc_attr($this->plugin_name); ?>-overlay_color" type="text" data-alpha="true" class="color-picker ays_pb_color_input ays_pb_overlay_color_change" name="ays_pb_overlay_color" value="<?php echo $overlay_color; ?>" data-default-color="#000">
                                             </div>
                                             <div class="ays_toggle_target ays_pb_overlay_color_mobile_container" style=" <?php echo ( $enable_overlay_color_mobile ) ? '' : 'display:none'; ?>">
                                                 <hr>
                                                 <div class="ays_pb_current_device_name show" style="text-align: center; margin-bottom: 10px; max-width: 110px;"><?php echo esc_html__('Mobile', "ays-popup-box") ?></div>
-                                                <input id="<?php echo $this->plugin_name; ?>-overlay_color_mobile" type="text" data-alpha="true" class="color-picker ays_pb_color_input ays_pb_overlay_color_mobile_change" name="ays_pb_overlay_color_mobile" value="<?php echo $overlay_color_mobile; ?>"  data-default-color="#000"/>
+                                                <input id="<?php echo esc_attr($this->plugin_name); ?>-overlay_color_mobile" type="text" data-alpha="true" class="color-picker ays_pb_color_input ays_pb_overlay_color_mobile_change" name="ays_pb_overlay_color_mobile" value="<?php echo $overlay_color_mobile; ?>"  data-default-color="#000"/>
                                             </div>
                                             <div class="ays_pb_mobile_settings_container">
                                                 <input type="checkbox" class="ays_toggle_checkbox ays-pb-onoffswitch-checkbox" id="ays_pb_enable_overlay_color_mobile" name="ays_pb_enable_overlay_color_mobile" <?php echo $enable_overlay_color_mobile ? 'checked' : '' ?>>
@@ -6418,7 +6423,7 @@ $ays_users_roles = $wp_roles->roles;
                             <div class="ays-pb-accordion-body">
                                 <div class="form-group row">
                                     <div class="col-sm-4">
-                                        <label for="<?php echo $this->plugin_name; ?>-ays_pb_bordersize">
+                                        <label for="<?php echo esc_attr($this->plugin_name); ?>-ays_pb_bordersize">
                                             <span>
                                                 <?php echo  esc_html__('Border Width',"ays-popup-box") ?>
                                                 <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__("Specify the border size of the popup in pixels.", "ays-popup-box"); ?>">
@@ -6431,12 +6436,12 @@ $ays_users_roles = $wp_roles->roles;
                                         <div class="ays_toggle_parent">
                                             <div>
                                                 <div class="ays_pb_current_device_name ays_pb_current_device_name_pc show ays_toggle_target" style="<?php echo ($enable_border_size_mobile) ? '' : 'display: none;' ?> text-align: center; margin-bottom: 10px; max-width: 225px;"><?php echo esc_html__('Desktop', "ays-popup-box") ?></div>
-                                                <input id="<?php echo $this->plugin_name; ?>-ays_pb_bordersize" type="number" class="ays-pb-text-input ays-pb-text-input-short" name="<?php echo $this->plugin_name; ?>[ays_pb_bordersize]" value="<?php echo wp_unslash($border_size); ?>">
+                                                <input id="<?php echo esc_attr($this->plugin_name); ?>-ays_pb_bordersize" type="number" class="ays-pb-text-input ays-pb-text-input-short" name="<?php echo esc_attr($this->plugin_name); ?>[ays_pb_bordersize]" value="<?php echo wp_unslash($border_size); ?>">
                                             </div>
                                             <div class="ays_toggle_target ays_pb_bordersize_mobile_container" style=" <?php echo ( $enable_border_size_mobile ) ? '' : 'display:none'; ?>">
                                                 <hr>
                                                 <div class="ays_pb_current_device_name show" style="text-align: center; margin-bottom: 10px; max-width: 225px;"><?php echo esc_html__('Mobile', "ays-popup-box") ?></div>
-                                                <input id="<?php echo $this->plugin_name; ?>-ays_pb_bordersize_mobile" type="number" class="ays-pb-text-input ays-pb-text-input-short" name="ays_pb_bordersize_mobile" value="<?php echo wp_unslash($border_size_mobile); ?>"/>
+                                                <input id="<?php echo esc_attr($this->plugin_name); ?>-ays_pb_bordersize_mobile" type="number" class="ays-pb-text-input ays-pb-text-input-short" name="ays_pb_bordersize_mobile" value="<?php echo wp_unslash($border_size_mobile); ?>"/>
                                             </div>
                                             <div class="ays_pb_mobile_settings_container">
                                                 <input type="checkbox" class="ays_toggle_checkbox ays-pb-onoffswitch-checkbox" id="ays_pb_enable_bordersize_mobile" name="ays_pb_enable_bordersize_mobile" <?php echo $enable_border_size_mobile ? 'checked' : '' ?>>
@@ -6525,7 +6530,7 @@ $ays_users_roles = $wp_roles->roles;
                                 <!-- Border color start -->
                                 <div class="form-group row">
                                     <div class="col-sm-4">
-                                        <label for="<?php echo $this->plugin_name; ?>-bordercolor">
+                                        <label for="<?php echo esc_attr($this->plugin_name); ?>-bordercolor">
                                             <span>
                                                 <?php echo  esc_html__('Border color',"ays-popup-box") ?>
                                                 <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__("Specify the border color of the popup.", "ays-popup-box"); ?>">
@@ -6538,12 +6543,12 @@ $ays_users_roles = $wp_roles->roles;
                                         <div class="ays_toggle_parent">
                                             <div>
                                                 <div class="ays_pb_current_device_name ays_pb_current_device_name_pc show ays_toggle_target" style="<?php echo ($enable_bordercolor_mobile) ? '' : 'display: none;' ?> text-align: center; margin-bottom: 10px; max-width: 110px;"><?php echo esc_html__('Desktop', "ays-popup-box") ?></div>
-                                                <input id="<?php echo $this->plugin_name; ?>-bordercolor" class="ays_pb_color_input ays_pb_bordercolor_change" type="text" name="<?php echo $this->plugin_name; ?>[ays_pb_bordercolor]" value="<?php echo wp_unslash($bordercolor); ?>" data-default-color="#FFFFFF" data-alpha="true">
+                                                <input id="<?php echo esc_attr($this->plugin_name); ?>-bordercolor" class="ays_pb_color_input ays_pb_bordercolor_change" type="text" name="<?php echo esc_attr($this->plugin_name); ?>[ays_pb_bordercolor]" value="<?php echo wp_unslash($bordercolor); ?>" data-default-color="#FFFFFF" data-alpha="true">
                                             </div>
                                             <div class="ays_toggle_target ays_pb_bordercolor_mobile_container" style=" <?php echo ( $enable_bordercolor_mobile ) ? '' : 'display:none'; ?>">
                                                 <hr>
                                                 <div class="ays_pb_current_device_name show" style="text-align: center; margin-bottom: 10px; max-width: 110px;"><?php echo esc_html__('Mobile', "ays-popup-box") ?></div>
-                                                <input id="<?php echo $this->plugin_name; ?>-bordercolor-mobile" class="ays_pb_color_input ays_pb_bordercolor_mobile_change" type="text" name="ays_pb_bordercolor_mobile" value="<?php echo wp_unslash($bordercolor_mobile); ?>" data-default-color="#FFFFFF" data-alpha="true">
+                                                <input id="<?php echo esc_attr($this->plugin_name); ?>-bordercolor-mobile" class="ays_pb_color_input ays_pb_bordercolor_mobile_change" type="text" name="ays_pb_bordercolor_mobile" value="<?php echo wp_unslash($bordercolor_mobile); ?>" data-default-color="#FFFFFF" data-alpha="true">
                                             </div>
                                             <div class="ays_pb_mobile_settings_container">
                                                 <input type="checkbox" class="ays_toggle_checkbox ays-pb-onoffswitch-checkbox" id="ays_pb_enable_bordercolor_mobile" name="ays_pb_enable_bordercolor_mobile" <?php echo $enable_bordercolor_mobile ? 'checked' : '' ?>>
@@ -6557,7 +6562,7 @@ $ays_users_roles = $wp_roles->roles;
                                 <!-- Border radius start -->
                                 <div class="form-group row">
                                     <div class="col-sm-4">
-                                        <label for="<?php echo $this->plugin_name; ?>-ays_pb_border_radius">
+                                        <label for="<?php echo esc_attr($this->plugin_name); ?>-ays_pb_border_radius">
                                             <span>
                                                 <?php echo  esc_html__('Border radius',"ays-popup-box") ?>
                                                 <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__("Specify the radius of the border. Allows adding rounded corners to the popup.", "ays-popup-box"); ?>">
@@ -6570,12 +6575,12 @@ $ays_users_roles = $wp_roles->roles;
                                         <div class="ays_toggle_parent">
                                             <div>
                                                 <div class="ays_pb_current_device_name ays_pb_current_device_name_pc show ays_toggle_target" style="<?php echo ($enable_border_radius_mobile) ? '' : 'display: none;' ?> text-align: center; margin-bottom: 10px; max-width: 225px;"><?php echo esc_html__('Desktop', "ays-popup-box") ?></div>
-                                                <input id="<?php echo $this->plugin_name; ?>-ays_pb_border_radius" type="number" class="ays-pb-text-input ays-pb-text-input-short" name="<?php echo $this->plugin_name; ?>[ays_pb_border_radius]" value="<?php echo wp_unslash($border_radius); ?>">
+                                                <input id="<?php echo esc_attr($this->plugin_name); ?>-ays_pb_border_radius" type="number" class="ays-pb-text-input ays-pb-text-input-short" name="<?php echo esc_attr($this->plugin_name); ?>[ays_pb_border_radius]" value="<?php echo wp_unslash($border_radius); ?>">
                                             </div>
                                             <div class="ays_toggle_target ays_pb_border_radius_mobile_container" style=" <?php echo ( $enable_border_radius_mobile ) ? '' : 'display:none'; ?>">
                                                 <hr>
                                                 <div class="ays_pb_current_device_name show" style="text-align: center; margin-bottom: 10px; max-width: 225px;"><?php echo esc_html__('Mobile', "ays-popup-box") ?></div>
-                                                <input id="<?php echo $this->plugin_name; ?>-ays_pb_border_radius_mobile" type="number" class="ays-pb-text-input ays-pb-text-input-short" name="ays_pb_border_radius_mobile" value="<?php echo wp_unslash($border_radius_mobile); ?>">
+                                                <input id="<?php echo esc_attr($this->plugin_name); ?>-ays_pb_border_radius_mobile" type="number" class="ays-pb-text-input ays-pb-text-input-short" name="ays_pb_border_radius_mobile" value="<?php echo wp_unslash($border_radius_mobile); ?>">
                                             </div>
                                             <div class="ays_pb_mobile_settings_container">
                                                 <input type="checkbox" class="ays_toggle_checkbox ays-pb-onoffswitch-checkbox" id="ays_pb_enable_border_radius_mobile" name="ays_pb_enable_border_radius_mobile" <?php echo $enable_border_radius_mobile ? 'checked' : '' ?>>
@@ -6973,18 +6978,18 @@ $ays_users_roles = $wp_roles->roles;
                                         </label>
                                     </div>
                                     <div class="col-sm-6 ays_divider_left">
-                                        <input type="text" class="ays-pb-text-input ays-pb-text-input-short" name="<?php echo $this->plugin_name; ?>[custom-class]" id="custom_class" placeholder="myClass myAnotherClass..." value="<?php echo $custom_class; ?>">
+                                        <input type="text" class="ays-pb-text-input ays-pb-text-input-short" name="<?php echo esc_attr($this->plugin_name); ?>[custom-class]" id="custom_class" placeholder="myClass myAnotherClass..." value="<?php echo $custom_class; ?>">
                                     </div>
                                 </div>
                                 <hr>
                                 <div class="ays-field">
-                                    <label for="<?php echo $this->plugin_name; ?>-custom-css">
+                                    <label for="<?php echo esc_attr($this->plugin_name); ?>-custom-css">
                                         <span><?php echo esc_html__('Custom CSS', "ays-popup-box"); ?></span>
                                         <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__('Field for entering your own CSS code.',  "ays-popup-box")?>">
                                             <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                         </a>
                                     </label>
-                                    <textarea id="<?php echo $this->plugin_name; ?>-custom-css"  class="ays-textarea" name="<?php echo  $this->plugin_name; ?>[custom-css]"><?php echo $custom_css; ?></textarea>
+                                    <textarea id="<?php echo esc_attr($this->plugin_name); ?>-custom-css"  class="ays-textarea" name="<?php echo esc_attr($this->plugin_name); ?>[custom-css]"><?php echo esc_attr($custom_css); ?></textarea>
                                 </div>
                                 <hr>
                                 <div class="form-group row">
@@ -7015,7 +7020,7 @@ $ays_users_roles = $wp_roles->roles;
                                         <img class='close_btn_img' src='<?php echo $close_btn_background_img; ?>' width='30' height='30' style='<?php echo $close_btn_img_display; ?>'>
                                         <?php
                                                 if ($close_button_text === '✕') {
-                                                    echo "<img src='" . AYS_PB_ADMIN_URL . "/images/icons/times-2x.svg' class='close_btn_text' style='".$close_btn_text_display."'>";
+                                                    echo "<img src='" . esc_url(AYS_PB_ADMIN_URL) . "/images/icons/times-2x.svg' class='close_btn_text' style='".$close_btn_text_display."'>";
                                                 }else{
                                                    echo $close_button_text;
                                                 }
@@ -7173,7 +7178,7 @@ $ays_users_roles = $wp_roles->roles;
                                                 <a class='close-image-btn ays-close-button-on-off ays-close-button-text ays-close-button-take-text-color close_btn_text' style='<?php echo $close_btn_text_display;?>'>
                                                      <?php
                                                 if ($close_button_text === '✕') {
-                                                    echo "<img src='" . AYS_PB_ADMIN_URL . "/images/icons/times-circle.svg'>";
+                                                    echo "<img src='" . esc_url(AYS_PB_ADMIN_URL) . "/images/icons/times-circle.svg'>";
                                                 }else{
                                                     echo $close_button_text;
                                                 }
@@ -7228,7 +7233,7 @@ $ays_users_roles = $wp_roles->roles;
                                         <img class='close_btn_img' src='<?php echo $close_btn_background_img; ?>' width='30' height='30' style='<?php echo $close_btn_img_display; ?>'>
                                         <?php
                                             if ($close_button_text === '✕') {
-                                                echo "<img src='" . AYS_PB_ADMIN_URL . "/images/icons/times-2x.svg' class='close_btn_text' style='".$close_btn_text_display."'>";
+                                                echo "<img src='" . esc_url(AYS_PB_ADMIN_URL) . "/images/icons/times-2x.svg' class='close_btn_text' style='".$close_btn_text_display."'>";
                                             }else{
                                                 echo $close_button_text;
                                             }
@@ -7246,7 +7251,7 @@ $ays_users_roles = $wp_roles->roles;
                                         <img class='close_btn_img' src='<?php echo $close_btn_background_img; ?>' width='30' height='30' style='<?php echo $close_btn_img_display; ?>'>
                                         <?php
                                                 if ($close_button_text === '✕') {
-                                                    echo "<img src='" . AYS_PB_ADMIN_URL . "/images/icons/times-2x.svg' class='close_btn_text' style='".$close_btn_text_display."'>";
+                                                    echo "<img src='" . esc_url(AYS_PB_ADMIN_URL) . "/images/icons/times-2x.svg' class='close_btn_text' style='".$close_btn_text_display."'>";
                                                 }else{
                                                    echo $close_button_text;
                                                 }
@@ -7318,7 +7323,7 @@ $ays_users_roles = $wp_roles->roles;
                         <div class="ays_toggle_parent">
                             <div class="form-group row">
                                 <div class="col-sm-3">
-                                    <label for="<?php echo $this->plugin_name; ?>-ays_pb_cookie">
+                                    <label for="<?php echo esc_attr($this->plugin_name); ?>-ays_pb_cookie">
                                         <span style="font-size: 15px;"><?php echo esc_html__("Display once per session", "ays-popup-box"); ?></span>
                                         <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__('Define the interval between the popup sessions in minutes. To disable the option, set 0. E.g. set it to 1440 to show the popup once a day to each user.', "ays-popup-box"); ?>">
                                             <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
@@ -7326,7 +7331,7 @@ $ays_users_roles = $wp_roles->roles;
                                     </label>
                                 </div>
                                 <div class="col-sm-9">
-                                    <input type="number" id="<?php echo $this->plugin_name; ?>-ays_pb_cookie" name="<?php echo $this->plugin_name; ?>[cookie]" class="ays-pb-text-input ays-pb-text-input-short ays_toggle_input" value="<?php echo $cookie; ?>" />
+                                    <input type="number" id="<?php echo esc_attr($this->plugin_name); ?>-ays_pb_cookie" name="<?php echo esc_attr($this->plugin_name); ?>[cookie]" class="ays-pb-text-input ays-pb-text-input-short ays_toggle_input" value="<?php echo $cookie; ?>" />
                                 </div>
                             </div>
                             <div class="ays_toggle_target" style="<?php echo ($cookie > 0) ? '' : 'display:none;' ?>">
@@ -7346,7 +7351,7 @@ $ays_users_roles = $wp_roles->roles;
                         <div class="ays_toggle_parent">
                             <div class="form-group row">
                                 <div class="col-sm-3">
-                                    <label for="<?php echo $this->plugin_name; ?>-log-user">
+                                    <label for="<?php echo esc_attr($this->plugin_name); ?>-log-user">
                                         <span><?php echo esc_html__('Display for logged-in users', "ays-popup-box"); ?></span>
                                         <a class="ays_help" data-toggle="tooltip"
                                            title="<?php echo esc_html__('Enable this option to display the popup for logged-in users.', "ays-popup-box") ?>">
@@ -7357,12 +7362,12 @@ $ays_users_roles = $wp_roles->roles;
                                 <div class="col-sm-9">
                                     <div class="row">
                                         <div class="onoffswitch col-sm-2">
-                                            <input type="checkbox" name="<?php echo $this->plugin_name; ?>[log_user]" class="ays-pb-onoffswitch-checkbox ays_toggle_checkbox" id="<?php echo $this->plugin_name; ?>-log-user" <?php if($log_user == 'On'){ echo 'checked';} else { echo '';} ?> />
+                                            <input type="checkbox" name="<?php echo esc_attr($this->plugin_name); ?>[log_user]" class="ays-pb-onoffswitch-checkbox ays_toggle_checkbox" id="<?php echo esc_attr($this->plugin_name); ?>-log-user" <?php if($log_user == 'On'){ echo 'checked';} else { echo '';} ?> />
                                         </div>
                                         <div class="col-sm-10 ays_toggle_target ays_divider_left" style="<?php echo ($log_user == 'On') ? '' : 'display:none;' ?>:">
                                             <div class="form-group row">
                                                 <div class="col-sm-3">
-                                                    <label for="<?php echo $this->plugin_name; ?>-users_role">
+                                                    <label for="<?php echo esc_attr($this->plugin_name); ?>-users_role">
                                                         <span><?php echo esc_html__('Display for certain user roles', "ays-popup-box"); ?></span>
                                                         <a class="ays_help" data-toggle="tooltip"
                                                         title="<?php echo esc_html__('Show the popup only to certain user role(s) mentioned in the list. Leave it blank for showing the popup to all user roles.', "ays-popup-box") ?>">
@@ -7371,7 +7376,7 @@ $ays_users_roles = $wp_roles->roles;
                                                     </label>
                                                 </div>
                                                 <div class="col-sm-9 ays-pb-users-roles ays_pb_users_roles">
-                                                    <select name="<?php echo $this->plugin_name; ?>[ays_users_roles][]" id="ays_users_roles" multiple class="">
+                                                    <select name="<?php echo esc_attr($this->plugin_name); ?>[ays_users_roles][]" id="ays_users_roles" multiple class="">
                                                         <?php
                                                         foreach ($ays_users_roles as $key => $user_role) {
                                                             $selected_role = "";
@@ -7402,7 +7407,7 @@ $ays_users_roles = $wp_roles->roles;
                         <hr/>
                         <div class="form-group row">
                             <div class="col-sm-3">
-                                <label for="<?php echo $this->plugin_name; ?>-guest">
+                                <label for="<?php echo esc_attr($this->plugin_name); ?>-guest">
                                     <span><?php echo esc_html__('Display for guests', "ays-popup-box"); ?></span>
                                     <a class="ays_help" data-toggle="tooltip"
                                        title="<?php echo esc_html__('Enable this option to display the popup for guest visitors.', "ays-popup-box") ?>">
@@ -7412,7 +7417,7 @@ $ays_users_roles = $wp_roles->roles;
                             </div>
                             <div class="col-sm-9">
                                 <p class="onoffswitch">
-                                    <input type="checkbox" name="<?php echo $this->plugin_name; ?>[guest]" class="ays-pb-onoffswitch-checkbox" id="<?php echo $this->plugin_name; ?>-guest" <?php if($guest == 'On'){ echo 'checked';} else { echo '';} ?> />
+                                    <input type="checkbox" name="<?php echo esc_attr($this->plugin_name); ?>[guest]" class="ays-pb-onoffswitch-checkbox" id="<?php echo esc_attr($this->plugin_name); ?>-guest" <?php if($guest == 'On'){ echo 'checked';} else { echo '';} ?> />
                                 </p>
                             </div>
                         </div>
@@ -7760,8 +7765,8 @@ $ays_users_roles = $wp_roles->roles;
                                 <p style="margin: 0;"><?php echo  esc_html__('Choose Your Popup Type', "ays-popup-box") ?></p>
                             </div>
                             <div class="ays_pb_layer_box_blocks">
-                                <label for="<?php echo $this->plugin_name; ?>-modal_content_custom_html" class='ays-pb-dblclick-layer'>
-                                    <input id="<?php echo $this->plugin_name; ?>-modal_content_custom_html" type="radio" name="<?php echo $this->plugin_name; ?>[modal_content]" class="ays-pb-content-type" value="custom_html" <?php echo $modal_content == 'custom_html' ? 'checked' : ''; ?>>
+                                <label for="<?php echo esc_attr($this->plugin_name); ?>-modal_content_custom_html" class='ays-pb-dblclick-layer'>
+                                    <input id="<?php echo esc_attr($this->plugin_name); ?>-modal_content_custom_html" type="radio" name="<?php echo esc_attr($this->plugin_name); ?>[modal_content]" class="ays-pb-content-type" value="custom_html" <?php echo $modal_content == 'custom_html' ? 'checked' : ''; ?>>
                                     <div class="ays_pb_layer_item">
                                         <div class="ays_pb_layer_item_logo">
                                             <div class="ays_pb_layer_item_logo_overlay">
@@ -7781,8 +7786,8 @@ $ays_users_roles = $wp_roles->roles;
                                         </div>
                                     </div>
                                 </label>
-                                <label for="<?php echo $this->plugin_name; ?>-modal_content_shortcode" class='ays-pb-dblclick-layer'>
-                                    <input id="<?php echo $this->plugin_name; ?>-modal_content_shortcode" type="radio" name="<?php echo $this->plugin_name; ?>[modal_content]" class="ays-pb-content-type" value="shortcode" <?php echo $modal_content == 'shortcode' ? 'checked' : ''; ?>>
+                                <label for="<?php echo esc_attr($this->plugin_name); ?>-modal_content_shortcode" class='ays-pb-dblclick-layer'>
+                                    <input id="<?php echo esc_attr($this->plugin_name); ?>-modal_content_shortcode" type="radio" name="<?php echo esc_attr($this->plugin_name); ?>[modal_content]" class="ays-pb-content-type" value="shortcode" <?php echo $modal_content == 'shortcode' ? 'checked' : ''; ?>>
                                     <div class="ays_pb_layer_item">
                                         <div class="ays_pb_layer_item_logo">
                                             <div class="ays_pb_layer_item_logo_overlay">
@@ -7802,8 +7807,8 @@ $ays_users_roles = $wp_roles->roles;
                                         </div>
                                     </div>
                                 </label>
-                                <label for="<?php echo $this->plugin_name; ?>-modal_content_video_type" class='ays-pb-dblclick-layer'>
-                                    <input id="<?php echo $this->plugin_name; ?>-modal_content_video_type" type="radio" name="<?php echo $this->plugin_name; ?>[modal_content]" class="ays-pb-content-type" value="video_type" <?php echo $modal_content == 'video_type' ? 'checked' : ''; ?>>
+                                <label for="<?php echo esc_attr($this->plugin_name); ?>-modal_content_video_type" class='ays-pb-dblclick-layer'>
+                                    <input id="<?php echo esc_attr($this->plugin_name); ?>-modal_content_video_type" type="radio" name="<?php echo esc_attr($this->plugin_name); ?>[modal_content]" class="ays-pb-content-type" value="video_type" <?php echo $modal_content == 'video_type' ? 'checked' : ''; ?>>
                                     <div class="ays_pb_layer_item">
                                         <div class="ays_pb_layer_item_logo">
                                             <div class="ays_pb_layer_item_logo_overlay">
@@ -7823,8 +7828,8 @@ $ays_users_roles = $wp_roles->roles;
                                         </div> 
                                     </div>
                                 </label>
-                                <label for="<?php echo $this->plugin_name; ?>-modal_content_image_type" class='ays-pb-dblclick-layer'>
-                                    <input id="<?php echo $this->plugin_name; ?>-modal_content_image_type" type="radio" name="<?php echo $this->plugin_name; ?>[modal_content]" class="ays-pb-content-type" value="image_type" <?php echo $modal_content == 'image_type' ? 'checked' : ''; ?>>
+                                <label for="<?php echo esc_attr($this->plugin_name); ?>-modal_content_image_type" class='ays-pb-dblclick-layer'>
+                                    <input id="<?php echo esc_attr($this->plugin_name); ?>-modal_content_image_type" type="radio" name="<?php echo esc_attr($this->plugin_name); ?>[modal_content]" class="ays-pb-content-type" value="image_type" <?php echo $modal_content == 'image_type' ? 'checked' : ''; ?>>
                                     <div class="ays_pb_layer_item">
                                         <div class="ays_pb_layer_item_logo">
                                             <div class="ays_pb_layer_item_logo_overlay">
@@ -7844,8 +7849,8 @@ $ays_users_roles = $wp_roles->roles;
                                         </div>
                                     </div>
                                 </label>
-                                <label for="<?php echo $this->plugin_name; ?>-modal_content_facebook_type" class='ays-pb-dblclick-layer'>
-                                    <input id="<?php echo $this->plugin_name; ?>-modal_content_facebook_type" type="radio" name="<?php echo $this->plugin_name; ?>[modal_content]" class="ays-pb-content-type" value="facebook_type" <?php echo $modal_content == 'facebook_type' ? 'checked' : ''; ?>>
+                                <label for="<?php echo esc_attr($this->plugin_name); ?>-modal_content_facebook_type" class='ays-pb-dblclick-layer'>
+                                    <input id="<?php echo esc_attr($this->plugin_name); ?>-modal_content_facebook_type" type="radio" name="<?php echo esc_attr($this->plugin_name); ?>[modal_content]" class="ays-pb-content-type" value="facebook_type" <?php echo $modal_content == 'facebook_type' ? 'checked' : ''; ?>>
                                     <div class="ays_pb_layer_item">
                                         <div class="ays_pb_layer_item_logo">
                                             <div class="ays_pb_layer_item_logo_overlay">
@@ -7865,8 +7870,8 @@ $ays_users_roles = $wp_roles->roles;
                                         </div>
                                     </div>
                                 </label>
-                                <label for="<?php echo $this->plugin_name; ?>-modal_content_notification" class='ays-pb-dblclick-layer'>
-                                    <input id="<?php echo $this->plugin_name; ?>-modal_content_notification" type="radio" name="<?php echo $this->plugin_name; ?>[modal_content]" class="ays-pb-content-type" value="notification_type" <?php echo $modal_content == 'notification_type' ? 'checked' : ''; ?>>
+                                <label for="<?php echo esc_attr($this->plugin_name); ?>-modal_content_notification" class='ays-pb-dblclick-layer'>
+                                    <input id="<?php echo esc_attr($this->plugin_name); ?>-modal_content_notification" type="radio" name="<?php echo esc_attr($this->plugin_name); ?>[modal_content]" class="ays-pb-content-type" value="notification_type" <?php echo $modal_content == 'notification_type' ? 'checked' : ''; ?>>
                                     <div class="ays_pb_layer_item">
                                         <div class="ays_pb_layer_item_logo">
                                             <div class="ays_pb_layer_item_logo_overlay">
@@ -8161,37 +8166,37 @@ $ays_users_roles = $wp_roles->roles;
                     <label>
                         <div class="ays_pb_layer_item">
                             <?php echo esc_html__('Shortcode', "ays-popup-box") ?>
-                            <input id="<?php echo $this->plugin_name; ?>-modal_content_shortcode" type="radio" name="<?php echo $this->plugin_name; ?>[modal_content]" value="shortcode" <?php echo ($modal_content == 'shortcode') ? 'checked': '' ?>>
+                            <input id="<?php echo esc_attr($this->plugin_name); ?>-modal_content_shortcode" type="radio" name="<?php echo esc_attr($this->plugin_name); ?>[modal_content]" value="shortcode" <?php echo ($modal_content == 'shortcode') ? 'checked': '' ?>>
                         </div>
                     </label>
                     <label>
                         <div class="ays_pb_layer_item">
                             <?php echo  esc_html__('Custom Content', "ays-popup-box") ?>
-                            <input id="<?php echo $this->plugin_name; ?>-modal_content_custom_html" type="radio" name="<?php echo $this->plugin_name; ?>[modal_content]" value="custom_html" <?php echo ($modal_content == 'custom_html') ? 'checked' : ''; ?>>
+                            <input id="<?php echo esc_attr($this->plugin_name); ?>-modal_content_custom_html" type="radio" name="<?php echo esc_attr($this->plugin_name); ?>[modal_content]" value="custom_html" <?php echo ($modal_content == 'custom_html') ? 'checked' : ''; ?>>
                       </div>
                     </label>
                     <label>
                         <div class="ays_pb_layer_item">
                             <?php echo  esc_html__('Video', "ays-popup-box") ?>
-                            <input id="<?php echo $this->plugin_name; ?>-modal_content_video_type" type="radio" name="<?php echo $this->plugin_name; ?>[modal_content]" value="video_type" <?php echo ($modal_content == 'video_type') ? 'checked' : ''; ?>>
+                            <input id="<?php echo esc_attr($this->plugin_name); ?>-modal_content_video_type" type="radio" name="<?php echo esc_attr($this->plugin_name); ?>[modal_content]" value="video_type" <?php echo ($modal_content == 'video_type') ? 'checked' : ''; ?>>
                         </div>
                     </label>
                     <label>
                         <div class="ays_pb_layer_item">
                             <?php echo  esc_html__('Image', "ays-popup-box") ?>
-                            <input id="<?php echo $this->plugin_name; ?>-modal_content_image_type" type="radio" name="<?php echo $this->plugin_name; ?>[modal_content]" value="image_type" <?php echo ($modal_content == 'image_type') ? 'checked' : ''; ?>>
+                            <input id="<?php echo esc_attr($this->plugin_name); ?>-modal_content_image_type" type="radio" name="<?php echo esc_attr($this->plugin_name); ?>[modal_content]" value="image_type" <?php echo ($modal_content == 'image_type') ? 'checked' : ''; ?>>
                         </div>
                     </label>
                     <label>
                         <div class="ays_pb_layer_item">
                             <?php echo  esc_html__('Facebook', "ays-popup-box") ?>
-                            <input id="<?php echo $this->plugin_name; ?>-modal_content_facebook_type" type="radio" name="<?php echo $this->plugin_name; ?>[modal_content]" value="facebook_type" <?php echo ($modal_content == 'facebook_type') ? 'checked' : ''; ?>>
+                            <input id="<?php echo esc_attr($this->plugin_name); ?>-modal_content_facebook_type" type="radio" name="<?php echo esc_attr($this->plugin_name); ?>[modal_content]" value="facebook_type" <?php echo ($modal_content == 'facebook_type') ? 'checked' : ''; ?>>
                         </div>
                     </label>
                     <label>
                         <div class="ays_pb_layer_item">
                             <?php echo  esc_html__('Notification', "ays-popup-box") ?>
-                            <input id="<?php echo $this->plugin_name; ?>-modal_content_notification_type" type="radio" name="<?php echo $this->plugin_name; ?>[modal_content]" value="notification_type" <?php echo ($modal_content == 'notification_type') ? 'checked' : ''; ?>>
+                            <input id="<?php echo esc_attr($this->plugin_name); ?>-modal_content_notification_type" type="radio" name="<?php echo esc_attr($this->plugin_name); ?>[modal_content]" value="notification_type" <?php echo ($modal_content == 'notification_type') ? 'checked' : ''; ?>>
                         </div>
                     </label>
                 </div>
@@ -8200,13 +8205,13 @@ $ays_users_roles = $wp_roles->roles;
     </div>
 
     <script>
-        jQuery("#<?php echo $this->plugin_name; ?>-show_all_except").on('click', function(){
+        jQuery("#<?php echo esc_attr($this->plugin_name); ?>-show_all_except").on('click', function(){
             jQuery('.ays_pb_view_place_tr').show(250);
         });
-        jQuery("#<?php echo $this->plugin_name; ?>-show_all_selected").on('click', function(){
+        jQuery("#<?php echo esc_attr($this->plugin_name); ?>-show_all_selected").on('click', function(){
             jQuery('.ays_pb_view_place_tr').show(250);
         });
-        jQuery("#<?php echo $this->plugin_name; ?>-show_all_yes").on('click', function(){
+        jQuery("#<?php echo esc_attr($this->plugin_name); ?>-show_all_yes").on('click', function(){
             jQuery('.ays_pb_view_place_tr').hide(250);
         });
     </script>
@@ -8231,7 +8236,7 @@ $ays_users_roles = $wp_roles->roles;
                         bg_img_val = $(document).find('.ays-pb-live-container').css({'background-image': "none"});
                     }
                 }else{
-                    bg_img_val = $(document).find('.ays-pb-live-container').not('.ays_template_window').css({'background-image': 'url('+$("#<?php echo $this->plugin_name; ?>-bg-image").val()+ ')'});
+                    bg_img_val = $(document).find('.ays-pb-live-container').not('.ays_template_window').css({'background-image': 'url('+$("#<?php echo esc_attr($this->plugin_name); ?>-bg-image").val()+ ')'});
                 }
 
                 var pbTitleVal = $(document).find('#ays-pb-popup_title').val();
@@ -8249,7 +8254,7 @@ $ays_users_roles = $wp_roles->roles;
 
                 $(document).find(".ays-pb-live-container-main").addClass('display_none');
                 $(document).find(".ays-pb-live-container-main").removeClass('ays_active');
-                switch ($("input[name='<?php echo $this->plugin_name; ?>[view_type]']:checked").val()) {
+                switch ($("input[name='<?php echo esc_attr($this->plugin_name); ?>[view_type]']:checked").val()) {
                     case 'default':
                         $(document).find(".ays-pb-live-container-main.ays-pb-modal").removeClass('display_none');
                         $(document).find(".ays-pb-live-container-main.ays-pb-modal").addClass('ays_active');
@@ -8305,7 +8310,7 @@ $ays_users_roles = $wp_roles->roles;
                             'background-position' : pb_bg_image_position
                         });
                         $(document).find('.ays_winxp_content').css({
-                            'background-color': $("#<?php echo $this->plugin_name; ?>-bgcolor").val()
+                            'background-color': $("#<?php echo esc_attr($this->plugin_name); ?>-bgcolor").val()
                         });
                         ays_pb_view_type = '.ays_winxp_window';
                         break;
@@ -8330,17 +8335,17 @@ $ays_users_roles = $wp_roles->roles;
                             'background-position' : pb_bg_image_position
                         });
                         ays_pb_view_type = '.ays_lil_window';
-                        $(document).find('.ays_lil_head .ays-close-button-take-text-color').css('background-color', $("#<?php echo $this->plugin_name; ?>-header_bgcolor").val() + ' !important');
-                        $(document).find('.ays_lil_head .ays-close-button-take-text-color').css('color', $("#<?php echo $this->plugin_name; ?>-ays_pb_textcolor").val() + ' !important');
+                        $(document).find('.ays_lil_head .ays-close-button-take-text-color').css('background-color', $("#<?php echo esc_attr($this->plugin_name); ?>-header_bgcolor").val() + ' !important');
+                        $(document).find('.ays_lil_head .ays-close-button-take-text-color').css('color', $("#<?php echo esc_attr($this->plugin_name); ?>-ays_pb_textcolor").val() + ' !important');
                         changeCloseButtonPosition();
                         break;
                     case 'image':
                         $(document).find(".ays-pb-live-container-main.ays_image_window").removeClass('display_none');
                         $(document).find(".ays-pb-live-container-main.ays_image_window").addClass('ays_active');
-                        if ($("#<?php echo $this->plugin_name; ?>-bg-image").val() == '') {
+                        if ($("#<?php echo esc_attr($this->plugin_name); ?>-bg-image").val() == '') {
                             default_template_img = 'url("https://quiz-plugin.com/wp-content/uploads/2020/02/elefante.jpg")';
                         }else{
-                            default_template_img = 'url(' + $("#<?php echo $this->plugin_name; ?>-bg-image").val() + ')';
+                            default_template_img = 'url(' + $("#<?php echo esc_attr($this->plugin_name); ?>-bg-image").val() + ')';
                         }
                         $(document).find('.ays_bg_image_box').css({
                             'background-image' : default_template_img,
@@ -8365,11 +8370,11 @@ $ays_users_roles = $wp_roles->roles;
                     case 'template':
                         $(document).find(".ays-pb-live-container-main.ays_template_window").removeClass('display_none');
                         $(document).find(".ays-pb-live-container-main.ays_template_window").addClass('ays_active');
-                        $(document).find('.ays_template_head').css('background-color', $("#<?php echo $this->plugin_name; ?>-header_bgcolor").val() + ' !important');
-                        if ($("#<?php echo $this->plugin_name; ?>-bg-image").val() == '') {
+                        $(document).find('.ays_template_head').css('background-color', $("#<?php echo esc_attr($this->plugin_name); ?>-header_bgcolor").val() + ' !important');
+                        if ($("#<?php echo esc_attr($this->plugin_name); ?>-bg-image").val() == '') {
                             default_template_img = 'url("https://quiz-plugin.com/wp-content/uploads/2020/02/girl-scaled.jpg")';
                         }else{
-                            default_template_img = 'url(' + $("#<?php echo $this->plugin_name; ?>-bg-image").val() + ')';
+                            default_template_img = 'url(' + $("#<?php echo esc_attr($this->plugin_name); ?>-bg-image").val() + ')';
                         }
                         $(document).find('.ays_bg_image_box').css({
                             'background-image' : default_template_img,
@@ -8432,8 +8437,8 @@ $ays_users_roles = $wp_roles->roles;
                         break;
                 }
 
-                $(document).on('click','input[name="<?php echo $this->plugin_name; ?>[view_type]"], .ays-pb-template-choose-template-btn',function () {
-                    var bgImage = $("#<?php echo $this->plugin_name; ?>-bg-image").val();
+                $(document).on('click','input[name="<?php echo esc_attr($this->plugin_name); ?>[view_type]"], .ays-pb-template-choose-template-btn',function () {
+                    var bgImage = $("#<?php echo esc_attr($this->plugin_name); ?>-bg-image").val();
                     var bgGradient = $("#ays-enable-background-gradient").prop('checked');
                     var pb_bg_image_position = $(document).find('#ays_pb_bg_image_position').val();
                     var pb_bg_image_sizing = $(document).find('#ays_pb_bg_image_sizing').val();
@@ -8467,7 +8472,7 @@ $ays_users_roles = $wp_roles->roles;
 
                     $(document).find(".ays-pb-live-container-main").addClass('display_none');
                     $(document).find(".ays-pb-live-container-main").removeClass('ays_active');
-                    switch ($("input[name='<?php echo $this->plugin_name; ?>[view_type]']:checked").val()) {
+                    switch ($("input[name='<?php echo esc_attr($this->plugin_name); ?>[view_type]']:checked").val()) {
                         case 'default':
                             $(document).find(".ays-pb-live-container-main.ays-pb-modal").removeClass('display_none');
                             $(document).find(".ays-pb-live-container-main.ays-pb-modal").addClass('ays_active');
@@ -8479,7 +8484,7 @@ $ays_users_roles = $wp_roles->roles;
                                 'background-size' : pb_bg_image_sizing,
                                 'background-position' : pb_bg_image_position
                             });
-                            $(document).find(ays_pb_view_type + ' .desc').html($("#<?php echo $this->plugin_name; ?>-popup_description").val());
+                            $(document).find(ays_pb_view_type + ' .desc').html($("#<?php echo esc_attr($this->plugin_name); ?>-popup_description").val());
                             $(document).find(ays_pb_view_type + ' .ays_title').html( pbTitle );
                             $(document).find("#ays-pb-close-button-text").on('change', function () {
                                 if($("#ays-pb-close-button-text").val() == '✕'){
@@ -8509,10 +8514,10 @@ $ays_users_roles = $wp_roles->roles;
                             }
 
                             $(ays_pb_view_type).css({
-                                'background-color': $("#<?php echo $this->plugin_name; ?>-bgcolor").val(),
-                                'color': $("#<?php echo $this->plugin_name; ?>-ays_pb_textcolor").val() + ' !important',
-                                'border': $("#<?php echo $this->plugin_name; ?>-ays_pb_bordersize").val() + "px "+$('#ays_pb_border_style').val()+ $("#<?php echo $this->plugin_name; ?>-bordercolor").val(),
-                                'border-radius': $("#<?php echo $this->plugin_name; ?>-ays_pb_border_radius").val() + 'px',
+                                'background-color': $("#<?php echo esc_attr($this->plugin_name); ?>-bgcolor").val(),
+                                'color': $("#<?php echo esc_attr($this->plugin_name); ?>-ays_pb_textcolor").val() + ' !important',
+                                'border': $("#<?php echo esc_attr($this->plugin_name); ?>-ays_pb_bordersize").val() + "px "+$('#ays_pb_border_style').val()+ $("#<?php echo esc_attr($this->plugin_name); ?>-bordercolor").val(),
+                                'border-radius': $("#<?php echo esc_attr($this->plugin_name); ?>-ays_pb_border_radius").val() + 'px',
                                 'font-family': $('#ays_pb_font_family').val(),
                             });
                             var closeBtnDefaultColor = $(document).find('#ays_pb_close_button_color').val('#000');
@@ -8529,13 +8534,13 @@ $ays_users_roles = $wp_roles->roles;
                                 'background-size' : pb_bg_image_sizing,
                                 'background-position' : pb_bg_image_position
                             });
-                            $(document).find(ays_pb_view_type + ' .desc').html($("#<?php echo $this->plugin_name; ?>-popup_description").val());
+                            $(document).find(ays_pb_view_type + ' .desc').html($("#<?php echo esc_attr($this->plugin_name); ?>-popup_description").val());
                             $(document).find(ays_pb_view_type + ' .ays_title').html( pbTitle );
                             $(ays_pb_view_type).css({
-                                'background-color': $("#<?php echo $this->plugin_name; ?>-bgcolor").val(),
-                                'color': $("#<?php echo $this->plugin_name; ?>-ays_pb_textcolor").val() + ' !important',
-                                'border': $("#<?php echo $this->plugin_name; ?>-ays_pb_bordersize").val() + "px"+ $('#ays_pb_border_style').val()+ $("#<?php echo $this->plugin_name; ?>-bordercolor").val(),
-                                'border-radius': $("#<?php echo $this->plugin_name; ?>-ays_pb_border_radius").val() + 'px','font-family': $('#ays_pb_font_family').val(),
+                                'background-color': $("#<?php echo esc_attr($this->plugin_name); ?>-bgcolor").val(),
+                                'color': $("#<?php echo esc_attr($this->plugin_name); ?>-ays_pb_textcolor").val() + ' !important',
+                                'border': $("#<?php echo esc_attr($this->plugin_name); ?>-ays_pb_bordersize").val() + "px"+ $('#ays_pb_border_style').val()+ $("#<?php echo esc_attr($this->plugin_name); ?>-bordercolor").val(),
+                                'border-radius': $("#<?php echo esc_attr($this->plugin_name); ?>-ays_pb_border_radius").val() + 'px','font-family': $('#ays_pb_font_family').val(),
                             });
                             if($(document).find('#ays_enable_title_text_shadow').prop('checked')){
                                 $(document).find(ays_pb_view_type+' h2.ays_title').css('text-shadow' , textShadowX+'px '+textShadowY +'px '+textShadowZ+'px '+textShadowColor);
@@ -8561,13 +8566,13 @@ $ays_users_roles = $wp_roles->roles;
                                 'background-size' : pb_bg_image_sizing,
                                 'background-position' : pb_bg_image_position
                             });
-                            $(document).find(ays_pb_view_type + ' .desc').html($("#<?php echo $this->plugin_name; ?>-popup_description").val());
+                            $(document).find(ays_pb_view_type + ' .desc').html($("#<?php echo esc_attr($this->plugin_name); ?>-popup_description").val());
                             $(document).find(ays_pb_view_type + ' .ays_title').html( pbTitle );
                             $(ays_pb_view_type).css({
-                                'background-color': $("#<?php echo $this->plugin_name; ?>-bgcolor").val(),
-                                'color': $("#<?php echo $this->plugin_name; ?>-ays_pb_textcolor").val() + ' !important',
-                                'border': $("#<?php echo $this->plugin_name; ?>-ays_pb_bordersize").val() + "px "+$('#ays_pb_border_style').val()+ $("#<?php echo $this->plugin_name; ?>-bordercolor").val(),
-                                'border-radius': $("#<?php echo $this->plugin_name; ?>-ays_pb_border_radius").val() + 'px','font-family': $('#ays_pb_font_family').val(),
+                                'background-color': $("#<?php echo esc_attr($this->plugin_name); ?>-bgcolor").val(),
+                                'color': $("#<?php echo esc_attr($this->plugin_name); ?>-ays_pb_textcolor").val() + ' !important',
+                                'border': $("#<?php echo esc_attr($this->plugin_name); ?>-ays_pb_bordersize").val() + "px "+$('#ays_pb_border_style').val()+ $("#<?php echo esc_attr($this->plugin_name); ?>-bordercolor").val(),
+                                'border-radius': $("#<?php echo esc_attr($this->plugin_name); ?>-ays_pb_border_radius").val() + 'px','font-family': $('#ays_pb_font_family').val(),
                             });
                             if($(document).find('#ays_enable_title_text_shadow').prop('checked')){
                                 $(document).find(ays_pb_view_type+' h2.ays_title').css('text-shadow' , textShadowX+'px '+textShadowY +'px '+textShadowZ+'px '+textShadowColor);
@@ -8593,13 +8598,13 @@ $ays_users_roles = $wp_roles->roles;
                                 'background-size' : pb_bg_image_sizing,
                                 'background-position' : pb_bg_image_position
                             });
-                            $(document).find(ays_pb_view_type + ' .desc').html($("#<?php echo $this->plugin_name; ?>-popup_description").val());
+                            $(document).find(ays_pb_view_type + ' .desc').html($("#<?php echo esc_attr($this->plugin_name); ?>-popup_description").val());
                             $(document).find(ays_pb_view_type + ' .ays_title').html( pbTitle );
                             $(ays_pb_view_type).css({
-                                'background-color': $("#<?php echo $this->plugin_name; ?>-bgcolor").val(),
-                                'color': $("#<?php echo $this->plugin_name; ?>-ays_pb_textcolor").val() + ' !important',
-                                'border': $("#<?php echo $this->plugin_name; ?>-ays_pb_bordersize").val() + "px "+$('#ays_pb_border_style').val()+ $("#<?php echo $this->plugin_name; ?>-bordercolor").val(),
-                                'border-radius': $("#<?php echo $this->plugin_name; ?>-ays_pb_border_radius").val() + 'px','font-family': $('#ays_pb_font_family').val(),
+                                'background-color': $("#<?php echo esc_attr($this->plugin_name); ?>-bgcolor").val(),
+                                'color': $("#<?php echo esc_attr($this->plugin_name); ?>-ays_pb_textcolor").val() + ' !important',
+                                'border': $("#<?php echo esc_attr($this->plugin_name); ?>-ays_pb_bordersize").val() + "px "+$('#ays_pb_border_style').val()+ $("#<?php echo esc_attr($this->plugin_name); ?>-bordercolor").val(),
+                                'border-radius': $("#<?php echo esc_attr($this->plugin_name); ?>-ays_pb_border_radius").val() + 'px','font-family': $('#ays_pb_font_family').val(),
                             });
                             if($(document).find('#ays_enable_title_text_shadow').prop('checked')){
                                 $(document).find(ays_pb_view_type+' h2.ays_title').css('text-shadow' , textShadowX+'px '+textShadowY +'px '+textShadowZ+'px '+textShadowColor);
@@ -8619,10 +8624,10 @@ $ays_users_roles = $wp_roles->roles;
                             $(document).find(".ays-pb-live-container-main.ays_winxp_window").addClass('ays_active');
 
                             ays_pb_view_type = '.ays_winxp_window';
-                            $(document).find(ays_pb_view_type + ' .desc').html($("#<?php echo $this->plugin_name; ?>-popup_description").val());
+                            $(document).find(ays_pb_view_type + ' .desc').html($("#<?php echo esc_attr($this->plugin_name); ?>-popup_description").val());
                             $(document).find(ays_pb_view_type + ' .ays_title').html( pbTitle );
                             $(document).find(ays_pb_view_type + ' .ays_winxp_content').css({
-                                'background-color': $("#<?php echo $this->plugin_name; ?>-bgcolor").val()
+                                'background-color': $("#<?php echo esc_attr($this->plugin_name); ?>-bgcolor").val()
                             });
                             $(document).find('.ays_bg_image_box').css({
                                 'background-image' : bg_image_css,
@@ -8631,9 +8636,9 @@ $ays_users_roles = $wp_roles->roles;
                                 'background-position' : pb_bg_image_position
                             });
                             $(ays_pb_view_type).css({
-                                'color': $("#<?php echo $this->plugin_name; ?>-ays_pb_textcolor").val() + ' !important',
-                                'border': $("#<?php echo $this->plugin_name; ?>-ays_pb_bordersize").val() + "px "+$('#ays_pb_border_style').val()+ $("#<?php echo $this->plugin_name; ?>-bordercolor").val(),
-                                'border-radius': $("#<?php echo $this->plugin_name; ?>-ays_pb_border_radius").val() + 'px','font-family': $('#ays_pb_font_family').val(),
+                                'color': $("#<?php echo esc_attr($this->plugin_name); ?>-ays_pb_textcolor").val() + ' !important',
+                                'border': $("#<?php echo esc_attr($this->plugin_name); ?>-ays_pb_bordersize").val() + "px "+$('#ays_pb_border_style').val()+ $("#<?php echo esc_attr($this->plugin_name); ?>-bordercolor").val(),
+                                'border-radius': $("#<?php echo esc_attr($this->plugin_name); ?>-ays_pb_border_radius").val() + 'px','font-family': $('#ays_pb_font_family').val(),
                             });
                             if($(document).find('#ays_enable_title_text_shadow').prop('checked')){
                                 $(document).find(ays_pb_view_type+' h2.ays_title').css('text-shadow' , textShadowX+'px '+textShadowY +'px '+textShadowZ+'px '+textShadowColor);
@@ -8659,16 +8664,16 @@ $ays_users_roles = $wp_roles->roles;
                                 'background-size' : pb_bg_image_sizing,
                                 'background-position' : pb_bg_image_position
                             });
-                            $(document).find(ays_pb_view_type + ' .desc').html($("#<?php echo $this->plugin_name; ?>-popup_description").val());
+                            $(document).find(ays_pb_view_type + ' .desc').html($("#<?php echo esc_attr($this->plugin_name); ?>-popup_description").val());
                             $(document).find(ays_pb_view_type + ' .ays_title').html( pbTitle );
                             $(document).find("#ays-pb-close-button-text").on('change', function () {
                                 $(ays_pb_view_type + ' .ays-close-button-text').html($("#ays-pb-close-button-text").val());
                             });
                             $(ays_pb_view_type).css({
-                                'background-color': $("#<?php echo $this->plugin_name; ?>-bgcolor").val(),
-                                'color': $("#<?php echo $this->plugin_name; ?>-ays_pb_textcolor").val() + ' !important',
-                                'border': $("#<?php echo $this->plugin_name; ?>-ays_pb_bordersize").val() + "px "+$('#ays_pb_border_style').val()+ $("#<?php echo $this->plugin_name; ?>-bordercolor").val(),
-                                'border-radius': $("#<?php echo $this->plugin_name; ?>-ays_pb_border_radius").val() + 'px','font-family': $('#ays_pb_font_family').val(),
+                                'background-color': $("#<?php echo esc_attr($this->plugin_name); ?>-bgcolor").val(),
+                                'color': $("#<?php echo esc_attr($this->plugin_name); ?>-ays_pb_textcolor").val() + ' !important',
+                                'border': $("#<?php echo esc_attr($this->plugin_name); ?>-ays_pb_bordersize").val() + "px "+$('#ays_pb_border_style').val()+ $("#<?php echo esc_attr($this->plugin_name); ?>-bordercolor").val(),
+                                'border-radius': $("#<?php echo esc_attr($this->plugin_name); ?>-ays_pb_border_radius").val() + 'px','font-family': $('#ays_pb_font_family').val(),
                             });
                             $(document).find('.ays_bg_image_box').css({
                                 'background-image' : bg_image_css,
@@ -8694,16 +8699,16 @@ $ays_users_roles = $wp_roles->roles;
                             $(document).find(".ays-pb-live-container-main.ays_lil_window").addClass('ays_active');
 
                             ays_pb_view_type = '.ays_lil_window';
-                            $(document).find(ays_pb_view_type + ' .desc').html($("#<?php echo $this->plugin_name; ?>-popup_description").val());
+                            $(document).find(ays_pb_view_type + ' .desc').html($("#<?php echo esc_attr($this->plugin_name); ?>-popup_description").val());
                             $(document).find(ays_pb_view_type + ' .ays_title').html( pbTitle );
                             $(document).find("#ays-pb-close-button-text").on('change', function () {
                                 $(ays_pb_view_type + ' .ays-close-button-text').html($("#ays-pb-close-button-text").val());
                             });
                             $(ays_pb_view_type).css({
-                                'background-color': $("#<?php echo $this->plugin_name; ?>-bgcolor").val(),
-                                'color': $("#<?php echo $this->plugin_name; ?>-ays_pb_textcolor").val() + ' !important',
-                                'border': $("#<?php echo $this->plugin_name; ?>-ays_pb_bordersize").val() + "px "+$('#ays_pb_border_style').val()+ $("#<?php echo $this->plugin_name; ?>-bordercolor").val(),
-                                'border-radius': $("#<?php echo $this->plugin_name; ?>-ays_pb_border_radius").val() + 'px','font-family': $('#ays_pb_font_family').val(),
+                                'background-color': $("#<?php echo esc_attr($this->plugin_name); ?>-bgcolor").val(),
+                                'color': $("#<?php echo esc_attr($this->plugin_name); ?>-ays_pb_textcolor").val() + ' !important',
+                                'border': $("#<?php echo esc_attr($this->plugin_name); ?>-ays_pb_bordersize").val() + "px "+$('#ays_pb_border_style').val()+ $("#<?php echo esc_attr($this->plugin_name); ?>-bordercolor").val(),
+                                'border-radius': $("#<?php echo esc_attr($this->plugin_name); ?>-ays_pb_border_radius").val() + 'px','font-family': $('#ays_pb_font_family').val(),
                             });
                             $(document).find('.ays_bg_image_box').css({
                                 'background-image' : bg_image_css,
@@ -8711,9 +8716,9 @@ $ays_users_roles = $wp_roles->roles;
                                 'background-size' : pb_bg_image_sizing,
                                 'background-position' : pb_bg_image_position
                             });
-                            $(document).find('.ays_lil_head').css('background-color', $("#<?php echo $this->plugin_name; ?>-header_bgcolor").val() + ' !important');
-                            $(document).find('.ays_lil_head .ays-close-button-take-text-color').css('background-color', $("#<?php echo $this->plugin_name; ?>-ays_pb_textcolor").val() + ' !important');
-                            $(document).find('.ays_lil_head .ays-close-button-take-text-color').css('color', $("#<?php echo $this->plugin_name; ?>-header_bgcolor").val() + " !important");
+                            $(document).find('.ays_lil_head').css('background-color', $("#<?php echo esc_attr($this->plugin_name); ?>-header_bgcolor").val() + ' !important');
+                            $(document).find('.ays_lil_head .ays-close-button-take-text-color').css('background-color', $("#<?php echo esc_attr($this->plugin_name); ?>-ays_pb_textcolor").val() + ' !important');
+                            $(document).find('.ays_lil_head .ays-close-button-take-text-color').css('color', $("#<?php echo esc_attr($this->plugin_name); ?>-header_bgcolor").val() + " !important");
                             changeCloseButtonPosition();
                             if($(document).find('#ays_enable_title_text_shadow').prop('checked')){
                                 $(document).find(ays_pb_view_type+' h2.ays_title').css('text-shadow' , textShadowX+'px '+textShadowY +'px '+textShadowZ+'px '+textShadowColor);
@@ -8734,18 +8739,18 @@ $ays_users_roles = $wp_roles->roles;
                             $(document).find(".ays-pb-live-container-main.ays_image_window").addClass('ays_active');
 
                             ays_pb_view_type = '.ays_image_window';
-                            $(document).find(ays_pb_view_type + ' .desc').html($("#<?php echo $this->plugin_name; ?>-popup_description").val());
+                            $(document).find(ays_pb_view_type + ' .desc').html($("#<?php echo esc_attr($this->plugin_name); ?>-popup_description").val());
                             $(document).find(ays_pb_view_type + ' .ays_title').html( pbTitle );
                             $(document).find("#ays-pb-close-button-text").on('change', function () {
                                 $(ays_pb_view_type + ' .ays-close-button-text').html($("#ays-pb-close-button-text").val());
                             });
                             $(ays_pb_view_type).css({
-                                'background-color': $("#<?php echo $this->plugin_name; ?>-bgcolor").val(),
-                                'color': $("#<?php echo $this->plugin_name; ?>-ays_pb_textcolor").val() + ' !important',
-                                'border': $("#<?php echo $this->plugin_name; ?>-ays_pb_bordersize").val() + "px "+$('#ays_pb_border_style').val()+ $("#<?php echo $this->plugin_name; ?>-bordercolor").val(),
-                                'border-radius': $("#<?php echo $this->plugin_name; ?>-ays_pb_border_radius").val() + 'px','font-family': $('#ays_pb_font_family').val(),
+                                'background-color': $("#<?php echo esc_attr($this->plugin_name); ?>-bgcolor").val(),
+                                'color': $("#<?php echo esc_attr($this->plugin_name); ?>-ays_pb_textcolor").val() + ' !important',
+                                'border': $("#<?php echo esc_attr($this->plugin_name); ?>-ays_pb_bordersize").val() + "px "+$('#ays_pb_border_style').val()+ $("#<?php echo esc_attr($this->plugin_name); ?>-bordercolor").val(),
+                                'border-radius': $("#<?php echo esc_attr($this->plugin_name); ?>-ays_pb_border_radius").val() + 'px','font-family': $('#ays_pb_font_family').val(),
                             });
-                            var bg_img_default = $("#<?php echo $this->plugin_name; ?>-bg-image").val();
+                            var bg_img_default = $("#<?php echo esc_attr($this->plugin_name); ?>-bg-image").val();
                             if(!bg_img_default)
                                 bg_img_default="https://quiz-plugin.com/wp-content/uploads/2020/02/elefante.jpg";
                             $(document).find('.ays_bg_image_box').css({
@@ -8774,7 +8779,7 @@ $ays_users_roles = $wp_roles->roles;
 
                             ays_pb_view_type = '.ays_minimal_window';
 
-                            $(document).find(ays_pb_view_type + ' .desc').html($("#<?php echo $this->plugin_name; ?>-popup_description").val());
+                            $(document).find(ays_pb_view_type + ' .desc').html($("#<?php echo esc_attr($this->plugin_name); ?>-popup_description").val());
                             $(document).find(ays_pb_view_type + ' .ays_title').html( pbTitle );
 
                             $(document).find("#ays-pb-close-button-text").on('change', function () {
@@ -8785,10 +8790,10 @@ $ays_users_roles = $wp_roles->roles;
                                 }
                             });
                             $(ays_pb_view_type).css({
-                                'background-color': $("#<?php echo $this->plugin_name; ?>-bgcolor").val(),
-                                'color': $("#<?php echo $this->plugin_name; ?>-ays_pb_textcolor").val() + ' !important',
-                                'border': $("#<?php echo $this->plugin_name; ?>-ays_pb_bordersize").val() + "px "+$('#ays_pb_border_style').val()+ $("#<?php echo $this->plugin_name; ?>-bordercolor").val(),
-                                'border-radius': $("#<?php echo $this->plugin_name; ?>-ays_pb_border_radius").val() + 'px','font-family': $('#ays_pb_font_family').val(),
+                                'background-color': $("#<?php echo esc_attr($this->plugin_name); ?>-bgcolor").val(),
+                                'color': $("#<?php echo esc_attr($this->plugin_name); ?>-ays_pb_textcolor").val() + ' !important',
+                                'border': $("#<?php echo esc_attr($this->plugin_name); ?>-ays_pb_bordersize").val() + "px "+$('#ays_pb_border_style').val()+ $("#<?php echo esc_attr($this->plugin_name); ?>-bordercolor").val(),
+                                'border-radius': $("#<?php echo esc_attr($this->plugin_name); ?>-ays_pb_border_radius").val() + 'px','font-family': $('#ays_pb_font_family').val(),
                             });
 
                             $(document).find('.ays_bg_image_box').css({
@@ -8816,19 +8821,19 @@ $ays_users_roles = $wp_roles->roles;
                             $(document).find(".ays-pb-live-container-main.ays_template_window").addClass('ays_active');
 
                             ays_pb_view_type = '.ays_template_window';
-                            $(document).find(ays_pb_view_type + ' .desc').html($("#<?php echo $this->plugin_name; ?>-popup_description").val());
+                            $(document).find(ays_pb_view_type + ' .desc').html($("#<?php echo esc_attr($this->plugin_name); ?>-popup_description").val());
                             $(document).find(ays_pb_view_type + ' .ays_title').html( pbTitle );
                             $(document).find("#ays-pb-close-button-text").on('change', function () {
                                 $(ays_pb_view_type + ' .ays-close-button-text').html($("#ays-pb-close-button-text").val());
                             });
                             $(ays_pb_view_type).css({
-                                'background-color': $("#<?php echo $this->plugin_name; ?>-bgcolor").val(),
-                                'color': $("#<?php echo $this->plugin_name; ?>-ays_pb_textcolor").val() + ' !important',
-                                'border': $("#<?php echo $this->plugin_name; ?>-ays_pb_bordersize").val() + "px "+$('#ays_pb_border_style').val()+ $("#<?php echo $this->plugin_name; ?>-bordercolor").val(),
-                                'border-radius': $("#<?php echo $this->plugin_name; ?>-ays_pb_border_radius").val() + 'px','font-family': $('#ays_pb_font_family').val(),
+                                'background-color': $("#<?php echo esc_attr($this->plugin_name); ?>-bgcolor").val(),
+                                'color': $("#<?php echo esc_attr($this->plugin_name); ?>-ays_pb_textcolor").val() + ' !important',
+                                'border': $("#<?php echo esc_attr($this->plugin_name); ?>-ays_pb_bordersize").val() + "px "+$('#ays_pb_border_style').val()+ $("#<?php echo esc_attr($this->plugin_name); ?>-bordercolor").val(),
+                                'border-radius': $("#<?php echo esc_attr($this->plugin_name); ?>-ays_pb_border_radius").val() + 'px','font-family': $('#ays_pb_font_family').val(),
                             });
-                            $(document).find('.ays_template_head').css('background-color', $("#<?php echo $this->plugin_name; ?>-header_bgcolor").val() + ' !important');
-                            var bg_img_default = $("#<?php echo $this->plugin_name; ?>-bg-image").val();
+                            $(document).find('.ays_template_head').css('background-color', $("#<?php echo esc_attr($this->plugin_name); ?>-header_bgcolor").val() + ' !important');
+                            var bg_img_default = $("#<?php echo esc_attr($this->plugin_name); ?>-bg-image").val();
                             if(!bg_img_default)
                                 bg_img_default="https://quiz-plugin.com/wp-content/uploads/2020/02/girl-scaled.jpg";
                             $(document).find('.ays_bg_image_box').css({
@@ -8863,16 +8868,16 @@ $ays_users_roles = $wp_roles->roles;
                                     'background-size' : pb_bg_image_sizing,
                                     'background-position' : pb_bg_image_position
                                 });
-                                $(document).find(ays_pb_view_type + ' .desc').html($("#<?php echo $this->plugin_name; ?>-popup_description").val());
+                                $(document).find(ays_pb_view_type + ' .desc').html($("#<?php echo esc_attr($this->plugin_name); ?>-popup_description").val());
                                 $(document).find(ays_pb_view_type + ' .ays_title').html( pbTitle );
                                 $(document).find("#ays-pb-close-button-text").on('change', function () {
                                     $(ays_pb_view_type + ' .ays-close-button-text').html($("#ays-pb-close-button-text").val());
                                 });
                                 $(ays_pb_view_type).css({
                                 
-                                    'color': $("#<?php echo $this->plugin_name; ?>-ays_pb_textcolor").val() + ' !important',
-                                    'border': $("#<?php echo $this->plugin_name; ?>-ays_pb_bordersize").val() + "px "+$('#ays_pb_border_style').val()+ $("#<?php echo $this->plugin_name; ?>-bordercolor").val(),
-                                    'border-radius': $("#<?php echo $this->plugin_name; ?>-ays_pb_border_radius").val() + 'px','font-family': $('#ays_pb_font_family').val(),
+                                    'color': $("#<?php echo esc_attr($this->plugin_name); ?>-ays_pb_textcolor").val() + ' !important',
+                                    'border': $("#<?php echo esc_attr($this->plugin_name); ?>-ays_pb_bordersize").val() + "px "+$('#ays_pb_border_style').val()+ $("#<?php echo esc_attr($this->plugin_name); ?>-bordercolor").val(),
+                                    'border-radius': $("#<?php echo esc_attr($this->plugin_name); ?>-ays_pb_border_radius").val() + 'px','font-family': $('#ays_pb_font_family').val(),
                                 });
                             }
                             changeCloseButtonPosition();
@@ -8894,22 +8899,22 @@ $ays_users_roles = $wp_roles->roles;
                             $(document).find(".ays-pb-live-container-main.ays-pb-modal").addClass('ays_active');
 
                             $(document).find('.ays_bg_image_box').css({
-                                'background-image' : 'url(' + $("#<?php echo $this->plugin_name; ?>-bg-image").val() + ')',
+                                'background-image' : 'url(' + $("#<?php echo esc_attr($this->plugin_name); ?>-bg-image").val() + ')',
                                 'background-repeat' : 'no-repeat',
                                 'background-size' : pb_bg_image_sizing,
                                 'background-position' : pb_bg_image_position
                             });
                             ays_pb_view_type = '.ays-pb-modal';
-                            $(document).find(ays_pb_view_type + ' .desc').html($("#<?php echo $this->plugin_name; ?>-popup_description").val());
+                            $(document).find(ays_pb_view_type + ' .desc').html($("#<?php echo esc_attr($this->plugin_name); ?>-popup_description").val());
                             $(document).find(ays_pb_view_type + ' .ays_title').html( pbTitle );
                             $(document).find("#ays-pb-close-button-text").on('change', function () {
                                 $(ays_pb_view_type + ' .ays-close-button-text').html($("#ays-pb-close-button-text").val());
                             });
                             $(ays_pb_view_type).css({
-                                'background-color': $("#<?php echo $this->plugin_name; ?>-bgcolor").val(),
-                                'color': $("#<?php echo $this->plugin_name; ?>-ays_pb_textcolor").val() + ' !important',
-                                'border': $("#<?php echo $this->plugin_name; ?>-ays_pb_bordersize").val() + "px "+$('#ays_pb_border_style').val()+ $("#<?php echo $this->plugin_name; ?>-bordercolor").val(),
-                                'border-radius': $("#<?php echo $this->plugin_name; ?>-ays_pb_border_radius").val() + 'px','font-family': $('#ays_pb_font_family').val(),
+                                'background-color': $("#<?php echo esc_attr($this->plugin_name); ?>-bgcolor").val(),
+                                'color': $("#<?php echo esc_attr($this->plugin_name); ?>-ays_pb_textcolor").val() + ' !important',
+                                'border': $("#<?php echo esc_attr($this->plugin_name); ?>-ays_pb_bordersize").val() + "px "+$('#ays_pb_border_style').val()+ $("#<?php echo esc_attr($this->plugin_name); ?>-bordercolor").val(),
+                                'border-radius': $("#<?php echo esc_attr($this->plugin_name); ?>-ays_pb_border_radius").val() + 'px','font-family': $('#ays_pb_font_family').val(),
                             });
                             changeCloseButtonPosition();
                             if($(document).find('#ays_enable_title_text_shadow').prop('checked')){
@@ -8929,24 +8934,24 @@ $ays_users_roles = $wp_roles->roles;
                 });
 
                 $(ays_pb_view_type).css({
-                    'background-color': $("#<?php echo $this->plugin_name; ?>-bgcolor").val(),
-                    'color': $("#<?php echo $this->plugin_name; ?>-ays_pb_textcolor").val() + ' !important',
-                    'border': $("#<?php echo $this->plugin_name; ?>-ays_pb_bordersize").val() + "px "+$('#ays_pb_border_style').val()+ $("#<?php echo $this->plugin_name; ?>-bordercolor").val(),
-                    'border-radius': $("#<?php echo $this->plugin_name; ?>-ays_pb_border_radius").val() + 'px',
+                    'background-color': $("#<?php echo esc_attr($this->plugin_name); ?>-bgcolor").val(),
+                    'color': $("#<?php echo esc_attr($this->plugin_name); ?>-ays_pb_textcolor").val() + ' !important',
+                    'border': $("#<?php echo esc_attr($this->plugin_name); ?>-ays_pb_bordersize").val() + "px "+$('#ays_pb_border_style').val()+ $("#<?php echo esc_attr($this->plugin_name); ?>-bordercolor").val(),
+                    'border-radius': $("#<?php echo esc_attr($this->plugin_name); ?>-ays_pb_border_radius").val() + 'px',
                     'font-family': $('#ays_pb_font_family').val(),
                 });
 
-                $(document).find(ays_pb_view_type + ' .desc').html($("#<?php echo $this->plugin_name; ?>-popup_description").val());
+                $(document).find(ays_pb_view_type + ' .desc').html($("#<?php echo esc_attr($this->plugin_name); ?>-popup_description").val());
                 $(document).find(ays_pb_view_type + ' .ays_title').html( pbTitle );
 
-                $(document).find("#<?php echo $this->plugin_name; ?>-popup_title").on('change', function () {
+                $(document).find("#<?php echo esc_attr($this->plugin_name); ?>-popup_title").on('change', function () {
                     var pbTitleVal = $(this).val();
                     var pbTitle = aysPopupstripHTML( pbTitleVal );
 
                     $(ays_pb_view_type + ' .ays_title').html( pbTitle );
                 });
-                $(document).find("#<?php echo $this->plugin_name; ?>-popup_description").on('change', function () {
-                    $(ays_pb_view_type + ' .desc').html($("#<?php echo $this->plugin_name; ?>-popup_description").val());
+                $(document).find("#<?php echo esc_attr($this->plugin_name); ?>-popup_description").on('change', function () {
+                    $(ays_pb_view_type + ' .desc').html($("#<?php echo esc_attr($this->plugin_name); ?>-popup_description").val());
                 });
                 $(document).find("#ays-pb-close-button-text").on('change', function () {
                     let $this      = $(document).find('.ays-pb-modal .ays-close-button-text');
@@ -8983,7 +8988,7 @@ $ays_users_roles = $wp_roles->roles;
                 function changeCloseButtonPosition(){
                     let position = $(document).find('#ays-pb-close-button-position').val();
                     let ays_pb_radius = Math.abs($(document).find('#ays-pb-ays_pb_bordersize').val());
-                    let checkedTheme = $(document).find("input[name='<?php echo $this->plugin_name; ?>[view_type]']:checked").val();
+                    let checkedTheme = $(document).find("input[name='<?php echo esc_attr($this->plugin_name); ?>[view_type]']:checked").val();
                     let tb,tb_value,rl,rl_value,auto_1,auto_2,res;
                     let ays_pb_checked_theme_class = '';
 
@@ -9224,8 +9229,8 @@ $ays_users_roles = $wp_roles->roles;
                 var optionsForBgHeader = {
                     change: function (e) {
                         setTimeout(function() {
-                            $(document).find('.ays_lil_head').css('background-color', $("#<?php echo $this->plugin_name; ?>-header_bgcolor").val()+ " !important");
-                            $(document).find('.ays_template_head').css('background-color', $("#<?php echo $this->plugin_name; ?>-header_bgcolor").val()+ " !important");
+                            $(document).find('.ays_lil_head').css('background-color', $("#<?php echo esc_attr($this->plugin_name); ?>-header_bgcolor").val()+ " !important");
+                            $(document).find('.ays_template_head').css('background-color', $("#<?php echo esc_attr($this->plugin_name); ?>-header_bgcolor").val()+ " !important");
                         }, 100, e.target.value)
                     }
                 }
@@ -9242,7 +9247,7 @@ $ays_users_roles = $wp_roles->roles;
                 $(document).find('.ays_pb_textcolor_change').wpColorPicker(optionsForTextColor);
                 $(document).find('.ays_pb_bordercolor_change').wpColorPicker(optionsForBorderColor);
                 $(document).find('.ays_pb_overlay_color_change').wpColorPicker(optionsForOverlayColor);
-                $(document).find('#<?php echo $this->plugin_name; ?>-header_bgcolor').wpColorPicker(optionsForBgHeader);
+                $(document).find('#<?php echo esc_attr($this->plugin_name); ?>-header_bgcolor').wpColorPicker(optionsForBgHeader);
                 $(document).find('#ays_title_text_shadow_color').wpColorPicker(optionsForTextShadowColor);
                 $(document).find('#ays_pb_box_shadow_color').wpColorPicker(optionsForBoxShadowColor);
 
@@ -9266,8 +9271,8 @@ $ays_users_roles = $wp_roles->roles;
                     $(document).find(ays_pb_view_type + ", .ays_image_type_img_window").css('box-shadow', 'unset');
                 }
                 
-                $(document).find("#<?php echo $this->plugin_name; ?>-ays_pb_textcolor").on('change', function () {
-                    $(ays_pb_view_type + ", .ays_image_type_img_window").css('color', $("#<?php echo $this->plugin_name; ?>-ays_pb_textcolor").val() + ' !important');
+                $(document).find("#<?php echo esc_attr($this->plugin_name); ?>-ays_pb_textcolor").on('change', function () {
+                    $(ays_pb_view_type + ", .ays_image_type_img_window").css('color', $("#<?php echo esc_attr($this->plugin_name); ?>-ays_pb_textcolor").val() + ' !important');
                 });
 
                 $(document).find("#ays_pb_title_text_shadow_x_offset").on('change', function () {
@@ -9316,12 +9321,12 @@ $ays_users_roles = $wp_roles->roles;
                     $(document).find(ays_pb_view_type + ", .ays_image_type_img_window").css("box-shadow", x+"px "+y+"px "+z+"px "+boxShadowColor);
                 });
 
-                $(document).find("#<?php echo $this->plugin_name; ?>-ays_pb_bordersize").on('change', function () {
+                $(document).find("#<?php echo esc_attr($this->plugin_name); ?>-ays_pb_bordersize").on('change', function () {
                     let ays_pb_radius = Math.abs($(this).val());
                     let ays_pb_bottom = (-40 - ays_pb_radius);
                     let closeBtnPosition = $(document).find('#ays-pb-close-button-position').val();
                     let tb,tb_value,rl,rl_value,auto_1,auto_2,res;
-                    $(ays_pb_view_type + ", .ays_image_type_img_window").css('border', $("#<?php echo $this->plugin_name; ?>-ays_pb_bordersize").val() + "px "+$('#ays_pb_border_style').val()+ $("#<?php echo $this->plugin_name; ?>-bordercolor").val());
+                    $(ays_pb_view_type + ", .ays_image_type_img_window").css('border', $("#<?php echo esc_attr($this->plugin_name); ?>-ays_pb_bordersize").val() + "px "+$('#ays_pb_border_style').val()+ $("#<?php echo esc_attr($this->plugin_name); ?>-bordercolor").val());
                     $(document).find('.ays-pb-live-container.ays_image_window .ays_pb_timer').css('bottom', ays_pb_bottom+'px');
                     $(document).find('.ays-pb-live-container.ays_minimal_window .ays_pb_timer').css('bottom', ays_pb_bottom+'px');
                     switch(closeBtnPosition){
@@ -9352,11 +9357,11 @@ $ays_users_roles = $wp_roles->roles;
                     $(document).find('.ays-pb-live-container .close-image-btn').css(tb,tb_value).css(rl,rl_value).css(auto_1,'auto').css(auto_2,'auto');
 
                 });
-                $(document).find("#<?php echo $this->plugin_name; ?>-ays_pb_border_radius").on('change', function () {
-                    $(ays_pb_view_type + ", .ays_image_type_img_window").css('border-radius', $("#<?php echo $this->plugin_name; ?>-ays_pb_border_radius").val() + 'px');
-                    $(document).find('.ays_video_content>video').css('border-radius', $("#<?php echo $this->plugin_name; ?>-ays_pb_border_radius").val() + 'px');
+                $(document).find("#<?php echo esc_attr($this->plugin_name); ?>-ays_pb_border_radius").on('change', function () {
+                    $(ays_pb_view_type + ", .ays_image_type_img_window").css('border-radius', $("#<?php echo esc_attr($this->plugin_name); ?>-ays_pb_border_radius").val() + 'px');
+                    $(document).find('.ays_video_content>video').css('border-radius', $("#<?php echo esc_attr($this->plugin_name); ?>-ays_pb_border_radius").val() + 'px');
                 });
-                $(document).find("#<?php echo $this->plugin_name; ?>-animate_in").on('change', function () {
+                $(document).find("#<?php echo esc_attr($this->plugin_name); ?>-animate_in").on('change', function () {
                     if($(this).val() == 'none'){
                         $(document).find('#ays_pb_animation_speed').prop( "disabled", true );
                         // $(document).find('#ays_pb_animation_speed_mobile').prop( "disabled", true );
@@ -9365,25 +9370,25 @@ $ays_users_roles = $wp_roles->roles;
                         // $(document).find('#ays_pb_animation_speed_mobile').prop( "disabled", false );
                     }
                     let animation_speed = Math.abs($(document).find('#ays_pb_animation_speed').val() ) +"s";
-                    $(ays_pb_view_type + ", .ays_image_type_img_window").css('animation', $("#<?php echo $this->plugin_name; ?>-animate_in").val() + " " + animation_speed);
+                    $(ays_pb_view_type + ", .ays_image_type_img_window").css('animation', $("#<?php echo esc_attr($this->plugin_name); ?>-animate_in").val() + " " + animation_speed);
                 });
-                $(document).find("#<?php echo $this->plugin_name; ?>-animate_in_mobile").on('change', function () {
+                $(document).find("#<?php echo esc_attr($this->plugin_name); ?>-animate_in_mobile").on('change', function () {
                     if($(this).val() == 'none'){
                         $(document).find('#ays_pb_animation_speed_mobile').prop( "disabled", true );
                     }else{
                         $(document).find('#ays_pb_animation_speed_mobile').prop( "disabled", false );
                     }
                 });
-                $(document).find("#<?php echo $this->plugin_name; ?>-animate_out").on('change', function () {
+                $(document).find("#<?php echo esc_attr($this->plugin_name); ?>-animate_out").on('change', function () {
                     if($(this).val() == 'none'){
                         $(document).find('#ays_pb_close_animation_speed').prop( "disabled", true );
                     }else{
                         $(document).find('#ays_pb_close_animation_speed').prop( "disabled", false );
                     }
                     let animation_speed = Math.abs($(document).find('#ays_pb_close_animation_speed').val() ) +"s";
-                    $(ays_pb_view_type + ", .ays_image_type_img_window").css('animation', $("#<?php echo $this->plugin_name; ?>-animate_out").val() + " " + animation_speed);
+                    $(ays_pb_view_type + ", .ays_image_type_img_window").css('animation', $("#<?php echo esc_attr($this->plugin_name); ?>-animate_out").val() + " " + animation_speed);
                 });
-                $(document).find("#<?php echo $this->plugin_name; ?>-animate_out_mobile").on('change', function () {
+                $(document).find("#<?php echo esc_attr($this->plugin_name); ?>-animate_out_mobile").on('change', function () {
                     if($(this).val() == 'none'){
                         $(document).find('#ays_pb_close_animation_speed_mobile').prop( "disabled", true );
                     }else{
@@ -9396,8 +9401,8 @@ $ays_users_roles = $wp_roles->roles;
                 $(document).find("#ays_pb_font_size").on('change', function () {
                     $(ays_pb_view_type).find('p.desc').css('font-size', $('#ays_pb_font_family').val()+'px !important');
                 });
-                $(document).find("#<?php echo $this->plugin_name; ?>-ays_pb_bordercolor").on('change', function () {
-                    $(ays_pb_view_type).css('border', $("#<?php echo $this->plugin_name; ?>-ays_pb_bordersize").val() + "px "+$('#ays_pb_border_style').val()+ $("#<?php echo $this->plugin_name; ?>-ays_pb_bordercolor").val());
+                $(document).find("#<?php echo esc_attr($this->plugin_name); ?>-ays_pb_bordercolor").on('change', function () {
+                    $(ays_pb_view_type).css('border', $("#<?php echo esc_attr($this->plugin_name); ?>-ays_pb_bordersize").val() + "px "+$('#ays_pb_border_style').val()+ $("#<?php echo esc_attr($this->plugin_name); ?>-ays_pb_bordercolor").val());
                 });
                 $(document).find("#ays-active ,#ays-deactive").on('click',function(){
                     $(document).find("#ui-datepicker-div").css('z-index', '10010');

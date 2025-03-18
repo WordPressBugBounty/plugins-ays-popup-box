@@ -129,14 +129,14 @@ if (isset($id) && !is_null($id)) {
                     <div class="col-sm-8 ays_toggle_target ays_divider_left">
                         <div class="form-group row">                        
                             <div class="col-sm-12">
-                                <label class="ays-pb-label-style" for="<?php echo $this->plugin_name; ?>-show_all_yes"><?php echo esc_html__("All pages", "ays-popup-box"); ?>
-                                    <input type="radio" id="<?php echo $this->plugin_name; ?>-show_all_yes" checked> 
+                                <label class="ays-pb-label-style" for="<?php echo esc_attr($this->plugin_name); ?>-show_all_yes"><?php echo esc_html__("All pages", "ays-popup-box"); ?>
+                                    <input type="radio" id="<?php echo esc_attr($this->plugin_name); ?>-show_all_yes" checked> 
                                 </label>
-                                <label class="ays-pb-label-style" for="<?php echo $this->plugin_name; ?>-show_all_except"><?php echo esc_html__("Except", "ays-popup-box"); ?>
-                                    <input type="radio" id="<?php echo $this->plugin_name; ?>-show_all_except"  class="" name="<?php echo $this->plugin_name; ?>[show_all]" value="except">
+                                <label class="ays-pb-label-style" for="<?php echo esc_attr($this->plugin_name); ?>-show_all_except"><?php echo esc_html__("Except", "ays-popup-box"); ?>
+                                    <input type="radio" id="<?php echo esc_attr($this->plugin_name); ?>-show_all_except"  class="" name="<?php echo esc_attr($this->plugin_name); ?>[show_all]" value="except">
                                 </label>
-                                <label class="ays-pb-label-style" for="<?php echo $this->plugin_name; ?>-show_all_selected"><?php echo esc_html__("Include", "ays-popup-box"); ?>
-                                    <input type="radio" id="<?php echo $this->plugin_name; ?>-show_all_selected"  class="" name="<?php echo $this->plugin_name; ?>[show_all]" value="selected">
+                                <label class="ays-pb-label-style" for="<?php echo esc_attr($this->plugin_name); ?>-show_all_selected"><?php echo esc_html__("Include", "ays-popup-box"); ?>
+                                    <input type="radio" id="<?php echo esc_attr($this->plugin_name); ?>-show_all_selected"  class="" name="<?php echo esc_attr($this->plugin_name); ?>[show_all]" value="selected">
                                 </label>
                                 <a class="ays_help ays-pb-help-pro" style="font-size:15px;" data-toggle="tooltip" data-html="true"
                                     title="<?php

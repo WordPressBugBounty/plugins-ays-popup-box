@@ -885,7 +885,7 @@ class Ays_PopupBox_List_Table extends WP_List_Table {
 
         $options = json_decode($popup['options'], true);
 
-        $options['create_date'] = date("Y-m-d H:i:s");
+        $options['create_date'] = gmdate("Y-m-d H:i:s");
         $options['author'] = $author;
 
         $result = $wpdb->insert(
