@@ -76,6 +76,7 @@
         $(document).find('#ays_pb_close_button_hover_color').wpColorPicker();
         $(document).find('#ays_title_text_shadow_color_mobile').wpColorPicker();
         $(document).find('#ays_pb_box_shadow_color').wpColorPicker();
+        $(document).find("#ays-pb-ays_pb_textcolor").wpColorPicker();
         $(document).find('#ays_pb_box_shadow_color_mobile').wpColorPicker();
         $(document).find('#ays_pb_button_background_color').wpColorPicker();
         $(document).find('#ays-background-gradient-color-1').wpColorPicker(ays_pb_box_gradient_color1_picker);
@@ -1221,6 +1222,12 @@
             }
         });
         // Toggle box shadow end
+
+        $(document).find('#ays-pb-ays_pb_textcolor').on('change', function() {
+            var textColor = $(document).find('#ays-pb-ays_pb_textcolor').val();
+            $(document).find('div.ays-pb-live-container .ays_title').css('color', textColor);
+            $(document).find('div.ays-pb-live-container .desc').css('color', textColor);
+        });
 
         // Close button image | Add start
         $(document).on('click', 'a.ays_pb_add_close_btn_bg_image', function(e) {

@@ -7086,9 +7086,9 @@ $ays_users_roles = $wp_roles->roles;
                                                 }
                                         ?>
                                     </label>
-
-                                    <h2 class="ays_title" style='<?php echo $hide_title ;?>'></h2>
-                                    <p class="desc" style='font-size:<?php echo $pb_font_size?>px;'></p>
+                                    
+                                    <h2 class="ays_title" style='<?php echo $hide_title ;?>; color: <?php echo $textcolor;?>'></h2>
+                                    <p class="desc" style='font-size:<?php echo $pb_font_size?>px; color: <?php echo $textcolor; ?>  '></p>
                                     <hr class="title_hr" style="<?php echo $hide_title ;?>" />
                                     <div class="ays_modal_content"><span><?php echo esc_html__("Here can be custom HTML or shortcode", "ays-popup-box"); ?></span></div>
                                     <?php echo $ays_pb_timer_desc; ?>
@@ -7098,7 +7098,7 @@ $ays_users_roles = $wp_roles->roles;
                                         <label class='ays-pb-modal-close ays_close ays-close-button-on-off <?php $close_button == 'on' ? 'display_none_important' : ''; ?>'><img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/times-2x.svg"?>"></label>
                                         <a class='ays_hide'></a>
                                         <a class='ays_fullScreen'></a>
-                                        <h2 class="ays_title" style='<?php echo $hide_title ;?>'></h2>
+                                        <h2 class="ays_title" style='<?php echo $hide_title ;?>; color: <?php echo $textcolor; ?>'></h2>
                                     </div>
                                     <hr />
                                     <div class='ays_text'>
@@ -7112,7 +7112,7 @@ $ays_users_roles = $wp_roles->roles;
                                 </div>
                                 <div class='ays-pb-live-container ays-pb-live-container-main ays_cmd_window ays_bg_image_box <?php echo ($view_type == 'cmd') ? 'ays_active' : 'display_none'; ?>'>
                                     <header class='ays_cmd_window-header'>
-                                        <div class='ays_cmd_window_title'><h2 class="ays_title" style='<?php echo $hide_title ;?>'></h2></div>
+                                        <div class='ays_cmd_window_title'><h2 class="ays_title" style='<?php echo $hide_title ;?>; color: <?php echo $textcolor; ?>'></h2></div>
                                         <nav class='ays_cmd_window-controls'>
                                             <span class='ays_cmd_control-item ays_cmd_control-minimize ays_cmd_js-minimize'>-</span>
                                             <span class='ays_cmd_control-item ays_cmd_control-maximize ays_cmd_js-maximize'>□</span>
@@ -7141,7 +7141,7 @@ $ays_users_roles = $wp_roles->roles;
                                             <div class='ays_ubuntu_hide'></div>
                                             <div class='ays_ubuntu_maximize'></div>
                                         </div>
-                                        <h2 class="ays_title" style='<?php echo $hide_title ;?>'></h2>
+                                        <h2 class="ays_title" style='<?php echo $hide_title ;?>; color: <?php echo $textcolor; ?>'></h2>
                                     </div>
                                     <div class='ays_ubuntu_tools'>
                                         <ul>
@@ -7165,7 +7165,7 @@ $ays_users_roles = $wp_roles->roles;
                                 <div class='ays-pb-live-container-main ays_winxp_window <?php echo ($view_type == 'winXP') ? 'ays_active' : 'display_none'; ?>'>
                                     <div class='ays_winxp_title-bar'>
                                         <div class='ays_winxp_title-bar-title'>
-                                            <h2 class="ays_title" style='<?php echo $hide_title ;?>'></h2>
+                                            <h2 class="ays_title" style='<?php echo $hide_title ;?>; color: <?php echo $textcolor; ?>'></h2>
                                         </div>
                                         <div class='ays_winxp_title-bar-close ays-close-button-on-off'>
                                             <label for='ays-pb-modal-checkbox' class='ays_winxp_close ays-pb-modal-close'></label>
@@ -7184,7 +7184,7 @@ $ays_users_roles = $wp_roles->roles;
                                     <header class='ays_win98_head'>
                                         <div class='ays_win98_header'>
                                             <div class='ays_win98_title'>
-                                                <h2 class="ays_title" style='<?php echo $hide_title ;?>'></h2>
+                                                <h2 class="ays_title" style='<?php echo $hide_title ;?>; color: <?php echo $textcolor; ?>'></h2>
                                             </div>
                                             <div class='ays_win98_btn-close ays-close-button-on-off'><label for='ays-pb-modal-checkbox' class='ays-pb-modal-close'><span class="ays-close-button-text"><?php echo $close_button_text ?></span></label></div>
                                         </div>
@@ -7206,7 +7206,7 @@ $ays_users_roles = $wp_roles->roles;
                                             <?php echo $close_button_text; ?>
                                         </a>
                                     </label>
-                                        <h2 class="ays_title_lil ays_title" style='<?php echo $hide_title ;?>'></h2>
+                                        <h2 class="ays_title_lil ays_title" style='<?php echo $hide_title ;?> color: <?php echo $textcolor; ?>'></h2>
                                     </header>
                                     <div class='ays_lil_content'>
                                         <p class="desc" style='font-size:<?php echo $pb_font_size?>px margin: 0; <?php echo $hide_desc ;?>'></p>
@@ -7222,8 +7222,8 @@ $ays_users_roles = $wp_roles->roles;
                                                 <a class='close-image-btn ays-close-button-on-off ays-close-button-text ays-close-button-take-text-color close_btn_text' style='<?php echo $close_btn_text_display;?>'>
                                                     <?php echo $close_button_text;?>
                                                 </a>
-                                        <h2 class="ays_title_image ays_title" style='<?php echo $hide_title ;?>'></h2>
-                                        <p class="desc" style='font-size:<?php echo $pb_font_size?>px margin: 0; <?php echo $hide_desc ;?>'></p>
+                                        <h2 class="ays_title_image ays_title" style='<?php echo $hide_title ;?> color: <?php echo $textcolor; ?>'></h2>
+                                        <p class="desc" style='font-size:<?php echo $pb_font_size?>px margin: 0; <?php echo $hide_desc ;?> color: <?php echo $textcolor; ?>'></p>
                                     </header>
                                     <div class='ays_image_content '>
                                         <div class="ays_modal_content"><span><?php echo esc_html__("Here can be custom HTML or shortcode", "ays-popup-box"); ?></span></div>
@@ -7244,8 +7244,8 @@ $ays_users_roles = $wp_roles->roles;
                                                 }
                                         ?>
                                                 </a>
-                                        <h2 class="ays_title_minimal ays_title" style='<?php echo $hide_title ;?>'></h2>
-                                        <p class="desc" style='font-size:<?php echo $pb_font_size?>px margin: 0; <?php echo $hide_desc ;?>'></p>
+                                        <h2 class="ays_title_minimal ays_title" style='<?php echo $hide_title ;?> color: <?php echo $textcolor; ?>'></h2>
+                                        <p class="desc" style='font-size:<?php echo $pb_font_size?>px margin: 0; <?php echo $hide_desc ;?> color: <?php echo $textcolor; ?>'></p>
                                     </header>
                                     <div class='ays_image_content '>
                                         <div class="ays_modal_content"><span><?php echo esc_html__("Here can be custom HTML or shortcode", "ays-popup-box"); ?></span></div>
@@ -7260,12 +7260,12 @@ $ays_users_roles = $wp_roles->roles;
                                                 <?php echo $close_button_text; ?>
                                             </a>
                                         </label>
-                                        <h2 class="ays_title_template ays_title" style='<?php echo $hide_title ;?>'></h2>
+                                        <h2 class="ays_title_template ays_title" style='<?php echo $hide_title ;?> color: <?php echo $textcolor; ?>'></h2>
                                     </header>
                                     <footer class='ays_template_footer' style='<?php echo $calck_template_footer; ?>'>
                                         <div class="ays_bg_image_box"></div>
                                         <div class='ays_template_content '>
-                                            <p class="desc" style='font-size:<?php echo $pb_font_size?>px margin: 0; <?php echo $hide_desc ;?>'></p>
+                                            <p class="desc" style='font-size:<?php echo $pb_font_size?>px margin: 0; <?php echo $hide_desc ;?> color: <?php echo $textcolor; ?>'></p>
                                             <div class="ays_modal_content"><span><?php echo esc_html__("Here can be custom HTML or shortcode", "ays-popup-box"); ?></span></div>
                                             <?php echo $ays_pb_timer_desc; ?>
                                         </div>
@@ -7317,7 +7317,7 @@ $ays_users_roles = $wp_roles->roles;
                                                 }
                                         ?>
                                     </label>
-                                    <h2 class="ays_title" style='<?php echo $hide_title ;?>'></h2>
+                                    <h2 class="ays_title" style='<?php echo $hide_title ;?>; color: <?php echo $textcolor; ?>'></h2>
                                     <p class="desc" style='font-size:<?php echo $pb_font_size?>px;'></p>
                                     <hr class="title_hr" style="<?php echo $hide_title ;?>" />
                                     <div class="ays_modal_content"><span></span></div>
