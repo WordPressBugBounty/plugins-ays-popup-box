@@ -7686,8 +7686,10 @@ $ays_users_roles = $wp_roles->roles;
                                         <input type="checkbox" class="ays-enable-timer1">
                                     </div>
                                     <div class="col-sm-8 ays_toggle_target ays_divider_left">
-                                        <select class="ays-text-input ays-pb-text-input ays-pb-text-input-short ays_pb_aysDropdown" style="width: 15vw;">                            
-                                                <option>USA</option>
+                                        <select class="ays-text-input ays-pb-text-input ays-pb-text-input-short ays_pb_aysDropdown" style="width: 15vw;" multiple>                            
+                                            <option selected>USA</option>
+                                            <option selected>Germany</option>
+                                            <option selected>France</option>
                                         </select>
                                     </div>
                                 </div> 

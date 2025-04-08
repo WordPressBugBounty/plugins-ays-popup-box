@@ -193,7 +193,7 @@ class Ays_Pb_Data {
             $ays_popup_box_flag = intval(get_option('ays_pb_sale_btn'));
             if ($ays_popup_box_flag == 0 ) {
                 if (isset($_GET['page']) && strpos($_GET['page'], AYS_PB_NAME) !== false) {
-                    $this->ays_pb_new_banner_message($ays_popup_box_flag);
+                    $this->ays_pb_new_mega_bundle_message_2025($ays_popup_box_flag);
                     // $this->ays_pb_christmas_top_message_2024($ays_popup_box_flag);
                 }
             }
@@ -667,7 +667,7 @@ class Ays_Pb_Data {
                                 $content[] = '<img src="' . AYS_PB_ADMIN_URL . '/images/icons/pb-30-guaranteeicon.svg" style="width: 70px;">';
                             $content[] = '</div>';
                             $content[] = '<span class="ays-pb-new-mega-bundle-desc">';
-                                $content[] = '<img class="ays-pb-new-mega-bundle-guaranteeicon" src="' . AYS_PB_ADMIN_URL . '/images/icons/pb-maker-guaranteeicon.svg" style="width: 30px;">';
+                                $content[] = '<img class="ays-pb-new-mega-bundle-guaranteeicon" src="' . AYS_PB_ADMIN_URL . '/images/icons/pb-guaranteeicon.svg" style="width: 30px;">';
                                 $content[] = esc_html__( "30 Day Money Back Guarantee", "ays-popup-box" );
                             $content[] = '</span>';
                         $content[] = '</div>';
@@ -690,8 +690,8 @@ class Ays_Pb_Data {
 
                     $content[] = '<div class="ays-pb-dicount-wrap-box ays-pb-dicount-wrap-countdown-box">';
 
-                        $content[] = '<div id="ays-pb-maker-countdown-main-container">';
-                            $content[] = '<div class="ays-pb-maker-countdown-container">';
+                        $content[] = '<div id="ays-pb-countdown-main-container">';
+                            $content[] = '<div class="ays-pb-countdown-container">';
 
                                 $content[] = '<div id="ays-pb-countdown">';
 
@@ -733,6 +733,89 @@ class Ays_Pb_Data {
         }
     }
 
+
+    // New Mega Bundle
+    public function ays_pb_new_mega_bundle_message_2025($ishmar){
+        if($ishmar == 0 ){
+            $content = array();
+
+            $pb_cta_button_link = sprintf('https://ays-pro.com/essential-bundle?utm_source=dashboard&utm_medium=popup-free&utm_campaign=sale-banner-%s', AYS_PB_NAME_VERSION);
+
+            $content[] = '<div id="ays-pb-new-mega-bundle-2025-dicount-month-main" class="notice notice-success is-dismissible ays_pb_dicount_info">';
+                $content[] = '<div id="ays-pb-dicount-month" class="ays_pb_dicount_month">';
+                    $content[] = '<div class="ays-pb-dicount-wrap-box ays-pb-dicount-wrap-text-box">';
+                        $content[] = '<div>';
+
+                            $content[] = '<span class="ays-pb-new-mega-bundle-2025-title">';
+                                $content[] = __( " <span><a href='". $pb_cta_button_link ."' target='_blank' style='color:#ffffff; text-decoration: underline;'>Essential Bundle </a></span>( Quiz + Form + Popup )", 'popup-box' );
+                            $content[] = '</span>';
+                            $content[] = '</br>';
+
+                            $content[] = '<span class="ays-pb-new-mega-bundle-2025-desc">';
+                                $content[] = __( "30 Day Money Back Guarantee", 'popup-box' );
+                            $content[] = '</span>';
+                        $content[] = '</div>';
+                        $content[] = '<div>';
+                                $content[] = '<img class="ays-pb-new-mega-bundle-guaranteeicon" src="' . AYS_PB_ADMIN_URL . '/images/ays-pb-essential-bundle-2025-discount.svg" style="width: 80px;">';
+                        $content[] = '</div>';
+
+                        $content[] = '<div style="position: absolute;right: 10px;bottom: 1px;" class="ays-pb-dismiss-buttons-container-for-form">';
+
+                            $content[] = '<form action="" method="POST">';
+                                $content[] = '<div id="ays-pb-dismiss-buttons-content">';
+                                if( current_user_can( 'manage_options' ) ){
+                                    $content[] = '<button class="btn btn-link ays-button" name="ays_pb_sale_btn" style="height: 32px; margin-left: 0;padding-left: 0">'. __( "Dismiss ad", 'popup-box' ) .'</button>';
+                                    $content[] = wp_nonce_field( AYS_PB_NAME . '-sale-banner' ,  AYS_PB_NAME . '-sale-banner' );
+                                }
+                                $content[] = '</div>';
+                            $content[] = '</form>';
+                            
+                        $content[] = '</div>';
+
+                    $content[] = '</div>';
+
+                    $content[] = '<div class="ays-pb-dicount-wrap-box ays-pb-dicount-wrap-countdown-box">';
+
+                        $content[] = '<div id="ays-pb-countdown-main-container">';
+                            $content[] = '<div class="ays-pb-countdown-container">';
+
+                                $content[] = '<div id="ays-pb-countdown">';
+
+                                    $content[] = '<ul>';
+                                        $content[] = '<li><span id="ays-pb-countdown-days"></span>'. __( "Days", 'popup-box' ) .'</li>';
+                                        $content[] = '<li><span id="ays-pb-countdown-hours"></span>'. __( "Hours", 'popup-box' ) .'</li>';
+                                        $content[] = '<li><span id="ays-pb-countdown-minutes"></span>'. __( "Minutes", 'popup-box' ) .'</li>';
+                                        $content[] = '<li><span id="ays-pb-countdown-seconds"></span>'. __( "Seconds", 'popup-box' ) .'</li>';
+                                    $content[] = '</ul>';
+                                $content[] = '</div>';
+
+                                $content[] = '<div id="ays-pb-countdown-content" class="emoji">';
+                                    $content[] = '<span></span>';
+                                    $content[] = '<span></span>';
+                                    $content[] = '<span></span>';
+                                    $content[] = '<span></span>';
+                                $content[] = '</div>';
+
+                            $content[] = '</div>';
+                        $content[] = '</div>';
+                            
+                    $content[] = '</div>';
+
+                    $content[] = '<div class="ays-pb-dicount-wrap-box ays-pb-dicount-wrap-button-box">';
+                        $content[] = '<a href="'. $pb_cta_button_link .'" class="button button-primary ays-button" id="ays-button-top-buy-now" target="_blank">' . __( 'Buy Now', 'popup-box' ) . '</a>';
+                        $content[] = '<span class="ays-pb-dicount-one-time-text">';
+                            $content[] = __( "One-time payment", 'popup-box' );
+                        $content[] = '</span>';
+                    $content[] = '</div>';
+                $content[] = '</div>';
+            $content[] = '</div>';
+
+            $content = implode( '', $content );
+            echo wp_kses_post($content);
+        }
+    }
+
+
     // Christmas Top Banner 2024
     public function ays_pb_christmas_top_message_2024($ishmar){
         if($ishmar == 0 ){
@@ -743,8 +826,8 @@ class Ays_Pb_Data {
 
                     $content[] = '<div class="ays-pb-dicount-wrap-box ays-pb-dicount-wrap-countdown-box">';
 
-                        $content[] = '<div id="ays-pb-maker-countdown-main-container">';
-                            $content[] = '<div class="ays-pb-maker-countdown-container">';
+                        $content[] = '<div id="ays-pb-countdown-main-container">';
+                            $content[] = '<div class="ays-pb-countdown-container">';
 
                                 $content[] = '<div id="ays-pb-countdown">';
 
