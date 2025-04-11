@@ -290,7 +290,7 @@ class Ays_Pb_Activator {
                         '',
                         '',
                         %s,
-                        'On',
+                        'off',
                         'off',
                         'all',
                         0,
