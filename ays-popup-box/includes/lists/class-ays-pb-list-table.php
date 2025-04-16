@@ -1036,6 +1036,7 @@ class Ays_PopupBox_List_Table extends WP_List_Table {
             'youtube_link' => '',
             'instagram_link' => '',
             'behance_link' => '',
+            'telegram_link' => '',
         );
 
         // Id
@@ -1431,6 +1432,9 @@ class Ays_PopupBox_List_Table extends WP_List_Table {
         // Enable social media links | Behance link
         $behance_link = (isset($ays_social_links['ays_pb_behance_link']) && $ays_social_links['ays_pb_behance_link'] != '') ? sanitize_text_field($ays_social_links['ays_pb_behance_link']) : '';
 
+        // Enable social media links | Telegram link
+        $telegram_link = (isset($ays_social_links['ays_pb_telegram_link']) && $ays_social_links['ays_pb_telegram_link'] != '') ? sanitize_text_field($ays_social_links['ays_pb_telegram_link']) : '';
+
         $social_links = array(
             'linkedin_link' => $linkedin_link,
             'facebook_link' => $facebook_link,
@@ -1439,6 +1443,7 @@ class Ays_PopupBox_List_Table extends WP_List_Table {
             'youtube_link' => $youtube_link,
             'instagram_link' => $instagram_link,
             'behance_link' => $behance_link,
+            'telegram_link' => $telegram_link,
         );
 
         // Schedule the popup

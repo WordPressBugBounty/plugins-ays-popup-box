@@ -93,6 +93,7 @@ $social_links_default = array(
     'youtube_link' => '',
     'instagram_link' => '',
     'behance_link' => '',
+    'telegram_link' => '',
 );
 
 $image_sizing_options = array(
@@ -888,6 +889,9 @@ $instagram_link = (isset($social_links['instagram_link']) && $social_links['inst
 
 // Enable social media links | Behance link
 $behance_link = (isset($social_links['behance_link']) && $social_links['behance_link'] != '') ? esc_url($social_links['behance_link']) : '';
+
+// Enable social media links | Telegram link
+$telegram_link = (isset($social_links['telegram_link']) && $social_links['telegram_link'] != '') ? esc_url($social_links['telegram_link']) : '';
 
 // Schedule the popup
 $popupbox['active_date_check'] = (isset($popupbox['active_date_check']) && $popupbox['active_date_check'] != '') ? esc_attr( stripslashes($popupbox['active_date_check']) ) : 'off';
@@ -4044,6 +4048,21 @@ $ays_users_roles = $wp_roles->roles;
                                     <div class="col-sm-8">
                                         <input type="text" class="ays-text-input" id="ays_pb_behance_link" name="ays_social_links[ays_pb_behance_link]"
                                             value="<?php echo $behance_link; ?>" />
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="form-group row">
+                                    <div class="col-sm-4">
+                                        <label for="ays_pb_telegram_link">
+                                            <?php echo esc_html__('Telegram link',"ays-popup-box")?>
+                                            <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__('Telegram page link for showing at the end of the popup.',"ays-popup-box")?>">
+                                                <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
+                                            </a>
+                                        </label>
+                                    </div>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="ays-text-input" id="ays_pb_telegram_link" name="ays_social_links[ays_pb_telegram_link]"
+                                            value="<?php echo $telegram_link; ?>" />
                                     </div>
                                 </div>
                             </div>
