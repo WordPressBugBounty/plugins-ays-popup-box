@@ -4,7 +4,7 @@ Donate link: https://ays-pro.com/wordpress/popup-box
 Tags: popup, popups, exit popup, pop up, modal
 Requires at least: 4.0
 Tested up to: 6.8
-Stable tag: 5.2.6
+Stable tag: 5.2.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -215,6 +215,7 @@ Don't forget, in case of any problems or upcoming questions feel free to contact
 * [Quiz Maker](https://wordpress.org/plugins/quiz-maker/) for creating advanced quizzes and exams easily and quickly.
 * [Survey Maker](https://wordpress.org/plugins/survey-maker/) for collecting data and analyze it.  
 * [Poll Maker](https://wordpress.org/plugins/poll-maker/) for creating powerful and interactive polls. 
+* [Fox LMS](https://wordpress.org/plugins/fox-lms/) to empower educators and trainers to build structured, interactive online learning systems easily for their WordPress website.
 * [Secure Copy Content Protection](https://wordpress.org/plugins/secure-copy-content-protection/) to protect web content from being plagiarized.
 * [Chartify](https://wordpress.org/plugins/chart-builder/) to build both static and dynamic charts, graphs and diagrams. 
 * [Easy Form](https://wordpress.org/plugins/easy-form/) to create various forms for your website. 
@@ -334,6 +335,10 @@ After clearing the caches, try to check the case with either the **Incognito mod
 
 
 == Changelog ==
+
+= 5.2.7 =
+* Fixed: CSS conflict with the HTML5 Video Player plugin
+* Fixed: CSS conflict with the Panorama Viewer plugin
 
 = 5.2.6 =
 * Added: Telegram social media link

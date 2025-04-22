@@ -1245,43 +1245,43 @@ class Ays_Pb_Public {
             }
             $ays_pb_disable_scroll_on_popup_mobile = ( isset( $options['disable_scroll_on_popup_mobile'] ) && $options['disable_scroll_on_popup_mobile'] == 'on' ) ? true : false;
 
-            $disable_scroll_on_popup = '';
-            $disable_scroll_overflow_y = '';
-            $disable_scroll_display_none = '';
+            $disable_scroll_on_popup        = '';
+            $disable_scroll_overflow_y      = '';
+            $disable_scroll_display_none    = '';
             $position_absolute_popup_scroll = '';
-            $padding_top_popup_scroll = '';
-            $width_popup_scroll = '';
-            $bottom_popup_scroll = '';
-            $margin_top = '';
+            $padding_top_popup_scroll       = '';
+            $width_popup_scroll             = '';
+            $bottom_popup_scroll            = '';
+            $margin_top                     = '';
             if($ays_pb_disable_scroll_on_popup){
-                $disable_scroll_on_popup = 'overflow:hidden !important;';
-                $disable_scroll_overflow_y = 'overflow-y: hidden !important';
-                $disable_scroll_display_none = 'display:none;';
-                $position_absolute_popup_scroll = 'position:absolute;';
-                $padding_top_popup_scroll = 'padding:65px 10px;';
-                $width_popup_scroll = 'width:100%';
-                $bottom_popup_scroll = 'bottom:unset';
-                $margin_top = 'margin-top: 65px;';
+                $disable_scroll_on_popup         = 'overflow:hidden !important;';
+                $disable_scroll_overflow_y       = 'overflow-y: hidden !important';
+                $disable_scroll_display_none     = 'display:none;';
+                $position_absolute_popup_scroll  = 'position:absolute;';
+                $padding_top_popup_scroll        = 'padding:65px 10px;';
+                $width_popup_scroll              = 'width:100%';
+                $bottom_popup_scroll             = 'bottom:unset';
+                $margin_top                      = 'margin-top: 65px;';
             }
-
+            
             if($ays_pb_disable_scroll_on_popup_mobile){
-                $disable_scroll_on_popup_mobile = 'overflow:hidden !important;';
-                $disable_scroll_overflow_y_mobile = 'overflow-y: hidden !important';
-                $disable_scroll_display_none_mobile = 'display:none;';
-                $position_absolute_popup_scroll_mobile = 'position:absolute;';
-                $padding_top_popup_scroll_mobile = 'padding:65px 10px;';
-                $width_popup_scroll_mobile = 'width:100%';
-                $bottom_popup_scroll_mobile = 'bottom:unset';
-                $margin_top_mobile = 'margin-top: 65px;';
+                $disable_scroll_on_popup_mobile          = 'overflow:hidden !important;';
+                $disable_scroll_overflow_y_mobile        = 'overflow-y: hidden !important';
+                $disable_scroll_display_none_mobile      = 'display:none;';
+                $position_absolute_popup_scroll_mobile   = 'position:absolute;';
+                $padding_top_popup_scroll_mobile         = 'padding:65px 10px;';
+                $width_popup_scroll_mobile               = 'width:100%';
+                $bottom_popup_scroll_mobile              = 'bottom:unset';
+                $margin_top_mobile                       = 'margin-top: 65px;';
             } else {
-                $disable_scroll_on_popup_mobile = 'overflow:auto !important;';
-                $disable_scroll_overflow_y_mobile = 'overflow-y: auto !important';
-                $disable_scroll_display_none_mobile = 'display:block;';
-                $position_absolute_popup_scroll_mobile = 'position:sticky;';
-                $padding_top_popup_scroll_mobile = 'padding:0;';
-                $width_popup_scroll_mobile = 'width:auto';
-                $bottom_popup_scroll_mobile = 'bottom:6px';
-                $margin_top_mobile = 'margin-top: 0;';
+                $disable_scroll_on_popup_mobile          = 'overflow:auto !important;';
+                $disable_scroll_overflow_y_mobile        = 'overflow-y: auto !important';
+                $disable_scroll_display_none_mobile      = 'display:block;';
+                $position_absolute_popup_scroll_mobile   = 'position:sticky;';
+                $padding_top_popup_scroll_mobile         = 'padding:0;';
+                $width_popup_scroll_mobile               = 'width:auto';
+                $bottom_popup_scroll_mobile              = 'bottom:6px';
+                $margin_top_mobile                       = 'margin-top: 0;';
             }
 
             //Background image position for mobile

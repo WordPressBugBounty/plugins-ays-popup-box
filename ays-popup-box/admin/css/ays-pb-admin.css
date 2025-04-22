@@ -4603,3 +4603,9 @@ a.ays-rated-link, a.ays-rated-link:hover, a.ays-rated-link:focus {
     animation: ays_pulse 1s linear infinite;
 }
 /* Footer | Heart beat animation styles end */
+
+#h5vp_shortcode_button img,
+#h5vp_add_video_button img {
+    padding: 0;
+    margin-right: 4px;
+}
