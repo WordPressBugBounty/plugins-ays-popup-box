@@ -86,28 +86,28 @@ $author = array(
 $x = '✕';
 
 $social_links_default = array(
-    'linkedin_link' => '',
-    'facebook_link' => '',
-    'twitter_link' => '',
+    'linkedin_link'  => '',
+    'facebook_link'  => '',
+    'twitter_link'   => '',
     'vkontakte_link' => '',
-    'youtube_link' => '',
+    'youtube_link'   => '',
     'instagram_link' => '',
-    'behance_link' => '',
-    'telegram_link' => '',
+    'behance_link'   => '',
+    'telegram_link'  => '',
 );
 
 $image_sizing_options = array(
-    'cover' => esc_html__('Cover', "ays-popup-box"),
+    'cover'   => esc_html__('Cover', "ays-popup-box"),
     'contain' => esc_html__('Contain', "ays-popup-box"),
-    'none' => esc_html__('None', "ays-popup-box"),
-    'unset' => esc_html__('Unset', "ays-popup-box"),
+    'none'    => esc_html__('None', "ays-popup-box"),
+    'unset'   => esc_html__('Unset', "ays-popup-box"),
 );
 
 $text_transform_options = array(
-    'none' => esc_html__('None', "ays-popup-box"),
+    'none'       => esc_html__('None', "ays-popup-box"),
     'capitalize' => esc_html__('Capitalize', "ays-popup-box"),
-    'uppercase' => esc_html__('Uppercase', "ays-popup-box"),
-    'lowercase' => esc_html__('Lowercase', "ays-popup-box"),
+    'uppercase'  => esc_html__('Uppercase', "ays-popup-box"),
+    'lowercase'  => esc_html__('Lowercase', "ays-popup-box"),
 );
 
 $text_decoration_options = array(
@@ -118,10 +118,10 @@ $text_decoration_options = array(
 );
 
 $font_weight_options = array(
-    'normal' => esc_html__('Normal', "ays-popup-box"),
+    'normal'  => esc_html__('Normal', "ays-popup-box"),
     'lighter' => esc_html__('Lighter', "ays-popup-box"),
-    'bold' => esc_html__('Bold', "ays-popup-box"),
-    'bolder' => esc_html__('Bolder', "ays-popup-box"),
+    'bold'    => esc_html__('Bold', "ays-popup-box"),
+    'bolder'  => esc_html__('Bolder', "ays-popup-box"),
     '100' => '100',
     '200' => '200',
     '300' => '300',
@@ -134,13 +134,13 @@ $font_weight_options = array(
 );
 
 $border_styles = array(
-    'solid' => esc_html__('Solid',"ays-popup-box"),
+    'solid'  => esc_html__('Solid',"ays-popup-box"),
     'dotted' => esc_html__('Dotted',"ays-popup-box"),
     'dashed' => esc_html__('Dashed',"ays-popup-box"),
     'double' => esc_html__('Double',"ays-popup-box"),
     'groove' => esc_html__('Groove',"ays-popup-box"),
-    'ridge' => esc_html__('Ridge',"ays-popup-box"),
-    'inset' => esc_html__('Inset',"ays-popup-box"),
+    'ridge'  => esc_html__('Ridge',"ays-popup-box"),
+    'inset'  => esc_html__('Inset',"ays-popup-box"),
     'outset' => esc_html__('Outset',"ays-popup-box"),
 );
 

@@ -989,6 +989,7 @@ class Ays_Pb_Admin {
         $plugin_url_arr = array();
 
         $plugin_slug = array(
+            'fox-lms',
             'quiz-maker',
             'poll-maker',
             'survey-maker',
@@ -1014,6 +1015,15 @@ class Ays_Pb_Admin {
         }
 
         $plugins_array = array(
+            'fox-lms/fox-lms.php'        => array(
+                'icon'        => $images_url . 'icon-fox-lms-128x128.png',
+                'name'        => __( 'Fox LMS', 'ays-popup-box' ),
+                'desc'        => __( 'Build and manage online courses directly on your WordPress site.', 'ays-popup-box' ),
+                'desc_hidden' => __( 'With the FoxLMS plugin, you can create, sell, and organize courses, lessons, and quizzes, transforming your website into a dynamic e-learning platform.', 'ays-popup-box' ),
+                'wporg'       => 'https://wordpress.org/plugins/fox-lms/',
+                'buy_now'     => 'https://foxlms.com/pricing/?utm_source=dashboard&utm_medium=pb-free&utm_campaign=fox-lms-our-products-page',
+                'url'         => $plugin_url_arr['fox-lms'],
+            ),
            'quiz-maker/quiz-maker.php' => array(
                 'icon' => $images_url . 'icon-quiz-128x128.png',
                 'name' => esc_html__('Quiz Maker', "ays-popup-box"),
