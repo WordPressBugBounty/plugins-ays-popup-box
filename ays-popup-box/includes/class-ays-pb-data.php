@@ -747,12 +747,13 @@ class Ays_Pb_Data {
                         $content[] = '<div>';
 
                             $content[] = '<span class="ays-pb-new-mega-bundle-2025-title">';
-                                $content[] = __( " <span><a href='". $pb_cta_button_link ."' target='_blank' style='color:#ffffff; text-decoration: underline;'>Essential Bundle </a></span>( Quiz + Form + Popup )", 'popup-box' );
+                                /* translators: %s: link to Essential Bundle and %s: (Quiz + Form + Popup) */
+                                $content[] = sprintf(' <a href="%s" target="_blank" style="color:#ffffff; text-decoration: underline;">Essential Bundle</a> ( %s )', esc_url($pb_cta_button_link), esc_html__( "Quiz + Form + Popup", "ays-popup-box" ));
                             $content[] = '</span>';
                             $content[] = '</br>';
 
                             $content[] = '<span class="ays-pb-new-mega-bundle-2025-desc">';
-                                $content[] = __( "30 Day Money Back Guarantee", 'popup-box' );
+                                $content[] = __( "30 Day Money Back Guarantee", 'ays-popup-box' );
                             $content[] = '</span>';
                         $content[] = '</div>';
                         $content[] = '<div>';
@@ -764,7 +765,7 @@ class Ays_Pb_Data {
                             $content[] = '<form action="" method="POST">';
                                 $content[] = '<div id="ays-pb-dismiss-buttons-content">';
                                 if( current_user_can( 'manage_options' ) ){
-                                    $content[] = '<button class="btn btn-link ays-button" name="ays_pb_sale_btn" style="height: 32px; margin-left: 0;padding-left: 0">'. __( "Dismiss ad", 'popup-box' ) .'</button>';
+                                    $content[] = '<button class="btn btn-link ays-button" name="ays_pb_sale_btn" style="height: 32px; margin-left: 0;padding-left: 0">'. __( "Dismiss ad", 'ays-popup-box' ) .'</button>';
                                     $content[] = wp_nonce_field( AYS_PB_NAME . '-sale-banner' ,  AYS_PB_NAME . '-sale-banner' );
                                 }
                                 $content[] = '</div>';
@@ -782,10 +783,10 @@ class Ays_Pb_Data {
                                 $content[] = '<div id="ays-pb-countdown">';
 
                                     $content[] = '<ul>';
-                                        $content[] = '<li><span id="ays-pb-countdown-days"></span>'. __( "Days", 'popup-box' ) .'</li>';
-                                        $content[] = '<li><span id="ays-pb-countdown-hours"></span>'. __( "Hours", 'popup-box' ) .'</li>';
-                                        $content[] = '<li><span id="ays-pb-countdown-minutes"></span>'. __( "Minutes", 'popup-box' ) .'</li>';
-                                        $content[] = '<li><span id="ays-pb-countdown-seconds"></span>'. __( "Seconds", 'popup-box' ) .'</li>';
+                                        $content[] = '<li><span id="ays-pb-countdown-days"></span>'. __( "Days", 'ays-popup-box' ) .'</li>';
+                                        $content[] = '<li><span id="ays-pb-countdown-hours"></span>'. __( "Hours", 'ays-popup-box' ) .'</li>';
+                                        $content[] = '<li><span id="ays-pb-countdown-minutes"></span>'. __( "Minutes", 'ays-popup-box' ) .'</li>';
+                                        $content[] = '<li><span id="ays-pb-countdown-seconds"></span>'. __( "Seconds", 'ays-popup-box' ) .'</li>';
                                     $content[] = '</ul>';
                                 $content[] = '</div>';
 
@@ -802,9 +803,9 @@ class Ays_Pb_Data {
                     $content[] = '</div>';
 
                     $content[] = '<div class="ays-pb-dicount-wrap-box ays-pb-dicount-wrap-button-box">';
-                        $content[] = '<a href="'. $pb_cta_button_link .'" class="button button-primary ays-button" id="ays-button-top-buy-now" target="_blank">' . __( 'Buy Now', 'popup-box' ) . '</a>';
+                        $content[] = '<a href="'. $pb_cta_button_link .'" class="button button-primary ays-button" id="ays-button-top-buy-now" target="_blank">' . __( 'Buy Now', 'ays-popup-box' ) . '</a>';
                         $content[] = '<span class="ays-pb-dicount-one-time-text">';
-                            $content[] = __( "One-time payment", 'popup-box' );
+                            $content[] = __( "One-time payment", 'ays-popup-box' );
                         $content[] = '</span>';
                     $content[] = '</div>';
                 $content[] = '</div>';

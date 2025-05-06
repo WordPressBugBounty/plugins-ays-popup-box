@@ -2966,9 +2966,13 @@ $ays_users_roles = $wp_roles->roles;
                                     foreach ( $posts as $post ) {
                                        
                                         $checked = (is_array($except_posts) && in_array($post->ID, $except_posts)) ? "selected" : "";
-                                        echo "<option value='{$post->ID}' {$checked}>{$post->post_title}</option>";
+                                        echo wp_kses("<option value='{$post->ID}' {$checked}>{$post->post_title}</option>", array(
+                                            'option' => array(
+                                                'value' => array(),
+                                                'selected' => array()
+                                            )
+                                        ));
                                     }
-
                                     if (!empty($view_place)) {
                                         $args = array(
                                             'post_type' => array('post', 'page'),
@@ -2981,7 +2985,7 @@ $ays_users_roles = $wp_roles->roles;
                                             foreach ($query->posts as $key => $post){
                                                 if(in_array($post->ID, $view_place)):
                                                     ?>
-                                                    <option selected value="<?php echo $post->ID; ?>"><?php echo get_the_title($post->ID); ?></option> 
+                                                    <option selected value="<?php echo esc_attr($post->ID); ?>"><?php echo esc_html(get_the_title($post->ID)); ?></option> 
                                                 <?php
                                                 endif;
                                             }
@@ -3032,7 +3036,7 @@ $ays_users_roles = $wp_roles->roles;
                                     );
                                 ?>">
                                 <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
-                            </a>
+                                </a>
                         </label>
                     </div>
                     <div class="col-sm-9">
