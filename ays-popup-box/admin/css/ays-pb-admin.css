@@ -3764,6 +3764,18 @@ blockquote.ays-pb-integration-tab-note > p {
     form#ays-pb-settings-form .ays-settings-wrapper div:first-child {
         margin-bottom: 10px;
     }
+
+    .ays-pb-coupon-container {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+    .ays-notice-banner .modile-ddmenu-sm{
+        margin-right: 0 !important;
+    }
+
+    .ays-notice-banner.ays-pb-notice .navigation-bar ul#menu{
+        justify-content: center;
+    }
 }
 
 @media screen and (max-width: 530px) {
@@ -3795,6 +3807,10 @@ blockquote.ays-pb-integration-tab-note > p {
 
     #ays-pb-settings-form .vmessage input[type="text"] {
         width: 100%;
+    }
+
+    .ays-notice-banner.ays-pb-notice .logo-container{
+        gap: 7px !important;
     }
 }
 /* General Settings page styles end */
@@ -4609,3 +4625,61 @@ a.ays-rated-link, a.ays-rated-link:hover, a.ays-rated-link:focus {
     padding: 0;
     margin-right: 4px;
 }
+
+/* Popup Box Top Banner Coupon Button | Start */
+
+.ays-pb-coupon-container .ays-pb-coupon-box {
+    display: flex;
+    align-items: center;
+    border: 2px dashed #000;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 700;
+    /*color: #0B328E;*/
+    padding: 5px 15px;
+    border-radius: 20px;
+    color: #000;
+    background-color: #f9dc6c;
+    cursor: pointer;
+}
+
+.ays-pb-coupon-container span.ays-pb-logo-container-one-time-text{
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.ays-pb-coupon-container {
+    margin-left: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.ays-pb-coupon-container .ays-pb-coupon-box span {
+    margin-left: 5px;
+}
+
+.ays-pb-coupon-container .ays-pb-coupon-box img {
+    width: 10px;
+}
+
+.ays-pb-coupon-container .ays-pb-coupon-box img {
+    width: 8px;
+}
+
+.ays-pb-coupon-container .ays-pb-coupon-box:hover {
+    color: #000;
+    background-color: #f1c51b;
+}
+
+.ays-pb-coupon-container .ays-pb-coupon-box:focus {
+    box-shadow: unset;
+}
+
+.ays-pb-coupon-container .ays-pb-coupon-box:hover .ays-pb-svg-light-hover{
+    display: flex;
+}
+/* Popup Box Top Banner Coupon Button | End */

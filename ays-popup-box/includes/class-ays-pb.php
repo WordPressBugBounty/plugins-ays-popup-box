@@ -270,7 +270,11 @@ class Ays_Pb {
 		// Our Products | Activate plugin
         $this->loader->add_action( 'wp_ajax_ays_pb_activate_plugin', $plugin_admin, 'ays_pb_activate_plugin' );
         $this->loader->add_action( 'wp_ajax_nopriv_ays_pb_activate_plugin', $plugin_admin, 'ays_pb_activate_plugin' );
-    }
+
+		// AJAX handler for changing popupbox status in list table
+		$this->loader->add_action( 'wp_ajax_ays_pb_change_status', $plugin_admin, 'ays_pb_change_status' );
+		$this->loader->add_action( 'wp_ajax_nopriv_ays_pb_change_status', $plugin_admin, 'ays_pb_change_status' );
+	}
 
 	/**
 	 * Register all of the hooks related to the integrations functionality

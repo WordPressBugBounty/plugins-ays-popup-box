@@ -1853,6 +1853,45 @@
                 subLoader.addClass('display_none');
             }, 5000);
         }
+
+        // AJAX handler for changing popupbox status in list table without reloading the page
+        $(document).on('change', '.ays-pb-onoffswitch-checkbox-list-table', function(e) {
+            var $this = $(this);
+            var popupbox_id = $this.data('id');
+            var status = $this.prop('checked');
+            var nonce = $this.data('nonce');
+
+            // Show loading indicator
+            $this.closest('label').css('opacity', '0.5');
+            
+            $.ajax({
+                url: pb.ajax,
+                method: 'POST',
+                data: {
+                    action: 'ays_pb_change_status',
+                    popupbox_id: popupbox_id,
+                    status: status,
+                    _ajax_nonce: nonce
+                },
+                success: function(response) {
+                    if (response.success) {                            
+                        // Remember the current state of the checkbox for the next change
+                        $this.data('was-checked', $this.prop('checked'));
+                    } else {
+                        // In case of an error, return the checkbox to the previous state
+                        $this.prop('checked', !status);
+                    }
+                    // Remove loading indicator
+                    $this.closest('label').css('opacity', '1');
+                },
+                error: function() {
+                    // In case of an error, return the checkbox to the previous state
+                    $this.prop('checked', !status);                    
+                    // Remove loading indicator
+                    $this.closest('label').css('opacity', '1');
+                }
+            });
+        });
     });
 
     function aysPopupstripHTML(dirtyString) {
@@ -2282,3 +2321,31 @@
     // Media uploaders start
 
 })(jQuery);
+
+selectAndCopyElementContents = function(el) {
+    if (window.getSelection && document.createRange) {
+        var _this = jQuery(document).find('.ays-pb-copy-element-box');
+
+        var text      = el.textContent;
+        var textField = document.createElement('textarea');
+
+        textField.innerText = text;
+        document.body.appendChild(textField);
+        textField.select();
+        document.execCommand('copy');
+        textField.remove();
+
+        var selection = window.getSelection();
+        selection.setBaseAndExtent(el,0,el,1);
+
+        _this.attr( "data-original-title", pb.copied );
+        _this.attr( "title", pb.copied );
+
+        _this.tooltip("show");
+
+    } else if (document.selection && document.body.createTextRange) {
+        var textRange = document.body.createTextRange();
+        textRange.moveToElementText(el);
+        textRange.select();
+    }
+};

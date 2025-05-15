@@ -397,24 +397,24 @@ class Ays_PopupBox_List_Table extends WP_List_Table {
     function column_onoffswitch($item) {
         $onoffswitch = ( isset($item['onoffswitch']) && $item['onoffswitch'] == 'On' ) ? true : false;
 
-        $nonce = $onoffswitch ? wp_create_nonce($this->plugin_name . "-unpublish-popupbox") : wp_create_nonce($this->plugin_name . "-publish-popupbox");
+        $nonce = wp_create_nonce($this->plugin_name . "-change-status-nonce");
 
         $checked = $onoffswitch ? 'checked' : '';
-        $href_value = $onoffswitch ? 'unpublish' : 'publish';
-        $href = sprintf('?page=%s&action=%s&popupbox=%d&_wpnonce=%s', esc_attr($_REQUEST['page']), $href_value, absint($item['id']), $nonce);
+        // $href_value = $onoffswitch ? 'unpublish' : 'publish';
+        // $href = sprintf('?page=%s&action=%s&popupbox=%d&_wpnonce=%s', esc_attr($_REQUEST['page']), $href_value, absint($item['id']), $nonce);
 
-        $href = $this->ays_pb_add_filters_to_link($href);
+        // $href = $this->ays_pb_add_filters_to_link($href);
 
-        if (isset($_GET['fstatus']) && $_GET['fstatus'] != '') {
-            $ays_pb_status = esc_sql(sanitize_text_field($_GET['fstatus']));
-            $href .= '&fstatus=' . $ays_pb_status;
-        }
+        // if (isset($_GET['fstatus']) && $_GET['fstatus'] != '') {
+        //     $ays_pb_status = esc_sql(sanitize_text_field($_GET['fstatus']));
+        //     $href .= '&fstatus=' . $ays_pb_status;
+        // }
 
         $status_html = array();
 
         $status_html[] = '<label class="ays-pb-enable-switch ays-pb-enable-switch-list-table">';
-            $status_html[] = '<input type="checkbox" class="ays-pb-onoffswitch-checkbox"' . $checked . '>';
-            $status_html[] = '<a href="' . $href . '" class="ays-pb-enable-switch-slider ays-pb-enable-switch-round"></a>';
+            $status_html[] = '<input type="checkbox" class="ays-pb-onoffswitch-checkbox-list-table" data-id="'.absint($item['id']).'" data-nonce="'.$nonce.'" '.$checked.'>';
+            $status_html[] = '<span class="ays-pb-enable-switch-slider ays-pb-enable-switch-round"></span>';
         $status_html[] = '</label>';
 
         $status_html = implode('', $status_html);

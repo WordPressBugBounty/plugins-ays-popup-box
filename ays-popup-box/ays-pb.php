@@ -16,7 +16,7 @@ ob_start();
  * Plugin Name:       Popup Box
  * Plugin URI:        http://ays-pro.com/wordpress/popup-box
  * Description:       Pop up anything you want! Create informative and promotional popups all in one plugin. Boost your website traffic with eye-catching popups. 
- * Version:           5.2.9
+ * Version:           5.3.0
  * Author:            Popup Box Team
  * Author URI:        http://ays-pro.com/
  * License:           GPL-2.0+
@@ -35,7 +35,7 @@ if ( ! defined( 'WPINC' ) ) {
  * Start at version 1.0.0 and use SemVer - https://semver.org
  * Rename this for your plugin and update it as you release new versions.
  */
-define( 'AYS_PB_NAME_VERSION', '5.2.9' );
+define( 'AYS_PB_NAME_VERSION', '5.3.0' );
 define( 'AYS_PB_NAME', 'ays-pb' );
 
 if( ! defined( 'AYS_PB_ADMIN_URL' ) ) {
@@ -112,6 +112,12 @@ function general_ays_pb_admin_notice() {
                             <span><?php echo esc_html__( "Upgrade", "ays-popup-box" ); ?></span>
                         </a>
                         <div class="popup-box-notice-one-time">(<?php echo esc_html__("One-time payment", "ays-popup-box"); ?>)</div>
+                    </div>
+                    <div class="ays-pb-coupon-container">
+                        <div class="ays-pb-coupon-box ays-pb-copy-element-box-parent">
+                            <span onClick="selectAndCopyElementContents(this)" class="ays-pb-copy-element-box" data-toggle="tooltip" title="<?php echo esc_html__( "Click for copy", 'ays-popup-box' ); ?>"><?php echo esc_html__( "spring2025", 'ays-popup-box' ); ?></span>
+                        </div>
+                        <span class="ays-pb-logo-container-one-time-text"><?php echo esc_html__( "Extra 20% Coupon", 'ays-popup-box' ); ?></span>
                     </div>
                 </div>
                 <ul id="menu">

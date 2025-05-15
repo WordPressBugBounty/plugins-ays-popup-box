@@ -1395,4 +1395,31 @@ class Ays_Pb_Admin {
         // Fallback error just in case.
         wp_send_json_error($result);
     }
+
+    /**
+     * AJAX handler for changing popupbox status in list table
+     */
+    public function ays_pb_change_status() {
+
+        check_ajax_referer( $this->plugin_name . '-change-status-nonce', sanitize_key($_REQUEST['_ajax_nonce']) );
+
+        global $wpdb;
+        $pb_table = $wpdb->prefix . "ays_pb";
+        $id = absint($_REQUEST['popupbox_id']);
+        $current_status = $_REQUEST['status'] == 'true' ? 'On' : 'Off';
+        $wpdb->update(
+            $pb_table,
+            array(
+                "onoffswitch" => $current_status
+            ),
+            array("id" => $id),
+            array("%s"),
+            array("%d")
+        );
+
+        $_GET["fstatus"] = $current_status == 'On' ? 'published' : 'unpublished';
+        wp_send_json_success(array(
+            'status' => $current_status,
+        ));
+    }
 }

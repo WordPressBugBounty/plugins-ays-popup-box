@@ -1,5 +1,5 @@
 /* New Popup Box PRO banner start */
-/* div#ays-pb-new-mega-bundle-dicount-month-main {
+ div#ays-pb-new-mega-bundle-dicount-month-main {
     border: 0;
     background: #FFF;
     border-radius: 20px;
@@ -289,6 +289,7 @@ div#ays-pb-new-mega-bundle-dicount-month-main button.notice-dismiss:before {
 @media all and (max-width: 768px) {
     div#ays-pb-new-mega-bundle-dicount-month-main {
         padding-right: 0;
+        display: none;
     }
     div#ays-pb-new-mega-bundle-dicount-month-main .ays_pb_dicount_month{
         display: flex;
@@ -417,7 +418,7 @@ div#ays-pb-new-mega-bundle-dicount-month-main button.notice-dismiss:before {
     div#ays-pb-new-mega-bundle-dicount-month-main .ays-pb-dicount-wrap-box.ays-pb-dicount-wrap-countdown-box {
         width: 35%;
     }
-} */
+} 
 /* New Popup Box PRO banner end */
 
 /* 2024 | Black Friday top banner | Start */
@@ -1462,7 +1463,7 @@ div#ays-pb-christmas-top-bundle-dicount-month-main button.notice-dismiss:before{
 
 /* New Mega Bundle 2025 Banner pb | Start */
 
-div#ays-pb-new-mega-bundle-2025-dicount-month-main {
+/* div#ays-pb-new-mega-bundle-2025-dicount-month-main {
     border: 0;
     background: #FFF;
     border-radius: 20px;
@@ -1503,10 +1504,10 @@ div#ays-pb-new-mega-bundle-2025-dicount-month-main .btn-link {
 }
 
 div#ays-pb-new-mega-bundle-2025-dicount-month-main.ays_pb_dicount_info {
-    /*background-image: url("../images/new-mega-bundle-logo-background.svg"); 
+    background-image: url("../images/new-mega-bundle-logo-background.svg"); 
     background-position: center right;
     background-repeat: no-repeat;
-    background-size: cover;*/
+    background-size: cover;
 }
 
 #ays-pb-new-mega-bundle-2025-dicount-month-main .ays_pb_dicount_month {
@@ -1689,7 +1690,7 @@ div#ays-pb-new-mega-bundle-2025-dicount-month-main.ays_pb_dicount_info {
     min-width: 62px;
     border-radius: 4.273px;
     /*border: 0.534px solid #F4F4F4;*/
-    /*background: #9896ED;*/
+    /*background: #9896ED;
     background: transparent;
     border: unset;
 }
@@ -1716,7 +1717,7 @@ div#ays-pb-new-mega-bundle-2025-dicount-month-main.ays_pb_dicount_info {
     right: -5px;
     font-size: 40px;
 
-}*/
+}
 
 #ays-pb-new-mega-bundle-2025-dicount-month-main .ays-pb-dicount-wrap-box li span#ays-pb-countdown-seconds:after {
     content: unset;
@@ -1952,7 +1953,7 @@ div#ays-pb-new-mega-bundle-2025-dicount-month-main button.notice-dismiss:hover:b
         min-height: 50px;
         min-width: 50px;
     }
-}
+} */
 
 
 /* New Mega Bundle 2025 Banner pb | End */
