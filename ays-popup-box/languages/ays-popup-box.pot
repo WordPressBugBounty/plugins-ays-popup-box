@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Popup box\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-05-05 09:47+0400\n"
+"POT-Creation-Date: 2025-05-19 18:36+0400\n"
 "PO-Revision-Date: 2018-07-13 11:50+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -195,8 +195,8 @@ msgstr ""
 msgid "Settings"
 msgstr ""
 
-#: ../admin/class-ays-pb-admin.php:606 ../ays-pb.php:118 ../ays-pb.php:126
-#: ../ays-pb.php:135
+#: ../admin/class-ays-pb-admin.php:606 ../ays-pb.php:124 ../ays-pb.php:132
+#: ../ays-pb.php:141
 msgid "Demo"
 msgstr ""
 
@@ -204,8 +204,8 @@ msgstr ""
 msgid "Upgrade 30% Sale"
 msgstr ""
 
-#: ../admin/class-ays-pb-admin.php:618 ../ays-pb.php:119 ../ays-pb.php:127
-#: ../ays-pb.php:136
+#: ../admin/class-ays-pb-admin.php:618 ../ays-pb.php:125 ../ays-pb.php:133
+#: ../ays-pb.php:142
 msgid "Free Support"
 msgstr ""
 
@@ -225,8 +225,8 @@ msgstr ""
 msgid "If you love our plugin, please do big favor and rate us on"
 msgstr ""
 
-#: ../admin/class-ays-pb-admin.php:964 ../includes/class-ays-pb-data.php:723
-#: ../includes/class-ays-pb-data.php:806
+#: ../admin/class-ays-pb-admin.php:964 ../includes/class-ays-pb-data.php:721
+#: ../includes/class-ays-pb-data.php:804
 msgid "Buy Now"
 msgstr ""
 
@@ -613,8 +613,8 @@ msgstr ""
 
 #: ../admin/partials/actions/ays-pb-admin-actions.php:928
 #: ../admin/partials/actions/ays-pb-admin-actions.php:940
-#: ../includes/class-ays-pb-data.php:469 ../includes/class-ays-pb-data.php:768
-#: ../includes/class-ays-pb-data.php:884
+#: ../includes/class-ays-pb-data.php:469 ../includes/class-ays-pb-data.php:766
+#: ../includes/class-ays-pb-data.php:882
 #: ../public/partials/ays-pb-public-templates.php:294
 #: ../public/partials/ays-pb-public-templates.php:300
 #: ../public/partials/ays-pb-public-templates.php:575
@@ -3164,8 +3164,8 @@ msgstr ""
 #: ../admin/partials/features/popup-box-pro-features-display.php:59
 #: ../admin/partials/features/popup-box-pro-features-display.php:946
 #: ../admin/partials/features/popup-box-pro-features-display.php:952
-#: ../ays-pb.php:114 ../includes/class-ays-pb-data.php:725
-#: ../includes/class-ays-pb-data.php:808 ../includes/class-ays-pb-data.php:909
+#: ../ays-pb.php:114 ../includes/class-ays-pb-data.php:723
+#: ../includes/class-ays-pb-data.php:806 ../includes/class-ays-pb-data.php:907
 msgid "One-time payment"
 msgstr ""
 
@@ -3846,15 +3846,27 @@ msgstr ""
 msgid "Subscribers"
 msgstr ""
 
-#: ../ays-pb.php:120 ../ays-pb.php:137
+#: ../ays-pb.php:118
+msgid "Click for copy"
+msgstr ""
+
+#: ../ays-pb.php:118
+msgid "spring2025"
+msgstr ""
+
+#: ../ays-pb.php:120
+msgid "Extra 20% Coupon"
+msgstr ""
+
+#: ../ays-pb.php:126 ../ays-pb.php:143
 msgid "Make a Suggestion"
 msgstr ""
 
-#: ../ays-pb.php:121 ../ays-pb.php:128 ../ays-pb.php:138
+#: ../ays-pb.php:127 ../ays-pb.php:134 ../ays-pb.php:144
 msgid "Contact us"
 msgstr ""
 
-#: ../ays-pb.php:125 ../ays-pb.php:134
+#: ../ays-pb.php:131 ../ays-pb.php:140
 msgid "Documentation"
 msgstr ""
 
@@ -3868,7 +3880,7 @@ msgstr ""
 
 #: ../includes/class-ays-pb-data.php:257 ../includes/class-ays-pb-data.php:329
 #: ../includes/class-ays-pb-data.php:395 ../includes/class-ays-pb-data.php:640
-#: ../includes/class-ays-pb-data.php:993
+#: ../includes/class-ays-pb-data.php:991
 msgid "Buy Now !"
 msgstr ""
 
@@ -3927,27 +3939,27 @@ msgstr ""
 msgid "50% off"
 msgstr ""
 
-#: ../includes/class-ays-pb-data.php:443 ../includes/class-ays-pb-data.php:786
-#: ../includes/class-ays-pb-data.php:840
+#: ../includes/class-ays-pb-data.php:443 ../includes/class-ays-pb-data.php:784
+#: ../includes/class-ays-pb-data.php:838
 msgid "Days"
 msgstr ""
 
-#: ../includes/class-ays-pb-data.php:444 ../includes/class-ays-pb-data.php:787
-#: ../includes/class-ays-pb-data.php:841
+#: ../includes/class-ays-pb-data.php:444 ../includes/class-ays-pb-data.php:785
+#: ../includes/class-ays-pb-data.php:839
 msgid "Hours"
 msgstr ""
 
-#: ../includes/class-ays-pb-data.php:445 ../includes/class-ays-pb-data.php:788
-#: ../includes/class-ays-pb-data.php:842
+#: ../includes/class-ays-pb-data.php:445 ../includes/class-ays-pb-data.php:786
+#: ../includes/class-ays-pb-data.php:840
 msgid "Minutes"
 msgstr ""
 
-#: ../includes/class-ays-pb-data.php:446 ../includes/class-ays-pb-data.php:789
-#: ../includes/class-ays-pb-data.php:843
+#: ../includes/class-ays-pb-data.php:446 ../includes/class-ays-pb-data.php:787
+#: ../includes/class-ays-pb-data.php:841
 msgid "Seconds"
 msgstr ""
 
-#: ../includes/class-ays-pb-data.php:460 ../includes/class-ays-pb-data.php:906
+#: ../includes/class-ays-pb-data.php:460 ../includes/class-ays-pb-data.php:904
 msgid "Get Your Deal"
 msgstr ""
 
@@ -3959,33 +3971,29 @@ msgstr ""
 msgid "Hurry up! <a href='https://ays-pro.com/wordpress/popup-box' target='_blank'>Check it out!</a>"
 msgstr ""
 
-#: ../includes/class-ays-pb-data.php:660
-msgid "Limited Time 30% SALE on "
-msgstr ""
-
-#: ../includes/class-ays-pb-data.php:671 ../includes/class-ays-pb-data.php:756
-msgid "30 Day Money Back Guarantee"
-msgstr ""
-
-#: ../includes/class-ays-pb-data.php:699 ../includes/class-ays-pb-data.php:836
-#: ../includes/class-ays-pb-data.php:969
-msgid "Offer ends in:"
-msgstr ""
-
-#: ../includes/class-ays-pb-data.php:751
+#: ../includes/class-ays-pb-data.php:661 ../includes/class-ays-pb-data.php:749
 msgid "Quiz + Form + Popup"
 msgstr ""
 
-#: ../includes/class-ays-pb-data.php:865
+#: ../includes/class-ays-pb-data.php:669 ../includes/class-ays-pb-data.php:754
+msgid "30 Day Money Back Guarantee"
+msgstr ""
+
+#: ../includes/class-ays-pb-data.php:697 ../includes/class-ays-pb-data.php:834
+#: ../includes/class-ays-pb-data.php:967
+msgid "Offer ends in:"
+msgstr ""
+
+#: ../includes/class-ays-pb-data.php:863
 msgid "Christmas Sale"
 msgstr ""
 
-#: ../includes/class-ays-pb-data.php:874
+#: ../includes/class-ays-pb-data.php:872
 #, no-php-format
 msgid "20% Extra OFF"
 msgstr ""
 
-#: ../includes/class-ays-pb-data.php:900
+#: ../includes/class-ays-pb-data.php:898
 #, no-php-format
 msgid "20% Extra Discount Coupon"
 msgstr ""

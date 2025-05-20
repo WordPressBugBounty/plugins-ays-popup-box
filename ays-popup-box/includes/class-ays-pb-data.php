@@ -649,6 +649,20 @@ class Ays_Pb_Data {
     // Main banner
     public function ays_pb_new_banner_message($ishmar){
         if($ishmar == 0 ){
+
+            $ays_pb_sale_date = get_option('ays_pb_sale_date');
+
+            $val = 60*60*24*5;
+
+            $current_date = current_time( 'mysql' );
+            $date_diff = strtotime($current_date) - intval(strtotime($ays_pb_sale_date));
+            $days_diff = $date_diff / $val;
+
+            $style_attr = '';
+            if( $days_diff < 0 ){
+                $style_attr = 'style="display:none;"';
+            }
+
             $content = array();
             $pb_cta_button_link = sprintf('https://ays-pro.com/essential-bundle?utm_source=dashboard&utm_medium=popup-free&utm_campaign=sale-banner-%s', AYS_PB_NAME_VERSION);
 
@@ -691,7 +705,7 @@ class Ays_Pb_Data {
                         $content[] = '<div id="ays-pb-countdown-main-container">';
                             $content[] = '<div class="ays-pb-countdown-container">';
 
-                                $content[] = '<div id="ays-pb-countdown">';
+                                $content[] = '<div ' . $style_attr . ' id="ays-pb-countdown">';
 
                                     $content[] = '<div>';
                                         $content[] = esc_html__( "Offer ends in:", "ays-popup-box" );

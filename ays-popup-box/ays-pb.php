@@ -16,7 +16,7 @@ ob_start();
  * Plugin Name:       Popup Box
  * Plugin URI:        http://ays-pro.com/wordpress/popup-box
  * Description:       Pop up anything you want! Create informative and promotional popups all in one plugin. Boost your website traffic with eye-catching popups. 
- * Version:           5.3.0
+ * Version:           5.3.1
  * Author:            Popup Box Team
  * Author URI:        http://ays-pro.com/
  * License:           GPL-2.0+
@@ -35,7 +35,7 @@ if ( ! defined( 'WPINC' ) ) {
  * Start at version 1.0.0 and use SemVer - https://semver.org
  * Rename this for your plugin and update it as you release new versions.
  */
-define( 'AYS_PB_NAME_VERSION', '5.3.0' );
+define( 'AYS_PB_NAME_VERSION', '5.3.1' );
 define( 'AYS_PB_NAME', 'ays-pb' );
 
 if( ! defined( 'AYS_PB_ADMIN_URL' ) ) {
@@ -107,7 +107,7 @@ function general_ays_pb_admin_notice() {
                         <img class="popup-box-logo" src="<?php echo esc_attr(AYS_PB_ADMIN_URL) . '/images/icons/icon-popup-128x128.png'; ?>" alt="Popup Box" title="Popup Box"/>
                     </a>
                     <div>
-                        <a href="https://ays-pro.com/wordpress/popup-box?utm_source=dashboard&utm_medium=popup-free&utm_campaign=popup-top-banner-upgrade-button" target="_blank" class="popup-box-upgrade-to-pro">
+                        <a href="https://ays-pro.com/wordpress/popup-box?utm_source=dashboard&utm_medium=popup-free&utm_campaign=popup-top-banner-upgrade-button-<?php echo AYS_PB_NAME_VERSION; ?>" target="_blank" class="popup-box-upgrade-to-pro">
                             <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . '/images/icons/lightning-white.svg' ?>" class="popup-box-upgrade-white-icon">
                             <span><?php echo esc_html__( "Upgrade", "ays-popup-box" ); ?></span>
                         </a>
