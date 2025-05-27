@@ -270,6 +270,7 @@ $options = array(
     'disable_scroll_on_popup' => 'off',
     'disable_scroll_on_popup_mobile' => 'off',
     'show_scrollbar' => 'off',
+    'show_scrollbar_mobile' => 'off',
     // Styles
     'enable_display_content_mobile' => 'off',
     'show_popup_title_mobile' => 'off',
@@ -967,6 +968,13 @@ if (isset($options['disable_scroll_on_popup_mobile'])) {
 // Show scrollbar
 $options['show_scrollbar'] = (isset($options['show_scrollbar']) && $options['show_scrollbar'] != '') ? esc_attr( stripslashes($options['show_scrollbar']) ) : 'off';
 $ays_pb_show_scrollbar = (isset($options['show_scrollbar']) && $options['show_scrollbar'] == 'on') ? true : false;
+
+// Show scrollbar mobile
+if (isset($options['show_scrollbar_mobile'])) {
+    $ays_pb_show_scrollbar_mobile = $options['show_scrollbar_mobile'] == 'on' ? true : false;
+} else {
+    $ays_pb_show_scrollbar_mobile = $ays_pb_show_scrollbar;
+}
 
 // Display Content | Show title
 $show_popup_title = (isset($popupbox['show_popup_title']) && $popupbox['show_popup_title'] != '') ? esc_attr( stripslashes($popupbox['show_popup_title']) ) : 'off';
@@ -4564,7 +4572,20 @@ $ays_users_roles = $wp_roles->roles;
                                 </label>
                             </div>
                             <div class="col-sm-9">
-                                <input type="checkbox" name="ays_pb_show_scrollbar" class="ays-pb-onoffswitch-checkbox" id="ays_pb_show_scrollbar" <?php echo ($ays_pb_show_scrollbar) ? 'checked' : ''; ?> />
+                                <div class="ays_pb_pc_and_mobile_container ays_pb_pc_and_mobile_container_cb">
+                                    <div class="ays_pb_option_for_desktop">
+                                        <span class="ays_pb_current_device_name" style="<?php echo ($ays_pb_show_scrollbar_mobile || $ays_pb_show_scrollbar) ? 'display: block' : '' ?>"><?php echo esc_html__('Desktop', "ays-popup-box") ?></span>
+                                        <p class="onoffswitch">
+                                            <input type="checkbox" name="ays_pb_show_scrollbar" class="ays-pb-onoffswitch-checkbox" id="ays_pb_show_scrollbar" <?php echo ($ays_pb_show_scrollbar) ? 'checked' : ''; ?> />
+                                        </p>
+                                    </div>
+                                    <div class="ays_pb_option_for_mobile_device ays_pb_option_for_mobile_device_cb ays_divider_left <?php echo ($ays_pb_show_scrollbar_mobile || $ays_pb_show_scrollbar) ? 'show' : '' ?>">
+                                        <span class="ays_pb_current_device_name" style="<?php echo ($ays_pb_show_scrollbar_mobile || $ays_pb_show_scrollbar) ? 'display: block' : '' ?>"><?php echo esc_html__('Mobile', "ays-popup-box") ?></span>
+                                        <p class="onoffswitch" style="margin:0;">
+                                            <input type="checkbox" name="ays_pb_show_scrollbar_mobile" class="ays-pb-onoffswitch-checkbox" id="ays_pb_show_scrollbar_mobile" <?php if($ays_pb_show_scrollbar_mobile){ echo 'checked';} ?>/>
+                                        </p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>

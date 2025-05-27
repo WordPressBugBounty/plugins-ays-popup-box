@@ -310,12 +310,24 @@ class Ays_Pb_Public_Templates {
         $options->show_scrollbar = ( isset( $options->show_scrollbar ) && $options->show_scrollbar != '' ) ? stripslashes( esc_attr($options->show_scrollbar) ) : 'off';
         $ays_pb_show_scrollbar = ( isset( $options->show_scrollbar ) && $options->show_scrollbar == 'on' ) ? true : false;
 
+        // Show scrollbar mobile
+        if (isset($options->show_scrollbar_mobile)) {
+            $ays_pb_show_scrollbar_mobile = $options->show_scrollbar_mobile == 'on' ? true : false;
+        } else {
+            $ays_pb_show_scrollbar_mobile = $ays_pb_show_scrollbar;
+        }
+
         $ays_pb_disable_scroll_on_popup_class = $this->ays_pb_generate_disable_popup_class($options);
 
         $ays_pb_show_scrollbar_class = '';
-        if($ays_pb_show_scrollbar){
+        $ays_pb_show_scrollbar_class_desktop = $ays_pb_show_scrollbar ? 'ays-pb-show-scrollbar-desktop' : '';
+        $ays_pb_show_scrollbar_class_mobile = $ays_pb_show_scrollbar_mobile ? 'ays-pb-show-scrollbar-mobile' : '';
+        
+        if($ays_pb_show_scrollbar || $ays_pb_show_scrollbar_mobile){
             $ays_pb_show_scrollbar_class = 'ays-pb-show-scrollbar';
         }
+
+        $ays_pb_show_scrollbar_class .= ' ' . $ays_pb_show_scrollbar_class_desktop . ' ' . $ays_pb_show_scrollbar_class_mobile;
 
         $popupbox_view = "
                 <div class='ays-pb-modal ays-pb-modal_".$popup['id']." ".$popup['custom_class']." ".$ays_pb_disable_scroll_on_popup_class." ".$ays_pb_show_scrollbar_class." ays-popup-box-main-box ays-pb-bg-styles_".$popup['id']." ays-pb-border-mobile_".$popup['id']."' {$ays_pb_flag} style='width: {$pb_width}; height: {$pb_height}; background-color:" .  $popup['ays_pb_bgcolor'] . "; color: " . $popup['ays_pb_textcolor'] . " !important; border: ".$popup['ays_pb_bordersize']."px  $border_style " .$popup['ays_pb_bordercolor']. "; border-radius: ".$popup['ays_pb_border_radius']."px;font-family:{$ays_pb_font_family};{$box_shadow};' >
@@ -581,16 +593,30 @@ class Ays_Pb_Public_Templates {
             $enable_dismiss_text_mobile = (isset($options->enable_dismiss_text_mobile) && $options->enable_dismiss_text_mobile != "") ? esc_html( stripslashes($options->enable_dismiss_text_mobile) ) : esc_html__("Dismiss ad", "ays-popup-box");
         }
 
-        //Show scrollbar
-        $options->show_scrollbar = ( isset( $options->show_scrollbar ) && $options->show_scrollbar != '' ) ? stripslashes( esc_attr($options->show_scrollbar) ) : 'off';
-        $ays_pb_show_scrollbar = ( isset( $options->show_scrollbar ) && $options->show_scrollbar == 'on' ) ? true : false;
+        //Close button color
+        $close_button_color = (isset($options->close_button_color) && $options->close_button_color != "") ? esc_attr( stripslashes( $options->close_button_color ) ) : $popup['ays_pb_textcolor'];
+
+        //Close button hover color
+        $close_button_color = (isset($options->close_button_color) && $options->close_button_color != "") ? esc_attr( stripslashes( $options->close_button_color ) ) : $popup['ays_pb_textcolor'];
+
+        // Show scrollbar mobile
+        if (isset($options->show_scrollbar_mobile)) {
+            $ays_pb_show_scrollbar_mobile = $options->show_scrollbar_mobile == 'on' ? true : false;
+        } else {
+            $ays_pb_show_scrollbar_mobile = $ays_pb_show_scrollbar;
+        }
 
         $ays_pb_disable_scroll_on_popup_class = $this->ays_pb_generate_disable_popup_class($options);
 
         $ays_pb_show_scrollbar_class = '';
-        if($ays_pb_show_scrollbar){
+        $ays_pb_show_scrollbar_class_desktop = $ays_pb_show_scrollbar ? 'ays-pb-show-scrollbar-desktop' : '';
+        $ays_pb_show_scrollbar_class_mobile = $ays_pb_show_scrollbar_mobile ? 'ays-pb-show-scrollbar-mobile' : '';
+        
+        if($ays_pb_show_scrollbar || $ays_pb_show_scrollbar_mobile){
             $ays_pb_show_scrollbar_class = 'ays-pb-show-scrollbar';
         }
+
+        $ays_pb_show_scrollbar_class .= ' ' . $ays_pb_show_scrollbar_class_desktop . ' ' . $ays_pb_show_scrollbar_class_mobile;
 
         $mac_view = "<div class='ays_window ays-pb-modal_".$popup['id']." ".$popup['custom_class']." ".$ays_pb_disable_scroll_on_popup_class." ".$ays_pb_show_scrollbar_class." ays-pb-bg-styles_".$popup['id']." ays-pb-border-mobile_".$popup['id']."' {$ays_pb_flag} style='width: {$pb_width}; height: {$pb_height}; background-color: ".$popup['ays_pb_bgcolor']."; color: ".$popup['ays_pb_textcolor']." !important; border: ".$popup['ays_pb_bordersize']."px $border_style ".$popup['ays_pb_bordercolor']."; border-radius: ".$popup['ays_pb_border_radius']."px;font-family:{$ays_pb_font_family};{$box_shadow}'>
                          <div class='ays_topBar'>
@@ -896,12 +922,24 @@ class Ays_Pb_Public_Templates {
         $options->show_scrollbar = ( isset( $options->show_scrollbar ) && $options->show_scrollbar != '' ) ? stripslashes( esc_attr($options->show_scrollbar) ) : 'off';
         $ays_pb_show_scrollbar = ( isset( $options->show_scrollbar ) && $options->show_scrollbar == 'on' ) ? true : false;
 
+        // Show scrollbar mobile
+        if (isset($options->show_scrollbar_mobile)) {
+            $ays_pb_show_scrollbar_mobile = $options->show_scrollbar_mobile == 'on' ? true : false;
+        } else {
+            $ays_pb_show_scrollbar_mobile = $ays_pb_show_scrollbar;
+        }
+
         $ays_pb_disable_scroll_on_popup_class = $this->ays_pb_generate_disable_popup_class($options);
 
         $ays_pb_show_scrollbar_class = '';
-        if($ays_pb_show_scrollbar){
+        $ays_pb_show_scrollbar_class_desktop = $ays_pb_show_scrollbar ? 'ays-pb-show-scrollbar-desktop' : '';
+        $ays_pb_show_scrollbar_class_mobile = $ays_pb_show_scrollbar_mobile ? 'ays-pb-show-scrollbar-mobile' : '';
+        
+        if($ays_pb_show_scrollbar || $ays_pb_show_scrollbar_mobile){
             $ays_pb_show_scrollbar_class = 'ays-pb-show-scrollbar';
         }
+
+        $ays_pb_show_scrollbar_class .= ' ' . $ays_pb_show_scrollbar_class_desktop . ' ' . $ays_pb_show_scrollbar_class_mobile;
 
         $cmd_view = "<div class='ays_cmd_window ays-pb-modal_".$popup['id']." ".$popup['custom_class']." ".$ays_pb_disable_scroll_on_popup_class." ".$ays_pb_show_scrollbar_class." ays-pb-bg-styles_".$popup['id']." ays-pb-border-mobile_".$popup['id']."' {$ays_pb_flag} style='width: {$pb_width}; height: {$pb_height}; background-color: ".$popup['ays_pb_bgcolor']."; color: ".$popup['ays_pb_textcolor']." !important; border: ".$popup['ays_pb_bordersize']."px $border_style ".$popup['ays_pb_bordercolor']."; border-radius: ".$popup['ays_pb_border_radius']."px;font-family:{$ays_pb_font_family};{$box_shadow}'>
                         <header class='ays_cmd_window-header'>
@@ -1228,12 +1266,24 @@ class Ays_Pb_Public_Templates {
         $options->show_scrollbar = ( isset( $options->show_scrollbar ) && $options->show_scrollbar != '' ) ? stripslashes( esc_attr($options->show_scrollbar) ) : 'off';
         $ays_pb_show_scrollbar = ( isset( $options->show_scrollbar ) && $options->show_scrollbar == 'on' ) ? true : false;
 
+        // Show scrollbar mobile
+        if (isset($options->show_scrollbar_mobile)) {
+            $ays_pb_show_scrollbar_mobile = $options->show_scrollbar_mobile == 'on' ? true : false;
+        } else {
+            $ays_pb_show_scrollbar_mobile = $ays_pb_show_scrollbar;
+        }
+
         $ays_pb_disable_scroll_on_popup_class = $this->ays_pb_generate_disable_popup_class($options);
 
         $ays_pb_show_scrollbar_class = '';
-        if($ays_pb_show_scrollbar){
+        $ays_pb_show_scrollbar_class_desktop = $ays_pb_show_scrollbar ? 'ays-pb-show-scrollbar-desktop' : '';
+        $ays_pb_show_scrollbar_class_mobile = $ays_pb_show_scrollbar_mobile ? 'ays-pb-show-scrollbar-mobile' : '';
+        
+        if($ays_pb_show_scrollbar || $ays_pb_show_scrollbar_mobile){
             $ays_pb_show_scrollbar_class = 'ays-pb-show-scrollbar';
         }
+
+        $ays_pb_show_scrollbar_class .= ' ' . $ays_pb_show_scrollbar_class_desktop . ' ' . $ays_pb_show_scrollbar_class_mobile;
 
         $ubuntu_view = "<div class='ays_ubuntu_window ays-pb-modal_".$popup['id']." ".$popup['custom_class']." ".$ays_pb_disable_scroll_on_popup_class." ".$ays_pb_show_scrollbar_class." ays-pb-bg-styles_".$popup['id']." ays-pb-border-mobile_".$popup['id']."' {$ays_pb_flag} style='width: {$pb_width}; height: {$pb_height}; background-color: ".$popup['ays_pb_bgcolor']."; color: ".$popup['ays_pb_textcolor']." !important; border: ".$popup['ays_pb_bordersize']."px $border_style ".$popup['ays_pb_bordercolor']."; border-radius: ".$popup['ays_pb_border_radius']."px;font-family:{$ays_pb_font_family};{$box_shadow}'>
                       <div class='ays_ubuntu_topbar'>
@@ -1544,12 +1594,24 @@ class Ays_Pb_Public_Templates {
         $options->show_scrollbar = ( isset( $options->show_scrollbar ) && $options->show_scrollbar != '' ) ? stripslashes( esc_attr($options->show_scrollbar) ) : 'off';
         $ays_pb_show_scrollbar = ( isset( $options->show_scrollbar ) && $options->show_scrollbar == 'on' ) ? true : false;
 
+        // Show scrollbar mobile
+        if (isset($options->show_scrollbar_mobile)) {
+            $ays_pb_show_scrollbar_mobile = $options->show_scrollbar_mobile == 'on' ? true : false;
+        } else {
+            $ays_pb_show_scrollbar_mobile = $ays_pb_show_scrollbar;
+        }
+
         $ays_pb_disable_scroll_on_popup_class = $this->ays_pb_generate_disable_popup_class($options);
 
         $ays_pb_show_scrollbar_class = '';
-        if($ays_pb_show_scrollbar){
+        $ays_pb_show_scrollbar_class_desktop = $ays_pb_show_scrollbar ? 'ays-pb-show-scrollbar-desktop' : '';
+        $ays_pb_show_scrollbar_class_mobile = $ays_pb_show_scrollbar_mobile ? 'ays-pb-show-scrollbar-mobile' : '';
+        
+        if($ays_pb_show_scrollbar || $ays_pb_show_scrollbar_mobile){
             $ays_pb_show_scrollbar_class = 'ays-pb-show-scrollbar';
         }
+
+        $ays_pb_show_scrollbar_class .= ' ' . $ays_pb_show_scrollbar_class_desktop . ' ' . $ays_pb_show_scrollbar_class_mobile;
 
         $ubuntu_view = "<div class='ays_winxp_window ays-pb-modal_".$popup['id']." ".$popup['custom_class']." ".$ays_pb_disable_scroll_on_popup_class." ".$ays_pb_show_scrollbar_class." ays-pb-border-mobile_".$popup['id']."' {$ays_pb_flag} style='width: {$pb_width}; height: {$pb_height}; color: ".$popup['ays_pb_textcolor']." !important; border: ".$popup['ays_pb_bordersize']."px $border_style ".$popup['ays_pb_bordercolor']."; border-radius: ".$popup['ays_pb_border_radius']."px;font-family:{$ays_pb_font_family};{$box_shadow};'>
                             <div class='ays_winxp_title-bar'>
@@ -1851,12 +1913,24 @@ class Ays_Pb_Public_Templates {
         $options->show_scrollbar = ( isset( $options->show_scrollbar ) && $options->show_scrollbar != '' ) ? stripslashes( esc_attr($options->show_scrollbar) ) : 'off';
         $ays_pb_show_scrollbar = ( isset( $options->show_scrollbar ) && $options->show_scrollbar == 'on' ) ? true : false;
 
+        // Show scrollbar mobile
+        if (isset($options->show_scrollbar_mobile)) {
+            $ays_pb_show_scrollbar_mobile = $options->show_scrollbar_mobile == 'on' ? true : false;
+        } else {
+            $ays_pb_show_scrollbar_mobile = $ays_pb_show_scrollbar;
+        }
+
         $ays_pb_disable_scroll_on_popup_class = $this->ays_pb_generate_disable_popup_class($options);
 
         $ays_pb_show_scrollbar_class = '';
-        if($ays_pb_show_scrollbar){
+        $ays_pb_show_scrollbar_class_desktop = $ays_pb_show_scrollbar ? 'ays-pb-show-scrollbar-desktop' : '';
+        $ays_pb_show_scrollbar_class_mobile = $ays_pb_show_scrollbar_mobile ? 'ays-pb-show-scrollbar-mobile' : '';
+        
+        if($ays_pb_show_scrollbar || $ays_pb_show_scrollbar_mobile){
             $ays_pb_show_scrollbar_class = 'ays-pb-show-scrollbar';
         }
+
+        $ays_pb_show_scrollbar_class .= ' ' . $ays_pb_show_scrollbar_class_desktop . ' ' . $ays_pb_show_scrollbar_class_mobile;
 
         $ubuntu_view = "<div class='ays_win98_window ays-pb-modal_".$popup['id']." ".$popup['custom_class']." ".$ays_pb_disable_scroll_on_popup_class." ".$ays_pb_show_scrollbar_class." ays-pb-bg-styles_".$popup['id']." ays-pb-border-mobile_".$popup['id']."' {$ays_pb_flag} style='width: {$pb_width}; height: {$pb_height}; padding: {$pb_padding}; background-color: ".$popup['ays_pb_bgcolor']."; color: ".$popup['ays_pb_textcolor']." !important; border: ".$popup['ays_pb_bordersize']."px $border_style ".$popup['ays_pb_bordercolor']."; border-radius: ".$popup['ays_pb_border_radius']."px;font-family:{$ays_pb_font_family};{$box_shadow};'>
                             <header class='ays_win98_head' style='background-color: ".$popup['ays_pb_bgcolor'].";'>
@@ -2139,12 +2213,24 @@ class Ays_Pb_Public_Templates {
         $options->show_scrollbar = ( isset( $options->show_scrollbar ) && $options->show_scrollbar != '' ) ? stripslashes( esc_attr($options->show_scrollbar) ) : 'off';
         $ays_pb_show_scrollbar = ( isset( $options->show_scrollbar ) && $options->show_scrollbar == 'on' ) ? true : false;
 
+        // Show scrollbar mobile
+        if (isset($options->show_scrollbar_mobile)) {
+            $ays_pb_show_scrollbar_mobile = $options->show_scrollbar_mobile == 'on' ? true : false;
+        } else {
+            $ays_pb_show_scrollbar_mobile = $ays_pb_show_scrollbar;
+        }
+
         $ays_pb_disable_scroll_on_popup_class = $this->ays_pb_generate_disable_popup_class($options);
 
         $ays_pb_show_scrollbar_class = '';
-        if($ays_pb_show_scrollbar){
+        $ays_pb_show_scrollbar_class_desktop = $ays_pb_show_scrollbar ? 'ays-pb-show-scrollbar-desktop' : '';
+        $ays_pb_show_scrollbar_class_mobile = $ays_pb_show_scrollbar_mobile ? 'ays-pb-show-scrollbar-mobile' : '';
+        
+        if($ays_pb_show_scrollbar || $ays_pb_show_scrollbar_mobile){
             $ays_pb_show_scrollbar_class = 'ays-pb-show-scrollbar';
         }
+
+        $ays_pb_show_scrollbar_class .= ' ' . $ays_pb_show_scrollbar_class_desktop . ' ' . $ays_pb_show_scrollbar_class_mobile;
 
         $ubuntu_view = "    <div class='ays_lil_window ays-pb-modal_".$popup['id']." ".$popup['custom_class']." ".$ays_pb_disable_scroll_on_popup_class." ".$ays_pb_show_scrollbar_class." ays-pb-bg-styles_".$popup['id']." ays-pb-border-mobile_".$popup['id']."' {$ays_pb_flag} style='width: {$pb_width}; height: {$pb_height}; background-color: ".$popup['ays_pb_bgcolor']."; color: ".$popup['ays_pb_textcolor']." !important; border: ".$popup['ays_pb_bordersize']."px $border_style ".$popup['ays_pb_bordercolor']."; border-radius: ".$popup['ays_pb_border_radius']."px;font-family:{$ays_pb_font_family}; {$box_shadow};'>
                                  <header class='ays_lil_head' style='background-color: ".(($popup['show_title'] !== "On") ?  "" :  $popup['ays_pb_header_bgcolor']).";'>
@@ -2435,16 +2521,24 @@ class Ays_Pb_Public_Templates {
             $enable_dismiss_text_mobile = (isset($options->enable_dismiss_text_mobile) && $options->enable_dismiss_text_mobile != "") ? esc_html( stripslashes($options->enable_dismiss_text_mobile) ) : esc_html__("Dismiss ad", "ays-popup-box");
         }
 
-        //Show scrollbar
-        $options->show_scrollbar = ( isset( $options->show_scrollbar ) && $options->show_scrollbar != '' ) ? stripslashes( esc_attr($options->show_scrollbar) ) : 'off';
-        $ays_pb_show_scrollbar = ( isset( $options->show_scrollbar ) && $options->show_scrollbar == 'on' ) ? true : false;
+        // Show scrollbar mobile
+        if (isset($options->show_scrollbar_mobile)) {
+            $ays_pb_show_scrollbar_mobile = $options->show_scrollbar_mobile == 'on' ? true : false;
+        } else {
+            $ays_pb_show_scrollbar_mobile = $ays_pb_show_scrollbar;
+        }
 
         $ays_pb_disable_scroll_on_popup_class = $this->ays_pb_generate_disable_popup_class($options);
 
         $ays_pb_show_scrollbar_class = '';
-        if($ays_pb_show_scrollbar){
+        $ays_pb_show_scrollbar_class_desktop = $ays_pb_show_scrollbar ? 'ays-pb-show-scrollbar-desktop' : '';
+        $ays_pb_show_scrollbar_class_mobile = $ays_pb_show_scrollbar_mobile ? 'ays-pb-show-scrollbar-mobile' : '';
+        
+        if($ays_pb_show_scrollbar || $ays_pb_show_scrollbar_mobile){
             $ays_pb_show_scrollbar_class = 'ays-pb-show-scrollbar';
         }
+
+        $ays_pb_show_scrollbar_class .= ' ' . $ays_pb_show_scrollbar_class_desktop . ' ' . $ays_pb_show_scrollbar_class_mobile;
 
         $ubuntu_view .= "   <div class='ays_image_window ays-pb-modal_".$popup['id']." ".$popup['custom_class']." ays-pb-bg-styles_".$popup['id']." ays-pb-border-mobile_".$popup['id']."' {$ays_pb_flag} style='width: {$pb_width}; height: {$pb_height}; background-color: ".$popup['ays_pb_bgcolor']."; color: ".$popup['ays_pb_textcolor']." !important;font-family:{$ays_pb_font_family}; border: ".$popup['ays_pb_bordersize']."px $border_style ".$popup['ays_pb_bordercolor']."; border-radius: ".$popup['ays_pb_border_radius']."px; {$box_shadow}; animation-fill-mode: forwards;' data-name='modern_minimal'>
                                 <header class='ays_image_head' style='{$image_header_height}'>
@@ -2737,16 +2831,24 @@ class Ays_Pb_Public_Templates {
         //Close button color
         $close_button_color = (isset($options->close_button_color) && $options->close_button_color != "") ? esc_attr( stripslashes( $options->close_button_color ) ) : $popup['ays_pb_textcolor'];
 
-        //Show scrollbar
-        $options->show_scrollbar = ( isset( $options->show_scrollbar ) && $options->show_scrollbar != '' ) ? stripslashes( esc_attr($options->show_scrollbar) ) : 'off';
-        $ays_pb_show_scrollbar = ( isset( $options->show_scrollbar ) && $options->show_scrollbar == 'on' ) ? true : false;
+        // Show scrollbar mobile
+        if (isset($options->show_scrollbar_mobile)) {
+            $ays_pb_show_scrollbar_mobile = $options->show_scrollbar_mobile == 'on' ? true : false;
+        } else {
+            $ays_pb_show_scrollbar_mobile = $ays_pb_show_scrollbar;
+        }
 
         $ays_pb_disable_scroll_on_popup_class = $this->ays_pb_generate_disable_popup_class($options);
 
         $ays_pb_show_scrollbar_class = '';
-        if($ays_pb_show_scrollbar){
+        $ays_pb_show_scrollbar_class_desktop = $ays_pb_show_scrollbar ? 'ays-pb-show-scrollbar-desktop' : '';
+        $ays_pb_show_scrollbar_class_mobile = $ays_pb_show_scrollbar_mobile ? 'ays-pb-show-scrollbar-mobile' : '';
+        
+        if($ays_pb_show_scrollbar || $ays_pb_show_scrollbar_mobile){
             $ays_pb_show_scrollbar_class = 'ays-pb-show-scrollbar';
         }
+
+        $ays_pb_show_scrollbar_class .= ' ' . $ays_pb_show_scrollbar_class_desktop . ' ' . $ays_pb_show_scrollbar_class_mobile;
 
         $ubuntu_view = "   <div class='ays_template_window ".$ays_pb_disable_scroll_on_popup_class." ays-pb-modal_".$popup['id']." ".$popup['custom_class']." ".$ays_pb_show_scrollbar_class." ays-pb-border-mobile_".$popup['id']."' {$ays_pb_flag} style='width: {$pb_width};  height: {$pb_height}; color: ".$popup['ays_pb_textcolor']." !important; font-family:{$ays_pb_font_family}; border: ".$popup['ays_pb_bordersize']."px $border_style ".$popup['ays_pb_bordercolor']."; border-radius: ".$popup['ays_pb_border_radius']."px; {$box_shadow};'>
                                  <header class='ays_template_head' style='{$header_height};background-color: {$ays_template_header_bgcolor}'>
@@ -3035,16 +3137,24 @@ class Ays_Pb_Public_Templates {
             $enable_dismiss_text_mobile = (isset($options->enable_dismiss_text_mobile) && $options->enable_dismiss_text_mobile != "") ? esc_html( stripslashes($options->enable_dismiss_text_mobile) ) : esc_html__("Dismiss ad", "ays-popup-box");
         }
 
-        //Show scrollbar
-        $options->show_scrollbar = ( isset( $options->show_scrollbar ) && $options->show_scrollbar != '' ) ? stripslashes( esc_attr($options->show_scrollbar) ) : 'off';
-        $ays_pb_show_scrollbar = ( isset( $options->show_scrollbar ) && $options->show_scrollbar == 'on' ) ? true : false;
+        // Show scrollbar mobile
+        if (isset($options->show_scrollbar_mobile)) {
+            $ays_pb_show_scrollbar_mobile = $options->show_scrollbar_mobile == 'on' ? true : false;
+        } else {
+            $ays_pb_show_scrollbar_mobile = $ays_pb_show_scrollbar;
+        }
 
         $ays_pb_disable_scroll_on_popup_class = $this->ays_pb_generate_disable_popup_class($options);
 
         $ays_pb_show_scrollbar_class = '';
-        if($ays_pb_show_scrollbar){
+        $ays_pb_show_scrollbar_class_desktop = $ays_pb_show_scrollbar ? 'ays-pb-show-scrollbar-desktop' : '';
+        $ays_pb_show_scrollbar_class_mobile = $ays_pb_show_scrollbar_mobile ? 'ays-pb-show-scrollbar-mobile' : '';
+        
+        if($ays_pb_show_scrollbar || $ays_pb_show_scrollbar_mobile){
             $ays_pb_show_scrollbar_class = 'ays-pb-show-scrollbar';
         }
+
+        $ays_pb_show_scrollbar_class .= ' ' . $ays_pb_show_scrollbar_class_desktop . ' ' . $ays_pb_show_scrollbar_class_mobile;
 
         $ubuntu_view .= "   <div class='ays_minimal_window ays-pb-modal_".$popup['id']." ".$popup['custom_class']." ays-pb-bg-styles_".$popup['id']." ays-pb-border-mobile_".$popup['id']."' {$ays_pb_flag} style='width: {$pb_width}; height: {$pb_height}; background-color: ".$popup['ays_pb_bgcolor']."; color: ".$popup['ays_pb_textcolor']." !important;font-family:{$ays_pb_font_family}; border: ".$popup['ays_pb_bordersize']."px $border_style ".$popup['ays_pb_bordercolor']."; border-radius: ".$popup['ays_pb_border_radius']."px; {$box_shadow};' data-name='modern_minimal'>
                                 <header class='ays_minimal_head' style='{$image_header_height}'>
@@ -3459,16 +3569,24 @@ class Ays_Pb_Public_Templates {
         //Close button hover color
         $close_button_color = (isset($options->close_button_color) && $options->close_button_color != "") ? esc_attr( stripslashes( $options->close_button_color ) ) : $popup['ays_pb_textcolor'];
 
-        //Show scrollbar
-        $options->show_scrollbar = ( isset( $options->show_scrollbar ) && $options->show_scrollbar != '' ) ? stripslashes( esc_attr($options->show_scrollbar) ) : 'off';
-        $ays_pb_show_scrollbar = ( isset( $options->show_scrollbar ) && $options->show_scrollbar == 'on' ) ? true : false;
+        // Show scrollbar mobile
+        if (isset($options->show_scrollbar_mobile)) {
+            $ays_pb_show_scrollbar_mobile = $options->show_scrollbar_mobile == 'on' ? true : false;
+        } else {
+            $ays_pb_show_scrollbar_mobile = $ays_pb_show_scrollbar;
+        }
 
         $ays_pb_disable_scroll_on_popup_class = $this->ays_pb_generate_disable_popup_class($options);
 
         $ays_pb_show_scrollbar_class = '';
-        if($ays_pb_show_scrollbar){
+        $ays_pb_show_scrollbar_class_desktop = $ays_pb_show_scrollbar ? 'ays-pb-show-scrollbar-desktop' : '';
+        $ays_pb_show_scrollbar_class_mobile = $ays_pb_show_scrollbar_mobile ? 'ays-pb-show-scrollbar-mobile' : '';
+        
+        if($ays_pb_show_scrollbar || $ays_pb_show_scrollbar_mobile){
             $ays_pb_show_scrollbar_class = 'ays-pb-show-scrollbar';
         }
+
+        $ays_pb_show_scrollbar_class .= ' ' . $ays_pb_show_scrollbar_class_desktop . ' ' . $ays_pb_show_scrollbar_class_mobile;
 
         // Main image src
         $image_type_img_src = (isset($options->image_type_img_src) && $options->image_type_img_src != '') ? stripslashes( esc_url($options->image_type_img_src) ) : "";
@@ -3671,16 +3789,24 @@ class Ays_Pb_Public_Templates {
         //Close button hover color
         $close_button_color = (isset($options->close_button_color) && $options->close_button_color != "") ? esc_attr( stripslashes( $options->close_button_color ) ) : $popup['ays_pb_textcolor'];
 
-        //Show scrollbar
-        $options->show_scrollbar = ( isset( $options->show_scrollbar ) && $options->show_scrollbar != '' ) ? stripslashes( esc_attr($options->show_scrollbar) ) : 'off';
-        $ays_pb_show_scrollbar = ( isset( $options->show_scrollbar ) && $options->show_scrollbar == 'on' ) ? true : false;
+        // Show scrollbar mobile
+        if (isset($options->show_scrollbar_mobile)) {
+            $ays_pb_show_scrollbar_mobile = $options->show_scrollbar_mobile == 'on' ? true : false;
+        } else {
+            $ays_pb_show_scrollbar_mobile = $ays_pb_show_scrollbar;
+        }
 
         $ays_pb_disable_scroll_on_popup_class = $this->ays_pb_generate_disable_popup_class($options);
 
         $ays_pb_show_scrollbar_class = '';
-        if($ays_pb_show_scrollbar){
+        $ays_pb_show_scrollbar_class_desktop = $ays_pb_show_scrollbar ? 'ays-pb-show-scrollbar-desktop' : '';
+        $ays_pb_show_scrollbar_class_mobile = $ays_pb_show_scrollbar_mobile ? 'ays-pb-show-scrollbar-mobile' : '';
+        
+        if($ays_pb_show_scrollbar || $ays_pb_show_scrollbar_mobile){
             $ays_pb_show_scrollbar_class = 'ays-pb-show-scrollbar';
         }
+
+        $ays_pb_show_scrollbar_class .= ' ' . $ays_pb_show_scrollbar_class_desktop . ' ' . $ays_pb_show_scrollbar_class_mobile;
 
         // Facebook page url
         $facebook_page_url = (isset($options->facebook_page_url) && $options->facebook_page_url != '') ? stripslashes( esc_url($options->facebook_page_url) ) : "";

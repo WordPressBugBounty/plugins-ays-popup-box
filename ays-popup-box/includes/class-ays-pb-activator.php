@@ -458,6 +458,7 @@ class Ays_Pb_Activator {
             'disable_scroll_on_popup' => 'off',
             'disable_scroll_on_popup_mobile' => 'off',
             'show_scrollbar' => 'off',
+            'show_scrollbar_mobile' => 'off',
             // Styles
             'enable_display_content_mobile' => 'off',
             'show_popup_title_mobile' => 'off',

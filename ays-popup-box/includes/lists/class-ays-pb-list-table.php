@@ -1511,7 +1511,10 @@ class Ays_PopupBox_List_Table extends WP_List_Table {
 
         // Show scrollbar
         $show_scrollbar = (isset($_POST['ays_pb_show_scrollbar']) && $_POST['ays_pb_show_scrollbar'] != '') ? 'on' : 'off';
-
+        
+        // Show scrollbar mobile
+        $show_scrollbar_mobile = (isset($_POST['ays_pb_show_scrollbar_mobile']) && $_POST['ays_pb_show_scrollbar_mobile'] != '') ? 'on' : 'off';
+        
         // Template
 		$view_type = (isset($_POST['ays-pb']['view_type']) && $_POST['ays-pb']['view_type'] != '') ? wp_unslash( sanitize_text_field($_POST['ays-pb']['view_type']) ) : '';
 
@@ -2053,6 +2056,7 @@ class Ays_PopupBox_List_Table extends WP_List_Table {
             'disable_scroll_on_popup' => $disable_scroll_on_popup,
             'disable_scroll_on_popup_mobile' => $disable_scroll_on_popup_mobile,
             'show_scrollbar' => $show_scrollbar,
+            'show_scrollbar_mobile' => $show_scrollbar_mobile,
             'hide_on_pc' => $hide_on_pc,
             'hide_on_tablets' => $hide_on_tablets,
             'pb_bg_image_direction_on_mobile' => $pb_bg_image_direction_on_mobile,

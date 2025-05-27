@@ -971,7 +971,24 @@ class Ays_Pb_Public {
                 $disable_scroll_mobile = $disable_scroll;
             }
 
-            $ays_pb_show_scrollbar_class = (isset($options['show_scrollbar']) && $options['show_scrollbar'] == 'on') ? 'ays-pb-show-scrollbar' : '';
+            $ays_pb_show_scrollbar = (isset($options['show_scrollbar']) && $options['show_scrollbar'] == 'on') ? true : false;
+            
+            // Show scrollbar mobile
+            if (isset($options['show_scrollbar_mobile'])) {
+                $ays_pb_show_scrollbar_mobile = $options['show_scrollbar_mobile'] == 'on' ? true : false;
+            } else {
+                $ays_pb_show_scrollbar_mobile = $ays_pb_show_scrollbar;
+            }
+
+            $ays_pb_show_scrollbar_class = '';
+            $ays_pb_show_scrollbar_class_desktop = $ays_pb_show_scrollbar ? 'ays-pb-show-scrollbar-desktop' : '';
+            $ays_pb_show_scrollbar_class_mobile = $ays_pb_show_scrollbar_mobile ? 'ays-pb-show-scrollbar-mobile' : '';
+            
+            if($ays_pb_show_scrollbar || $ays_pb_show_scrollbar_mobile){
+                $ays_pb_show_scrollbar_class = 'ays-pb-show-scrollbar';
+            }
+
+            $ays_pb_show_scrollbar_class .= ' ' . $ays_pb_show_scrollbar_class_desktop . ' ' . $ays_pb_show_scrollbar_class_mobile;
 
             $enable_pb_fullscreen = (isset($options['enable_pb_fullscreen']) && $options['enable_pb_fullscreen'] == 'on') ? true : false;
 
