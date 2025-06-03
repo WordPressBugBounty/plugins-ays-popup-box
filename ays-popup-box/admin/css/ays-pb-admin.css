@@ -4683,3 +4683,38 @@ a.ays-rated-link, a.ays-rated-link:hover, a.ays-rated-link:focus {
     display: flex;
 }
 /* Popup Box Top Banner Coupon Button | End */
+
+/* Close Button Icons selection */
+.ays-pb-close-button-icons-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.ays-pb-close-icon-item {
+    text-align: center;
+    position: relative;
+}
+
+.ays-pb-close-icon-item input[type="radio"] {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+    z-index: 1;
+    opacity: 0;
+}
+
+.ays-pb-close-icon-item label {
+    display: block;
+    cursor: pointer;
+    position: relative;
+}
+
+.ays-pb-close-icon-item input:checked + img {
+    border-color: #007cba;
+    box-shadow: 0 0 0 1px #007cba;
+}
+/* Close Button Icons selection End */

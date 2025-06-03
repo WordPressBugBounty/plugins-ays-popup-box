@@ -6869,13 +6869,40 @@ $ays_users_roles = $wp_roles->roles;
                                         <label for="ays_pb_close_button_image">
                                             <span>
                                                 <?php echo  esc_html__('Close button image',"ays-popup-box") ?>
-                                                <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__("Add an image which will be displayed instead of the close button.", "ays-popup-box"); ?>">
+                                                <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__("Add an image which will be displayed instead of the close button or choose from predefined icons.", "ays-popup-box"); ?>">
                                                     <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                                 </a>
                                             </span>
                                         </label>
                                     </div>
                                     <div class="col-sm-8 ays_divider_left">
+                                        <!-- Predefined SVG Icons -->
+                                        <div class="ays-pb-close-button-icons-list">
+                                            <div class="ays-pb-close-button-icons-wrapper" style="display: flex; gap: 10px; margin-bottom: 10px;">
+                                                <?php
+                                                $svg_icons = array(
+                                                    '1' => AYS_PB_ADMIN_URL . "/images/icons/close-icon-1.svg",
+                                                    '2' => AYS_PB_ADMIN_URL . "/images/icons/close-icon-2.svg",
+                                                    '3' => AYS_PB_ADMIN_URL . "/images/icons/close-icon-3.svg",
+                                                    '4' => AYS_PB_ADMIN_URL . "/images/icons/close-icon-4.svg"
+                                                );
+                                                
+                                                foreach ($svg_icons as $key => $icon_url) {
+                                                    $checked = ($close_btn_background_img == $icon_url) ? 'checked' : '';
+                                                    ?>
+                                                    <div class="ays-pb-close-icon-item" style="text-align: center;">
+                                                        <label style="display: block; cursor: pointer;">
+                                                            <input type="radio" name="ays_pb_close_btn_icon" value="<?php echo esc_url($icon_url); ?>" <?php echo $checked; ?>>
+                                                            <img src="<?php echo esc_url($icon_url); ?>" style="width: 30px; height: 30px; border: 1px solid #ccc; padding: 5px; border-radius: 3px;">
+                                                        </label>
+                                                    </div>
+                                                    <?php
+                                                }
+                                                ?>
+                                            </div>
+                                        </div>
+                                        
+                                        <!-- Custom Image Upload Button -->
                                         <div>
                                             <a href="javascript:void(0)" class="button ays_pb_add_close_btn_bg_image">
                                                 <?php echo $close_btn_background_img != '' ? esc_html__('Edit Image', "ays-popup-box") : esc_html__('Add Image', "ays-popup-box"); ?>

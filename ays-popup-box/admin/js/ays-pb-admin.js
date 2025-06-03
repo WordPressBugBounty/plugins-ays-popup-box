@@ -2296,6 +2296,22 @@
         return false;
     }
 
+    function updateCloseButtonImage(imageUrl) {
+        $('#close_btn_bg_img').val(imageUrl);
+        $('#ays_close_btn_bg_img').attr('src', imageUrl);
+        $('.ays_pb_close_btn_bg_img_container').show();
+        
+        $(document).find('img.close_btn_img').attr('src', imageUrl);
+        
+        $(document).find('img.close_btn_img').css('display', 'block');
+        $(document).find('label.close_btn_label > .close_btn_text').css('display', 'none');
+    }
+    
+    $(document).on('change', 'input[name="ays_pb_close_btn_icon"]', function() {
+        var selectedImageUrl = $(this).val();
+        updateCloseButtonImage(selectedImageUrl);
+    });
+
     function openMusicMediaUploader(e, element) {
         e.preventDefault();
 
