@@ -593,11 +593,9 @@ class Ays_Pb_Public_Templates {
             $enable_dismiss_text_mobile = (isset($options->enable_dismiss_text_mobile) && $options->enable_dismiss_text_mobile != "") ? esc_html( stripslashes($options->enable_dismiss_text_mobile) ) : esc_html__("Dismiss ad", "ays-popup-box");
         }
 
-        //Close button color
-        $close_button_color = (isset($options->close_button_color) && $options->close_button_color != "") ? esc_attr( stripslashes( $options->close_button_color ) ) : $popup['ays_pb_textcolor'];
-
-        //Close button hover color
-        $close_button_color = (isset($options->close_button_color) && $options->close_button_color != "") ? esc_attr( stripslashes( $options->close_button_color ) ) : $popup['ays_pb_textcolor'];
+        //Show scrollbar
+        $options->show_scrollbar = ( isset( $options->show_scrollbar ) && $options->show_scrollbar != '' ) ? stripslashes( esc_attr($options->show_scrollbar) ) : 'off';
+        $ays_pb_show_scrollbar = ( isset( $options->show_scrollbar ) && $options->show_scrollbar == 'on' ) ? true : false;
 
         // Show scrollbar mobile
         if (isset($options->show_scrollbar_mobile)) {
@@ -921,7 +919,7 @@ class Ays_Pb_Public_Templates {
         //Show scrollbar
         $options->show_scrollbar = ( isset( $options->show_scrollbar ) && $options->show_scrollbar != '' ) ? stripslashes( esc_attr($options->show_scrollbar) ) : 'off';
         $ays_pb_show_scrollbar = ( isset( $options->show_scrollbar ) && $options->show_scrollbar == 'on' ) ? true : false;
-
+        
         // Show scrollbar mobile
         if (isset($options->show_scrollbar_mobile)) {
             $ays_pb_show_scrollbar_mobile = $options->show_scrollbar_mobile == 'on' ? true : false;
@@ -1265,7 +1263,7 @@ class Ays_Pb_Public_Templates {
         //Show scrollbar
         $options->show_scrollbar = ( isset( $options->show_scrollbar ) && $options->show_scrollbar != '' ) ? stripslashes( esc_attr($options->show_scrollbar) ) : 'off';
         $ays_pb_show_scrollbar = ( isset( $options->show_scrollbar ) && $options->show_scrollbar == 'on' ) ? true : false;
-
+        
         // Show scrollbar mobile
         if (isset($options->show_scrollbar_mobile)) {
             $ays_pb_show_scrollbar_mobile = $options->show_scrollbar_mobile == 'on' ? true : false;
@@ -1912,7 +1910,7 @@ class Ays_Pb_Public_Templates {
         //Show scrollbar
         $options->show_scrollbar = ( isset( $options->show_scrollbar ) && $options->show_scrollbar != '' ) ? stripslashes( esc_attr($options->show_scrollbar) ) : 'off';
         $ays_pb_show_scrollbar = ( isset( $options->show_scrollbar ) && $options->show_scrollbar == 'on' ) ? true : false;
-
+        
         // Show scrollbar mobile
         if (isset($options->show_scrollbar_mobile)) {
             $ays_pb_show_scrollbar_mobile = $options->show_scrollbar_mobile == 'on' ? true : false;
@@ -2212,7 +2210,7 @@ class Ays_Pb_Public_Templates {
         //Show scrollbar
         $options->show_scrollbar = ( isset( $options->show_scrollbar ) && $options->show_scrollbar != '' ) ? stripslashes( esc_attr($options->show_scrollbar) ) : 'off';
         $ays_pb_show_scrollbar = ( isset( $options->show_scrollbar ) && $options->show_scrollbar == 'on' ) ? true : false;
-
+        
         // Show scrollbar mobile
         if (isset($options->show_scrollbar_mobile)) {
             $ays_pb_show_scrollbar_mobile = $options->show_scrollbar_mobile == 'on' ? true : false;
@@ -2521,6 +2519,10 @@ class Ays_Pb_Public_Templates {
             $enable_dismiss_text_mobile = (isset($options->enable_dismiss_text_mobile) && $options->enable_dismiss_text_mobile != "") ? esc_html( stripslashes($options->enable_dismiss_text_mobile) ) : esc_html__("Dismiss ad", "ays-popup-box");
         }
 
+        //Show scrollbar
+        $options->show_scrollbar = ( isset( $options->show_scrollbar ) && $options->show_scrollbar != '' ) ? stripslashes( esc_attr($options->show_scrollbar) ) : 'off';
+        $ays_pb_show_scrollbar = ( isset( $options->show_scrollbar ) && $options->show_scrollbar == 'on' ) ? true : false;
+        
         // Show scrollbar mobile
         if (isset($options->show_scrollbar_mobile)) {
             $ays_pb_show_scrollbar_mobile = $options->show_scrollbar_mobile == 'on' ? true : false;
@@ -2831,6 +2833,10 @@ class Ays_Pb_Public_Templates {
         //Close button color
         $close_button_color = (isset($options->close_button_color) && $options->close_button_color != "") ? esc_attr( stripslashes( $options->close_button_color ) ) : $popup['ays_pb_textcolor'];
 
+        //Show scrollbar
+        $options->show_scrollbar = ( isset( $options->show_scrollbar ) && $options->show_scrollbar != '' ) ? stripslashes( esc_attr($options->show_scrollbar) ) : 'off';
+        $ays_pb_show_scrollbar = ( isset( $options->show_scrollbar ) && $options->show_scrollbar == 'on' ) ? true : false;
+       
         // Show scrollbar mobile
         if (isset($options->show_scrollbar_mobile)) {
             $ays_pb_show_scrollbar_mobile = $options->show_scrollbar_mobile == 'on' ? true : false;
@@ -3136,6 +3142,10 @@ class Ays_Pb_Public_Templates {
         } else {
             $enable_dismiss_text_mobile = (isset($options->enable_dismiss_text_mobile) && $options->enable_dismiss_text_mobile != "") ? esc_html( stripslashes($options->enable_dismiss_text_mobile) ) : esc_html__("Dismiss ad", "ays-popup-box");
         }
+
+        //Show scrollbar
+        $options->show_scrollbar = ( isset( $options->show_scrollbar ) && $options->show_scrollbar != '' ) ? stripslashes( esc_attr($options->show_scrollbar) ) : 'off';
+        $ays_pb_show_scrollbar = ( isset( $options->show_scrollbar ) && $options->show_scrollbar == 'on' ) ? true : false;
 
         // Show scrollbar mobile
         if (isset($options->show_scrollbar_mobile)) {
@@ -3569,6 +3579,10 @@ class Ays_Pb_Public_Templates {
         //Close button hover color
         $close_button_color = (isset($options->close_button_color) && $options->close_button_color != "") ? esc_attr( stripslashes( $options->close_button_color ) ) : $popup['ays_pb_textcolor'];
 
+        //Show scrollbar
+        $options->show_scrollbar = ( isset( $options->show_scrollbar ) && $options->show_scrollbar != '' ) ? stripslashes( esc_attr($options->show_scrollbar) ) : 'off';
+        $ays_pb_show_scrollbar = ( isset( $options->show_scrollbar ) && $options->show_scrollbar == 'on' ) ? true : false;
+        
         // Show scrollbar mobile
         if (isset($options->show_scrollbar_mobile)) {
             $ays_pb_show_scrollbar_mobile = $options->show_scrollbar_mobile == 'on' ? true : false;
@@ -3789,6 +3803,10 @@ class Ays_Pb_Public_Templates {
         //Close button hover color
         $close_button_color = (isset($options->close_button_color) && $options->close_button_color != "") ? esc_attr( stripslashes( $options->close_button_color ) ) : $popup['ays_pb_textcolor'];
 
+        //Show scrollbar
+        $options->show_scrollbar = ( isset( $options->show_scrollbar ) && $options->show_scrollbar != '' ) ? stripslashes( esc_attr($options->show_scrollbar) ) : 'off';
+        $ays_pb_show_scrollbar = ( isset( $options->show_scrollbar ) && $options->show_scrollbar == 'on' ) ? true : false;
+        
         // Show scrollbar mobile
         if (isset($options->show_scrollbar_mobile)) {
             $ays_pb_show_scrollbar_mobile = $options->show_scrollbar_mobile == 'on' ? true : false;
