@@ -585,18 +585,18 @@ class Ays_Pb_Data {
 
             $content[] = '<div id="ays-pb-engagement-dicount-month-main" class="notice notice-success is-dismissible ays_pb-engagement_dicount_info">';
                 $content[] = '<div id="ays-pb-engagement-dicount-month" class="ays_pb-engagement_dicount_month">';
-                    $content[] = '<a href="https://ays-pro.com/wordpress/popup-box" target="_blank" class="ays-pb-engagement-sale-banner-link"><img src="' . AYS_PB_ADMIN_URL . '/images/icons/icon-popup-128x128.png"></a>';
+                    $content[] = '<a href="https://popup-plugin.com" target="_blank" class="ays-pb-engagement-sale-banner-link"><img src="' . AYS_PB_ADMIN_URL . '/images/icons/icon-popup-128x128.png"></a>';
 
                     $content[] = '<div class="ays-pb-engagement-dicount-wrap-box">';
 
                         $content[] = '<strong style="font-weight: bold;">';
-                            $content[] = esc_html__( "Limited Time <span style='color:#E85011;'>20%</span> SALE on <span><a href='https://ays-pro.com/wordpress/popup-box' target='_blank' style='color:#E85011; text-decoration: underline;'>Popup Box</a></span>", "ays-popup-box" );
+                            $content[] = esc_html__( "Limited Time <span style='color:#E85011;'>20%</span> SALE on <span><a href='https://popup-plugin.com' target='_blank' style='color:#E85011; text-decoration: underline;'>Popup Box</a></span>", "ays-popup-box" );
                         $content[] = '</strong>';
 
                         $content[] = '<br>';
 
                         $content[] = '<strong>';
-                                $content[] = esc_html__( "Hurry up! <a href='https://ays-pro.com/wordpress/popup-box' target='_blank'>Check it out!</a>", "ays-popup-box" );
+                                $content[] = esc_html__( "Hurry up! <a href='https://popup-plugin.com' target='_blank'>Check it out!</a>", "ays-popup-box" );
                         $content[] = '</strong>';
 
                         $content[] = '<div style="position: absolute;right: 10px;bottom: 1px;" class="ays-pb-engagement-dismiss-buttons-container-for-form">';
@@ -637,7 +637,7 @@ class Ays_Pb_Data {
                             
                     $content[] = '</div>';
 
-                    $content[] = '<a href="https://ays-pro.com/wordpress/popup-box" class="button button-primary ays-button" id="ays-button-top-buy-now" target="_blank" style="height: 32px; display: flex; align-items: center; font-weight: 500; " >' . esc_html__( 'Buy Now !', "ays-popup-box" ) . '</a>';
+                    $content[] = '<a href="https://popup-plugin.com" class="button button-primary ays-button" id="ays-button-top-buy-now" target="_blank" style="height: 32px; display: flex; align-items: center; font-weight: 500; " >' . esc_html__( 'Buy Now !', "ays-popup-box" ) . '</a>';
                 $content[] = '</div>';
             $content[] = '</div>';
 

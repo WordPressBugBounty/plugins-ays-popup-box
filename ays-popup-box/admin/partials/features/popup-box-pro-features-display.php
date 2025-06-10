@@ -43,7 +43,7 @@
                                 <span style="text-decoration:line-through;color:red;">$75</span>
                             </div>
                             <div class="price-now"><span>$49</span></div>
-                            <a href="https://ays-pro.com/wordpress/popup-box" class="price-buy">
+                            <a href="https://popup-plugin.com/pricing/" class="price-buy">
                                 <?php echo esc_html__('Buy now', "ays-popup-box"); ?><span class="hide-mobile"></span>
                             </a>
                             <div style="font-size:12px;"> (<?php echo esc_html__('One-time payment', "ays-popup-box"); ?>)</div>
@@ -53,7 +53,7 @@
                                 <span style="text-decoration:line-through;color:red;">$250</span>
                             </div>
                             <div class="price-now"><span>$149</span></div>
-                            <a href="https://ays-pro.com/wordpress/popup-box" class="price-buy">
+                            <a href="https://popup-plugin.com/pricing/" class="price-buy">
                                 <?php echo esc_html__('Buy now', "ays-popup-box"); ?><span class="hide-mobile"></span>
                             </a>
                             <div style="font-size:12px;"> (<?php echo esc_html__('One-time payment', "ays-popup-box"); ?>)</div>
@@ -940,13 +940,13 @@
                         <td></td>
                         <td></td>
                         <td>
-                            <a href="https://ays-pro.com/wordpress/popup-box" class="price-buy">
+                            <a href="https://popup-plugin.com/pricing/" class="price-buy">
                                 <?php echo esc_html__('Buy now', "ays-popup-box"); ?><span class="hide-mobile"></span>
                             </a>
                             <div style="font-size:12px;"> (<?php echo esc_html__('One-time payment', "ays-popup-box"); ?>)</div>
                         </td>
                         <td>
-                            <a href="https://ays-pro.com/wordpress/popup-box" class="price-buy">
+                            <a href="https://popup-plugin.com/pricing/" class="price-buy">
                                 <?php echo esc_html__('Buy now', "ays-popup-box"); ?><span class="hide-mobile"></span>
                             </a>
                             <div style="font-size:12px;"> (<?php echo esc_html__('One-time payment', "ays-popup-box"); ?>) </div>

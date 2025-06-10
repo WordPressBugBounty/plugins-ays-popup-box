@@ -1,10 +1,10 @@
 ﻿=== Popup Box - Create Countdown, Coupon, Video, Contact Form Popups ===
 Contributors: ays-pro
-Donate link: https://ays-pro.com/wordpress/popup-box
+Donate link: https://popup-plugin.com
 Tags: popup, popups, exit popup, pop up, modal
 Requires at least: 4.0
 Tested up to: 6.8
-Stable tag: 5.3.4
+Stable tag: 5.3.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -16,7 +16,7 @@ Popup everything you want! Create informative and promotional popups all in one 
 
 ### WordPress Popup Plugin
 
-* [WordPress Popup plugin pricing](https://ays-pro.com/wordpress/popup-box)
+* [WordPress Popup plugin pricing](https://popup-plugin.com/pricing)
 * [Popup Box FREE demo](https://ays-demo.com/popup-box-plugin-free-demo/)
 * [Popup Box PRO demo](https://ays-demo.com/popup-box-plugin-pro-demo/)
 * [Popup Box PRO documentation](https://ays-pro.com/wordpress-popup-box-plugin-user-manual)
@@ -27,7 +27,7 @@ https://www.youtube.com/watch?v=Ofk1mxUF-9g
 
 == Best free WordPress popup plugin ==
 
-[WordPress Popup plugin](https://ays-pro.com/wordpress/popup-box) is an easy way to **popup anything**. Add **eye-catching** and **high converting** popups to your website. The Popup plugin is here to break the stereotypes against annoying popups. You don't have to be a tech-savvy person to use the huge variety of features included in this plugin. This plugin offers the best popup designs for creating responsive, promotional, and conversational popups. There are 15 types of popups that you can use for your website:
+[WordPress Popup plugin](https://popup-plugin.com) is an easy way to **popup anything**. Add **eye-catching** and **high converting** popups to your website. The Popup plugin is here to break the stereotypes against annoying popups. You don't have to be a tech-savvy person to use the huge variety of features included in this plugin. This plugin offers the best popup designs for creating responsive, promotional, and conversational popups. There are 15 types of popups that you can use for your website:
 
 * **Shortcode** - Copy and paste the shortcode from other plugins and display it on your popup. 
 * **Custom Content** - You can add HTML and create your preferred popup from the scratch.
@@ -67,11 +67,11 @@ https://www.youtube.com/watch?v=Ofk1mxUF-9g
 == Popup Triggers ==
 * On page load
 * On click 
-* On hover (available in [Pro version](https://ays-pro.com/wordpress/popup-box))
-* Exit intent (available in [Pro version](https://ays-pro.com/wordpress/popup-box))
-* Inactivity (available in [Pro version](https://ays-pro.com/wordpress/popup-box))
-* After visiting x pages (available in [Pro version](https://ays-pro.com/wordpress/popup-box))
-* Scrolling to elements (available in [Pro version](https://ays-pro.com/wordpress/popup-box))
+* On hover (available in [Pro version](https://popup-plugin.com/))
+* Exit intent (available in [Pro version](https://popup-plugin.com/))
+* Inactivity (available in [Pro version](https://popup-plugin.com/))
+* After visiting x pages (available in [Pro version](https://popup-plugin.com/))
+* Scrolling to elements (available in [Pro version](https://popup-plugin.com/))
 
 **What  WordPress Popup Plugin Offers**
 
@@ -107,7 +107,7 @@ The privacy policy for Facebook can be found at this URL: https://www.facebook.c
 * Live preview
 
 
-**[Popup Box PRO](https://ays-pro.com/wordpress/popup-box) Features**
+**[Popup Box PRO](https://popup-plugin.com/pricing) Features**
 
 * Includes ALL Free version Features and
 * Subscription popup
@@ -170,7 +170,7 @@ So according to selected sizes, you can have a full-screen popup.
 
 You will be able to preview the changes before saving them.
 
-**[PRO](https://ays-pro.com/wordpress/popup-box) | [DEMO](https://ays-demo.com/popup-box-plugin-pro-demo/) | [DOCUMENTATION](https://ays-pro.com/wordpress-popup-box-plugin-user-manual)**
+**[PRO](https://popup-plugin.com/pricing) | [DEMO](https://ays-demo.com/popup-box-plugin-pro-demo/) | [DOCUMENTATION](https://ays-pro.com/wordpress-popup-box-plugin-user-manual)**
 
 == Why us? What advantages does popup box offer? ==
 
@@ -314,7 +314,7 @@ Simply and effortlessly! Either you are switching from the free to pro, or the l
 
 = 12. Something does not work or I have a suggestion/pre-sale question. What should I do? =
 
-**Contact us**!  Either write on our [FREE support forum](https://wordpress.org/support/plugin/ays-popup-box/) or reach out to use with our [contact form](https://ays-pro.com/contact). Either way, our helpful customer care specialists will contact back you quickly and will do their best to satisfy all your needs.
+**Contact us**!  Either write on our [FREE support forum](https://wordpress.org/support/plugin/ays-popup-box/) or reach out to use with our [contact form](https://popup-plugin.com/contact-us/). Either way, our helpful customer care specialists will contact back you quickly and will do their best to satisfy all your needs.
 
 = 13. Can I customize the popup the way I want? =
 This is not even a question! Surely, you can customize the best popups the way you wish. Choose one of our premade themes, change the background color, image, text, and everything that you can think of. Can't find anything of your taste? You are free to add your **custom CSS code** to get your preferred design.
@@ -335,6 +335,9 @@ After clearing the caches, try to check the case with either the **Incognito mod
 
 
 == Changelog ==
+
+= 5.3.5 ( June 9, 2025 ) =
+* Improved: Some changes in the admin dashboard
 
 = 5.3.4 ( June 6, 2025 ) =
 * Fixed: Show scrollbar option issue

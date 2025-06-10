@@ -3193,10 +3193,10 @@ class Ays_Pb_Public {
                             }
                         }else{
                             $post = get_post($post_id);
-                            $this_post_title = strval($post->post_title);
+                            $this_post_title = isset($post->post_title) ? strval($post->post_title) : '';
                             $except_posts = array();
                             $except_post_types = array();
-                            $postType = $post->post_type;
+                            $postType = isset($post->post_type) ? $post->post_type : '';
                             
                             
                             
