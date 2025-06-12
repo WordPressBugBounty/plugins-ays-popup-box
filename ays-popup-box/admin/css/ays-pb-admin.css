@@ -808,7 +808,7 @@ div.ays_ask_question_content .ays-ask-question-content-inner-question-mark-text 
     box-shadow: unset;
     display: flex;
     align-items: center;
-    width: 128px;
+    width: fit-content;
     gap: 6px;
 }
 

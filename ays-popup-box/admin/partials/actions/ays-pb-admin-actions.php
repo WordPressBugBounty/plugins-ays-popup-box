@@ -1519,16 +1519,16 @@ if ($close_btn_background_img != '') {
 }
 
 $hide_title = '';
-$hide_desc = '';
+$hide_desc  = '';
 
 $header_height = (($show_popup_title !== "On") ?  "height: 0px !important" :  "");
 $calck_template_footer = (($show_popup_title !== "On") ? "height: 100%;" :  "");
 $header_padding = '';
 if($show_popup_title == 'On'){
-    $hide_title = 'display:block';
+    $hide_title     = 'display:block';
     $header_padding = 'display:flex;align-items:center;justify-content:center';
 }else{
-    $hide_title = 'display:none';
+    $hide_title     = 'display:none';
     $header_padding = 'height:0 !important';
 }
 
@@ -1557,9 +1557,9 @@ $not_default_view_types = array(
 );
 
 $show_popup_triggers_tooltip = array(
-    'pageLoaded' => 'On page load - Trigger displays the popup automatically on the page load. Define the time delay of the popup in Open Delay option.',
+    'pageLoaded'    => 'On page load - Trigger displays the popup automatically on the page load. Define the time delay of the popup in Open Delay option.',
     'clickSelector' => 'On click - Trigger displays a popup on your site when the user clicks on a targeted CSS element(s). Define the CSS element in the CSS selector(s) option.',
-    'both' => 'Both (On page load & On click) - Popup will be shown both on page load and click.',
+    'both'          => 'Both (On page load & On click) - Popup will be shown both on page load and click.',
 );
 
 $if_dismiss_cookie_exists = (isset( $_COOKIE['ays_pb_fox_lms_pages_popup_dismiss_for_three_click'] ) && $_COOKIE['ays_pb_fox_lms_pages_popup_dismiss_for_three_click'] >= 3) ? true : false;
