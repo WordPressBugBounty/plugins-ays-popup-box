@@ -4140,6 +4140,9 @@ class Ays_Pb_Public_Templates {
 
         // Current date
         $current_date = date_i18n( 'M d, Y', current_time('timestamp') );
+        $current_time = date_i18n( get_option( 'time_format' ), current_time('timestamp') );
+        $current_day = date_i18n( 'l', current_time('timestamp') );
+        $current_month = date_i18n( 'F', current_time('timestamp') );
 
         $message_variables_data = array(
             'popup_title' => $popup_title,
@@ -4154,6 +4157,9 @@ class Ays_Pb_Public_Templates {
             'creation_date' => $creation_date,
             'current_date' => $current_date,
             'user_nickname' => $user_nickname,
+            'current_time' => $current_time,
+            'current_day' => $current_day,
+            'current_month' => $current_month,
         );
 
         return $message_variables_data;

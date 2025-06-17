@@ -581,6 +581,33 @@ $categories_title_length = (isset($options['categories_title_length']) && intval
                                         <?php echo esc_html__( "It will show the current date upon opening a popup.", "ays-popup-box"); ?>
                                     </span>
                                 </p>
+                                <p class="vmessage">
+                                    <strong>
+                                        <input type="text" onClick="this.setSelectionRange(0, this.value.length)" readonly value="%%current_time%%" class='ays-pb-message-variables-inputs'/>
+                                    </strong>
+                                    <span> - </span>
+                                    <span style="font-size:18px;">
+                                        <?php echo esc_html__( "It will show the current time upon opening a popup.", "ays-popup-box"); ?>
+                                    </span>
+                                </p>
+                                <p class="vmessage">
+                                    <strong>
+                                        <input type="text" onClick="this.setSelectionRange(0, this.value.length)" readonly value="%%current_day%%" class='ays-pb-message-variables-inputs'/>
+                                    </strong>
+                                    <span> - </span>
+                                    <span style="font-size:18px;">
+                                        <?php echo esc_html__( "It will show the current day upon opening a popup.", "ays-popup-box"); ?>
+                                    </span>
+                                </p>
+                                <p class="vmessage">
+                                    <strong>
+                                        <input type="text" onClick="this.setSelectionRange(0, this.value.length)" readonly value="%%current_month%%" class='ays-pb-message-variables-inputs'/>
+                                    </strong>
+                                    <span> - </span>
+                                    <span style="font-size:18px;">
+                                        <?php echo esc_html__( "It will show the current month upon opening a popup.", "ays-popup-box"); ?>
+                                    </span>
+                                </p>
                             </div>
                         </div>
                     </div>
