@@ -4,7 +4,7 @@ Donate link: https://popup-plugin.com
 Tags: popup, popups, exit popup, pop up, modal
 Requires at least: 4.0
 Tested up to: 6.8
-Stable tag: 5.3.7
+Stable tag: 5.3.8
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -335,6 +335,9 @@ After clearing the caches, try to check the case with either the **Incognito mod
 
 
 == Changelog ==
+
+= 5.3.8 ( June 18, 2025 ) =
+* Improved: Some changes in the admin dashboard
 
 = 5.3.7 ( June 17, 2025 ) =
 * Added: Current time, day and month message variables

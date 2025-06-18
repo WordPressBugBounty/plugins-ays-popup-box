@@ -1892,6 +1892,17 @@
                 }
             });
         });
+
+        $(document).on('change','#ays_pb_pricing_period,#ays_pb_pricing_period_mobile',function(){
+			if($(this).is(':checked')){
+				$('.features-lifetime').removeClass('display_none');
+				$('.features-annual').addClass('display_none');
+			} else {
+				$('.features-lifetime').addClass('display_none');
+				$('.features-annual').removeClass('display_none');
+			}
+		});
+
     });
 
     function aysPopupstripHTML(dirtyString) {
