@@ -664,7 +664,7 @@ class Ays_Pb_Data {
             }
 
             $content = array();
-            $pb_cta_button_link = sprintf('https://ays-pro.com/essential-bundle?utm_source=dashboard&utm_medium=popup-free&utm_campaign=sale-banner-%s', AYS_PB_NAME_VERSION);
+            $pb_cta_button_link = sprintf('https://popup-plugin.com?utm_source=dashboard&utm_medium=popup-free&utm_campaign=sale-banner-%s', AYS_PB_NAME_VERSION);
 
             $content[] = '<div id="ays-pb-new-mega-bundle-dicount-month-main" class="notice notice-success is-dismissible ays_pb_dicount_info">';
                 $content[] = '<div id="ays-pb-dicount-month" class="ays_pb_dicount_month">';
@@ -672,7 +672,7 @@ class Ays_Pb_Data {
                     $content[] = '<div class="ays-pb-dicount-wrap-box ays-pb-dicount-wrap-text-box">';
                         $content[] = '<div>';
                             $content[] = '<span class="ays-pb-new-mega-bundle-title">';
-                                $content[] = sprintf(' <a href="%s" target="_blank" style="color:#ffffff; text-decoration: underline;">Essential Bundle</a> ( %s )', esc_url($pb_cta_button_link), esc_html__( "Quiz + Form + Popup", "ays-popup-box" ));
+                                $content[] = sprintf('Get the Pro Version of <a href="%s" target="_blank" style="color:#ffffff; text-decoration: underline;">%s</a>', esc_url($pb_cta_button_link),esc_html__( "Popup Box", "ays-popup-box" ));
                             $content[] = '</span>';
                             $content[] = '</br>';
                             $content[] = '<div class="ays-pb-new-mega-bundle-mobile-image-display-block display_none">';
@@ -684,7 +684,7 @@ class Ays_Pb_Data {
                             $content[] = '</span>';
                         $content[] = '</div>';
                         $content[] = '<div>';
-                            $content[] = '<img src="' . AYS_PB_ADMIN_URL . '/images/ays-pb-banner-50.svg" class="ays-pb-new-mega-bundle-mobile-image-display-none" style="width: 70px;">';
+                            $content[] = '<img src="' . AYS_PB_ADMIN_URL . '/images/ays-pb-banner-sale-20.svg" class="ays-pb-new-mega-bundle-mobile-image-display-none" style="width: 70px;">';
                         $content[] = '</div>';
                         $content[] = '<div style="position: absolute;right: 10px;bottom: 1px;" class="ays-pb-dismiss-buttons-container-for-form">';
                             $content[] = '<form action="" method="POST">';
@@ -731,8 +731,19 @@ class Ays_Pb_Data {
                             
                     $content[] = '</div>';
 
+                    $content[] = '<div class="ays-pb-dicount-wrap-box ays-pb-coupon-wrap-button-box">';
+                        $content[] = '<div class="ays-pb-coupon-container">';
+                            $content[] = '<div class="ays-pb-coupon-row ays-pb-shortcode-box" onClick="selectAndCopyElementContents(this)" class="ays-pb-copy-element-box" data-toggle="tooltip" title="'. esc_html__('Click for copy.','ays-pb') .'">';
+                                $content[] = 'summer2025';
+                            $content[] = '</div>';
+                            $content[] = '<div class="ays-pb-coupon-text-row">';
+                                $content[] = __( "20% Extra Discount", 'ays-pb' );
+                            $content[] = '</div>';
+                        $content[] = '</div>';
+                    $content[] = '</div>';
+
                     $content[] = '<div class="ays-pb-dicount-wrap-box ays-pb-dicount-wrap-button-box">';
-                        $content[] = sprintf('<a href="%s" class="button button-primary ays-button" id="ays-button-top-buy-now" target="_blank">%s</a>', esc_url($pb_cta_button_link), esc_html__( 'Buy Now', "ays-popup-box" ));
+                        $content[] = sprintf('<a href="%s" class="button button-primary ays-button" id="ays-button-top-buy-now" target="_blank">%s</a>', esc_url("https://popup-plugin.com/pricing?utm_source=dashboard&utm_medium=popup-free&utm_campaign=sale-banner-".AYS_PB_NAME_VERSION), esc_html__( 'Buy Now', "ays-popup-box" ));
                         $content[] = '<span class="ays-pb-dicount-one-time-text">';
                             $content[] = esc_html__( "One-time payment", "ays-popup-box" );
                         $content[] = '</span>';

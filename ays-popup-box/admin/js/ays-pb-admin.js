@@ -2351,7 +2351,7 @@
 
 selectAndCopyElementContents = function(el) {
     if (window.getSelection && document.createRange) {
-        var _this = jQuery(document).find('.ays-pb-copy-element-box');
+        var $currentElement = jQuery(el);
 
         var text      = el.textContent;
         var textField = document.createElement('textarea');
@@ -2365,10 +2365,10 @@ selectAndCopyElementContents = function(el) {
         var selection = window.getSelection();
         selection.setBaseAndExtent(el,0,el,1);
 
-        _this.attr( "data-original-title", pb.copied );
-        _this.attr( "title", pb.copied );
+        $currentElement.attr( "data-original-title", pb.copied );
+        $currentElement.attr( "title", pb.copied );
 
-        _this.tooltip("show");
+        $currentElement.tooltip("show");
 
     } else if (document.selection && document.body.createTextRange) {
         var textRange = document.body.createTextRange();

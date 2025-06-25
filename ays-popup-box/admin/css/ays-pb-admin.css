@@ -4548,8 +4548,8 @@ div.ays-pb-faq-main p {
         font-size: 24px;
     }
 
-    .ays-pb-features-toggle-mobile{
-        display: flex!important;
+    #wpwrap div.ays-pb-features-toggle-mobile{
+        display: flex;
     }
     .ays-pb-features-toggle-pc{
         display: none!important;
@@ -4736,8 +4736,8 @@ a.ays-rated-link, a.ays-rated-link:hover, a.ays-rated-link:focus {
     font-weight: 500;
     color: #363636
 }
-.ays-pb-features-toggle-mobile{
-    display:none!important;
+#wpwrap .ays-pb-features-toggle-mobile{
+    display: none;
 }
 
 

@@ -118,7 +118,7 @@ div#ays-pb-new-mega-bundle-dicount-month-main .btn-link {
 }
 
 div#ays-pb-new-mega-bundle-dicount-month-main.ays_pb_dicount_info {
-    background-image: url("../images/new-mega-bundle-logo-background.svg"); 
+    background-image: url("../images/ays-pb-banner-background-20.svg"); 
     background-position: center right;
     background-repeat: no-repeat;
     background-size: cover;
@@ -366,6 +366,26 @@ div#ays-pb-new-mega-bundle-dicount-month-main button.notice-dismiss:before{
     font-style: normal;
     font-weight: 600;
     line-height: normal;
+}
+
+#ays-pb-new-mega-bundle-dicount-month-main .ays-pb-coupon-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 6px;
+    width: 200px;
+    background-color: #776dd9;
+    border: 2px dashed #FFA500;
+    border-radius: 18px;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+#ays-pb-new-mega-bundle-dicount-month-main .ays-pb-coupon-text-row {
+    font-weight: 700;
+    font-size: 14px;
+    text-align: center;
 }
 
 @media all and (max-width: 768px) {
