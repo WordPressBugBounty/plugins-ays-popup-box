@@ -69,11 +69,11 @@
                         </th>
                         <th class="price-info">
                             <div class="price-now">
-                                <span style="text-decoration:line-through;color:red;" class="features-lifetime display_none">$75</span>
-                                <span style="text-decoration:line-through;color:red;" class="features-annual">$25</span>
+                                <span style="text-decoration:line-through;color:red;" class="features-lifetime display_none">$99</span>
+                                <span style="text-decoration:line-through;color:red;" class="features-annual">$49</span>
                             </div>
-                            <div class="price-now features-lifetime display_none"><span>$49</span></div>
-                            <div class="price-now features-annual"><span>$19</span></div>
+                            <div class="price-now features-lifetime display_none"><span>$69</span></div>
+                            <div class="price-now features-annual"><span>$29</span></div>
                             <a href="https://popup-plugin.com/pricing/" class="price-buy">
                                 <?php echo esc_html__('Buy now', "ays-popup-box"); ?><span class="hide-mobile"></span>
                             </a>
@@ -130,10 +130,20 @@
                             <?php echo esc_html__('1 months', "ays-popup-box"); ?>
                         </td>
                         <td>
-                            <?php echo esc_html__('12 months', "ays-popup-box"); ?>
+                            <p class="features-annual">
+                                <?php echo esc_html__('12 months', 'ays-popup-box'); ?>
+                            </p>
+                            <p class="features-lifetime display_none">
+                                <?php echo esc_html__('Lifetime', 'ays-popup-box'); ?>
+                            </p>
                         </td>
                         <td>
-                            <?php echo esc_html__('Lifetime', "ays-popup-box"); ?>
+                            <p class="features-annual">
+                                <?php echo esc_html__('12 months', 'ays-popup-box'); ?>
+                            </p>
+                            <p class="features-lifetime display_none">
+                                <?php echo esc_html__('Lifetime', 'ays-popup-box'); ?>
+                            </p>
                         </td>
                     </tr>
                     <tr>
@@ -150,10 +160,20 @@
                             <?php echo esc_html__('1 months', "ays-popup-box"); ?>
                         </td>
                         <td>
-                            <?php echo esc_html__('12 months', "ays-popup-box"); ?>
+                            <p class="features-annual">
+                                <?php echo esc_html__('12 months', 'ays-popup-box'); ?>
+                            </p>
+                            <p class="features-lifetime display_none">
+                                <?php echo esc_html__('Lifetime', 'ays-popup-box'); ?>
+                            </p>
                         </td>
                         <td>
-                            <?php echo esc_html__('Lifetime', "ays-popup-box"); ?>
+                            <p class="features-annual">
+                                <?php echo esc_html__('12 months', 'ays-popup-box'); ?>
+                            </p>
+                            <p class="features-lifetime display_none">
+                                <?php echo esc_html__('Lifetime', 'ays-popup-box'); ?>
+                            </p>
                         </td>
                     </tr>
                     <tr>
