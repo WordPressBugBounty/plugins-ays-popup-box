@@ -197,11 +197,22 @@ class Ays_Pb_Activator {
                 delete_network_option($network_id, 'ays_pb_db_version');
             }
 
+            $is_plugin_downloaded = get_network_option('ays_pb_db_version', false) === false;
+            if ($is_plugin_downloaded) {
+                update_option('ays_pb_first_time_activation_page', true);
+            }
+
             if ( get_network_option($network_id, 'ays_pb_db_version') != $ays_pb_db_version ) {
                 self::activate();
                 self::alter_tables();
             }
         } else {
+
+            $is_plugin_downloaded = get_site_option('ays_pb_db_version', false) === false;
+            if ($is_plugin_downloaded) {
+                update_option('ays_pb_first_time_activation_page', true);
+            }
+
             if ( get_site_option('ays_pb_db_version') != $ays_pb_db_version ) {
                 self::activate();
                 self::alter_tables();

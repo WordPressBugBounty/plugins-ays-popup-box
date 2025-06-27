@@ -125,6 +125,16 @@ class Ays_Pb {
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-ays-pb-i18n.php';
 
 		/**
+         * The class responsible for showing Popup Box Welcome page.
+         */
+        require_once plugin_dir_path(dirname(__FILE__)) . 'includes/class-ays-pb-ays-welcome.php';
+
+        /**
+         * The class responsible for showing Popup Box Feedback popup.
+         */
+        require_once plugin_dir_path(dirname(__FILE__)) . 'includes/class-ays-pb-feedback.php';
+
+		/**
 		 * The class responsible for defining all actions that occur in the admin area.
 		 */
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-ays-pb-admin.php';

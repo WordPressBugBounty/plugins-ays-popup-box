@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Popup box\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-06-11 15:53+0400\n"
+"POT-Creation-Date: 2025-06-27 09:57+0400\n"
 "PO-Revision-Date: 2018-07-13 11:50+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -11,31 +11,43 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION\n"
-"X-Generator: Poedit 3.6\n"
+"X-Generator: Poedit 2.3\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: esc_html__;__;_e;_n_noop:1,2;_x\n"
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SearchPath-0: ..\n"
 
-#: ../admin/class-ays-pb-admin.php:133
+#: ../admin/class-ays-pb-admin.php:115 ../admin/class-ays-pb-admin.php:153
+msgid "Error"
+msgstr ""
+
+#: ../admin/class-ays-pb-admin.php:116 ../admin/class-ays-pb-admin.php:152
+msgid "Can't load resource."
+msgstr ""
+
+#: ../admin/class-ays-pb-admin.php:117 ../admin/class-ays-pb-admin.php:154
+msgid "Maybe something went wrong."
+msgstr ""
+
+#: ../admin/class-ays-pb-admin.php:143
 #: ../admin/partials/actions/ays-pb-admin-actions.php:7898
 msgid "Are you sure you want to go to the next popup page?"
 msgstr ""
 
-#: ../admin/class-ays-pb-admin.php:134
+#: ../admin/class-ays-pb-admin.php:144
 #: ../admin/partials/actions/ays-pb-admin-actions.php:7889
 msgid "Are you sure you want to go to the previous popup page?"
 msgstr ""
 
-#: ../admin/class-ays-pb-admin.php:137
+#: ../admin/class-ays-pb-admin.php:147
 msgid "Add Video"
 msgstr ""
 
-#: ../admin/class-ays-pb-admin.php:138
+#: ../admin/class-ays-pb-admin.php:148
 msgid "Edit Video"
 msgstr ""
 
-#: ../admin/class-ays-pb-admin.php:139
+#: ../admin/class-ays-pb-admin.php:149
 #: ../admin/partials/actions/ays-pb-admin-actions.php:1809
 #: ../admin/partials/actions/ays-pb-admin-actions.php:1836
 #: ../admin/partials/actions/ays-pb-admin-actions.php:1988
@@ -45,7 +57,7 @@ msgstr ""
 msgid "Add Image"
 msgstr ""
 
-#: ../admin/class-ays-pb-admin.php:140
+#: ../admin/class-ays-pb-admin.php:150
 #: ../admin/partials/actions/ays-pb-admin-actions.php:1809
 #: ../admin/partials/actions/ays-pb-admin-actions.php:1836
 #: ../admin/partials/actions/ays-pb-admin-actions.php:1988
@@ -55,35 +67,23 @@ msgstr ""
 msgid "Edit Image"
 msgstr ""
 
-#: ../admin/class-ays-pb-admin.php:141
+#: ../admin/class-ays-pb-admin.php:151
 msgid "Please select more"
 msgstr ""
 
-#: ../admin/class-ays-pb-admin.php:142
-msgid "Can't load resource."
-msgstr ""
-
-#: ../admin/class-ays-pb-admin.php:143
-msgid "Error"
-msgstr ""
-
-#: ../admin/class-ays-pb-admin.php:144
-msgid "Maybe something went wrong."
-msgstr ""
-
-#: ../admin/class-ays-pb-admin.php:145 ../admin/class-ays-pb-admin.php:1244
+#: ../admin/class-ays-pb-admin.php:155 ../admin/class-ays-pb-admin.php:1287
 msgid "Activated"
 msgstr ""
 
-#: ../admin/class-ays-pb-admin.php:150
+#: ../admin/class-ays-pb-admin.php:160
 msgid "Clear"
 msgstr ""
 
-#: ../admin/class-ays-pb-admin.php:151
+#: ../admin/class-ays-pb-admin.php:161
 msgid "Clear color"
 msgstr ""
 
-#: ../admin/class-ays-pb-admin.php:152
+#: ../admin/class-ays-pb-admin.php:162
 #: ../admin/partials/actions/ays-pb-admin-actions.php:4649
 #: ../admin/partials/actions/ays-pb-admin-actions.php:4657
 #: ../includes/lists/class-ays-pb-list-table.php:473
@@ -91,53 +91,55 @@ msgstr ""
 msgid "Default"
 msgstr ""
 
-#: ../admin/class-ays-pb-admin.php:153
+#: ../admin/class-ays-pb-admin.php:163
 msgid "Select default color"
 msgstr ""
 
-#: ../admin/class-ays-pb-admin.php:154
+#: ../admin/class-ays-pb-admin.php:164
 msgid "Select Color"
 msgstr ""
 
-#: ../admin/class-ays-pb-admin.php:155
+#: ../admin/class-ays-pb-admin.php:165
 msgid "Color value"
 msgstr ""
 
-#: ../admin/class-ays-pb-admin.php:253 ../admin/class-ays-pb-admin.php:254
+#: ../admin/class-ays-pb-admin.php:296 ../admin/class-ays-pb-admin.php:297
 #: ../admin/partials/how-to-use/ays-pb-how-to-use.php:15
+#: ../includes/class-ays-pb-data.php:675
+#: ../includes/class-ays-pb-feedback.php:130
 msgid "Popup Box"
 msgstr ""
 
-#: ../admin/class-ays-pb-admin.php:266 ../admin/class-ays-pb-admin.php:267
+#: ../admin/class-ays-pb-admin.php:309 ../admin/class-ays-pb-admin.php:310
 #: ../admin/partials/how-to-use/ays-pb-how-to-use.php:22
 msgid "Popups"
 msgstr ""
 
-#: ../admin/class-ays-pb-admin.php:280 ../admin/class-ays-pb-admin.php:281
-#: ../admin/class-ays-pb-admin.php:471
+#: ../admin/class-ays-pb-admin.php:323 ../admin/class-ays-pb-admin.php:324
+#: ../admin/class-ays-pb-admin.php:514
 #: ../includes/lists/class-ays-pb-popup-categories-list-table.php:14
 msgid "Categories"
 msgstr ""
 
-#: ../admin/class-ays-pb-admin.php:294 ../admin/class-ays-pb-admin.php:295
+#: ../admin/class-ays-pb-admin.php:337 ../admin/class-ays-pb-admin.php:338
 msgid "Custom Fields"
 msgstr ""
 
-#: ../admin/class-ays-pb-admin.php:307 ../admin/class-ays-pb-admin.php:308
+#: ../admin/class-ays-pb-admin.php:350 ../admin/class-ays-pb-admin.php:351
 msgid "Analytics"
 msgstr ""
 
-#: ../admin/class-ays-pb-admin.php:320 ../admin/class-ays-pb-admin.php:321
+#: ../admin/class-ays-pb-admin.php:363 ../admin/class-ays-pb-admin.php:364
 msgid "Submissions"
 msgstr ""
 
-#: ../admin/class-ays-pb-admin.php:333 ../admin/class-ays-pb-admin.php:334
-#: ../admin/partials/features/popup-box-pro-features-display.php:407
-#: ../admin/partials/features/popup-box-pro-features-display.php:412
+#: ../admin/class-ays-pb-admin.php:376 ../admin/class-ays-pb-admin.php:377
+#: ../admin/partials/features/popup-box-pro-features-display.php:462
+#: ../admin/partials/features/popup-box-pro-features-display.php:467
 msgid "Export/Import"
 msgstr ""
 
-#: ../admin/class-ays-pb-admin.php:346 ../admin/class-ays-pb-admin.php:347
+#: ../admin/class-ays-pb-admin.php:389 ../admin/class-ays-pb-admin.php:390
 #: ../admin/partials/actions/ays-pb-admin-actions.php:1705
 #: ../admin/partials/actions/ays-pb-admin-actions.php:3935
 #: ../admin/partials/actions/ays-pb-admin-actions.php:3937
@@ -145,232 +147,232 @@ msgstr ""
 msgid "General Settings"
 msgstr ""
 
-#: ../admin/class-ays-pb-admin.php:360 ../admin/class-ays-pb-admin.php:361
+#: ../admin/class-ays-pb-admin.php:403 ../admin/class-ays-pb-admin.php:404
 msgid "How to use"
 msgstr ""
 
-#: ../admin/class-ays-pb-admin.php:373 ../admin/class-ays-pb-admin.php:374
+#: ../admin/class-ays-pb-admin.php:416 ../admin/class-ays-pb-admin.php:417
 msgid "Our Products"
 msgstr ""
 
-#: ../admin/class-ays-pb-admin.php:386 ../admin/class-ays-pb-admin.php:387
+#: ../admin/class-ays-pb-admin.php:429 ../admin/class-ays-pb-admin.php:430
 msgid "PRO Features"
 msgstr ""
 
-#: ../admin/class-ays-pb-admin.php:458
+#: ../admin/class-ays-pb-admin.php:501
 #: ../includes/lists/class-ays-pb-list-table.php:13
 msgid "PopupBox"
 msgstr ""
 
-#: ../admin/class-ays-pb-admin.php:495
+#: ../admin/class-ays-pb-admin.php:538
 msgid "General Information:"
 msgstr ""
 
-#: ../admin/class-ays-pb-admin.php:497
+#: ../admin/class-ays-pb-admin.php:540
 msgid "Popup Information"
 msgstr ""
 
-#: ../admin/class-ays-pb-admin.php:499
+#: ../admin/class-ays-pb-admin.php:542
 msgid "The WordPress Popup plugin will help you to create engaging popups with fully customizable and responsive designs. Attract your audience and convert them into email subscribers or paying customers.  Construct advertising offers, generate more leads by creating option forms and subscription popups."
 msgstr ""
 
-#: ../admin/class-ays-pb-admin.php:505
+#: ../admin/class-ays-pb-admin.php:548
 msgid "For more information:"
 msgstr ""
 
-#: ../admin/class-ays-pb-admin.php:507
+#: ../admin/class-ays-pb-admin.php:550
 msgid "Youtube video tutorials"
 msgstr ""
 
-#: ../admin/class-ays-pb-admin.php:510
+#: ../admin/class-ays-pb-admin.php:553
 msgid "Documentation: "
 msgstr ""
 
-#: ../admin/class-ays-pb-admin.php:513
+#: ../admin/class-ays-pb-admin.php:556
 msgid "Popup Box plugin Premium version:"
 msgstr ""
 
-#: ../admin/class-ays-pb-admin.php:615
+#: ../admin/class-ays-pb-admin.php:658
 #: ../admin/partials/actions/ays-pb-admin-actions.php:1678
 msgid "Settings"
 msgstr ""
 
-#: ../admin/class-ays-pb-admin.php:616 ../ays-pb.php:125 ../ays-pb.php:134
+#: ../admin/class-ays-pb-admin.php:659 ../ays-pb.php:125 ../ays-pb.php:134
 #: ../ays-pb.php:144
 msgid "Demo"
 msgstr ""
 
-#: ../admin/class-ays-pb-admin.php:617
+#: ../admin/class-ays-pb-admin.php:660
 msgid "Upgrade 30% Sale"
 msgstr ""
 
-#: ../admin/class-ays-pb-admin.php:628 ../ays-pb.php:126 ../ays-pb.php:135
+#: ../admin/class-ays-pb-admin.php:671 ../ays-pb.php:126 ../ays-pb.php:135
 #: ../ays-pb.php:145
 msgid "Free Support"
 msgstr ""
 
-#: ../admin/class-ays-pb-admin.php:802
+#: ../admin/class-ays-pb-admin.php:845
 msgid "Support"
 msgstr ""
 
-#: ../admin/class-ays-pb-admin.php:804
+#: ../admin/class-ays-pb-admin.php:847
 msgid "Docs"
 msgstr ""
 
-#: ../admin/class-ays-pb-admin.php:806
+#: ../admin/class-ays-pb-admin.php:849
 msgid "Suggest a Feature"
 msgstr ""
 
-#: ../admin/class-ays-pb-admin.php:810
+#: ../admin/class-ays-pb-admin.php:853
 msgid "If you love our plugin, please do big favor and rate us on"
 msgstr ""
 
-#: ../admin/class-ays-pb-admin.php:974 ../includes/class-ays-pb-data.php:735
-#: ../includes/class-ays-pb-data.php:818
+#: ../admin/class-ays-pb-admin.php:1017 ../includes/class-ays-pb-data.php:746
+#: ../includes/class-ays-pb-data.php:829
 msgid "Buy Now"
 msgstr ""
 
-#: ../admin/class-ays-pb-admin.php:1030
+#: ../admin/class-ays-pb-admin.php:1073
 msgid "Fox LMS"
 msgstr ""
 
-#: ../admin/class-ays-pb-admin.php:1031
+#: ../admin/class-ays-pb-admin.php:1074
 msgid "Build and manage online courses directly on your WordPress site."
 msgstr ""
 
-#: ../admin/class-ays-pb-admin.php:1032
+#: ../admin/class-ays-pb-admin.php:1075
 msgid "With the FoxLMS plugin, you can create, sell, and organize courses, lessons, and quizzes, transforming your website into a dynamic e-learning platform."
 msgstr ""
 
-#: ../admin/class-ays-pb-admin.php:1039
+#: ../admin/class-ays-pb-admin.php:1082
 msgid "Quiz Maker"
 msgstr ""
 
-#: ../admin/class-ays-pb-admin.php:1040
+#: ../admin/class-ays-pb-admin.php:1083
 msgid "With our Quiz Maker plugin it’s easy to make a quiz in a short time."
 msgstr ""
 
-#: ../admin/class-ays-pb-admin.php:1041
+#: ../admin/class-ays-pb-admin.php:1084
 msgid "You to add images to your quiz, order unlimited questions. Also you can style your quiz to satisfy your visitors."
 msgstr ""
 
-#: ../admin/class-ays-pb-admin.php:1048
+#: ../admin/class-ays-pb-admin.php:1091
 msgid "Poll Maker"
 msgstr ""
 
-#: ../admin/class-ays-pb-admin.php:1049
+#: ../admin/class-ays-pb-admin.php:1092
 msgid "Create amazing online polls for your WordPress website super easily."
 msgstr ""
 
-#: ../admin/class-ays-pb-admin.php:1050
+#: ../admin/class-ays-pb-admin.php:1093
 msgid "Build up various types of polls in a minute and get instant feedback on any topic or product."
 msgstr ""
 
-#: ../admin/class-ays-pb-admin.php:1057
+#: ../admin/class-ays-pb-admin.php:1100
 msgid "Survey Maker"
 msgstr ""
 
-#: ../admin/class-ays-pb-admin.php:1058
+#: ../admin/class-ays-pb-admin.php:1101
 msgid "Make amazing online surveys and get real-time feedback quickly and easily."
 msgstr ""
 
-#: ../admin/class-ays-pb-admin.php:1059
+#: ../admin/class-ays-pb-admin.php:1102
 msgid "Learn what your website visitors want, need, and expect with the help of Survey Maker. Build surveys without limiting your needs."
 msgstr ""
 
-#: ../admin/class-ays-pb-admin.php:1066
+#: ../admin/class-ays-pb-admin.php:1109
 msgid "Gallery Photo Gallery"
 msgstr ""
 
-#: ../admin/class-ays-pb-admin.php:1067
+#: ../admin/class-ays-pb-admin.php:1110
 msgid "Create unlimited galleries and include unlimited images in those galleries."
 msgstr ""
 
-#: ../admin/class-ays-pb-admin.php:1068
+#: ../admin/class-ays-pb-admin.php:1111
 msgid "Represent images in an attractive way. Attract people with your own single and multiple free galleries from your photo library."
 msgstr ""
 
-#: ../admin/class-ays-pb-admin.php:1075
+#: ../admin/class-ays-pb-admin.php:1118
 msgid "Secure Copy Content Protection"
 msgstr ""
 
-#: ../admin/class-ays-pb-admin.php:1076
+#: ../admin/class-ays-pb-admin.php:1119
 msgid "Disable the right click, copy paste, content selection and copy shortcut keys on your website."
 msgstr ""
 
-#: ../admin/class-ays-pb-admin.php:1077
+#: ../admin/class-ays-pb-admin.php:1120
 msgid "Protect web content from being plagiarized. Prevent plagiarism from your website with this easy to use plugin."
 msgstr ""
 
-#: ../admin/class-ays-pb-admin.php:1084
+#: ../admin/class-ays-pb-admin.php:1127
 msgid "Personal Dictionary"
 msgstr ""
 
-#: ../admin/class-ays-pb-admin.php:1085
+#: ../admin/class-ays-pb-admin.php:1128
 msgid "Allow your students to create personal dictionary, study and memorize the words."
 msgstr ""
 
-#: ../admin/class-ays-pb-admin.php:1086
+#: ../admin/class-ays-pb-admin.php:1129
 msgid "Allow your users to create their own digital dictionaries and learn new words and terms as fastest as possible."
 msgstr ""
 
-#: ../admin/class-ays-pb-admin.php:1093
+#: ../admin/class-ays-pb-admin.php:1136
 msgid "Chart Builder"
 msgstr ""
 
-#: ../admin/class-ays-pb-admin.php:1094
+#: ../admin/class-ays-pb-admin.php:1137
 msgid "Chart Builder plugin allows you to create beautiful charts"
 msgstr ""
 
-#: ../admin/class-ays-pb-admin.php:1095
+#: ../admin/class-ays-pb-admin.php:1138
 msgid " and graphs easily and quickly."
 msgstr ""
 
-#: ../admin/class-ays-pb-admin.php:1241
+#: ../admin/class-ays-pb-admin.php:1284
 msgid "Active"
 msgstr ""
 
-#: ../admin/class-ays-pb-admin.php:1249
+#: ../admin/class-ays-pb-admin.php:1292
 msgid "Inactive"
 msgstr ""
 
-#: ../admin/class-ays-pb-admin.php:1252
+#: ../admin/class-ays-pb-admin.php:1295
 msgid "Activate"
 msgstr ""
 
-#: ../admin/class-ays-pb-admin.php:1264
+#: ../admin/class-ays-pb-admin.php:1307
 msgid "Not Installed"
 msgstr ""
 
-#: ../admin/class-ays-pb-admin.php:1267
+#: ../admin/class-ays-pb-admin.php:1310
 msgid "Install Plugin"
 msgstr ""
 
-#: ../admin/class-ays-pb-admin.php:1287
+#: ../admin/class-ays-pb-admin.php:1330
 msgid "Plugin activation is disabled for you on this site."
 msgstr ""
 
-#: ../admin/class-ays-pb-admin.php:1295
+#: ../admin/class-ays-pb-admin.php:1338
 msgid "Plugin activated."
 msgstr ""
 
-#: ../admin/class-ays-pb-admin.php:1299
+#: ../admin/class-ays-pb-admin.php:1342
 msgid "Could not activate the plugin. Please activate it on the Plugins page."
 msgstr ""
 
-#: ../admin/class-ays-pb-admin.php:1311
+#: ../admin/class-ays-pb-admin.php:1354
 msgid "There was an error while performing your request."
 msgstr ""
 
-#: ../admin/class-ays-pb-admin.php:1319
+#: ../admin/class-ays-pb-admin.php:1362
 msgid "Could not install the plugin. Please download and install it manually."
 msgstr ""
 
-#: ../admin/class-ays-pb-admin.php:1389
+#: ../admin/class-ays-pb-admin.php:1432
 msgid "Plugin installed."
 msgstr ""
 
-#: ../admin/class-ays-pb-admin.php:1400
+#: ../admin/class-ays-pb-admin.php:1443
 msgid "Plugin installed and activated."
 msgstr ""
 
@@ -613,8 +615,8 @@ msgstr ""
 
 #: ../admin/partials/actions/ays-pb-admin-actions.php:929
 #: ../admin/partials/actions/ays-pb-admin-actions.php:941
-#: ../includes/class-ays-pb-data.php:469 ../includes/class-ays-pb-data.php:780
-#: ../includes/class-ays-pb-data.php:896
+#: ../includes/class-ays-pb-data.php:469 ../includes/class-ays-pb-data.php:791
+#: ../includes/class-ays-pb-data.php:907
 #: ../public/partials/ays-pb-public-templates.php:294
 #: ../public/partials/ays-pb-public-templates.php:300
 #: ../public/partials/ays-pb-public-templates.php:587
@@ -713,8 +715,8 @@ msgstr ""
 
 #: ../admin/partials/actions/ays-pb-admin-actions.php:1679
 #: ../admin/partials/actions/ays-pb-admin-actions.php:2034
-#: ../admin/partials/features/popup-box-pro-features-display.php:267
-#: ../admin/partials/features/popup-box-pro-features-display.php:272
+#: ../admin/partials/features/popup-box-pro-features-display.php:322
+#: ../admin/partials/features/popup-box-pro-features-display.php:327
 msgid "Styles"
 msgstr ""
 
@@ -743,6 +745,7 @@ msgstr ""
 
 #: ../admin/partials/actions/ays-pb-admin-actions.php:1698
 #: ../admin/partials/actions/ays-pb-admin-actions.php:7877
+#: ../includes/class-ays-pb-ays-welcome.php:159
 msgid "Cancel"
 msgstr ""
 
@@ -1412,8 +1415,8 @@ msgid "Enter the class starting with a “ . ” and id with a “ # ”"
 msgstr ""
 
 #: ../admin/partials/actions/ays-pb-admin-actions.php:3125
-#: ../admin/partials/features/popup-box-pro-features-display.php:323
-#: ../admin/partials/features/popup-box-pro-features-display.php:328
+#: ../admin/partials/features/popup-box-pro-features-display.php:378
+#: ../admin/partials/features/popup-box-pro-features-display.php:383
 msgid "Popup position"
 msgstr ""
 
@@ -2187,7 +2190,7 @@ msgstr ""
 #: ../admin/partials/actions/ays-pb-admin-actions.php:5123
 #: ../admin/partials/actions/ays-pb-admin-actions.php:5152
 #: ../admin/partials/actions/ays-pb-admin-actions.php:5183
-#, no-php-format
+#, php-format
 msgid "For 100% leave blank"
 msgstr ""
 
@@ -2341,8 +2344,8 @@ msgid "Define the title text shadow for mobile devices."
 msgstr ""
 
 #: ../admin/partials/actions/ays-pb-admin-actions.php:5718
-#: ../admin/partials/features/popup-box-pro-features-display.php:771
-#: ../admin/partials/features/popup-box-pro-features-display.php:776
+#: ../admin/partials/features/popup-box-pro-features-display.php:826
+#: ../admin/partials/features/popup-box-pro-features-display.php:831
 msgid "Title style"
 msgstr ""
 
@@ -2763,7 +2766,10 @@ msgid "Here can be custom HTML or shortcode"
 msgstr ""
 
 #: ../admin/partials/actions/ays-pb-admin-actions.php:7373
-#: ../public/partials/ays-pb-public-templates.php:4221
+#: ../public/partials/ays-pb-public-templates.php:4227
+#: ../public/partials/ays-pb-public-templates.php:4229
+#: ../public/partials/ays-pb-public-templates.php:4231
+#: ../public/partials/ays-pb-public-templates.php:4233
 msgid "This will close in "
 msgstr ""
 
@@ -2874,8 +2880,8 @@ msgid "Show the popup only to visitors using certain browser(s) mentioned in the
 msgstr ""
 
 #: ../admin/partials/actions/ays-pb-admin-actions.php:7766
-#: ../admin/partials/features/popup-box-pro-features-display.php:435
-#: ../admin/partials/features/popup-box-pro-features-display.php:440
+#: ../admin/partials/features/popup-box-pro-features-display.php:490
+#: ../admin/partials/features/popup-box-pro-features-display.php:495
 msgid "Limit by country"
 msgstr ""
 
@@ -3151,356 +3157,374 @@ msgstr ""
 msgid "See All Plugins"
 msgstr ""
 
-#: ../admin/partials/features/popup-box-pro-features-display.php:22
-msgid "Personal"
+#: ../admin/partials/features/popup-box-pro-features-display.php:18
+#: ../admin/partials/features/popup-box-pro-features-display.php:52
+msgid "Annual"
 msgstr ""
 
-#: ../admin/partials/features/popup-box-pro-features-display.php:26
-msgid "Business"
-msgstr ""
-
-#: ../admin/partials/features/popup-box-pro-features-display.php:30
-msgid "Developer"
-msgstr ""
-
-#: ../admin/partials/features/popup-box-pro-features-display.php:38
-msgid "Free"
-msgstr ""
-
-#: ../admin/partials/features/popup-box-pro-features-display.php:47
-#: ../admin/partials/features/popup-box-pro-features-display.php:57
-#: ../admin/partials/features/popup-box-pro-features-display.php:944
-#: ../admin/partials/features/popup-box-pro-features-display.php:950
-msgid "Buy now"
-msgstr ""
-
-#: ../admin/partials/features/popup-box-pro-features-display.php:49
-#: ../admin/partials/features/popup-box-pro-features-display.php:59
-#: ../admin/partials/features/popup-box-pro-features-display.php:946
-#: ../admin/partials/features/popup-box-pro-features-display.php:952
-#: ../ays-pb.php:114 ../includes/class-ays-pb-data.php:737
-#: ../includes/class-ays-pb-data.php:820 ../includes/class-ays-pb-data.php:921
-msgid "One-time payment"
-msgstr ""
-
-#: ../admin/partials/features/popup-box-pro-features-display.php:67
-#: ../admin/partials/features/popup-box-pro-features-display.php:72
-msgid "Can Be Used On"
-msgstr ""
-
-#: ../admin/partials/features/popup-box-pro-features-display.php:75
-msgid "1 site"
-msgstr ""
-
-#: ../admin/partials/features/popup-box-pro-features-display.php:78
-msgid "5 sites"
-msgstr ""
-
-#: ../admin/partials/features/popup-box-pro-features-display.php:81
-msgid "Unlimited sites"
-msgstr ""
-
-#: ../admin/partials/features/popup-box-pro-features-display.php:87
-#: ../admin/partials/features/popup-box-pro-features-display.php:92
-msgid "Upgrade for"
-msgstr ""
-
-#: ../admin/partials/features/popup-box-pro-features-display.php:95
-#: ../admin/partials/features/popup-box-pro-features-display.php:115
-msgid "1 months"
-msgstr ""
-
-#: ../admin/partials/features/popup-box-pro-features-display.php:98
-#: ../admin/partials/features/popup-box-pro-features-display.php:118
-msgid "12 months"
-msgstr ""
-
-#: ../admin/partials/features/popup-box-pro-features-display.php:101
-#: ../admin/partials/features/popup-box-pro-features-display.php:121
-#: ../admin/partials/features/popup-box-pro-features-display.php:134
-#: ../admin/partials/features/popup-box-pro-features-display.php:135
-#: ../admin/partials/features/popup-box-pro-features-display.php:136
+#: ../admin/partials/features/popup-box-pro-features-display.php:27
+#: ../admin/partials/features/popup-box-pro-features-display.php:61
+#: ../admin/partials/features/popup-box-pro-features-display.php:137
+#: ../admin/partials/features/popup-box-pro-features-display.php:145
+#: ../admin/partials/features/popup-box-pro-features-display.php:167
+#: ../admin/partials/features/popup-box-pro-features-display.php:175
+#: ../admin/partials/features/popup-box-pro-features-display.php:189
+#: ../admin/partials/features/popup-box-pro-features-display.php:190
+#: ../admin/partials/features/popup-box-pro-features-display.php:191
 msgid "Lifetime"
 msgstr ""
 
+#: ../admin/partials/features/popup-box-pro-features-display.php:36
+msgid "Personal"
+msgstr ""
+
+#: ../admin/partials/features/popup-box-pro-features-display.php:40
+msgid "Business"
+msgstr ""
+
+#: ../admin/partials/features/popup-box-pro-features-display.php:44
+msgid "Developer"
+msgstr ""
+
+#: ../admin/partials/features/popup-box-pro-features-display.php:67
+msgid "Free"
+msgstr ""
+
+#: ../admin/partials/features/popup-box-pro-features-display.php:78
+#: ../admin/partials/features/popup-box-pro-features-display.php:91
+#: ../admin/partials/features/popup-box-pro-features-display.php:999
+#: ../admin/partials/features/popup-box-pro-features-display.php:1006
+msgid "Buy now"
+msgstr ""
+
+#: ../admin/partials/features/popup-box-pro-features-display.php:80
+#: ../admin/partials/features/popup-box-pro-features-display.php:93
+#: ../admin/partials/features/popup-box-pro-features-display.php:1001
+#: ../admin/partials/features/popup-box-pro-features-display.php:1008
+#: ../ays-pb.php:114 ../includes/class-ays-pb-data.php:748
+#: ../includes/class-ays-pb-data.php:831 ../includes/class-ays-pb-data.php:932
+msgid "One-time payment"
+msgstr ""
+
+#: ../admin/partials/features/popup-box-pro-features-display.php:81
+#: ../admin/partials/features/popup-box-pro-features-display.php:94
+#: ../admin/partials/features/popup-box-pro-features-display.php:1002
+#: ../admin/partials/features/popup-box-pro-features-display.php:1009
+msgid "On Year"
+msgstr ""
+
+#: ../admin/partials/features/popup-box-pro-features-display.php:102
 #: ../admin/partials/features/popup-box-pro-features-display.php:107
-#: ../admin/partials/features/popup-box-pro-features-display.php:112
+msgid "Can Be Used On"
+msgstr ""
+
+#: ../admin/partials/features/popup-box-pro-features-display.php:110
+msgid "1 site"
+msgstr ""
+
+#: ../admin/partials/features/popup-box-pro-features-display.php:113
+msgid "5 sites"
+msgstr ""
+
+#: ../admin/partials/features/popup-box-pro-features-display.php:116
+msgid "50 sites"
+msgstr ""
+
+#: ../admin/partials/features/popup-box-pro-features-display.php:122
+#: ../admin/partials/features/popup-box-pro-features-display.php:127
+msgid "Upgrade for"
+msgstr ""
+
+#: ../admin/partials/features/popup-box-pro-features-display.php:130
+#: ../admin/partials/features/popup-box-pro-features-display.php:160
+msgid "1 months"
+msgstr ""
+
+#: ../admin/partials/features/popup-box-pro-features-display.php:134
+#: ../admin/partials/features/popup-box-pro-features-display.php:142
+#: ../admin/partials/features/popup-box-pro-features-display.php:164
+#: ../admin/partials/features/popup-box-pro-features-display.php:172
+msgid "12 months"
+msgstr ""
+
+#: ../admin/partials/features/popup-box-pro-features-display.php:152
+#: ../admin/partials/features/popup-box-pro-features-display.php:157
 msgid "Support for"
 msgstr ""
 
-#: ../admin/partials/features/popup-box-pro-features-display.php:127
-#: ../admin/partials/features/popup-box-pro-features-display.php:132
+#: ../admin/partials/features/popup-box-pro-features-display.php:182
+#: ../admin/partials/features/popup-box-pro-features-display.php:187
 msgid "Usage for"
 msgstr ""
 
-#: ../admin/partials/features/popup-box-pro-features-display.php:141
-#: ../admin/partials/features/popup-box-pro-features-display.php:146
+#: ../admin/partials/features/popup-box-pro-features-display.php:196
+#: ../admin/partials/features/popup-box-pro-features-display.php:201
 msgid "Session time option"
 msgstr ""
 
-#: ../admin/partials/features/popup-box-pro-features-display.php:155
-#: ../admin/partials/features/popup-box-pro-features-display.php:160
+#: ../admin/partials/features/popup-box-pro-features-display.php:210
+#: ../admin/partials/features/popup-box-pro-features-display.php:215
 msgid "Responsive design"
 msgstr ""
 
-#: ../admin/partials/features/popup-box-pro-features-display.php:169
-#: ../admin/partials/features/popup-box-pro-features-display.php:174
+#: ../admin/partials/features/popup-box-pro-features-display.php:224
+#: ../admin/partials/features/popup-box-pro-features-display.php:229
 msgid "Custom content popup"
 msgstr ""
 
-#: ../admin/partials/features/popup-box-pro-features-display.php:183
-#: ../admin/partials/features/popup-box-pro-features-display.php:188
+#: ../admin/partials/features/popup-box-pro-features-display.php:238
+#: ../admin/partials/features/popup-box-pro-features-display.php:243
 msgid "Shortcode popup"
 msgstr ""
 
-#: ../admin/partials/features/popup-box-pro-features-display.php:197
-#: ../admin/partials/features/popup-box-pro-features-display.php:202
+#: ../admin/partials/features/popup-box-pro-features-display.php:252
+#: ../admin/partials/features/popup-box-pro-features-display.php:257
 msgid "Video popup"
 msgstr ""
 
-#: ../admin/partials/features/popup-box-pro-features-display.php:211
-#: ../admin/partials/features/popup-box-pro-features-display.php:216
+#: ../admin/partials/features/popup-box-pro-features-display.php:266
+#: ../admin/partials/features/popup-box-pro-features-display.php:271
 msgid "Image popup"
 msgstr ""
 
-#: ../admin/partials/features/popup-box-pro-features-display.php:225
-#: ../admin/partials/features/popup-box-pro-features-display.php:230
+#: ../admin/partials/features/popup-box-pro-features-display.php:280
+#: ../admin/partials/features/popup-box-pro-features-display.php:285
 msgid "Facebook popup"
 msgstr ""
 
-#: ../admin/partials/features/popup-box-pro-features-display.php:239
-#: ../admin/partials/features/popup-box-pro-features-display.php:244
+#: ../admin/partials/features/popup-box-pro-features-display.php:294
+#: ../admin/partials/features/popup-box-pro-features-display.php:299
 msgid "Notification popup"
 msgstr ""
 
-#: ../admin/partials/features/popup-box-pro-features-display.php:253
-#: ../admin/partials/features/popup-box-pro-features-display.php:258
+#: ../admin/partials/features/popup-box-pro-features-display.php:308
+#: ../admin/partials/features/popup-box-pro-features-display.php:313
 msgid "Scroll from top"
 msgstr ""
 
-#: ../admin/partials/features/popup-box-pro-features-display.php:281
-#: ../admin/partials/features/popup-box-pro-features-display.php:286
+#: ../admin/partials/features/popup-box-pro-features-display.php:336
+#: ../admin/partials/features/popup-box-pro-features-display.php:341
 msgid "Display on pages"
 msgstr ""
 
-#: ../admin/partials/features/popup-box-pro-features-display.php:295
-#: ../admin/partials/features/popup-box-pro-features-display.php:300
+#: ../admin/partials/features/popup-box-pro-features-display.php:350
+#: ../admin/partials/features/popup-box-pro-features-display.php:355
 msgid "Delay"
 msgstr ""
 
-#: ../admin/partials/features/popup-box-pro-features-display.php:309
-#: ../admin/partials/features/popup-box-pro-features-display.php:314
+#: ../admin/partials/features/popup-box-pro-features-display.php:364
+#: ../admin/partials/features/popup-box-pro-features-display.php:369
 msgid "Open with click"
 msgstr ""
 
-#: ../admin/partials/features/popup-box-pro-features-display.php:337
-#: ../admin/partials/features/popup-box-pro-features-display.php:342
+#: ../admin/partials/features/popup-box-pro-features-display.php:392
+#: ../admin/partials/features/popup-box-pro-features-display.php:397
 msgid "Multiple scheduling"
 msgstr ""
 
-#: ../admin/partials/features/popup-box-pro-features-display.php:351
-#: ../admin/partials/features/popup-box-pro-features-display.php:356
+#: ../admin/partials/features/popup-box-pro-features-display.php:406
+#: ../admin/partials/features/popup-box-pro-features-display.php:411
 msgid "Popup Reports"
 msgstr ""
 
-#: ../admin/partials/features/popup-box-pro-features-display.php:365
-#: ../admin/partials/features/popup-box-pro-features-display.php:370
+#: ../admin/partials/features/popup-box-pro-features-display.php:420
+#: ../admin/partials/features/popup-box-pro-features-display.php:425
 msgid "Enable for selected user OS"
 msgstr ""
 
-#: ../admin/partials/features/popup-box-pro-features-display.php:379
+#: ../admin/partials/features/popup-box-pro-features-display.php:434
 msgid "Enable for selected browsers"
 msgstr ""
 
-#: ../admin/partials/features/popup-box-pro-features-display.php:384
+#: ../admin/partials/features/popup-box-pro-features-display.php:439
 msgid "Enable for selected browser"
 msgstr ""
 
-#: ../admin/partials/features/popup-box-pro-features-display.php:393
-#: ../admin/partials/features/popup-box-pro-features-display.php:398
+#: ../admin/partials/features/popup-box-pro-features-display.php:448
+#: ../admin/partials/features/popup-box-pro-features-display.php:453
 msgid "Limitation count"
 msgstr ""
 
-#: ../admin/partials/features/popup-box-pro-features-display.php:421
-#: ../admin/partials/features/popup-box-pro-features-display.php:426
+#: ../admin/partials/features/popup-box-pro-features-display.php:476
+#: ../admin/partials/features/popup-box-pro-features-display.php:481
 msgid "User role permission"
 msgstr ""
 
-#: ../admin/partials/features/popup-box-pro-features-display.php:449
-#: ../admin/partials/features/popup-box-pro-features-display.php:454
+#: ../admin/partials/features/popup-box-pro-features-display.php:504
+#: ../admin/partials/features/popup-box-pro-features-display.php:509
 msgid "MailChimp integration"
 msgstr ""
 
-#: ../admin/partials/features/popup-box-pro-features-display.php:463
-#: ../admin/partials/features/popup-box-pro-features-display.php:468
+#: ../admin/partials/features/popup-box-pro-features-display.php:518
+#: ../admin/partials/features/popup-box-pro-features-display.php:523
 msgid "Campaign Monitor integration"
 msgstr ""
 
-#: ../admin/partials/features/popup-box-pro-features-display.php:477
-#: ../admin/partials/features/popup-box-pro-features-display.php:482
+#: ../admin/partials/features/popup-box-pro-features-display.php:532
+#: ../admin/partials/features/popup-box-pro-features-display.php:537
 msgid "ActiveCampaign integration"
 msgstr ""
 
-#: ../admin/partials/features/popup-box-pro-features-display.php:491
-#: ../admin/partials/features/popup-box-pro-features-display.php:496
+#: ../admin/partials/features/popup-box-pro-features-display.php:546
+#: ../admin/partials/features/popup-box-pro-features-display.php:551
 msgid "GetResponse integration"
 msgstr ""
 
-#: ../admin/partials/features/popup-box-pro-features-display.php:505
-#: ../admin/partials/features/popup-box-pro-features-display.php:510
+#: ../admin/partials/features/popup-box-pro-features-display.php:560
+#: ../admin/partials/features/popup-box-pro-features-display.php:565
 msgid "ConvertKit integration"
 msgstr ""
 
-#: ../admin/partials/features/popup-box-pro-features-display.php:519
-#: ../admin/partials/features/popup-box-pro-features-display.php:524
+#: ../admin/partials/features/popup-box-pro-features-display.php:574
+#: ../admin/partials/features/popup-box-pro-features-display.php:579
 msgid "Brevo integration"
 msgstr ""
 
-#: ../admin/partials/features/popup-box-pro-features-display.php:533
-#: ../admin/partials/features/popup-box-pro-features-display.php:538
+#: ../admin/partials/features/popup-box-pro-features-display.php:588
+#: ../admin/partials/features/popup-box-pro-features-display.php:593
 msgid "MailerLite integration"
 msgstr ""
 
-#: ../admin/partials/features/popup-box-pro-features-display.php:547
-#: ../admin/partials/features/popup-box-pro-features-display.php:552
+#: ../admin/partials/features/popup-box-pro-features-display.php:602
+#: ../admin/partials/features/popup-box-pro-features-display.php:607
 msgid "reCAPTCHA integration"
 msgstr ""
 
-#: ../admin/partials/features/popup-box-pro-features-display.php:561
-#: ../admin/partials/features/popup-box-pro-features-display.php:566
+#: ../admin/partials/features/popup-box-pro-features-display.php:616
+#: ../admin/partials/features/popup-box-pro-features-display.php:621
 msgid "Yes or No popup"
 msgstr ""
 
-#: ../admin/partials/features/popup-box-pro-features-display.php:575
-#: ../admin/partials/features/popup-box-pro-features-display.php:580
+#: ../admin/partials/features/popup-box-pro-features-display.php:630
+#: ../admin/partials/features/popup-box-pro-features-display.php:635
 msgid "Iframe popup"
 msgstr ""
 
-#: ../admin/partials/features/popup-box-pro-features-display.php:589
-#: ../admin/partials/features/popup-box-pro-features-display.php:594
+#: ../admin/partials/features/popup-box-pro-features-display.php:644
+#: ../admin/partials/features/popup-box-pro-features-display.php:649
 msgid "Subscription popup"
 msgstr ""
 
-#: ../admin/partials/features/popup-box-pro-features-display.php:603
-#: ../admin/partials/features/popup-box-pro-features-display.php:608
+#: ../admin/partials/features/popup-box-pro-features-display.php:658
+#: ../admin/partials/features/popup-box-pro-features-display.php:663
 msgid "Contact form popup"
 msgstr ""
 
-#: ../admin/partials/features/popup-box-pro-features-display.php:617
-#: ../admin/partials/features/popup-box-pro-features-display.php:622
+#: ../admin/partials/features/popup-box-pro-features-display.php:672
+#: ../admin/partials/features/popup-box-pro-features-display.php:677
 msgid "Send file after subscription popup"
 msgstr ""
 
-#: ../admin/partials/features/popup-box-pro-features-display.php:631
-#: ../admin/partials/features/popup-box-pro-features-display.php:636
+#: ../admin/partials/features/popup-box-pro-features-display.php:686
+#: ../admin/partials/features/popup-box-pro-features-display.php:691
 msgid "Coupon popup"
 msgstr ""
 
-#: ../admin/partials/features/popup-box-pro-features-display.php:645
-#: ../admin/partials/features/popup-box-pro-features-display.php:650
+#: ../admin/partials/features/popup-box-pro-features-display.php:700
+#: ../admin/partials/features/popup-box-pro-features-display.php:705
 msgid "Countdown popup"
 msgstr ""
 
-#: ../admin/partials/features/popup-box-pro-features-display.php:659
-#: ../admin/partials/features/popup-box-pro-features-display.php:664
+#: ../admin/partials/features/popup-box-pro-features-display.php:714
+#: ../admin/partials/features/popup-box-pro-features-display.php:719
 msgid "Cookie popup"
 msgstr ""
 
-#: ../admin/partials/features/popup-box-pro-features-display.php:673
-#: ../admin/partials/features/popup-box-pro-features-display.php:678
+#: ../admin/partials/features/popup-box-pro-features-display.php:728
+#: ../admin/partials/features/popup-box-pro-features-display.php:733
 msgid "Download popup"
 msgstr ""
 
-#: ../admin/partials/features/popup-box-pro-features-display.php:687
-#: ../admin/partials/features/popup-box-pro-features-display.php:692
+#: ../admin/partials/features/popup-box-pro-features-display.php:742
+#: ../admin/partials/features/popup-box-pro-features-display.php:747
 msgid "WooCommerce popup"
 msgstr ""
 
-#: ../admin/partials/features/popup-box-pro-features-display.php:701
-#: ../admin/partials/features/popup-box-pro-features-display.php:706
+#: ../admin/partials/features/popup-box-pro-features-display.php:756
+#: ../admin/partials/features/popup-box-pro-features-display.php:761
 msgid "Login form popup"
 msgstr ""
 
-#: ../admin/partials/features/popup-box-pro-features-display.php:715
-#: ../admin/partials/features/popup-box-pro-features-display.php:720
+#: ../admin/partials/features/popup-box-pro-features-display.php:770
+#: ../admin/partials/features/popup-box-pro-features-display.php:775
 msgid "Google map popup"
 msgstr ""
 
-#: ../admin/partials/features/popup-box-pro-features-display.php:729
-#: ../admin/partials/features/popup-box-pro-features-display.php:734
+#: ../admin/partials/features/popup-box-pro-features-display.php:784
+#: ../admin/partials/features/popup-box-pro-features-display.php:789
 msgid "Close by scrolling down"
 msgstr ""
 
-#: ../admin/partials/features/popup-box-pro-features-display.php:743
-#: ../admin/partials/features/popup-box-pro-features-display.php:748
+#: ../admin/partials/features/popup-box-pro-features-display.php:798
+#: ../admin/partials/features/popup-box-pro-features-display.php:803
 msgid "Close by classname"
 msgstr ""
 
-#: ../admin/partials/features/popup-box-pro-features-display.php:757
-#: ../admin/partials/features/popup-box-pro-features-display.php:762
+#: ../admin/partials/features/popup-box-pro-features-display.php:812
+#: ../admin/partials/features/popup-box-pro-features-display.php:817
 msgid "Actions while clicking on the popup"
 msgstr ""
 
-#: ../admin/partials/features/popup-box-pro-features-display.php:785
-#: ../admin/partials/features/popup-box-pro-features-display.php:790
+#: ../admin/partials/features/popup-box-pro-features-display.php:840
+#: ../admin/partials/features/popup-box-pro-features-display.php:845
 msgid "Peachy theme"
 msgstr ""
 
-#: ../admin/partials/features/popup-box-pro-features-display.php:799
-#: ../admin/partials/features/popup-box-pro-features-display.php:804
+#: ../admin/partials/features/popup-box-pro-features-display.php:854
+#: ../admin/partials/features/popup-box-pro-features-display.php:859
 msgid "Yellowish theme"
 msgstr ""
 
-#: ../admin/partials/features/popup-box-pro-features-display.php:813
-#: ../admin/partials/features/popup-box-pro-features-display.php:818
+#: ../admin/partials/features/popup-box-pro-features-display.php:868
+#: ../admin/partials/features/popup-box-pro-features-display.php:873
 msgid "Coral theme"
 msgstr ""
 
-#: ../admin/partials/features/popup-box-pro-features-display.php:827
-#: ../admin/partials/features/popup-box-pro-features-display.php:832
+#: ../admin/partials/features/popup-box-pro-features-display.php:882
+#: ../admin/partials/features/popup-box-pro-features-display.php:887
 msgid "Frozen theme"
 msgstr ""
 
-#: ../admin/partials/features/popup-box-pro-features-display.php:841
-#: ../admin/partials/features/popup-box-pro-features-display.php:846
+#: ../admin/partials/features/popup-box-pro-features-display.php:896
+#: ../admin/partials/features/popup-box-pro-features-display.php:901
 msgid "Food theme"
 msgstr ""
 
-#: ../admin/partials/features/popup-box-pro-features-display.php:855
-#: ../admin/partials/features/popup-box-pro-features-display.php:860
+#: ../admin/partials/features/popup-box-pro-features-display.php:910
+#: ../admin/partials/features/popup-box-pro-features-display.php:915
 msgid "Forest theme"
 msgstr ""
 
-#: ../admin/partials/features/popup-box-pro-features-display.php:869
-#: ../admin/partials/features/popup-box-pro-features-display.php:874
+#: ../admin/partials/features/popup-box-pro-features-display.php:924
+#: ../admin/partials/features/popup-box-pro-features-display.php:929
 msgid "Exit Intent Popup"
 msgstr ""
 
-#: ../admin/partials/features/popup-box-pro-features-display.php:883
-#: ../admin/partials/features/popup-box-pro-features-display.php:888
+#: ../admin/partials/features/popup-box-pro-features-display.php:938
+#: ../admin/partials/features/popup-box-pro-features-display.php:943
 msgid "On Hover Trigger"
 msgstr ""
 
-#: ../admin/partials/features/popup-box-pro-features-display.php:897
-#: ../admin/partials/features/popup-box-pro-features-display.php:902
+#: ../admin/partials/features/popup-box-pro-features-display.php:952
+#: ../admin/partials/features/popup-box-pro-features-display.php:957
 msgid "After visiting X pages Trigger"
 msgstr ""
 
-#: ../admin/partials/features/popup-box-pro-features-display.php:911
-#: ../admin/partials/features/popup-box-pro-features-display.php:916
+#: ../admin/partials/features/popup-box-pro-features-display.php:966
+#: ../admin/partials/features/popup-box-pro-features-display.php:971
 msgid "Inactivity Trigger"
 msgstr ""
 
-#: ../admin/partials/features/popup-box-pro-features-display.php:925
-#: ../admin/partials/features/popup-box-pro-features-display.php:930
+#: ../admin/partials/features/popup-box-pro-features-display.php:980
+#: ../admin/partials/features/popup-box-pro-features-display.php:985
 msgid "Scrolling to Element Trigger"
 msgstr ""
 
-#: ../admin/partials/features/popup-box-pro-features-display.php:964
+#: ../admin/partials/features/popup-box-pro-features-display.php:1021
 msgid "30 DAY MONEY BACK GUARANTEE !!!"
 msgstr ""
 
-#: ../admin/partials/features/popup-box-pro-features-display.php:966
+#: ../admin/partials/features/popup-box-pro-features-display.php:1023
 msgid ""
 "We're sure that you'll love our Popup box plugin, but, if for some reason, you're not\n"
 "                        satisfied in the first 30 days of using our product, there is a money-back guarantee and\n"
@@ -3852,7 +3876,19 @@ msgstr ""
 msgid "It will show the current date upon opening a popup."
 msgstr ""
 
-#: ../admin/partials/settings/popup-box-settings.php:600
+#: ../admin/partials/settings/popup-box-settings.php:590
+msgid "It will show the current time upon opening a popup."
+msgstr ""
+
+#: ../admin/partials/settings/popup-box-settings.php:599
+msgid "It will show the current day upon opening a popup."
+msgstr ""
+
+#: ../admin/partials/settings/popup-box-settings.php:608
+msgid "It will show the current month upon opening a popup."
+msgstr ""
+
+#: ../admin/partials/settings/popup-box-settings.php:627
 msgid "Save changes"
 msgstr ""
 
@@ -3888,6 +3924,31 @@ msgstr ""
 msgid "Documentation"
 msgstr ""
 
+#: ../includes/class-ays-pb-ays-welcome.php:39
+#: ../includes/class-ays-pb-ays-welcome.php:40
+msgid "Welcome to Popup Box"
+msgstr ""
+
+#: ../includes/class-ays-pb-ays-welcome.php:144
+msgid "Popup Box Logo"
+msgstr ""
+
+#: ../includes/class-ays-pb-ays-welcome.php:147
+msgid "Thank you for using Popup Box plugin !"
+msgstr ""
+
+#: ../includes/class-ays-pb-ays-welcome.php:148
+msgid "To enhance the user experience of our product, we would like to request permission to track certain user interactions. Please rest assured that this tracking will be minimal and will only involve non-sensitive actions, such as specific clicks within the interface. No personal or sensitive data will be collected."
+msgstr ""
+
+#: ../includes/class-ays-pb-ays-welcome.php:149
+msgid "Our goal is solely to improve the functionality and usability of the product based on user behavior."
+msgstr ""
+
+#: ../includes/class-ays-pb-ays-welcome.php:164
+msgid "Agree & continue"
+msgstr ""
+
 #: ../includes/class-ays-pb-data.php:214
 msgid "Limited Time <span class='ays-pb-dicount-wrap-color'>50%</span> SALE on <br><span><a href='https://ays-pro.com/winter-bundle' target='_blank' class='ays-pb-dicount-wrap-color ays-pb-dicount-wrap-text-decoration' style='display:block;'>Winter Bundle</a></span> (Copy + Popup + Survey)!"
 msgstr ""
@@ -3898,7 +3959,7 @@ msgstr ""
 
 #: ../includes/class-ays-pb-data.php:257 ../includes/class-ays-pb-data.php:329
 #: ../includes/class-ays-pb-data.php:395 ../includes/class-ays-pb-data.php:640
-#: ../includes/class-ays-pb-data.php:1005
+#: ../includes/class-ays-pb-data.php:1016
 msgid "Buy Now !"
 msgstr ""
 
@@ -3953,31 +4014,31 @@ msgid "( Quiz + Form + Popup )"
 msgstr ""
 
 #: ../includes/class-ays-pb-data.php:435
-#, no-php-format
+#, php-format
 msgid "50% off"
 msgstr ""
 
-#: ../includes/class-ays-pb-data.php:443 ../includes/class-ays-pb-data.php:798
-#: ../includes/class-ays-pb-data.php:852
+#: ../includes/class-ays-pb-data.php:443 ../includes/class-ays-pb-data.php:809
+#: ../includes/class-ays-pb-data.php:863
 msgid "Days"
 msgstr ""
 
-#: ../includes/class-ays-pb-data.php:444 ../includes/class-ays-pb-data.php:799
-#: ../includes/class-ays-pb-data.php:853
+#: ../includes/class-ays-pb-data.php:444 ../includes/class-ays-pb-data.php:810
+#: ../includes/class-ays-pb-data.php:864
 msgid "Hours"
 msgstr ""
 
-#: ../includes/class-ays-pb-data.php:445 ../includes/class-ays-pb-data.php:800
-#: ../includes/class-ays-pb-data.php:854
+#: ../includes/class-ays-pb-data.php:445 ../includes/class-ays-pb-data.php:811
+#: ../includes/class-ays-pb-data.php:865
 msgid "Minutes"
 msgstr ""
 
-#: ../includes/class-ays-pb-data.php:446 ../includes/class-ays-pb-data.php:801
-#: ../includes/class-ays-pb-data.php:855
+#: ../includes/class-ays-pb-data.php:446 ../includes/class-ays-pb-data.php:812
+#: ../includes/class-ays-pb-data.php:866
 msgid "Seconds"
 msgstr ""
 
-#: ../includes/class-ays-pb-data.php:460 ../includes/class-ays-pb-data.php:918
+#: ../includes/class-ays-pb-data.php:460 ../includes/class-ays-pb-data.php:929
 msgid "Get Your Deal"
 msgstr ""
 
@@ -3989,31 +4050,119 @@ msgstr ""
 msgid "Hurry up! <a href='https://popup-plugin.com' target='_blank'>Check it out!</a>"
 msgstr ""
 
-#: ../includes/class-ays-pb-data.php:675 ../includes/class-ays-pb-data.php:763
-msgid "Quiz + Form + Popup"
-msgstr ""
-
-#: ../includes/class-ays-pb-data.php:683 ../includes/class-ays-pb-data.php:768
+#: ../includes/class-ays-pb-data.php:683 ../includes/class-ays-pb-data.php:779
 msgid "30 Day Money Back Guarantee"
 msgstr ""
 
-#: ../includes/class-ays-pb-data.php:711 ../includes/class-ays-pb-data.php:848
-#: ../includes/class-ays-pb-data.php:981
+#: ../includes/class-ays-pb-data.php:711 ../includes/class-ays-pb-data.php:859
+#: ../includes/class-ays-pb-data.php:992
 msgid "Offer ends in:"
 msgstr ""
 
-#: ../includes/class-ays-pb-data.php:877
+#: ../includes/class-ays-pb-data.php:736
+msgid "Click for copy."
+msgstr ""
+
+#: ../includes/class-ays-pb-data.php:740
+msgid "20% Extra Discount"
+msgstr ""
+
+#: ../includes/class-ays-pb-data.php:774
+msgid "Quiz + Form + Popup"
+msgstr ""
+
+#: ../includes/class-ays-pb-data.php:888
 msgid "Christmas Sale"
 msgstr ""
 
-#: ../includes/class-ays-pb-data.php:886
-#, no-php-format
+#: ../includes/class-ays-pb-data.php:897
 msgid "20% Extra OFF"
 msgstr ""
 
-#: ../includes/class-ays-pb-data.php:912
-#, no-php-format
+#: ../includes/class-ays-pb-data.php:923
 msgid "20% Extra Discount Coupon"
+msgstr ""
+
+#: ../includes/class-ays-pb-feedback.php:77
+msgid "I no longer need the plugin"
+msgstr ""
+
+#: ../includes/class-ays-pb-feedback.php:81
+msgid "I found a better alternative"
+msgstr ""
+
+#: ../includes/class-ays-pb-feedback.php:82
+#: ../includes/class-ays-pb-feedback.php:118
+msgid "Other"
+msgstr ""
+
+#: ../includes/class-ays-pb-feedback.php:84
+msgid "OptinMonster"
+msgstr ""
+
+#: ../includes/class-ays-pb-feedback.php:85
+msgid "Popup Maker"
+msgstr ""
+
+#: ../includes/class-ays-pb-feedback.php:86
+msgid "Popup Builder"
+msgstr ""
+
+#: ../includes/class-ays-pb-feedback.php:87
+msgid "Popup and Slider Builder"
+msgstr ""
+
+#: ../includes/class-ays-pb-feedback.php:88
+msgid "Poptin"
+msgstr ""
+
+#: ../includes/class-ays-pb-feedback.php:92
+msgid "The plugin didn’t work as expected"
+msgstr ""
+
+#: ../includes/class-ays-pb-feedback.php:96
+msgid "Missing essential features"
+msgstr ""
+
+#: ../includes/class-ays-pb-feedback.php:97
+msgid "Please share which features"
+msgstr ""
+
+#: ../includes/class-ays-pb-feedback.php:100
+msgid "I only needed it temporarily"
+msgstr ""
+
+#: ../includes/class-ays-pb-feedback.php:104
+msgid "Conflicts with other plugins or themes"
+msgstr ""
+
+#: ../includes/class-ays-pb-feedback.php:107
+#, php-format
+msgid "Contact our %s support team %s to find and fix the issue."
+msgstr ""
+
+#: ../includes/class-ays-pb-feedback.php:113
+msgid "I’m using the premium version now"
+msgstr ""
+
+#: ../includes/class-ays-pb-feedback.php:119
+msgid "Please share the reason"
+msgstr ""
+
+#: ../includes/class-ays-pb-feedback.php:131
+msgid "Quick Feedback"
+msgstr ""
+
+#: ../includes/class-ays-pb-feedback.php:139
+msgid "If you have a moment, please share why you are deactivating Popup Box:"
+msgstr ""
+
+#: ../includes/class-ays-pb-feedback.php:172
+msgid "Skip &amp; Deactivate"
+msgstr ""
+
+#: ../includes/class-ays-pb-feedback.php:173
+msgid "Submit &amp; Deactivate"
 msgstr ""
 
 #: ../includes/class-ays-pb-integrations.php:137
@@ -4428,6 +4577,13 @@ msgstr ""
 
 #: ../public/partials/ays-pb-public-templates.php:4137
 msgid "Popup link"
+msgstr ""
+
+#: ../public/partials/ays-pb-public-templates.php:4227
+#: ../public/partials/ays-pb-public-templates.php:4229
+#: ../public/partials/ays-pb-public-templates.php:4231
+#: ../public/partials/ays-pb-public-templates.php:4233
+msgid " seconds"
 msgstr ""
 
 #: ../public/partials/class-ays-pb-user-information-shortcodes.php:388

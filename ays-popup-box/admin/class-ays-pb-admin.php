@@ -110,7 +110,17 @@ class Ays_Pb_Admin {
         if ( false !== strpos($hook_suffix, "plugins.php") ) {
             wp_enqueue_script( $this->plugin_name . '-sweetalert', plugin_dir_url(__FILE__) . '/js/ays-pb-sweetalert2.all.min.js', array('jquery'), $this->version, true );
             wp_enqueue_script( $this->plugin_name . '-admin', plugin_dir_url(__FILE__) . 'js/admin.js', array('jquery'), $this->version, true );
-            wp_localize_script( $this->plugin_name . '-admin', 'popup_box_ajax', array('ajax_url' => admin_url('admin-ajax.php')) );
+            wp_localize_script( $this->plugin_name . '-admin', 'popup_box_ajax', array(
+                'ajax_url'              => admin_url('admin-ajax.php'),
+                'errorMsg'              => __( "Error", 'ays-popup-box' ),
+                'loadResource'          => __( "Can't load resource.", 'ays-popup-box' ),
+                'somethingWentWrong'    => __( "Maybe something went wrong.", 'ays-popup-box' ),
+            ));
+        }
+
+        $check_terms_agreement = get_option('ays_pb_agree_terms');
+        if($check_terms_agreement === 'true' && strpos($hook_suffix, $this->plugin_name) !== false){
+            wp_enqueue_script( $this->plugin_name . '-hotjar', plugin_dir_url(__FILE__) . 'js/extras/ays-pb-hotjar.js', array(), $this->version, false);
         }
 
         if(false === strpos($hook_suffix, $this->plugin_name))
@@ -235,11 +245,44 @@ class Ays_Pb_Admin {
                 wp_dequeue_script('wp_social_select2_js');
             }
 
+            if (is_plugin_active('wp-social/wp-social.php')) {
+                wp_dequeue_style('wp_social_select2_css');
+                wp_deregister_script('wp_social_select2_js');
+                wp_dequeue_script('wp_social_select2_js');
+            }
+
+            if (is_plugin_active('happyforms/happyforms.php')) {
+                wp_dequeue_style('happyforms-admin');
+            }
+
+            if (is_plugin_active('ultimate-viral-quiz/index.php')) {
+                wp_dequeue_style('select2');
+                wp_dequeue_style('dataTables');
+                
+                wp_dequeue_script('sweetalert');
+                wp_dequeue_script('select2');
+                wp_dequeue_script('dataTables');
+            }
+
+            if (is_plugin_active('forms-by-made-it/madeit-form.php')) {
+                wp_dequeue_style('madeit-form-admin-style');
+            }
+
+            if (is_plugin_active('real-media-library-lite/index.php')) {
+                wp_dequeue_style('real-media-library-lite-rml');
+            }
+
             // Theme | Pixel Ebook Store
             wp_dequeue_style('pixel-ebook-store-free-demo-content-style');
-
             // Theme | Interactive Education
             wp_dequeue_style('interactive-education-free-demo-content-style');
+            // Theme | Phlox 2.17.6
+            wp_dequeue_style('auxin-admin-style');
+            // Theme | Mavix Education 1.0
+            wp_dequeue_style('mavix-education-admin-style');
+            // Theme | RT Education School 1.1.9
+            wp_dequeue_style('rt-education-school-custom-admin-style');
+            wp_dequeue_style('rt-education-school-custom-admin-notice-style');
         }
 	}
 
@@ -612,7 +655,7 @@ class Ays_Pb_Admin {
         $popup_ajax_deactivate_plugin_nonce = wp_create_nonce( 'popup-box-ajax-deactivate-plugin-nonce' );
 
         $settings_link = array(
-            '<a href="' . admin_url( 'options-general.php?page=' . $this->plugin_name ) . '">' . esc_html__('Settings', "ays-popup-box") . '</a>',
+            '<a href="' . admin_url( 'admin.php?page=' . $this->plugin_name ) . '">' . esc_html__('Settings', "ays-popup-box") . '</a>',
             '<a href="https://ays-demo.com/popup-box-plugin-free-demo/" target="_blank">' . esc_html__('Demo', "ays-popup-box") . '</a>',
             '<a id="ays-pb-plugins-buy-now-button" href="https://popup-plugin.com/?utm_source=dashboard&utm_medium=popup-free&utm_campaign=plugins-buy-now-button" target="_blank">' . esc_html__('Upgrade 30% Sale', "ays-popup-box") . '</a>
             <input type="hidden" id="popup_box_ajax_deactivate_plugin_nonce" name="popup_box_ajax_deactivate_plugin_nonce" value="' . $popup_ajax_deactivate_plugin_nonce .'">',
