@@ -1037,6 +1037,7 @@ class Ays_PopupBox_List_Table extends WP_List_Table {
             'instagram_link' => '',
             'behance_link' => '',
             'telegram_link' => '',
+            'tiktok_link' => '',
         );
 
         // Id
@@ -1435,6 +1436,9 @@ class Ays_PopupBox_List_Table extends WP_List_Table {
         // Enable social media links | Telegram link
         $telegram_link = (isset($ays_social_links['ays_pb_telegram_link']) && $ays_social_links['ays_pb_telegram_link'] != '') ? sanitize_text_field($ays_social_links['ays_pb_telegram_link']) : '';
 
+        // Enable social media links | TikTok link
+        $tiktok_link = (isset($ays_social_links['ays_pb_tiktok_link']) && $ays_social_links['ays_pb_tiktok_link'] != '') ? sanitize_text_field($ays_social_links['ays_pb_tiktok_link']) : '';
+
         $social_links = array(
             'linkedin_link' => $linkedin_link,
             'facebook_link' => $facebook_link,
@@ -1444,6 +1448,7 @@ class Ays_PopupBox_List_Table extends WP_List_Table {
             'instagram_link' => $instagram_link,
             'behance_link' => $behance_link,
             'telegram_link' => $telegram_link,
+            'tiktok_link' => $tiktok_link,
         );
 
         // Schedule the popup

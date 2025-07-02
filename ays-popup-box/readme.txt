@@ -4,7 +4,7 @@ Donate link: https://popup-plugin.com
 Tags: popup, popups, exit popup, pop up, modal
 Requires at least: 4.0
 Tested up to: 6.8
-Stable tag: 5.4.1
+Stable tag: 5.4.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -335,6 +335,10 @@ After clearing the caches, try to check the case with either the **Incognito mod
 
 
 == Changelog ==
+
+= 5.4.2 ( July 1, 2025 ) =
+* Added: TikTok social media link
+* Improved: Some changes on the admin dashboard
 
 = 5.4.1 ( June 27, 2025 ) =
 * Updated: POT file

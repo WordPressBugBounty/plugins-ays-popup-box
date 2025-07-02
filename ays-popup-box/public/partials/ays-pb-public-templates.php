@@ -204,6 +204,7 @@ class Ays_Pb_Public_Templates {
         $instagram_link = isset($social_link_arr['instagram_link']) && $social_link_arr['instagram_link'] != '' ? esc_url($social_link_arr['instagram_link']) : '';
         $behance_link = isset($social_link_arr['behance_link']) && $social_link_arr['behance_link'] != '' ? esc_url($social_link_arr['behance_link']) : '';
         $telegram_link = isset($social_link_arr['telegram_link']) && $social_link_arr['telegram_link'] != '' ? esc_url($social_link_arr['telegram_link']) : '';
+        $tiktok_link = isset($social_link_arr['tiktok_link']) && $social_link_arr['tiktok_link'] != '' ? esc_url($social_link_arr['tiktok_link']) : '';
 
         if($linkedin_link != ''){
             $ays_social_links_array['Linkedin']['link'] = $linkedin_link;
@@ -240,6 +241,11 @@ class Ays_Pb_Public_Templates {
         if($telegram_link != ''){
             $ays_social_links_array['Telegram']['link'] = $telegram_link;
             $ays_social_links_array['Telegram']['img'] = '<img src="'.AYS_PB_PUBLIC_URL.'/images/icons/telegram.svg">';
+        }
+
+        if($tiktok_link != ''){
+            $ays_social_links_array['TikTok']['link'] = $tiktok_link;
+            $ays_social_links_array['TikTok']['img'] = '<img src="'.AYS_PB_PUBLIC_URL.'/images/icons/tiktok.svg">';
         }
 
         // Heading for social buttons
@@ -482,6 +488,7 @@ class Ays_Pb_Public_Templates {
             'instagram_link' => '',
             'behance_link' => '',
             'telegram_link' => '',
+            'tiktok_link' => '',
         );
         $ays_social_links_array = array();
         
@@ -499,6 +506,7 @@ class Ays_Pb_Public_Templates {
         $instagram_link = isset($social_link_arr['instagram_link']) && $social_link_arr['instagram_link'] != '' ? esc_url($social_link_arr['instagram_link']) : '';
         $behance_link = isset($social_link_arr['behance_link']) && $social_link_arr['behance_link'] != '' ? esc_url($social_link_arr['behance_link']) : '';
         $telegram_link = isset($social_link_arr['telegram_link']) && $social_link_arr['telegram_link'] != '' ? esc_url($social_link_arr['telegram_link']) : '';
+        $tiktok_link = isset($social_link_arr['tiktok_link']) && $social_link_arr['tiktok_link'] != '' ? esc_url($social_link_arr['tiktok_link']) : '';
         
         if($linkedin_link != ''){
             $ays_social_links_array['Linkedin']['link'] = $linkedin_link;
@@ -534,6 +542,11 @@ class Ays_Pb_Public_Templates {
         if($telegram_link != ''){
             $ays_social_links_array['Telegram']['link'] = $telegram_link;
             $ays_social_links_array['Telegram']['img'] = '<img src="'.AYS_PB_PUBLIC_URL.'/images/icons/telegram.svg">';
+        }
+
+        if($tiktok_link != ''){
+            $ays_social_links_array['TikTok']['link'] = $tiktok_link;
+            $ays_social_links_array['TikTok']['img'] = '<img src="'.AYS_PB_PUBLIC_URL.'/images/icons/tiktok.svg">';
         }
 
         $ays_social_links = '';
@@ -801,6 +814,7 @@ class Ays_Pb_Public_Templates {
             'instagram_link' => '',
             'behance_link' => '',
             'telegram_link' => '',
+            'tiktok_link' => '',
         );
         $ays_social_links_array = array();
         
@@ -818,6 +832,7 @@ class Ays_Pb_Public_Templates {
         $instagram_link = isset($social_link_arr['instagram_link']) && $social_link_arr['instagram_link'] != '' ? esc_url($social_link_arr['instagram_link']) : '';
         $behance_link = isset($social_link_arr['behance_link']) && $social_link_arr['behance_link'] != '' ? esc_url($social_link_arr['behance_link']) : '';
         $telegram_link = isset($social_link_arr['telegram_link']) && $social_link_arr['telegram_link'] != '' ? esc_url($social_link_arr['telegram_link']) : '';
+        $tiktok_link = isset($social_link_arr['tiktok_link']) && $social_link_arr['tiktok_link'] != '' ? esc_url($social_link_arr['tiktok_link']) : '';
         
         if($linkedin_link != ''){
             $ays_social_links_array['Linkedin']['link'] = $linkedin_link;
@@ -857,6 +872,11 @@ class Ays_Pb_Public_Templates {
         if($telegram_link != ''){
             $ays_social_links_array['Telegram']['link'] = $telegram_link;
             $ays_social_links_array['Telegram']['img'] = '<img src="'.AYS_PB_PUBLIC_URL.'/images/icons/telegram.svg">';
+        }
+
+        if($tiktok_link != ''){
+            $ays_social_links_array['TikTok']['link'] = $tiktok_link;
+            $ays_social_links_array['TikTok']['img'] = '<img src="'.AYS_PB_PUBLIC_URL.'/images/icons/tiktok.svg">';
         }
 
         $ays_social_links = '';
@@ -1149,6 +1169,7 @@ class Ays_Pb_Public_Templates {
             'instagram_link' => '',
             'behance_link' => '',
             'telegram_link' => '',
+            'tiktok_link' => '',
         );
         $ays_social_links_array = array();
         
@@ -1166,6 +1187,7 @@ class Ays_Pb_Public_Templates {
         $instagram_link = isset($social_link_arr['instagram_link']) && $social_link_arr['instagram_link'] != '' ? esc_url($social_link_arr['instagram_link']) : '';
         $behance_link = isset($social_link_arr['behance_link']) && $social_link_arr['behance_link'] != '' ? esc_url($social_link_arr['behance_link']) : '';
         $telegram_link = isset($social_link_arr['telegram_link']) && $social_link_arr['telegram_link'] != '' ? esc_url($social_link_arr['telegram_link']) : '';
+        $tiktok_link = isset($social_link_arr['tiktok_link']) && $social_link_arr['tiktok_link'] != '' ? esc_url($social_link_arr['tiktok_link']) : '';
         
         if($linkedin_link != ''){
             $ays_social_links_array['Linkedin']['link'] = $linkedin_link;
@@ -1201,6 +1223,11 @@ class Ays_Pb_Public_Templates {
         if($telegram_link != ''){
             $ays_social_links_array['Telegram']['link'] = $telegram_link;
             $ays_social_links_array['Telegram']['img'] = '<img src="'.AYS_PB_PUBLIC_URL.'/images/icons/telegram.svg">';
+        }
+
+        if($tiktok_link != ''){
+            $ays_social_links_array['TikTok']['link'] = $tiktok_link;
+            $ays_social_links_array['TikTok']['img'] = '<img src="'.AYS_PB_PUBLIC_URL.'/images/icons/tiktok.svg">';
         }
 
         $ays_social_links = '';
@@ -1492,6 +1519,7 @@ class Ays_Pb_Public_Templates {
         $instagram_link = isset($social_link_arr['instagram_link']) && $social_link_arr['instagram_link'] != '' ? esc_url($social_link_arr['instagram_link']) : '';
         $behance_link = isset($social_link_arr['behance_link']) && $social_link_arr['behance_link'] != '' ? esc_url($social_link_arr['behance_link']) : '';
         $telegram_link = isset($social_link_arr['telegram_link']) && $social_link_arr['telegram_link'] != '' ? esc_url($social_link_arr['telegram_link']) : '';
+        $tiktok_link = isset($social_link_arr['tiktok_link']) && $social_link_arr['tiktok_link'] != '' ? esc_url($social_link_arr['tiktok_link']) : '';
         
         if($linkedin_link != ''){
             $ays_social_links_array['Linkedin']['link'] = $linkedin_link;
@@ -1527,6 +1555,11 @@ class Ays_Pb_Public_Templates {
         if($telegram_link != ''){
             $ays_social_links_array['Telegram']['link'] = $telegram_link;
             $ays_social_links_array['Telegram']['img'] = '<img src="'.AYS_PB_PUBLIC_URL.'/images/icons/telegram.svg">';
+        }
+        
+        if($tiktok_link != ''){
+            $ays_social_links_array['TikTok']['link'] = $tiktok_link;
+            $ays_social_links_array['TikTok']['img'] = '<img src="'.AYS_PB_PUBLIC_URL.'/images/icons/tiktok.svg">';
         }
 
         $ays_social_links = '';
@@ -1797,6 +1830,7 @@ class Ays_Pb_Public_Templates {
             'instagram_link' => '',
             'behance_link' => '',
             'telegram_link' => '',
+            'tiktok_link' => '',
         );
         $ays_social_links_array = array();
         
@@ -1814,6 +1848,7 @@ class Ays_Pb_Public_Templates {
         $instagram_link = isset($social_link_arr['instagram_link']) && $social_link_arr['instagram_link'] != '' ? esc_url($social_link_arr['instagram_link']) : '';
         $behance_link = isset($social_link_arr['behance_link']) && $social_link_arr['behance_link'] != '' ? esc_url($social_link_arr['behance_link']) : '';
         $telegram_link = isset($social_link_arr['telegram_link']) && $social_link_arr['telegram_link'] != '' ? esc_url($social_link_arr['telegram_link']) : '';
+        $tiktok_link = isset($social_link_arr['tiktok_link']) && $social_link_arr['tiktok_link'] != '' ? esc_url($social_link_arr['tiktok_link']) : '';
         
         if($linkedin_link != ''){
             $ays_social_links_array['Linkedin']['link'] = $linkedin_link;
@@ -1848,6 +1883,11 @@ class Ays_Pb_Public_Templates {
         if($telegram_link != ''){
             $ays_social_links_array['Telegram']['link'] = $telegram_link;
             $ays_social_links_array['Telegram']['img'] = '<img src="'.AYS_PB_PUBLIC_URL.'/images/icons/telegram.svg">';
+        }
+
+        if($tiktok_link != ''){
+            $ays_social_links_array['TikTok']['link'] = $tiktok_link;
+            $ays_social_links_array['TikTok']['img'] = '<img src="'.AYS_PB_PUBLIC_URL.'/images/icons/tiktok.svg">';
         }
 
         $ays_social_links = '';
@@ -2094,6 +2134,7 @@ class Ays_Pb_Public_Templates {
             'instagram_link' => '',
             'behance_link' => '',
             'telegram_link' => '',
+            'tiktok_link' => '',
         );
         $ays_social_links_array = array();
         
@@ -2111,6 +2152,7 @@ class Ays_Pb_Public_Templates {
         $instagram_link = isset($social_link_arr['instagram_link']) && $social_link_arr['instagram_link'] != '' ? esc_url($social_link_arr['instagram_link']) : '';
         $behance_link = isset($social_link_arr['behance_link']) && $social_link_arr['behance_link'] != '' ? esc_url($social_link_arr['behance_link']) : '';
         $telegram_link = isset($social_link_arr['telegram_link']) && $social_link_arr['telegram_link'] != '' ? esc_url($social_link_arr['telegram_link']) : '';
+        $tiktok_link = isset($social_link_arr['tiktok_link']) && $social_link_arr['tiktok_link'] != '' ? esc_url($social_link_arr['tiktok_link']) : '';
         
         if($linkedin_link != ''){
             $ays_social_links_array['Linkedin']['link'] = $linkedin_link;
@@ -2145,6 +2187,11 @@ class Ays_Pb_Public_Templates {
         if($telegram_link != ''){
             $ays_social_links_array['Telegram']['link'] = $telegram_link;
             $ays_social_links_array['Telegram']['img'] = '<img src="'.AYS_PB_PUBLIC_URL.'/images/icons/telegram.svg">';
+        }
+
+        if($tiktok_link != ''){
+            $ays_social_links_array['TikTok']['link'] = $tiktok_link;
+            $ays_social_links_array['TikTok']['img'] = '<img src="'.AYS_PB_PUBLIC_URL.'/images/icons/tiktok.svg">';
         }
 
         $ays_social_links = '';
@@ -2409,6 +2456,7 @@ class Ays_Pb_Public_Templates {
             'instagram_link' => '',
             'behance_link' => '',
             'telegram_link' => '',
+            'tiktok_link' => '',
         );
         $ays_social_links_array = array();
         
@@ -2426,6 +2474,7 @@ class Ays_Pb_Public_Templates {
         $instagram_link = isset($social_link_arr['instagram_link']) && $social_link_arr['instagram_link'] != '' ? esc_url($social_link_arr['instagram_link']) : '';
         $behance_link = isset($social_link_arr['behance_link']) && $social_link_arr['behance_link'] != '' ? esc_url($social_link_arr['behance_link']) : '';
         $telegram_link = isset($social_link_arr['telegram_link']) && $social_link_arr['telegram_link'] != '' ? esc_url($social_link_arr['telegram_link']) : '';
+        $tiktok_link = isset($social_link_arr['tiktok_link']) && $social_link_arr['tiktok_link'] != '' ? esc_url($social_link_arr['tiktok_link']) : '';
         
         if($linkedin_link != ''){
             $ays_social_links_array['Linkedin']['link'] = $linkedin_link;
@@ -2462,6 +2511,12 @@ class Ays_Pb_Public_Templates {
             $ays_social_links_array['Telegram']['link'] = $telegram_link;
             $ays_social_links_array['Telegram']['img'] = '<img src="'.AYS_PB_PUBLIC_URL.'/images/icons/telegram.svg">';
         }
+        
+        if($tiktok_link != ''){
+            $ays_social_links_array['TikTok']['link'] = $tiktok_link;
+            $ays_social_links_array['TikTok']['img'] = '<img src="'.AYS_PB_PUBLIC_URL.'/images/icons/tiktok.svg">';
+        }
+
         $ays_social_links = '';
 
         // Heading for social buttons
@@ -2712,6 +2767,7 @@ class Ays_Pb_Public_Templates {
             'instagram_link' => '',
             'behance_link' => '',
             'telegram_link' => '',
+            'tiktok_link' => '',
         );
         $ays_social_links_array = array();
         
@@ -2729,6 +2785,7 @@ class Ays_Pb_Public_Templates {
         $behance_link = isset($social_link_arr['behance_link']) && $social_link_arr['behance_link'] != '' ? esc_url($social_link_arr['behance_link']) : '';
         $instagram_link = isset($social_link_arr['instagram_link']) && $social_link_arr['instagram_link'] != '' ? esc_url($social_link_arr['instagram_link']) : '';
         $telegram_link = isset($social_link_arr['telegram_link']) && $social_link_arr['telegram_link'] != '' ? esc_url($social_link_arr['telegram_link']) : '';
+        $tiktok_link = isset($social_link_arr['tiktok_link']) && $social_link_arr['tiktok_link'] != '' ? esc_url($social_link_arr['tiktok_link']) : '';
         
         if($linkedin_link != ''){
             $ays_social_links_array['Linkedin']['link'] = $linkedin_link;
@@ -2765,6 +2822,12 @@ class Ays_Pb_Public_Templates {
             $ays_social_links_array['Telegram']['link'] = $telegram_link;
             $ays_social_links_array['Telegram']['img'] = '<img src="'.AYS_PB_PUBLIC_URL.'/images/icons/telegram.svg">';
         }
+        
+        if($tiktok_link != ''){
+            $ays_social_links_array['TikTok']['link'] = $tiktok_link;
+            $ays_social_links_array['TikTok']['img'] = '<img src="'.AYS_PB_PUBLIC_URL.'/images/icons/tiktok.svg">';
+        }
+
         $ays_social_links = '';
 
         // Heading for social buttons
@@ -3033,6 +3096,7 @@ class Ays_Pb_Public_Templates {
             'instagram_link' => '',
             'behance_link' => '',
             'telegram_link' => '',
+            'tiktok_link' => '',
         );
         $ays_social_links_array = array();
         
@@ -3050,6 +3114,7 @@ class Ays_Pb_Public_Templates {
         $instagram_link = isset($social_link_arr['instagram_link']) && $social_link_arr['instagram_link'] != '' ? esc_url($social_link_arr['instagram_link']) : '';
         $behance_link = isset($social_link_arr['behance_link']) && $social_link_arr['behance_link'] != '' ? esc_url($social_link_arr['behance_link']) : '';
         $telegram_link = isset($social_link_arr['telegram_link']) && $social_link_arr['telegram_link'] != '' ? esc_url($social_link_arr['telegram_link']) : '';
+        $tiktok_link = isset($social_link_arr['tiktok_link']) && $social_link_arr['tiktok_link'] != '' ? esc_url($social_link_arr['tiktok_link']) : '';
         
         if($linkedin_link != ''){
             $ays_social_links_array['Linkedin']['link'] = $linkedin_link;
@@ -3084,6 +3149,11 @@ class Ays_Pb_Public_Templates {
         if($telegram_link != ''){
             $ays_social_links_array['Telegram']['link'] = $telegram_link;
             $ays_social_links_array['Telegram']['img'] = '<img src="'.AYS_PB_PUBLIC_URL.'/images/icons/telegram.svg">';
+        }
+
+        if($tiktok_link != ''){
+            $ays_social_links_array['TikTok']['link'] = $tiktok_link;
+            $ays_social_links_array['TikTok']['img'] = '<img src="'.AYS_PB_PUBLIC_URL.'/images/icons/tiktok.svg">';
         }
 
         $ays_social_links = '';
@@ -3332,6 +3402,7 @@ class Ays_Pb_Public_Templates {
             'instagram_link' => '',
             'behance_link' => '',
             'telegram_link' => '',
+            'tiktok_link' => '',
         );
         $ays_social_links_array = array();
         
@@ -3349,6 +3420,7 @@ class Ays_Pb_Public_Templates {
         $instagram_link = isset($social_link_arr['instagram_link']) && $social_link_arr['instagram_link'] != '' ? esc_url($social_link_arr['instagram_link']) : '';
         $behance_link = isset($social_link_arr['behance_link']) && $social_link_arr['behance_link'] != '' ? esc_url($social_link_arr['behance_link']) : '';
         $telegram_link = isset($social_link_arr['telegram_link']) && $social_link_arr['telegram_link'] != '' ? esc_url($social_link_arr['telegram_link']) : '';
+        $tiktok_link = isset($social_link_arr['tiktok_link']) && $social_link_arr['tiktok_link'] != '' ? esc_url($social_link_arr['tiktok_link']) : '';
         
         if($linkedin_link != ''){
             $ays_social_links_array['Linkedin']['link'] = $linkedin_link;
@@ -3384,6 +3456,11 @@ class Ays_Pb_Public_Templates {
         if($telegram_link != ''){
             $ays_social_links_array['Telegram']['link'] = $telegram_link;
             $ays_social_links_array['Telegram']['img'] = '<img src="'.AYS_PB_PUBLIC_URL.'/images/icons/telegram.svg">';
+        }
+
+        if($tiktok_link != ''){
+            $ays_social_links_array['TikTok']['link'] = $tiktok_link;
+            $ays_social_links_array['TikTok']['img'] = '<img src="'.AYS_PB_PUBLIC_URL.'/images/icons/tiktok.svg">';
         }
 
         $ays_social_links = '';

@@ -457,6 +457,7 @@ class Ays_Pb_Activator {
                 'instagram_link' => '',
                 'behance_link' => '',
                 'telegram_link' => '',
+                'tiktok_link' => '',
             ),
             'create_date' => current_time('mysql'),
             'create_author' => $pb_create_author,

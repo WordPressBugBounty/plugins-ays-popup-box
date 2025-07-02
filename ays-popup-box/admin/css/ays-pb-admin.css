@@ -4804,3 +4804,8 @@ a.ays-rated-link, a.ays-rated-link:hover, a.ays-rated-link:focus {
 .ays-pb-features-wrap .ays-pb-toggle-switch input:checked + .slider {
     background-color: #69c7f1;
 }
+
+[class~="error"]:not([class*="ays-pb"]),
+[class~="notice"]:not([class*="ays-pb"]) {
+    display: none !important;
+}
