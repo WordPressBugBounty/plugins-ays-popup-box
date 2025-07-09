@@ -4,6 +4,7 @@
     padding: 3px 0 0;
     transition: .3s ease-in-out;
     height: 30px;
+    display: inline-block !important;
 }
 /* Plugin menu icon styles end */
 
