@@ -286,9 +286,9 @@ class Ays_Pb {
 		$this->loader->add_action( 'wp_ajax_nopriv_ays_pb_change_status', $plugin_admin, 'ays_pb_change_status' );
 		
 		// Dencque third-party scripts and styles
-		$this->loader->add_action('admin_enqueue_scripts', $plugin_admin, 'maybe_dequeue_third_party_assets');
-		$this->loader->add_action('wp_footer', $plugin_admin, 'end_buffer', 999);
-		$this->loader->add_action('admin_footer', $plugin_admin, 'end_buffer', 999);
+		// $this->loader->add_action('admin_enqueue_scripts', $plugin_admin, 'maybe_dequeue_third_party_assets');
+		// $this->loader->add_action('wp_footer', $plugin_admin, 'end_buffer', 999);
+		// $this->loader->add_action('admin_footer', $plugin_admin, 'end_buffer', 999);
 
 		$this->loader->add_action('current_screen', $plugin_admin, 'ays_pb_disable_all_notice_from_plugin', 200, 1);
 

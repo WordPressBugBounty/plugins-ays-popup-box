@@ -157,12 +157,12 @@ class Ays_Pb_Admin {
         );
 
         $color_picker_strings = array(
-            'clear' => esc_html__( 'Clear', "ays-popup-box" ),
-            'clearAriaLabel' => esc_html__( 'Clear color', "ays-popup-box" ),
-            'defaultString' => esc_html__( 'Default', "ays-popup-box" ),
-            'defaultAriaLabel' => esc_html__( 'Select default color', "ays-popup-box" ),
-            'pick' => esc_html__( 'Select Color', "ays-popup-box" ),
-            'defaultLabel' => esc_html__( 'Color value', "ays-popup-box" ),
+            'clear'             => esc_html__( 'Clear', "ays-popup-box" ),
+            'clearAriaLabel'    => esc_html__( 'Clear color', "ays-popup-box" ),
+            'defaultString'     => esc_html__( 'Default', "ays-popup-box" ),
+            'defaultAriaLabel'  => esc_html__( 'Select default color', "ays-popup-box" ),
+            'pick'              => esc_html__( 'Select Color', "ays-popup-box" ),
+            'defaultLabel'      => esc_html__( 'Color value', "ays-popup-box" ),
         );
 
         // Extended scripts
@@ -498,9 +498,9 @@ class Ays_Pb_Admin {
     public function screen_option_popupbox() {
 		$option = 'per_page';
 		$args = array(
-			'label' => esc_html__('PopupBox', "ays-popup-box"),
+			'label'   => esc_html__('PopupBox', "ays-popup-box"),
 			'default' => 20,
-			'option' => 'popupboxes_per_page'
+			'option'  => 'popupboxes_per_page'
 		);
 
 		add_screen_option($option, $args);
@@ -511,9 +511,9 @@ class Ays_Pb_Admin {
     public function screen_option_categories() {
         $option = 'per_page';
         $args = array(
-            'label' => esc_html__('Categories', "ays-popup-box"),
+            'label'   => esc_html__('Categories', "ays-popup-box"),
             'default' => 20,
-            'option' => 'popup_categories_per_page'
+            'option'  => 'popup_categories_per_page'
         );
 
         add_screen_option($option, $args);
@@ -534,8 +534,8 @@ class Ays_Pb_Admin {
 
 		$screen->add_help_tab(
 			array(
-				'id' => 'popupbox_help_tab',
-				'title' => esc_html__('General Information:', "ays-popup-box"),
+				'id'      => 'popupbox_help_tab',
+				'title'   => esc_html__('General Information:', "ays-popup-box"),
 				'content' =>
 					'<h2>' . esc_html__('Popup Information', "ays-popup-box") . '</h2>' .
 					'<p>'
@@ -628,10 +628,10 @@ class Ays_Pb_Admin {
 
         if(function_exists('wp_enqueue_code_editor')) {
             $cm_settings['codeEditor'] = wp_enqueue_code_editor(array(
-                'type' => 'text/css',
+                'type'       => 'text/css',
                 'codemirror' => array(
                     'inputStyle' => 'contenteditable',
-                    'theme' => 'cobalt',
+                    'theme'      => 'cobalt',
                 )
             ));
 

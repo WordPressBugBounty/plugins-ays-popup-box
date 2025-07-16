@@ -2883,6 +2883,8 @@ $ays_users_roles = $wp_roles->roles;
                         <div class="ays-pb-description-small-hint <?php echo $show_popup_desc == 'On' ? 'display_none' : ''; ?>">
                             <p class="ays-pb-small-hint-text">
                                 <?php echo esc_html__("This option is currently unavailable as the 'Show Description' option is disabled.", "ays-popup-box"); ?>
+                                <br>
+                                <?php echo esc_html__("To find the 'Show Description' option, head to the Styles Tab of the given popup.", "ays-popup-box"); ?>
                             </p>
                         </div>
                     </div>
