@@ -4669,7 +4669,7 @@ $ays_users_roles = $wp_roles->roles;
                                             <div class="ays-pb-template-label">
                                                     <p <?php echo ('default' == $view_type) ? 'class="apm_active_theme"' : '' ?> ><?php echo esc_html__('Default', "ays-popup-box") ?></p>
                                                     <p class="ays-pb-template-label-preview">
-                                                        <a href="https://bit.ly/3yAJuOt" target="_blank">Preview</a>
+                                                        <a href="https://demo.popup-plugin.com/shortcode-popup/" target="_blank">Preview</a>
                                                     </p>
                                             </div>
                                         </div>
@@ -4695,7 +4695,7 @@ $ays_users_roles = $wp_roles->roles;
                                             <div class="ays-pb-template-label">
                                                     <p <?php echo ('red' == $view_type) ? 'class="apm_active_theme"' : '' ?>><?php echo esc_html__('Red', "ays-popup-box") ?></p>
                                                     <p class="ays-pb-template-label-preview">
-                                                        <a href="https://bit.ly/3Au6ss9" target="_blank">Preview</a>
+                                                        <a href="https://demo.popup-plugin.com/custom-content-popup/" target="_blank">Preview</a>
                                                     </p>
                                             </div>
                                         </div>
@@ -4722,7 +4722,7 @@ $ays_users_roles = $wp_roles->roles;
                                             <div class="ays-pb-template-label">
                                                 <p <?php echo ( 'image' == $view_type) ? 'class="apm_active_theme"' : '' ?>><?php echo esc_html__('Modern', "ays-popup-box") ?></p>
                                                     <p class="ays-pb-template-label-preview">
-                                                        <a href="https://bit.ly/3bNERYh" target="_blank">Preview</a>
+                                                        <a href="https://demo.popup-plugin.com/iframe-popup/" target="_blank">Preview</a>
                                                     </p>
                                             </div>
                                         </div>
@@ -4830,7 +4830,7 @@ $ays_users_roles = $wp_roles->roles;
                                             <div class="ays-pb-template-label">
                                                 <p><?php echo esc_html__('Peachy', "ays-popup-box") ?></p>
                                                 <p>
-                                                    <a href="https://bit.ly/3If66Hm" target="_blank" style="background:#d06b46;border: 1px solid #d06b46;">Demo</a>
+                                                    <a href="https://demo.popup-plugin.com/countdown-popup/" target="_blank" style="background:#d06b46;border: 1px solid #d06b46;">Demo</a>
                                                     <a href="https://popup-plugin.com/" target="_blank">Pro</a>
                                                 </p>
                                             </div>
@@ -4846,7 +4846,7 @@ $ays_users_roles = $wp_roles->roles;
                                             <div class="ays-pb-template-label">
                                                     <p><?php echo esc_html__('Yellowish', "ays-popup-box") ?></p>
                                                     <p>
-                                                        <a href="https://bit.ly/3Iafmwy" target="_blank" style="background:#d06b46;border: 1px solid #d06b46;">Demo</a>
+                                                        <a href="https://demo.popup-plugin.com/coupon-popup/" target="_blank" style="background:#d06b46;border: 1px solid #d06b46;">Demo</a>
                                                         <a href="https://popup-plugin.com/" target="_blank">Pro</a>
                                                     </p>
                                             </div>
@@ -4862,7 +4862,7 @@ $ays_users_roles = $wp_roles->roles;
                                             <div class="ays-pb-template-label">
                                                 <p><?php echo esc_html__('Coral', "ays-popup-box") ?></p>
                                                 <p>
-                                                    <a href="https://bit.ly/3AqvPLg" target="_blank" style="background:#d06b46;border: 1px solid #d06b46;">Demo</a>
+                                                    <a href="https://demo.popup-plugin.com/yes-no-popup" target="_blank" style="background:#d06b46;border: 1px solid #d06b46;">Demo</a>
                                                     <a href="https://popup-plugin.com/" target="_blank">Pro</a>
                                                 </p>
                                             </div>
@@ -4879,7 +4879,7 @@ $ays_users_roles = $wp_roles->roles;
                                             <div class="ays-pb-template-label">
                                                 <p><?php echo esc_html__('Frozen', "ays-popup-box") ?></p>
                                                 <p>
-                                                    <a href="https://bit.ly/3R5szuB" target="_blank" style="background:#d06b46;border: 1px solid #d06b46;">Demo</a>
+                                                    <a href="https://demo.popup-plugin.com/subscription-popup/" target="_blank" style="background:#d06b46;border: 1px solid #d06b46;">Demo</a>
                                                     <a href="https://popup-plugin.com/" target="_blank">Pro</a>
                                                 </p>
                                             </div>
@@ -4895,7 +4895,7 @@ $ays_users_roles = $wp_roles->roles;
                                             <div class="ays-pb-template-label">
                                                     <p><?php echo esc_html__('Food', "ays-popup-box") ?></p>
                                                     <p>
-                                                        <a href="https://bit.ly/3Al4qKI" target="_blank" style="background:#d06b46;">Demo</a>
+                                                        <a href="https://demo.popup-plugin.com/subscribe-and-get-file-popup/" target="_blank" style="background:#d06b46;">Demo</a>
                                                         <a href="https://popup-plugin.com/" target="_blank">Pro</a>
                                                     </p>
                                             </div>
@@ -4911,7 +4911,7 @@ $ays_users_roles = $wp_roles->roles;
                                             <div class="ays-pb-template-label">
                                                 <p><?php echo esc_html__('Forest', "ays-popup-box") ?></p>
                                                 <p>
-                                                    <a href="https://bit.ly/3acggfr" target="_blank" style="background:#d06b46; border: 1px solid #d06b46;">Demo</a>
+                                                    <a href="https://demo.popup-plugin.com/contact-form-popup/" target="_blank" style="background:#d06b46; border: 1px solid #d06b46;">Demo</a>
                                                     <a href="https://popup-plugin.com/" target="_blank">Pro</a>
                                                 </p>
                                             </div>
@@ -7949,7 +7949,7 @@ $ays_users_roles = $wp_roles->roles;
                                                 <p style="margin:0px; font-size:19px;"><?php echo  esc_html__('Custom Content', "ays-popup-box") ?></p>
                                             </div>
                                             <div class="ays_pb_layer_buttons">
-                                                <a href="https://ays-demo.com/custom-content-red-popup/" class="ays-pb-view-demo-content" target="_blank"><?php echo  esc_html__('View demo', "ays-popup-box") ?></a>
+                                                <a href="https://demo.popup-plugin.com/custom-content-popup/" class="ays-pb-view-demo-content" target="_blank"><?php echo  esc_html__('View demo', "ays-popup-box") ?></a>
                                                 <div class="ays-pb-select-type">
                                                     <p><?php echo esc_html__('Select', 'ays-popup-box') ?></p>
                                                 </div>
@@ -7970,7 +7970,7 @@ $ays_users_roles = $wp_roles->roles;
                                                 <p style="margin:0px; font-size:19px;"><?php echo esc_html__('Shortcode', "ays-popup-box") ?></p>
                                             </div>
                                             <div class="ays_pb_layer_buttons">
-                                                <a href="https://ays-demo.com/popup-shortcode-default-type/" class="ays-pb-view-demo-content" target="_blank"><?php echo  esc_html__('View demo', "ays-popup-box") ?></a>
+                                                <a href="https://demo.popup-plugin.com/shortcode-popup/" class="ays-pb-view-demo-content" target="_blank"><?php echo  esc_html__('View demo', "ays-popup-box") ?></a>
                                                 <div class="ays-pb-select-type">
                                                     <p><?php echo esc_html__('Select', 'ays-popup-box') ?></p>
                                                 </div>
@@ -7991,7 +7991,7 @@ $ays_users_roles = $wp_roles->roles;
                                                 <p style="margin:0px; font-size:19px;"><?php echo  esc_html__('Video', "ays-popup-box") ?></p>
                                             </div>
                                             <div class="ays_pb_layer_buttons">
-                                                <a href="https://ays-demo.com/video-coral-type/" class="ays-pb-view-demo-content" target="_blank"><?php echo  esc_html__('View demo', "ays-popup-box") ?></a>
+                                                <a href="https://demo.popup-plugin.com/video-popup/" class="ays-pb-view-demo-content" target="_blank"><?php echo  esc_html__('View demo', "ays-popup-box") ?></a>
                                                 <div class="ays-pb-select-type">
                                                     <p><?php echo esc_html__('Select', 'ays-popup-box') ?></p>
                                                 </div>
@@ -8078,7 +8078,7 @@ $ays_users_roles = $wp_roles->roles;
                                                 <p><?php echo esc_html__('Upgrade Now', 'ays-popup-box') ?></p>
                                             </a>
                                             <div class="ays-pb-view-demo-content">
-                                                <a href="https://bit.ly/3R5szuB" target="_blank"><?php echo  esc_html__('View demo', "ays-popup-box") ?></a>
+                                                <a href="https://demo.popup-plugin.com/subscription-popup/" target="_blank"><?php echo  esc_html__('View demo', "ays-popup-box") ?></a>
                                             </div>
                                         </div> 
                                     </div>
@@ -8101,7 +8101,7 @@ $ays_users_roles = $wp_roles->roles;
                                                 <p><?php echo esc_html__('Upgrade Now', 'ays-popup-box') ?></p>
                                             </a>
                                             <div class="ays-pb-view-demo-content">
-                                                <a href="https://bit.ly/3AqvPLg" target="_blank"><?php echo  esc_html__('View demo', "ays-popup-box") ?></a>
+                                                <a href="https://demo.popup-plugin.com/yes-no-popup/" target="_blank"><?php echo  esc_html__('View demo', "ays-popup-box") ?></a>
                                             </div>
                                         </div> 
                                     </div>
@@ -8123,7 +8123,7 @@ $ays_users_roles = $wp_roles->roles;
                                                 <p><?php echo esc_html__('Upgrade Now', 'ays-popup-box') ?></p>
                                             </a>
                                             <div class="ays-pb-view-demo-content">
-                                                <a href="https://bit.ly/3bNERYh" target="_blank"><?php echo  esc_html__('View demo', "ays-popup-box") ?></a>
+                                                <a href="https://demo.popup-plugin.com/iframe-popup/" target="_blank"><?php echo  esc_html__('View demo', "ays-popup-box") ?></a>
                                             </div>
                                         </div> 
                                     </div>
@@ -8145,7 +8145,7 @@ $ays_users_roles = $wp_roles->roles;
                                                 <p><?php echo esc_html__('Upgrade Now', 'ays-popup-box') ?></p>
                                             </a>
                                             <div class="ays-pb-view-demo-content">
-                                                <a href="https://bit.ly/3acggfr" target="_blank"><?php echo  esc_html__('View demo', "ays-popup-box") ?></a>
+                                                <a href="https://demo.popup-plugin.com/contact-form-popup/" target="_blank"><?php echo  esc_html__('View demo', "ays-popup-box") ?></a>
                                             </div>
                                         </div> 
                                     </div>
@@ -8167,7 +8167,7 @@ $ays_users_roles = $wp_roles->roles;
                                                 <p><?php echo esc_html__('Upgrade Now', 'ays-popup-box') ?></p>
                                             </a>
                                             <div class="ays-pb-view-demo-content">
-                                                <a href="https://bit.ly/3Al4qKI" target="_blank"><?php echo  esc_html__('View demo', "ays-popup-box") ?></a>
+                                                <a href="https://demo.popup-plugin.com/subscribe-and-get-file-popup/" target="_blank"><?php echo  esc_html__('View demo', "ays-popup-box") ?></a>
                                             </div>
                                         </div> 
                                     </div>
@@ -8189,7 +8189,7 @@ $ays_users_roles = $wp_roles->roles;
                                                 <p><?php echo esc_html__('Upgrade Now', 'ays-popup-box') ?></p>
                                             </a>
                                             <div class="ays-pb-view-demo-content">
-                                                <a href="https://bit.ly/3Iafmwy" target="_blank"><?php echo  esc_html__('View demo', "ays-popup-box") ?></a>
+                                                <a href="https://demo.popup-plugin.com/coupon-popup/" target="_blank"><?php echo  esc_html__('View demo', "ays-popup-box") ?></a>
                                             </div>
                                         </div> 
                                     </div>
@@ -8211,7 +8211,7 @@ $ays_users_roles = $wp_roles->roles;
                                                 <p><?php echo esc_html__('Upgrade Now', 'ays-popup-box') ?></p>
                                             </a>
                                             <div class="ays-pb-view-demo-content">
-                                                <a href="https://bit.ly/3If66Hm" target="_blank"><?php echo  esc_html__('View demo', "ays-popup-box") ?></a>
+                                                <a href="https://demo.popup-plugin.com/countdown-popup/" target="_blank"><?php echo  esc_html__('View demo', "ays-popup-box") ?></a>
                                             </div>
                                         </div> 
                                     </div>
@@ -8233,7 +8233,7 @@ $ays_users_roles = $wp_roles->roles;
                                                 <p><?php echo esc_html__('Upgrade Now', 'ays-popup-box') ?></p>
                                             </a>
                                             <div class="ays-pb-view-demo-content">
-                                                <a href="https://bit.ly/3IayfiQ" target="_blank"><?php echo  esc_html__('View demo', "ays-popup-box") ?></a>
+                                                <a href="https://demo.popup-plugin.com/cookies-popup/" target="_blank"><?php echo  esc_html__('View demo', "ays-popup-box") ?></a>
                                             </div>
                                         </div> 
                                     </div>
@@ -8255,7 +8255,7 @@ $ays_users_roles = $wp_roles->roles;
                                                 <p><?php echo esc_html__('Upgrade Now', 'ays-popup-box') ?></p>
                                             </a>
                                             <div class="ays-pb-view-demo-content">
-                                                <a href="https://bit.ly/3RrgTmh" target="_blank"><?php echo  esc_html__('View demo', "ays-popup-box") ?></a>
+                                                <a href="https://demo.popup-plugin.com/download-popup/" target="_blank"><?php echo  esc_html__('View demo', "ays-popup-box") ?></a>
                                             </div>
                                         </div> 
                                     </div>
@@ -8296,7 +8296,7 @@ $ays_users_roles = $wp_roles->roles;
                                                 <p><?php echo esc_html__('Upgrade Now', 'ays-popup-box') ?></p>
                                             </a>
                                             <div class="ays-pb-view-demo-content">
-                                                <a href="https://bit.ly/3o6QBIg" target="_blank"><?php echo  esc_html__('View demo', "ays-popup-box") ?></a>
+                                                <a href="https://demo.popup-plugin.com/login-form-popup/" target="_blank"><?php echo  esc_html__('View demo', "ays-popup-box") ?></a>
                                             </div>
                                         </div> 
                                     </div>
@@ -8318,7 +8318,7 @@ $ays_users_roles = $wp_roles->roles;
                                                 <p><?php echo esc_html__('Upgrade Now', 'ays-popup-box') ?></p>
                                             </a>
                                             <div class="ays-pb-view-demo-content">
-                                                <a href="https://bit.ly/3c1MkmM" target="_blank"><?php echo  esc_html__('View demo', "ays-popup-box") ?></a>
+                                                <a href="https://demo.popup-plugin.com/google-map-popup/" target="_blank"><?php echo  esc_html__('View demo', "ays-popup-box") ?></a>
                                             </div>
                                         </div> 
                                     </div>
