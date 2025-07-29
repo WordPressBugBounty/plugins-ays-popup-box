@@ -4189,11 +4189,11 @@ class Ays_Pb_Public_Templates {
 
         $user_email = ( isset( $user_data->user_email ) && $user_data->user_email != '' ) ? stripslashes( $user_data->user_email ) : '';
 
-        $pb_user_information = Ays_Pb_Data::get_user_profile_data();
-		$user_first_name = (isset( $pb_user_information['user_first_name'] ) && $pb_user_information['user_first_name']  != "") ? $pb_user_information['user_first_name'] : '';
-		$user_last_name = (isset( $pb_user_information['user_last_name'] ) && $pb_user_information['user_last_name']  != "") ? $pb_user_information['user_last_name'] : '';
+        $pb_user_information  = Ays_Pb_Data::get_user_profile_data();
+		$user_first_name      = (isset( $pb_user_information['user_first_name'] ) && $pb_user_information['user_first_name']  != "") ? $pb_user_information['user_first_name'] : '';
+		$user_last_name       = (isset( $pb_user_information['user_last_name'] ) && $pb_user_information['user_last_name']  != "") ? $pb_user_information['user_last_name'] : '';
         $user_wordpress_roles = (isset( $pb_user_information['user_wordpress_roles'] ) && $pb_user_information['user_wordpress_roles']  != "") ? $pb_user_information['user_wordpress_roles'] : '';
-        $user_nickname = (isset( $pb_user_information['user_nickname'] ) && $pb_user_information['user_nickname']  != "") ? $pb_user_information['user_nickname'] : '';
+        $user_nickname        = (isset( $pb_user_information['user_nickname'] ) && $pb_user_information['user_nickname']  != "") ? $pb_user_information['user_nickname'] : '';
 
         $author = ( isset( $popup_options->author ) && $popup_options->author != "" ) ? json_decode( $popup_options->author ) : '';
         $current_popup_author = ( isset( $author->name ) && $author->name != "" ) ? $author->name : '';
@@ -4216,10 +4216,18 @@ class Ays_Pb_Public_Templates {
         $creation_date = ( isset( $popup_options->create_date ) && $popup_options->create_date != "" ) ? date_i18n( get_option( 'date_format' ), strtotime( $popup_options->create_date ) ) : '';
 
         // Current date
-        $current_date = date_i18n( 'M d, Y', current_time('timestamp') );
-        $current_time = date_i18n( get_option( 'time_format' ), current_time('timestamp') );
-        $current_day = date_i18n( 'l', current_time('timestamp') );
+        $current_date  = date_i18n( 'M d, Y', current_time('timestamp') );
+        $current_time  = date_i18n( get_option( 'time_format' ), current_time('timestamp') );
+        $current_day   = date_i18n( 'l', current_time('timestamp') );
         $current_month = date_i18n( 'F', current_time('timestamp') );
+
+        if (is_user_logged_in()) {
+            $current_user_id = get_current_user_id();
+            $user_registered = $user_data->user_registered;
+        } else {
+            $current_user_id = '';
+            $user_registered = '';
+        }
 
         $message_variables_data = array(
             'popup_title' => $popup_title,
@@ -4237,6 +4245,8 @@ class Ays_Pb_Public_Templates {
             'current_time' => $current_time,
             'current_day' => $current_day,
             'current_month' => $current_month,
+            'user_id' => $current_user_id,
+            'user_registered' => $user_registered,
         );
 
         return $message_variables_data;
