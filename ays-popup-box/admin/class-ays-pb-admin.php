@@ -118,10 +118,10 @@ class Ays_Pb_Admin {
             ));
         }
 
-        $check_terms_agreement = get_option('ays_pb_agree_terms');
-        if($check_terms_agreement === 'true' && strpos($hook_suffix, $this->plugin_name) !== false){
-            wp_enqueue_script( $this->plugin_name . '-hotjar', plugin_dir_url(__FILE__) . 'js/extras/ays-pb-hotjar.js', array(), $this->version, false);
-        }
+        // $check_terms_agreement = get_option('ays_pb_agree_terms');
+        // if($check_terms_agreement === 'true' && strpos($hook_suffix, $this->plugin_name) !== false){
+        //     wp_enqueue_script( $this->plugin_name . '-hotjar', plugin_dir_url(__FILE__) . 'js/extras/ays-pb-hotjar.js', array(), $this->version, false);
+        // }
 
         if(false === strpos($hook_suffix, $this->plugin_name))
             return;
