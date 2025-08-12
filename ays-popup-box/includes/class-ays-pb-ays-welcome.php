@@ -192,4 +192,4 @@ class Ays_Pb_Ays_Welcome {
         ) );
     }
 }
-new Ays_Pb_Ays_Welcome();
+//new Ays_Pb_Ays_Welcome();
