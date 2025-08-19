@@ -859,6 +859,10 @@ div.ays_ask_question_content .ays-ask-question-content-inner-question-mark-text 
     color: gray;
 }
 
+.ays-pb-youtube-placeholder{
+    cursor: pointer;
+}
+
 .ays-pb-create-pb-youtube-video-button-box {
     margin-top: 80px;
 }
