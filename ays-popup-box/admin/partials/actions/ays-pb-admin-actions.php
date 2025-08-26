@@ -4,11 +4,19 @@ $id = isset($_GET['popupbox']) ? absint( intval($_GET['popupbox']) ) : null;
 $ays_pb_tab = isset($_GET['ays_pb_tab']) ? sanitize_text_field($_GET['ays_pb_tab']) : 'tab1';
 
 if (isset($_POST['ays_submit']) || isset($_POST['ays_submit_top'])) {
+    // CSRF protection: verify nonce and referer before processing
+    if ( ! isset($_POST['pb_action']) || ! check_admin_referer( 'pb_action', 'pb_action' ) ) {
+        wp_die( 'Invalid request.' );
+    }
     $_POST['id'] = $id;
     $this->popupbox_obj->add_or_edit_popupbox();
 }
 
 if (isset($_POST['ays_apply']) || isset($_POST['ays_apply_top'])) {
+    // CSRF protection: verify nonce and referer before processing
+    if ( ! isset($_POST['pb_action']) || ! check_admin_referer( 'pb_action', 'pb_action' ) ) {
+        wp_die( 'Invalid request.' );
+    }
     $_POST['id'] = $id;
     $_POST['submit_type'] = 'apply';
     $this->popupbox_obj->add_or_edit_popupbox();
@@ -8693,7 +8701,7 @@ $ays_users_roles = $wp_roles->roles;
                                 'background-size' : pb_bg_image_sizing,
                                 'background-position' : pb_bg_image_position
                             });
-                            $(document).find(ays_pb_view_type + ' .desc').html($("#<?php echo esc_attr($this->plugin_name); ?>-popup_description").val());
+                            $(document).find(ays_pb_view_type + ' .desc').text($("#<?php echo esc_attr($this->plugin_name); ?>-popup_description").val());
                             $(document).find(ays_pb_view_type + ' .ays_title').html( pbTitle );
                             $(document).find("#ays-pb-close-button-text").on('change', function () {
                                 if($("#ays-pb-close-button-text").val() == '✕'){
@@ -8743,7 +8751,7 @@ $ays_users_roles = $wp_roles->roles;
                                 'background-size' : pb_bg_image_sizing,
                                 'background-position' : pb_bg_image_position
                             });
-                            $(document).find(ays_pb_view_type + ' .desc').html($("#<?php echo esc_attr($this->plugin_name); ?>-popup_description").val());
+                            $(document).find(ays_pb_view_type + ' .desc').text($("#<?php echo esc_attr($this->plugin_name); ?>-popup_description").val());
                             $(document).find(ays_pb_view_type + ' .ays_title').html( pbTitle );
                             $(ays_pb_view_type).css({
                                 'background-color': $("#<?php echo esc_attr($this->plugin_name); ?>-bgcolor").val(),
@@ -8775,7 +8783,7 @@ $ays_users_roles = $wp_roles->roles;
                                 'background-size' : pb_bg_image_sizing,
                                 'background-position' : pb_bg_image_position
                             });
-                            $(document).find(ays_pb_view_type + ' .desc').html($("#<?php echo esc_attr($this->plugin_name); ?>-popup_description").val());
+                            $(document).find(ays_pb_view_type + ' .desc').text($("#<?php echo esc_attr($this->plugin_name); ?>-popup_description").val());
                             $(document).find(ays_pb_view_type + ' .ays_title').html( pbTitle );
                             $(ays_pb_view_type).css({
                                 'background-color': $("#<?php echo esc_attr($this->plugin_name); ?>-bgcolor").val(),
@@ -8807,7 +8815,7 @@ $ays_users_roles = $wp_roles->roles;
                                 'background-size' : pb_bg_image_sizing,
                                 'background-position' : pb_bg_image_position
                             });
-                            $(document).find(ays_pb_view_type + ' .desc').html($("#<?php echo esc_attr($this->plugin_name); ?>-popup_description").val());
+                            $(document).find(ays_pb_view_type + ' .desc').text($("#<?php echo esc_attr($this->plugin_name); ?>-popup_description").val());
                             $(document).find(ays_pb_view_type + ' .ays_title').html( pbTitle );
                             $(ays_pb_view_type).css({
                                 'background-color': $("#<?php echo esc_attr($this->plugin_name); ?>-bgcolor").val(),
@@ -8833,7 +8841,7 @@ $ays_users_roles = $wp_roles->roles;
                             $(document).find(".ays-pb-live-container-main.ays_winxp_window").addClass('ays_active');
 
                             ays_pb_view_type = '.ays_winxp_window';
-                            $(document).find(ays_pb_view_type + ' .desc').html($("#<?php echo esc_attr($this->plugin_name); ?>-popup_description").val());
+                            $(document).find(ays_pb_view_type + ' .desc').text($("#<?php echo esc_attr($this->plugin_name); ?>-popup_description").val());
                             $(document).find(ays_pb_view_type + ' .ays_title').html( pbTitle );
                             $(document).find(ays_pb_view_type + ' .ays_winxp_content').css({
                                 'background-color': $("#<?php echo esc_attr($this->plugin_name); ?>-bgcolor").val()
@@ -8873,7 +8881,7 @@ $ays_users_roles = $wp_roles->roles;
                                 'background-size' : pb_bg_image_sizing,
                                 'background-position' : pb_bg_image_position
                             });
-                            $(document).find(ays_pb_view_type + ' .desc').html($("#<?php echo esc_attr($this->plugin_name); ?>-popup_description").val());
+                            $(document).find(ays_pb_view_type + ' .desc').text($("#<?php echo esc_attr($this->plugin_name); ?>-popup_description").val());
                             $(document).find(ays_pb_view_type + ' .ays_title').html( pbTitle );
                             $(document).find("#ays-pb-close-button-text").on('change', function () {
                                 $(ays_pb_view_type + ' .ays-close-button-text').html($("#ays-pb-close-button-text").val());
@@ -8908,7 +8916,7 @@ $ays_users_roles = $wp_roles->roles;
                             $(document).find(".ays-pb-live-container-main.ays_lil_window").addClass('ays_active');
 
                             ays_pb_view_type = '.ays_lil_window';
-                            $(document).find(ays_pb_view_type + ' .desc').html($("#<?php echo esc_attr($this->plugin_name); ?>-popup_description").val());
+                            $(document).find(ays_pb_view_type + ' .desc').text($("#<?php echo esc_attr($this->plugin_name); ?>-popup_description").val());
                             $(document).find(ays_pb_view_type + ' .ays_title').html( pbTitle );
                             $(document).find("#ays-pb-close-button-text").on('change', function () {
                                 $(ays_pb_view_type + ' .ays-close-button-text').html($("#ays-pb-close-button-text").val());
@@ -8948,7 +8956,7 @@ $ays_users_roles = $wp_roles->roles;
                             $(document).find(".ays-pb-live-container-main.ays_image_window").addClass('ays_active');
 
                             ays_pb_view_type = '.ays_image_window';
-                            $(document).find(ays_pb_view_type + ' .desc').html($("#<?php echo esc_attr($this->plugin_name); ?>-popup_description").val());
+                            $(document).find(ays_pb_view_type + ' .desc').text($("#<?php echo esc_attr($this->plugin_name); ?>-popup_description").val());
                             $(document).find(ays_pb_view_type + ' .ays_title').html( pbTitle );
                             $(document).find("#ays-pb-close-button-text").on('change', function () {
                                 $(ays_pb_view_type + ' .ays-close-button-text').html($("#ays-pb-close-button-text").val());
@@ -8988,7 +8996,7 @@ $ays_users_roles = $wp_roles->roles;
 
                             ays_pb_view_type = '.ays_minimal_window';
 
-                            $(document).find(ays_pb_view_type + ' .desc').html($("#<?php echo esc_attr($this->plugin_name); ?>-popup_description").val());
+                            $(document).find(ays_pb_view_type + ' .desc').text($("#<?php echo esc_attr($this->plugin_name); ?>-popup_description").val());
                             $(document).find(ays_pb_view_type + ' .ays_title').html( pbTitle );
 
                             $(document).find("#ays-pb-close-button-text").on('change', function () {
@@ -9030,7 +9038,7 @@ $ays_users_roles = $wp_roles->roles;
                             $(document).find(".ays-pb-live-container-main.ays_template_window").addClass('ays_active');
 
                             ays_pb_view_type = '.ays_template_window';
-                            $(document).find(ays_pb_view_type + ' .desc').html($("#<?php echo esc_attr($this->plugin_name); ?>-popup_description").val());
+                            $(document).find(ays_pb_view_type + ' .desc').text($("#<?php echo esc_attr($this->plugin_name); ?>-popup_description").val());
                             $(document).find(ays_pb_view_type + ' .ays_title').html( pbTitle );
                             $(document).find("#ays-pb-close-button-text").on('change', function () {
                                 $(ays_pb_view_type + ' .ays-close-button-text').html($("#ays-pb-close-button-text").val());
@@ -9077,7 +9085,7 @@ $ays_users_roles = $wp_roles->roles;
                                     'background-size' : pb_bg_image_sizing,
                                     'background-position' : pb_bg_image_position
                                 });
-                                $(document).find(ays_pb_view_type + ' .desc').html($("#<?php echo esc_attr($this->plugin_name); ?>-popup_description").val());
+                                $(document).find(ays_pb_view_type + ' .desc').text($("#<?php echo esc_attr($this->plugin_name); ?>-popup_description").val());
                                 $(document).find(ays_pb_view_type + ' .ays_title').html( pbTitle );
                                 $(document).find("#ays-pb-close-button-text").on('change', function () {
                                     $(ays_pb_view_type + ' .ays-close-button-text').html($("#ays-pb-close-button-text").val());
@@ -9114,7 +9122,7 @@ $ays_users_roles = $wp_roles->roles;
                                 'background-position' : pb_bg_image_position
                             });
                             ays_pb_view_type = '.ays-pb-modal';
-                            $(document).find(ays_pb_view_type + ' .desc').html($("#<?php echo esc_attr($this->plugin_name); ?>-popup_description").val());
+                            $(document).find(ays_pb_view_type + ' .desc').text($("#<?php echo esc_attr($this->plugin_name); ?>-popup_description").val());
                             $(document).find(ays_pb_view_type + ' .ays_title').html( pbTitle );
                             $(document).find("#ays-pb-close-button-text").on('change', function () {
                                 $(ays_pb_view_type + ' .ays-close-button-text').html($("#ays-pb-close-button-text").val());
@@ -9150,7 +9158,7 @@ $ays_users_roles = $wp_roles->roles;
                     'font-family': $('#ays_pb_font_family').val(),
                 });
 
-                $(document).find(ays_pb_view_type + ' .desc').html($("#<?php echo esc_attr($this->plugin_name); ?>-popup_description").val());
+                $(document).find(ays_pb_view_type + ' .desc').text($("#<?php echo esc_attr($this->plugin_name); ?>-popup_description").val());
                 $(document).find(ays_pb_view_type + ' .ays_title').html( pbTitle );
 
                 $(document).find("#<?php echo esc_attr($this->plugin_name); ?>-popup_title").on('change', function () {
@@ -9160,7 +9168,7 @@ $ays_users_roles = $wp_roles->roles;
                     $(ays_pb_view_type + ' .ays_title').html( pbTitle );
                 });
                 $(document).find("#<?php echo esc_attr($this->plugin_name); ?>-popup_description").on('change', function () {
-                    $(ays_pb_view_type + ' .desc').html($("#<?php echo esc_attr($this->plugin_name); ?>-popup_description").val());
+                    $(ays_pb_view_type + ' .desc').text($("#<?php echo esc_attr($this->plugin_name); ?>-popup_description").val());
                 });
                 $(document).find("#ays-pb-close-button-text").on('change', function () {
                     let $this      = $(document).find('.ays-pb-modal .ays-close-button-text');
