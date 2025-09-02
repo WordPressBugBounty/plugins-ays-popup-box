@@ -359,6 +359,7 @@ $options = array(
     'close_button_color' => '#000000',
     'close_button_hover_color' => '#000000',
     'close_button_size' => 1,
+    'close_button_padding' => 0,
     'enable_box_shadow' => 'off',
     'box_shadow_color' => '#000',
     'pb_box_shadow_x_offset' => 0,
@@ -1386,6 +1387,9 @@ $close_button_hover_color = (isset($options['close_button_hover_color']) && $opt
 // Close button size
 $ays_close_button_size = (isset($options['close_button_size']) && $options['close_button_size'] != '') ? abs( intval($options['close_button_size']) ) : 1;
 
+// Close button padding
+$ays_close_button_padding = (isset($options['close_button_padding']) && $options['close_button_padding'] != '') ? abs( intval($options['close_button_padding']) ) : 0;
+
 // Box shadow | On desktop
 $options['enable_box_shadow'] = (isset($options['enable_box_shadow']) && $options['enable_box_shadow'] != '') ? esc_attr( stripslashes($options['enable_box_shadow']) ) : 'off';
 $enable_box_shadow = (isset($options['enable_box_shadow']) && $options['enable_box_shadow'] == 'on') ? true : false;
@@ -1818,7 +1822,7 @@ $ays_users_roles = $wp_roles->roles;
                     </div>
                     <div class="col-sm-9">
                         <a href="javascript:void(0)" class="button ays-pb-add-bg-video">
-                            <?php echo $image_type_img_src != '' ? esc_html__('Edit Image', "ays-popup-box") : esc_html__('Add Image', "ays-popup-box"); ?>
+                            <?php echo $image_type_img_src != '' ? esc_html__('Edit Video', "ays-popup-box") : esc_html__('Add Video', "ays-popup-box"); ?>
                         </a>
                         <div class="<?php echo $ays_video_theme_bg != '' ? '' : 'display_none'; ?> ays-pb-bg-video-container-main">
                             <div class="ays-pb-bg-video-container">
@@ -7019,6 +7023,24 @@ $ays_users_roles = $wp_roles->roles;
                                     </div>
                                 </div>
                                 <!-- close button size end  -->
+                                <hr>
+                                <!-- close button padding start  -->
+                                <div class="form-group row ays_pb_close_bttn_option <?php echo $close_button == 'on' ? 'display_none' : ''; ?>">
+                                    <div class="col-sm-4">
+                                        <label for="ays_pb_close_button_padding">
+                                            <span>
+                                                <?php echo  esc_html__('Close button padding',"ays-popup-box") ?>
+                                                <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__("Define the close button padding in pixels.", "ays-popup-box"); ?>">
+                                                    <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
+                                                </a>
+                                            </span>
+                                        </label>
+                                    </div>
+                                    <div class="col-sm-6 ays_divider_left">
+                                        <input id="ays_pb_close_button_padding" type="number" class="ays-pb-text-input ays-pb-text-input-short" name="ays_pb_close_button_padding" value="<?php echo $ays_close_button_padding; ?>">
+                                    </div>
+                                </div>
+                                <!-- close button padding end  -->
                                 <hr>
                             </div>
                         </div>

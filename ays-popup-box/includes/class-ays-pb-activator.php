@@ -558,6 +558,7 @@ class Ays_Pb_Activator {
             'close_button_color' => '#000000',
             'close_button_hover_color' => '#000000',
             'close_button_size' => 1,
+            'close_button_padding' => 0,
             'enable_box_shadow' => 'off',
             'box_shadow_color' => '#000',
             'pb_box_shadow_x_offset' => 0,

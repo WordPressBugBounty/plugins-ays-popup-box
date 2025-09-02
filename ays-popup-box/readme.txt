@@ -4,7 +4,7 @@ Donate link: https://popup-plugin.com
 Tags: popup, popups, exit popup, pop up, modal
 Requires at least: 4.0
 Tested up to: 6.8
-Stable tag: 5.5.0
+Stable tag: 5.5.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -339,6 +339,9 @@ After clearing the caches, try to check the case with either the **Incognito mod
 
 
 == Changelog ==
+
+= 5.5.1 ( September 2, 2025 ) =
+* Added: Close button padding option
 
 = 5.5.0 ( August 25, 2025 ) =
 * Fixed: Vulnerability issue on the admin dashboard

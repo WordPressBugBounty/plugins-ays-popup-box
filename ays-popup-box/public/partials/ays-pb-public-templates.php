@@ -271,6 +271,7 @@ class Ays_Pb_Public_Templates {
 
         //close button size 
         $close_btn_size = (isset($options->close_button_size) && $options->close_button_size != '') ? abs($options->close_button_size) : '1';
+        $close_btn_padding = (isset($options->close_button_padding) && $options->close_button_padding != '') ? abs($options->close_button_padding) : '0';
 
         //border style 
         $border_style = (isset($options->border_style) && $options->border_style != '') ? $options->border_style : 'solid';
@@ -353,7 +354,7 @@ class Ays_Pb_Public_Templates {
                         </button>
                     </div>
                     $ays_pb_timer_desc
-                    <div class='ays-pb-modal-close ".$popup['closeButton']." ays-pb-modal-close_".$popup['id']." ays-pb-close-button-delay ays_pb_pause_sound_".$popup['id']."' style='color: $close_button_color !important; font-family:$ays_pb_font_family;transform:scale({$close_btn_size})' data-toggle='tooltip' title='$ays_pb_close_button_hover_text'></div>
+                    <div class='ays-pb-modal-close ".$popup['closeButton']." ays-pb-modal-close_".$popup['id']." ays-pb-close-button-delay ays_pb_pause_sound_".$popup['id']."' style='color: $close_button_color !important; font-family:$ays_pb_font_family;transform:scale({$close_btn_size}); padding: {$close_btn_padding}px' data-toggle='tooltip' title='$ays_pb_close_button_hover_text'></div>
                 </div>";
 
 		return $popupbox_view;
@@ -571,6 +572,7 @@ class Ays_Pb_Public_Templates {
         }
 
         $close_btn_size = (isset($options->close_button_size) && $options->close_button_size != '') ? abs($options->close_button_size): '1';
+        $close_btn_padding = (isset($options->close_button_padding) && $options->close_button_padding != '') ? abs($options->close_button_padding): '0';
 
         //border style 
         $border_style = (isset($options->border_style) && $options->border_style != '') ? $options->border_style : 'solid';
@@ -901,6 +903,7 @@ class Ays_Pb_Public_Templates {
         }
 
         $close_btn_size = (isset($options->close_button_size) && $options->close_button_size != '') ? abs($options->close_button_size) : '1';
+        $close_btn_padding = (isset($options->close_button_padding) && $options->close_button_padding != '') ? abs($options->close_button_padding) : '0';
 
         //border style 
         $border_style = (isset($options->border_style) && $options->border_style != '') ? $options->border_style : 'solid';
@@ -1252,6 +1255,7 @@ class Ays_Pb_Public_Templates {
         }
 
         $close_btn_size = (isset($options->close_button_size) && $options->close_button_size != '') ? abs($options->close_button_size): '1';
+        $close_btn_padding = (isset($options->close_button_padding) && $options->close_button_padding != '') ? abs($options->close_button_padding): '0';
         
         //border style 
         $border_style = (isset($options->border_style) && $options->border_style != '') ? $options->border_style : 'solid';
@@ -1584,6 +1588,7 @@ class Ays_Pb_Public_Templates {
         }
 
         $close_btn_size = (isset($options->close_button_size) && $options->close_button_size != '') ? abs($options->close_button_size) : '1';
+        $close_btn_padding = (isset($options->close_button_padding) && $options->close_button_padding != '') ? abs($options->close_button_padding) : '0';
 
         //border style 
         $border_style = (isset($options->border_style) && $options->border_style != '') ? $options->border_style : 'solid';
@@ -1912,6 +1917,7 @@ class Ays_Pb_Public_Templates {
         }
 
         $close_btn_size = (isset($options->close_button_size) && $options->close_button_size != '') ? abs($options->close_button_size) : '1';
+        $close_btn_padding = (isset($options->close_button_padding) && $options->close_button_padding != '') ? abs($options->close_button_padding) : '0';
 
         //border style 
         $border_style = (isset($options->border_style) && $options->border_style != '') ? $options->border_style : 'solid';
@@ -2216,6 +2222,7 @@ class Ays_Pb_Public_Templates {
         }
 
         $close_btn_size = (isset($options->close_button_size) && $options->close_button_size != '') ? abs($options->close_button_size) : '1';
+        $close_btn_padding = (isset($options->close_button_padding) && $options->close_button_padding != '') ? abs($options->close_button_padding) : '0';
 
         //border style 
         $border_style = (isset($options->border_style) && $options->border_style != '') ? $options->border_style : 'solid';
@@ -2286,7 +2293,7 @@ class Ays_Pb_Public_Templates {
                                         </div>
                                         <div class='ays_lil_btn-close ".$popup['closeButton']." ays-pb-close-button-delay'>
                                             <div class='ays-pb-modal-close_".$popup['id']."' >
-                                                <a class='close-lil-btn ays_pb_pause_sound_".$popup['id']."' style='background-color:".$popup['ays_pb_textcolor']." !important; color: ".$close_button_color." ; font-family:{$ays_pb_font_family};transform:scale({$close_btn_size})'  data-toggle='tooltip' title='" . $ays_pb_close_button_hover_text . "'></a>
+                                                <a class='close-lil-btn ays_pb_pause_sound_".$popup['id']."' style='background-color:".$popup['ays_pb_textcolor']." !important; color: ".$close_button_color." ; padding: {$close_btn_padding}px; font-family:{$ays_pb_font_family};transform:scale({$close_btn_size})'  data-toggle='tooltip' title='" . $ays_pb_close_button_hover_text . "'></a>
                                             </div>
                                         </div>
                                     </div>
@@ -2539,6 +2546,7 @@ class Ays_Pb_Public_Templates {
         }
 
         $close_btn_size = (isset($options->close_button_size) && $options->close_button_size != '') ? abs($options->close_button_size) : '1';
+        $close_btn_padding = (isset($options->close_button_padding) && $options->close_button_padding != '') ? abs($options->close_button_padding) : '0';
 
         //border style 
         $border_style = (isset($options->border_style) && $options->border_style != '') ? $options->border_style : 'solid';
@@ -2606,7 +2614,7 @@ class Ays_Pb_Public_Templates {
                                         </div>
                                         <div class='ays_image_btn-close ".$popup['closeButton']."'>
                                             <div class='ays-pb-modal-close_".$popup['id']." ays-pb-close-button-delay' >
-                                                <div class='close-image-btn ays_pb_pause_sound_".$popup['id']."' style='color: ".$popup['ays_pb_textcolor']." ; font-family:{$ays_pb_font_family};transform:scale({$close_btn_size})'  data-toggle='tooltip' title='" . $ays_pb_close_button_hover_text . "'></div>
+                                                <div class='close-image-btn ays_pb_pause_sound_".$popup['id']."' style='color: ".$popup['ays_pb_textcolor']." ; padding: {$close_btn_padding}px; font-family:{$ays_pb_font_family};transform:scale({$close_btn_size})' data-toggle='tooltip' title='" . $ays_pb_close_button_hover_text . "'></div>
                                             </div>
                                         </div>
                                     </div>
@@ -2850,6 +2858,7 @@ class Ays_Pb_Public_Templates {
         }
 
         $close_btn_size = (isset($options->close_button_size) && $options->close_button_size != '') ? abs($options->close_button_size) : '1';
+        $close_btn_padding = (isset($options->close_button_padding) && $options->close_button_padding != '') ? abs($options->close_button_padding) : '0';
 
         //border style 
         $border_style = (isset($options->border_style) && $options->border_style != '') ? $options->border_style : 'solid';
@@ -2927,7 +2936,7 @@ class Ays_Pb_Public_Templates {
                                         </div>
                                         <div class='ays_template_btn-close ".$popup['closeButton']." '>
                                             <div class='close-template-btn-container ays-pb-modal-close_".$popup['id']." ays-pb-close-button-delay' >
-                                                <div class='close-template-btn ays_pb_pause_sound_".$popup['id']."' style='color: ".$close_button_color." ;font-family:{$ays_pb_font_family};transform:scale({$close_btn_size})' data-toggle='tooltip' title='" . $ays_pb_close_button_hover_text . "'></div>
+                                                <div class='close-template-btn ays_pb_pause_sound_".$popup['id']."' style='color: ".$close_button_color." ;padding: {$close_btn_padding}px; font-family:{$ays_pb_font_family};transform:scale({$close_btn_size})' data-toggle='tooltip' title='" . $ays_pb_close_button_hover_text . "'></div>
                                             </div>
                                         </div>
                                     </div>
@@ -3178,6 +3187,7 @@ class Ays_Pb_Public_Templates {
         }
 
         $close_btn_size = (isset($options->close_button_size) && $options->close_button_size != '') ? abs($options->close_button_size) : '1';
+        $close_btn_padding = (isset($options->close_button_padding) && $options->close_button_padding != '') ? abs($options->close_button_padding) : '0';
 
         //border style 
         $border_style = (isset($options->border_style) && $options->border_style != '') ? $options->border_style : 'solid';
@@ -3245,7 +3255,7 @@ class Ays_Pb_Public_Templates {
                                         </div>
                                         <div class='ays_minimal_btn-close ".$popup['closeButton']."'>
                                             <div class='ays-pb-modal-close_".$popup['id']." ays-pb-close-button-delay' >
-                                                <div class='close-minimal-btn ays_pb_pause_sound_".$popup['id']."' style='color: ".$popup['ays_pb_textcolor']." ; font-family:{$ays_pb_font_family};transform:scale({$close_btn_size})'  data-toggle='tooltip' title='" . $ays_pb_close_button_hover_text . "'></div>
+                                                <div class='close-minimal-btn ays_pb_pause_sound_".$popup['id']."' style='color: ".$popup['ays_pb_textcolor']." ; padding: {$close_btn_padding}px; font-family:{$ays_pb_font_family};transform:scale({$close_btn_size})' data-toggle='tooltip' title='" . $ays_pb_close_button_hover_text . "'></div>
                                             </div>
                                         </div>
                                     </div>
@@ -3485,6 +3495,7 @@ class Ays_Pb_Public_Templates {
         }
         
         $close_btn_size = (isset($options->close_button_size) && $options->close_button_size != '') ? abs($options->close_button_size) : '1';
+        $close_btn_padding = (isset($options->close_button_padding) && $options->close_button_padding != '') ? abs($options->close_button_padding) : '0';
 
         //border style 
         $border_style = (isset($options->border_style) && $options->border_style != '') ? $options->border_style : 'solid';
@@ -3515,7 +3526,7 @@ class Ays_Pb_Public_Templates {
                                         $ays_pb_sound_mute
                                         <div class='ays_video_btn-close ".$popup['closeButton']."'>
                                             <div for='ays-pb-modal-checkbox_".$popup['id']."' class='ays-pb-modal-close_".$popup['id']." ays-pb-close-button-delay' >
-                                                <div class='close-image-btn ays_pb_pause_sound_".$popup['id']."' style='color: ".$popup['ays_pb_textcolor']." ; font-family:{$ays_pb_font_family};transform:scale({$close_btn_size})'  data-toggle='tooltip' title='" . $ays_pb_close_button_hover_text . "'></div>
+                                                <div class='close-image-btn ays_pb_pause_sound_".$popup['id']."' style='color: ".$popup['ays_pb_textcolor']." ; padding: {$close_btn_padding}px; font-family:{$ays_pb_font_family};transform:scale({$close_btn_size})' data-toggle='tooltip' title='" . $ays_pb_close_button_hover_text . "'></div>
                                             </div>
                                         </div>
                                     </div>
@@ -3615,6 +3626,7 @@ class Ays_Pb_Public_Templates {
 
         //close button size 
         $close_btn_size = (isset($options->close_button_size) && $options->close_button_size != '') ? abs($options->close_button_size) : '1';
+        $close_btn_padding = (isset($options->close_button_padding) && $options->close_button_padding != '') ? abs($options->close_button_padding) : '0';
 
         //border style 
         $border_style = (isset($options->border_style) && $options->border_style != '') ? $options->border_style : 'solid';
@@ -3707,7 +3719,7 @@ class Ays_Pb_Public_Templates {
                         </button>
                     </div>
                     $ays_pb_timer_desc
-                    <div class='ays-pb-modal-close ".$popup['closeButton']." ays-pb-modal-close_".$popup['id']." ays-pb-close-button-delay ays_pb_pause_sound_".$popup['id']."' style='color: $close_button_color !important;transform:scale({$close_btn_size})' data-toggle='tooltip' title='$ays_pb_close_button_hover_text'></div>
+                    <div class='ays-pb-modal-close ".$popup['closeButton']." ays-pb-modal-close_".$popup['id']." ays-pb-close-button-delay ays_pb_pause_sound_".$popup['id']."' style='color: $close_button_color !important;padding: {$close_btn_padding}px;transform:scale({$close_btn_size})' data-toggle='tooltip' title='$ays_pb_close_button_hover_text'></div>
                 </div>";
 
         return $popupbox_view;
@@ -3839,6 +3851,7 @@ class Ays_Pb_Public_Templates {
 
         //close button size 
         $close_btn_size = (isset($options->close_button_size) && $options->close_button_size != '') ? abs($options->close_button_size) : '1';
+        $close_btn_padding = (isset($options->close_button_padding) && $options->close_button_padding != '') ? abs($options->close_button_padding) : '0';
 
         //border style 
         $border_style = (isset($options->border_style) && $options->border_style != '') ? $options->border_style : 'solid';
@@ -3947,7 +3960,7 @@ class Ays_Pb_Public_Templates {
                         </button>
                     </div>
                     $ays_pb_timer_desc
-                    <div class='ays-pb-modal-close ".$popup['closeButton']." ays-pb-modal-close_".$popup['id']." ays-pb-close-button-delay ays_pb_pause_sound_".$popup['id']."' style='color: $close_button_color !important; font-family:$ays_pb_font_family;transform:scale({$close_btn_size})' data-toggle='tooltip' title='$ays_pb_close_button_hover_text'></div>
+                    <div class='ays-pb-modal-close ".$popup['closeButton']." ays-pb-modal-close_".$popup['id']." ays-pb-close-button-delay ays_pb_pause_sound_".$popup['id']."' style='color: $close_button_color !important; padding: {$close_btn_padding}px; font-family:$ays_pb_font_family;transform:scale({$close_btn_size})' data-toggle='tooltip' title='$ays_pb_close_button_hover_text'></div>
                 </div>";
 
 		return $popupbox_view;
@@ -4025,6 +4038,7 @@ class Ays_Pb_Public_Templates {
 
         //Close button size 
         $close_btn_size = (isset($options->close_button_size) && $options->close_button_size != '') ? abs($options->close_button_size) : '1';
+        $close_btn_padding = (isset($options->close_button_padding) && $options->close_button_padding != '') ? abs($options->close_button_padding) : '0';
 
         //Close button hover text
         $ays_pb_close_button_hover_text = (isset($options->close_button_hover_text) && $options->close_button_hover_text != '') ? stripslashes( esc_attr($options->close_button_hover_text) ) : "";
@@ -4136,7 +4150,7 @@ class Ays_Pb_Public_Templates {
                 </button>
             </div>
             " . $ays_pb_timer_desc . "
-            <div class='ays-pb-modal-close ".$popup['closeButton']." ays-pb-modal-close_".$popup['id']." ays-pb-close-button-delay' style='color: $close_button_color !important; font-family:$ays_pb_font_family;transform:scale({$close_btn_size})' data-toggle='tooltip' title='$ays_pb_close_button_hover_text'></div>
+            <div class='ays-pb-modal-close ".$popup['closeButton']." ays-pb-modal-close_".$popup['id']." ays-pb-close-button-delay' style='color: $close_button_color !important; padding: {$close_btn_padding}px; font-family:$ays_pb_font_family;transform:scale({$close_btn_size})' data-toggle='tooltip' title='$ays_pb_close_button_hover_text'></div>
         </div>";
 
         return $popupbox_view;

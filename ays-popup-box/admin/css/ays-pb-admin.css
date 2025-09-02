@@ -4814,6 +4814,10 @@ a.ays-rated-link, a.ays-rated-link:hover, a.ays-rated-link:focus {
     display: none !important;
 }
 
+div.masteriyo-notice {
+    display: none !important;
+}
+
 /* third-party plugins styles */
 
 /* #wpadminbar .yoast-issue-counter {
