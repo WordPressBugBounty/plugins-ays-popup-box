@@ -627,6 +627,26 @@
 
         menuItemWidth = menuItemWidth / menuItemWidths.length;
 
+        // Tab documentation links data
+        var tabDocsData = {
+            'tab1': {
+                'link': 'https://popup-plugin.com/docs/configuring-general-tab',
+                'text': pb.generalTabDoc
+            },
+            'tab2': {
+                'link': 'https://popup-plugin.com/docs/configuring-settings-tab',
+                'text': pb.settingsTabDoc
+            },
+            'tab3': {
+                'link': 'https://popup-plugin.com/docs/configuring-styles-tab',
+                'text': pb.stylesTabDoc
+            },
+            'tab4': {
+                'link': 'https://popup-plugin.com/docs/configuring-limitation-users-tab',
+                'text': pb.limitationUsersTabDoc
+            }
+        };
+
         $(document).find('.nav-tab-wrapper a.nav-tab').on('click', function(e) {
             let elemenetID = $(this).attr('href');
             let active_tab = $(this).attr('data-tab');
@@ -645,6 +665,20 @@
 
             $(document).find('[name="ays_pb_tab"]').val(active_tab);
             $('.ays-pb-tab-content' + elemenetID).addClass('ays-pb-tab-content-active');
+            
+            // Update documentation link based on active tab
+            var docLinkContainer = $(document).find('#ays-pb-tab-doc-link');
+            if (docLinkContainer.length > 0) {
+                if (tabDocsData[active_tab]) {
+                    var linkHtml = '<a class="ays-pb-doc-link" href="' + tabDocsData[active_tab].link + '" target="_blank" style="font-size: 14px;">' + 
+                                   tabDocsData[active_tab].text + '</a>';
+                    docLinkContainer.html(linkHtml);
+                    docLinkContainer.show();
+                } else {
+                    docLinkContainer.hide();
+                }
+            }
+            
             e.preventDefault();
         });
 
