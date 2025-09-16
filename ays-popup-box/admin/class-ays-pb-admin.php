@@ -158,6 +158,8 @@ class Ays_Pb_Admin {
             'settingsTabDoc' => esc_html__( "How to Configure Settings Tab?", "ays-popup-box" ),
             'limitationUsersTabDoc' => esc_html__( "How to Configure Limitation Users Tab?", "ays-popup-box" ),
             'stylesTabDoc' => esc_html__( "How to Configure Styles Tab?", "ays-popup-box" ),
+            "successCopyCoupon"                 => __( "Coupon code copied!", 'ays-popup-box' ),
+            "failedCopyCoupon"                  => __( "Failed to copy coupon code", 'ays-popup-box' ),
         );
 
         $color_picker_strings = array(
