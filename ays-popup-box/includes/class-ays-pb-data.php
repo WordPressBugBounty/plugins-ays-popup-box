@@ -1103,7 +1103,7 @@ class Ays_Pb_Data {
                     
                     $content[] = '<div class="ays-pb-progress-banner-center">';
                         $content[] = '<div class="ays-pb-progress-banner-coupon">';
-                            $content[] = '<div class="ays-pb-progress-banner-coupon-box" onclick="copyToClipboard(\'FREE2PRO20\')" title="' . __('Click to copy', 'ays-popup-box') . '">';
+                            $content[] = '<div class="ays-pb-progress-banner-coupon-box" onclick="pbCopyToClipboard(\'FREE2PRO20\')" title="' . __('Click to copy', 'ays-popup-box') . '">';
                                 $content[] = '<span class="ays-pb-progress-banner-coupon-text">FREE2PRO20</span>';
                                 $content[] = '<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="ays-pb-progress-banner-copy-icon">';
                                     $content[] = '<path d="M13.5 2.5H6.5C5.67 2.5 5 3.17 5 4V10C5 10.83 5.67 11.5 6.5 11.5H13.5C14.33 11.5 15 10.83 15 10V4C15 3.17 14.33 2.5 13.5 2.5ZM13.5 10H6.5V4H13.5V10ZM2.5 6.5V12.5C2.5 13.33 3.17 14 4 14H10V12.5H4V6.5H2.5Z" fill="white"/>';
@@ -1112,9 +1112,9 @@ class Ays_Pb_Data {
                         $content[] = '</div>';
                         
                         $content[] = '<div class="ays-pb-progress-banner-progress">';
-                            $content[] = '<p class="ays-pb-progress-banner-progress-text">' . __('Only', 'ays-popup-box') . ' <span id="remaining-licenses">' . $remaining_licenses . '</span> ' . __('of 50 discounted licenses left', 'ays-popup-box') . '</p>';
+                            $content[] = '<p class="ays-pb-progress-banner-progress-text">' . __('Only', 'ays-popup-box') . ' <span id="pb-remaining-licenses">' . $remaining_licenses . '</span> ' . __('of 50 discounted licenses left', 'ays-popup-box') . '</p>';
                             $content[] = '<div class="ays-pb-progress-banner-progress-bar">';
-                                $content[] = '<div class="ays-pb-progress-banner-progress-fill" id="progress-fill" style="width: ' . $progress_percentage . '%;"></div>';
+                                $content[] = '<div class="ays-pb-progress-banner-progress-fill" id="pb-progress-fill" style="width: ' . $progress_percentage . '%;"></div>';
                             $content[] = '</div>';
                         $content[] = '</div>';
                     $content[] = '</div>';

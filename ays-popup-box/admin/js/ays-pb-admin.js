@@ -2402,7 +2402,7 @@
 		var endDate = new Date("2025-09-30");
 		var totalLicenses = 50;
 		var progressionPattern = new Array(2, 3, 1, 4, 2, 3, 1, 3, 2, 4, 1, 2, 3, 1, 2, 3, 4, 1, 2, 1, 2, 3);
-		function getCurrentProgress() {
+		function pbGetCurrentProgress() {
 			var today = new Date();
 			// today.setDate(today.getDate() + 1);
 			var daysPassed = Math.floor((today - startDate) / (1000 * 60 * 60 * 24));
@@ -2412,16 +2412,16 @@
 			}
 			return Math.min(usedLicenses, totalLicenses);
 		}
-		function updateProgress() {
-			var usedLicenses = getCurrentProgress();
+		function pbUpdateProgress() {
+			var usedLicenses = pbGetCurrentProgress();
 			var remainingLicenses = totalLicenses - usedLicenses;
 			var progressPercentage = (usedLicenses / totalLicenses) * 100;
-			var remainingElement = document.getElementById("remaining-licenses");
-			var progressElement = document.getElementById("progress-fill");
+			var remainingElement = document.getElementById("pb-remaining-licenses");
+			var progressElement = document.getElementById("pb-progress-fill");
 			if (remainingElement) remainingElement.textContent = remainingLicenses;
 			if (progressElement) progressElement.style.width = progressPercentage + "%";
 		}
-		updateProgress();
+		pbUpdateProgress();
 	});
 
 	// New Sale Banner | End 
@@ -2457,10 +2457,10 @@ selectAndCopyElementContents = function(el) {
 };
 
 // Copy to clipboard function
-function copyToClipboard(text) {
+function pbCopyToClipboard(text) {
     if (navigator.clipboard && window.isSecureContext) {
         navigator.clipboard.writeText(text).then(function() {
-            showCopyNotification(pb.successCopyCoupon);
+            pbShowCopyNotification(pb.successCopyCoupon);
         }).catch(function() {
             fallbackCopyTextToClipboard(text);
         });
@@ -2481,17 +2481,17 @@ function fallbackCopyTextToClipboard(text) {
     try {
         var successful = document.execCommand("copy");
         if (successful) {
-            showCopyNotification(pb.successCopyCoupon);
+            pbShowCopyNotification(pb.successCopyCoupon);
         } else {
-            showCopyNotification(pb.failedCopyCoupon);
+            pbShowCopyNotification(pb.failedCopyCoupon);
         }
     } catch (err) {
-        showCopyNotification(pb.failedCopyCoupon);
+        pbShowCopyNotification(pb.failedCopyCoupon);
     }
     document.body.removeChild(textArea);
 }
 
-function showCopyNotification(message) {
+function pbShowCopyNotification(message) {
     var notification = document.createElement("div");
     notification.className = "ays-pb-copy-notification show";
     notification.textContent = message;
