@@ -1082,7 +1082,7 @@ class Ays_Pb_Data {
 
             $cta_button_link = esc_url('https://popup-plugin.com/pricing/?utm_source=dashboard&utm_medium=popup-free&utm_campaign=ays-pb-license-banner-' . AYS_PB_NAME_VERSION);
 
-            $content[] = '<div id="ays-pb-progress-banner-main" class="ays-pb-progress-banner-main ays_quiz_dicount_info ays-pb-admin-notice notice notice-success is-dismissible" ' . $style_attr . '>';
+            $content[] = '<div id="ays-pb-progress-banner-main" class="ays-pb-progress-banner-main ays_quiz_dicount_info ays-pb-admin-notice notice notice-success is-dismissible" >';
                 $content[] = '<div class="ays-pb-progress-banner-content">';
                     $content[] = '<div class="ays-pb-progress-banner-left">';
                         $content[] = '<div class="ays-pb-progress-banner-icon">';
@@ -1111,9 +1111,9 @@ class Ays_Pb_Data {
                             $content[] = '</div>';
                         $content[] = '</div>';
                         
-                        $content[] = '<div class="ays-pb-progress-banner-progress">';
+                        $content[] = '<div class="ays-pb-progress-banner-progress" ' . $style_attr . '>';
                             $content[] = '<p class="ays-pb-progress-banner-progress-text">' . __('Only', 'ays-popup-box') . ' <span id="pb-remaining-licenses">' . $remaining_licenses . '</span> ' . __('of 50 discounted licenses left', 'ays-popup-box') . '</p>';
-                            $content[] = '<div class="ays-pb-progress-banner-progress-bar">';
+                            $content[] = '<div class="ays-pb-progress-banner-progress-bar" >';
                                 $content[] = '<div class="ays-pb-progress-banner-progress-fill" id="pb-progress-fill" style="width: ' . $progress_percentage . '%;"></div>';
                             $content[] = '</div>';
                         $content[] = '</div>';

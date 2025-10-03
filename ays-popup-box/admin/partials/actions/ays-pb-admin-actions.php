@@ -1595,6 +1595,7 @@ if ( $if_fox_lms_plugin_exists ) {
 
 $if_fox_lms_plugin_installed_flag = get_option('ays_pb_and_fox_lms_plugin_flag');
 
+$pb_temporarily_do_not_show_fox_lms_popup = false;
 ?>
 
 <style>
@@ -8082,7 +8083,7 @@ $ays_users_roles = $wp_roles->roles;
                                                 <p style="margin:0px; font-size:19px;"><?php echo  esc_html__('Image', "ays-popup-box") ?></p>
                                             </div>
                                             <div class="ays_pb_layer_buttons">
-                                                <!-- <a href="" class="ays-pb-view-demo-content" target="_blank"></a> -->
+                                                <a href="https://demo.popup-plugin.com/image-popup/" class="ays-pb-view-demo-content" target="_blank"><?php echo  esc_html__('View demo', "ays-popup-box") ?></a>
                                                 <div class="ays-pb-select-type">
                                                     <p><?php echo esc_html__('Select', 'ays-popup-box') ?></p>
                                                 </div>
@@ -8103,7 +8104,7 @@ $ays_users_roles = $wp_roles->roles;
                                                 <p style="margin:0px; font-size:19px;"><?php echo  esc_html__('Facebook', "ays-popup-box") ?></p>
                                             </div>
                                             <div class="ays_pb_layer_buttons">
-                                                <!-- <a href="" class="ays-pb-view-demo-content" target="_blank"></a> -->
+                                                <a href="https://demo.popup-plugin.com/facebook-popup/" class="ays-pb-view-demo-content" target="_blank"><?php echo  esc_html__('View demo', "ays-popup-box") ?></a>
                                                 <div class="ays-pb-select-type">
                                                     <p><?php echo esc_html__('Select', 'ays-popup-box') ?></p>
                                                 </div>
@@ -8124,6 +8125,7 @@ $ays_users_roles = $wp_roles->roles;
                                                 <p style="margin:0px; font-size:19px;"><?php echo  esc_html__('Notification', "ays-popup-box") ?></p>
                                             </div>
                                             <div class="ays_pb_layer_buttons">
+                                                <a href="https://demo.popup-plugin.com/notification-popup/" class="ays-pb-view-demo-content" target="_blank"><?php echo  esc_html__('View demo', "ays-popup-box") ?></a>
                                                 <div class="ays-pb-select-type">
                                                     <p><?php echo esc_html__('Select', 'ays-popup-box') ?></p>
                                                 </div>
@@ -8346,6 +8348,9 @@ $ays_users_roles = $wp_roles->roles;
                                                 <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) ?>/images/icons/pro-features-icons/Unlocked_24_24.svg" class="ays-pb-unlocked-img">
                                                 <p><?php echo esc_html__('Upgrade Now', 'ays-popup-box') ?></p>
                                             </a>
+                                            <div class="ays-pb-view-demo-content">
+                                                <a href="https://demo.popup-plugin.com/woocommerce-product-popup/" target="_blank"><?php echo  esc_html__('View demo', "ays-popup-box") ?></a>
+                                            </div>
                                         </div> 
                                     </div>
                                 </label> 
@@ -8442,7 +8447,7 @@ $ays_users_roles = $wp_roles->roles;
                     </label>
                 </div>
             <?php endif; ?>
-            <?php if( !$if_dismiss_cookie_exists && !$if_fox_lms_plugin_exists && !$if_fox_lms_plugin_installed_flag ): ?>
+            <?php if( !$if_dismiss_cookie_exists && !$if_fox_lms_plugin_exists && !$if_fox_lms_plugin_installed_flag && $pb_temporarily_do_not_show_fox_lms_popup ): ?>
                 <!-- Popup Box and Fox LMS integration main page 2025 | Start -->
                 <div id="ays-pb-fox-lms-all-pages-popup" class="bounceInRight_2022" style="display: none;">
                     <div id="ays-pb-fox-lms-all-pages-popup-main">
