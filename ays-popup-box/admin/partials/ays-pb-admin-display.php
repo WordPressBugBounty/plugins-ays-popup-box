@@ -11,16 +11,53 @@
  * @package    Ays_Pb
  * @subpackage Ays_Pb/admin/partials
  */
+
+if (isset($_GET['error'])) {
+    if ($_GET['error'] === 'nonce') {
+        echo '<div class="notice notice-error ays-pb-notice"><p>' . __('Security check failed. Please try again.', 'ays-popup-box') . '</p></div>';
+    } elseif ($_GET['error'] === 'permissions') {
+        echo '<div class="notice notice-error ays-pb-notice"><p>' . __('You do not have sufficient permissions.', 'ays-popup-box') . '</p></div>';
+    }
+}
+
 $action = isset($_GET['action']) ? sanitize_text_field($_GET['action']) : '';
 $id = isset($_GET['popupbox']) ? absint( intval($_GET['popupbox']) ) : null;
 $popup_max_id = Ays_Pb_Data::get_max_id();
 
 if ($action == 'duplicate') {
+
+    if (!current_user_can('manage_options')) {
+        wp_redirect(add_query_arg('error', 'permissions', admin_url('admin.php?page=' . sanitize_text_field($_REQUEST['page']))));
+        exit;
+    }
+
+    $nonce = sanitize_text_field( wp_unslash( $_REQUEST['_wpnonce'] ) ) ?? '';
+    if (!wp_verify_nonce( sanitize_text_field( wp_unslash( $nonce ) ), $this->plugin_name . '-duplicate-popupbox-' . $id)) {
+        wp_redirect(add_query_arg('error', 'nonce', admin_url('admin.php?page=' . sanitize_text_field($_REQUEST['page']))));
+        exit;
+    }
+
     $this->popupbox_obj->duplicate_popupbox($id);
 }
 
-if ($action == 'unpublish' || $action == 'publish') {
+if ($action == 'unpublish' || $action == 'publish') {      
+
+    if (!current_user_can('manage_options')) {
+        wp_redirect(add_query_arg('error', 'permissions', admin_url('admin.php?page=' . sanitize_text_field($_REQUEST['page']))));
+        exit;
+    }
+
+    $nonce = sanitize_text_field( wp_unslash( $_REQUEST['_wpnonce'] ) ) ?? '';
+    if (!wp_verify_nonce( sanitize_text_field( wp_unslash( $nonce ) ), 'ays_pb_publish_unpublish_' . $id)) {
+        wp_redirect(add_query_arg('error', 'nonce', admin_url('admin.php?page=' . sanitize_text_field($_REQUEST['page']))));
+        exit;
+    }
+
     $this->popupbox_obj->publish_unpublish_popupbox($id, $action);
+
+    wp_redirect(add_query_arg('success', 'status_changed', admin_url('admin.php?page=' . sanitize_text_field($_REQUEST['page']))));
+    exit;
+    
 }
 
 $plus_icon_svg = "<span><img src='" . AYS_PB_ADMIN_URL . "/images/icons/plus-icon.svg'></span>";

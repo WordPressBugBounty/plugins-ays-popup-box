@@ -1696,7 +1696,7 @@ div#ays-pb-christmas-top-bundle-dicount-month-main button.notice-dismiss:before{
 
 /* New Mega Bundle 2025 Banner pb | Start */
 
-/* div#ays-pb-new-mega-bundle-2025-dicount-month-main {
+/*div#ays-pb-new-mega-bundle-2025-dicount-month-main {
     border: 0;
     background: #FFF;
     border-radius: 20px;
@@ -1704,7 +1704,7 @@ div#ays-pb-christmas-top-bundle-dicount-month-main button.notice-dismiss:before{
     position: relative;
     z-index: 1;
     min-height: 80px;
-    background-color: #6998DD;
+    background-color: #5551ff;
 }
 div#ays-pb-new-mega-bundle-2025-dicount-month-main.ays_pb_dicount_info button {
     display: flex;
@@ -1922,10 +1922,8 @@ div#ays-pb-new-mega-bundle-2025-dicount-month-main.ays_pb_dicount_info {
     min-height: 62px;
     min-width: 62px;
     border-radius: 4.273px;
-    /*border: 0.534px solid #F4F4F4;*/
-    /*background: #9896ED;
-    background: transparent;
-    border: unset;
+    border: 0.534px solid #F4F4F4;
+    background: #9896ED;
 }
 
 #ays-pb-countdown-main-container .emoji {
@@ -1942,7 +1940,7 @@ div#ays-pb-new-mega-bundle-2025-dicount-month-main.ays_pb_dicount_info {
     position: relative;
 }
 
-/*#ays-pb-new-mega-bundle-2025-dicount-month-main .ays-pb-dicount-wrap-box li span:after {
+#ays-pb-new-mega-bundle-2025-dicount-month-main .ays-pb-dicount-wrap-box li span:after {
     content: ":";
     color: #fff;
     position: absolute;
@@ -2007,6 +2005,10 @@ div#ays-pb-new-mega-bundle-2025-dicount-month-main button.notice-dismiss:hover:b
 
 
 @media all and (max-width: 768px) {
+    div#ays-pb-new-mega-bundle-2025-dicount-month-main.ays_quiz_dicount_info.notice {
+        display: none !important;
+    }
+
     div#ays-pb-new-mega-bundle-2025-dicount-month-main {
         padding-right: 0;
     }
@@ -2186,7 +2188,7 @@ div#ays-pb-new-mega-bundle-2025-dicount-month-main button.notice-dismiss:hover:b
         min-height: 50px;
         min-width: 50px;
     }
-} */
+}*/ 
 
 
 /* New Mega Bundle 2025 Banner pb | End */

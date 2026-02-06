@@ -50,6 +50,11 @@
 }
 /* Plugin deactivation popup styles end */
 
+#toplevel_page_ays-pb .wp-first-item,
+#adminmenu .wp-submenu-head {
+    display: none;
+}
+
 /* Plugins page upgrade button styles start */
 #ays-pb-plugins-buy-now-button {
     color: #01A32A;
