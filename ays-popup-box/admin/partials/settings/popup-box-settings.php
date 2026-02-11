@@ -675,6 +675,15 @@ $categories_title_length = (isset($options['categories_title_length']) && intval
                                 </p>
                                 <p class="vmessage">
                                     <strong>
+                                        <input type="text" onClick="this.setSelectionRange(0, this.value.length)" readonly value="%%post_author_nickname%%" class='ays-pb-message-variables-inputs'/>
+                                    </strong>
+                                    <span> - </span>
+                                    <span style="font-size:18px;">
+                                        <?php echo esc_html__( "Shows the post author's nickname that was filled in their WordPress profile.", "ays-popup-box"); ?>
+                                    </span>
+                                </p>
+                                <p class="vmessage">
+                                    <strong>
                                         <input type="text" onClick="this.setSelectionRange(0, this.value.length)" readonly value="%%post_author_email%%" class='ays-pb-message-variables-inputs'/>
                                     </strong>
                                     <span> - </span>

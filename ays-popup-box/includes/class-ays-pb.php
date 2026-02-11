@@ -127,7 +127,7 @@ class Ays_Pb {
 		/**
          * The class responsible for showing Popup Box Welcome page.
          */
-        // require_once plugin_dir_path(dirname(__FILE__)) . 'includes/class-ays-pb-ays-welcome.php';
+        require_once plugin_dir_path(dirname(__FILE__)) . 'includes/class-ays-pb-ays-welcome.php';
 
         /**
          * The class responsible for showing Popup Box Feedback popup.
