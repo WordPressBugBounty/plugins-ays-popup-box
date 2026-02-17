@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Popup box\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-01-07 09:20+0300\n"
-"PO-Revision-Date: 2026-01-07 09:20+0300\n"
+"POT-Creation-Date: 2026-02-15 16:04+0300\n"
+"PO-Revision-Date: 2026-02-15 16:04+0300\n"
 "Last-Translator: \n"
 "Language-Team: Čeština\n"
 "Language: cs_CZ\n"
@@ -99,7 +99,7 @@ msgstr "Jak nastavit kartu omezení uživatelů?"
 msgid "How to Configure Styles Tab?"
 msgstr "Jak nastavit kartu stylů?"
 
-#: ../admin/class-ays-pb-admin.php:165 ../includes/class-ays-pb-data.php:885
+#: ../admin/class-ays-pb-admin.php:165 ../includes/class-ays-pb-data.php:996
 msgid "Coupon code copied!"
 msgstr "Kód kupónu zkopírován!"
 
@@ -118,8 +118,8 @@ msgstr "Vymazat barvu"
 #: ../admin/class-ays-pb-admin.php:172
 #: ../admin/partials/actions/ays-pb-admin-actions.php:4791
 #: ../admin/partials/actions/ays-pb-admin-actions.php:4799
-#: ../includes/lists/class-ays-pb-list-table.php:605
-#: ../includes/lists/class-ays-pb-list-table.php:635
+#: ../includes/lists/class-ays-pb-list-table.php:645
+#: ../includes/lists/class-ays-pb-list-table.php:675
 msgid "Default"
 msgstr "Výchozí"
 
@@ -137,7 +137,7 @@ msgstr "Hodnota barvy"
 
 #: ../admin/class-ays-pb-admin.php:306 ../admin/class-ays-pb-admin.php:307
 #: ../admin/partials/how-to-use/ays-pb-how-to-use.php:15
-#: ../includes/class-ays-pb-data.php:678 ../includes/class-ays-pb-data.php:831
+#: ../includes/class-ays-pb-data.php:679 ../includes/class-ays-pb-data.php:942
 #: ../includes/class-ays-pb-feedback.php:130
 msgid "Popup Box"
 msgstr "Popup Box"
@@ -273,8 +273,9 @@ msgstr "Navrhnout funkci"
 msgid "If you love our plugin, please do big favor and rate us on"
 msgstr "Pokud máte rádi náš plugin, prosíme o hodnocení na"
 
-#: ../admin/class-ays-pb-admin.php:1055 ../includes/class-ays-pb-data.php:749
-#: ../includes/class-ays-pb-data.php:853 ../includes/class-ays-pb-data.php:2061
+#: ../admin/class-ays-pb-admin.php:1055 ../includes/class-ays-pb-data.php:750
+#: ../includes/class-ays-pb-data.php:859 ../includes/class-ays-pb-data.php:964
+#: ../includes/class-ays-pb-data.php:2172
 msgid "Buy Now"
 msgstr "Koupit nyní"
 
@@ -675,8 +676,8 @@ msgstr "Times New Roman"
 #: ../admin/partials/how-to-use/ays-pb-how-to-use.php:27
 #: ../admin/partials/settings/popup-box-settings.php:497
 #: ../admin/partials/settings/popup-box-settings.php:509
-#: ../includes/lists/class-ays-pb-list-table.php:568
-#: ../includes/lists/class-ays-pb-list-table.php:586
+#: ../includes/lists/class-ays-pb-list-table.php:608
+#: ../includes/lists/class-ays-pb-list-table.php:626
 msgid "Custom Content"
 msgstr "Vlastní obsah"
 
@@ -686,7 +687,7 @@ msgstr "Vlastní obsah"
 #: ../admin/partials/how-to-use/ays-pb-how-to-use.php:28
 #: ../admin/partials/settings/popup-box-settings.php:458
 #: ../admin/partials/settings/popup-box-settings.php:476
-#: ../includes/lists/class-ays-pb-list-table.php:571
+#: ../includes/lists/class-ays-pb-list-table.php:611
 msgid "Shortcode"
 msgstr "Shortcode"
 
@@ -701,7 +702,7 @@ msgstr "Podívejte se, jak přidat popup se shortcoden"
 #: ../admin/partials/actions/ays-pb-admin-actions.php:8130
 #: ../admin/partials/actions/ays-pb-admin-actions.php:8494
 #: ../admin/partials/how-to-use/ays-pb-how-to-use.php:29
-#: ../includes/lists/class-ays-pb-list-table.php:574
+#: ../includes/lists/class-ays-pb-list-table.php:614
 msgid "Video"
 msgstr "Video"
 
@@ -714,7 +715,7 @@ msgstr "Podívejte se, jak přidat video popup"
 #: ../admin/partials/actions/ays-pb-admin-actions.php:8500
 #: ../admin/partials/how-to-use/ays-pb-how-to-use.php:30
 #: ../includes/lists/class-ays-pb-list-table.php:300
-#: ../includes/lists/class-ays-pb-list-table.php:577
+#: ../includes/lists/class-ays-pb-list-table.php:617
 msgid "Image"
 msgstr "Obrázek"
 
@@ -722,7 +723,7 @@ msgstr "Obrázek"
 #: ../admin/partials/actions/ays-pb-admin-actions.php:8172
 #: ../admin/partials/actions/ays-pb-admin-actions.php:8506
 #: ../admin/partials/how-to-use/ays-pb-how-to-use.php:31
-#: ../includes/lists/class-ays-pb-list-table.php:580
+#: ../includes/lists/class-ays-pb-list-table.php:620
 msgid "Facebook"
 msgstr "Facebook"
 
@@ -730,17 +731,17 @@ msgstr "Facebook"
 #: ../admin/partials/actions/ays-pb-admin-actions.php:8193
 #: ../admin/partials/actions/ays-pb-admin-actions.php:8512
 #: ../admin/partials/how-to-use/ays-pb-how-to-use.php:32
-#: ../includes/lists/class-ays-pb-list-table.php:583
+#: ../includes/lists/class-ays-pb-list-table.php:623
 msgid "Notification"
 msgstr "Notifikace"
 
 #: ../admin/partials/actions/ays-pb-admin-actions.php:942
 #: ../admin/partials/actions/ays-pb-admin-actions.php:954
-#: ../includes/class-ays-pb-data.php:472 ../includes/class-ays-pb-data.php:863
-#: ../includes/class-ays-pb-data.php:1486
-#: ../includes/class-ays-pb-data.php:2023
-#: ../includes/class-ays-pb-data.php:2152
-#: ../includes/class-ays-pb-data.php:2373
+#: ../includes/class-ays-pb-data.php:473 ../includes/class-ays-pb-data.php:824
+#: ../includes/class-ays-pb-data.php:974 ../includes/class-ays-pb-data.php:1597
+#: ../includes/class-ays-pb-data.php:2134
+#: ../includes/class-ays-pb-data.php:2263
+#: ../includes/class-ays-pb-data.php:2484
 #: ../public/partials/ays-pb-public-templates.php:301
 #: ../public/partials/ays-pb-public-templates.php:307
 #: ../public/partials/ays-pb-public-templates.php:602
@@ -778,7 +779,7 @@ msgstr "Toto se zavře za"
 #: ../admin/partials/actions/ays-pb-admin-actions.php:1499
 #: ../admin/partials/actions/ays-pb-admin-actions.php:1501
 #: ../admin/partials/actions/ays-pb-admin-actions.php:7533
-#: ../includes/class-ays-pb-data.php:1445
+#: ../includes/class-ays-pb-data.php:1556
 msgid "seconds"
 msgstr "sekund"
 
@@ -816,7 +817,7 @@ msgstr "Opera"
 
 #: ../admin/partials/actions/ays-pb-admin-actions.php:1635
 #: ../admin/partials/actions/ays-pb-categories-actions.php:70
-#: ../admin/partials/ays-pb-admin-display.php:36
+#: ../admin/partials/ays-pb-admin-display.php:73
 #: ../admin/partials/ays-pb-categories-display.php:18
 #: ../admin/partials/features/popup-box-pro-features-display.php:6
 #: ../admin/partials/settings/popup-box-settings.php:70
@@ -2459,19 +2460,19 @@ msgstr "Šablona"
 
 #: ../admin/partials/actions/ays-pb-admin-actions.php:4817
 #: ../admin/partials/actions/ays-pb-admin-actions.php:4826
-#: ../includes/lists/class-ays-pb-list-table.php:608
+#: ../includes/lists/class-ays-pb-list-table.php:648
 msgid "Red"
 msgstr "Červená"
 
 #: ../admin/partials/actions/ays-pb-admin-actions.php:4844
 #: ../admin/partials/actions/ays-pb-admin-actions.php:4852
-#: ../includes/lists/class-ays-pb-list-table.php:611
+#: ../includes/lists/class-ays-pb-list-table.php:651
 msgid "Modern"
 msgstr "Moderní"
 
 #: ../admin/partials/actions/ays-pb-admin-actions.php:4870
 #: ../admin/partials/actions/ays-pb-admin-actions.php:4878
-#: ../includes/lists/class-ays-pb-list-table.php:614
+#: ../includes/lists/class-ays-pb-list-table.php:654
 msgid "Minimal"
 msgstr "Minimální"
 
@@ -2479,8 +2480,8 @@ msgstr "Minimální"
 #: ../admin/partials/actions/ays-pb-admin-actions.php:4904
 #: ../admin/partials/actions/ays-pb-admin-actions.php:4961
 #: ../admin/partials/actions/ays-pb-admin-actions.php:4977
-#: ../includes/class-ays-pb-data.php:433
-#: ../includes/lists/class-ays-pb-list-table.php:617
+#: ../includes/class-ays-pb-data.php:434
+#: ../includes/lists/class-ays-pb-list-table.php:657
 msgid "Sale"
 msgstr "Výprodej"
 
@@ -2522,19 +2523,19 @@ msgstr "MacOS "
 
 #: ../admin/partials/actions/ays-pb-admin-actions.php:5097
 #: ../admin/partials/actions/ays-pb-admin-actions.php:5105
-#: ../includes/lists/class-ays-pb-list-table.php:623
+#: ../includes/lists/class-ays-pb-list-table.php:663
 msgid "Ubuntu"
 msgstr "Ubuntu"
 
 #: ../admin/partials/actions/ays-pb-admin-actions.php:5124
 #: ../admin/partials/actions/ays-pb-admin-actions.php:5132
-#: ../includes/lists/class-ays-pb-list-table.php:626
+#: ../includes/lists/class-ays-pb-list-table.php:666
 msgid "Windows XP"
 msgstr "Windows XP"
 
 #: ../admin/partials/actions/ays-pb-admin-actions.php:5151
 #: ../admin/partials/actions/ays-pb-admin-actions.php:5159
-#: ../includes/lists/class-ays-pb-list-table.php:629
+#: ../includes/lists/class-ays-pb-list-table.php:669
 msgid "Windows 98"
 msgstr "Windows 98"
 
@@ -3221,7 +3222,7 @@ msgid "Here can be custom HTML or shortcode"
 msgstr "Zde může být vlastní HTML nebo shortcode"
 
 #: ../admin/partials/actions/ays-pb-admin-actions.php:7533
-#: ../public/partials/ays-pb-public-templates.php:4341
+#: ../public/partials/ays-pb-public-templates.php:4353
 msgid "This will close in "
 msgstr "Zavře se za "
 
@@ -3435,7 +3436,7 @@ msgstr "Předplatné"
 #: ../admin/partials/actions/ays-pb-admin-actions.php:8417
 #: ../admin/partials/actions/ays-pb-admin-actions.php:8439
 #: ../admin/partials/actions/ays-pb-admin-actions.php:8461
-#: ../includes/class-ays-pb-data.php:2365
+#: ../includes/class-ays-pb-data.php:2476
 msgid "Upgrade Now"
 msgstr "Upgradovat nyní"
 
@@ -3503,9 +3504,10 @@ msgstr ""
 #: ../admin/partials/features/popup-box-pro-features-display.php:92
 #: ../admin/partials/features/popup-box-pro-features-display.php:999
 #: ../admin/partials/features/popup-box-pro-features-display.php:1005
-#: ../admin/partials/settings/popup-box-settings.php:754 ../ays-pb.php:115
-#: ../includes/class-ays-pb-data.php:751 ../includes/class-ays-pb-data.php:2063
-#: ../includes/class-ays-pb-data.php:2177
+#: ../admin/partials/settings/popup-box-settings.php:790 ../ays-pb.php:115
+#: ../includes/class-ays-pb-data.php:752 ../includes/class-ays-pb-data.php:861
+#: ../includes/class-ays-pb-data.php:2174
+#: ../includes/class-ays-pb-data.php:2288
 msgid "One-time payment"
 msgstr "Jednorázová platba"
 
@@ -3587,28 +3589,36 @@ msgstr "Další kategorie vyskakovacího okna"
 msgid "Learn How to Use Custom Fields in Popup Box"
 msgstr "Zjistěte, jak používat vlastní pole v Popup Boxu"
 
-#: ../admin/partials/ays-pb-admin-display.php:47
-#: ../admin/partials/ays-pb-admin-display.php:72
-#: ../admin/partials/ays-pb-admin-display.php:89
+#: ../admin/partials/ays-pb-admin-display.php:17
+msgid "Security check failed. Please try again."
+msgstr ""
+
+#: ../admin/partials/ays-pb-admin-display.php:19
+msgid "You do not have sufficient permissions."
+msgstr ""
+
+#: ../admin/partials/ays-pb-admin-display.php:84
+#: ../admin/partials/ays-pb-admin-display.php:109
+#: ../admin/partials/ays-pb-admin-display.php:126
 #: ../admin/partials/ays-pb-categories-display.php:29
 #: ../admin/partials/ays-pb-categories-display.php:54
 #: ../admin/partials/how-to-use/ays-pb-how-to-use.php:22
 msgid "Add New"
 msgstr "Přidat nový"
 
-#: ../admin/partials/ays-pb-admin-display.php:60
+#: ../admin/partials/ays-pb-admin-display.php:97
 msgid "Search"
 msgstr "Hledat"
 
-#: ../admin/partials/ays-pb-admin-display.php:78
+#: ../admin/partials/ays-pb-admin-display.php:115
 msgid "Create Your First Popup in Under One Minute"
 msgstr "Vytvořte své první vyskakovací okno za méně než jednu minutu"
 
-#: ../admin/partials/ays-pb-admin-display.php:86
+#: ../admin/partials/ays-pb-admin-display.php:123
 msgid "Please note that this video will disappear once you created 4 popups."
 msgstr "Upozorňujeme, že toto video zmizí, jakmile vytvoříte 4 popupy."
 
-#: ../admin/partials/ays-pb-admin-display.php:96
+#: ../admin/partials/ays-pb-admin-display.php:133
 msgid "How to create a popup in one minute?"
 msgstr "Jak vytvořit vyskakovací okno za minutu?"
 
@@ -4687,19 +4697,39 @@ msgstr ""
 
 #: ../admin/partials/settings/popup-box-settings.php:682
 #, fuzzy
-#| msgid "The title of the website."
-msgid "The ID of the current post."
-msgstr "Název webové stránky."
+#| msgid "The user's nickname that was filled in their WordPress profile."
+msgid ""
+"Shows the post author's nickname that was filled in their WordPress profile."
+msgstr "Přezdívka uživatele vyplněná v jeho profilu WordPress."
 
 #: ../admin/partials/settings/popup-box-settings.php:691
+#, fuzzy
+#| msgid "Shows the admin's email that was filled in their WordPress profile."
+msgid ""
+"Shows the post author's email that was filled in their WordPress profile."
+msgstr "Zobrazuje e-mail správce, který byl vyplněn v jeho profilu WordPress."
+
+#: ../admin/partials/settings/popup-box-settings.php:700
+msgid "The Post title of the current post."
+msgstr "Název aktuálního příspěvku."
+
+#: ../admin/partials/settings/popup-box-settings.php:709
+msgid "The ID of the current post."
+msgstr "ID aktuálního příspěvku."
+
+#: ../admin/partials/settings/popup-box-settings.php:718
 msgid "The title of the website."
 msgstr "Název webové stránky."
 
-#: ../admin/partials/settings/popup-box-settings.php:700
+#: ../admin/partials/settings/popup-box-settings.php:727
+msgid "The description of the website."
+msgstr "Popis webové stránky."
+
+#: ../admin/partials/settings/popup-box-settings.php:736
 msgid "The URL of the home page."
 msgstr "URL domovské stránky."
 
-#: ../admin/partials/settings/popup-box-settings.php:719
+#: ../admin/partials/settings/popup-box-settings.php:755
 msgid "Save changes"
 msgstr "Uložit změny"
 
@@ -4748,7 +4778,7 @@ msgstr ""
 msgid "Agree & continue"
 msgstr "Souhlasit a pokračovat"
 
-#: ../includes/class-ays-pb-data.php:217
+#: ../includes/class-ays-pb-data.php:218
 msgid ""
 "Limited Time <span class='ays-pb-dicount-wrap-color'>50%</span> SALE on "
 "<br><span><a href='https://ays-pro.com/winter-bundle' target='_blank' "
@@ -4760,7 +4790,7 @@ msgstr ""
 "class='ays-pb-dicount-wrap-color ays-pb-dicount-wrap-text-decoration' "
 "style='display:block;'>Zimní balíček</a></span> (Copy + Popup + Survey)!"
 
-#: ../includes/class-ays-pb-data.php:223
+#: ../includes/class-ays-pb-data.php:224
 msgid ""
 "Hurry up! Ending on. <a href='https://ays-pro.com/winter-bundle' "
 "target='_blank'>Check it out!</a>"
@@ -4768,13 +4798,13 @@ msgstr ""
 "Pospěšte si! Končí již brzy. <a href='https://ays-pro.com/winter-bundle' "
 "target='_blank'>Podívejte se!</a>"
 
-#: ../includes/class-ays-pb-data.php:260 ../includes/class-ays-pb-data.php:332
-#: ../includes/class-ays-pb-data.php:398 ../includes/class-ays-pb-data.php:643
-#: ../includes/class-ays-pb-data.php:2261
+#: ../includes/class-ays-pb-data.php:261 ../includes/class-ays-pb-data.php:333
+#: ../includes/class-ays-pb-data.php:399 ../includes/class-ays-pb-data.php:644
+#: ../includes/class-ays-pb-data.php:2372
 msgid "Buy Now !"
 msgstr "Koupit ihned !"
 
-#: ../includes/class-ays-pb-data.php:281
+#: ../includes/class-ays-pb-data.php:282
 msgid ""
 "Spring is here! \n"
 "                                                    <span class='ays-pb-"
@@ -4793,7 +4823,7 @@ msgid ""
 "                                                    </span>"
 msgstr ""
 
-#: ../includes/class-ays-pb-data.php:350
+#: ../includes/class-ays-pb-data.php:351
 msgid ""
 "Limited Time \n"
 "                            <span class='ays-pb-dicount-wrap-color-"
@@ -4813,7 +4843,7 @@ msgid ""
 "                            </span>"
 msgstr ""
 
-#: ../includes/class-ays-pb-data.php:363
+#: ../includes/class-ays-pb-data.php:364
 msgid ""
 "Hurry up! \n"
 "                                                <a href='https://ays-pro.com/"
@@ -4824,52 +4854,52 @@ msgid ""
 "                                                </a>"
 msgstr ""
 
-#: ../includes/class-ays-pb-data.php:433
+#: ../includes/class-ays-pb-data.php:434
 msgid "Limited Time"
 msgstr "Omezený čas"
 
-#: ../includes/class-ays-pb-data.php:434
+#: ../includes/class-ays-pb-data.php:435
 msgid "Essential Bundle"
 msgstr "Základní balíček"
 
-#: ../includes/class-ays-pb-data.php:434
+#: ../includes/class-ays-pb-data.php:435
 msgid "( Quiz + Form + Popup )"
 msgstr "( Quiz + Form + Popup )"
 
-#: ../includes/class-ays-pb-data.php:438
+#: ../includes/class-ays-pb-data.php:439
 msgid "50% off"
 msgstr "Sleva 50 %"
 
-#: ../includes/class-ays-pb-data.php:446 ../includes/class-ays-pb-data.php:1293
-#: ../includes/class-ays-pb-data.php:2041
-#: ../includes/class-ays-pb-data.php:2108
+#: ../includes/class-ays-pb-data.php:447 ../includes/class-ays-pb-data.php:1404
+#: ../includes/class-ays-pb-data.php:2152
+#: ../includes/class-ays-pb-data.php:2219
 msgid "Days"
 msgstr "Dny"
 
-#: ../includes/class-ays-pb-data.php:447 ../includes/class-ays-pb-data.php:1294
-#: ../includes/class-ays-pb-data.php:2042
-#: ../includes/class-ays-pb-data.php:2109
+#: ../includes/class-ays-pb-data.php:448 ../includes/class-ays-pb-data.php:1405
+#: ../includes/class-ays-pb-data.php:2153
+#: ../includes/class-ays-pb-data.php:2220
 msgid "Hours"
 msgstr "Hodiny"
 
-#: ../includes/class-ays-pb-data.php:448 ../includes/class-ays-pb-data.php:1295
-#: ../includes/class-ays-pb-data.php:2043
-#: ../includes/class-ays-pb-data.php:2110
+#: ../includes/class-ays-pb-data.php:449 ../includes/class-ays-pb-data.php:1406
+#: ../includes/class-ays-pb-data.php:2154
+#: ../includes/class-ays-pb-data.php:2221
 msgid "Minutes"
 msgstr "Minuty"
 
-#: ../includes/class-ays-pb-data.php:449 ../includes/class-ays-pb-data.php:1296
-#: ../includes/class-ays-pb-data.php:2044
-#: ../includes/class-ays-pb-data.php:2111
+#: ../includes/class-ays-pb-data.php:450 ../includes/class-ays-pb-data.php:1407
+#: ../includes/class-ays-pb-data.php:2155
+#: ../includes/class-ays-pb-data.php:2222
 msgid "Seconds"
 msgstr "Sekundy"
 
-#: ../includes/class-ays-pb-data.php:463 ../includes/class-ays-pb-data.php:1310
-#: ../includes/class-ays-pb-data.php:2174
+#: ../includes/class-ays-pb-data.php:464 ../includes/class-ays-pb-data.php:1421
+#: ../includes/class-ays-pb-data.php:2285
 msgid "Get Your Deal"
 msgstr "Získejte svou nabídku"
 
-#: ../includes/class-ays-pb-data.php:596
+#: ../includes/class-ays-pb-data.php:597
 msgid ""
 "Limited Time <span style='color:#E85011;'>20%</span> SALE on <span><a "
 "href='https://popup-plugin.com' target='_blank' style='color:#E85011; text-"
@@ -4879,7 +4909,7 @@ msgstr ""
 "href='https://popup-plugin.com' target='_blank' style='color:#E85011; text-"
 "decoration: underline;'>Popup Box</a></span>"
 
-#: ../includes/class-ays-pb-data.php:602
+#: ../includes/class-ays-pb-data.php:603
 msgid ""
 "Hurry up! <a href='https://popup-plugin.com' target='_blank'>Check it out!</"
 "a>"
@@ -4887,75 +4917,79 @@ msgstr ""
 "Pospěšte si! <a href='https://popup-plugin.com' target='_blank'>Podívejte se!"
 "</a>"
 
-#: ../includes/class-ays-pb-data.php:686 ../includes/class-ays-pb-data.php:2011
+#: ../includes/class-ays-pb-data.php:687 ../includes/class-ays-pb-data.php:807
+#: ../includes/class-ays-pb-data.php:2122
 msgid "30 Day Money Back Guarantee"
 msgstr "30denní záruka vrácení peněz"
 
-#: ../includes/class-ays-pb-data.php:714 ../includes/class-ays-pb-data.php:2104
-#: ../includes/class-ays-pb-data.php:2237
+#: ../includes/class-ays-pb-data.php:715 ../includes/class-ays-pb-data.php:2215
+#: ../includes/class-ays-pb-data.php:2348
 msgid "Offer ends in:"
 msgstr "Nabídka končí za:"
 
-#: ../includes/class-ays-pb-data.php:835
+#: ../includes/class-ays-pb-data.php:800
+#, php-format
+msgid "%1$s Essential Bundle %2$s ( Quiz + Form + Popup )"
+msgstr "%1$s Základní balíček %2$s ( Quiz + Form + Popup )"
+
+#: ../includes/class-ays-pb-data.php:946
 msgid "CHRISTMAS SPECIAL"
-msgstr ""
+msgstr "VÁNOČNÍ SPECIÁL"
 
-#: ../includes/class-ays-pb-data.php:841
-#, fuzzy
-#| msgid "Limited Time"
+#: ../includes/class-ays-pb-data.php:952
 msgid "Limited time offer"
-msgstr "Omezený čas"
+msgstr "Časově omezená nabídka"
 
-#: ../includes/class-ays-pb-data.php:845 ../includes/class-ays-pb-data.php:2344
+#: ../includes/class-ays-pb-data.php:956 ../includes/class-ays-pb-data.php:2455
 msgid "Click to copy"
 msgstr "Kliknutím zkopírujete"
 
-#: ../includes/class-ays-pb-data.php:1267
+#: ../includes/class-ays-pb-data.php:1378
 msgid "Coupon Code"
 msgstr "Kód kuponu"
 
-#: ../includes/class-ays-pb-data.php:1430
+#: ../includes/class-ays-pb-data.php:1541
 msgid "days"
 msgstr "dní"
 
-#: ../includes/class-ays-pb-data.php:1435
+#: ../includes/class-ays-pb-data.php:1546
 msgid "hours"
 msgstr "hodin"
 
-#: ../includes/class-ays-pb-data.php:1440
+#: ../includes/class-ays-pb-data.php:1551
 msgid "minutes"
 msgstr "minut"
 
-#: ../includes/class-ays-pb-data.php:2005
+#: ../includes/class-ays-pb-data.php:2116
 msgid "Quiz + Form + Popup"
 msgstr "Quiz + Form + Popup"
 
-#: ../includes/class-ays-pb-data.php:2133
+#: ../includes/class-ays-pb-data.php:2244
 msgid "Christmas Sale"
 msgstr "Vánoční výprodej"
 
-#: ../includes/class-ays-pb-data.php:2142
+#: ../includes/class-ays-pb-data.php:2253
 msgid "20% Extra OFF"
 msgstr "Sleva 20 % navíc"
 
-#: ../includes/class-ays-pb-data.php:2168
+#: ../includes/class-ays-pb-data.php:2279
 msgid "20% Extra Discount Coupon"
 msgstr "Kupon na 20% slevu navíc"
 
-#: ../includes/class-ays-pb-data.php:2337
+#: ../includes/class-ays-pb-data.php:2448
 #, php-format
 msgid "Get the Pro Version of %s Popup Box%s – 20%% OFF"
 msgstr "Získejte Pro verzi %s Popup Box%s – sleva 20 %%"
 
-#: ../includes/class-ays-pb-data.php:2338
+#: ../includes/class-ays-pb-data.php:2449
 msgid "Unlock advanced features + 7-Day Free Trial"
 msgstr "Odemkněte pokročilé funkce + 7denní zkušební verze"
 
-#: ../includes/class-ays-pb-data.php:2353
+#: ../includes/class-ays-pb-data.php:2464
 msgid "Only"
 msgstr "Pouze"
 
-#: ../includes/class-ays-pb-data.php:2353
+#: ../includes/class-ays-pb-data.php:2464
 msgid "of 50 discounted licenses left"
 msgstr "z 50 zlevněných licencí zbývá"
 
@@ -5293,28 +5327,26 @@ msgstr "Vyskakovací okna"
 #: ../includes/lists/class-ays-pb-list-table.php:218
 #: ../includes/lists/class-ays-pb-list-table.php:256
 #: ../includes/lists/class-ays-pb-list-table.php:261
-#: ../includes/lists/class-ays-pb-list-table.php:390
-#: ../includes/lists/class-ays-pb-list-table.php:395
-#: ../includes/lists/class-ays-pb-list-table.php:433
-#: ../includes/lists/class-ays-pb-list-table.php:438
-#: ../includes/lists/class-ays-pb-list-table.php:497
-#: ../includes/lists/class-ays-pb-list-table.php:502
-#: ../includes/lists/class-ays-pb-list-table.php:681
-#: ../includes/lists/class-ays-pb-list-table.php:686
-#: ../includes/lists/class-ays-pb-list-table.php:707
-#: ../includes/lists/class-ays-pb-list-table.php:712
-#: ../includes/lists/class-ays-pb-list-table.php:749
-#: ../includes/lists/class-ays-pb-list-table.php:754
-#: ../includes/lists/class-ays-pb-list-table.php:792
-#: ../includes/lists/class-ays-pb-list-table.php:797
-#: ../includes/lists/class-ays-pb-list-table.php:863
-#: ../includes/lists/class-ays-pb-list-table.php:868
-#: ../includes/lists/class-ays-pb-list-table.php:988
-#: ../includes/lists/class-ays-pb-list-table.php:993
-#: ../includes/lists/class-ays-pb-list-table.php:1187
-#: ../includes/lists/class-ays-pb-list-table.php:1192
-#: ../includes/lists/class-ays-pb-list-table.php:2599
-#: ../includes/lists/class-ays-pb-list-table.php:2604
+#: ../includes/lists/class-ays-pb-list-table.php:473
+#: ../includes/lists/class-ays-pb-list-table.php:478
+#: ../includes/lists/class-ays-pb-list-table.php:537
+#: ../includes/lists/class-ays-pb-list-table.php:542
+#: ../includes/lists/class-ays-pb-list-table.php:721
+#: ../includes/lists/class-ays-pb-list-table.php:726
+#: ../includes/lists/class-ays-pb-list-table.php:747
+#: ../includes/lists/class-ays-pb-list-table.php:752
+#: ../includes/lists/class-ays-pb-list-table.php:790
+#: ../includes/lists/class-ays-pb-list-table.php:795
+#: ../includes/lists/class-ays-pb-list-table.php:833
+#: ../includes/lists/class-ays-pb-list-table.php:838
+#: ../includes/lists/class-ays-pb-list-table.php:904
+#: ../includes/lists/class-ays-pb-list-table.php:909
+#: ../includes/lists/class-ays-pb-list-table.php:1029
+#: ../includes/lists/class-ays-pb-list-table.php:1034
+#: ../includes/lists/class-ays-pb-list-table.php:1228
+#: ../includes/lists/class-ays-pb-list-table.php:1233
+#: ../includes/lists/class-ays-pb-list-table.php:2640
+#: ../includes/lists/class-ays-pb-list-table.php:2645
 #: ../includes/lists/class-ays-pb-popup-categories-list-table.php:47
 #: ../includes/lists/class-ays-pb-popup-categories-list-table.php:52
 #: ../includes/lists/class-ays-pb-popup-categories-list-table.php:102
@@ -5339,10 +5371,8 @@ msgstr "Vyskakovací okna"
 #: ../includes/lists/class-ays-pb-popup-categories-list-table.php:607
 #: ../includes/lists/class-ays-pb-popup-categories-list-table.php:761
 #: ../includes/lists/class-ays-pb-popup-categories-list-table.php:766
-#, fuzzy
-#| msgid "Maybe something went wrong."
 msgid "Something went wrong"
-msgstr "Možná se něco pokazilo."
+msgstr "Něco se pokazilo"
 
 #: ../includes/lists/class-ays-pb-list-table.php:115
 #: ../includes/lists/class-ays-pb-popup-categories-list-table.php:86
@@ -5389,93 +5419,99 @@ msgstr "Konverze"
 msgid "ID"
 msgstr "ID"
 
-#: ../includes/lists/class-ays-pb-list-table.php:409
+#: ../includes/lists/class-ays-pb-list-table.php:407
 #: ../includes/lists/class-ays-pb-popup-categories-list-table.php:348
 #: ../public/partials/ays-pb-public-templates.php:1331
 msgid "Edit"
 msgstr "Upravit"
 
-#: ../includes/lists/class-ays-pb-list-table.php:410
+#: ../includes/lists/class-ays-pb-list-table.php:415
 msgid "Duplicate"
 msgstr "Duplikovat"
 
-#: ../includes/lists/class-ays-pb-list-table.php:411
-#: ../includes/lists/class-ays-pb-list-table.php:848
+#: ../includes/lists/class-ays-pb-list-table.php:427
+#: ../includes/lists/class-ays-pb-list-table.php:889
 #: ../includes/lists/class-ays-pb-popup-categories-list-table.php:352
 #: ../includes/lists/class-ays-pb-popup-categories-list-table.php:577
 msgid "Delete"
 msgstr "Smazat"
 
-#: ../includes/lists/class-ays-pb-list-table.php:620
-msgid "MacOs window"
-msgstr "MacOs okno"
-
-#: ../includes/lists/class-ays-pb-list-table.php:632
-msgid "Command Prompt"
-msgstr "Příkazový řádek"
-
-#: ../includes/lists/class-ays-pb-list-table.php:846
-#: ../includes/lists/class-ays-pb-popup-categories-list-table.php:575
-msgid "Publish"
-msgstr "Publikovat"
-
-#: ../includes/lists/class-ays-pb-list-table.php:847
+#: ../includes/lists/class-ays-pb-list-table.php:441
+#: ../includes/lists/class-ays-pb-list-table.php:888
 #: ../includes/lists/class-ays-pb-popup-categories-list-table.php:576
 msgid "Unpublish"
 msgstr "Zrušit publikaci"
 
-#: ../includes/lists/class-ays-pb-list-table.php:950
+#: ../includes/lists/class-ays-pb-list-table.php:451
+#: ../includes/lists/class-ays-pb-list-table.php:887
+#: ../includes/lists/class-ays-pb-popup-categories-list-table.php:575
+msgid "Publish"
+msgstr "Publikovat"
+
+#: ../includes/lists/class-ays-pb-list-table.php:660
+msgid "MacOs window"
+msgstr "MacOs okno"
+
+#: ../includes/lists/class-ays-pb-list-table.php:672
+msgid "Command Prompt"
+msgstr "Příkazový řádek"
+
+#: ../includes/lists/class-ays-pb-list-table.php:991
 msgid "Select Category"
 msgstr "Vybrat kategorii"
 
-#: ../includes/lists/class-ays-pb-list-table.php:958
+#: ../includes/lists/class-ays-pb-list-table.php:999
 msgid "Select Author"
 msgstr "Vybrat autora"
 
-#: ../includes/lists/class-ays-pb-list-table.php:966
+#: ../includes/lists/class-ays-pb-list-table.php:1007
 msgid "Select Type"
 msgstr "Vybrat typ"
 
-#: ../includes/lists/class-ays-pb-list-table.php:973
+#: ../includes/lists/class-ays-pb-list-table.php:1014
 msgid "Filter"
 msgstr "Filtrovat"
 
-#: ../includes/lists/class-ays-pb-list-table.php:975
+#: ../includes/lists/class-ays-pb-list-table.php:1016
 msgid "Clear filters"
 msgstr "Vymazat filtry"
 
-#: ../includes/lists/class-ays-pb-list-table.php:2617
+#: ../includes/lists/class-ays-pb-list-table.php:2658
 msgid "PopupBox created."
 msgstr "Popup Box vytvořen."
 
-#: ../includes/lists/class-ays-pb-list-table.php:2619
+#: ../includes/lists/class-ays-pb-list-table.php:2660
 msgid "PopupBox saved."
 msgstr "Popup Box uložen."
 
-#: ../includes/lists/class-ays-pb-list-table.php:2621
+#: ../includes/lists/class-ays-pb-list-table.php:2662
 msgid "PopupBox deleted."
 msgstr "Popup Box smazán."
 
-#: ../includes/lists/class-ays-pb-list-table.php:2623
+#: ../includes/lists/class-ays-pb-list-table.php:2664
 msgid "PopupBox duplicated."
 msgstr "Popup Box byl duplikován."
 
-#: ../includes/lists/class-ays-pb-list-table.php:2625
+#: ../includes/lists/class-ays-pb-list-table.php:2666
 msgid "PopupBox published."
 msgstr "Popup Box byl publikován."
 
-#: ../includes/lists/class-ays-pb-list-table.php:2627
+#: ../includes/lists/class-ays-pb-list-table.php:2668
 msgid "PopupBox unpublished."
 msgstr "Publikace Popup Boxu byla zrušena."
 
-#: ../includes/lists/class-ays-pb-list-table.php:2629
+#: ../includes/lists/class-ays-pb-list-table.php:2670
+msgid "Popup status updated successfully."
+msgstr "Stav vyskakovacího okna byl úspěšně aktualizován."
+
+#: ../includes/lists/class-ays-pb-list-table.php:2672
 msgid ""
 "You're not allowed to add popupbox for more popupboxes please checkout to "
 msgstr ""
 "Nemáte oprávnění přidávat další Popup Boxy, pro navýšení limitu prosím "
 "přejděte na "
 
-#: ../includes/lists/class-ays-pb-list-table.php:2629
+#: ../includes/lists/class-ays-pb-list-table.php:2672
 msgid "version"
 msgstr "verzi"
 

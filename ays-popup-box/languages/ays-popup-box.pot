@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Popup box\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-01-27 17:20+0300\n"
+"POT-Creation-Date: 2026-02-15 16:01+0300\n"
 "PO-Revision-Date: 2018-07-13 11:50+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -2898,7 +2898,7 @@ msgid "Here can be custom HTML or shortcode"
 msgstr ""
 
 #: ../admin/partials/actions/ays-pb-admin-actions.php:7533
-#: ../public/partials/ays-pb-public-templates.php:4345
+#: ../public/partials/ays-pb-public-templates.php:4353
 msgid "This will close in "
 msgstr ""
 
@@ -3150,7 +3150,7 @@ msgstr ""
 #: ../admin/partials/features/popup-box-pro-features-display.php:92
 #: ../admin/partials/features/popup-box-pro-features-display.php:999
 #: ../admin/partials/features/popup-box-pro-features-display.php:1005
-#: ../admin/partials/settings/popup-box-settings.php:772 ../ays-pb.php:115
+#: ../admin/partials/settings/popup-box-settings.php:790 ../ays-pb.php:115
 #: ../includes/class-ays-pb-data.php:752 ../includes/class-ays-pb-data.php:861
 #: ../includes/class-ays-pb-data.php:2174
 #: ../includes/class-ays-pb-data.php:2288
@@ -4203,26 +4203,34 @@ msgid "The user's registration date when logged-in. In case the user is not logg
 msgstr ""
 
 #: ../admin/partials/settings/popup-box-settings.php:682
-msgid "The Post title of the current post."
+msgid "Shows the post author's nickname that was filled in their WordPress profile."
 msgstr ""
 
 #: ../admin/partials/settings/popup-box-settings.php:691
-msgid "The ID of the current post."
+msgid "Shows the post author's email that was filled in their WordPress profile."
 msgstr ""
 
 #: ../admin/partials/settings/popup-box-settings.php:700
-msgid "The title of the website."
+msgid "The Post title of the current post."
 msgstr ""
 
 #: ../admin/partials/settings/popup-box-settings.php:709
-msgid "The description of the website."
+msgid "The ID of the current post."
 msgstr ""
 
 #: ../admin/partials/settings/popup-box-settings.php:718
+msgid "The title of the website."
+msgstr ""
+
+#: ../admin/partials/settings/popup-box-settings.php:727
+msgid "The description of the website."
+msgstr ""
+
+#: ../admin/partials/settings/popup-box-settings.php:736
 msgid "The URL of the home page."
 msgstr ""
 
-#: ../admin/partials/settings/popup-box-settings.php:737
+#: ../admin/partials/settings/popup-box-settings.php:755
 msgid "Save changes"
 msgstr ""
 

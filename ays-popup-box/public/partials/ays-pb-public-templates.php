@@ -4254,6 +4254,7 @@ class Ays_Pb_Public_Templates {
         $author_id = get_the_author_meta('ID');
         $post_author_nickname = get_the_author_meta( 'nickname', $author_id );
         $post_author_email = get_the_author_meta( 'email', $author_id );
+        $post_author_first_name = get_the_author_meta( 'first_name', $author_id );
 
         $post_id = url_to_postid( get_permalink() );
         $get_site_title = get_bloginfo('name');
@@ -4281,6 +4282,7 @@ class Ays_Pb_Public_Templates {
             'user_registered'                   => $user_registered,
             'post_author_nickname'              => $post_author_nickname,
             'post_author_email'                 => $post_author_email,
+            'post_author_first_name'            => $post_author_first_name,
             'post_title'                        => $post_title,
             'post_id'                           => $post_id,
             'site_title'                        => $get_site_title,

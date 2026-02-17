@@ -2473,6 +2473,7 @@ label.ays_switch_toggle:hover:after {
 
 /* Live preview styles start */
 .popup_preview {
+    display: none;
     position: sticky;
     top:80px;
 }

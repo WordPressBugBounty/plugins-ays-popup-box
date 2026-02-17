@@ -41,8 +41,6 @@
             var countdownEndTime = pb.pbBannerDate
             var countDown = new Date(countdownEndTime).getTime();
 
-            console.log(countdownEndTime);
-
             if ( isNaN(countDown) || isFinite(countDown) == false ) {
                 var AYS_POPUP_MILLISECONDS = 3 * day;
                 var countdownStartDate = new Date(Date.now() + AYS_POPUP_MILLISECONDS);

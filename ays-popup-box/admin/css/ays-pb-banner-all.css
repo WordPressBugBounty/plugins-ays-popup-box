@@ -388,6 +388,78 @@ div#ays-pb-new-mega-bundle-dicount-month-main button.notice-dismiss:before{
     text-align: center;
 }
 
+/* Right section */
+.ays-pb-dicount-banner-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.ays-pb-dicount-banner-coupon-box {
+    border: 2px dashed rgba(255, 255, 255, 0.4);
+    padding: 8px 16px;
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.1);
+    cursor: pointer;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    backdrop-filter: blur(10px);
+}
+
+.ays-pb-dicount-banner-coupon-box:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.6);
+    transform: translateY(-1px);
+}
+
+.ays-pb-dicount-banner-coupon-text {
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #fff;
+    font-family: monospace;
+}
+
+.ays-pb-dicount-banner-copy-icon {
+    opacity: 0.8;
+    transition: opacity 0.3s;
+}
+
+.ays-pb-dicount-banner-coupon-box:hover .ays-pb-dicount-banner-copy-icon {
+    opacity: 1;
+}
+
+.ays-pb-dicount-banner-btn-arrow {
+    display: inline-block;
+    transition: transform 0.3s;
+}
+
+.ays-pb-dicount-banner-buy-now-btn:hover .ays-pb-dicount-banner-btn-arrow {
+    transform: translateX(4px);
+}
+
+/* Notification */
+.ays-pb-dicount-banner-copy-notification {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 14px;
+    z-index: 10000;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.ays-pb-dicount-banner-copy-notification.show {
+    opacity: 1;
+}
+
 @media all and (max-width: 1024px) {
     #ays-pb-new-mega-bundle-dicount-month-main{
         display: none !important;
