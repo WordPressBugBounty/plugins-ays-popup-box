@@ -710,13 +710,18 @@
         $(document).find('.nav-tab-wrapper a.nav-tab').on('click', function(e) {
             let elemenetID = $(this).attr('href');
             let active_tab = $(this).attr('data-tab');
+            let $this = $(this);
+            
             $(document).find('.nav-tab-wrapper a.nav-tab').each(function() {
                 if ($(this).hasClass('nav-tab-active')) {
                     $(this).removeClass('nav-tab-active');
                 }
             });
 
-            $(this).addClass('nav-tab-active');
+            setTimeout(function() {
+                 $this.addClass('nav-tab-active');
+            }, 50);
+
             $(document).find('.ays-pb-tab-content').each(function() {
                 if ($(this).hasClass('ays-pb-tab-content-active')) {
                     $(this).removeClass('ays-pb-tab-content-active');
@@ -972,9 +977,13 @@
                 $(document).find('.ays-pb-open-click-hover').show(250);
                 $(document).find('.ays-pb-open-click-hover').css('display', 'flex');
                 $(document).find('.ays-pb-open-click-hover').prev('hr').css('display', 'block');
+                $(document).find('#ays-pb-youtube-how-to-make-link').attr('href','https://youtu.be/_BZ1rhfm8O0');
+                $(document).find('#ays-pb-youtube-how-to-make-link').text('View how to make popup on button click');
             } else {
                 $(document).find('.ays-pb-open-click-hover').hide(250);
                 $(document).find('.ays-pb-open-click-hover').prev('hr').css('display', 'none');
+                $(document).find('#ays-pb-youtube-how-to-make-link').attr('href','https://youtu.be/2pK9I2r_MyE');
+                $(document).find('#ays-pb-youtube-how-to-make-link').text('View how to make popup on load');
             }
         });
         // Change popup trigger end

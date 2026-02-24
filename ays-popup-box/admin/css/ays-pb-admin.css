@@ -1518,6 +1518,13 @@ div.ays-pb-top-menu-wrapper div.ays-pb-top-menu div.ays-pb-top-tab-wrapper {
     transition: .5s ease-in-out;
     padding-right: 7px;
     width: fit-content;
+    padding-left: 0;
+    background: revert;
+}
+
+div.ays-pb-top-menu-wrapper div.ays-pb-top-menu div.ays-pb-top-tab-wrapper a.nav-tab {    
+    font-weight: 500;
+    margin-right: 0;
 }
 
 .ays_pb_menu_left,
@@ -4402,6 +4409,8 @@ p.import-help {
     min-width: 150px;
     margin-right: 15px;
     border-bottom: none;
+    padding: 0;
+    background: revert;
 }
 
 .ays-settings-wrapper .nav-tab-wrapper .nav-tab {
@@ -4409,6 +4418,26 @@ p.import-help {
     width: 100%;
     border: 1px solid #ccc;
     margin: 0;
+    padding: 5px 10px;
+    font-size: 14px;
+    font-weight: 600;
+    background: #dcdcde;
+}
+
+.ays-settings-wrapper .nav-tab-wrapper .nav-tab-active, 
+.ays-settings-wrapper .nav-tab-wrapper .nav-tab-active:focus, 
+.ays-settings-wrapper .nav-tab-wrapper .nav-tab-active:focus:active,
+.ays-settings-wrapper .nav-tab-wrapper .nav-tab-active:hover {
+    color: #000;
+    border: 1px solid #ccc;
+    background: #f0f0f1;
+    box-shadow: unset;
+}
+
+.ays-settings-wrapper .nav-tab-wrapper .nav-tab-active {
+    border-bottom: 1px solid #f0f0f1;
+    background: #f0f0f1;
+    color: #000;
 }
 
 .ays-settings-wrapper .ays-pb-tabs-wrapper {

@@ -65,6 +65,10 @@ $categories_title_length = (isset($options['categories_title_length']) && intval
             <input type="hidden" name="ays_pb_tab" value="<?php echo esc_attr($ays_pb_tab); ?>">
             <div class="ays-pb-heading-box">
                 <div class="ays-pb-wordpress-user-manual-box">
+                    <a href="https://www.youtube.com/watch?v=0cZOSdiKqTI" target="_blank">
+                        <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . '/images/icons/youtube-video-icon.svg' ?>">
+                        <span><?php echo esc_html__("How to create Popup", "ays-popup-box"); ?></span>
+                    </a>
                     <a href="https://popup-plugin.com/docs" target="_blank">
                         <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . '/images/icons/text-file.svg' ?>">
                         <span><?php echo esc_html__("View Documentation", "ays-popup-box"); ?></span>

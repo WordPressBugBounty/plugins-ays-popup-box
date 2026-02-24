@@ -184,14 +184,14 @@ class Ays_Pb_Activator {
             }
         }
 
-        // $terms_activation = get_option('ays_pb_show_agree_terms');
-        // $first_activation = get_option('ays_pb_first_time_activation_page', false);
+        $terms_activation = get_option('ays_pb_show_agree_terms');
+        $first_activation = get_option('ays_pb_first_time_activation_page', false);
 
-        // if ( !$terms_activation && $first_activation ) {
-        //     self::ays_pb_activator_request( 'activator' );
-        //     update_option('ays_pb_agree_terms', 'true');
-        //     update_option('ays_pb_show_agree_terms', 'hide');
-        // }
+        if ( !$terms_activation && $first_activation ) {
+            self::ays_pb_activator_request( 'activator' );
+            update_option('ays_pb_agree_terms', 'true');
+            update_option('ays_pb_show_agree_terms', 'hide');
+        }
 
     }
 
