@@ -1824,6 +1824,10 @@ $ays_users_roles = $wp_roles->roles;
                                 </a>
                             </span>
                         </label>
+                        <p class="ays_pb_small_hint_text_for_message_variables">
+                            <span><?php echo esc_html__( "To see all Message Variables " , 'ays-popup-box' ); ?></span>
+                            <a href="?page=ays-pb-settings&ays_pb_tab=tab4" target="_blank"><?php echo esc_html__( "click here" , 'ays-popup-box' ); ?></a>
+                        </p>
                     </div>
                     <div class="col-sm-9">
                         <div style = "text-align: end; margin-bottom: 20px;">

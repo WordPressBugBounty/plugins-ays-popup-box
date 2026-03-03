@@ -182,6 +182,12 @@ textarea.ays-textarea {
     height: 40px;
 }
 
+.ays_pb_small_hint_text_for_message_variables {
+    font-style: italic;
+    font-size: 11px;
+    color: gray;
+}
+
 #ays-button,
 #ays-button-apply,
 #ays-cat-button-apply {
