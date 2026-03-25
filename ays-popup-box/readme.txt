@@ -4,7 +4,7 @@ Donate link: https://popup-plugin.com
 Tags: popup, popups, exit popup, pop up, modal
 Requires at least: 4.0
 Tested up to: 6.9
-Stable tag: 6.1.9
+Stable tag: 6.2.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -309,6 +309,11 @@ After clearing the caches, try to check the case with either the **Incognito mod
 
 
 == Changelog ==
+
+= 6.2.0 ( March 24, 2026 ) =
+* Improved: Enhanced HTML sanitization logic in popup editors
+* Improved: Extended allowed HTML tags support (audio, video, etc.)
+* Improved: Some changes on the admin dashboard
 
 = 6.1.9 ( March 10, 2026 ) =
 * Added: Post Author Display name message variable on the general settings

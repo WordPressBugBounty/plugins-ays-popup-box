@@ -513,7 +513,7 @@ $onoffswitch = (isset($popupbox['onoffswitch']) && $popupbox['onoffswitch'] != '
 $shortcode = (isset($popupbox['shortcode']) && $popupbox['shortcode'] != '') ? htmlentities($popupbox['shortcode']) : '';
 
 // Custom content type | Custom content
-$custom_html = (isset($popupbox['custom_html']) && $popupbox['custom_html'] != '') ? stripslashes($popupbox['custom_html']) : '';
+$custom_html = (isset($popupbox['custom_html']) && $popupbox['custom_html'] != '') ? stripslashes( wpautop( $popupbox['custom_html'] ) ) : '';
 
 // Video type | Video
 $ays_video_theme_bg = (isset($options['video_theme_url']) && !empty($options['video_theme_url'])) ? esc_url($options['video_theme_url']) : '';

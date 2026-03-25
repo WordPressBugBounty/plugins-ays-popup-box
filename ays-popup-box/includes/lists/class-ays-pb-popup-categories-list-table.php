@@ -612,10 +612,15 @@ class Popup_Categories_List_Table extends WP_List_Table {
         $ays_change_type = (isset($_POST['ays_change_type'])) ? sanitize_text_field( $_POST['ays_change_type'] ) : '';
 
         if( isset($_POST["popup_category_action"]) && wp_verify_nonce( sanitize_text_field( $_POST["popup_category_action"] ), 'popup_category_action' ) ){
-            
+
+            $pb_allowed_html = Ays_Pb_Data::ays_pb_custom_allowed_html();
+
             $id = absint( sanitize_text_field( $_POST['id'] ) );
+
             $title = stripslashes( sanitize_text_field( $_POST['ays_title'] ) );
-            $description = stripslashes(wpautop( wp_kses_post($_POST['ays_description']) ) );
+
+            $description = isset( $_POST['ays_description'] ) && $_POST['ays_description'] != '' ? wp_kses( $_POST['ays_description'], $pb_allowed_html ) : '';
+
             $publish = absint( sanitize_text_field( $_POST['ays_publish'] ) );
             $message = '';
             if( $id == 0 ){
