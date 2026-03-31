@@ -969,6 +969,7 @@
                 pageLoaded: 'On page load - Trigger displays the popup automatically on the page load. Define the time delay of the popup in Open Delay option.',
                 clickSelector: 'On click - Trigger displays a popup on your site when the user clicks on a targeted CSS element(s). Define the CSS element in the CSS selector(s) option.',
                 both: 'Both (On page load & On click) - Popup will be shown both on page load and click.',
+                exitIntent: 'Exit intent - The popup will be displayed when the visitor decides to leave the website. Note: The exit intent option doesn\'t work for the mobile devices',
             }
 
             $(document).find('.ays-pb-triggers-tooltip').attr('data-original-title', showPopupTriggersTooltip[thisVal]);
@@ -979,6 +980,11 @@
                 $(document).find('.ays-pb-open-click-hover').prev('hr').css('display', 'block');
                 $(document).find('#ays-pb-youtube-how-to-make-link').attr('href','https://youtu.be/_BZ1rhfm8O0');
                 $(document).find('#ays-pb-youtube-how-to-make-link').text('View how to make popup on button click');
+            } else if (thisVal == 'exitIntent') {
+                $(document).find('.ays-pb-open-click-hover').hide(250);
+                $(document).find('.ays-pb-open-click-hover').prev('hr').css('display', 'none');
+                $(document).find('#ays-pb-youtube-how-to-make-link').attr('href','https://youtu.be/3oF20sABMHY?si=feToyHfHBpCky_hZ');
+                $(document).find('#ays-pb-youtube-how-to-make-link').text('View how to make popup with exit intent');
             } else {
                 $(document).find('.ays-pb-open-click-hover').hide(250);
                 $(document).find('.ays-pb-open-click-hover').prev('hr').css('display', 'none');
@@ -2516,6 +2522,20 @@
 	});
 
 	// New Sale Banner | End     
+
+        //Display None Scroll from top option exit intent start
+        $(document).on( 'change', "#ays-pb-action_button_type", function(){
+            if($(this).val() == 'exitIntent'){
+                $(document).find('.ays-pb-scroll-from-top-content').css('display', 'none');
+                $(document).find('.ays-pb-scroll-from-top-content').next().css('display', 'none');
+            }else{
+                $(document).find('.ays-pb-scroll-from-top-content').css('display', 'flex');
+                $(document).find('.ays-pb-scroll-from-top-content').next().css('display', 'block');
+            }
+        });
+        //Display None Scroll from top option exit intent end
+
+
 
     $(document).on('click', '.ays-pb-new-watch-video-button-box', function(e){
         e.preventDefault();

@@ -1576,7 +1576,9 @@ $show_popup_triggers_tooltip = array(
     'pageLoaded'    => 'On page load - Trigger displays the popup automatically on the page load. Define the time delay of the popup in Open Delay option.',
     'clickSelector' => 'On click - Trigger displays a popup on your site when the user clicks on a targeted CSS element(s). Define the CSS element in the CSS selector(s) option.',
     'both'          => 'Both (On page load & On click) - Popup will be shown both on page load and click.',
-);
+    'exitIntent'    => 'Exit intent - The popup will be displayed when the visitor decides to leave the website. Note: The exit intent option doesn\'t work for the mobile devices',
+
+    );
 
 $if_dismiss_cookie_exists = (isset( $_COOKIE['ays_pb_fox_lms_pages_popup_dismiss_for_three_click'] ) && $_COOKIE['ays_pb_fox_lms_pages_popup_dismiss_for_three_click'] >= 3) ? true : false;
 $if_fox_lms_plugin_exists = ( in_array('fox-lms/fox-lms.php', apply_filters('active_plugins', get_option('active_plugins'))) ) ? true : false;
@@ -3124,6 +3126,7 @@ $ays_users_roles = $wp_roles->roles;
                                         "<li>". esc_html__('Onload',"ays-popup-box") ."</li>".
                                         "<li>". esc_html__('Onclick',"ays-popup-box") ."</li>".
                                         "<li>". esc_html__('Both(On page load & On click)',"ays-popup-box") ."</li>".
+                                        "<li>". esc_html__('Exit Intent',"ays-popup-box") ."</li>".
                                     "</ul>"
                                     );
                                 ?>">
@@ -3142,8 +3145,8 @@ $ays_users_roles = $wp_roles->roles;
                                 <option <?php if(!isset($action_button_type)){ echo 'selected'; } echo 'both' == $action_button_type ? 'selected' : ''; ?> value="both"><?php echo esc_html__('Both (On page load & On click)', "ays-popup-box"); ?></option>
                                 <option <?php echo 'pageLoaded' == $action_button_type ? 'selected' : ''; ?> value="pageLoaded"><?php echo esc_html__('Onload', "ays-popup-box"); ?></option>
                                 <option <?php echo 'clickSelector' == $action_button_type ? 'selected' : ''; ?> value="clickSelector"><?php echo esc_html__('On Click', "ays-popup-box"); ?></option>
+                                <option <?php echo 'exitIntent' == $action_button_type ? 'selected' : ''; ?> value="exitIntent"><?php echo __('Exit intent', "ays-popup-box"); ?></option>
                                 <option value="exit_intent" disabled><?php echo esc_html__('On hover (Pro)', "ays-popup-box"); ?></option>
-                                <option value="exit_intent" disabled><?php echo esc_html__('Exit Intent (Pro)', "ays-popup-box"); ?></option>
                                 <option value="exit_intent" disabled><?php echo esc_html__('After visiting x pages (Pro)', "ays-popup-box"); ?></option>
                                 <option value="exit_intent" disabled><?php echo esc_html__('Inactivity (Pro)', "ays-popup-box"); ?></option>
                                 <option value="exit_intent" disabled><?php echo esc_html__('Scrolling to element (Pro)', "ays-popup-box"); ?></option>
@@ -3170,6 +3173,10 @@ $ays_users_roles = $wp_roles->roles;
                                         $how_to_make_link_url = esc_url( 'https://youtu.be/_BZ1rhfm8O0' );
                                         $how_to_make_link_text = esc_html__( "View how to make popup on button click", "ays-popup-box" );
                                         break;
+                                    case 'exitIntent':
+                                        $how_to_make_link_url = esc_url( 'https://youtu.be/3oF20sABMHY?si=feToyHfHBpCky_hZ' );
+                                        $how_to_make_link_text = esc_html__( "View how to make popup with exit intent", "ays-popup-box" );
+                                        break;    
                                 }
                             ?>
                             <div class="ays-pb-youtube-video-link">

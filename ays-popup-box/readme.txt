@@ -1,10 +1,10 @@
-﻿=== Popup Box - Create Countdown, Coupon, Video, Contact Form Popups ===
+=== Popup Box - Create Countdown, Coupon, Video, Contact Form Popups ===
 Contributors: ays-pro
 Donate link: https://popup-plugin.com
 Tags: popup, popups, exit popup, pop up, modal
 Requires at least: 4.0
 Tested up to: 6.9
-Stable tag: 6.2.0
+Stable tag: 6.2.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -59,9 +59,9 @@ This flexibility makes Popup Box suitable for blogs, business websites, landing 
 Popup Box allows you to control exactly when your popups appear by using different trigger types:
 
 * **On page load** – show a popup automatically when the page finishes loading   
-* **On click** – open a popup when a visitor clicks a selected button or element   
+* **On click** – open a popup when a visitor clicks a selected button or element 
+* **Exit intent** – trigger a popup when visitors are about to leave the page     
 * **On hover** (Pro version)_ – display a popup when a user hovers over a specific element   
-* **Exit intent** (Pro version) – trigger a popup when visitors are about to leave the page   
 * **Inactivity** (Pro version) – show a popup after a visitor stays inactive for a defined time   
 * **After visiting X pages** (Pro version) – display a popup based on the number of pages viewed   
 * **Scrolling to elements** (Pro version) – trigger a popup when users scroll to a selected section
@@ -309,6 +309,11 @@ After clearing the caches, try to check the case with either the **Incognito mod
 
 
 == Changelog ==
+
+= 6.2.1 ( March 27, 2026 ) =
+* Added: Popup trigger "Exit Intent"
+* Updated: POT file
+
 
 = 6.2.0 ( March 24, 2026 ) =
 * Improved: Enhanced HTML sanitization logic in popup editors

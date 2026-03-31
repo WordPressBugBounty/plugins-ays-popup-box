@@ -119,7 +119,7 @@ class Ays_Pb_Public_Templates {
         if($popup['ays_pb_action_buttons_type'] == 'both' || $popup['ays_pb_action_buttons_type'] == 'pageLoaded'){
             $ays_pb_flag = "data-ays-flag='false'";
         }
-        if($popup['ays_pb_action_buttons_type'] == 'clickSelector'){
+        if($popup['ays_pb_action_buttons_type'] == 'clickSelector' || $popup['ays_pb_action_buttons_type'] == 'exitIntent'){
             $ays_pb_flag = "data-ays-flag='true'";
         }
         if ( $popup['closeButton'] == "on" ){
@@ -416,7 +416,7 @@ class Ays_Pb_Public_Templates {
         if($popup['ays_pb_action_buttons_type'] == 'both' || $popup['ays_pb_action_buttons_type'] == 'pageLoaded'){
             $ays_pb_flag = "data-ays-flag='false'";
         }
-        if($popup['ays_pb_action_buttons_type'] == 'clickSelector'){
+        if($popup['ays_pb_action_buttons_type'] == 'clickSelector' || $popup['ays_pb_action_buttons_type'] == 'exitIntent'){
             $ays_pb_flag = "data-ays-flag='true'";
         }
 
