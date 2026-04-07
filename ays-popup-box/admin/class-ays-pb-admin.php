@@ -201,6 +201,20 @@ class Ays_Pb_Admin {
         }
 	}
 
+    public function ays_pb_add_body_class( $classes ) {
+        global $pagenow;
+
+        if ( $pagenow === 'admin.php' ) {
+            $page = isset( $_GET['page'] ) ? sanitize_key( $_GET['page'] ) : '';
+            
+            if ( strpos( $page, $this->plugin_name ) === 0 ) {
+                $classes .= ' ays-popup-plugin-admin';
+            }
+        }
+
+        return $classes;
+    }
+
     public static function ays_pb_update_banner_time() {
         $date = time() + ( 3 * 24 * 60 * 60 ) + (int) ( get_option( 'gmt_offset' ) * HOUR_IN_SECONDS);
         $next_3_days = gmdate('M d, Y H:i:s', $date);

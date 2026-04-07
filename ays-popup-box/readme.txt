@@ -3,8 +3,8 @@ Contributors: ays-pro
 Donate link: https://popup-plugin.com
 Tags: popup, popups, exit popup, pop up, modal
 Requires at least: 4.0
-Tested up to: 6.9
-Stable tag: 6.2.1
+Tested up to: 7.0
+Stable tag: 6.2.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -310,10 +310,13 @@ After clearing the caches, try to check the case with either the **Incognito mod
 
 == Changelog ==
 
+= 6.2.2 ( April 07, 2026 ) =
+* Improved: Some changes on the admin dashboard
+* Tested: Compatible up to 7.0
+
 = 6.2.1 ( March 27, 2026 ) =
 * Added: Popup trigger "Exit Intent"
 * Updated: POT file
-
 
 = 6.2.0 ( March 24, 2026 ) =
 * Improved: Enhanced HTML sanitization logic in popup editors

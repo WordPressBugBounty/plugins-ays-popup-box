@@ -1011,9 +1011,9 @@ class Ays_PopupBox_List_Table extends WP_List_Table {
                     }
                 ?>
             </select>
-            <input type="button" id="doaction-<?php echo esc_attr($which); ?>" class="ays-popup-question-tab-all-filter-button-<?php echo esc_attr($which); ?> button" value="<?php echo esc_html__("Filter", "ays-popup-box"); ?>">
+            <input type="button" id="doaction-<?php echo esc_attr($which); ?>" class="ays-popup-question-tab-all-filter-button-<?php echo esc_attr($which); ?> button action" value="<?php echo esc_html__("Filter", "ays-popup-box"); ?>">
         </div>
-        <a href="?page=<?php echo esc_attr($_REQUEST['page']); ?>" class="button ays-pb-clear-filters"><?php echo esc_html__("Clear filters", "ays-popup-box"); ?></a>
+        <a href="?page=<?php echo esc_attr($_REQUEST['page']); ?>" class="button ays-pb-clear-filters action"><?php echo esc_html__("Clear filters", "ays-popup-box"); ?></a>
         <?php
     }
 
