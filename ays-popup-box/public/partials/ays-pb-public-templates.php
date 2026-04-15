@@ -4257,41 +4257,46 @@ class Ays_Pb_Public_Templates {
         $post_author_first_name = get_the_author_meta( 'first_name', $author_id );
         $post_author_last_name = get_the_author_meta( 'last_name', $author_id );
         $post_author_display_name = get_the_author_meta( 'display_name', $author_id );
+        $post_author_website_url = get_the_author_meta( 'url', $author_id );
 
         $post_id = url_to_postid( get_permalink() );
         $get_site_title = get_bloginfo('name');
         $get_site_description = get_bloginfo('description');
 
+        if ( ! empty( $post_author_website_url ) ) {
+            $post_author_website_url = '<a href="'. $post_author_website_url .'" target="_blank">'. $post_author_website_url .'</a>';
+        }
 
         $message_variables_data = array(
-            'popup_title'                   => $popup_title,
-            'user_name'                     => $user_display_name,
-            'user_email'                    => $user_email,
-            'user_first_name'               => $user_first_name,
-            'user_last_name'                => $user_last_name,
-            'admin_email'                   => $super_admin_email,
-            'current_popup_author'          => $current_popup_author,
-            'current_popup_author_email'    => $current_popup_author_email,
-            'current_popup_page_link'       => $popup_current_page_link_html,
-            'user_wordpress_roles'          => $user_wordpress_roles,
-            'creation_date'                 => $creation_date,
-            'current_date'                  => $current_date,
-            'user_nickname'                 => $user_nickname,
-            'current_time'                  => $current_time,
-            'current_day'                   => $current_day,
-            'current_month'                 => $current_month,
-            'user_id'                       => $current_user_id,
-            'user_registered'               => $user_registered,
-            'post_author_nickname'          => $post_author_nickname,
-            'post_author_email'             => $post_author_email,
-            'post_author_first_name'        => $post_author_first_name,
-            'post_author_last_name'         => $post_author_last_name,
-            'post_author_display_name'      => $post_author_display_name,
-            'post_title'                    => $post_title,
-            'post_id'                       => $post_id,
-            'site_title'                    => $get_site_title,
-            'site_description'              => $get_site_description,
-            'home_page_url'                 => $home_page_url,
+            'popup_title'                       => $popup_title,
+            'user_name'                         => $user_display_name,
+            'user_email'                        => $user_email,
+            'user_first_name'                   => $user_first_name,
+            'user_last_name'                    => $user_last_name,
+            'admin_email'                       => $super_admin_email,
+            'current_popup_author'              => $current_popup_author,
+            'current_popup_author_email'        => $current_popup_author_email,
+            'current_popup_page_link'           => $popup_current_page_link_html,
+            'user_wordpress_roles'              => $user_wordpress_roles,
+            'creation_date'                     => $creation_date,
+            'current_date'                      => $current_date,
+            'user_nickname'                     => $user_nickname,
+            'current_time'                      => $current_time,
+            'current_day'                       => $current_day,
+            'current_month'                     => $current_month,
+            'user_id'                           => $current_user_id,
+            'user_registered'                   => $user_registered,
+            'post_author_nickname'              => $post_author_nickname,
+            'post_author_email'                 => $post_author_email,
+            'post_author_first_name'            => $post_author_first_name,
+            'post_author_last_name'             => $post_author_last_name,
+            'post_author_display_name'          => $post_author_display_name,
+            'post_author_website_url'           => $post_author_website_url,
+            'post_title'                        => $post_title,
+            'post_id'                           => $post_id,
+            'site_title'                        => $get_site_title,
+            'site_description'                  => $get_site_description,
+            'home_page_url'                     => $home_page_url,
         );
 
         return $message_variables_data;
