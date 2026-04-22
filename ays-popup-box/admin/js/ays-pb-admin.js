@@ -1820,6 +1820,36 @@
         });
         // Popup category save end
 
+        // Select message vars popups page | Start
+        $(document).find('.ays-pb-message-vars-icon').on('click', function(e){
+            $(this).parents(".ays-pb-message-vars-box").find(".ays-pb-message-vars-data").toggle('fast');
+        });
+        
+        $(document).on( "click" , function(e){
+            if($(e.target).closest('.ays-pb-message-vars-box').length != 0){
+            } 
+            else{
+                $(document).find(".ays-pb-message-vars-box .ays-pb-message-vars-data").hide('fast');
+            }
+        });
+
+        $(document).find('.ays-pb-message-vars-each-data').on('click', function(e){
+            var _this  = $(this);
+            var parent = _this.parents('.ays-pb-desc-message-vars-parent');
+
+            var textarea   = parent.find('textarea.ays-textarea');
+            var textareaID = textarea.attr('id');
+
+            var messageVar = _this.find(".ays-pb-message-vars-each-var").val();
+            
+            if ( parent.find("#wp-"+ textareaID +"-wrap").hasClass("tmce-active") ){
+                window.tinyMCE.get(textareaID).setContent( window.tinyMCE.get(textareaID).getContent() + messageVar + " " );
+            }else{
+                $(document).find('#'+textareaID).append( " " + messageVar + " ");
+            }
+        });
+        /* Select message vars popups page | End */
+
         // Go to next/prev popup confirmation end
         $(document).on('click', '#ays-popups-next-button, #ays-popups-prev-button, .ays-pb-next-prev-button-class', function(e) {
             e.preventDefault();

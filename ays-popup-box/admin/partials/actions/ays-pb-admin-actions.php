@@ -446,6 +446,40 @@ switch ($action) {
         break;
 }
 
+$popup_message_vars = array(  
+    '%%popup_title%%'                               => esc_html__("Popup Title", 'ays-popup-box'),
+    '%%user_name%%'                                 => esc_html__("User's Name", 'ays-popup-box'),
+    '%%user_email%%'                                => esc_html__("User's Email", 'ays-popup-box'),
+    '%%user_first_name%%'                           => esc_html__("User's First Name", 'ays-popup-box'),
+    '%%user_last_name%%'                            => esc_html__("User's Last Name", 'ays-popup-box'),
+    '%%admin_email%%'                               => esc_html__("Admin Email", 'ays-popup-box'),
+    '%%current_popup_author%%'                      => esc_html__("Popup Author", 'ays-popup-box'),
+    '%%current_popup_author_email%%'                => esc_html__("Popup Author Email", 'ays-popup-box'),
+    '%%current_popup_page_link%%'                   => esc_html__("Popup page link", 'ays-popup-box'),
+    '%%user_wordpress_roles%%'                      => esc_html__("User's Wordpress Roles", 'ays-popup-box'),
+    '%%user_nickname%%'                             => esc_html__("User's Nickname", 'ays-popup-box'),
+    '%%creation_date%%'                             => esc_html__("Popup Creation Date", 'ays-popup-box'),
+    '%%current_date%%'                              => esc_html__("Current Date", 'ays-popup-box'),
+    '%%current_time%%'                              => esc_html__("Current Time", 'ays-popup-box'),
+    '%%current_day%%'                               => esc_html__("Current Day", 'ays-popup-box'),
+    '%%current_month%%'                             => esc_html__("Current Month", 'ays-popup-box'),
+    '%%user_id%%'                                   => esc_html__("User's ID", 'ays-popup-box'),
+    '%%user_registered%%'                           => esc_html__("User's Registered", 'ays-popup-box'),
+    '%%post_author_nickname%%'                      => esc_html__("Post Author Nickname", 'ays-popup-box'),
+    '%%post_author_email%%'                         => esc_html__("Post Author Email", 'ays-popup-box'),
+    '%%post_author_first_name%%'                    => esc_html__("Post Author First Name", 'ays-popup-box'),
+    '%%post_author_last_name%%'                     => esc_html__("Post Author Last Name", 'ays-popup-box'),
+    '%%post_author_display_name%%'                  => esc_html__("Post Author Display Name", 'ays-popup-box'),
+    '%%post_author_website_url%%'                   => esc_html__("Post Author Website URL", 'ays-popup-box'),
+    '%%post_title%%'                                => esc_html__("Post Title", 'ays-popup-box'),
+    '%%post_id%%'                                   => esc_html__("Post ID", 'ays-popup-box'),
+    '%%site_title%%'                                => esc_html__("Site Title", 'ays-popup-box'),
+    '%%site_description%%'                          => esc_html__("Site Description", 'ays-popup-box'),
+    '%%home_page_url%%'                             => esc_html__("Home page URL", 'ays-popup-box'),
+);
+
+$popup_message_vars_html = $this->ays_popup_generate_message_vars_html( $popup_message_vars );
+
 // General Settings | options
 $gen_options = ($this->settings_obj->ays_get_setting('options') === false) ? array() : json_decode( stripcslashes($this->settings_obj->ays_get_setting('options')), true );
 
@@ -1816,7 +1850,7 @@ $ays_users_roles = $wp_roles->roles;
                 <!-- Shortcode end -->
                 <hr class="ays_custom_html_hr <?php echo $modal_content == 'custom_html' ? '' : 'display_none'; ?>">
                 <!-- Custom content start -->
-                <div class="form-group row ays-field <?php echo $modal_content == 'custom_html' ? '' : 'display_none'; ?>" id="ays_custom_html">
+                <div class="form-group row ays-field ays-pb-desc-message-vars-parent <?php echo $modal_content == 'custom_html' ? '' : 'display_none'; ?>" id="ays_custom_html">
                     <div class="col-sm-3">
                         <label>
                             <span>
@@ -1838,6 +1872,7 @@ $ays_users_roles = $wp_roles->roles;
                             </a>
                         </div>
                         <?php
+                            echo $popup_message_vars_html;
                             $content = ($custom_html);
                             $editor_id = 'custom-html';
                             $settings = array('editor_height'=> $pb_wp_editor_height,'textarea_name'=> $this->plugin_name.'[custom_html]', 'editor_class'=>'ays-textarea', 'media_buttons' => true);

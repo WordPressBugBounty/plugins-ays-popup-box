@@ -752,6 +752,17 @@ div.ays-notice-banner.ays-pb-notice {
 }
 /* Notice banner styles end */
 
+.ays_fa {
+    display: inline-block;
+    font: 14px / 1 FontAwesome;
+    font-size: inherit;
+    -webkit-font-smoothing: antialiased;
+}
+
+.ays_fa_link::before {
+    content: "\f0c1";
+}
+
 /* Ask a question box styles start */
 div.ays_ask_question_content {
     position: fixed;
@@ -3578,6 +3589,86 @@ div.pro-features-popup-conteiner {
 }
 
 /*PRO features popup | end*/
+
+/* Select message vars popups page | Start */
+.ays-pb-message-vars-box{
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    align-items: flex-end;
+    user-select: none;
+    position: relative;
+}
+
+.ays-pb-subtitle-main-box{
+    position: relative;
+    min-height: 27px;
+    word-break: break-word;
+}
+
+.ays-pb-message-vars-box .ays-pb-message-vars-icon{
+    display: flex;
+    width: 150px;
+    justify-content: space-between;
+    cursor: pointer;
+    margin-bottom: 15px;
+    
+}
+
+.ays-pb-message-vars-box .ays-pb-message-vars-icon span{
+    font-size: 13px;
+    margin-right: 5px;
+}
+
+.ays-pb-message-vars-data{
+    position: absolute;
+    top: 27px;
+    max-height: 350px;
+    overflow: auto scroll;
+    z-index: 99999;
+    background-color: #ffff;
+    border-radius: 3px;
+    width: 250px;
+    display: none;
+    box-shadow: 0 0px 0px 0.5px #00000087;
+}
+
+.ays-pb-message-vars-data::-webkit-scrollbar{
+    width: 0.2em;
+}
+   
+.ays-pb-message-vars-data::-webkit-scrollbar-track{
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+.ays-pb-message-vars-data::-webkit-scrollbar-thumb{
+    background-color: darkgrey;
+    outline: 1px solid slategrey;
+    border-radius: 5px;
+}
+
+.ays-pb-message-vars-data .ays-pb-message-vars-each-data{
+    border-bottom: 1px solid #80808059;
+    cursor: pointer;
+}
+
+.ays-pb-message-vars-data .ays-pb-message-vars-each-data{
+    padding: 8px 0 8px 8px;
+}
+
+.ays-pb-message-vars-data .ays-pb-message-vars-each-data:hover {
+    background-color: #f2f5fb;
+}
+
+.ays-pb-message-vars-each-data-checker:checked + div.ays-pb-message-vars-each-data{
+    background-color: #e1e1e1;
+}
+
+.ays-pb-message-vars-each-data-label{
+    display: block;
+    margin: 0;
+}
+/* Select message vars popups page | End */ 
 
 /* Live preview | MacOS theme styles start */
 .ays_window {
