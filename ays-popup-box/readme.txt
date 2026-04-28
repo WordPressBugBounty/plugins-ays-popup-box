@@ -4,7 +4,7 @@ Donate link: https://popup-plugin.com
 Tags: popup, popups, exit popup, pop up, modal
 Requires at least: 4.0
 Tested up to: 7.0
-Stable tag: 6.2.4
+Stable tag: 6.2.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -309,6 +309,9 @@ After clearing the caches, try to check the case with either the **Incognito mod
 
 
 == Changelog ==
+
+= 6.2.5 ( April 28, 2026 ) =
+* Added: Current Popup Author Display Name message variable on the general settings
 
 = 6.2.4 ( April 21, 2026 ) =
 * Added: Possibility to use Message Variables in the Custom Content option

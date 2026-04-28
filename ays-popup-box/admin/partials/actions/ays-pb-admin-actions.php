@@ -455,6 +455,7 @@ $popup_message_vars = array(
     '%%admin_email%%'                               => esc_html__("Admin Email", 'ays-popup-box'),
     '%%current_popup_author%%'                      => esc_html__("Popup Author", 'ays-popup-box'),
     '%%current_popup_author_email%%'                => esc_html__("Popup Author Email", 'ays-popup-box'),
+    '%%current_popup_author_display_name%%'         => esc_html__("Popup Author Display Name", 'ays-popup-box'),
     '%%current_popup_page_link%%'                   => esc_html__("Popup page link", 'ays-popup-box'),
     '%%user_wordpress_roles%%'                      => esc_html__("User's Wordpress Roles", 'ays-popup-box'),
     '%%user_nickname%%'                             => esc_html__("User's Nickname", 'ays-popup-box'),
