@@ -4,7 +4,7 @@ Donate link: https://popup-plugin.com
 Tags: popup, popups, exit popup, pop up, modal
 Requires at least: 4.0
 Tested up to: 7.0
-Stable tag: 6.2.5
+Stable tag: 6.2.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -13,7 +13,7 @@ Build flexible popups and modal windows with multiple popup types, triggers, and
 
 == Description ==
 
-### WordPress Popup Plugin – Popup Box
+### WordPress Popup Plugin - Popup Box
 
 * [WordPress Popup plugin pricing](https://popup-plugin.com/?utm_source=wporg&utm_medium=pricing&utm_campaign=description)
 * [Popup Box FREE demo](https://demo.popup-plugin.com/wordpress-popup-plugin-free-demo/)
@@ -23,7 +23,7 @@ Build flexible popups and modal windows with multiple popup types, triggers, and
 **Popup Box** is a flexible [WordPress Popup plugin](https://popup-plugin.com/?utm_source=wporg&utm_medium=homepage&utm_campaign=description) that helps you create different types of popups and modal windows with rich customization options and **advanced display control**. 
 It's built for website owners who need a reliable **popup builder**, not just a marketing-only tool.
 
-With Popup Box, you can design popups for content display, user interaction, announcements, forms, or promotions — and control exactly **when, where, and how** they appear on your website.
+With Popup Box, you can design popups for content display, user interaction, announcements, forms, or promotions - and control exactly **when, where, and how** they appear on your website.
 
 *In this short video, you can find a quick overview of how to create a popup in WordPress.*
 
@@ -33,8 +33,8 @@ https://www.youtube.com/watch?v=Ofk1mxUF-9g
 
 Popup Box allows you to create a wide variety of **modal popups** and overlays without limitations:
 
-* **[Custom HTML popup](https://demo.popup-plugin.com/custom-content-popup/)** – build fully custom content from scratch   
-* **[Shortcode popup](https://demo.popup-plugin.com/shortcode-popup/)** – display content from other WordPress plugins   
+* **[Custom HTML popup](https://demo.popup-plugin.com/custom-content-popup/)** - build fully custom content from scratch   
+* **[Shortcode popup](https://demo.popup-plugin.com/shortcode-popup/)** - display content from other WordPress plugins   
 * **Lightbox popup** for [images](https://demo.popup-plugin.com/image-popup/), [videos](https://demo.popup-plugin.com/video-popup/), or embedded content   
 * **[Subscription popups](https://demo.popup-plugin.com/subscription-popup/)** for collecting emails   
 * **[Contact form popups](https://demo.popup-plugin.com/contact-form-popup/)** for receiving user messages   
@@ -58,15 +58,15 @@ This flexibility makes Popup Box suitable for blogs, business websites, landing 
 
 Popup Box allows you to control exactly when your popups appear by using different trigger types:
 
-* **On page load** – show a popup automatically when the page finishes loading   
-* **On click** – open a popup when a visitor clicks a selected button or element 
-* **Exit intent** – trigger a popup when visitors are about to leave the page     
-* **On hover** (Pro version)_ – display a popup when a user hovers over a specific element   
-* **Inactivity** (Pro version) – show a popup after a visitor stays inactive for a defined time   
-* **After visiting X pages** (Pro version) – display a popup based on the number of pages viewed   
-* **Scrolling to elements** (Pro version) – trigger a popup when users scroll to a selected section
+* **On page load** - show a popup automatically when the page finishes loading   
+* **On click** - open a popup when a visitor clicks a selected button or element 
+* **Exit intent** - trigger a popup when visitors are about to leave the page     
+* **On hover** (Pro version)_ - display a popup when a user hovers over a specific element   
+* **Inactivity** (Pro version) - show a popup after a visitor stays inactive for a defined time   
+* **After visiting X pages** (Pro version) - display a popup based on the number of pages viewed   
+* **Scrolling to elements** (Pro version) - trigger a popup when users scroll to a selected section
    
-== Free vs Pro – What's Included ==
+== Free vs Pro - What's Included ==
 
 **Free Version**
 
@@ -148,7 +148,7 @@ Popup Box works smoothly with WooCommerce and general WordPress setups:
 * Embed forms, videos, or external content
    
 
-You decide how popups support your website — without forcing a specific workflow.
+You decide how popups support your website - without forcing a specific workflow.
 
 
 == Customization & Styling Options ==
@@ -253,11 +253,11 @@ Sure, by all means!  The modals created with our WordPress popup builder plugin 
 
 = 4. How can I configure my modal form to open on its own (automatically)? =
 
-It is easy as pie! Please go to the General tab of the given modal form, and choose the **On-page load** variant from the **Popup trigger** dropdown. After the configuration, your modal form will be displayed oon as the webpage(where it is located) is loaded.  And voilà, your amazing WordPress popup is ready!
+It is easy as pie! Please go to the General tab of the given modal form, and choose the **On-page load** variant from the **Popup trigger** dropdown. After the configuration, your modal form will be displayed oon as the webpage(where it is located) is loaded.  And voila, your amazing WordPress popup is ready!
 
 = 5. How to redirect visitors after clicking on the modal form? =
 
-Simply by enabling the **Actions while clicking on the popup** option and ticking on the Enable redirection suboption. All you need to do is provide the redirection URL and choose whether open it on a new tab ot – isn't that amazing!
+Simply by enabling the **Actions while clicking on the popup** option and ticking on the Enable redirection suboption. All you need to do is provide the redirection URL and choose whether open it on a new tab ot - isn't that amazing!
 
 = 6. Can I pop up my module after a specific amount of time? =
 
@@ -309,6 +309,9 @@ After clearing the caches, try to check the case with either the **Incognito mod
 
 
 == Changelog ==
+
+= 6.2.6 ( May 06, 2026 ) =
+* Improved: Popup type selection modal design on the popup editor page
 
 = 6.2.5 ( April 28, 2026 ) =
 * Added: Current Popup Author Display Name message variable on the general settings

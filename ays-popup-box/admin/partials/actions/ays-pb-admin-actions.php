@@ -8094,27 +8094,214 @@ $ays_users_roles = $wp_roles->roles;
                 </h1>
                 <div class="ays-pb-prev-next-button-content">
                     <?php
-                        if ( $prev_popup_id != "" && !is_null( $prev_popup_id ) ) {
+                        // if ( $prev_popup_id != "" && !is_null( $prev_popup_id ) ) {
 
-                            $other_attributes = array(
-                                'id' => 'ays-popups-prev-button',
-                                'href' => sprintf( '?page=%s&action=%s&popupbox=%d', esc_attr( $_REQUEST['page'] ), 'edit', absint( $prev_popup_id ) ),
-                                'data-message' => esc_html__( 'Are you sure you want to go to the previous popup page?', "ays-popup-box"),
-                            );
-                            submit_button(esc_html__('Prev popup', "ays-popup-box"), 'button ays-button ays-popup-prev-popup-button', 'ays_popup_prev_button', false, $other_attributes);
-                        }
-                        if ( $next_popup_id != "" && !is_null( $next_popup_id ) ) {
+                        //     $other_attributes = array(
+                        //         'id' => 'ays-popups-prev-button',
+                        //         'href' => sprintf( '?page=%s&action=%s&popupbox=%d', esc_attr( $_REQUEST['page'] ), 'edit', absint( $prev_popup_id ) ),
+                        //         'data-message' => esc_html__( 'Are you sure you want to go to the previous popup page?', "ays-popup-box"),
+                        //     );
+                        //     submit_button(esc_html__('Prev popup', "ays-popup-box"), 'button ays-button ays-popup-prev-popup-button', 'ays_popup_prev_button', false, $other_attributes);
+                        // }
+                        // if ( $next_popup_id != "" && !is_null( $next_popup_id ) ) {
                         
-                            $other_attributes = array(
-                                'id' => 'ays-popups-next-button',
-                                'href' => sprintf( '?page=%s&action=%s&popupbox=%d', esc_attr( $_REQUEST['page'] ), 'edit', absint( $next_popup_id )),
-                                'data-message' => esc_html__( 'Are you sure you want to go to the next popup page?', "ays-popup-box"),
-                            );
-                            submit_button(esc_html__('Next Popup', "ays-popup-box"), 'button button-primary ays-button', 'ays_popup_next_button', false, $other_attributes);
-                        }
+                        //     $other_attributes = array(
+                        //         'id' => 'ays-popups-next-button',
+                        //         'href' => sprintf( '?page=%s&action=%s&popupbox=%d', esc_attr( $_REQUEST['page'] ), 'edit', absint( $next_popup_id )),
+                        //         'data-message' => esc_html__( 'Are you sure you want to go to the next popup page?', "ays-popup-box"),
+                        //     );
+                        //     submit_button(esc_html__('Next Popup', "ays-popup-box"), 'button button-primary ays-button', 'ays_popup_next_button', false, $other_attributes);
+                        // }
                     ?>
                 </div>
             </div>
+            <?php
+                // $ays_pb_popup_tutorial_fallback = 'https://www.youtube.com/watch?v=0cZOSdiKqTI';
+                $ays_pb_popup_tutorial_fallback = '';
+
+                $ays_pb_popup_type_cards = array(
+                    array(
+                        'type'        => 'custom_html',
+                        'title'       => esc_html__( 'Custom Content', 'ays-popup-box' ),
+                        'description' => esc_html__( 'Create a popup with your own text, images, buttons, or custom HTML content.', 'ays-popup-box' ),
+                        'demo_url'    => 'https://demo.popup-plugin.com/custom-content-popup/',
+                        'tutorial_url'=> $ays_pb_popup_tutorial_fallback,
+                        'docs_url'    => 'https://popup-plugin.com/docs/custom-content-type/',
+                        'icon'        => 'custom-content',
+                        'is_pro'      => false,
+                    ),
+                    array(
+                        'type'        => 'shortcode',
+                        'title'       => esc_html__( 'Shortcode', 'ays-popup-box' ),
+                        'description' => esc_html__( 'Embed any WordPress shortcode inside your popup to reuse existing content.', 'ays-popup-box' ),
+                        'demo_url'    => 'https://demo.popup-plugin.com/shortcode-popup/',
+                        'tutorial_url'=> 'https://www.youtube.com/watch?v=q6ai1WhpLfc',
+                        'docs_url'    => 'https://popup-plugin.com/docs/shortcode-type/',
+                        'icon'        => 'shortcode',
+                        'is_pro'      => false,
+                    ),
+                    array(
+                        'type'        => 'video_type',
+                        'title'       => esc_html__( 'Video', 'ays-popup-box' ),
+                        'description' => esc_html__( 'Showcase a YouTube, Vimeo, or self-hosted video inside an elegant popup.', 'ays-popup-box' ),
+                        'demo_url'    => 'https://demo.popup-plugin.com/video-popup/',
+                        'tutorial_url'=> 'https://www.youtube.com/watch?v=urT9M3iqbKQ',
+                        'docs_url'    => 'https://popup-plugin.com/docs/video-type/',
+                        'icon'        => 'video',
+                        'is_pro'      => false,
+                    ),
+                    array(
+                        'type'        => 'image_type',
+                        'title'       => esc_html__( 'Image', 'ays-popup-box' ),
+                        'description' => esc_html__( 'Display a single image popup - perfect for promos, banners, or announcements.', 'ays-popup-box' ),
+                        'demo_url'    => 'https://demo.popup-plugin.com/image-popup/',
+                        'tutorial_url'=> 'https://www.youtube.com/watch?v=-CFXZosVIJE',
+                        'docs_url'    => 'https://popup-plugin.com/docs/image-type/',
+                        'icon'        => 'image',
+                        'is_pro'      => false,
+                    ),
+                    array(
+                        'type'        => 'facebook_type',
+                        'title'       => esc_html__( 'Facebook', 'ays-popup-box' ),
+                        'description' => esc_html__( 'Promote your Facebook page and grow your community with a Like-box popup.', 'ays-popup-box' ),
+                        'demo_url'    => 'https://demo.popup-plugin.com/facebook-popup/',
+                        'tutorial_url'=> $ays_pb_popup_tutorial_fallback,
+                        'docs_url'    => 'https://popup-plugin.com/docs/facebook-type/',
+                        'icon'        => 'facebook',
+                        'is_pro'      => false,
+                    ),
+                    array(
+                        'type'        => 'notification_type',
+                        'title'       => esc_html__( 'Notification', 'ays-popup-box' ),
+                        'description' => esc_html__( 'Show a small, non-intrusive notification message in the corner of the screen.', 'ays-popup-box' ),
+                        'demo_url'    => 'https://demo.popup-plugin.com/notification-popup/',
+                        'tutorial_url'=> $ays_pb_popup_tutorial_fallback,
+                        'docs_url'    => 'https://popup-plugin.com/docs/notification-type/',
+                        'icon'        => 'notification',
+                        'is_pro'      => false,
+                    ),
+                    array(
+                        'type'        => '',
+                        'title'       => esc_html__( 'Subscription', 'ays-popup-box' ),
+                        'description' => esc_html__( 'Collect emails and grow your mailing list with a clean opt-in popup.', 'ays-popup-box' ),
+                        'demo_url'    => 'https://demo.popup-plugin.com/subscription-popup/',
+                        'tutorial_url'=> 'https://www.youtube.com/watch?v=5_2cAJ0ky2o',
+                        'docs_url'    => 'https://popup-plugin.com/docs/subscription-type/',
+                        'icon'        => 'subscription',
+                        'is_pro'      => true,
+                    ),
+                    array(
+                        'type'        => '',
+                        'title'       => esc_html__( 'Yes or No', 'ays-popup-box' ),
+                        'description' => esc_html__( 'Ask visitors a simple question and route them based on their answer.', 'ays-popup-box' ),
+                        'demo_url'    => 'https://demo.popup-plugin.com/yes-no-popup/',
+                        'tutorial_url'=> $ays_pb_popup_tutorial_fallback,
+                        'docs_url'    => 'https://popup-plugin.com/docs/yes-or-no-type/',
+                        'icon'        => 'yes-no',
+                        'is_pro'      => true,
+                    ),
+                    array(
+                        'type'        => '',
+                        'title'       => esc_html__( 'Embed( Iframe )', 'ays-popup-box' ),
+                        'description' => esc_html__( 'Embed any external page or web app directly inside your popup with an iframe.', 'ays-popup-box' ),
+                        'demo_url'    => 'https://demo.popup-plugin.com/iframe-popup/',
+                        'tutorial_url'=> 'https://www.youtube.com/watch?v=oOvHTcePpys',
+                        'docs_url'    => 'https://popup-plugin.com/docs/embed-iframe-type/',
+                        'icon'        => 'embed',
+                        'is_pro'      => true,
+                    ),
+                    array(
+                        'type'        => '',
+                        'title'       => esc_html__( 'Contact form', 'ays-popup-box' ),
+                        'description' => esc_html__( 'Let visitors reach you instantly with a built-in contact form popup.', 'ays-popup-box' ),
+                        'demo_url'    => 'https://demo.popup-plugin.com/contact-form-popup/',
+                        'tutorial_url'=> 'https://www.youtube.com/watch?v=BdwSmLbsCC4',
+                        'docs_url'    => 'https://popup-plugin.com/docs/contact-form-type/',
+                        'icon'        => 'contact-form',
+                        'is_pro'      => true,
+                    ),
+                    array(
+                        'type'        => '',
+                        'title'       => esc_html__( 'Subscribe & get file', 'ays-popup-box' ),
+                        'description' => esc_html__( 'Offer a downloadable lead magnet in exchange for an email subscription.', 'ays-popup-box' ),
+                        'demo_url'    => 'https://demo.popup-plugin.com/subscribe-and-get-file-popup/',
+                        'tutorial_url'=> $ays_pb_popup_tutorial_fallback,
+                        'docs_url'    => 'https://popup-plugin.com/docs/subscribe-and-get-a-file-type/',
+                        'icon'        => 'subscribe-file',
+                        'is_pro'      => true,
+                    ),
+                    array(
+                        'type'        => '',
+                        'title'       => esc_html__( 'Coupon', 'ays-popup-box' ),
+                        'description' => esc_html__( 'Reward visitors with a discount code to boost conversions and sales.', 'ays-popup-box' ),
+                        'demo_url'    => 'https://demo.popup-plugin.com/coupon-popup/',
+                        'tutorial_url'=> 'https://www.youtube.com/watch?v=3zM6MANge68',
+                        'docs_url'    => 'https://popup-plugin.com/docs/coupon-type/',
+                        'icon'        => 'coupon',
+                        'is_pro'      => true,
+                    ),
+                    array(
+                        'type'        => '',
+                        'title'       => esc_html__( 'Countdown', 'ays-popup-box' ),
+                        'description' => esc_html__( 'Create urgency with a countdown timer popup for offers and announcements.', 'ays-popup-box' ),
+                        'demo_url'    => 'https://demo.popup-plugin.com/countdown-popup/',
+                        'tutorial_url'=> 'https://www.youtube.com/watch?v=WxzkC6aiZf0',
+                        'docs_url'    => 'https://popup-plugin.com/docs/countdown-type/',
+                        'icon'        => 'countdown',
+                        'is_pro'      => true,
+                    ),
+                    array(
+                        'type'        => '',
+                        'title'       => esc_html__( 'Accept Cookie', 'ays-popup-box' ),
+                        'description' => esc_html__( 'Show a cookie consent popup and keep visitors informed about tracking.', 'ays-popup-box' ),
+                        'demo_url'    => 'https://demo.popup-plugin.com/cookies-popup/',
+                        'tutorial_url'=> $ays_pb_popup_tutorial_fallback,
+                        'docs_url'    => 'https://popup-plugin.com/docs/accept-cookie-type/',
+                        'icon'        => 'accept-cookie',
+                        'is_pro'      => true,
+                    ),
+                    array(
+                        'type'        => '',
+                        'title'       => esc_html__( 'Download', 'ays-popup-box' ),
+                        'description' => esc_html__( 'Let visitors download files directly from a focused popup.', 'ays-popup-box' ),
+                        'demo_url'    => 'https://demo.popup-plugin.com/download-popup/',
+                        'tutorial_url'=> 'https://www.youtube.com/watch?v=QuTulJpujH0',
+                        'docs_url'    => 'https://popup-plugin.com/docs/download-type/',
+                        'icon'        => 'download',
+                        'is_pro'      => true,
+                    ),
+                    array(
+                        'type'        => '',
+                        'title'       => esc_html__( 'WooCommerce', 'ays-popup-box' ),
+                        'description' => esc_html__( 'Promote WooCommerce products and offers with a dedicated popup.', 'ays-popup-box' ),
+                        'demo_url'    => 'https://demo.popup-plugin.com/woocommerce-product-popup/',
+                        'tutorial_url'=> 'https://www.youtube.com/watch?v=i4vo-0ZaheU',
+                        'docs_url'    => 'https://popup-plugin.com/docs/woocommerce-product-type/',
+                        'icon'        => 'woocommerce',
+                        'is_pro'      => true,
+                    ),
+                    array(
+                        'type'        => '',
+                        'title'       => esc_html__( 'Login Form', 'ays-popup-box' ),
+                        'description' => esc_html__( 'Add a login form popup so users can sign in without leaving the page.', 'ays-popup-box' ),
+                        'demo_url'    => 'https://demo.popup-plugin.com/login-form-popup/',
+                        'tutorial_url'=> 'https://www.youtube.com/watch?v=7Hh3jp0hMgM',
+                        'docs_url'    => 'https://popup-plugin.com/docs/login-form-type/',
+                        'icon'        => 'login-form',
+                        'is_pro'      => true,
+                    ),
+                    array(
+                        'type'        => '',
+                        'title'       => esc_html__( 'Google Map', 'ays-popup-box' ),
+                        'description' => esc_html__( 'Display a Google Map in a popup for store locations and directions.', 'ays-popup-box' ),
+                        'demo_url'    => 'https://demo.popup-plugin.com/google-map-popup/',
+                        'tutorial_url'=> 'https://www.youtube.com/watch?v=aFrtPsznVx4',
+                        'docs_url'    => 'https://popup-plugin.com/docs/google-map-type/',
+                        'icon'        => 'google-map',
+                        'is_pro'      => true,
+                    ),
+                );
+            ?>
             <?php if($id === null): ?>
                 <div class="ays_pb_layer_container">
                     <div class="ays_pb_layer_content">
@@ -8126,399 +8313,153 @@ $ays_users_roles = $wp_roles->roles;
                             </div>
                             <div class="ays-pb-choose-type">
                                 <p style="margin: 0;"><?php echo  esc_html__('Choose Your Popup Type', "ays-popup-box") ?></p>
+                                <span><?php echo esc_html__('Pick a popup type to get started. Click anywhere on a card to select it.', 'ays-popup-box'); ?></span>
                             </div>
                             <div class="ays_pb_layer_box_blocks">
-                                <label for="<?php echo esc_attr($this->plugin_name); ?>-modal_content_custom_html" class='ays-pb-dblclick-layer'>
-                                    <input id="<?php echo esc_attr($this->plugin_name); ?>-modal_content_custom_html" type="radio" name="<?php echo esc_attr($this->plugin_name); ?>[modal_content]" class="ays-pb-content-type" value="custom_html" <?php echo $modal_content == 'custom_html' ? 'checked' : ''; ?>>
-                                    <div class="ays_pb_layer_item">
-                                        <div class="ays_pb_layer_item_logo">
-                                            <div class="ays_pb_layer_item_logo_overlay">
-                                                <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/file-code.svg"?>">
-                                            </div>
-                                        </div>
-                                        <div class="ays_pb_layer_item_title">
-                                            <div class="ays-pb-type-name">
-                                                <p style="margin:0px; font-size:19px;"><?php echo  esc_html__('Custom Content', "ays-popup-box") ?></p>
-                                            </div>
-                                            <div class="ays_pb_layer_buttons">
-                                                <a href="https://demo.popup-plugin.com/custom-content-popup/" class="ays-pb-view-demo-content" target="_blank"><?php echo  esc_html__('View demo', "ays-popup-box") ?></a>
-                                                <div class="ays-pb-select-type">
-                                                    <p><?php echo esc_html__('Select', 'ays-popup-box') ?></p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </label>
-                                <label for="<?php echo esc_attr($this->plugin_name); ?>-modal_content_shortcode" class='ays-pb-dblclick-layer'>
-                                    <input id="<?php echo esc_attr($this->plugin_name); ?>-modal_content_shortcode" type="radio" name="<?php echo esc_attr($this->plugin_name); ?>[modal_content]" class="ays-pb-content-type" value="shortcode" <?php echo $modal_content == 'shortcode' ? 'checked' : ''; ?>>
-                                    <div class="ays_pb_layer_item">
-                                        <div class="ays_pb_layer_item_logo">
-                                            <div class="ays_pb_layer_item_logo_overlay">
-                                                <span class="ays_pb_layer_item_logo_shortcode">[/]</span>
-                                            </div>
-                                        </div>
-                                        <div class="ays_pb_layer_item_title">
-                                            <div class="ays-pb-type-name">
-                                                <p style="margin:0px; font-size:19px;"><?php echo esc_html__('Shortcode', "ays-popup-box") ?></p>
-                                            </div>
-                                            <div class="ays_pb_layer_buttons">
-                                                <a href="https://demo.popup-plugin.com/shortcode-popup/" class="ays-pb-view-demo-content" target="_blank"><?php echo  esc_html__('View demo', "ays-popup-box") ?></a>
-                                                <div class="ays-pb-select-type">
-                                                    <p><?php echo esc_html__('Select', 'ays-popup-box') ?></p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </label>
-                                <label for="<?php echo esc_attr($this->plugin_name); ?>-modal_content_video_type" class='ays-pb-dblclick-layer'>
-                                    <input id="<?php echo esc_attr($this->plugin_name); ?>-modal_content_video_type" type="radio" name="<?php echo esc_attr($this->plugin_name); ?>[modal_content]" class="ays-pb-content-type" value="video_type" <?php echo $modal_content == 'video_type' ? 'checked' : ''; ?>>
-                                    <div class="ays_pb_layer_item">
-                                        <div class="ays_pb_layer_item_logo">
-                                            <div class="ays_pb_layer_item_logo_overlay">
-                                                <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/video.svg"?>">
-                                            </div>
-                                        </div>
-                                        <div class="ays_pb_layer_item_title">
-                                            <div class="ays-pb-type-name">
-                                                <p style="margin:0px; font-size:19px;"><?php echo  esc_html__('Video', "ays-popup-box") ?></p>
-                                            </div>
-                                            <div class="ays_pb_layer_buttons">
-                                                <a href="https://demo.popup-plugin.com/video-popup/" class="ays-pb-view-demo-content" target="_blank"><?php echo  esc_html__('View demo', "ays-popup-box") ?></a>
-                                                <div class="ays-pb-select-type">
-                                                    <p><?php echo esc_html__('Select', 'ays-popup-box') ?></p>
-                                                </div>
-                                            </div>
-                                        </div> 
-                                    </div>
-                                </label>
-                                <label for="<?php echo esc_attr($this->plugin_name); ?>-modal_content_image_type" class='ays-pb-dblclick-layer'>
-                                    <input id="<?php echo esc_attr($this->plugin_name); ?>-modal_content_image_type" type="radio" name="<?php echo esc_attr($this->plugin_name); ?>[modal_content]" class="ays-pb-content-type" value="image_type" <?php echo $modal_content == 'image_type' ? 'checked' : ''; ?>>
-                                    <div class="ays_pb_layer_item">
-                                        <div class="ays_pb_layer_item_logo">
-                                            <div class="ays_pb_layer_item_logo_overlay">
-                                                <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/popup-image-type.svg"?>">
-                                            </div>
-                                        </div>
-                                        <div class="ays_pb_layer_item_title">
-                                            <div class="ays-pb-type-name">
-                                                <p style="margin:0px; font-size:19px;"><?php echo  esc_html__('Image', "ays-popup-box") ?></p>
-                                            </div>
-                                            <div class="ays_pb_layer_buttons">
-                                                <a href="https://demo.popup-plugin.com/image-popup/" class="ays-pb-view-demo-content" target="_blank"><?php echo  esc_html__('View demo', "ays-popup-box") ?></a>
-                                                <div class="ays-pb-select-type">
-                                                    <p><?php echo esc_html__('Select', 'ays-popup-box') ?></p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </label>
-                                <label for="<?php echo esc_attr($this->plugin_name); ?>-modal_content_facebook_type" class='ays-pb-dblclick-layer'>
-                                    <input id="<?php echo esc_attr($this->plugin_name); ?>-modal_content_facebook_type" type="radio" name="<?php echo esc_attr($this->plugin_name); ?>[modal_content]" class="ays-pb-content-type" value="facebook_type" <?php echo $modal_content == 'facebook_type' ? 'checked' : ''; ?>>
-                                    <div class="ays_pb_layer_item">
-                                        <div class="ays_pb_layer_item_logo">
-                                            <div class="ays_pb_layer_item_logo_overlay">
-                                                <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/popup-facebook-type.svg"?>">
-                                            </div>
-                                        </div>
-                                        <div class="ays_pb_layer_item_title">
-                                            <div class="ays-pb-type-name">
-                                                <p style="margin:0px; font-size:19px;"><?php echo  esc_html__('Facebook', "ays-popup-box") ?></p>
-                                            </div>
-                                            <div class="ays_pb_layer_buttons">
-                                                <a href="https://demo.popup-plugin.com/facebook-popup/" class="ays-pb-view-demo-content" target="_blank"><?php echo  esc_html__('View demo', "ays-popup-box") ?></a>
-                                                <div class="ays-pb-select-type">
-                                                    <p><?php echo esc_html__('Select', 'ays-popup-box') ?></p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </label>
-                                <label for="<?php echo esc_attr($this->plugin_name); ?>-modal_content_notification" class='ays-pb-dblclick-layer'>
-                                    <input id="<?php echo esc_attr($this->plugin_name); ?>-modal_content_notification" type="radio" name="<?php echo esc_attr($this->plugin_name); ?>[modal_content]" class="ays-pb-content-type" value="notification_type" <?php echo $modal_content == 'notification_type' ? 'checked' : ''; ?>>
-                                    <div class="ays_pb_layer_item">
-                                        <div class="ays_pb_layer_item_logo">
-                                            <div class="ays_pb_layer_item_logo_overlay">
-                                                <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/popup-notification-type.svg"?>">
-                                            </div>
-                                        </div>
-                                        <div class="ays_pb_layer_item_title">
-                                            <div class="ays-pb-type-name">
-                                                <p style="margin:0px; font-size:19px;"><?php echo  esc_html__('Notification', "ays-popup-box") ?></p>
-                                            </div>
-                                            <div class="ays_pb_layer_buttons">
-                                                <a href="https://demo.popup-plugin.com/notification-popup/" class="ays-pb-view-demo-content" target="_blank"><?php echo  esc_html__('View demo', "ays-popup-box") ?></a>
-                                                <div class="ays-pb-select-type">
-                                                    <p><?php echo esc_html__('Select', 'ays-popup-box') ?></p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </label>
-                                <label class="ays-pb-pro-type-layer">
-                                    <div class="ays_pb_layer_item ays_pb_layer_item_pro">
-                                        <div class="ays_pb_layer_item_logo">
-                                            <div class="ays_pb_layer_item_logo_overlay">
-                                                <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/envelope.svg"?>">
-                                            </div>
-                                        </div>
-                                        <div class="ays_pb_layer_item_title">
-                                            <div class="ays-pb-type-name">
-                                                <p style="margin:0px; font-size:19px;"><?php echo  esc_html__('Subscription', "ays-popup-box") ?></p>
-                                            </div>
-                                            <a href="https://popup-plugin.com/" target="_blank" class="ays-pb-select-type-pro">
-                                                <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) ?>/images/icons/pro-features-icons/Locked_24x24.svg" class="ays-pb-locked-img">
-                                                <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) ?>/images/icons/pro-features-icons/Unlocked_24_24.svg" class="ays-pb-unlocked-img">
-                                                <p><?php echo esc_html__('Upgrade Now', 'ays-popup-box') ?></p>
-                                            </a>
-                                            <div class="ays-pb-view-demo-content">
-                                                <a href="https://demo.popup-plugin.com/subscription-popup/" target="_blank"><?php echo  esc_html__('View demo', "ays-popup-box") ?></a>
-                                            </div>
-                                        </div> 
-                                    </div>
+                                <?php foreach ( $ays_pb_popup_type_cards as $ays_pb_popup_type_card ) : ?>
+                                    <?php
+                                        $ays_pb_is_pro_type = isset( $ays_pb_popup_type_card['is_pro'] ) && true === $ays_pb_popup_type_card['is_pro'];
+                                        $ays_pb_label_class = $ays_pb_is_pro_type ? 'ays-pb-pro-type-layer' : 'ays-pb-dblclick-layer';
+                                        $ays_pb_item_class = $ays_pb_is_pro_type ? 'ays_pb_layer_item ays_pb_layer_item_pro' : 'ays_pb_layer_item';
+                                        $ays_pb_input_id = '';
 
-                                </label>
-                                <label class="ays-pb-pro-type-layer">
-                                    <div class="ays_pb_layer_item ays_pb_layer_item_pro">
-                                        <div class="ays_pb_layer_item_logo">
+                                        if ( ! $ays_pb_is_pro_type ) {
+                                            $ays_pb_input_id = sprintf(
+                                                '%s-modal_content_%s',
+                                                $this->plugin_name,
+                                                $ays_pb_popup_type_card['type']
+                                            );
+                                        }
+                                    ?>
+                                    <label
+                                        <?php if ( ! $ays_pb_is_pro_type ) : ?>
+                                            for="<?php echo esc_attr( $ays_pb_input_id ); ?>"
+                                        <?php endif; ?>
+                                        class="<?php echo esc_attr( $ays_pb_label_class ); ?>"
+                                    >
+                                        <?php if ( ! $ays_pb_is_pro_type ) : ?>
+                                            <input
+                                                id="<?php echo esc_attr( $ays_pb_input_id ); ?>"
+                                                type="radio"
+                                                name="<?php echo esc_attr( $this->plugin_name ); ?>[modal_content]"
+                                                class="ays-pb-content-type"
+                                                value="<?php echo esc_attr( $ays_pb_popup_type_card['type'] ); ?>"
+                                                <?php echo $modal_content === $ays_pb_popup_type_card['type'] ? 'checked' : ''; ?>
+                                            >
+                                        <?php endif; ?>
+                                        <div class="<?php echo esc_attr( $ays_pb_item_class ); ?>">
+                                            <a
+                                                href="<?php echo esc_url( $ays_pb_popup_type_card['docs_url'] ); ?>"
+                                                target="_blank"
+                                                class="ays-pb-card-doc-link ays-pb-card-link"
+                                                aria-label="<?php echo esc_attr( sprintf( __( 'View %s documentation', 'ays-popup-box' ), $ays_pb_popup_type_card['title'] ) ); ?>"
+                                            >
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                                    <path d="M12 7v14"></path>
+                                                    <path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"></path>
+                                                </svg>
+                                            </a>
+                                            <div class="ays_pb_layer_item_logo">
                                                 <div class="ays_pb_layer_item_logo_overlay">
-                                                <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/check.svg"?>">
+                                                    <?php switch ( $ays_pb_popup_type_card['icon'] ) :
+                                                        case 'custom-content': ?>
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 22h14a2 2 0 0 0 2-2V7l-5-5H6a2 2 0 0 0-2 2v4"></path><path d="M14 2v4a2 2 0 0 0 2 2h4"></path><path d="m5 12-3 3 3 3"></path><path d="m9 18 3-3-3-3"></path></svg>
+                                                            <?php break;
+                                                        case 'shortcode': ?>
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m18 16 4-4-4-4"></path><path d="m6 8-4 4 4 4"></path><path d="m14.5 4-5 16"></path></svg>
+                                                            <?php break;
+                                                        case 'video': ?>
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m16 13 5.223 3.482a.5.5 0 0 0 .777-.416V7.87a.5.5 0 0 0-.752-.432L16 10.5"></path><rect x="2" y="6" width="14" height="12" rx="2"></rect></svg>
+                                                            <?php break;
+                                                        case 'image': ?>
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="18" x="3" y="3" rx="2" ry="2"></rect><circle cx="9" cy="9" r="2"></circle><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"></path></svg>
+                                                            <?php break;
+                                                        case 'facebook': ?>
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                                                            <?php break;
+                                                        case 'notification': ?>
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"></path><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"></path></svg>
+                                                            <?php break;
+                                                        case 'subscription': ?>
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
+                                                            <?php break;
+                                                        case 'yes-no': ?>
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="m9 12 2 2 4-4"></path></svg>
+                                                            <?php break;
+                                                        case 'embed': ?>
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                                                            <?php break;
+                                                        case 'contact-form': ?>
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                                                            <?php break;
+                                                        case 'subscribe-file': ?>
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"></path><path d="M14 2v4a2 2 0 0 0 2 2h4"></path><path d="M12 18v-6"></path><path d="m9 15 3 3 3-3"></path></svg>
+                                                            <?php break;
+                                                        case 'coupon': ?>
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="19" x2="5" y1="5" y2="19"></line><circle cx="6.5" cy="6.5" r="2.5"></circle><circle cx="17.5" cy="17.5" r="2.5"></circle></svg>
+                                                            <?php break;
+                                                        case 'countdown': ?>
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="13" r="8"></circle><path d="M12 9v4l2 2"></path><path d="M9 2h6"></path><path d="M12 2v3"></path></svg>
+                                                            <?php break;
+                                                        case 'accept-cookie': ?>
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-4-4 4 4 0 0 1-4-4 4 4 0 0 1-2-2"></path><path d="M8.5 8.5v.01"></path><path d="M16 15.5v.01"></path><path d="M12 12v.01"></path><path d="M11 17v.01"></path><path d="M7 14v.01"></path></svg>
+                                                            <?php break;
+                                                        case 'download': ?>
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" x2="12" y1="15" y2="3"></line></svg>
+                                                            <?php break;
+                                                        case 'woocommerce': ?>
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 6 1.5 9h9L18 8H8"></path><path d="M6 6H4"></path><circle cx="9" cy="19" r="1"></circle><circle cx="16" cy="19" r="1"></circle><path d="M9 10h.01"></path><path d="M15 10h.01"></path></svg>
+                                                            <?php break;
+                                                        case 'login-form': ?>
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"></path><polyline points="10 17 15 12 10 7"></polyline><line x1="15" x2="3" y1="12" y2="12"></line></svg>
+                                                            <?php break;
+                                                        case 'google-map': ?>
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                                                            <?php break;
+                                                    endswitch; ?>
+                                                </div>
+                                            </div>
+                                            <div class="ays_pb_layer_item_title">
+                                                <div class="ays-pb-type-name">
+                                                    <p style="margin:0px; font-size:19px;"><?php echo esc_html( $ays_pb_popup_type_card['title'] ); ?></p>
+                                                </div>
+                                                <?php if ( $ays_pb_is_pro_type ) : ?>
+                                                    <a href="https://popup-plugin.com/" target="_blank" class="ays-pb-select-type-pro ays-pb-card-link">
+                                                        <svg
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                        viewBox="0 0 24 24"
+                                                        fill="none"
+                                                        stroke="currentColor"
+                                                        stroke-width="2"
+                                                        stroke-linecap="round"
+                                                        stroke-linejoin="round"
+                                                        class="premiumIcon"
+                                                        >
+                                                        <path d="M11.562 3.266a.5.5 0 0 1 .876 0L15.39 8.87a1 1 0 0 0 1.516.294L21.183 5.5a.5.5 0 0 1 .798.519l-2.834 10.246a1 1 0 0 1-.956.734H5.81a1 1 0 0 1-.957-.734L2.02 6.02a.5.5 0 0 1 .798-.519l4.276 3.664a1 1 0 0 0 1.516-.294z"></path>
+                                                        <path d="M5 21h14"></path>
+                                                        </svg>
+                                                        <p><?php echo esc_html__( 'PRO', 'ays-popup-box' ); ?></p>
+                                                    </a>
+                                                <?php endif; ?>
+                                            </div>
+                                            <div class="ays_pb_layer_item_description">
+                                                <p><?php echo esc_html( $ays_pb_popup_type_card['description'] ); ?></p>
+                                            </div>
+                                            <div class="ays_pb_layer_buttons<?php echo $ays_pb_is_pro_type ? ' ays_pb_layer_buttons_pro' : ''; ?>">
+                                                <a href="<?php echo esc_url( $ays_pb_popup_type_card['demo_url'] ); ?>" class="ays-pb-view-demo-content ays-pb-card-link" target="_blank"><?php echo esc_html__( 'View demo', 'ays-popup-box' ); ?></a>
+                                                <?php if ( ! empty($ays_pb_popup_type_card['tutorial_url']) ) : ?>
+                                                    <a href="<?php echo esc_url( $ays_pb_popup_type_card['tutorial_url'] ); ?>" class="ays-pb-watch-tutorial-content ays-pb-card-link" target="_blank"><?php echo esc_html__( 'Watch tutorial', 'ays-popup-box' ); ?></a>
+                                                    <?php if ( ! $ays_pb_is_pro_type ) : ?>
+                                                        <div class="ays-pb-select-type">
+                                                            <p><?php echo esc_html__( 'Select', 'ays-popup-box' ); ?></p>
+                                                        </div>
+                                                    <?php endif; ?>
+                                                <?php endif; ?>
+
                                             </div>
                                         </div>
-                                        <div class="ays_pb_layer_item_title">
-                                            <div class="ays-pb-type-name">
-                                                <p style="margin:0px; font-size:19px;"><?php echo  esc_html__('Yes or No', "ays-popup-box") ?></p>
-                                            </div>
-                                            <a href="https://popup-plugin.com/" target="_blank" class="ays-pb-select-type-pro">
-                                                <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) ?>/images/icons/pro-features-icons/Locked_24x24.svg" class="ays-pb-locked-img">
-                                                <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) ?>/images/icons/pro-features-icons/Unlocked_24_24.svg" class="ays-pb-unlocked-img">
-                                                <p><?php echo esc_html__('Upgrade Now', 'ays-popup-box') ?></p>
-                                            </a>
-                                            <div class="ays-pb-view-demo-content">
-                                                <a href="https://demo.popup-plugin.com/yes-no-popup/" target="_blank"><?php echo  esc_html__('View demo', "ays-popup-box") ?></a>
-                                            </div>
-                                        </div> 
-                                    </div>
-                                </label>
-                                <label class="ays-pb-pro-type-layer">
-                                    <div class="ays_pb_layer_item ays_pb_layer_item_pro">
-                                        <div class="ays_pb_layer_item_logo">
-                                            <div class="ays_pb_layer_item_logo_overlay">
-                                                <img src="<?php echo esc_url(AYS_PB_ADMIN_URL); ?>/images/icons/coding.png">
-                                            </div>
-                                        </div>
-                                        <div class="ays_pb_layer_item_title">
-                                            <div class="ays-pb-type-name">
-                                                <p style="margin:0px; font-size:19px;"><?php echo  esc_html__('Embed( Iframe )', "ays-popup-box") ?></p>
-                                            </div>
-                                            <a href="https://popup-plugin.com/" target="_blank" class="ays-pb-select-type-pro">
-                                                <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) ?>/images/icons/pro-features-icons/Locked_24x24.svg" class="ays-pb-locked-img">
-                                                <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) ?>/images/icons/pro-features-icons/Unlocked_24_24.svg" class="ays-pb-unlocked-img">
-                                                <p><?php echo esc_html__('Upgrade Now', 'ays-popup-box') ?></p>
-                                            </a>
-                                            <div class="ays-pb-view-demo-content">
-                                                <a href="https://demo.popup-plugin.com/iframe-popup/" target="_blank"><?php echo  esc_html__('View demo', "ays-popup-box") ?></a>
-                                            </div>
-                                        </div> 
-                                    </div>
-                                </label> 
-                                <label class="ays-pb-pro-type-layer">
-                                    <div class="ays_pb_layer_item ays_pb_layer_item_pro">
-                                        <div class="ays_pb_layer_item_logo">
-                                            <div class="ays_pb_layer_item_logo_overlay">
-                                                <img src="<?php echo esc_url(AYS_PB_ADMIN_URL); ?>/images/icons/comments.svg">
-                                            </div>
-                                        </div>
-                                        <div class="ays_pb_layer_item_title">
-                                            <div class="ays-pb-type-name">
-                                                <p style="margin:0px; font-size:19px;"><?php echo  esc_html__('Contact form', "ays-popup-box") ?></p>
-                                            </div>
-                                            <a href="https://popup-plugin.com/" target="_blank" class="ays-pb-select-type-pro">
-                                                <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) ?>/images/icons/pro-features-icons/Locked_24x24.svg" class="ays-pb-locked-img">
-                                                <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) ?>/images/icons/pro-features-icons/Unlocked_24_24.svg" class="ays-pb-unlocked-img">
-                                                <p><?php echo esc_html__('Upgrade Now', 'ays-popup-box') ?></p>
-                                            </a>
-                                            <div class="ays-pb-view-demo-content">
-                                                <a href="https://demo.popup-plugin.com/contact-form-popup/" target="_blank"><?php echo  esc_html__('View demo', "ays-popup-box") ?></a>
-                                            </div>
-                                        </div> 
-                                    </div>
-                                </label> 
-                                <label class="ays-pb-pro-type-layer">
-                                    <div class="ays_pb_layer_item ays_pb_layer_item_pro">
-                                        <div class="ays_pb_layer_item_logo">
-                                            <div class="ays_pb_layer_item_logo_overlay">
-                                                <img src="<?php echo esc_url(AYS_PB_ADMIN_URL); ?>/images/icons/file-upload.svg">
-                                            </div>
-                                        </div>
-                                        <div class="ays_pb_layer_item_title">
-                                            <div class="ays-pb-type-name">
-                                                <p style="margin:0px; font-size:19px;"><?php echo  esc_html__('Subscribe and get file', "ays-popup-box") ?></p>
-                                            </div>
-                                            <a href="https://popup-plugin.com/" target="_blank" class="ays-pb-select-type-pro">
-                                                <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) ?>/images/icons/pro-features-icons/Locked_24x24.svg" class="ays-pb-locked-img">
-                                                <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) ?>/images/icons/pro-features-icons/Unlocked_24_24.svg" class="ays-pb-unlocked-img">
-                                                <p><?php echo esc_html__('Upgrade Now', 'ays-popup-box') ?></p>
-                                            </a>
-                                            <div class="ays-pb-view-demo-content">
-                                                <a href="https://demo.popup-plugin.com/subscribe-and-get-file-popup/" target="_blank"><?php echo  esc_html__('View demo', "ays-popup-box") ?></a>
-                                            </div>
-                                        </div> 
-                                    </div>
-                                </label> 
-                                <label class="ays-pb-pro-type-layer">
-                                    <div class="ays_pb_layer_item ays_pb_layer_item_pro">
-                                        <div class="ays_pb_layer_item_logo">
-                                            <div class="ays_pb_layer_item_logo_overlay">
-                                                <img src= "<?php echo esc_url(AYS_PB_ADMIN_URL) ;?>/images/icons/coupon.svg" style="width:40px;height:40px;">
-                                            </div>
-                                        </div>
-                                        <div class="ays_pb_layer_item_title">
-                                            <div class="ays-pb-type-name">
-                                                <p style="margin:0px; font-size:19px;"><?php echo  esc_html__('Coupon', "ays-popup-box") ?></p>
-                                            </div>
-                                            <a href="https://popup-plugin.com/" target="_blank" class="ays-pb-select-type-pro">
-                                                <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) ?>/images/icons/pro-features-icons/Locked_24x24.svg" class="ays-pb-locked-img">
-                                                <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) ?>/images/icons/pro-features-icons/Unlocked_24_24.svg" class="ays-pb-unlocked-img">
-                                                <p><?php echo esc_html__('Upgrade Now', 'ays-popup-box') ?></p>
-                                            </a>
-                                            <div class="ays-pb-view-demo-content">
-                                                <a href="https://demo.popup-plugin.com/coupon-popup/" target="_blank"><?php echo  esc_html__('View demo', "ays-popup-box") ?></a>
-                                            </div>
-                                        </div> 
-                                    </div>
-                                </label>
-                                <label class="ays-pb-pro-type-layer">
-                                    <div class="ays_pb_layer_item ays_pb_layer_item_pro">
-                                        <div class="ays_pb_layer_item_logo">
-                                            <div class="ays_pb_layer_item_logo_overlay">
-                                                <img src= "<?php echo esc_url(AYS_PB_ADMIN_URL); ?>/images/icons/countdown.svg">
-                                            </div>
-                                        </div>
-                                        <div class="ays_pb_layer_item_title">
-                                            <div class="ays-pb-type-name">
-                                                <p style="margin:0px; font-size:19px;"><?php echo  esc_html__('Countdown', "ays-popup-box") ?></p>
-                                            </div>
-                                            <a href="https://popup-plugin.com/" target="_blank" class="ays-pb-select-type-pro">
-                                                <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) ?>/images/icons/pro-features-icons/Locked_24x24.svg" class="ays-pb-locked-img">
-                                                <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) ?>/images/icons/pro-features-icons/Unlocked_24_24.svg" class="ays-pb-unlocked-img">
-                                                <p><?php echo esc_html__('Upgrade Now', 'ays-popup-box') ?></p>
-                                            </a>
-                                            <div class="ays-pb-view-demo-content">
-                                                <a href="https://demo.popup-plugin.com/countdown-popup/" target="_blank"><?php echo  esc_html__('View demo', "ays-popup-box") ?></a>
-                                            </div>
-                                        </div> 
-                                    </div>
-                                </label>
-                                <label class="ays-pb-pro-type-layer">
-                                    <div class="ays_pb_layer_item ays_pb_layer_item_pro">
-                                        <div class="ays_pb_layer_item_logo">
-                                            <div class="ays_pb_layer_item_logo_overlay">
-                                                <img src= "<?php echo esc_url(AYS_PB_ADMIN_URL) ;?>/images/icons/cookie.svg">
-                                            </div>
-                                        </div>
-                                        <div class="ays_pb_layer_item_title">
-                                            <div class="ays-pb-type-name">
-                                                <p style="margin:0px; font-size:19px;"><?php echo  esc_html__('Accept Cookie', "ays-popup-box") ?></p>
-                                            </div>
-                                            <a href="https://popup-plugin.com/" target="_blank" class="ays-pb-select-type-pro">
-                                                <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) ?>/images/icons/pro-features-icons/Locked_24x24.svg" class="ays-pb-locked-img">
-                                                <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) ?>/images/icons/pro-features-icons/Unlocked_24_24.svg" class="ays-pb-unlocked-img">
-                                                <p><?php echo esc_html__('Upgrade Now', 'ays-popup-box') ?></p>
-                                            </a>
-                                            <div class="ays-pb-view-demo-content">
-                                                <a href="https://demo.popup-plugin.com/cookies-popup/" target="_blank"><?php echo  esc_html__('View demo', "ays-popup-box") ?></a>
-                                            </div>
-                                        </div> 
-                                    </div>
-                                </label> 
-                                <label class="ays-pb-pro-type-layer">
-                                    <div class="ays_pb_layer_item ays_pb_layer_item_pro">
-                                        <div class="ays_pb_layer_item_logo">
-                                            <div class="ays_pb_layer_item_logo_overlay">
-                                                <img src= "<?php echo esc_url(AYS_PB_ADMIN_URL) ;?>/images/icons/download.svg">
-                                            </div>
-                                        </div>
-                                        <div class="ays_pb_layer_item_title">
-                                            <div class="ays-pb-type-name">
-                                                <p style="margin:0px; font-size:19px;"><?php echo  esc_html__('Download', "ays-popup-box") ?></p>
-                                            </div>
-                                            <a href="https://popup-plugin.com/" target="_blank" class="ays-pb-select-type-pro">
-                                                <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) ?>/images/icons/pro-features-icons/Locked_24x24.svg" class="ays-pb-locked-img">
-                                                <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) ?>/images/icons/pro-features-icons/Unlocked_24_24.svg" class="ays-pb-unlocked-img">
-                                                <p><?php echo esc_html__('Upgrade Now', 'ays-popup-box') ?></p>
-                                            </a>
-                                            <div class="ays-pb-view-demo-content">
-                                                <a href="https://demo.popup-plugin.com/download-popup/" target="_blank"><?php echo  esc_html__('View demo', "ays-popup-box") ?></a>
-                                            </div>
-                                        </div> 
-                                    </div>
-                                </label> 
-                                <label class="ays-pb-pro-type-layer">
-                                    <div class="ays_pb_layer_item ays_pb_layer_item_pro">
-                                        <div class="ays_pb_layer_item_logo">
-                                            <div class="ays_pb_layer_item_logo_overlay">
-                                                <img src= "<?php echo esc_url(AYS_PB_ADMIN_URL) ;?>/images/icons/woo.svg">
-                                            </div>
-                                        </div>
-                                        <div class="ays_pb_layer_item_title">
-                                            <div class="ays-pb-type-name">
-                                                <p style="margin:0px; font-size:19px;"><?php echo  esc_html__('WooCommerce', "ays-popup-box") ?></p>
-                                            </div>
-                                            <a href="https://popup-plugin.com/" target="_blank" class="ays-pb-select-type-pro">
-                                                <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) ?>/images/icons/pro-features-icons/Locked_24x24.svg" class="ays-pb-locked-img">
-                                                <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) ?>/images/icons/pro-features-icons/Unlocked_24_24.svg" class="ays-pb-unlocked-img">
-                                                <p><?php echo esc_html__('Upgrade Now', 'ays-popup-box') ?></p>
-                                            </a>
-                                            <div class="ays-pb-view-demo-content">
-                                                <a href="https://demo.popup-plugin.com/woocommerce-product-popup/" target="_blank"><?php echo  esc_html__('View demo', "ays-popup-box") ?></a>
-                                            </div>
-                                        </div> 
-                                    </div>
-                                </label> 
-                                <label>
-                                    <div class="ays_pb_layer_item ays_pb_layer_item_pro">
-                                        <div class="ays_pb_layer_item_logo">
-                                            <div class="ays_pb_layer_item_logo_overlay">
-                                                <img src= "<?php echo esc_url(AYS_PB_ADMIN_URL) ;?>/images/icons/sign-in.svg">
-                                            </div>
-                                        </div>
-                                        <div class="ays_pb_layer_item_title">
-                                            <div class="ays-pb-type-name">
-                                                <p style="margin:0px; font-size:19px;"><?php echo  esc_html__('Login Form', "ays-popup-box") ?></p>
-                                            </div>
-                                            <a href="https://popup-plugin.com/" target="_blank" class="ays-pb-select-type-pro">
-                                                <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) ?>/images/icons/pro-features-icons/Locked_24x24.svg" class="ays-pb-locked-img">
-                                                <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) ?>/images/icons/pro-features-icons/Unlocked_24_24.svg" class="ays-pb-unlocked-img">
-                                                <p><?php echo esc_html__('Upgrade Now', 'ays-popup-box') ?></p>
-                                            </a>
-                                            <div class="ays-pb-view-demo-content">
-                                                <a href="https://demo.popup-plugin.com/login-form-popup/" target="_blank"><?php echo  esc_html__('View demo', "ays-popup-box") ?></a>
-                                            </div>
-                                        </div> 
-                                    </div>
-                                </label> 
-                                <label>
-                                    <div class="ays_pb_layer_item ays_pb_layer_item_pro">
-                                        <div class="ays_pb_layer_item_logo">
-                                            <div class="ays_pb_layer_item_logo_overlay">
-                                                <img src= "<?php echo esc_url(AYS_PB_ADMIN_URL) ;?>/images/icons/map-marker.svg">
-                                            </div>
-                                        </div>
-                                        <div class="ays_pb_layer_item_title">
-                                            <div class="ays-pb-type-name">
-                                                <p style="margin:0px; font-size:19px;"><?php echo  esc_html__('Google Map', "ays-popup-box") ?></p>
-                                            </div>
-                                            <a href="https://popup-plugin.com/" target="_blank" class="ays-pb-select-type-pro">
-                                                <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) ?>/images/icons/pro-features-icons/Locked_24x24.svg" class="ays-pb-locked-img">
-                                                <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) ?>/images/icons/pro-features-icons/Unlocked_24_24.svg" class="ays-pb-unlocked-img">
-                                                <p><?php echo esc_html__('Upgrade Now', 'ays-popup-box') ?></p>
-                                            </a>
-                                            <div class="ays-pb-view-demo-content">
-                                                <a href="https://demo.popup-plugin.com/google-map-popup/" target="_blank"><?php echo  esc_html__('View demo', "ays-popup-box") ?></a>
-                                            </div>
-                                        </div> 
-                                    </div>
-                                </label> 
+                                    </label>
+                                <?php endforeach; ?>
                             </div>
                         </div>
                     </div>

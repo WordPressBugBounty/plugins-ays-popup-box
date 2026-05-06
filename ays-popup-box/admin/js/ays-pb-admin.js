@@ -489,7 +489,7 @@
 
         // Choose popup type start
         $(document).find('.ays_pb_layer_box_blocks .ays-pb-dblclick-layer').on('click',function(e) {
-            if ( !($(e.target).hasClass('ays-pb-view-demo-content')) ) {
+            if ( !($(e.target).closest('.ays-pb-card-link').length) ) {
                 $(this).parents('.ays_pb_layer_container').find('.ays_pb_select_button_layer input.ays_pb_layer_button').trigger('click');
             }
         });
