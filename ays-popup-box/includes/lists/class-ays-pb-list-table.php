@@ -2421,6 +2421,8 @@ class Ays_PopupBox_List_Table extends WP_List_Table {
                 '%s',   // options
             )
 			);
+
+            $inserted_id = $wpdb->insert_id;
 			$message = "created";
 		}else{
 			$pb_result = $wpdb->update(
@@ -2528,8 +2530,25 @@ class Ays_PopupBox_List_Table extends WP_List_Table {
             ),
 				array( "%d" )
 			);
+
+            $inserted_id = $id;
 			$message = "updated";
 		}
+
+        if($message == 'created'){
+            setcookie('ays_pb_created_new', $inserted_id, time() + 3600, '/');
+                    
+            $homepage_url = get_home_url();
+            if(!empty($homepage_url)){
+                $custom_post_url = array(
+                    'preview'   => 'true',
+                );
+                $custom_post_url_ready = http_build_query($custom_post_url);
+                $ready_url = get_home_url();
+                $ready_url .= '/?' . $custom_post_url_ready;
+                setcookie('ays_pb_created_new_'.$inserted_id.'_post_id', $ready_url, time() + 3600, '/');
+            }
+        }
 
 		if( $pb_result >= 0 ){
 			if($submit_type != ''){

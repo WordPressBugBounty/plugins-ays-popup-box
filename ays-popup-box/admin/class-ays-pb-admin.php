@@ -162,8 +162,16 @@ class Ays_Pb_Admin {
             'settingsTabDoc' => esc_html__( "How to Configure Settings Tab?", "ays-popup-box" ),
             'limitationUsersTabDoc' => esc_html__( "How to Configure Limitation Users Tab?", "ays-popup-box" ),
             'stylesTabDoc' => esc_html__( "How to Configure Styles Tab?", "ays-popup-box" ),
+            "copied"                            => esc_html__( "Copied!", 'ays-popup-box' ),
             "successCopyCoupon"                 => __( "Coupon code copied!", 'ays-popup-box' ),
             "failedCopyCoupon"                  => __( "Failed to copy coupon code", 'ays-popup-box' ),
+            "createdPopupClose"                 => esc_html__( "Close", 'ays-popup-box' ),
+            "createdPopupTitle"                 => esc_html__( "Your popup is ready", 'ays-popup-box' ),
+            "createdPopupDescription"           => esc_html__( "Your popup has been created successfully.", 'ays-popup-box' ),
+            "createdPopupNotice"                => sprintf( esc_html__( "To see your popup in action, visit your %s.", 'ays-popup-box' ), '<strong>' . esc_html__( "website homepage", 'ays-popup-box' ) . '</strong>' ),
+            "createdPopupId"                    => esc_html__( "Popup ID", 'ays-popup-box' ),
+            "createdPopupView"                  => esc_html__( "View the popup", 'ays-popup-box' ),
+            "createdPopupOkay"                  => esc_html__( "Okay", 'ays-popup-box' ),
         );
 
         $color_picker_strings = array(

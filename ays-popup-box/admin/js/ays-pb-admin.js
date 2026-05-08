@@ -2644,6 +2644,135 @@
         popupModal.aysPbModal('show_flex');
     });
 
+    // Check new added popup start
+    $(function() {
+        var createdNewPopup = aysPbGetCookie('ays_pb_created_new');
+        var popupId = parseInt(createdNewPopup, 10);
+
+        if(!createdNewPopup || popupId <= 1){
+            return;
+        }
+
+        var getCustomPostId = aysPbGetCookie('ays_pb_created_new_'+createdNewPopup+'_post_id');
+        var createdPopupPostUrl = getCustomPostId;
+
+        if (createdPopupPostUrl) {
+            try {
+                createdPopupPostUrl = decodeURIComponent(createdPopupPostUrl);
+            } catch (e) {}
+        }
+
+        var link = '#';
+        if(createdPopupPostUrl){
+            try {
+                var popupReadyUrl = new URL(createdPopupPostUrl, window.location.origin);
+                if (popupReadyUrl.protocol === 'http:' || popupReadyUrl.protocol === 'https:') {
+                    link = popupReadyUrl.href;
+                }
+            } catch (e) {}
+        }
+
+        var checkSvgIcon = '<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>';
+        var globeSvgIcon = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path><path d="M2 12h20"></path></svg>';
+        var externalLinkSvgIcon = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h6v6"></path><path d="M10 14 21 3"></path><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg>';
+        var closeSvgIcon = '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg>';
+        var createdPopupTexts = {
+            close: pb.createdPopupClose,
+            title: pb.createdPopupTitle,
+            description: pb.createdPopupDescription,
+            notice: pb.createdPopupNotice,
+            id: pb.createdPopupId,
+            view: pb.createdPopupView,
+            okay: pb.createdPopupOkay
+        };
+        var createdPopupHtml = '<div class="ays-pb-created-popup-overlay" role="presentation">'+
+            '<div class="ays-pb-created-popup-modal" role="dialog" aria-modal="true" aria-labelledby="ays-pb-created-popup-title" aria-describedby="ays-pb-created-popup-description" tabindex="-1">'+
+                '<button type="button" class="ays-pb-created-popup-close" aria-label="'+ createdPopupTexts.close +'">'+ closeSvgIcon +'</button>'+
+                '<div class="ays-pb-created-popup-content">'+
+                    '<div class="ays-pb-created-popup-hero">'+
+                        '<div class="ays-pb-created-popup-check-wrap">'+
+                            '<span class="ays-pb-created-popup-check-halo ays-pb-created-popup-check-halo-lg"></span>'+
+                            '<span class="ays-pb-created-popup-check-halo ays-pb-created-popup-check-halo-md"></span>'+
+                            '<span class="ays-pb-created-popup-check-ring"><span class="ays-pb-created-popup-check">'+ checkSvgIcon +'</span></span>'+
+                        '</div>'+
+                        '<h2 id="ays-pb-created-popup-title" class="ays-pb-created-popup-title">'+ createdPopupTexts.title +'</h2>'+
+                        '<p id="ays-pb-created-popup-description" class="ays-pb-created-popup-description">'+ createdPopupTexts.description +'</p>'+
+                    '</div>'+
+                    '<div class="ays-pb-created-popup-notice">'+
+                        '<span class="ays-pb-created-popup-notice-icon">'+ globeSvgIcon +'</span>'+
+                        '<p>'+ createdPopupTexts.notice +'</p>'+
+                    '</div>'+
+                    '<div class="ays-pb-created-popup-id">'+ createdPopupTexts.id +' <strong>#'+ popupId +'</strong></div>'+
+                    '<div class="ays-pb-created-popup-actions">'+
+                        '<a class="ays-pb-created-popup-button ays-pb-created-popup-button-secondary" href="#" target="_blank" rel="noopener noreferrer">'+ createdPopupTexts.view +' '+ externalLinkSvgIcon +'</a>'+
+                        '<button type="button" class="ays-pb-created-popup-button ays-pb-created-popup-button-primary">'+ createdPopupTexts.okay +'</button>'+
+                    '</div>'+
+                '</div>'+
+            '</div>'+
+        '</div>';
+
+        $('.ays-pb-created-popup-overlay').remove();
+
+        var previousActiveElement = document.activeElement;
+        var $createdPopup = $(createdPopupHtml);
+        var $createdPopupModal = $createdPopup.find('.ays-pb-created-popup-modal');
+
+        $createdPopup.find('.ays-pb-created-popup-button-secondary').attr('href', link);
+
+        function aysPbCloseCreatedPopup() {
+            $(document).off('keydown.aysPbCreatedPopup');
+            $('body').removeClass('ays-pb-created-popup-open');
+            $createdPopup.remove();
+
+            if (previousActiveElement && typeof previousActiveElement.focus === 'function') {
+                previousActiveElement.focus();
+            }
+        }
+
+        $createdPopup.on('click', function(e) {
+            if (e.target === this) {
+                aysPbCloseCreatedPopup();
+            }
+        });
+
+        $createdPopup.find('.ays-pb-created-popup-close, .ays-pb-created-popup-button-primary').on('click', function() {
+            aysPbCloseCreatedPopup();
+        });
+
+        $(document).on('keydown.aysPbCreatedPopup', function(e) {
+            if (e.key === 'Escape') {
+                aysPbCloseCreatedPopup();
+                return;
+            }
+
+            if (e.key !== 'Tab') {
+                return;
+            }
+
+            var focusableElements = $createdPopupModal.find('a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])').filter(':visible');
+            if (!focusableElements.length) {
+                return;
+            }
+
+            var firstFocusable = focusableElements[0];
+            var lastFocusable = focusableElements[focusableElements.length - 1];
+
+            if (e.shiftKey && document.activeElement === firstFocusable) {
+                e.preventDefault();
+                lastFocusable.focus();
+            } else if (!e.shiftKey && document.activeElement === lastFocusable) {
+                e.preventDefault();
+                firstFocusable.focus();
+            }
+        });
+
+        $('body').addClass('ays-pb-created-popup-open').append($createdPopup);
+        $createdPopup.find('.ays-pb-created-popup-button-primary').trigger('focus');
+
+        aysPbDeleteCookie('ays_pb_created_new');
+        aysPbDeleteCookie('ays_pb_created_new_'+createdNewPopup+'_post_id');
+    });
+
 
 })(jQuery);
 
@@ -2729,3 +2858,35 @@ function pbShowCopyNotification(message) {
         }, 300);
     }, 2000);
 } 
+
+function aysPbCreateCookie(name, value, days) {
+    var expires;
+    if (days) {
+        var date = new Date();
+        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+        expires = "; expires=" + date.toGMTString();
+    }
+    else {
+        expires = "";
+    }
+    document.cookie = name + "=" + value + expires + "; path=/";
+}
+
+function aysPbGetCookie(c_name) {
+    if (document.cookie.length > 0) {
+        var c_start = document.cookie.indexOf(c_name + "=");
+        if (c_start != -1) {
+            c_start = c_start + c_name.length + 1;
+            var c_end = document.cookie.indexOf(";", c_start);
+            if (c_end == -1) {
+                c_end = document.cookie.length;
+            }
+            return unescape(document.cookie.substring(c_start, c_end));
+        }
+    }
+    return "";
+}
+
+function aysPbDeleteCookie(name) {
+    document.cookie = name + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+}
