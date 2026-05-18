@@ -4,7 +4,7 @@ Donate link: https://popup-plugin.com
 Tags: popup, popups, exit popup, pop up, modal
 Requires at least: 4.0
 Tested up to: 7.0
-Stable tag: 6.2.7
+Stable tag: 6.2.8
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -309,6 +309,10 @@ After clearing the caches, try to check the case with either the **Incognito mod
 
 
 == Changelog ==
+
+= 6.2.8 ( May 18, 2026 ) =
+* Improved: The Popup Box admin top banner and improved its responsive layout
+* Improved: Some style and content changes on the admin dashboard
 
 = 6.2.7 ( May 08, 2026 ) =
 * Redesigned: The popup General tab with a new step-based layout for a clearer setup flow
