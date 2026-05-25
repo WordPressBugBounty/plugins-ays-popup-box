@@ -4,7 +4,7 @@ Donate link: https://popup-plugin.com
 Tags: popup, popups, exit popup, pop up, modal
 Requires at least: 4.0
 Tested up to: 7.0
-Stable tag: 6.2.8
+Stable tag: 6.2.9
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -309,6 +309,12 @@ After clearing the caches, try to check the case with either the **Incognito mod
 
 
 == Changelog ==
+
+= 6.2.9 ( May 25, 2026 ) =
+* Redesigned: The popup Template selection section with a cleaner card-based layout
+* Improved: Template selection flow by allowing users to select templates directly from the card
+* Improved: Template preview cards responsiveness on different screen sizes
+* Tested: Compatible up to WordPress 7.0
 
 = 6.2.8 ( May 18, 2026 ) =
 * Improved: The Popup Box admin top banner and improved its responsive layout

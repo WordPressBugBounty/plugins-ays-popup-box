@@ -4922,139 +4922,174 @@ $ays_users_roles = $wp_roles->roles;
                         <hr class="ays-pb-bolder-hr"/>
                         <div class="ays-pb-accordion-body">
                             <div class="pb_theme_img_box">
+                                <?php
+                                    $pb_template_upgrade_url = 'https://popup-plugin.com/pricing/';
+                                    $pb_template_themes = array(
+                                        array(
+                                            'value' => 'default',
+                                            'label' => __('Default', "ays-popup-box"),
+                                            'class' => 'default',
+                                            'image' => 'word-press-popup-maker-template-default-min.png',
+                                            'demo_url' => 'https://demo.popup-plugin.com/shortcode-popup/',
+                                            'is_pro' => false,
+                                        ),
+                                        array(
+                                            'value' => 'lil',
+                                            'label' => __('Red', "ays-popup-box"),
+                                            'class' => 'red',
+                                            'image' => 'word-press-popup-maker-template-red-min.png',
+                                            'demo_url' => 'https://demo.popup-plugin.com/custom-content-popup/',
+                                            'is_pro' => false,
+                                        ),
+                                        array(
+                                            'value' => 'image',
+                                            'label' => __('Modern', "ays-popup-box"),
+                                            'class' => 'modern',
+                                            'image' => 'word-press-popup-maker-template-modern-min.png',
+                                            'demo_url' => 'https://demo.popup-plugin.com/image-popup-free-demo/',
+                                            'is_pro' => false,
+                                        ),
+                                        array(
+                                            'value' => 'minimal',
+                                            'label' => __('Minimal', "ays-popup-box"),
+                                            'class' => 'minimal',
+                                            'image' => 'word-press-popup-maker-template-minimal.png',
+                                            'demo_url' => 'https://demo.popup-plugin.com/custom-content-popup-free-demo/',
+                                            'is_pro' => false,
+                                        ),
+                                        array(
+                                            'value' => 'template',
+                                            'label' => __('Sale', "ays-popup-box"),
+                                            'class' => 'sale',
+                                            'image' => 'word-press-popup-maker-template-sale-min.png',
+                                            'demo_url' => 'https://demo.popup-plugin.com/wordpress-popup-plugin-free-demo/',
+                                            'is_pro' => false,
+                                        ),
+                                        array(
+                                            'value' => 'peachy',
+                                            'label' => __('Peachy', "ays-popup-box"),
+                                            'class' => 'peachy',
+                                            'image' => 'word-press-popup-maker-template-peachy-min.png',
+                                            'demo_url' => 'https://demo.popup-plugin.com/countdown-popup/',
+                                            'is_pro' => true,
+                                        ),
+                                        array(
+                                            'value' => 'yellowish',
+                                            'label' => __('Yellowish', "ays-popup-box"),
+                                            'class' => 'yellowish',
+                                            'image' => 'word-press-popup-maker-template-yellowish-min.png',
+                                            'demo_url' => 'https://demo.popup-plugin.com/coupon-popup/',
+                                            'is_pro' => true,
+                                        ),
+                                        array(
+                                            'value' => 'coral',
+                                            'label' => __('Coral', "ays-popup-box"),
+                                            'class' => 'coral',
+                                            'image' => 'word-press-popup-maker-template-coral-min.png',
+                                            'demo_url' => 'https://demo.popup-plugin.com/yes-no-popup',
+                                            'is_pro' => true,
+                                        ),
+                                        array(
+                                            'value' => 'frozen',
+                                            'label' => __('Frozen', "ays-popup-box"),
+                                            'class' => 'frozen',
+                                            'image' => 'word-press-popup-maker-template-frozen-min.png',
+                                            'demo_url' => 'https://demo.popup-plugin.com/subscription-popup/',
+                                            'is_pro' => true,
+                                        ),
+                                        array(
+                                            'value' => 'food',
+                                            'label' => __('Food', "ays-popup-box"),
+                                            'class' => 'food',
+                                            'image' => 'word-press-popup-maker-template-food-min.png',
+                                            'demo_url' => 'https://demo.popup-plugin.com/subscribe-and-get-file-popup/',
+                                            'is_pro' => true,
+                                        ),
+                                        array(
+                                            'value' => 'forest',
+                                            'label' => __('Forest', "ays-popup-box"),
+                                            'class' => 'forest',
+                                            'image' => 'word-press-popup-maker-template-forest-min.png',
+                                            'demo_url' => 'https://demo.popup-plugin.com/contact-form-popup/',
+                                            'is_pro' => true,
+                                        ),
+                                    );
+                                ?>
                                 <div class="ays-pb-template-themes">
-                                    <div class="ays-pb-template-content ays-pb-default-theme">
-                                        <div class="ays-pb-template-overlay-preview">
-                                            <div class="ays-pb-choose-template-div <?php echo ('default' != $view_type) ? 'display_none' : '' ?>">
-                                                <div class="ays-pb-template-checkbox">
-                                                    <label class="ays-pb-template-checkbox-container">
-                                                        <input type="radio" name="<?php echo esc_attr($this->plugin_name); ?>[view_type]"
-                                                                value="default" <?php echo ('default' == $view_type) ? 'checked' : '' ?>>
-                                                        <span class="ays-pb-checkmark"></span>
-                                                    </label>
+                                    <?php foreach ( $pb_template_themes as $pb_template_theme ) : ?>
+                                        <?php
+                                            $pb_template_is_checked = $view_type === $pb_template_theme['value'];
+                                            $pb_template_item_classes = array(
+                                                'ays-pb-template-content',
+                                                'ays-pb-' . $pb_template_theme['class'] . '-theme',
+                                            );
+
+                                            if ( $pb_template_theme['is_pro'] ) {
+                                                $pb_template_item_classes[] = 'ays-pb-template-content-only-pro';
+                                            }
+
+                                            if ( $pb_template_is_checked ) {
+                                                $pb_template_item_classes[] = 'ays-pb-template-content-selected';
+                                            }
+                                        ?>
+                                        <div class="<?php echo esc_attr(implode(' ', $pb_template_item_classes)); ?>">
+                                            <div class="ays-pb-template-overlay-preview">
+                                                <div class="ays-pb-template-label">
+                                                    <p <?php echo $pb_template_is_checked ? 'class="apm_active_theme"' : ''; ?>><?php echo esc_html($pb_template_theme['label']); ?></p>
+                                                    <?php if ( $pb_template_theme['is_pro'] ) : ?>
+                                                        <span class="ays-pb-template-lock" aria-label="<?php echo esc_attr__('PRO', "ays-popup-box"); ?>">
+                                                            <svg viewBox="0 0 24 24" width="13" height="13" aria-hidden="true" focusable="false">
+                                                                <path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                                                                <rect width="18" height="11" x="3" y="11" rx="2" ry="2" fill="none" stroke="currentColor" stroke-width="2"></rect>
+                                                            </svg>
+                                                        </span>
+                                                    <?php endif; ?>
                                                 </div>
-                                                <div class="ays-pb-template-choose-template-btn">
-                                                    <button type="button">Choose Template</button>
-                                                </div>
-                                            </div>
-                                            <div class="ays-pb-template-label">
-                                                    <p <?php echo ('default' == $view_type) ? 'class="apm_active_theme"' : '' ?> ><?php echo esc_html__('Default', "ays-popup-box") ?></p>
-                                                    <p class="ays-pb-template-label-preview">
-                                                        <a href="https://demo.popup-plugin.com/shortcode-popup/" target="_blank">Preview</a>
+                                                <?php if ( ! $pb_template_theme['is_pro'] ) : ?>
+                                                    <div class="ays-pb-choose-template-div <?php echo ! $pb_template_is_checked ? 'display_none' : ''; ?>">
+                                                        <div class="ays-pb-template-checkbox">
+                                                            <label class="ays-pb-template-checkbox-container">
+                                                                <input type="radio" name="<?php echo esc_attr($this->plugin_name); ?>[view_type]" value="<?php echo esc_attr($pb_template_theme['value']); ?>" <?php checked( $pb_template_is_checked ); ?>>
+                                                                <span class="ays-pb-checkmark"></span>
+                                                            </label>
+                                                        </div>
+                                                        <p class="ays-pb-template-actions">
+                                                            <a href="<?php echo esc_url($pb_template_theme['demo_url']); ?>" target="_blank" rel="noopener" class="ays-pb-template-demo-button" aria-label="<?php echo esc_attr(sprintf(__('View %s demo', "ays-popup-box"), $pb_template_theme['label'])); ?>">
+                                                                <svg viewBox="0 0 24 24" width="13" height="13" aria-hidden="true" focusable="false">
+                                                                    <path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0"></path>
+                                                                    <circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="2"></circle>
+                                                                </svg>
+                                                                <?php echo esc_html__('View Demo', "ays-popup-box"); ?>
+                                                            </a>
+                                                        </p>
+                                                    </div>
+                                                <?php else : ?>
+                                                    <a href="<?php echo esc_url($pb_template_upgrade_url); ?>" target="_blank" rel="noopener" class="ays-pb-template-pro-overlay" aria-label="<?php echo esc_attr(sprintf(__('Upgrade to unlock %s template', "ays-popup-box"), $pb_template_theme['label'])); ?>"></a>
+                                                    <p class="ays-pb-template-actions">
+                                                        <a href="<?php echo esc_url($pb_template_theme['demo_url']); ?>" target="_blank" rel="noopener" class="ays-pb-template-demo-button" aria-label="<?php echo esc_attr(sprintf(__('View %s demo', "ays-popup-box"), $pb_template_theme['label'])); ?>">
+                                                            <svg viewBox="0 0 24 24" width="13" height="13" aria-hidden="true" focusable="false">
+                                                                <path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0"></path>
+                                                                <circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="2"></circle>
+                                                            </svg>
+                                                            <?php echo esc_html__('View Demo', "ays-popup-box"); ?>
+                                                        </a>
+                                                        <a href="<?php echo esc_url($pb_template_upgrade_url); ?>" target="_blank" rel="noopener" class="ays-pb-template-pro-button" aria-label="<?php echo esc_attr(sprintf(__('Upgrade to unlock %s template', "ays-popup-box"), $pb_template_theme['label'])); ?>">
+                                                            <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                                                                <path d="M11.562 3.266a.5.5 0 0 1 .876 0L15.39 8.87a1 1 0 0 0 1.516.294L21.183 5.5a.5.5 0 0 1 .798.519l-2.834 10.246a1 1 0 0 1-.956.734H5.81a1 1 0 0 1-.957-.734L2.02 6.02a.5.5 0 0 1 .798-.519l4.276 3.664a1 1 0 0 0 1.516-.294z"></path>
+                                                                <path d="M5 21h14"></path>
+                                                            </svg>
+                                                            <?php echo esc_html__('Pro', "ays-popup-box"); ?>
+                                                        </a>
                                                     </p>
+                                                <?php endif; ?>
                                             </div>
-                                        </div>
-                                        <div class="pb_theme_image_div col">
-                                            <div class="ays-pb-template-img">
-                                                <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . '/images/themes/word-press-popup-maker-template-default-min.png' ?>" alt="<?php echo esc_html__('Default', "ays-popup-box") ?>">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="ays-pb-template-content ays-pb-red-theme">
-                                        <div class="ays-pb-template-overlay-preview">
-                                            <div class="ays-pb-choose-template-div <?php echo ('lil' != $view_type) ? 'display_none' : '' ?>">
-                                                <div class="ays-pb-template-checkbox">
-                                                    <label class="ays-pb-template-checkbox-container">
-                                                        <input type="radio" name="<?php echo esc_attr($this->plugin_name); ?>[view_type]" value="lil" <?php echo ('lil' == $view_type) ? 'checked' : '' ?>>
-                                                        <span class="ays-pb-checkmark"></span>
-                                                    </label>
-                                                </div>
-                                                <div class="ays-pb-template-choose-template-btn">
-                                                    <button type="button">Choose Template</button>
+                                            <div class="pb_theme_image_div col">
+                                                <div class="ays-pb-template-img">
+                                                    <img src="<?php echo esc_url(AYS_PB_ADMIN_URL . '/images/themes/' . $pb_template_theme['image']); ?>" alt="<?php echo esc_attr($pb_template_theme['label']); ?>">
                                                 </div>
                                             </div>
-                                            <div class="ays-pb-template-label">
-                                                    <p <?php echo ('red' == $view_type) ? 'class="apm_active_theme"' : '' ?>><?php echo esc_html__('Red', "ays-popup-box") ?></p>
-                                                    <p class="ays-pb-template-label-preview">
-                                                        <a href="https://demo.popup-plugin.com/custom-content-popup/" target="_blank">Preview</a>
-                                                    </p>
-                                            </div>
                                         </div>
-                                        <div class="pb_theme_image_div col">
-                                            <div class="ays-pb-template-img">
-                                            <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . '/images/themes/word-press-popup-maker-template-red-min.png' ?>"
-                                                    alt="<?php echo esc_html__('Red', "ays-popup-box") ?>">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="ays-pb-template-content ays-pb-modern-theme">
-                                        <div class="ays-pb-template-overlay-preview">
-                                            <div class="ays-pb-choose-template-div <?php echo ('image' != $view_type) ? 'display_none' : '' ?>">
-                                                <div class="ays-pb-template-checkbox">
-                                                    <label class="ays-pb-template-checkbox-container">
-                                                        <input type="radio" name="<?php echo esc_attr($this->plugin_name); ?>[view_type]" value="image" <?php echo ('image' == $view_type) ? 'checked' : '' ?>>
-                                                        <span class="ays-pb-checkmark"></span>
-                                                    </label>
-                                                </div>
-                                                <div class="ays-pb-template-choose-template-btn">
-                                                    <button type="button">Choose Template</button>
-                                                </div>
-                                            </div>
-                                            <div class="ays-pb-template-label">
-                                                <p <?php echo ( 'image' == $view_type) ? 'class="apm_active_theme"' : '' ?>><?php echo esc_html__('Modern', "ays-popup-box") ?></p>
-                                                    <p class="ays-pb-template-label-preview">
-                                                        <a href="https://demo.popup-plugin.com/iframe-popup/" target="_blank">Preview</a>
-                                                    </p>
-                                            </div>
-                                        </div>
-                                        <div class="pb_theme_image_div col">
-                                            <div class="ays-pb-template-img">
-                                                <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . '/images/themes/word-press-popup-maker-template-modern-min.png' ?>" alt="<?php echo esc_html__('Modern', "ays-popup-box") ?>">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="ays-pb-template-content ays-pb-minimal-theme">
-                                        <div class="ays-pb-template-overlay-preview">
-                                            <div class="ays-pb-choose-template-div <?php echo ('minimal' != $view_type) ? 'display_none' : '' ?>">
-                                                <div class="ays-pb-template-checkbox">
-                                                    <label class="ays-pb-template-checkbox-container">
-                                                        <input type="radio" name="<?php echo esc_attr($this->plugin_name); ?>[view_type]" value="minimal" <?php echo ('minimal' == $view_type) ? 'checked' : '' ?>>
-                                                        <span class="ays-pb-checkmark"></span>
-                                                    </label>
-                                                </div>
-                                                <div class="ays-pb-template-choose-template-btn">
-                                                    <button type="button">Choose Template</button>
-                                                </div>
-                                            </div>
-                                            <div class="ays-pb-template-label">
-                                                    <p <?php echo ( 'minimal' == $view_type) ? 'class="apm_active_theme"' : '' ?> ><?php echo esc_html__('Minimal', "ays-popup-box") ?></p>
-                                                    <p class="ays-pb-template-label-preview" style="display:none;">
-                                                        <a href="#">Preview</a>
-                                                    </p>
-                                            </div>
-                                        </div>
-                                        <div class="pb_theme_image_div col">
-                                            <div class="ays-pb-template-img">
-                                            <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . '/images/themes/word-press-popup-maker-template-minimal.png' ?>" alt="<?php echo esc_html__('Minimal', "ays-popup-box") ?>">
-                                            </div>
-                                        </div>
-                                    </div> 
-                                    <div class="ays-pb-template-content ays-pb-sale-theme">
-                                        <div class="ays-pb-template-overlay-preview">
-                                            <div class="ays-pb-choose-template-div <?php echo ('template' != $view_type) ? 'display_none' : '' ?>">
-                                                <div class="ays-pb-template-checkbox">
-                                                    <label class="ays-pb-template-checkbox-container">
-                                                        <input type="radio" name="<?php echo esc_attr($this->plugin_name); ?>[view_type]" value="template" <?php echo ('template' == $view_type) ? 'checked' : '' ?>>
-                                                        <span class="ays-pb-checkmark"></span>
-                                                    </label>
-                                                </div>
-                                                <div class="ays-pb-template-choose-template-btn">
-                                                    <button type="button">Choose Template</button>
-                                                </div>
-                                            </div>
-                                            <div class="ays-pb-template-label">
-                                                    <p <?php echo ( 'template' == $view_type) ? 'class="apm_active_theme"' : '' ?> ><?php echo esc_html__('Sale', "ays-popup-box") ?></p>
-                                                    <p class="ays-pb-template-label-preview" style="display:none;">
-                                                        <a href="#">Preview</a>
-                                                    </p>
-                                            </div>
-                                        </div>
-                                        <div class="pb_theme_image_div col">
-                                            <div class="ays-pb-template-img">
-                                            <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . '/images/themes/word-press-popup-maker-template-sale-min.png' ?>" alt="<?php echo esc_html__('Sale', "ays-popup-box") ?>">
-                                            </div>
-                                        </div>
-                                    </div>
+                                    <?php endforeach; ?>
                                     <!-- video theme -->
                                     <div class="ays-pb-template-content ays-pb-video-theme" style="display: none;">
                                         <div class="ays-pb-template-overlay-preview">
@@ -5093,105 +5128,6 @@ $ays_users_roles = $wp_roles->roles;
                                     <!-- Notification theme -->
                                     <div class="ays-pb-template-content ays-pb-notification-theme" style="display: none;">
                                         <input type="radio" id="notification_theme_view_type" name="<?php echo esc_attr($this->plugin_name); ?>[view_type]" value="notification" <?php echo ($view_type == 'notification') ? 'checked' : '' ?>>
-                                    </div>
-                                </div>
-                                <div class="ays-pb-template-pro-themes">
-                                    <div class="ays-pb-template-content ays-pb-peachy-theme">
-                                        <div class="ays-pb-template-overlay-preview">
-                                            <div class="ays-pb-template-label">
-                                                <p><?php echo esc_html__('Peachy', "ays-popup-box") ?></p>
-                                                <p>
-                                                    <a href="https://demo.popup-plugin.com/countdown-popup/" target="_blank" style="background:#d06b46;border: 1px solid #d06b46;">Demo</a>
-                                                    <a href="https://popup-plugin.com/" target="_blank">Pro</a>
-                                                </p>
-                                            </div>
-                                        </div>
-                                        <div class="pb_theme_image_div col">
-                                            <div class="ays-pb-template-img">
-                                                <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . '/images/themes/word-press-popup-maker-template-peachy-min.png' ?>" alt="<?php echo esc_html__('Sale', "ays-popup-box") ?>">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="ays-pb-template-content ays-pb-yellowish-theme">
-                                        <div class="ays-pb-template-overlay-preview">
-                                            <div class="ays-pb-template-label">
-                                                    <p><?php echo esc_html__('Yellowish', "ays-popup-box") ?></p>
-                                                    <p>
-                                                        <a href="https://demo.popup-plugin.com/coupon-popup/" target="_blank" style="background:#d06b46;border: 1px solid #d06b46;">Demo</a>
-                                                        <a href="https://popup-plugin.com/" target="_blank">Pro</a>
-                                                    </p>
-                                            </div>
-                                        </div>
-                                        <div class="pb_theme_image_div col">
-                                            <div class="ays-pb-template-img">
-                                                <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . '/images/themes/word-press-popup-maker-template-yellowish-min.png' ?>" alt="<?php echo esc_html__('Sale', "ays-popup-box") ?>">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="ays-pb-template-content ays-pb-coral-theme">
-                                        <div class="ays-pb-template-overlay-preview">
-                                            <div class="ays-pb-template-label">
-                                                <p><?php echo esc_html__('Coral', "ays-popup-box") ?></p>
-                                                <p>
-                                                    <a href="https://demo.popup-plugin.com/yes-no-popup" target="_blank" style="background:#d06b46;border: 1px solid #d06b46;">Demo</a>
-                                                    <a href="https://popup-plugin.com/" target="_blank">Pro</a>
-                                                </p>
-                                            </div>
-                                        </div>
-                                        <div class="pb_theme_image_div col">
-                                            <div class="ays-pb-template-img">
-                                                <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . '/images/themes/word-press-popup-maker-template-coral-min.png' ?>" alt="<?php echo esc_html__('Coral', "ays-popup-box") ?>">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="ays-pb-template-content ays-pb-frozen-theme">
-                                        <div class="ays-pb-template-overlay-preview">
-                                            <div class="ays-pb-template-label">
-                                                <p><?php echo esc_html__('Frozen', "ays-popup-box") ?></p>
-                                                <p>
-                                                    <a href="https://demo.popup-plugin.com/subscription-popup/" target="_blank" style="background:#d06b46;border: 1px solid #d06b46;">Demo</a>
-                                                    <a href="https://popup-plugin.com/" target="_blank">Pro</a>
-                                                </p>
-                                            </div>
-                                        </div>
-                                        <div class="pb_theme_image_div col">
-                                            <div class="ays-pb-template-img">
-                                                <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . '/images/themes/word-press-popup-maker-template-frozen-min.png' ?>" alt="<?php echo esc_html__('Frozen', "ays-popup-box") ?>">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="ays-pb-template-content ays-pb-food-theme">
-                                        <div class="ays-pb-template-overlay-preview">
-                                            <div class="ays-pb-template-label">
-                                                    <p><?php echo esc_html__('Food', "ays-popup-box") ?></p>
-                                                    <p>
-                                                        <a href="https://demo.popup-plugin.com/subscribe-and-get-file-popup/" target="_blank" style="background:#d06b46;">Demo</a>
-                                                        <a href="https://popup-plugin.com/" target="_blank">Pro</a>
-                                                    </p>
-                                            </div>
-                                        </div>
-                                        <div class="pb_theme_image_div col">
-                                            <div class="ays-pb-template-img">
-                                                <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . '/images/themes/word-press-popup-maker-template-food-min.png' ?>" alt="<?php echo esc_html__('Food', "ays-popup-box") ?>">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="ays-pb-template-content ays-pb-forest-theme">
-                                        <div class="ays-pb-template-overlay-preview">
-                                            <div class="ays-pb-template-label">
-                                                <p><?php echo esc_html__('Forest', "ays-popup-box") ?></p>
-                                                <p>
-                                                    <a href="https://demo.popup-plugin.com/contact-form-popup/" target="_blank" style="background:#d06b46; border: 1px solid #d06b46;">Demo</a>
-                                                    <a href="https://popup-plugin.com/" target="_blank">Pro</a>
-                                                </p>
-                                            </div>
-                                        </div>
-                                        <div class="pb_theme_image_div col">
-                                            <div class="ays-pb-template-img">
-                                                <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . '/images/themes/word-press-popup-maker-template-forest-min.png' ?>" alt="<?php echo esc_html__('Forest', "ays-popup-box") ?>">
-                                            </div>
-                                        </div>
                                     </div>
                                 </div>
                                 <div class="ays-pb-template-themes-view-more-button-content" style="display: none;">
@@ -8719,6 +8655,19 @@ $ays_users_roles = $wp_roles->roles;
                 var boxShadowY = $("#ays_pb_box_shadow_y_offset").val();
                 var boxShadowZ = $("#ays_pb_box_shadow_z_offset").val();
 
+                function aysPbSetCloseButtonColorByTheme(theme) {
+                    var closeButtonColor = theme == 'lil' ? '#ffffff' : '#000000';
+                    var $closeButtonColorField = $(document).find('#ays_pb_close_button_color');
+
+                    if ($closeButtonColorField.length && typeof $closeButtonColorField.wpColorPicker === 'function') {
+                        $closeButtonColorField.wpColorPicker('color', closeButtonColor);
+                    } else {
+                        $closeButtonColorField.val(closeButtonColor);
+                    }
+
+                    $closeButtonColorField.trigger('change');
+                }
+
                 $(document).find(".ays-pb-live-container-main").addClass('display_none');
                 $(document).find(".ays-pb-live-container-main").removeClass('ays_active');
                 switch ($("input[name='<?php echo esc_attr($this->plugin_name); ?>[view_type]']:checked").val()) {
@@ -8939,6 +8888,8 @@ $ays_users_roles = $wp_roles->roles;
 
                     $(document).find(".ays-pb-live-container-main").addClass('display_none');
                     $(document).find(".ays-pb-live-container-main").removeClass('ays_active');
+                    aysPbSetCloseButtonColorByTheme($("input[name='<?php echo esc_attr($this->plugin_name); ?>[view_type]']:checked").val());
+
                     switch ($("input[name='<?php echo esc_attr($this->plugin_name); ?>[view_type]']:checked").val()) {
                         case 'default':
                             $(document).find(".ays-pb-live-container-main.ays-pb-modal").removeClass('display_none');
@@ -8987,7 +8938,6 @@ $ays_users_roles = $wp_roles->roles;
                                 'border-radius': $("#<?php echo esc_attr($this->plugin_name); ?>-ays_pb_border_radius").val() + 'px',
                                 'font-family': $('#ays_pb_font_family').val(),
                             });
-                            var closeBtnDefaultColor = $(document).find('#ays_pb_close_button_color').val('#000');
                             changeCloseButtonPosition();
                             break;
                         case 'mac':
@@ -9198,8 +9148,6 @@ $ays_users_roles = $wp_roles->roles;
                             }else{
                                 $(document).find(ays_pb_view_type).css('box-shadow', 'unset');
                             }
-                            $(document).find("#ays_pb_close_button_color").val('#ffffff');
-                            var closeBtnDefaultColor = $(document).find('#ays_pb_close_button_color').val('#fff');
                             break;
                         case 'image':
                             $(document).find(".ays-pb-live-container-main.ays_image_window").removeClass('display_none');
@@ -9238,7 +9186,6 @@ $ays_users_roles = $wp_roles->roles;
                             }else{
                                 $(document).find(ays_pb_view_type).css('box-shadow', 'unset');
                             }
-                            var closeBtnDefaultColor = $(document).find('#ays_pb_close_button_color').val('#000');
                             break;
                         case 'minimal':
                             $(document).find(".ays-pb-live-container-main.ays_minimal_window").removeClass('display_none');
@@ -9281,7 +9228,6 @@ $ays_users_roles = $wp_roles->roles;
                             }else{
                                 $(document).find(ays_pb_view_type).css('box-shadow', 'unset');
                             }
-                            var closeBtnDefaultColor = $(document).find('#ays_pb_close_button_color').val('#000');
                             break;
                         case 'template':
                             $(document).find(".ays-pb-live-container-main.ays_template_window").removeClass('display_none');
@@ -9321,7 +9267,6 @@ $ays_users_roles = $wp_roles->roles;
                             }else{
                                 $(document).find(ays_pb_view_type).css('box-shadow', 'unset');
                             }
-                            var closeBtnDefaultColor = $(document).find('#ays_pb_close_button_color').val('#000');
                             break;
                         case 'video':
                             if(modal_content == 'video_type'){
@@ -9359,7 +9304,6 @@ $ays_users_roles = $wp_roles->roles;
                             }else{
                                 $(document).find(ays_pb_view_type).css('box-shadow', 'unset');
                             }
-                            var closeBtnDefaultColor = $(document).find('#ays_pb_close_button_color').val('#000');
                             break;
                         default:
                             $(document).find(".ays-pb-live-container-main.ays-pb-modal").removeClass('display_none');
@@ -9395,7 +9339,6 @@ $ays_users_roles = $wp_roles->roles;
                             }else{
                                 $(document).find(ays_pb_view_type).css('box-shadow', 'unset');
                             }
-                            var closeBtnDefaultColor = $(document).find('#ays_pb_close_button_color').val('#000');
                             break;
                     }
                 });

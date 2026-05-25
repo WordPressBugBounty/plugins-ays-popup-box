@@ -2722,105 +2722,123 @@ a.ays_pb_plus_schedule:hover {
 
 /* Popups page | Template section styles start */
 .pb_theme_img_box {
-    max-width: 1400px;
+    max-width: 1480px;
     margin: auto;
 }
 
 .ays-pb-template-content {
     position: relative;
-    margin: 10px 0;
+    overflow: hidden;
+    width: 100%;
+    min-height: 238px;
+    margin: 0;
+    border: 1px solid #d0d7de;
+    border-radius: 8px;
+    background: #fff;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.ays-pb-template-content:hover {
+    border-color: rgba(31, 41, 55, 0.24);
+    box-shadow: 0 8px 18px rgba(15, 23, 42, 0.12);
+    transform: translateY(-2px);
+}
+
+.ays-pb-template-content:not(.ays-pb-template-content-only-pro) {
+    cursor: pointer;
 }
 
 .ays-pb-template-overlay-preview {
-    position: absolute;
+    position: static;
     z-index: 1;
-    left: 15px;
-    top: 0;
-    width: 216px;
-    height: 190px;
+    width: 100%;
+    height: auto;
 }
 
-.ays-pb-template-choose-template-btn {
+.ays-pb-template-content .pb_theme_image_div.col {
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
+    margin: 0;
+    float: none;
+}
+
+.ays-pb-template-img {
+    position: relative;
     display: flex;
-    justify-content: center;
     align-items: center;
-    height: 72%;
+    justify-content: center;
+    height: 188px;
+    padding: 12px;
+    background: #fff;
+}
+
+.ays-pb-template-img img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border: 0;
+    box-shadow: none;
 }
 
 .ays-pb-template-checkbox {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    margin-top: 4px;
+    position: absolute;
+    top: -218px;
+    right: 8px;
+    margin: 0;
 }
 
 .ays-pb-template-label p {
-    font-family: 'Ubuntu';
     font-style: normal;
     font-weight: 600;
-    font-size: 13px;
-    line-height: 15px;
-    color: #544D48;
-    margin: 10px 7px;
+    font-size: 12px;
+    line-height: 16px;
+    color: #1d2327;
+    margin: 0;
 }
 
 .ays-pb-template-label p:nth-child(2){
     font-weight: 400;
-    font-size: 14px;
-    line-height: 16.09px;
+    font-size: 12px;
+    line-height: 16px;
 }
     
 .ays-pb-template-label {
-    position: absolute;
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: #ffffff;
-    opacity: 0.7;
-    height: 41px;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    min-height: 34px;
+    padding: 8px 12px;
+    border-bottom: 1px solid #d0d7de;
+    background: #f6f7f7;
+    opacity: 1;
 }
 
 .ays-pb-template-label > p > a {
-    border: 1px solid;
-    padding: 4px 25px;
-    color: #14988B;
-}
-
-.ays-pb-template-choose-template-btn > button {
-    font-size: 14px;
-    color: #ffffff;
-    border: 1px solid rgb(255, 255, 255);
-    outline: none;
-    padding: 4px 20px;
-    background-color: unset;
-    cursor: pointer;
-}
-
-.ays-pb-template-choose-template-btn > button:hover, .ays-pb-template-choose-template-btn > button:focus {
-    font-size: 14px;
-    color: #ffffff;
-    border: 1px solid rgb(255, 255, 255);
-    outline: none;
-    padding: 4px 20px;
-    background-color: unset;
-    cursor: pointer;
+    border: 0;
+    padding: 0;
+    color: inherit;
 }
 
 .ays-pb-template-checkbox-container {
     display: block;
     position: relative;
-    padding-left: 35px;
-    margin-bottom: 12px;
+    width: 20px;
+    height: 20px;
+    padding-left: 0;
+    margin: 0;
     cursor: pointer;
-    font-size: 22px;
+    font-size: 0;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-    margin-top: 3px;
 }
 
 .ays-pb-template-checkbox-container input {
@@ -2835,15 +2853,17 @@ a.ays_pb_plus_schedule:hover {
     position: absolute;
     top: 0;
     left: 0;
-    height: 18px;
-    width: 18px;
-    background-color: #eee;
-    border-radius: 3px;
-    margin-left: 13px;
+    height: 20px;
+    width: 20px;
+    background-color: #fff;
+    border: 1px solid #198754;
+    border-radius: 4px;
+    margin-left: 0;
+    box-shadow: 0 1px 4px rgba(25, 135, 84, 0.18);
 }
 
 .ays-pb-template-checkbox-container:hover input ~ .ays-pb-checkmark {
-    background-color: #ccc;
+    background-color: #f0fff7;
 }
 
 .ays-pb-checkmark:after {
@@ -2857,10 +2877,10 @@ a.ays_pb_plus_schedule:hover {
 }
 
 .ays-pb-template-checkbox-container .ays-pb-checkmark:after {
-    left: 6px;
-    top: 3px;
-    width: 6.6px;
-    height: 8.5px;
+    left: 7px;
+    top: 4px;
+    width: 5px;
+    height: 9px;
     border: solid #198754;
     border-width: 0 2px 2px 0;
     -webkit-transform: rotate(45deg);
@@ -2869,10 +2889,11 @@ a.ays_pb_plus_schedule:hover {
 }
 
 .ays-pb-template-themes, .ays-pb-template-themes-view-more, .ays-pb-template-pro-themes, .ays-pb-template-themes-view-more-button-content {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
     justify-content: center;
-    flex-wrap: wrap;
-    margin: 14px 0;
+    gap: 24px;
+    margin: 22px 0;
 }
 
 .ays-pb-template-themes-view-more {
@@ -2884,22 +2905,21 @@ a.ays_pb_plus_schedule:hover {
 }
 
 .ays-pb-template-pro-themes .ays-pb-template-overlay-preview {
-    bottom: 0;
+    bottom: auto;
     height: auto;
     background: unset;
-    top: initial;
+    top: auto;
 }
 
 .ays-pb-template-pro-themes .ays-pb-template-overlay-preview .ays-pb-template-label p:nth-child(2) > a {
-    color: #fff;
-    background: #14988B;
-    border: 1px solid;
-    border-radius: 3px;
-    padding: 5px 18px;
-    font-family: 'Ubuntu';
+    color: inherit;
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    padding: 0;
     font-style: normal;
-    font-weight: 500;
-    font-size: 14px;
+    font-weight: 600;
+    font-size: 12px;
     line-height: 16px;
 }
 
@@ -2925,7 +2945,6 @@ a.ays_pb_plus_schedule:hover {
     border: 1px solid #14988B;
     outline: 1px solid #14988B;
     cursor: pointer;
-    font-family: 'Montserrat';
     font-style: normal;
     font-weight: 600;
     font-size: 18px;
@@ -2939,9 +2958,133 @@ a.ays_pb_plus_schedule:hover {
 }
 
 .ays-pb-choose-template-div {
-    height: 149px;
-    background: rgba(95, 93, 89, 0.67);
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    height: 188px;
+    padding: 0 12px 14px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.88) 78%, #fff 100%);
 }   
+
+.ays-pb-template-content:hover .ays-pb-choose-template-div {
+    display: flex !important;
+}
+
+.ays-pb-template-content .ays-pb-template-actions {
+    position: absolute;
+    left: 12px;
+    right: 12px;
+    bottom: 14px;
+    z-index: 3;
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    margin: 0;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+}
+
+.ays-pb-template-content .ays-pb-choose-template-div .ays-pb-template-actions {
+    position: static;
+    left: auto;
+    right: auto;
+    bottom: auto;
+    margin-top: 0;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.ays-pb-template-content:hover .ays-pb-template-actions {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.ays-pb-template-content .ays-pb-template-actions a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 28px;
+    min-width: 90px;
+    padding: 5px 12px;
+    border: 1px solid #1d2327;
+    border-radius: 4px;
+    background: #1d2327;
+    color: #fff;
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.16);
+}
+
+.ays-pb-template-content .ays-pb-template-actions a svg {
+    flex: 0 0 auto;
+    margin-right: 5px;
+}
+
+.ays-pb-template-content .ays-pb-template-actions a:hover,
+.ays-pb-template-content .ays-pb-template-actions a:focus {
+    background: #111827;
+    color: #fff;
+    box-shadow: none;
+}
+
+.ays-pb-template-content .ays-pb-template-actions a.ays-pb-template-pro-button {
+    min-width: 66px;
+    border-color: #3b4553;
+    background: #3b4553;
+}
+
+.ays-pb-template-content .ays-pb-template-actions a.ays-pb-template-pro-button:hover,
+.ays-pb-template-content .ays-pb-template-actions a.ays-pb-template-pro-button:focus {
+    border-color: #27313f;
+    background: #27313f;
+}
+
+.ays-pb-template-content-only-pro .ays-pb-template-img img {
+    filter: blur(2px);
+    opacity: 0.58;
+}
+
+.ays-pb-template-content-only-pro .ays-pb-template-pro-overlay {
+    position: absolute;
+    top: 35px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+    background: rgba(255, 255, 255, 0.36);
+}
+
+.ays-pb-template-lock {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #69727d;
+}
+
+.ays-pb-template-lock svg {
+    display: block;
+}
+
+.ays-pb-template-content-selected {
+    border-color: #2271b1;
+    box-shadow: 0 0 0 2px rgba(34, 113, 177, 0.2), 0 8px 18px rgba(15, 23, 42, 0.1);
+}
+
+.ays-pb-template-content-selected:hover,
+.ays-pb-template-content-selected:focus,
+.ays-pb-template-content-selected:focus-within {
+    border-color: #2271b1;
+    box-shadow: 0 0 0 2px rgba(34, 113, 177, 0.2), 0 8px 18px rgba(15, 23, 42, 0.1);
+}
 
 .ays-pb-template-themes-hide-btn {
     display: none;
@@ -2949,8 +3092,9 @@ a.ays_pb_plus_schedule:hover {
 
 @media screen and (max-width: 768px) {    
     .ays-pb-template-themes, .ays-pb-template-themes-view-more, .ays-pb-template-pro-themes, .ays-pb-template-themes-view-more-button-content {
-        flex-wrap: wrap;
-        margin: 14px 0;
+        grid-template-columns: minmax(0, 1fr);
+        gap: 18px;
+        margin: 18px 0;
     }
 
     .ays-pb-template-themes-view-more-border {
@@ -2958,14 +3102,16 @@ a.ays_pb_plus_schedule:hover {
     }
 
     .ays-pb-template-content {
-        margin: 10px 0;
+        width: 100%;
+        max-width: 360px;
+        margin: 0 auto;
     }
 }
 
-@media screen and (max-width: 1180px) {
+@media screen and (min-width: 769px) and (max-width: 1180px) {
     .ays-pb-template-themes, .ays-pb-template-themes-view-more, .ays-pb-template-pro-themes, .ays-pb-template-themes-view-more-button-content {
-        flex-wrap: wrap;
-        margin: 14px 0;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        margin: 18px 0;
     }
 
     .ays-pb-template-themes-view-more-border {
@@ -2973,7 +3119,13 @@ a.ays_pb_plus_schedule:hover {
     }
 
     .ays-pb-template-content {
-        margin: 10px 0;
+        margin: 0 auto;
+    }
+}
+
+@media screen and (min-width: 1181px) and (max-width: 1440px) {
+    .ays-pb-template-themes, .ays-pb-template-themes-view-more, .ays-pb-template-pro-themes, .ays-pb-template-themes-view-more-button-content {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
     }
 }
 
@@ -6854,6 +7006,7 @@ div.ays-notice-banner {
 .ays-pb-logo-container-upgrade {
     display: flex;
     align-items: center;
+    min-width: 0;
 }
 
 .ays-notice-banner #navigation-container {
@@ -6872,6 +7025,7 @@ div.ays-notice-banner {
 .ays-notice-banner .ays-pb-logo-container-upgrade {
     flex: 0 0 auto;
     gap: 0;
+    min-width: 0;
 }
 
 .ays-notice-banner .logo-container {
@@ -6921,10 +7075,14 @@ div.ays-notice-banner {
 .ays-notice-banner .ays-pb-upgrade-container {
     margin-left: 20px;
     align-self: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 0 0 auto;
 }
 
 .ays-notice-banner .ays-pb-upgrade-container a {
-    /* min-height: 30px; */
+    min-height: 30px;
     padding: 6px 12px;
     border: 1px solid rgba(4, 120, 87, .2);
     border-radius: 999px;
@@ -6935,9 +7093,12 @@ div.ays-notice-banner {
     line-height: 1;
     box-shadow: 0 1px 2px rgba(15, 23, 42, .08);
     transition: background-color .15s ease, box-shadow .15s ease, transform .15s ease;
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
     text-decoration: none;
-    line-height: inherit;
+    white-space: nowrap;
 }
 
 .ays-notice-banner .ays-pb-upgrade-container a:hover,
@@ -6949,7 +7110,9 @@ div.ays-notice-banner {
 
 .ays-notice-banner .ays-pb-upgrade-container a img {
     width: 8px;
-    /* height: 13px; */
+    height: auto;
+    margin: 0;
+    flex: 0 0 auto;
 }
 
 .ays-notice-banner .ays-pb-logo-container-one-time-text {

@@ -1095,22 +1095,26 @@
             $(document).find('div.ays-pb-template-themes-view-more').css('display', 'none');
         });
 
-        $('.ays-pb-template-overlay-preview').mouseover(function() {
-            $(this).find('div.ays-pb-choose-template-div').css('display','block');
-        });
+        function aysPbSetCloseButtonColorByTheme(theme) {
+            var closeButtonColor = theme == 'lil' ? '#ffffff' : '#000000';
+            var $closeButtonColorField = $(document).find('#ays_pb_close_button_color');
 
-        $('.ays-pb-template-overlay-preview').mouseout(function() {
-            var checkedTheme = $(this).find('.ays-pb-choose-template-div').find('.ays-pb-template-checkbox-container > input').prop('checked');
-            if (!checkedTheme) {
-                $(this).find('div.ays-pb-choose-template-div').css('display','none');
+            if ($closeButtonColorField.length && typeof $closeButtonColorField.wpColorPicker === 'function') {
+                $closeButtonColorField.wpColorPicker('color', closeButtonColor);
+            } else {
+                $closeButtonColorField.val(closeButtonColor);
             }
-        });
 
-        $(document).on('click', '.ays-pb-template-choose-template-btn, .ays-pb-template-checkbox input', function() {
-            var checked = $(this).parents('.ays-pb-choose-template-div').find('.ays-pb-template-checkbox input').prop('checked', true);
+            $closeButtonColorField.trigger('change');
+        }
+
+        function aysPbApplyTemplateSelection($templateContent) {
+            var checked = $templateContent.find('.ays-pb-template-checkbox input').prop('checked', true);
 
             if (checked) {
                 var checkedTheme = $('input[name="ays-pb[view_type]"]:checked').val();
+                aysPbSetCloseButtonColorByTheme(checkedTheme);
+
                 var backroundImageTag = $(document).find('#ays-pb-bg-img');
                 var backroundImageInput = $(document).find('#ays-pb-bg-image');
                 var backroundImageContent = $(document).find('.ays-pb-bg-image-container').parent();
@@ -1154,8 +1158,23 @@
                     }
                 }
 
-                $('div.ays-pb-choose-template-div').not($(this).find('.ays-pb-choose-template-div')).css('display', 'none');
+                $(document).find('.ays-pb-template-content').removeClass('ays-pb-template-content-selected');
+                $templateContent.addClass('ays-pb-template-content-selected');
+                $('div.ays-pb-choose-template-div').not($templateContent.find('.ays-pb-choose-template-div')).css('display', 'none');
             }
+        }
+
+        $(document).on('click', '.ays-pb-template-content:not(.ays-pb-template-content-only-pro)', function(e) {
+            if ($(e.target).closest('a').length) {
+                return;
+            }
+
+            aysPbApplyTemplateSelection($(this));
+        });
+
+        $(document).on('click', '.ays-pb-template-checkbox input', function(e) {
+            e.stopPropagation();
+            aysPbApplyTemplateSelection($(this).parents('.ays-pb-template-content'));
         });
         // Templates end
 
