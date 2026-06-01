@@ -108,13 +108,17 @@ class Ays_PopupBox_List_Table extends WP_List_Table {
             $selected_all = "style='font-weight:bold;'";
         }
 
-        $href = "?page=" . esc_attr($_REQUEST['page']);
+        $href = add_query_arg(
+            'page',
+            isset($_REQUEST['page']) ? sanitize_key(wp_unslash($_REQUEST['page'])) : '',
+            admin_url('admin.php')
+        );
         $href = $this->ays_pb_add_filters_to_link($href);
 
         $status_links = array(
-            "all" => "<a " . $selected_all . " href='" . $href . "'>" . esc_html__('All', "ays-popup-box") . " (" . $all_count . ")</a>",
-            "published" => "<a " . $selected_on . " href='" . $href . "&fstatus=published'>" . esc_html__('Published', "ays-popup-box") . " (" . $published_count . ")</a>",
-            "unpublished" => "<a " . $selected_off . " href='" . $href . "&fstatus=unpublished'>" . esc_html__('Unpublished', "ays-popup-box") . " (" . $unpublished_count . ")</a>"
+            "all" => "<a " . $selected_all . " href='" . esc_url($href) . "'>" . esc_html__('All', "ays-popup-box") . " (" . $all_count . ")</a>",
+            "published" => "<a " . $selected_on . " href='" . esc_url(add_query_arg('fstatus', 'published', $href)) . "'>" . esc_html__('Published', "ays-popup-box") . " (" . $published_count . ")</a>",
+            "unpublished" => "<a " . $selected_off . " href='" . esc_url(add_query_arg('fstatus', 'unpublished', $href)) . "'>" . esc_html__('Unpublished', "ays-popup-box") . " (" . $unpublished_count . ")</a>"
         );
 
         return $status_links;
@@ -220,22 +224,22 @@ class Ays_PopupBox_List_Table extends WP_List_Table {
 
         if (isset($_GET['filterby']) && absint(sanitize_text_field($_GET['filterby'])) > 0) {
             $cat_id = absint(sanitize_text_field($_GET['filterby']));
-            $href .= '&filterby=' . $cat_id;
+            $href = add_query_arg('filterby', $cat_id, $href);
         }
 
         if (isset($_GET['filterbyAuthor']) && $_GET['filterbyAuthor'] != '') {
-            $ays_pb_author = esc_sql(sanitize_text_field($_GET['filterbyAuthor']));
-            $href .= '&filterbyAuthor=' . $ays_pb_author;
+            $ays_pb_author = absint(wp_unslash($_GET['filterbyAuthor']));
+            $href = add_query_arg('filterbyAuthor', $ays_pb_author, $href);
         }
 
         if (isset($_GET['filterbyType']) && $_GET['filterbyType'] != '') {
-            $ays_pb_type = esc_sql(sanitize_text_field($_GET['filterbyType']));
-            $href .= '&filterbyType=' . $ays_pb_type;
+            $ays_pb_type = sanitize_text_field(wp_unslash($_GET['filterbyType']));
+            $href = add_query_arg('filterbyType', $ays_pb_type, $href);
         }
 
         if (isset($_REQUEST['s']) && $_REQUEST['s'] != '') {
-            $search = esc_sql(sanitize_text_field($_REQUEST['s']));
-            $href .= '&s=' . $search;
+            $search = sanitize_text_field(wp_unslash($_REQUEST['s']));
+            $href = add_query_arg('s', $search, $href);
         }
 
         return $href;

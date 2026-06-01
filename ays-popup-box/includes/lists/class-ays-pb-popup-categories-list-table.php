@@ -75,17 +75,21 @@ class Popup_Categories_List_Table extends WP_List_Table {
             $selected_all = "style='font-weight:bold;'";
         }
 
-        $href = "?page=" . esc_attr($_REQUEST['page']);
+        $href = add_query_arg(
+            'page',
+            isset($_REQUEST['page']) ? sanitize_key(wp_unslash($_REQUEST['page'])) : '',
+            admin_url('admin.php')
+        );
 
         if (isset($_REQUEST['s']) && $_REQUEST['s'] != '') {
-            $search = esc_sql(sanitize_text_field($_REQUEST['s']));
-            $href .= '&s=' . $search;
+            $search = sanitize_text_field(wp_unslash($_REQUEST['s']));
+            $href = add_query_arg('s', $search, $href);
         }
 
         $status_links = array(
-            "all" => "<a " . $selected_all . " href='" . $href . "'>" . esc_html__('All', "ays-popup-box") . " (" . $all_count . ")</a>",
-            "published" => "<a " . $selected_1 . " href='" . $href . "&fstatus=1'>" . esc_html__('Published', "ays-popup-box") . " (" . $published_count . ")</a>",
-            "unpublished" => "<a " . $selected_0 . " href='" . $href . "&fstatus=0'>" . esc_html__('Unpublished', "ays-popup-box") . " (" . $unpublished_count . ")</a>"
+            "all" => "<a " . $selected_all . " href='" . esc_url($href) . "'>" . esc_html__('All', "ays-popup-box") . " (" . $all_count . ")</a>",
+            "published" => "<a " . $selected_1 . " href='" . esc_url(add_query_arg('fstatus', 1, $href)) . "'>" . esc_html__('Published', "ays-popup-box") . " (" . $published_count . ")</a>",
+            "unpublished" => "<a " . $selected_0 . " href='" . esc_url(add_query_arg('fstatus', 0, $href)) . "'>" . esc_html__('Unpublished', "ays-popup-box") . " (" . $unpublished_count . ")</a>"
         );
         return $status_links;
     }
