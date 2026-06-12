@@ -707,6 +707,16 @@
             }
         };
 
+        // Analytics Tab documentation links url
+        var headibngTabDocsData = {
+            'tab1': {
+                'link': 'https://popup-plugin.com/docs/reports/'
+            },
+            'tab2': {
+                'link': 'https://popup-plugin.com/docs/statistics/'
+            }
+        };
+
         $(document).find('.nav-tab-wrapper a.nav-tab').on('click', function(e) {
             let elemenetID = $(this).attr('href');
             let active_tab = $(this).attr('data-tab');
@@ -733,15 +743,21 @@
             
             // Update documentation link based on active tab
             var docLinkContainer = $(document).find('#ays-pb-tab-doc-link');
+            var docLinkImgIconSrc = docLinkContainer.find('.ays-pb-doc-link img').attr('src');
             if (docLinkContainer.length > 0) {
                 if (tabDocsData[active_tab]) {
-                    var linkHtml = '<a class="ays-pb-doc-link" href="' + tabDocsData[active_tab].link + '" target="_blank" style="font-size: 14px;">' + 
+                    var linkHtml = '<a class="ays-pb-doc-link" href="' + tabDocsData[active_tab].link + '" target="_blank" style="font-size: 14px;"><img src="' + docLinkImgIconSrc + '">' + 
                                    tabDocsData[active_tab].text + '</a>';
                     docLinkContainer.html(linkHtml);
                     docLinkContainer.show();
                 } else {
                     docLinkContainer.hide();
                 }
+            }
+
+            var headingDocLink = $(document).find('#ays-pb-heading-box-analytics');            
+            if (headingDocLink.length > 0) {
+                headingDocLink.attr('href', headibngTabDocsData[active_tab].link);
             }
             
             e.preventDefault();
@@ -979,17 +995,17 @@
                 $(document).find('.ays-pb-open-click-hover').css('display', 'flex');
                 $(document).find('.ays-pb-open-click-hover').prev('hr').css('display', 'block');
                 $(document).find('#ays-pb-youtube-how-to-make-link').attr('href','https://youtu.be/_BZ1rhfm8O0');
-                $(document).find('#ays-pb-youtube-how-to-make-link').text('View how to make popup on button click');
+                $(document).find('#ays-pb-youtube-how-to-make-link span').text('View how to make popup on button click');
             } else if (thisVal == 'exitIntent') {
                 $(document).find('.ays-pb-open-click-hover').hide(250);
                 $(document).find('.ays-pb-open-click-hover').prev('hr').css('display', 'none');
                 $(document).find('#ays-pb-youtube-how-to-make-link').attr('href','https://youtu.be/3oF20sABMHY?si=feToyHfHBpCky_hZ');
-                $(document).find('#ays-pb-youtube-how-to-make-link').text('View how to make popup with exit intent');
+                $(document).find('#ays-pb-youtube-how-to-make-link span').text('View how to make popup with exit intent');
             } else {
                 $(document).find('.ays-pb-open-click-hover').hide(250);
                 $(document).find('.ays-pb-open-click-hover').prev('hr').css('display', 'none');
                 $(document).find('#ays-pb-youtube-how-to-make-link').attr('href','https://youtu.be/2pK9I2r_MyE');
-                $(document).find('#ays-pb-youtube-how-to-make-link').text('View how to make popup on load');
+                $(document).find('#ays-pb-youtube-how-to-make-link span').text('View how to make popup on load');
             }
         });
         // Change popup trigger end
@@ -1841,7 +1857,10 @@
 
         // Select message vars popups page | Start
         $(document).find('.ays-pb-message-vars-icon').on('click', function(e){
-            $(this).parents(".ays-pb-message-vars-box").find(".ays-pb-message-vars-data").toggle('fast');
+            // $(this).parents(".ays-pb-message-vars-box").find(".ays-pb-message-vars-data").toggle('fast');
+            var messageVarsBox = $(this).parents(".ays-pb-message-vars-box");
+            messageVarsBox.toggleClass("ays-pb-message-vars-open");
+            messageVarsBox.find(".ays-pb-message-vars-data").toggle('fast');
         });
         
         $(document).on( "click" , function(e){
@@ -1849,6 +1868,7 @@
             } 
             else{
                 $(document).find(".ays-pb-message-vars-box .ays-pb-message-vars-data").hide('fast');
+                $(document).find(".ays-pb-message-vars-box").removeClass("ays-pb-message-vars-open");
             }
         });
 

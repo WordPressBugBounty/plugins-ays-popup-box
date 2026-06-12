@@ -283,7 +283,7 @@ $options = array(
     // Styles
     'enable_display_content_mobile' => 'off',
     'show_popup_title_mobile' => 'off',
-    'show_popup_desc_mobile' => 'off',
+    'show_popup_desc_mobile' => 'On',
     'popup_width_by_percentage_px' => 'pixels',
     'popup_width_by_percentage_px_mobile' => 'percentage',
     'mobile_width' => '',
@@ -413,7 +413,7 @@ $popupbox = array(
     'onoffoverlay' => 'On',
     'overlay_opacity' => '0.5',
     'show_popup_title' => 'off',
-    'show_popup_desc' => 'off',
+    'show_popup_desc' => 'On',
     'close_button' => 'Off',
     'header_bgcolor' => '#ffffff',
     'bg_image' => '',
@@ -1028,7 +1028,7 @@ if (isset($options['show_scrollbar_mobile'])) {
 $show_popup_title = (isset($popupbox['show_popup_title']) && $popupbox['show_popup_title'] != '') ? esc_attr( stripslashes($popupbox['show_popup_title']) ) : 'off';
 
 // Display Content | Show desctiption
-$show_popup_desc = (isset($popupbox['show_popup_desc']) && $popupbox['show_popup_desc'] != '') ? esc_attr( stripslashes($popupbox['show_popup_desc']) ) : 'off';
+$show_popup_desc = (isset($popupbox['show_popup_desc']) && $popupbox['show_popup_desc'] != '') ? esc_attr( stripslashes($popupbox['show_popup_desc']) ) : 'On';
 
 // Enable different display content mobile
 $enable_display_content_mobile = (isset($options['enable_display_content_mobile']) && $options['enable_display_content_mobile'] == 'on') ? true : false;
@@ -1042,7 +1042,7 @@ if (isset($options['show_popup_title_mobile'])) {
 
 // Display Content | Show description mobile
 if (isset($options['show_popup_desc_mobile'])) {
-    $show_popup_desc_mobile = $options['show_popup_desc_mobile'] !== '' ? esc_attr( stripslashes($options['show_popup_desc_mobile']) ) : 'off';
+    $show_popup_desc_mobile = $options['show_popup_desc_mobile'] !== '' ? esc_attr( stripslashes($options['show_popup_desc_mobile']) ) : 'On';
 } else {
     $show_popup_desc_mobile = $show_popup_desc;
 }
@@ -1732,6 +1732,7 @@ $ays_users_roles = $wp_roles->roles;
                         ?>
                             <span id="ays-pb-tab-doc-link">
                                 <a class="ays-pb-doc-link" href="<?php echo isset($tab_docs[$ays_pb_tab]['link']) ? esc_url($tab_docs[$ays_pb_tab]['link']) : 'https://popup-plugin.com/docs/configuring-general-tab'; ?>" target="_blank" style="font-size: 14px;">
+                                    <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . '/images/icons/text-file.svg' ?>">
                                     <?php echo isset($tab_docs[$ays_pb_tab]['text']) ? esc_html($tab_docs[$ays_pb_tab]['text']) : __('How to Configure General Settings?', 'ays-popup-box'); ?>
                                 </a>
                             </span>
@@ -1854,7 +1855,8 @@ $ays_users_roles = $wp_roles->roles;
                                     </div>
                                     <div class="col-sm-9">
                                         <div style = "text-align: end; margin-bottom: 5px;">
-                                            <a href="https://ays-pro.com/blog/how-to-create-a-custom-content-popup" target="_blank" style="font-size: 12px;">
+                                            <a href="https://popup-plugin.com/docs/custom-content-type/" target="_blank" style="font-size: 12px;">
+                                                <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . '/images/icons/text-file.svg' ?>">
                                                 <?php echo esc_html__("What is a Custom Content Popup?", "ays-popup-box"); ?>
                                             </a>
                                         </div>
@@ -2996,6 +2998,7 @@ $ays_users_roles = $wp_roles->roles;
                                     <div class="col-sm-12">
                                         <div style="margin-bottom: 0; text-align: end;">
                                             <a href="https://popup-plugin.com/docs/on-page-load-trigger/" target="_blank" style="font-size: 12px;">
+                                                <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . '/images/icons/text-file.svg' ?>">
                                                 <?php echo esc_html__("How to Page Load Trigger?", "ays-popup-box"); ?>
                                             </a>
                                         </div>
@@ -3063,13 +3066,15 @@ $ays_users_roles = $wp_roles->roles;
                                             <div class="ays-pb-youtube-video-link">
                                                 <div class="ays-pb-small-hint-text">
                                                 <a href="<?php echo $how_to_make_link_url; ?>" target="_blank" id="ays-pb-youtube-how-to-make-link">
-                                                    <?php echo $how_to_make_link_text; ?>
+                                                    <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . '/images/icons/youtube-video-icon.svg' ?>">
+                                                    <span><?php echo $how_to_make_link_text; ?></span>
                                                 </a>
                                                 </div>
                                             </div>
                                             <div class="ays-pb-youtube-video-link">
                                                 <div class="ays-pb-small-hint-text">
                                                 <a href="https://youtu.be/Phsw4q2mDmE" target="_blank">
+                                                    <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . '/images/icons/youtube-video-icon.svg' ?>">
                                                     <?php echo esc_html__("How to Set Popup Triggers with WordPress Popup Plugin (PRO)", "ays-popup-box");?>
                                                 </a>
                                                 </div>
@@ -3210,6 +3215,7 @@ $ays_users_roles = $wp_roles->roles;
                                     <div class="col-sm-12">
                                         <div style="margin-bottom: 0; text-align: end;">
                                             <a href="https://popup-plugin.com/docs/popup-display-options" target="_blank" style="font-size: 12px;">
+                                                <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . '/images/icons/text-file.svg' ?>">
                                                 <?php echo esc_html__("How to Configure Popup Display Options?", "ays-popup-box"); ?>
                                             </a>
                                         </div>
@@ -3470,6 +3476,7 @@ $ays_users_roles = $wp_roles->roles;
                                     <div class="ays-pb-youtube-video-link">
                                         <div class="ays-pb-small-hint-text">
                                             <a href="https://www.youtube.com/watch?v=xHjGrelxwI8" target="_blank">
+                                                <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . '/images/icons/youtube-video-icon.svg' ?>">
                                                 <?php echo esc_html__('How to Show Popup after a Time Delay', "ays-popup-box")?>
                                             </a>
                                         </div>
@@ -3524,6 +3531,7 @@ $ays_users_roles = $wp_roles->roles;
                                     <div class="ays-pb-youtube-video-link">
                                         <div class="ays-pb-small-hint-text">
                                             <a href="https://www.youtube.com/watch?v=7Hh3jp0hMgM&list=PL4ufu1uAjjWQTYn0O_72TLzmqgmVIYKI2" target="_blank">
+                                                <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . '/images/icons/youtube-video-icon.svg' ?>">
                                                 <?php echo esc_html__('How to Create a Login Form Popup', "ays-popup-box")?>
                                             </a>
                                         </div>
@@ -3577,21 +3585,26 @@ $ays_users_roles = $wp_roles->roles;
                             <div class="col-sm-9">
                                 <div class="ays_pb_pc_and_mobile_container ays_pb_pc_and_mobile_container_cb">
                                     <div class="ays_pb_option_for_desktop">
-                                        <span class="ays_pb_current_device_name" style="<?php echo ($close_popup_overlay_mobile || $close_popup_overlay != 'off') ? 'display: block' : '' ?>"><?php echo esc_html__('Desktop', "ays-popup-box") ?></span>
-                                        <p class="onoffswitch" style="margin:0;">
-                                            <input type="checkbox" name="close_popup_overlay" class="ays-pb-onoffswitch-checkbox" id="ays_close_popup_overlay" <?php echo $close_popup_overlay == 'off' ? '' : 'checked'; ?>/>
-                                        </p>
+                                        <label>
+                                            <span class="ays_pb_current_device_name" style="<?php echo ($close_popup_overlay_mobile || $close_popup_overlay != 'off') ? 'display: block' : '' ?>"><?php echo esc_html__('Desktop', "ays-popup-box") ?></span>
+                                            <p class="onoffswitch" style="margin:0;">
+                                                <input type="checkbox" name="close_popup_overlay" class="ays-pb-onoffswitch-checkbox" id="ays_close_popup_overlay" <?php echo $close_popup_overlay == 'off' ? '' : 'checked'; ?>/>
+                                            </p>
+                                        </label>
                                     </div>
                                     <div class="ays_pb_option_for_mobile_device ays_pb_option_for_mobile_device_cb ays_divider_left <?php echo ($close_popup_overlay_mobile || $close_popup_overlay != 'off') ? 'show' : '' ?>">
-                                        <span class="ays_pb_current_device_name" style="<?php echo ($close_popup_overlay_mobile || $close_popup_overlay != 'off') ? 'display: block' : '' ?>"><?php echo esc_html__('Mobile', "ays-popup-box") ?></span>
-                                        <p class="onoffswitch" style="margin:0;">
-                                            <input type="checkbox" name="close_popup_overlay_mobile" class="ays-pb-onoffswitch-checkbox" id="ays_close_popup_overlay_mobile" <?php echo $close_popup_overlay_mobile ? 'checked' : ''; ?>/>
-                                        </p>
+                                        <label>
+                                            <span class="ays_pb_current_device_name" style="<?php echo ($close_popup_overlay_mobile || $close_popup_overlay != 'off') ? 'display: block' : '' ?>"><?php echo esc_html__('Mobile', "ays-popup-box") ?></span>
+                                            <p class="onoffswitch" style="margin:0;">
+                                                <input type="checkbox" name="close_popup_overlay_mobile" class="ays-pb-onoffswitch-checkbox" id="ays_close_popup_overlay_mobile" <?php echo $close_popup_overlay_mobile ? 'checked' : ''; ?>/>
+                                            </p>
+                                        </label>
                                     </div>
                                 </div>
                                 <div class="ays-pb-youtube-video-link">
                                     <div class="ays-pb-small-hint-text">
                                         <a href="https://youtu.be/iOP7rxNoc9E?list=PL4ufu1uAjjWQTYn0O_72TLzmqgmVIYKI2" target="_blank">
+                                            <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . '/images/icons/youtube-video-icon.svg' ?>">
                                             <?php echo esc_html__('How to close Popup by clicking outside the box', "ays-popup-box")?>
                                         </a>
                                     </div>
@@ -3811,16 +3824,20 @@ $ays_users_roles = $wp_roles->roles;
                             <div class="col-sm-9 ays_pb_pc_and_mobile_container">
                                 <div class="ays_pb_pc_and_mobile_container ays_pb_pc_and_mobile_container_cb">
                                     <div class="ays_pb_option_for_desktop">
-                                        <span class="ays_pb_current_device_name" style="<?php echo ($ays_pb_hide_timer == 'on' || $ays_pb_hide_timer_mobile == 'on') ? 'display: block' : '' ?>"><?php echo esc_html__('Desktop', "ays-popup-box") ?></span>
-                                        <p class="onoffswitch">
-                                            <input id="ays_pb_hide_timer" type="checkbox" class="ays_pb_hide_timer ays-pb-onoffswitch-checkbox" name="ays_pb_hide_timer" <?php echo ($ays_pb_hide_timer == 'on' )? 'checked' : '' ?> value="on"/>
-                                        </p>
+                                        <label>
+                                            <span class="ays_pb_current_device_name" style="<?php echo ($ays_pb_hide_timer == 'on' || $ays_pb_hide_timer_mobile == 'on') ? 'display: block' : '' ?>"><?php echo esc_html__('Desktop', "ays-popup-box") ?></span>
+                                            <p class="onoffswitch">
+                                                <input id="ays_pb_hide_timer" type="checkbox" class="ays_pb_hide_timer ays-pb-onoffswitch-checkbox" name="ays_pb_hide_timer" <?php echo ($ays_pb_hide_timer == 'on' )? 'checked' : '' ?> value="on"/>
+                                            </p>
+                                        </label>
                                     </div>
                                     <div class="ays_pb_option_for_mobile_device ays_pb_option_for_mobile_device_cb ays_divider_left <?php echo ($ays_pb_hide_timer == 'on' || $ays_pb_hide_timer_mobile == 'on') ? 'show' : '' ?>">
-                                        <span class="ays_pb_current_device_name" style="<?php echo ($ays_pb_hide_timer == 'on' || $ays_pb_hide_timer_mobile == 'on') ? 'display: block' : '' ?>"><?php echo esc_html__('Mobile', "ays-popup-box") ?></span>
-                                        <p class="onoffswitch" style="margin:0;">
-                                            <input type="checkbox" name="ays_pb_hide_timer_mobile" class="ays-pb-onoffswitch-checkbox" id="ays_pb_hide_timer_mobile" <?php if($ays_pb_hide_timer_mobile == 'on'){ echo 'checked';} ?>/>
-                                        </p>
+                                        <label>
+                                            <span class="ays_pb_current_device_name" style="<?php echo ($ays_pb_hide_timer == 'on' || $ays_pb_hide_timer_mobile == 'on') ? 'display: block' : '' ?>"><?php echo esc_html__('Mobile', "ays-popup-box") ?></span>
+                                            <p class="onoffswitch" style="margin:0;">
+                                                <input type="checkbox" name="ays_pb_hide_timer_mobile" class="ays-pb-onoffswitch-checkbox" id="ays_pb_hide_timer_mobile" <?php if($ays_pb_hide_timer_mobile == 'on'){ echo 'checked';} ?>/>
+                                            </p>
+                                        </label>
                                     </div>
                                 </div>
                             </div>
@@ -4144,16 +4161,20 @@ $ays_users_roles = $wp_roles->roles;
                             <div class="col-sm-9">
                                 <div class="ays_pb_pc_and_mobile_container ays_pb_pc_and_mobile_container_cb">
                                     <div class="ays_pb_option_for_desktop">
-                                        <span class="ays_pb_current_device_name" style="<?php echo ($blured_overlay_mobile || $blured_overlay) ? 'display: block' : '' ?>"><?php echo esc_html__('Desktop', "ays-popup-box") ?></span>
-                                        <p class="onoffswitch">
-                                            <input type="checkbox" name="ays_pb_blured_overlay" class="ays-pb-onoffswitch-checkbox" id="ays_pb_blured_overlay" <?php echo $blured_overlay ? 'checked' : '' ?> >
-                                        </p>
+                                        <label>
+                                            <span class="ays_pb_current_device_name" style="<?php echo ($blured_overlay_mobile || $blured_overlay) ? 'display: block' : '' ?>"><?php echo esc_html__('Desktop', "ays-popup-box") ?></span>
+                                            <p class="onoffswitch">
+                                                <input type="checkbox" name="ays_pb_blured_overlay" class="ays-pb-onoffswitch-checkbox" id="ays_pb_blured_overlay" <?php echo $blured_overlay ? 'checked' : '' ?> >
+                                            </p>
+                                        </label>
                                     </div>
                                     <div class="ays_pb_option_for_mobile_device ays_pb_option_for_mobile_device_cb ays_divider_left <?php echo ($blured_overlay_mobile || $blured_overlay) ? 'show' : '' ?>">
-                                        <span class="ays_pb_current_device_name" style="<?php echo ($blured_overlay_mobile || $blured_overlay) ? 'display: block' : '' ?>"><?php echo esc_html__('Mobile', "ays-popup-box") ?></span>
-                                        <p class="onoffswitch" style="margin:0;">
-                                            <input type="checkbox" name="ays_pb_blured_overlay_mobile" class="ays-pb-onoffswitch-checkbox" id="ays_pb_blured_overlay_mobile" <?php if($blured_overlay_mobile){ echo 'checked';} ?>/>
-                                        </p>
+                                        <label>
+                                            <span class="ays_pb_current_device_name" style="<?php echo ($blured_overlay_mobile || $blured_overlay) ? 'display: block' : '' ?>"><?php echo esc_html__('Mobile', "ays-popup-box") ?></span>
+                                            <p class="onoffswitch" style="margin:0;">
+                                                <input type="checkbox" name="ays_pb_blured_overlay_mobile" class="ays-pb-onoffswitch-checkbox" id="ays_pb_blured_overlay_mobile" <?php if($blured_overlay_mobile){ echo 'checked';} ?>/>
+                                            </p>
+                                        </label>
                                     </div>
                                 </div>
                             </div>
@@ -4601,16 +4622,20 @@ $ays_users_roles = $wp_roles->roles;
                             <div class="col-sm-9">
                                 <div class="ays_pb_pc_and_mobile_container ays_pb_pc_and_mobile_container_cb">
                                     <div class="ays_pb_option_for_desktop">
-                                        <span class="ays_pb_current_device_name" style="<?php echo ($disable_scroll_mobile || $disable_scroll) ? 'display: block' : '' ?>"><?php echo esc_html__('Desktop', "ays-popup-box") ?></span>
-                                        <p class="onoffswitch">
-                                            <input type="checkbox" name="disable_scroll" class="ays-pb-onoffswitch-checkbox" id="ays_pb_disable_scroll" <?php echo ($disable_scroll) ? 'checked' : ''; ?> />
-                                        </p>
+                                        <label>
+                                            <span class="ays_pb_current_device_name" style="<?php echo ($disable_scroll_mobile || $disable_scroll) ? 'display: block' : '' ?>"><?php echo esc_html__('Desktop', "ays-popup-box") ?></span>
+                                            <p class="onoffswitch">
+                                                <input type="checkbox" name="disable_scroll" class="ays-pb-onoffswitch-checkbox" id="ays_pb_disable_scroll" <?php echo ($disable_scroll) ? 'checked' : ''; ?> />
+                                            </p>
+                                        </label>
                                     </div>
                                     <div class="ays_pb_option_for_mobile_device ays_pb_option_for_mobile_device_cb ays_divider_left <?php echo ($disable_scroll_mobile || $disable_scroll) ? 'show' : '' ?>">
-                                        <span class="ays_pb_current_device_name" style="<?php echo ($disable_scroll_mobile || $disable_scroll) ? 'display: block' : '' ?>"><?php echo esc_html__('Mobile', "ays-popup-box") ?></span>
-                                        <p class="onoffswitch" style="margin:0;">
-                                            <input type="checkbox" name="disable_scroll_mobile" class="ays-pb-onoffswitch-checkbox" id="ays_pb_disable_scroll_mobile" <?php if($disable_scroll_mobile){ echo 'checked';} ?>/>
-                                        </p>
+                                        <label>
+                                            <span class="ays_pb_current_device_name" style="<?php echo ($disable_scroll_mobile || $disable_scroll) ? 'display: block' : '' ?>"><?php echo esc_html__('Mobile', "ays-popup-box") ?></span>
+                                            <p class="onoffswitch" style="margin:0;">
+                                                <input type="checkbox" name="disable_scroll_mobile" class="ays-pb-onoffswitch-checkbox" id="ays_pb_disable_scroll_mobile" <?php if($disable_scroll_mobile){ echo 'checked';} ?>/>
+                                            </p>
+                                        </label>
                                     </div>
                                 </div>
                             </div>
@@ -4629,16 +4654,20 @@ $ays_users_roles = $wp_roles->roles;
                             <div class="col-sm-9">
                                 <div class="ays_pb_pc_and_mobile_container ays_pb_pc_and_mobile_container_cb">
                                     <div class="ays_pb_option_for_desktop">
-                                        <span class="ays_pb_current_device_name" style="<?php echo ($ays_pb_disable_scroll_on_popup_mobile || $ays_pb_disable_scroll_on_popup) ? 'display: block' : '' ?>"><?php echo esc_html__('Desktop', "ays-popup-box") ?></span>
-                                        <p class="onoffswitch">
-                                            <input type="checkbox" name="ays_pb_disable_scroll_on_popup" class="ays-pb-onoffswitch-checkbox" id="ays_pb_disable_scroll_on_popup" <?php echo ($ays_pb_disable_scroll_on_popup) ? 'checked' : ''; ?> />
-                                        </p>
+                                        <label>
+                                            <span class="ays_pb_current_device_name" style="<?php echo ($ays_pb_disable_scroll_on_popup_mobile || $ays_pb_disable_scroll_on_popup) ? 'display: block' : '' ?>"><?php echo esc_html__('Desktop', "ays-popup-box") ?></span>
+                                            <p class="onoffswitch">
+                                                <input type="checkbox" name="ays_pb_disable_scroll_on_popup" class="ays-pb-onoffswitch-checkbox" id="ays_pb_disable_scroll_on_popup" <?php echo ($ays_pb_disable_scroll_on_popup) ? 'checked' : ''; ?> />
+                                            </p>
+                                        </label>
                                     </div>
                                     <div class="ays_pb_option_for_mobile_device ays_pb_option_for_mobile_device_cb ays_divider_left <?php echo ($ays_pb_disable_scroll_on_popup_mobile || $ays_pb_disable_scroll_on_popup) ? 'show' : '' ?>">
-                                        <span class="ays_pb_current_device_name" style="<?php echo ($ays_pb_disable_scroll_on_popup_mobile || $ays_pb_disable_scroll_on_popup) ? 'display: block' : '' ?>"><?php echo esc_html__('Mobile', "ays-popup-box") ?></span>
-                                        <p class="onoffswitch" style="margin:0;">
-                                            <input type="checkbox" name="ays_pb_disable_scroll_on_popup_mobile" class="ays-pb-onoffswitch-checkbox" id="ays_pb_disable_scroll_on_popup_mobile" <?php if($ays_pb_disable_scroll_on_popup_mobile){ echo 'checked';} ?>/>
-                                        </p>
+                                        <label>
+                                            <span class="ays_pb_current_device_name" style="<?php echo ($ays_pb_disable_scroll_on_popup_mobile || $ays_pb_disable_scroll_on_popup) ? 'display: block' : '' ?>"><?php echo esc_html__('Mobile', "ays-popup-box") ?></span>
+                                            <p class="onoffswitch" style="margin:0;">
+                                                <input type="checkbox" name="ays_pb_disable_scroll_on_popup_mobile" class="ays-pb-onoffswitch-checkbox" id="ays_pb_disable_scroll_on_popup_mobile" <?php if($ays_pb_disable_scroll_on_popup_mobile){ echo 'checked';} ?>/>
+                                            </p>
+                                        </label>
                                     </div>
                                 </div>
                             </div>
@@ -4657,16 +4686,20 @@ $ays_users_roles = $wp_roles->roles;
                             <div class="col-sm-9">
                                 <div class="ays_pb_pc_and_mobile_container ays_pb_pc_and_mobile_container_cb">
                                     <div class="ays_pb_option_for_desktop">
-                                        <span class="ays_pb_current_device_name" style="<?php echo ($ays_pb_show_scrollbar_mobile || $ays_pb_show_scrollbar) ? 'display: block' : '' ?>"><?php echo esc_html__('Desktop', "ays-popup-box") ?></span>
-                                        <p class="onoffswitch">
-                                            <input type="checkbox" name="ays_pb_show_scrollbar" class="ays-pb-onoffswitch-checkbox" id="ays_pb_show_scrollbar" <?php echo ($ays_pb_show_scrollbar) ? 'checked' : ''; ?> />
-                                        </p>
+                                        <label>
+                                            <span class="ays_pb_current_device_name" style="<?php echo ($ays_pb_show_scrollbar_mobile || $ays_pb_show_scrollbar) ? 'display: block' : '' ?>"><?php echo esc_html__('Desktop', "ays-popup-box") ?></span>
+                                            <p class="onoffswitch">
+                                                <input type="checkbox" name="ays_pb_show_scrollbar" class="ays-pb-onoffswitch-checkbox" id="ays_pb_show_scrollbar" <?php echo ($ays_pb_show_scrollbar) ? 'checked' : ''; ?> />
+                                            </p>
+                                        </label>
                                     </div>
                                     <div class="ays_pb_option_for_mobile_device ays_pb_option_for_mobile_device_cb ays_divider_left <?php echo ($ays_pb_show_scrollbar_mobile || $ays_pb_show_scrollbar) ? 'show' : '' ?>">
-                                        <span class="ays_pb_current_device_name" style="<?php echo ($ays_pb_show_scrollbar_mobile || $ays_pb_show_scrollbar) ? 'display: block' : '' ?>"><?php echo esc_html__('Mobile', "ays-popup-box") ?></span>
-                                        <p class="onoffswitch" style="margin:0;">
-                                            <input type="checkbox" name="ays_pb_show_scrollbar_mobile" class="ays-pb-onoffswitch-checkbox" id="ays_pb_show_scrollbar_mobile" <?php if($ays_pb_show_scrollbar_mobile){ echo 'checked';} ?>/>
-                                        </p>
+                                        <label>
+                                            <span class="ays_pb_current_device_name" style="<?php echo ($ays_pb_show_scrollbar_mobile || $ays_pb_show_scrollbar) ? 'display: block' : '' ?>"><?php echo esc_html__('Mobile', "ays-popup-box") ?></span>
+                                            <p class="onoffswitch" style="margin:0;">
+                                                <input type="checkbox" name="ays_pb_show_scrollbar_mobile" class="ays-pb-onoffswitch-checkbox" id="ays_pb_show_scrollbar_mobile" <?php if($ays_pb_show_scrollbar_mobile){ echo 'checked';} ?>/>
+                                            </p>
+                                        </label>
                                     </div>
                                 </div>
                             </div>
@@ -4923,7 +4956,7 @@ $ays_users_roles = $wp_roles->roles;
                         <div class="ays-pb-accordion-body">
                             <div class="pb_theme_img_box">
                                 <?php
-                                    $pb_template_upgrade_url = 'https://popup-plugin.com/pricing/';
+                                    $pb_template_upgrade_url = 'https://popup-plugin.com/pricing/?utm_source=dashboard&utm_medium=popup-free&utm_campaign=popup-style-choose-template-'. esc_attr( AYS_PB_NAME_VERSION );
                                     $pb_template_themes = array(
                                         array(
                                             'value' => 'default',
@@ -8439,7 +8472,7 @@ $ays_users_roles = $wp_roles->roles;
                                                     <p style="margin:0px; font-size:19px;"><?php echo esc_html( $ays_pb_popup_type_card['title'] ); ?></p>
                                                 </div>
                                                 <?php if ( $ays_pb_is_pro_type ) : ?>
-                                                    <a href="https://popup-plugin.com/" target="_blank" class="ays-pb-select-type-pro ays-pb-card-link">
+                                                    <a href="https://popup-plugin.com/?utm_source=dashboard&utm_medium=popup-free&utm_campaign=popup-choose-your-popup-type-<?php echo esc_attr( AYS_PB_NAME_VERSION ); ?>" target="_blank" class="ays-pb-select-type-pro ays-pb-card-link">
                                                         <svg
                                                         xmlns="http://www.w3.org/2000/svg"
                                                         viewBox="0 0 24 24"
@@ -8593,7 +8626,7 @@ $ays_users_roles = $wp_roles->roles;
                                 </div>
 
                                 <div class="pro-features-popup-modal-right-box-footer-text">
-                                    <span class="ays_quiz_small_hint_text_for_message_variables"><?php echo esc_html__( "One-time payment", 'ays-popup-box' ); ?></span>
+                                    <span class="ays_pb_small_hint_text_for_message_variables"><?php echo esc_html__( "One-time payment", 'ays-popup-box' ); ?></span>
                                 </div>
                            </div>
                         </div>

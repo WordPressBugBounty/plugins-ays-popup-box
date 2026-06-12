@@ -248,7 +248,7 @@ $categories_title_length = (isset($options['categories_title_length']) && intval
                                     <strong style="font-size:30px;"><img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/globe.svg"?>"></strong>
                                     <h5><?php echo esc_html__('Who will have permission to Popup menu',"ays-popup-box")?></h5>
                                 </legend>
-                                <div class="col-sm-12 ays-pro-features-v2-main-box pro_features pro_features_popup">
+                                <div class="col-sm-12 pro_features_main pro_features_popup ays-pro-features-v2-main-box ays_pb_hide_for_notification_type">
 
                                     <div class="pro_features pro_features_popup pro_features_background_bolder">
                                         <div class="pro-features-popup-conteiner">

@@ -452,7 +452,7 @@ class Ays_PopupBox_List_Table extends WP_List_Table {
 
             $publish_url = wp_nonce_url($publish_url, 'ays_pb_publish_unpublish_' . absint($item['id']));
 
-            $actions['publish'] = '<a href="' . esc_url($publish_url) . '">' . esc_html__('Publish', 'ays-popup-box') . '</a>';
+            // $actions['publish'] = '<a href="' . esc_url($publish_url) . '">' . esc_html__('Publish', 'ays-popup-box') . '</a>';
         }
 
         return $title . $this->row_actions($actions);
