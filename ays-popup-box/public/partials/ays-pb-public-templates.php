@@ -4203,6 +4203,8 @@ class Ays_Pb_Public_Templates {
 
         $user_email = ( isset( $user_data->user_email ) && $user_data->user_email != '' ) ? stripslashes( $user_data->user_email ) : '';
 
+        $user_website_url = ( isset( $user_data->user_url ) && ! empty( $user_data->user_url ) ) ? $user_data->user_url : "";
+
         $pb_user_information  = Ays_Pb_Data::get_user_profile_data();
 		$user_first_name      = (isset( $pb_user_information['user_first_name'] ) && $pb_user_information['user_first_name']  != "") ? $pb_user_information['user_first_name'] : '';
 		$user_last_name       = (isset( $pb_user_information['user_last_name'] ) && $pb_user_information['user_last_name']  != "") ? $pb_user_information['user_last_name'] : '';
@@ -4214,16 +4216,20 @@ class Ays_Pb_Public_Templates {
         $current_popup_author = ( isset( $author->name ) && $author->name != "" ) ? $author->name : '';
 
         $current_popup_author_email = "";
+        $current_popup_author_nickname = "";
         $current_popup_author_display_name = "";
         if( isset($author) && !empty($author) && isset($author->id) && intval($author->id) > 0 ){
             $current_popup_author_data = get_userdata( $author->id );
             if ( isset( $current_popup_author_data ) && $current_popup_author_data ) {
                 // Get popup author email
                 $current_popup_author_email = ( isset( $current_popup_author_data->data->user_email ) && $current_popup_author_data->data->user_email != '' ) ? sanitize_text_field( $current_popup_author_data->data->user_email ) : '';
+                // Get popup author nickname
+                $current_popup_author_nickname = ( isset( $current_popup_author_data->data->user_nicename ) && $current_popup_author_data->data->user_nicename != '' ) ? sanitize_text_field( $current_popup_author_data->data->user_nicename ) : "";                
                 // Get popup author display name
                 $current_popup_author_display_name = ( isset( $current_popup_author_data->data->display_name ) && $current_popup_author_data->data->display_name != '' ) ? sanitize_text_field( $current_popup_author_data->data->display_name ) : "";
             } else {
                 $current_popup_author_email = '';
+                $current_popup_author_nickname = '';
                 $current_popup_author_display_name = '';
             }
         }
@@ -4284,26 +4290,32 @@ class Ays_Pb_Public_Templates {
             $post_author_website_url = '<a href="'. $post_author_website_url .'" target="_blank">'. $post_author_website_url .'</a>';
         }
 
+        if ( ! empty( $user_website_url ) ) {
+            $user_website_url = '<a href="'. $user_website_url .'" target="_blank">'. $user_website_url .'</a>';
+        }
+
         $message_variables_data = array(
             'popup_title'                               => $popup_title,
             'user_name'                                 => $user_display_name,
             'user_email'                                => $user_email,
             'user_first_name'                           => $user_first_name,
             'user_last_name'                            => $user_last_name,
+            'user_nickname'                             => $user_nickname,
+            'user_wordpress_roles'                      => $user_wordpress_roles,
+            'user_id'                                   => $current_user_id,
+            'user_registered'                           => $user_registered,
+            'user_website_url'                          => $user_website_url,
             'admin_email'                               => $super_admin_email,
             'current_popup_author'                      => $current_popup_author,
             'current_popup_author_email'                => $current_popup_author_email,
+            'current_popup_author_nickname'             => $current_popup_author_nickname,
             'current_popup_author_display_name'         => $current_popup_author_display_name,
             'current_popup_page_link'                   => $popup_current_page_link_html,
-            'user_wordpress_roles'                      => $user_wordpress_roles,
             'creation_date'                             => $creation_date,
             'current_date'                              => $current_date,
-            'user_nickname'                             => $user_nickname,
             'current_time'                              => $current_time,
             'current_day'                               => $current_day,
             'current_month'                             => $current_month,
-            'user_id'                                   => $current_user_id,
-            'user_registered'                           => $user_registered,
             'post_author_nickname'                      => $post_author_nickname,
             'post_author_email'                         => $post_author_email,
             'post_author_first_name'                    => $post_author_first_name,
