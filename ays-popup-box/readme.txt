@@ -4,7 +4,7 @@ Donate link: https://popup-plugin.com
 Tags: popup, popups, exit popup, pop up, modal
 Requires at least: 4.0
 Tested up to: 7.0
-Stable tag: 6.3.4
+Stable tag: 6.3.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -309,6 +309,10 @@ After clearing the caches, try to check the case with either the **Incognito mod
 
 
 == Changelog ==
+
+= 6.3.5 ( Jul 17, 2026 ) =
+* Added: Current Popup Author Website URL message variable on the general settings
+* Tested: Compatible up to WordPress 7.0.1
 
 = 6.3.4 ( Jul 08, 2026 ) =
 * Added: Current Popup Author Nickname message variable on the general settings

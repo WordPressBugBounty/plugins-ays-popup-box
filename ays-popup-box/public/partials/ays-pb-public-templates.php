@@ -4218,22 +4218,30 @@ class Ays_Pb_Public_Templates {
         $current_popup_author_email = "";
         $current_popup_author_nickname = "";
         $current_popup_author_display_name = "";
+        $current_popup_author_website_url = "";
         if( isset($author) && !empty($author) && isset($author->id) && intval($author->id) > 0 ){
             $current_popup_author_data = get_userdata( $author->id );
             if ( isset( $current_popup_author_data ) && $current_popup_author_data ) {
                 // Get popup author email
                 $current_popup_author_email = ( isset( $current_popup_author_data->data->user_email ) && $current_popup_author_data->data->user_email != '' ) ? sanitize_text_field( $current_popup_author_data->data->user_email ) : '';
                 // Get popup author nickname
-                $current_popup_author_nickname = ( isset( $current_popup_author_data->data->user_nicename ) && $current_popup_author_data->data->user_nicename != '' ) ? sanitize_text_field( $current_popup_author_data->data->user_nicename ) : "";                
+                $current_popup_author_nickname = ( isset( $current_popup_author_data->data->user_nicename ) && $current_popup_author_data->data->user_nicename != '' ) ? sanitize_text_field( $current_popup_author_data->data->user_nicename ) : "";
                 // Get popup author display name
                 $current_popup_author_display_name = ( isset( $current_popup_author_data->data->display_name ) && $current_popup_author_data->data->display_name != '' ) ? sanitize_text_field( $current_popup_author_data->data->display_name ) : "";
+                // Get popup author website URL
+                $current_popup_author_website_url = ( isset( $current_popup_author_data->data->user_url ) && $current_popup_author_data->data->user_url != '' ) ? sanitize_text_field( $current_popup_author_data->data->user_url ) : "";
             } else {
                 $current_popup_author_email = '';
                 $current_popup_author_nickname = '';
                 $current_popup_author_display_name = '';
+                $current_popup_author_website_url = '';
             }
         }
 
+
+        if ( ! empty( $current_popup_author_website_url ) ) {
+            $current_popup_author_website_url = '<a href="'. $current_popup_author_website_url .'" target="_blank">'. $current_popup_author_website_url .'</a>';
+        }
 
         $ays_pb_protocol = ((!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') || $_SERVER['SERVER_PORT'] == 443) ? "https://" : "http://";         
         $current_popup_page_link = esc_url( $ays_pb_protocol . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'] );
@@ -4295,39 +4303,40 @@ class Ays_Pb_Public_Templates {
         }
 
         $message_variables_data = array(
-            'popup_title'                               => $popup_title,
-            'user_name'                                 => $user_display_name,
-            'user_email'                                => $user_email,
-            'user_first_name'                           => $user_first_name,
-            'user_last_name'                            => $user_last_name,
-            'user_nickname'                             => $user_nickname,
-            'user_wordpress_roles'                      => $user_wordpress_roles,
-            'user_id'                                   => $current_user_id,
-            'user_registered'                           => $user_registered,
-            'user_website_url'                          => $user_website_url,
-            'admin_email'                               => $super_admin_email,
-            'current_popup_author'                      => $current_popup_author,
-            'current_popup_author_email'                => $current_popup_author_email,
-            'current_popup_author_nickname'             => $current_popup_author_nickname,
-            'current_popup_author_display_name'         => $current_popup_author_display_name,
-            'current_popup_page_link'                   => $popup_current_page_link_html,
-            'creation_date'                             => $creation_date,
-            'current_date'                              => $current_date,
-            'current_time'                              => $current_time,
-            'current_day'                               => $current_day,
-            'current_month'                             => $current_month,
-            'post_author_nickname'                      => $post_author_nickname,
-            'post_author_email'                         => $post_author_email,
-            'post_author_first_name'                    => $post_author_first_name,
-            'post_author_last_name'                     => $post_author_last_name,
-            'post_author_display_name'                  => $post_author_display_name,
-            'post_author_website_url'                   => $post_author_website_url,
-            'post_author_roles'                         => $post_author_roles,
-            'post_title'                                => $post_title,
-            'post_id'                                   => $post_id,
-            'site_title'                                => $get_site_title,
-            'site_description'                          => $get_site_description,
-            'home_page_url'                             => $home_page_url,
+            'popup_title'                       => $popup_title,
+            'user_name'                         => $user_display_name,
+            'user_email'                        => $user_email,
+            'user_first_name'                   => $user_first_name,
+            'user_last_name'                    => $user_last_name,
+            'user_nickname'                     => $user_nickname,
+            'user_wordpress_roles'              => $user_wordpress_roles,
+            'user_id'                           => $current_user_id,
+            'user_registered'                   => $user_registered,
+            'user_website_url'                  => $user_website_url,
+            'admin_email'                       => $super_admin_email,
+            'current_popup_author'              => $current_popup_author,
+            'current_popup_author_email'        => $current_popup_author_email,
+            'current_popup_author_nickname'     => $current_popup_author_nickname,
+            'current_popup_author_display_name' => $current_popup_author_display_name,
+            'current_popup_author_website_url'  => $current_popup_author_website_url,
+            'current_popup_page_link'           => $popup_current_page_link_html,
+            'creation_date'                     => $creation_date,
+            'current_date'                      => $current_date,
+            'current_time'                      => $current_time,
+            'current_day'                       => $current_day,
+            'current_month'                     => $current_month,
+            'post_author_nickname'              => $post_author_nickname,
+            'post_author_email'                 => $post_author_email,
+            'post_author_first_name'            => $post_author_first_name,
+            'post_author_last_name'             => $post_author_last_name,
+            'post_author_display_name'          => $post_author_display_name,
+            'post_author_website_url'           => $post_author_website_url,
+            'post_author_roles'                 => $post_author_roles,
+            'post_title'                        => $post_title,
+            'post_id'                           => $post_id,
+            'site_title'                        => $get_site_title,
+            'site_description'                  => $get_site_description,
+            'home_page_url'                     => $home_page_url,
         );  
 
         return $message_variables_data;
