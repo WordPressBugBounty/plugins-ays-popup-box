@@ -71,7 +71,16 @@ class Ays_Pb_Data {
 
     public static function replace_message_variables($content, $data){
         foreach($data as $variable => $value){
-            $content = str_replace("%%".$variable."%%", $value, $content);
+            if (is_array($value)) {
+                $value = implode(', ', $value);
+            } elseif (is_object($value)) {
+                $value = '';
+            }
+            $content = str_replace(
+                "%%".$variable."%%",
+                (string) $value,
+                $content
+            );
         }
         return $content;
     }
