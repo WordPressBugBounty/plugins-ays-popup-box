@@ -35,6 +35,66 @@ class Popup_Categories_List_Table extends WP_List_Table {
         }
     }
 
+    public function extra_tablenav($which) {
+
+        // Run a security check.
+        if (empty($this->ays_pb_nonce) || ! wp_verify_nonce( $this->ays_pb_nonce, 'ays_pb_admin_popup_categories_list_table_nonce' ) ) {
+            wp_die('Nonce verification failed!');
+        }
+
+        if( !is_user_logged_in() || !current_user_can( 'manage_options' ) ){
+            wp_die( esc_html__( 'Something went wrong', 'ays-popup-box' ) );
+        }
+
+        $description_filter = $this->get_description_filter();
+        $description_options = array(
+            'with'    => esc_html__( 'With description', 'ays-popup-box' ),
+            'without' => esc_html__( 'Without description', 'ays-popup-box' ),
+        );
+
+        $clear_filters_url = add_query_arg(
+            'page',
+            isset($_REQUEST['page']) ? sanitize_key(wp_unslash($_REQUEST['page'])) : '',
+            admin_url('admin.php')
+        );
+        ?>
+        <div class="alignleft actions bulkactions">
+            <select name="filterbyDescription-<?php echo esc_attr($which); ?>" id="bulk-action-popup-cat-description-selector-<?php echo esc_attr($which); ?>">
+                <option value=""><?php echo esc_html__( 'With/without description', 'ays-popup-box' ); ?></option>
+                <?php foreach ($description_options as $value => $label) : ?>
+                    <option value="<?php echo esc_attr($value); ?>" <?php selected($description_filter, $value); ?>><?php echo esc_html($label); ?></option>
+                <?php endforeach; ?>
+            </select>
+            <input type="button" class="ays-popup-question-tab-all-filter-button-<?php echo esc_attr($which); ?> button" value="<?php echo esc_attr__( 'Filter', 'ays-popup-box' ); ?>">
+        </div>
+        <a href="<?php echo esc_url($clear_filters_url); ?>" class="button"><?php echo esc_html__( 'Clear filters', 'ays-popup-box' ); ?></a>
+        <?php
+    }
+
+    private function get_description_filter() {
+        if (!isset($_GET['filterbyDescription'])) {
+            return '';
+        }
+
+        $description_filter = sanitize_key(wp_unslash($_GET['filterbyDescription']));
+
+        return in_array($description_filter, array('with', 'without'), true) ? $description_filter : '';
+    }
+
+    private function get_description_filter_condition() {
+        $description_filter = $this->get_description_filter();
+
+        if ($description_filter === 'with') {
+            return ' `description` != "" ';
+        }
+
+        if ($description_filter === 'without') {
+            return ' `description` = "" ';
+        }
+
+        return '';
+    }
+
     protected function get_views() {
 
         // Run a security check.
@@ -86,6 +146,11 @@ class Popup_Categories_List_Table extends WP_List_Table {
             $href = add_query_arg('s', $search, $href);
         }
 
+        $description_filter = $this->get_description_filter();
+        if ($description_filter !== '') {
+            $href = add_query_arg('filterbyDescription', $description_filter, $href);
+        }
+
         $status_links = array(
             "all" => "<a " . $selected_all . " href='" . esc_url($href) . "'>" . esc_html__('All', "ays-popup-box") . " (" . $all_count . ")</a>",
             "published" => "<a " . $selected_1 . " href='" . esc_url(add_query_arg('fstatus', 1, $href)) . "'>" . esc_html__('Published', "ays-popup-box") . " (" . $published_count . ")</a>",
@@ -119,6 +184,11 @@ class Popup_Categories_List_Table extends WP_List_Table {
         if (isset($_REQUEST['s']) && $_REQUEST['s'] != '') {
             $search = esc_sql(sanitize_text_field($_REQUEST['s']));
             $conditions[] = sprintf("title LIKE '%%%s%%' ", esc_sql($wpdb->esc_like($search)));
+        }
+
+        $description_condition = $this->get_description_filter_condition();
+        if ($description_condition !== '') {
+            $conditions[] = $description_condition;
         }
 
         if (!empty($conditions)) {
@@ -155,6 +225,11 @@ class Popup_Categories_List_Table extends WP_List_Table {
             $conditions[] = sprintf("title LIKE '%%%s%%' ", esc_sql($wpdb->esc_like($search)));
         }
 
+        $description_condition = $this->get_description_filter_condition();
+        if ($description_condition !== '') {
+            $conditions[] = $description_condition;
+        }
+
         if (!empty($conditions)) {
             $sql .= " AND " . implode(" AND ", $conditions);
         }
@@ -187,6 +262,11 @@ class Popup_Categories_List_Table extends WP_List_Table {
         if (isset($_REQUEST['s']) && $_REQUEST['s'] != '') {
             $search = esc_sql(sanitize_text_field($_REQUEST['s']));
             $conditions[] = sprintf("title LIKE '%%%s%%' ", esc_sql($wpdb->esc_like($search)));
+        }
+
+        $description_condition = $this->get_description_filter_condition();
+        if ($description_condition !== '') {
+            $conditions[] = $description_condition;
         }
 
         if (!empty($conditions)) {
@@ -495,6 +575,11 @@ class Popup_Categories_List_Table extends WP_List_Table {
             $filter[] = sprintf( " title LIKE '%%%s%%' ", esc_sql($wpdb->esc_like($search)) );
         }
 
+        $description_condition = $this->get_description_filter_condition();
+        if ($description_condition !== '') {
+            $filter[] = $description_condition;
+        }
+
         if (count($filter) !== 0) {
             $sql .= " WHERE " . implode(" AND ", $filter);
         }
@@ -539,6 +624,11 @@ class Popup_Categories_List_Table extends WP_List_Table {
         if ( isset($_REQUEST['fstatus']) && is_numeric($_REQUEST['fstatus']) && !is_null(sanitize_text_field($_REQUEST['fstatus'])) && esc_sql($_REQUEST['fstatus']) != '' ) {
             $fstatus = absint(esc_sql($_REQUEST['fstatus']));
             $where[] = " published = " . $fstatus;
+        }
+
+        $description_condition = $this->get_description_filter_condition();
+        if ($description_condition !== '') {
+            $where[] = $description_condition;
         }
 
         if (!empty($where)) {

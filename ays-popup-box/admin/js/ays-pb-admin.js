@@ -445,6 +445,7 @@
             var catFilter = $(document).find('select[name="filterby-' + top_or_bottom + '"]').val();
             var authorFilter = $(document).find('select[name="filterbyAuthor-' + top_or_bottom + '"]').val();
             var typeFilter = $(document).find('select[name="filterbyType-' + top_or_bottom + '"]').val();
+            var descriptionFilter = $(document).find('select[name="filterbyDescription-' + top_or_bottom + '"]').val();
             var link = location.href;
 
             if (typeof catFilter != 'undefined') {
@@ -465,6 +466,17 @@
                     value: typeFilter
                 });
             }
+            if (typeof descriptionFilter != 'undefined') {
+                link = catFilterForListTable(link, {
+                    what: 'filterbyDescription',
+                    value: descriptionFilter
+                });
+            }
+
+            link = catFilterForListTable(link, {
+                what: 'paged',
+                value: ''
+            });
 
             document.location.href = link;
         })
