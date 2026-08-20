@@ -303,6 +303,8 @@ $options = array(
     'pb_font_size_for_mobile' => 13,
     'pb_description_alignment_for_pc' => 'left',
     'pb_description_alignment_for_mobile' => 'left',
+    'pb_description_font_weight_for_pc' => 'normal',
+    'pb_description_font_weight_for_mobile' => 'normal',
     'enable_pb_title_text_shadow' => 'off',
     'pb_title_text_shadow' => 'rgba(255,255,255,0)',
     'pb_title_text_shadow_x_offset' => 2,
@@ -1129,6 +1131,12 @@ $pb_text_align = (isset($options['pb_description_alignment_for_pc']) && $options
 
 // Description text align mobile
 $pb_text_align_mobile = (isset($options['pb_description_alignment_for_mobile']) && $options['pb_description_alignment_for_mobile'] != '') ? esc_attr( stripslashes($options['pb_description_alignment_for_mobile']) ) : 'left';
+
+// Description font weight
+$pb_font_weight = (isset($options['pb_description_font_weight_for_pc']) && $options['pb_description_font_weight_for_pc'] != '') ? esc_attr( stripslashes($options['pb_description_font_weight_for_pc']) ) : 'normal';
+
+// Description font weight mobile
+$pb_font_weight_mobile = (isset($options['pb_description_font_weight_for_mobile']) && $options['pb_description_font_weight_for_mobile'] != '') ? esc_attr( stripslashes($options['pb_description_font_weight_for_mobile']) ) : 'normal';
 
 // Title text shadow | On desktop
 $options['enable_pb_title_text_shadow'] = (isset($options['enable_pb_title_text_shadow']) && $options['enable_pb_title_text_shadow'] == 'on') ? 'on' : 'off';
@@ -5852,6 +5860,76 @@ $ays_users_roles = $wp_roles->roles;
                                     </div>
                                 </div>
                                 <!-- Description Alignment end -->
+                                <hr class="ays_pb_hide_for_image_type ays_pb_hide_for_notification_type <?php echo ($modal_content == 'image_type' || $modal_content == 'notification_type') ? 'display_none' : ''; ?>">
+                                <!-- Description Font Weight start -->
+                                <div class="form-group row ays_pb_hide_for_image_type ays_pb_hide_for_notification_type <?php echo ($modal_content == 'image_type' || $modal_content == 'notification_type') ? 'display_none' : ''; ?>">
+                                    <div class="col-sm-4">
+                                        <label for="ays_pb_description_font_weight">
+                                            <?php echo  esc_html__('Description font weight',"ays-popup-box") ?>
+                                            <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__("Define the font weight of the popup description.", "ays-popup-box"); ?>">
+                                               <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
+                                            </a>
+                                        </label>
+                                    </div>
+                                    <div class="col-sm-6 ays_divider_left">
+                                        <div class="form-group row">
+                                            <div class="col-sm-3">
+                                                <label for="ays_pb_description_font_weight_for_pc">
+                                                    <?php echo  esc_html__('On desktop',"ays-popup-box") ?>  
+                                                        <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__('Define the description font weight for desktop devices.', 'ays-popup-box'); ?>">
+                                                            <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
+                                                        </a>
+                                                    </label>
+                                                </label>
+                                            </div>
+                                            <div class="col-sm-9">
+                                                <select id="ays_pb_description_font_weight_for_pc" class="ays-pb-text-input ays-pb-text-input-short" name="ays_pb_description_font_weight_for_pc">
+                                                    <option value="normal" <?php echo $pb_font_weight == 'normal' ? 'selected' : ''; ?>><?php echo esc_html__('Normal', 'ays-popup-box');  ?></option>
+                                                    <option value="bold" <?php echo $pb_font_weight == 'bold' ? 'selected' : ''; ?>  ><?php echo esc_html__('Bold', 'ays-popup-box'); ?></option>
+                                                    <option value="bolder" <?php echo $pb_font_weight == 'bolder' ? 'selected' : ''; ?>><?php  echo esc_html__('Bolder', 'ays-popup-box'); ?></option>
+                                                    <option value="100" <?php echo $pb_font_weight == '100' ? 'selected' : ''; ?>><?php  echo esc_html__('100', 'ays-popup-box'); ?></option>
+                                                    <option value="200" <?php echo $pb_font_weight == '200' ? 'selected' : ''; ?>><?php  echo esc_html__('200', 'ays-popup-box'); ?></option>
+                                                    <option value="300" <?php echo $pb_font_weight == '300' ? 'selected' : ''; ?>><?php  echo esc_html__('300', 'ays-popup-box'); ?></option>
+                                                    <option value="400" <?php echo $pb_font_weight == '400' ? 'selected' : ''; ?>><?php  echo esc_html__('400', 'ays-popup-box'); ?></option>
+                                                    <option value="500" <?php echo $pb_font_weight == '500' ? 'selected' : ''; ?>><?php  echo esc_html__('500', 'ays-popup-box'); ?></option>
+                                                    <option value="600" <?php echo $pb_font_weight == '600' ? 'selected' : ''; ?>><?php  echo esc_html__('600', 'ays-popup-box'); ?></option>
+                                                    <option value="700" <?php echo $pb_font_weight == '700' ? 'selected' : ''; ?>><?php  echo esc_html__('700', 'ays-popup-box'); ?></option>
+                                                    <option value="800" <?php echo $pb_font_weight == '800' ? 'selected' : ''; ?>><?php  echo esc_html__('800', 'ays-popup-box'); ?></option>
+                                                    <option value="900" <?php echo $pb_font_weight == '900' ? 'selected' : ''; ?>><?php  echo esc_html__('900', 'ays-popup-box'); ?></option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                        <div class="form-group row">
+                                            <div class="col-sm-3">
+                                                <label for="ays_pb_description_font_weight_for_mobile">
+                                                    <?php echo  esc_html__('On mobile',"ays-popup-box") ?>  
+                                                        <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__('Define the description font weight for mobile devices.', 'ays-popup-box'); ?>">
+                                                            <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
+                                                        </a>
+                                                    </label>
+                                                </label>
+                                            </div>
+                                            <div class="col-sm-9">
+                                                <select id="ays_pb_description_font_weight_for_mobile" class="ays-pb-text-input ays-pb-text-input-short" name="ays_pb_description_font_weight_for_mobile">
+                                                    <option value="normal" <?php echo $pb_font_weight_mobile == 'normal' ? 'selected' : ''; ?>><?php echo esc_html__('Normal', 'ays-popup-box'); ?></option>
+                                                    <option value="bold" <?php echo $pb_font_weight_mobile == 'bold' ? 'selected' : ''; ?>><?php echo esc_html__('Bold', 'ays-popup-box'); ?></option>
+                                                    <option value="bolder" <?php echo $pb_font_weight_mobile == 'bolder' ? 'selected' : ''; ?>><?php echo esc_html__('Bolder', 'ays-popup-box'); ?></option>
+                                                    <option value="100" <?php echo $pb_font_weight_mobile == '100' ? 'selected' : ''; ?>><?php  echo esc_html__('100', 'ays-popup-box'); ?></option>
+                                                    <option value="200" <?php echo $pb_font_weight_mobile == '200' ? 'selected' : ''; ?>><?php  echo esc_html__('200', 'ays-popup-box'); ?></option>
+                                                    <option value="300" <?php echo $pb_font_weight_mobile == '300' ? 'selected' : ''; ?>><?php  echo esc_html__('300', 'ays-popup-box'); ?></option>
+                                                    <option value="400" <?php echo $pb_font_weight_mobile == '400' ? 'selected' : ''; ?>><?php  echo esc_html__('400', 'ays-popup-box'); ?></option>
+                                                    <option value="500" <?php echo $pb_font_weight_mobile == '500' ? 'selected' : ''; ?>><?php  echo esc_html__('500', 'ays-popup-box'); ?></option>
+                                                    <option value="600" <?php echo $pb_font_weight_mobile == '600' ? 'selected' : ''; ?>><?php  echo esc_html__('600', 'ays-popup-box'); ?></option>
+                                                    <option value="700" <?php echo $pb_font_weight_mobile == '700' ? 'selected' : ''; ?>><?php  echo esc_html__('700', 'ays-popup-box'); ?></option>
+                                                    <option value="800" <?php echo $pb_font_weight_mobile == '800' ? 'selected' : ''; ?>><?php  echo esc_html__('800', 'ays-popup-box'); ?></option>
+                                                    <option value="900" <?php echo $pb_font_weight_mobile == '900' ? 'selected' : ''; ?>><?php  echo esc_html__('900', 'ays-popup-box'); ?></option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Description Font Weight end -->
                                 <hr class="ays_pb_hide_for_image_type ays_pb_hide_for_notification_type <?php echo ($modal_content == 'image_type' || $modal_content == 'notification_type') ? 'display_none' : ''; ?>">
                                 <!-- title styles start -->
                                 <!-- title text shadow start -->

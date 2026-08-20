@@ -1830,6 +1830,12 @@ class Ays_PopupBox_List_Table extends WP_List_Table {
         // Description text align mobile
         $pb_text_align_mobile = (isset($_POST['ays_pb_description_alignment_for_mobile']) && $_POST['ays_pb_description_alignment_for_mobile'] != '') ? stripslashes( sanitize_text_field($_POST['ays_pb_description_alignment_for_mobile']) ) : 'left';
 
+        // Description font weight
+        $pb_font_weight = (isset($_POST['ays_pb_description_font_weight_for_pc']) && $_POST['ays_pb_description_font_weight_for_pc'] != '') ? stripslashes( sanitize_text_field($_POST['ays_pb_description_font_weight_for_pc']) ) : 'normal';
+
+        // Description font weight mobile
+        $pb_font_weight_mobile = (isset($_POST['ays_pb_description_font_weight_for_mobile']) && $_POST['ays_pb_description_font_weight_for_mobile'] != '') ? stripslashes( sanitize_text_field($_POST['ays_pb_description_font_weight_for_mobile']) ) : 'normal';
+
         // Title text shadow | On desktop
         $enable_pb_title_text_shadow = (isset($_POST['ays_enable_title_text_shadow']) && $_POST['ays_enable_title_text_shadow'] != '') ? 'on' : 'off';
 
@@ -2257,6 +2263,8 @@ class Ays_PopupBox_List_Table extends WP_List_Table {
             'pb_font_size_for_mobile' => $pb_font_size_for_mobile,
             'pb_description_alignment_for_pc' => $pb_text_align,
             'pb_description_alignment_for_mobile' => $pb_text_align_mobile,
+            'pb_description_font_weight_for_pc' => $pb_font_weight,
+            'pb_description_font_weight_for_mobile' => $pb_font_weight_mobile,
             'pb_title_text_shadow' => $pb_title_text_shadow,
             'enable_pb_title_text_shadow' => $enable_pb_title_text_shadow,
             'pb_title_text_shadow_x_offset' => $pb_title_text_shadow_x_offset,

@@ -504,6 +504,8 @@ class Ays_Pb_Activator {
             'pb_font_size_for_mobile' => 13,
             'pb_description_alignment_for_pc' => 'center',
             'pb_description_alignment_for_mobile' => 'center',
+            'pb_description_font_weight_for_pc' => 'normal',
+            'pb_description_font_weight_for_mobile' => 'normal',
             'enable_pb_title_text_shadow' => 'off',
             'pb_title_text_shadow' => 'rgba(255,255,255,0)',
             'pb_title_text_shadow_x_offset' => 2,

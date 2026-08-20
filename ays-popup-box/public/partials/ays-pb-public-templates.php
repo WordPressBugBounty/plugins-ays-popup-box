@@ -82,7 +82,10 @@ class Ays_Pb_Public_Templates {
 
         // Description text align for pc
         $pb_text_align = (isset($options->pb_description_alignment_for_pc) && $options->pb_description_alignment_for_pc != '') ? esc_attr( stripslashes($options->pb_description_alignment_for_pc) ) : 'left';
-        
+
+        // Description font weight for pc
+        $pb_font_weight = (isset($options->pb_description_font_weight_for_pc) && $options->pb_description_font_weight_for_pc != '') ? esc_attr( stripslashes($options->pb_description_font_weight_for_pc) ) : 'normal';
+
         //close button hover text
         $ays_pb_close_button_hover_text = (isset($options->close_button_hover_text) && $options->close_button_hover_text != '') ? stripslashes( esc_attr($options->close_button_hover_text) ) : "";
 
@@ -113,7 +116,7 @@ class Ays_Pb_Public_Templates {
 
         if ($popup['ays_pb_description'] != '') {
             $content_desktop = Ays_Pb_Public::ays_autoembed( $popup['ays_pb_description'] );
-            $popup['ays_pb_description'] = "<div class='ays_pb_description " . $show_desc_mobile_class . "' style='text-align:{$pb_text_align}; font-size:{$pb_font_size}px; display:" . $show_popup_desc . "'>".$content_desktop."</div>";
+            $popup['ays_pb_description'] = "<div class='ays_pb_description " . $show_desc_mobile_class . "' style='text-align:{$pb_text_align}; font-size:{$pb_font_size}px; font-weight:{$pb_font_weight}; display:" . $show_popup_desc . "'>".$content_desktop."</div>";
         }
 
         if($popup['ays_pb_action_buttons_type'] == 'both' || $popup['ays_pb_action_buttons_type'] == 'pageLoaded'){
@@ -386,6 +389,9 @@ class Ays_Pb_Public_Templates {
         // Description text align for pc
         $pb_text_align = (isset($options->pb_description_alignment_for_pc) && $options->pb_description_alignment_for_pc != '') ? esc_attr( stripslashes($options->pb_description_alignment_for_pc) ) : 'left';
 
+        // Description font weight for pc
+        $pb_font_weight = (isset($options->pb_description_font_weight_for_pc) && $options->pb_description_font_weight_for_pc != '') ? esc_attr( stripslashes($options->pb_description_font_weight_for_pc) ) : 'normal';
+
         //Show Popup Title
         $show_popup_title = $popup['show_title'] == "On" ? 'block' : 'none';
 
@@ -410,7 +416,7 @@ class Ays_Pb_Public_Templates {
 
         if ($popup['ays_pb_description'] != '') {
             $content_desktop = Ays_Pb_Public::ays_autoembed( $popup['ays_pb_description'] );
-            $popup['ays_pb_description'] = "<div class='ays_pb_description " . $show_desc_mobile_class . "' style='text-align:{$pb_text_align}; font-size:{$pb_font_size}px; display:" . $show_popup_desc . "'>".$content_desktop."</div>";
+            $popup['ays_pb_description'] = "<div class='ays_pb_description " . $show_desc_mobile_class . "' style='text-align:{$pb_text_align}; font-size:{$pb_font_size}px; font-weight:{$pb_font_weight}; display:" . $show_popup_desc . "'>".$content_desktop."</div>";
         }
 
         if($popup['ays_pb_action_buttons_type'] == 'both' || $popup['ays_pb_action_buttons_type'] == 'pageLoaded'){
@@ -713,6 +719,9 @@ class Ays_Pb_Public_Templates {
         // Description text align for pc
         $pb_text_align = (isset($options->pb_description_alignment_for_pc) && $options->pb_description_alignment_for_pc != '') ? esc_attr( stripslashes($options->pb_description_alignment_for_pc) ) : 'left';
 
+        // Description font weight for pc
+        $pb_font_weight = (isset($options->pb_description_font_weight_for_pc) && $options->pb_description_font_weight_for_pc != '') ? esc_attr( stripslashes($options->pb_description_font_weight_for_pc) ) : 'normal';
+
         //Show Popup Title
         $show_popup_title = $popup['show_title'] == "On" ? 'block' : 'none';
 
@@ -737,7 +746,7 @@ class Ays_Pb_Public_Templates {
 
         if ($popup['ays_pb_description'] != '') {
             $content_desktop = Ays_Pb_Public::ays_autoembed( $popup['ays_pb_description'] );
-            $popup['ays_pb_description'] = "<div class='ays_pb_description " . $show_desc_mobile_class . "' style='text-align:{$pb_text_align}; font-size:{$pb_font_size}px; display:" . $show_popup_desc . "'>".$content_desktop."</div>";
+            $popup['ays_pb_description'] = "<div class='ays_pb_description " . $show_desc_mobile_class . "' style='text-align:{$pb_text_align}; font-size:{$pb_font_size}px; font-weight:{$pb_font_weight}; display:" . $show_popup_desc . "'>".$content_desktop."</div>";
         }
 
         if($popup['ays_pb_action_buttons_type'] == 'both' || $popup['ays_pb_action_buttons_type'] == 'pageLoaded'){
@@ -1071,6 +1080,9 @@ class Ays_Pb_Public_Templates {
         // Description text align for pc
         $pb_text_align = (isset($options->pb_description_alignment_for_pc) && $options->pb_description_alignment_for_pc != '') ? esc_attr( stripslashes($options->pb_description_alignment_for_pc) ) : 'left';
 
+        // Description font weight for pc
+        $pb_font_weight = (isset($options->pb_description_font_weight_for_pc) && $options->pb_description_font_weight_for_pc != '') ? esc_attr( stripslashes($options->pb_description_font_weight_for_pc) ) : 'normal';
+
         //Show Popup Title
         $show_popup_title = $popup['show_title'] == "On" ? 'block' : 'none';
 
@@ -1095,7 +1107,7 @@ class Ays_Pb_Public_Templates {
 
         if ($popup['ays_pb_description'] != '') {
             $content_desktop = Ays_Pb_Public::ays_autoembed( $popup['ays_pb_description'] );
-            $popup['ays_pb_description'] = "<div class='ays_pb_description " . $show_desc_mobile_class . "' style='text-align:{$pb_text_align}; font-size:{$pb_font_size}px; display:" . $show_popup_desc . "'>".$content_desktop."</div>";
+            $popup['ays_pb_description'] = "<div class='ays_pb_description " . $show_desc_mobile_class . "' style='text-align:{$pb_text_align}; font-size:{$pb_font_size}px; font-weight:{$pb_font_weight}; display:" . $show_popup_desc . "'>".$content_desktop."</div>";
         }
 
         if($popup['ays_pb_action_buttons_type'] == 'both' || $popup['ays_pb_action_buttons_type'] == 'pageLoaded'){
@@ -1406,6 +1418,9 @@ class Ays_Pb_Public_Templates {
         // Description text align for pc
         $pb_text_align = (isset($options->pb_description_alignment_for_pc) && $options->pb_description_alignment_for_pc != '') ? esc_attr( stripslashes($options->pb_description_alignment_for_pc) ) : 'left';
 
+        // Description font weight for pc
+        $pb_font_weight = (isset($options->pb_description_font_weight_for_pc) && $options->pb_description_font_weight_for_pc != '') ? esc_attr( stripslashes($options->pb_description_font_weight_for_pc) ) : 'normal';
+
         //Show Popup Title
         $show_popup_title = $popup['show_title'] == "On" ? 'block' : 'none';
 
@@ -1430,7 +1445,7 @@ class Ays_Pb_Public_Templates {
 
         if ($popup['ays_pb_description'] != '') {
             $content_desktop = Ays_Pb_Public::ays_autoembed( $popup['ays_pb_description'] );
-            $popup['ays_pb_description'] = "<div class='ays_pb_description " . $show_desc_mobile_class . "' style='text-align:{$pb_text_align}; font-size:{$pb_font_size}px; display:" . $show_popup_desc . "'>".$content_desktop."</div>";
+            $popup['ays_pb_description'] = "<div class='ays_pb_description " . $show_desc_mobile_class . "' style='text-align:{$pb_text_align}; font-size:{$pb_font_size}px; font-weight:{$pb_font_weight}; display:" . $show_popup_desc . "'>".$content_desktop."</div>";
         }
 
         if($popup['ays_pb_action_buttons_type'] == 'both' || $popup['ays_pb_action_buttons_type'] == 'pageLoaded'){
@@ -1732,6 +1747,9 @@ class Ays_Pb_Public_Templates {
         // Description text align for pc
         $pb_text_align = (isset($options->pb_description_alignment_for_pc) && $options->pb_description_alignment_for_pc != '') ? esc_attr( stripslashes($options->pb_description_alignment_for_pc) ) : 'left';
 
+        // Description font weight for pc
+        $pb_font_weight = (isset($options->pb_description_font_weight_for_pc) && $options->pb_description_font_weight_for_pc != '') ? esc_attr( stripslashes($options->pb_description_font_weight_for_pc) ) : 'normal';
+
         //Show Popup Title
         $show_popup_title = $popup['show_title'] == "On" ? 'block' : 'none';
 
@@ -1756,7 +1774,7 @@ class Ays_Pb_Public_Templates {
 
         if ($popup['ays_pb_description'] != '') {
             $content_desktop = Ays_Pb_Public::ays_autoembed( $popup['ays_pb_description'] );
-            $popup['ays_pb_description'] = "<div class='ays_pb_description " . $show_desc_mobile_class . "' style='text-align:{$pb_text_align}; font-size:{$pb_font_size}px; display:" . $show_popup_desc . "'>".$content_desktop."</div>";
+            $popup['ays_pb_description'] = "<div class='ays_pb_description " . $show_desc_mobile_class . "' style='text-align:{$pb_text_align}; font-size:{$pb_font_size}px; font-weight:{$pb_font_weight}; display:" . $show_popup_desc . "'>".$content_desktop."</div>";
         }
 
         if($popup['ays_pb_action_buttons_type'] == 'both' || $popup['ays_pb_action_buttons_type'] == 'pageLoaded'){
@@ -2030,6 +2048,9 @@ class Ays_Pb_Public_Templates {
         // Description text align for pc
         $pb_text_align = (isset($options->pb_description_alignment_for_pc) && $options->pb_description_alignment_for_pc != '') ? esc_attr( stripslashes($options->pb_description_alignment_for_pc) ) : 'left';
 
+        // Description font weight for pc
+        $pb_font_weight = (isset($options->pb_description_font_weight_for_pc) && $options->pb_description_font_weight_for_pc != '') ? esc_attr( stripslashes($options->pb_description_font_weight_for_pc) ) : 'normal';
+
         //close button hover text
         $ays_pb_close_button_hover_text = (isset($options->close_button_hover_text) && $options->close_button_hover_text != '') ? stripslashes( esc_attr($options->close_button_hover_text) ) : "";
 
@@ -2060,7 +2081,7 @@ class Ays_Pb_Public_Templates {
 
         if ($popup['ays_pb_description'] != '') {
             $content_desktop = Ays_Pb_Public::ays_autoembed( $popup['ays_pb_description'] );
-            $popup['ays_pb_description'] = "<div class='ays_pb_description " . $show_desc_mobile_class . "' style='text-align:{$pb_text_align}; font-size:{$pb_font_size}px; display:" . $show_popup_desc . "'>".$content_desktop."</div>";
+            $popup['ays_pb_description'] = "<div class='ays_pb_description " . $show_desc_mobile_class . "' style='text-align:{$pb_text_align}; font-size:{$pb_font_size}px; font-weight:{$pb_font_weight}; display:" . $show_popup_desc . "'>".$content_desktop."</div>";
         }
 
         if($popup['ays_pb_action_buttons_type'] == 'both' || $popup['ays_pb_action_buttons_type'] == 'pageLoaded'){
@@ -2344,6 +2365,9 @@ class Ays_Pb_Public_Templates {
         // Description text align for pc
         $pb_text_align = (isset($options->pb_description_alignment_for_pc) && $options->pb_description_alignment_for_pc != '') ? esc_attr( stripslashes($options->pb_description_alignment_for_pc) ) : 'left';
 
+        // Description font weight for pc
+        $pb_font_weight = (isset($options->pb_description_font_weight_for_pc) && $options->pb_description_font_weight_for_pc != '') ? esc_attr( stripslashes($options->pb_description_font_weight_for_pc) ) : 'normal';
+
         //close button hover text
         $ays_pb_close_button_hover_text = (isset($options->close_button_hover_text) && $options->close_button_hover_text != '') ? stripslashes( esc_attr($options->close_button_hover_text) ) : "";
 
@@ -2374,7 +2398,7 @@ class Ays_Pb_Public_Templates {
 
         if ($popup['ays_pb_description'] != '') {
             $content_desktop = Ays_Pb_Public::ays_autoembed( $popup['ays_pb_description'] );
-            $popup['ays_pb_description'] = "<div class='ays_pb_description " . $show_desc_mobile_class . "' style='text-align:{$pb_text_align}; font-size:{$pb_font_size}px; display:" . $show_popup_desc . "'>".$content_desktop."</div>";
+            $popup['ays_pb_description'] = "<div class='ays_pb_description " . $show_desc_mobile_class . "' style='text-align:{$pb_text_align}; font-size:{$pb_font_size}px; font-weight:{$pb_font_weight}; display:" . $show_popup_desc . "'>".$content_desktop."</div>";
         }
 
         if($popup['ays_pb_action_buttons_type'] == 'both' || $popup['ays_pb_action_buttons_type'] == 'pageLoaded'){
@@ -2666,6 +2690,9 @@ class Ays_Pb_Public_Templates {
         // Description text align for pc
         $pb_text_align = (isset($options->pb_description_alignment_for_pc) && $options->pb_description_alignment_for_pc != '') ? esc_attr( stripslashes($options->pb_description_alignment_for_pc) ) : 'left';
 
+        // Description font weight for pc
+        $pb_font_weight = (isset($options->pb_description_font_weight_for_pc) && $options->pb_description_font_weight_for_pc != '') ? esc_attr( stripslashes($options->pb_description_font_weight_for_pc) ) : 'normal';
+
         //close button hover text
         $ays_pb_close_button_hover_text = (isset($options->close_button_hover_text) && $options->close_button_hover_text != '') ? stripslashes( esc_attr($options->close_button_hover_text) ) : "";
 
@@ -2693,7 +2720,7 @@ class Ays_Pb_Public_Templates {
         
         if ($popup['ays_pb_description'] != '') {
             $content_desktop = Ays_Pb_Public::ays_autoembed( $popup['ays_pb_description'] );
-            $popup['ays_pb_description'] = "<div class='ays_pb_description " . $show_desc_mobile_class . "' style='text-align:{$pb_text_align}; font-size:{$pb_font_size}px; display:" . $show_popup_desc . "'>".$content_desktop."</div>";
+            $popup['ays_pb_description'] = "<div class='ays_pb_description " . $show_desc_mobile_class . "' style='text-align:{$pb_text_align}; font-size:{$pb_font_size}px; font-weight:{$pb_font_weight}; display:" . $show_popup_desc . "'>".$content_desktop."</div>";
         }
 
         if($popup['ays_pb_action_buttons_type'] == 'both' || $popup['ays_pb_action_buttons_type'] == 'pageLoaded'){
@@ -2986,6 +3013,9 @@ class Ays_Pb_Public_Templates {
         // Description text align for pc
         $pb_text_align = (isset($options->pb_description_alignment_for_pc) && $options->pb_description_alignment_for_pc != '') ? esc_attr( stripslashes($options->pb_description_alignment_for_pc) ) : 'left';
 
+        // Description font weight for pc
+        $pb_font_weight = (isset($options->pb_description_font_weight_for_pc) && $options->pb_description_font_weight_for_pc != '') ? esc_attr( stripslashes($options->pb_description_font_weight_for_pc) ) : 'normal';
+
         //close button hover text
         $ays_pb_close_button_hover_text = (isset($options->close_button_hover_text) && $options->close_button_hover_text != '') ? stripslashes( esc_attr($options->close_button_hover_text) ) : "";
 
@@ -3016,7 +3046,7 @@ class Ays_Pb_Public_Templates {
 
         if ($popup['ays_pb_description'] != '') {
             $content_desktop = Ays_Pb_Public::ays_autoembed( $popup['ays_pb_description'] );
-            $popup['ays_pb_description'] = "<div class='ays_pb_description " . $show_desc_mobile_class . "' style='text-align:{$pb_text_align}; font-size:{$pb_font_size}px; display:" . $show_popup_desc . "'>".$content_desktop."</div>";
+            $popup['ays_pb_description'] = "<div class='ays_pb_description " . $show_desc_mobile_class . "' style='text-align:{$pb_text_align}; font-size:{$pb_font_size}px; font-weight:{$pb_font_weight}; display:" . $show_popup_desc . "'>".$content_desktop."</div>";
         }
 
         if($popup['ays_pb_action_buttons_type'] == 'both' || $popup['ays_pb_action_buttons_type'] == 'pageLoaded'){
@@ -3336,7 +3366,7 @@ class Ays_Pb_Public_Templates {
 
         if ($popup['ays_pb_description'] != '') {
             $content_desktop = Ays_Pb_Public::ays_autoembed( $popup['ays_pb_description'] );
-            $popup['ays_pb_description'] = "<div class='ays_pb_description " . $show_desc_mobile_class . "' style='text-align:{$pb_text_align}; font-size:{$pb_font_size}px; display:" . $show_popup_desc . "'>".$content_desktop."</div>";
+            $popup['ays_pb_description'] = "<div class='ays_pb_description " . $show_desc_mobile_class . "' style='text-align:{$pb_text_align}; font-size:{$pb_font_size}px; font-weight:{$pb_font_weight}; display:" . $show_popup_desc . "'>".$content_desktop."</div>";
         }
 
         if($popup['ays_pb_action_buttons_type'] == 'both' || $popup['ays_pb_action_buttons_type'] == 'pageLoaded'){
@@ -3753,6 +3783,9 @@ class Ays_Pb_Public_Templates {
         // Description text align for pc
         $pb_text_align = (isset($options->pb_description_alignment_for_pc) && $options->pb_description_alignment_for_pc != '') ? esc_attr( stripslashes($options->pb_description_alignment_for_pc) ) : 'left';
 
+        // Description font weight for pc
+        $pb_font_weight = (isset($options->pb_description_font_weight_for_pc) && $options->pb_description_font_weight_for_pc != '') ? esc_attr( stripslashes($options->pb_description_font_weight_for_pc) ) : 'normal';
+
         //close button hover text
         $ays_pb_close_button_hover_text = (isset($options->close_button_hover_text) && $options->close_button_hover_text != '') ? stripslashes( esc_attr($options->close_button_hover_text) ) : "";
 
@@ -3783,7 +3816,7 @@ class Ays_Pb_Public_Templates {
 
         if ($popup['ays_pb_description'] != '') {
             $content_desktop = Ays_Pb_Public::ays_autoembed( $popup['ays_pb_description'] );
-            $popup['ays_pb_description'] = "<div class='ays_pb_description " . $show_desc_mobile_class . "' style='text-align:{$pb_text_align}; font-size:{$pb_font_size}px; display:" . $show_popup_desc . "'>".$content_desktop."</div>";
+            $popup['ays_pb_description'] = "<div class='ays_pb_description " . $show_desc_mobile_class . "' style='text-align:{$pb_text_align}; font-size:{$pb_font_size}px; font-weight:{$pb_font_weight}; display:" . $show_popup_desc . "'>".$content_desktop."</div>";
         }
 
         if($popup['ays_pb_action_buttons_type'] == 'both' || $popup['ays_pb_action_buttons_type'] == 'pageLoaded'){
