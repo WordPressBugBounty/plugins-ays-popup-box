@@ -1027,6 +1027,9 @@ class Ays_Pb_Public {
                 $pb_max_height_mobile = 100;
             }
 
+            // Min-Height Measurement Unit
+            $popup_min_height_by_percentage_px = ( isset($options['popup_min_height_by_percentage_px']) && $options['popup_min_height_by_percentage_px'] != '' ) ? stripslashes( esc_attr($options['popup_min_height_by_percentage_px']) ) : 'pixels';
+
             if ($pb_max_height == '') {
                 $max_height_styles = 'max-height: none;';
             } else {
@@ -1052,8 +1055,17 @@ class Ays_Pb_Public {
 
             if ($pb_min_height_val == 0) {
                 $pb_min_height = '';
-            }else{
-                $pb_min_height = "min-height: ".$pb_min_height_val."px;";
+            } else {
+                // if measurement unit is percentage than maximum value = 100
+                if ($popup_min_height_by_percentage_px == 'percentage' && $pb_min_height_val > 100) {
+                    $pb_min_height_val = 100;
+                }
+                
+                if ($popup_min_height_by_percentage_px == 'pixels') {
+                    $pb_min_height = "min-height: " . $pb_min_height_val . "px;";
+                } else {
+                    $pb_min_height = "min-height: " . $pb_min_height_val . "%;";
+                }
             }
 
             /* 

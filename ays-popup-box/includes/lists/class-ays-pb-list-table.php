@@ -1797,6 +1797,9 @@ class Ays_PopupBox_List_Table extends WP_List_Table {
         // Popup min-height
         $pb_min_height = (isset($_POST['ays_pb_min_height']) && $_POST['ays_pb_min_height'] != '') ? absint( intval($_POST['ays_pb_min_height']) ) : '';
 
+        // Popup min-height | Measurement unit
+        $popup_min_height_by_percentage_px = (isset($_POST['ays_popup_min_height_by_percentage_px']) && $_POST['ays_popup_min_height_by_percentage_px'] != '') ? stripslashes( sanitize_text_field($_POST['ays_popup_min_height_by_percentage_px']) ) : 'pixels';
+
         // Full-screen mode
         $enable_pb_fullscreen = (isset($_POST['enable_pb_fullscreen']) && $_POST['enable_pb_fullscreen'] == 'on') ? 'on' : 'off';
 
@@ -2259,6 +2262,7 @@ class Ays_PopupBox_List_Table extends WP_List_Table {
             'pb_max_height_mobile' => $pb_max_height_mobile,
             'popup_max_height_by_percentage_px_mobile' => $popup_max_height_by_percentage_px_mobile,
             'pb_min_height' => $pb_min_height,
+            'popup_min_height_by_percentage_px' => $popup_min_height_by_percentage_px,
             'pb_font_size' => $pb_font_size,
             'pb_font_size_for_mobile' => $pb_font_size_for_mobile,
             'pb_description_alignment_for_pc' => $pb_text_align,

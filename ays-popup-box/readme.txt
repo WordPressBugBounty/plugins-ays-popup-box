@@ -3,8 +3,8 @@ Contributors: ays-pro
 Donate link: https://popup-plugin.com
 Tags: popup, popups, exit popup, pop up, modal
 Requires at least: 4.0
-Tested up to: 7.0
-Stable tag: 6.3.8
+Tested up to: 7.1
+Stable tag: 6.3.9
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -309,6 +309,11 @@ After clearing the caches, try to check the case with either the **Incognito mod
 
 
 == Changelog ==
+
+= 6.3.9 ( Aug 25, 2026 ) =
+* Added: Percentage option for popup min-height
+* Updated: POT file
+* Tested: Compatible up to WordPress 7.1
 
 = 6.3.8 ( Aug 19, 2026 ) =
 * Added: Description font weight option in the Styles tab

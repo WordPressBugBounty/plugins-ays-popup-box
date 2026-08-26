@@ -294,6 +294,7 @@ $options = array(
     'pb_max_height_mobile' => '',
     'popup_max_height_by_percentage_px_mobile' => 'pixels',
     'pb_min_height' => '',
+    'popup_min_height_by_percentage_px' => 'pixels',
     'enable_pb_fullscreen' => 'off',
     'popup_content_padding' => 20,
     'popup_content_padding_mobile' => 20,
@@ -1097,6 +1098,13 @@ if ($popup_max_height_by_percentage_px_mobile == 'percentage' && $popup_max_heig
 
 // Popup min-height
 $pb_min_height = (isset($options['pb_min_height']) && $options['pb_min_height'] != '') ? absint( intval($options['pb_min_height']) ) : '';
+
+// Popup min-height | Measurement unit
+$popup_min_height_by_percentage_px = ( isset($options['popup_min_height_by_percentage_px']) && $options['popup_min_height_by_percentage_px'] != '' ) ? esc_attr( stripslashes($options['popup_min_height_by_percentage_px']) ) : 'pixels';
+
+if ($popup_min_height_by_percentage_px == 'percentage' && $pb_min_height > 100) {
+    $pb_min_height = 100;
+}
 
 // Full-screen mode
 $ays_enable_pb_fullscreen = (isset($options['enable_pb_fullscreen']) && $options['enable_pb_fullscreen'] == 'on') ? 'on' : 'off';
@@ -5598,18 +5606,28 @@ $ays_users_roles = $wp_roles->roles;
                                     <div class="col-sm-4">
                                         <label for='ays_pb_min_height'>
                                             <?php echo esc_html__('Popup min-height', "ays-popup-box"); ?>
-                                            <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__("Define the popup's minimal height in pixels.","ays-popup-box")?>">
+                                            <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__("Define the popup's minimal height in pixels and percentages.","ays-popup-box")?>">
                                                 <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                             </a>
                                         </label>
                                     </div>
-                                    <div class="col-sm-6 ays_divider_left ays_popup_display_flex_width">
-                                        <div>
-                                            <input type="number" class="ays-pb-text-input ays-pb-text-input-short" id='ays_pb_min_height' name='ays_pb_min_height' value="<?php echo $pb_min_height ?>" <?php echo $disable_height ;?>>
+                                    <div class="col-sm-6 ays_divider_left">
+                                        <div style="display: flex; align-items: center; gap: 5px">
+                                            <div>
+                                                <input type="number" class="ays-pb-text-input ays-pb-text-input-short" id='ays_pb_min_height' name='ays_pb_min_height' value="<?php echo $pb_min_height ?>" <?php echo $disable_height ;?>>
+                                            </div>
+                                            <div class="ays_pb_min_height_by_percentage_px_box">
+                                                <select name="ays_popup_min_height_by_percentage_px" id="ays_popup_min_height_by_percentage_px" class="ays_pb_aysDropdown ays-pb-percent ays_pb_min_height_unit_dropdown">
+                                                    <option value="pixels" <?php echo $popup_min_height_by_percentage_px == "pixels" ? "selected" : ""; ?>>
+                                                        <?php echo esc_html__( "px", "ays-popup-box" ); ?>
+                                                    </option>
+                                                    <option value="percentage" <?php echo $popup_min_height_by_percentage_px == "percentage" ? "selected" : ""; ?>>
+                                                        <?php echo esc_html__( "%", "ays-popup-box" ); ?>
+                                                    </option>
+                                                </select>
+                                            </div>
                                         </div>
-                                        <div class="ays_dropdown_max_width">
-                                            <input type="text" value="px" class="ays-form-hint-for-size" disabled>
-                                        </div>
+                                        <span style="display:block;" class="ays-pb-small-hint-text"><?php echo esc_html__("For auto leave blank", "ays-popup-box");?></span>
                                     </div>
                                 </div>
                                 <hr class="ays_pb_hide_for_notification_type <?php echo $modal_content == 'notification_type' ? 'display_none' : ''; ?>">

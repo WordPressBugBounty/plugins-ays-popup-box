@@ -1563,6 +1563,8 @@
             $form.find('select#ays_popup_max_height_by_percentage_px_mobile').parent('div.ays_pb_aysDropdown').find('div.text').text(defaultValues.percentPixel).change();
 
             $form.find('input#ays_pb_min_height').val(defaultValues.popupMinHeight).change();
+            $form.find('select#ays_popup_min_height_by_percentage_px').val(defaultValues.percentPixel).change();
+            $form.find('select#ays_popup_min_height_by_percentage_px').parent('div.ays_pb_aysDropdown').find('div.text').text(defaultValues.percentPixel).change();
 
             $form.find('input#open_pb_fullscreen').prop('checked', defaultValues.fullScreen).change();
 

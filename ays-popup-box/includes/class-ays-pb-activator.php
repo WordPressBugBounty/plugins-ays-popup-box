@@ -495,6 +495,7 @@ class Ays_Pb_Activator {
             'pb_max_height_mobile' => '',
             'popup_max_height_by_percentage_px_mobile' => 'pixels',
             'pb_min_height' => '',
+            'popup_min_height_by_percentage_px' => 'pixels',
             'enable_pb_fullscreen' => 'off',
             'popup_content_padding' => 20,
             'popup_content_padding_mobile' => 20,
