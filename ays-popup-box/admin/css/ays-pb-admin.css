@@ -1005,6 +1005,11 @@ input:checked + .ays-pb-enable-switch-slider .ays-pb-enable-switch-off {
 /* Switch toggle button styles end */
 
 /* Popup list table styles start */
+.ays-pb-list-table .wp-list-table .column-title a,
+.ays-pb-categories-list-table .wp-list-table .column-title a {
+    font-size: 14px;
+}
+
 .search-box input[type=search] {
     height: auto !important;
     font-size: 14px !important;

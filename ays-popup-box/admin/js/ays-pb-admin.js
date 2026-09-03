@@ -1552,6 +1552,10 @@
 
             $form.find('input#ays-pb-height').val(defaultValues.height).change();
             $form.find('input#ays-pb-height').prop('readonly', false).change();
+            $form.find('select#ays_popup_height_by_percentage_px').val(defaultValues.percentPixel).change();
+            $form.find('select#ays_popup_height_by_percentage_px').parent('div.ays_pb_aysDropdown').find('div.text').text(defaultValues.percentPixel).change();
+            $form.find('select#ays_popup_height_by_percentage_px_mobile').val(defaultValues.percentPixelMobile).change();
+            $form.find('select#ays_popup_height_by_percentage_px_mobile').parent('div.ays_pb_aysDropdown').find('div.text').text(defaultValues.percentPixelMobileText).change();
 
             $form.find('input#ays_pb_mobile_height').val(defaultValues.mobileHeight).change();
 

@@ -1131,6 +1131,10 @@ class Ays_Pb_Public {
                 $mobile_width = '100%';
             }
 
+            // PopupBox container height for mobile
+            $popup_height_by_percentage_px_mobile = (isset($options['popup_height_by_percentage_px_mobile']) && $options['popup_height_by_percentage_px_mobile'] != '') ? stripslashes( esc_attr($options['popup_height_by_percentage_px_mobile']) ) : 'pixels';
+            $mobile_height_unit = $popup_height_by_percentage_px_mobile == 'percentage' ?  '%' : 'px';
+
             // PopupBox container max-width for mobile
             if(isset($options['mobile_max_width']) && $options['mobile_max_width'] != ''){
                 $mobile_max_width = $options['mobile_max_width'] . '%';
@@ -1205,7 +1209,7 @@ class Ays_Pb_Public {
             $mobile_height = (isset($options['mobile_height']) && $options['mobile_height'] != "") ? $options['mobile_height'] : $popupbox["height"];
 
             if(isset($options['mobile_height']) && $options['mobile_height'] != ''){
-                
+
                 $mobile_height = $options['mobile_height'];
                 if( $options['mobile_height'] == 0){
                     $mobile_height = $popupbox["height"];
@@ -1213,6 +1217,8 @@ class Ays_Pb_Public {
             }else{
                 $mobile_height = $popupbox["height"];
             }
+
+            $mobile_height = $mobile_height . $mobile_height_unit;
 
             $ays_pb_padding_mobile = (isset($options['popup_content_padding_mobile']) && $options['popup_content_padding_mobile'] != '') ? $options['popup_content_padding_mobile'] : '20';
             $enable_padding_mobile = (isset($options['enable_padding_mobile']) && $options['enable_padding_mobile'] == 'on') ? true : false;
@@ -1810,7 +1816,7 @@ class Ays_Pb_Public {
                             .ays-pb-modal_".$id."{
                                 width: $mobile_width !important;
                                 max-width: $mobile_max_width !important;
-                                height : ".$mobile_height."px !important;
+                                height : ".$mobile_height." !important;
                                 " . $box_shadow_mobile . ";
                                 box-sizing: border-box;
                                 " . $max_height_styles_mobile . "

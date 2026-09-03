@@ -1779,8 +1779,22 @@ class Ays_PopupBox_List_Table extends WP_List_Table {
         $default_height = $view_type == 'notification' ? 100 : 500;
 		$height = (isset($_POST['ays-pb']['height']) && $_POST['ays-pb']['height']) ? absint( intval($_POST['ays-pb']['height']) ) : $default_height;
 
+        // Height | On desktop | Measurement unit
+        $popup_height_by_percentage_px = (isset($_POST['ays_popup_height_by_percentage_px']) && $_POST['ays_popup_height_by_percentage_px'] != '') ? stripslashes( sanitize_text_field($_POST['ays_popup_height_by_percentage_px']) ) : 'pixels';
+
         // Height | On mobile
         $mobile_height = (isset($_POST['ays_pb_mobile_height']) && $_POST['ays_pb_mobile_height'] != '') ? abs( intval($_POST['ays_pb_mobile_height']) ) : '';
+
+        // Height | On mobile | Measurement unit
+        $popup_height_by_percentage_px_mobile = (isset($_POST['ays_popup_height_by_percentage_px_mobile']) && $_POST['ays_popup_height_by_percentage_px_mobile'] != '') ? stripslashes( sanitize_text_field($_POST['ays_popup_height_by_percentage_px_mobile']) ) : 'pixels';
+
+        if ($popup_height_by_percentage_px == 'percentage' && $height > 100) {
+            $height = 100;
+        }
+
+        if ($popup_height_by_percentage_px_mobile == 'percentage' && $mobile_height > 100) {
+            $mobile_height = 100;
+        }
 
         // Popup max-height | On desktop
         $pb_max_height = (isset($_POST['ays_pb_max_height']) && $_POST['ays_pb_max_height'] != '') ? absint( intval($_POST['ays_pb_max_height']) ) : '';
@@ -2164,6 +2178,8 @@ class Ays_PopupBox_List_Table extends WP_List_Table {
             'close_popup_esc' => $close_popup_esc,
             'popup_width_by_percentage_px' => $popup_width_by_percentage_px,
             'popup_width_by_percentage_px_mobile' => $popup_width_by_percentage_px_mobile,
+            'popup_height_by_percentage_px' => $popup_height_by_percentage_px,
+            'popup_height_by_percentage_px_mobile' => $popup_height_by_percentage_px_mobile,
             'popup_content_padding' => $padding,
             'popup_content_padding_mobile' => $padding_mobile,
             'popup_padding_by_percentage_px' => $popup_padding_by_percentage_px,

@@ -77,7 +77,7 @@ class Ays_Pb_Public_Templates {
         //popup box font-family
         $ays_pb_font_family  = (isset($options->pb_font_family) && $options->pb_font_family != '') ? stripslashes( esc_attr($options->pb_font_family) ) : '';
 
-        // Font Size 
+        // Font Size
         $pb_font_size = (isset($options->pb_font_size) && $options->pb_font_size != '') ? absint($options->pb_font_size) : 13;
 
         // Description text align for pc
@@ -100,7 +100,7 @@ class Ays_Pb_Public_Templates {
 
         //Show Popup Title Mobile
         $show_title_mobile_class = $popup['show_title_mobile'] == 'On' ? 'ays_pb_show_title_on_mobile' : 'ays_pb_hide_title_on_mobile';
-        
+
         //Show Popup Description Mobile
         $show_desc_mobile_class = $popup['show_desc_mobile']  == 'On' ? 'ays_pb_show_desc_on_mobile' : 'ays_pb_hide_desc_on_mobile';
 
@@ -145,6 +145,9 @@ class Ays_Pb_Public_Templates {
             $pb_width = '100%';
         }
 
+        //popup height percentage
+        $popup_height_by_percentage_px = (isset($options->popup_height_by_percentage_px) && $options->popup_height_by_percentage_px != '') ? stripslashes( esc_attr($options->popup_height_by_percentage_px) ) : 'pixels';
+
         //pb full screen
         $pb_height = '';
         if($ays_pb_full_screen == 'on'){
@@ -152,14 +155,14 @@ class Ays_Pb_Public_Templates {
             $popup['ays_pb_height'] = 'auto';
         }else{
             $pb_width  = $popup_width_by_percentage_px == 'percentage' ? $popup['ays_pb_width'] . '%' : $popup['ays_pb_width'] . 'px';
-            $pb_height = $popup['ays_pb_height'] . 'px';
+            $pb_height = $popup_height_by_percentage_px == 'percentage' ? $popup['ays_pb_height'] . '%' : $popup['ays_pb_height'] . 'px';
         }
 
         if($pb_width == '0px' ||  $pb_width == '0%'){       
             $pb_width = '100%';
         }
 
-        if($pb_height == '0px'){       
+        if($pb_height == '0px' || $pb_height == '0%'){
             $pb_height = '500px';
         }
 
@@ -376,14 +379,14 @@ class Ays_Pb_Public_Templates {
 
         //close button hover text
         $ays_pb_close_button_hover_text = (isset($options->close_button_hover_text) && $options->close_button_hover_text != '') ? stripslashes( esc_attr($options->close_button_hover_text) ) : "";
-        
+
         // Box shadow
         $box_shadow = $this->ays_pb_generate_box_shadow_styles($options);
 
         //popup box font-family
         $ays_pb_font_family  = (isset($options->pb_font_family) && $options->pb_font_family != '') ? stripslashes( esc_attr($options->pb_font_family) ) : '';
 
-        // Font Size 
+        // Font Size
         $pb_font_size = (isset($options->pb_font_size) && $options->pb_font_size != '') ? absint($options->pb_font_size) : 13;
 
         // Description text align for pc
@@ -400,7 +403,7 @@ class Ays_Pb_Public_Templates {
 
         //Show Popup Title Mobile
         $show_title_mobile_class = $popup['show_title_mobile'] == 'On' ? 'ays_pb_show_title_on_mobile' : 'ays_pb_hide_title_on_mobile';
-        
+
         //Show Popup Description Mobile
         $show_desc_mobile_class = $popup['show_desc_mobile']  == 'On' ? 'ays_pb_show_desc_on_mobile' : 'ays_pb_hide_desc_on_mobile';
 
@@ -429,7 +432,7 @@ class Ays_Pb_Public_Templates {
         if ( $popup['closeButton'] == "on" ){
             $popup['closeButton'] = "ays-close-button-on-off";
         } else { $popup['closeButton'] = ""; }
-        
+
         //popup width percentage
         $popup_width_by_percentage_px = (isset($options->popup_width_by_percentage_px) && $options->popup_width_by_percentage_px != '') ? stripslashes( esc_attr($options->popup_width_by_percentage_px) ) : 'pixels';
         if(isset($popup['ays_pb_width']) && $popup['ays_pb_width'] != ''){
@@ -446,6 +449,9 @@ class Ays_Pb_Public_Templates {
             $pb_width = '100%';
         }
 
+        //popup height percentage
+        $popup_height_by_percentage_px = (isset($options->popup_height_by_percentage_px) && $options->popup_height_by_percentage_px != '') ? stripslashes( esc_attr($options->popup_height_by_percentage_px) ) : 'pixels';
+
         //pb full screen
         $ays_pb_full_screen  = (isset($options->enable_pb_fullscreen) && $options->enable_pb_fullscreen == 'on') ? 'on' : 'off';
         $pb_height = '';
@@ -454,14 +460,14 @@ class Ays_Pb_Public_Templates {
            $popup['ays_pb_height'] = 'auto';
         }else{
            $pb_width  = $popup_width_by_percentage_px == 'percentage' ? $popup['ays_pb_width'] . '%' : $popup['ays_pb_width'] . 'px';
-           $pb_height = $popup['ays_pb_height'] . 'px';
+           $pb_height = $popup_height_by_percentage_px == 'percentage' ? $popup['ays_pb_height'] . '%' : $popup['ays_pb_height'] . 'px';
         }
 
         if($pb_width == '0px' ||  $pb_width == '0%'){       
             $pb_width = '100%';
         }
 
-        if($pb_height == '0px'){       
+        if($pb_height == '0px' || $pb_height == '0%'){
             $pb_height = '500px';
         }
 
@@ -776,6 +782,9 @@ class Ays_Pb_Public_Templates {
             $pb_width = '100%';
         }
 
+        //popup height percentage
+        $popup_height_by_percentage_px = (isset($options->popup_height_by_percentage_px) && $options->popup_height_by_percentage_px != '') ? stripslashes( esc_attr($options->popup_height_by_percentage_px) ) : 'pixels';
+
         //pb full screen
         $ays_pb_full_screen  = (isset($options->enable_pb_fullscreen) && $options->enable_pb_fullscreen == 'on') ? 'on' : 'off';
         $pb_height = '';
@@ -784,14 +793,14 @@ class Ays_Pb_Public_Templates {
            $popup['ays_pb_height'] = 'auto';
         }else{
            $pb_width  = $popup_width_by_percentage_px == 'percentage' ? $popup['ays_pb_width'] . '%' : $popup['ays_pb_width'] . 'px';
-           $pb_height = $popup['ays_pb_height'] . 'px';
+           $pb_height = $popup_height_by_percentage_px == 'percentage' ? $popup['ays_pb_height'] . '%' : $popup['ays_pb_height'] . 'px';
         }
 
         if($pb_width == '0px' ||  $pb_width == '0%'){       
             $pb_width = '100%';
         }
 
-        if($pb_height == '0px'){       
+        if($pb_height == '0px' || $pb_height == '0%'){
             $pb_height = '500px';
         }
 
@@ -1135,6 +1144,9 @@ class Ays_Pb_Public_Templates {
             $pb_width = '100%';
         }
 
+        //popup height percentage
+        $popup_height_by_percentage_px = (isset($options->popup_height_by_percentage_px) && $options->popup_height_by_percentage_px != '') ? stripslashes( esc_attr($options->popup_height_by_percentage_px) ) : 'pixels';
+
         //pb full screen
         $ays_pb_full_screen  = (isset($options->enable_pb_fullscreen) && $options->enable_pb_fullscreen == 'on') ? 'on' : 'off';
         $pb_height = '';
@@ -1143,14 +1155,14 @@ class Ays_Pb_Public_Templates {
            $popup['ays_pb_height'] = 'auto';
         }else{
            $pb_width  = $popup_width_by_percentage_px == 'percentage' ? $popup['ays_pb_width'] . '%' : $popup['ays_pb_width'] . 'px';
-           $pb_height = $popup['ays_pb_height'] . 'px';
+           $pb_height = $popup_height_by_percentage_px == 'percentage' ? $popup['ays_pb_height'] . '%' : $popup['ays_pb_height'] . 'px';
         }
 
         if($pb_width == '0px' ||  $pb_width == '0%'){       
             $pb_width = '100%';
         }
 
-        if($pb_height == '0px'){       
+        if($pb_height == '0px' || $pb_height == '0%'){
             $pb_height = '500px';
         }
 
@@ -1475,6 +1487,9 @@ class Ays_Pb_Public_Templates {
             $pb_width = '100%';
         }
 
+        //popup height percentage
+        $popup_height_by_percentage_px = (isset($options->popup_height_by_percentage_px) && $options->popup_height_by_percentage_px != '') ? stripslashes( esc_attr($options->popup_height_by_percentage_px) ) : 'pixels';
+
         //pb full screen
         $ays_pb_full_screen  = (isset($options->enable_pb_fullscreen) && $options->enable_pb_fullscreen == 'on') ? 'on' : 'off';
         $pb_height = '';
@@ -1483,14 +1498,14 @@ class Ays_Pb_Public_Templates {
            $popup['ays_pb_height'] = 'auto';
         }else{
            $pb_width  = $popup_width_by_percentage_px == 'percentage' ? $popup['ays_pb_width'] . '%' : $popup['ays_pb_width'] . 'px';
-           $pb_height = $popup['ays_pb_height'] . 'px';
+           $pb_height = $popup_height_by_percentage_px == 'percentage' ? $popup['ays_pb_height'] . '%' : $popup['ays_pb_height'] . 'px';
         }
 
         if($pb_width == '0px' ||  $pb_width == '0%'){       
             $pb_width = '100%';
         }
 
-        if($pb_height == '0px'){       
+        if($pb_height == '0px' || $pb_height == '0%'){
             $pb_height = '500px';
         }
 
@@ -1804,6 +1819,9 @@ class Ays_Pb_Public_Templates {
             $pb_width = '100%';
         }
 
+        //popup height percentage
+        $popup_height_by_percentage_px = (isset($options->popup_height_by_percentage_px) && $options->popup_height_by_percentage_px != '') ? stripslashes( esc_attr($options->popup_height_by_percentage_px) ) : 'pixels';
+
         //pb full screen
         $ays_pb_full_screen  = (isset($options->enable_pb_fullscreen) && $options->enable_pb_fullscreen == 'on') ? 'on' : 'off';
         $pb_height = '';
@@ -1812,14 +1830,14 @@ class Ays_Pb_Public_Templates {
            $popup['ays_pb_height'] = 'auto';
         }else{
            $pb_width  = $popup_width_by_percentage_px == 'percentage' ? $popup['ays_pb_width'] . '%' : $popup['ays_pb_width'] . 'px';
-           $pb_height = $popup['ays_pb_height'] . 'px';
+           $pb_height = $popup_height_by_percentage_px == 'percentage' ? $popup['ays_pb_height'] . '%' : $popup['ays_pb_height'] . 'px';
         }
 
         if($pb_width == '0px' ||  $pb_width == '0%'){       
             $pb_width = '100%';
         }
 
-        if($pb_height == '0px'){       
+        if($pb_height == '0px' || $pb_height == '0%'){
             $pb_height = '500px';
         }
 
@@ -2112,6 +2130,9 @@ class Ays_Pb_Public_Templates {
             $pb_width = '100%';
         }
 
+        //popup height percentage
+        $popup_height_by_percentage_px = (isset($options->popup_height_by_percentage_px) && $options->popup_height_by_percentage_px != '') ? stripslashes( esc_attr($options->popup_height_by_percentage_px) ) : 'pixels';
+
         //pb full screen
         
         $pb_height = '';
@@ -2120,14 +2141,14 @@ class Ays_Pb_Public_Templates {
            $popup['ays_pb_height'] = 'auto';
         }else{
            $pb_width  = $popup_width_by_percentage_px == 'percentage' ? $popup['ays_pb_width'] . '%' : $popup['ays_pb_width'] . 'px';
-           $pb_height = $popup['ays_pb_height'] . 'px';
+           $pb_height = $popup_height_by_percentage_px == 'percentage' ? $popup['ays_pb_height'] . '%' : $popup['ays_pb_height'] . 'px';
         }
 
         if($pb_width == '0px' ||  $pb_width == '0%'){       
             $pb_width = '100%';
         }
 
-        if($pb_height == '0px'){       
+        if($pb_height == '0px' || $pb_height == '0%'){
             $pb_height = '500px';
         }
 
@@ -2446,14 +2467,14 @@ class Ays_Pb_Public_Templates {
            ";
         }else{
            $pb_width  = $popup_width_by_percentage_px == 'percentage' ? $popup['ays_pb_width'] . '%' : $popup['ays_pb_width'] . 'px';
-           $pb_height = $popup['ays_pb_height'] . 'px';
+           $pb_height = $popup_height_by_percentage_px == 'percentage' ? $popup['ays_pb_height'] . '%' : $popup['ays_pb_height'] . 'px';
         }
 
         if($pb_width == '0px' ||  $pb_width == '0%'){       
             $pb_width = '100%';
         }
 
-        if($pb_height == '0px'){       
+        if($pb_height == '0px' || $pb_height == '0%'){
             $pb_height = '500px';
         }
 
@@ -2753,6 +2774,9 @@ class Ays_Pb_Public_Templates {
             $pb_width = '100%';
         }
 
+        //popup height percentage
+        $popup_height_by_percentage_px = (isset($options->popup_height_by_percentage_px) && $options->popup_height_by_percentage_px != '') ? stripslashes( esc_attr($options->popup_height_by_percentage_px) ) : 'pixels';
+
         //pb full screen
         $ays_pb_full_screen  = (isset($options->enable_pb_fullscreen) && $options->enable_pb_fullscreen == 'on') ? 'on' : 'off';
         $pb_height = '';
@@ -2761,14 +2785,14 @@ class Ays_Pb_Public_Templates {
            $popup['ays_pb_height'] = 'auto';
         }else{
            $pb_width  = $popup_width_by_percentage_px == 'percentage' ? $popup['ays_pb_width'] . '%' : $popup['ays_pb_width'] . 'px';
-           $pb_height = $popup['ays_pb_height'] . 'px';
+           $pb_height = $popup_height_by_percentage_px == 'percentage' ? $popup['ays_pb_height'] . '%' : $popup['ays_pb_height'] . 'px';
         }
 
         if($pb_width == '0px' ||  $pb_width == '0%'){       
             $pb_width = '100%';
         }
 
-        if($pb_height == '0px'){       
+        if($pb_height == '0px' || $pb_height == '0%'){
             $pb_height = '500px';
         }
 
@@ -3094,14 +3118,14 @@ class Ays_Pb_Public_Templates {
            ";
         }else{
            $pb_width  = $popup_width_by_percentage_px == 'percentage' ? $popup['ays_pb_width'] . '%' : $popup['ays_pb_width'] . 'px';
-           $pb_height = $popup['ays_pb_height'] . 'px';
+           $pb_height = $popup_height_by_percentage_px == 'percentage' ? $popup['ays_pb_height'] . '%' : $popup['ays_pb_height'] . 'px';
         }
 
         if($pb_width == '0px' ||  $pb_width == '0%'){       
             $pb_width = '100%';
         }
 
-        if($pb_height == '0px'){       
+        if($pb_height == '0px' || $pb_height == '0%'){
             $pb_height = '500px';
         }
 
@@ -3330,6 +3354,9 @@ class Ays_Pb_Public_Templates {
         // Font Size 
         $pb_font_size = (isset($options->pb_font_size) && $options->pb_font_size != '') ? absint($options->pb_font_size) : 13;
 
+        // Description font weight for pc
+        $pb_font_weight = (isset($options->pb_description_font_weight_for_pc) && $options->pb_description_font_weight_for_pc != '') ? esc_attr( stripslashes($options->pb_description_font_weight_for_pc) ) : 'normal';
+
         // Description text align for pc
         $pb_text_align = (isset($options->pb_description_alignment_for_pc) && $options->pb_description_alignment_for_pc != '') ? esc_attr( stripslashes($options->pb_description_alignment_for_pc) ) : 'left';
 
@@ -3385,6 +3412,7 @@ class Ays_Pb_Public_Templates {
         //popup width percentage
 
         $popup_width_by_percentage_px = (isset($options->popup_width_by_percentage_px) && $options->popup_width_by_percentage_px != '') ? stripslashes( esc_attr($options->popup_width_by_percentage_px) ) : 'pixels';
+        $popup_height_by_percentage_px = (isset($options->popup_height_by_percentage_px) && $options->popup_height_by_percentage_px != '') ? stripslashes( esc_attr($options->popup_height_by_percentage_px) ) : 'pixels';
         if(isset($popup['ays_pb_width']) && $popup['ays_pb_width'] != ''){
             if ($popup_width_by_percentage_px && $popup_width_by_percentage_px == 'percentage') {
                 if (absint(intval($popup['ays_pb_width'])) > 100 ) {
@@ -3418,14 +3446,14 @@ class Ays_Pb_Public_Templates {
            ";
         }else{
            $pb_width  = $popup_width_by_percentage_px == 'percentage' ? $popup['ays_pb_width'] . '%' : $popup['ays_pb_width'] . 'px';
-           $pb_height = $popup['ays_pb_height'] . 'px';
+           $pb_height = $popup_height_by_percentage_px == 'percentage' ? $popup['ays_pb_height'] . '%' : $popup['ays_pb_height'] . 'px';
         }
 
         if($pb_width == '0px' ||  $pb_width == '0%'){       
             $pb_width = '100%';
         }
 
-        if($pb_height == '0px'){       
+        if($pb_height == '0px' || $pb_height == '0%'){
             $pb_height = '500px';
         }
 
@@ -3617,6 +3645,9 @@ class Ays_Pb_Public_Templates {
             $pb_width = '100%';
         }
 
+        //popup height percentage
+        $popup_height_by_percentage_px = (isset($options->popup_height_by_percentage_px) && $options->popup_height_by_percentage_px != '') ? stripslashes( esc_attr($options->popup_height_by_percentage_px) ) : 'pixels';
+
         //pb full screen
         $pb_height = '';
         if($ays_pb_full_screen == 'on'){
@@ -3624,14 +3655,14 @@ class Ays_Pb_Public_Templates {
             $popup['ays_pb_height'] = 'auto';
         }else{
             $pb_width  = $popup_width_by_percentage_px == 'percentage' ? $popup['ays_pb_width'] . '%' : $popup['ays_pb_width'] . 'px';
-            $pb_height = $popup['ays_pb_height'] . 'px';
+            $pb_height = $popup_height_by_percentage_px == 'percentage' ? $popup['ays_pb_height'] . '%' : $popup['ays_pb_height'] . 'px';
         }
 
         if($pb_width == '0px' ||  $pb_width == '0%'){       
             $pb_width = '100%';
         }
 
-        if($pb_height == '0px'){       
+        if($pb_height == '0px' || $pb_height == '0%'){
             $pb_height = '500px';
         }
 
@@ -3845,6 +3876,9 @@ class Ays_Pb_Public_Templates {
             $pb_width = '100%';
         }
 
+        //popup height percentage
+        $popup_height_by_percentage_px = (isset($options->popup_height_by_percentage_px) && $options->popup_height_by_percentage_px != '') ? stripslashes( esc_attr($options->popup_height_by_percentage_px) ) : 'pixels';
+
         //pb full screen
         $pb_height = '';
         if($ays_pb_full_screen == 'on'){
@@ -3852,14 +3886,14 @@ class Ays_Pb_Public_Templates {
             $popup['ays_pb_height'] = 'auto';
         }else{
             $pb_width  = $popup_width_by_percentage_px == 'percentage' ? $popup['ays_pb_width'] . '%' : $popup['ays_pb_width'] . 'px';
-            $pb_height = $popup['ays_pb_height'] . 'px';
+            $pb_height = $popup_height_by_percentage_px == 'percentage' ? $popup['ays_pb_height'] . '%' : $popup['ays_pb_height'] . 'px';
         }
 
         if($pb_width == '0px' ||  $pb_width == '0%'){       
             $pb_width = '100%';
         }
 
-        if($pb_height == '0px'){       
+        if($pb_height == '0px' || $pb_height == '0%'){
             $pb_height = '500px';
         }
 
@@ -4224,6 +4258,14 @@ class Ays_Pb_Public_Templates {
 
         if ($popup_options['options'] != '' || $popup_options['options'] != null) {
             $options['options'] = json_decode($popup_options['options']);
+        }
+
+        if (isset($options['options']->popup_height_by_percentage_px) && $options['options']->popup_height_by_percentage_px == 'percentage' && $options['ays_pb_height'] > 100) {
+            $options['ays_pb_height'] = 100;
+        }
+
+        if (isset($options['options']->popup_height_by_percentage_px_mobile) && $options['options']->popup_height_by_percentage_px_mobile == 'percentage' && isset($options['options']->mobile_height) && $options['options']->mobile_height > 100) {
+            $options['options']->mobile_height = 100;
         }
 
         return $options;

@@ -289,6 +289,8 @@ $options = array(
     'mobile_width' => '',
     'mobile_max_width' => '',
     'mobile_height' => '',
+    'popup_height_by_percentage_px' => 'pixels',
+    'popup_height_by_percentage_px_mobile' => 'pixels',
     'pb_max_height' => '',
     'popup_max_height_by_percentage_px' => 'pixels',
     'pb_max_height_mobile' => '',
@@ -1073,8 +1075,22 @@ $mobile_max_width = (isset($options['mobile_max_width']) && $options['mobile_max
 // Height | On desktop
 $height = (isset($popupbox['height']) && $popupbox['height'] != '') ? abs( intval($popupbox['height']) ) : '';
 
+// Height | On desktop | Measurement unit
+$popup_height_by_percentage_px = (isset($options['popup_height_by_percentage_px']) && $options['popup_height_by_percentage_px'] != '') ? esc_attr( stripslashes($options['popup_height_by_percentage_px']) ) : 'pixels';
+
 // Height | On mobile
 $mobile_height = (isset($options['mobile_height']) && $options['mobile_height'] != '') ? abs( intval($options['mobile_height']) ) : '';
+
+// Height | On mobile | Measurement unit
+$popup_height_by_percentage_px_mobile = (isset($options['popup_height_by_percentage_px_mobile']) && $options['popup_height_by_percentage_px_mobile'] != '') ? esc_attr( stripslashes($options['popup_height_by_percentage_px_mobile']) ) : 'pixels';
+
+if ($popup_height_by_percentage_px == 'percentage' && $height > 100) {
+    $height = 100;
+}
+
+if ($popup_height_by_percentage_px_mobile == 'percentage' && $mobile_height > 100) {
+    $mobile_height = 100;
+}
 
 // Popup max-height | On desktop
 $popup_max_height = (isset($options['pb_max_height']) && $options['pb_max_height'] != '' && $options['pb_max_height'] != 0) ? absint( intval($options['pb_max_height']) ) : '';
@@ -5475,7 +5491,7 @@ $ays_users_roles = $wp_roles->roles;
                                     <div class="col-sm-4">
                                         <label for="<?php echo esc_attr($this->plugin_name); ?>-height">
                                             <span><?php echo esc_html__('Height', "ays-popup-box"); ?></span>
-                                            <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__('Specify the height of the popup in pixels.',"ays-popup-box")?>">
+                                            <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_html__('Specify the height of the popup in pixels and percentages.',"ays-popup-box")?>">
                                                 <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                             </a>
                                         </label>
@@ -5486,17 +5502,27 @@ $ays_users_roles = $wp_roles->roles;
                                             <div class="col-sm-3">
                                                 <label for="<?php echo esc_attr($this->plugin_name); ?>-height">
                                                     <?php echo  esc_html__('On desktop',"ays-popup-box") ?>
-                                                    <a class="ays_help" data-toggle="tooltip" title="" data-original-title="Define the height for desktop devices. Leave it blank or put 0 to select the default theme value.">
+                                                    <a class="ays_help" data-toggle="tooltip" title="" data-original-title="Define the height for desktop devices. It accepts only numerical values and you can choose whether to define the value by percentage or in pixels. Leave it blank or put 0 to select the default theme value.">
                                                         <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                                     </a>
                                                 </label>
                                             </div>
                                             <div class="col-sm-9">
-                                                <div>
-                                                    <input type="number" id="<?php echo esc_attr($this->plugin_name); ?>-height"  class="ays-pb-text-input ays-pb-text-input-short ays_pb_height" name="<?php echo esc_attr($this->plugin_name); ?>[height]" value="<?php echo $height; ?>" <?php echo $disable_height ;?>> 
-                                                </div>
-                                                <div class="ays_dropdown_max_width">
-                                                    <input type="text" value="px" class="ays-form-hint-for-size" disabled>
+                                                <div style="display: flex; align-items: center; gap: 5px">
+                                                    <div>
+                                                        <input type="number" id="<?php echo esc_attr($this->plugin_name); ?>-height"  class="ays-pb-text-input ays-pb-text-input-short ays_pb_height" name="<?php echo esc_attr($this->plugin_name); ?>[height]" value="<?php echo $height; ?>" <?php echo $disable_height ;?>/>
+                                                        <span style="display:block;" class="ays-pb-small-hint-text"><?php echo esc_html__("For auto leave blank", "ays-popup-box");?></span>
+                                                    </div>
+                                                    <div class="ays_pb_height_by_percentage_px_box">
+                                                        <select name="ays_popup_height_by_percentage_px" id="ays_popup_height_by_percentage_px" class="ays_pb_aysDropdown ays-pb-percent ays_pb_height_unit_dropdown">
+                                                            <option value="pixels" <?php echo $popup_height_by_percentage_px == "pixels" ? "selected" : ""; ?>>
+                                                                <?php echo esc_html__( "px", "ays-popup-box" ); ?>
+                                                            </option>
+                                                            <option value="percentage" <?php echo $popup_height_by_percentage_px == "percentage" ? "selected" : ""; ?>>
+                                                                <?php echo esc_html__( "%", "ays-popup-box" ); ?>
+                                                            </option>
+                                                        </select>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -5507,17 +5533,27 @@ $ays_users_roles = $wp_roles->roles;
                                             <div class="col-sm-3">
                                                 <label for="ays_pb_mobile_height">
                                                     <?php echo  esc_html__('On mobile',"ays-popup-box") ?>
-                                                    <a class="ays_help" data-toggle="tooltip" title="" data-original-title="Specify popup height for mobile in pixels. Note: This option works for the screens with less than 768 pixels width.">
+                                                    <a class="ays_help" data-toggle="tooltip" title="" data-original-title="Define the height for mobile devices. It accepts only numerical values and you can choose whether to define the value by percentage or in pixels. Note: This option works for the screens with less than 768 pixels width.">
                                                         <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
                                                     </a>
                                                 </label>
                                             </div>
                                             <div class="col-sm-9">
-                                                <div>
-                                                    <input type="number" id="ays_pb_mobile_height"  class="ays-pb-text-input ays-pb-text-input-short ays-pb-mobile-height" name="ays_pb_mobile_height" value="<?php echo $mobile_height; ?>"/>
-                                                </div>
-                                                <div class="ays_dropdown_max_width">
-                                                    <input type="text" value="px" class="ays-form-hint-for-size" disabled>
+                                                <div style="display: flex; align-items: center; gap: 5px">
+                                                    <div>
+                                                        <input type="number" id="ays_pb_mobile_height"  class="ays-pb-text-input ays-pb-text-input-short ays-pb-mobile-height" name="ays_pb_mobile_height" value="<?php echo $mobile_height; ?>"/>
+                                                        <span style="display:block;" class="ays-pb-small-hint-text"><?php echo esc_html__("For auto leave blank", "ays-popup-box");?></span>
+                                                    </div>
+                                                    <div class="ays_pb_height_by_percentage_px_box">
+                                                        <select name="ays_popup_height_by_percentage_px_mobile" id="ays_popup_height_by_percentage_px_mobile" class="ays_pb_aysDropdown ays-pb-percent ays_pb_height_unit_dropdown">
+                                                            <option value="pixels" <?php echo $popup_height_by_percentage_px_mobile == "pixels" ? "selected" : ""; ?>>
+                                                                <?php echo esc_html__( "px", "ays-popup-box" ); ?>
+                                                            </option>
+                                                            <option value="percentage" <?php echo $popup_height_by_percentage_px_mobile == "percentage" ? "selected" : ""; ?>>
+                                                                <?php echo esc_html__( "%", "ays-popup-box" ); ?>
+                                                            </option>
+                                                        </select>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
