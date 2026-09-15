@@ -577,7 +577,16 @@ $categories_title_length = (isset($options['categories_title_length']) && intval
                                     <span style="font-size:18px;">
                                         <?php echo esc_html__( "The user's role(s) when logged-in. In case the user is not logged-in, the field will be empty.", "ays-popup-box"); ?>
                                     </span>
-                                </p>                                
+                                </p>
+                                <p class="vmessage">
+                                    <strong>
+                                        <input type="text" onClick="this.setSelectionRange(0, this.value.length)" readonly value="%%user_ip_address%%" class='ays-popup-message-variables-inputs'/>
+                                    </strong>
+                                    <span> - </span>
+                                    <span style="font-size:18px;">
+                                        <?php echo esc_html__( "The user's IP address.", "ays-popup-box"); ?>
+                                    </span>
+                                </p>
                                 <p class="vmessage">
                                     <strong>
                                         <input type="text" onClick="this.setSelectionRange(0, this.value.length)" readonly value="%%user_id%%" class='ays-pb-message-variables-inputs'/>

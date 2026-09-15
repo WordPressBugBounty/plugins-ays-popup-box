@@ -331,7 +331,7 @@ class Ays_Pb_Admin {
             $this->plugin_name,
             array($this, 'display_plugin_setup_page'),
             plugin_dir_url(__FILE__) . '/images/icons/popup-sidemenu-logo.svg',
-            6
+            25.20
         );
     }
 
