@@ -64,7 +64,7 @@ class Ays_Pb_Public_Templates {
         $popup = $this->ays_pb_set_popup_options($attr);
         $options = $popup['options'];
 
-        $message_data = $this->ays_pb_generate_message_variables_arr($popup['ays_pb_title'], $options);
+        $message_data = $this->ays_pb_generate_message_variables_arr($popup['ays_pb_title'], $popup['ays_pb_category_id'], $options);
 
         $popup['ays_pb_custom_html'] = Ays_Pb_Data::replace_message_variables( $popup['ays_pb_custom_html'], $message_data );
 
@@ -370,7 +370,7 @@ class Ays_Pb_Public_Templates {
         $popup = $this->ays_pb_set_popup_options($attr);
         $options = $popup['options'];
 
-        $message_data = $this->ays_pb_generate_message_variables_arr($popup['ays_pb_title'], $options);
+        $message_data = $this->ays_pb_generate_message_variables_arr($popup['ays_pb_title'], $popup['ays_pb_category_id'], $options);
 
         $popup['ays_pb_custom_html'] = Ays_Pb_Data::replace_message_variables( $popup['ays_pb_custom_html'], $message_data );
 
@@ -700,7 +700,7 @@ class Ays_Pb_Public_Templates {
         $popup = $this->ays_pb_set_popup_options($attr);
         $options = $popup['options'];
 
-        $message_data = $this->ays_pb_generate_message_variables_arr($popup['ays_pb_title'], $options);
+        $message_data = $this->ays_pb_generate_message_variables_arr($popup['ays_pb_title'], $popup['ays_pb_category_id'], $options);
 
         $popup['ays_pb_custom_html'] = Ays_Pb_Data::replace_message_variables( $popup['ays_pb_custom_html'], $message_data );
 
@@ -1067,7 +1067,7 @@ class Ays_Pb_Public_Templates {
         $popup = $this->ays_pb_set_popup_options($attr);
         $options = $popup['options'];
 
-        $message_data = $this->ays_pb_generate_message_variables_arr($popup['ays_pb_title'], $options);
+        $message_data = $this->ays_pb_generate_message_variables_arr($popup['ays_pb_title'], $popup['ays_pb_category_id'], $options);
 
         $popup['ays_pb_custom_html'] = Ays_Pb_Data::replace_message_variables( $popup['ays_pb_custom_html'], $message_data );
 
@@ -1408,7 +1408,7 @@ class Ays_Pb_Public_Templates {
         $popup = $this->ays_pb_set_popup_options($attr);
         $options = $popup['options'];
 
-        $message_data = $this->ays_pb_generate_message_variables_arr($popup['ays_pb_title'], $options);
+        $message_data = $this->ays_pb_generate_message_variables_arr($popup['ays_pb_title'], $popup['ays_pb_category_id'], $options);
 
         $popup['ays_pb_custom_html'] = Ays_Pb_Data::replace_message_variables( $popup['ays_pb_custom_html'], $message_data );
 
@@ -1740,7 +1740,7 @@ class Ays_Pb_Public_Templates {
         $popup = $this->ays_pb_set_popup_options($attr);
         $options = $popup['options'];
 
-        $message_data = $this->ays_pb_generate_message_variables_arr($popup['ays_pb_title'], $options);
+        $message_data = $this->ays_pb_generate_message_variables_arr($popup['ays_pb_title'], $popup['ays_pb_category_id'], $options);
 
         $popup['ays_pb_custom_html'] = Ays_Pb_Data::replace_message_variables( $popup['ays_pb_custom_html'], $message_data );
 
@@ -2047,7 +2047,7 @@ class Ays_Pb_Public_Templates {
         $popup = $this->ays_pb_set_popup_options($attr);
         $options = $popup['options'];
 
-        $message_data = $this->ays_pb_generate_message_variables_arr($popup['ays_pb_title'], $options);
+        $message_data = $this->ays_pb_generate_message_variables_arr($popup['ays_pb_title'], $popup['ays_pb_category_id'], $options);
 
         $popup['ays_pb_custom_html'] = Ays_Pb_Data::replace_message_variables( $popup['ays_pb_custom_html'], $message_data );
 
@@ -2367,7 +2367,7 @@ class Ays_Pb_Public_Templates {
                                           background-repeat: no-repeat;
                                           background-size: cover;';
 
-        $message_data = $this->ays_pb_generate_message_variables_arr($popup['ays_pb_title'], $options);
+        $message_data = $this->ays_pb_generate_message_variables_arr($popup['ays_pb_title'], $popup['ays_pb_category_id'], $options);
 
         $popup['ays_pb_custom_html'] = Ays_Pb_Data::replace_message_variables( $popup['ays_pb_custom_html'], $message_data );
 
@@ -2436,8 +2436,11 @@ class Ays_Pb_Public_Templates {
         $image_content_height = (($image_header_height !== "") ?  "max-height: 98% !important" :  "");
 
         //popup width percentage
-
         $popup_width_by_percentage_px = (isset($options->popup_width_by_percentage_px) && $options->popup_width_by_percentage_px != '') ? stripslashes( esc_attr($options->popup_width_by_percentage_px) ) : 'pixels';
+
+        //popup height percentage
+        $popup_height_by_percentage_px = (isset($options->popup_height_by_percentage_px) && $options->popup_height_by_percentage_px != '') ? stripslashes( esc_attr($options->popup_height_by_percentage_px) ) : 'pixels';
+
         if(isset($popup['ays_pb_width']) && $popup['ays_pb_width'] != ''){
             if ($popup_width_by_percentage_px && $popup_width_by_percentage_px == 'percentage') {
                 if (absint(intval($popup['ays_pb_width'])) > 100 ) {
@@ -2692,7 +2695,7 @@ class Ays_Pb_Public_Templates {
                                              background-repeat: no-repeat;
                                              background-size: cover;';
 
-        $message_data = $this->ays_pb_generate_message_variables_arr($popup['ays_pb_title'], $options);
+        $message_data = $this->ays_pb_generate_message_variables_arr($popup['ays_pb_title'], $popup['ays_pb_category_id'], $options);
 
         $popup['ays_pb_custom_html'] = Ays_Pb_Data::replace_message_variables( $popup['ays_pb_custom_html'], $message_data );
 
@@ -3018,7 +3021,7 @@ class Ays_Pb_Public_Templates {
         $popup = $this->ays_pb_set_popup_options($attr);
         $options = $popup['options'];
 
-        $message_data = $this->ays_pb_generate_message_variables_arr($popup['ays_pb_title'], $options);
+        $message_data = $this->ays_pb_generate_message_variables_arr($popup['ays_pb_title'], $popup['ays_pb_category_id'], $options);
 
         $popup['ays_pb_custom_html'] = Ays_Pb_Data::replace_message_variables( $popup['ays_pb_custom_html'], $message_data );
 
@@ -3087,8 +3090,11 @@ class Ays_Pb_Public_Templates {
         $image_content_height = (($image_header_height !== "") ?  "max-height: 100% !important" :  "");
 
         //popup width percentage
-
         $popup_width_by_percentage_px = (isset($options->popup_width_by_percentage_px) && $options->popup_width_by_percentage_px != '') ? stripslashes( esc_attr($options->popup_width_by_percentage_px) ) : 'pixels';
+
+        //popup height percentage
+        $popup_height_by_percentage_px = (isset($options->popup_height_by_percentage_px) && $options->popup_height_by_percentage_px != '') ? stripslashes( esc_attr($options->popup_height_by_percentage_px) ) : 'pixels';
+
         if(isset($popup['ays_pb_width']) && $popup['ays_pb_width'] != ''){
             if ($popup_width_by_percentage_px && $popup_width_by_percentage_px == 'percentage') {
                 if (absint(intval($popup['ays_pb_width'])) > 100 ) {
@@ -3117,8 +3123,9 @@ class Ays_Pb_Public_Templates {
                 </style>
            ";
         }else{
-           $pb_width  = $popup_width_by_percentage_px == 'percentage' ? $popup['ays_pb_width'] . '%' : $popup['ays_pb_width'] . 'px';
-           $pb_height = $popup_height_by_percentage_px == 'percentage' ? $popup['ays_pb_height'] . '%' : $popup['ays_pb_height'] . 'px';
+
+            $pb_width  = $popup_width_by_percentage_px == 'percentage' ? $popup['ays_pb_width'] . '%' : $popup['ays_pb_width'] . 'px';
+            $pb_height = $popup_height_by_percentage_px == 'percentage' ? $popup['ays_pb_height'] . '%' : $popup['ays_pb_height'] . 'px';
         }
 
         if($pb_width == '0px' ||  $pb_width == '0%'){       
@@ -3338,7 +3345,7 @@ class Ays_Pb_Public_Templates {
         $popup = $this->ays_pb_set_popup_options($attr);
         $options = $popup['options'];
 
-        $message_data = $this->ays_pb_generate_message_variables_arr($popup['ays_pb_title'], $options);
+        $message_data = $this->ays_pb_generate_message_variables_arr($popup['ays_pb_title'], $popup['ays_pb_category_id'], $options);
 
         $popup['ays_pb_custom_html'] = Ays_Pb_Data::replace_message_variables( $popup['ays_pb_custom_html'], $message_data );
 
@@ -3797,7 +3804,7 @@ class Ays_Pb_Public_Templates {
         $popup = $this->ays_pb_set_popup_options($attr);
         $options = $popup['options'];
 
-        $message_data = $this->ays_pb_generate_message_variables_arr($popup['ays_pb_title'], $options);
+        $message_data = $this->ays_pb_generate_message_variables_arr($popup['ays_pb_title'], $popup['ays_pb_category_id'], $options);
 
         // Title text shadow
         $title_text_shadow = $this->ays_pb_generate_title_text_shadow_styles($options);
@@ -4037,7 +4044,7 @@ class Ays_Pb_Public_Templates {
         $popup = $this->ays_pb_set_popup_options($attr);
         $options = $popup['options'];
 
-        $message_data = $this->ays_pb_generate_message_variables_arr($popup['ays_pb_title'], $options);
+        $message_data = $this->ays_pb_generate_message_variables_arr($popup['ays_pb_title'], $popup['ays_pb_category_id'], $options);
 
         $default_notification_type_components = array(
             'logo' => 'off',
@@ -4233,6 +4240,7 @@ class Ays_Pb_Public_Templates {
             'ays_pb_height'              => absint( intval($popup_options["height"]) ),
             'ays_pb_autoclose'           => stripslashes( esc_attr($popup_options["autoclose"]) ),
             'ays_pb_title'               => stripslashes(esc_attr( $popup_options["title"] )),
+            'ays_pb_category_id'         => stripslashes(esc_attr( $popup_options["category_id"] )),
             'ays_pb_description'         => $popup_options["description"],
             'ays_pb_bgcolor'             => stripslashes(esc_attr( $popup_options["bgcolor"] )),
             'ays_pb_header_bgcolor'      => stripslashes( esc_attr($popup_options["header_bgcolor"]) ),
@@ -4271,8 +4279,11 @@ class Ays_Pb_Public_Templates {
         return $options;
     }
 
-    public function ays_pb_generate_message_variables_arr($popup_title, $popup_options) {
+    public function ays_pb_generate_message_variables_arr($popup_title, $popup_category_id, $popup_options) {
         $user_data = wp_get_current_user();
+
+        $popup_category = self::get_popup_category_by_id( $popup_category_id );
+        $popup_category_title = ! empty( $popup_category['title'] ) ? $popup_category['title'] : '';
 
         $user_display_name = ( isset( $user_data->display_name ) && $user_data->display_name != '' ) ? stripslashes( $user_data->display_name ) : '';
 
@@ -4384,42 +4395,43 @@ class Ays_Pb_Public_Templates {
         }
 
         $message_variables_data = array(
-            'popup_title'                               => $popup_title,
-            'user_name'                                 => $user_display_name,
-            'user_email'                                => $user_email,
-            'user_first_name'                           => $user_first_name,
-            'user_last_name'                            => $user_last_name,
-            'user_nickname'                             => $user_nickname,
-            'user_wordpress_roles'                      => $user_wordpress_roles,
-            'user_ip_address'                           => $user_ip_address,
-            'user_id'                                   => $current_user_id,
-            'user_registered'                           => $user_registered,
-            'user_website_url'                          => $user_website_url,
-            'admin_email'                               => $super_admin_email,
-            'current_popup_author'                      => $current_popup_author,
-            'current_popup_author_email'                => $current_popup_author_email,
-            'current_popup_author_nickname'             => $current_popup_author_nickname,
-            'current_popup_author_display_name'         => $current_popup_author_display_name,
-            'current_popup_author_website_url'          => $current_popup_author_website_url,
-            'current_popup_author_registered'           => $current_popup_author_registered,
-            'current_popup_page_link'                   => $popup_current_page_link_html,
-            'creation_date'                             => $creation_date,
-            'current_date'                              => $current_date,
-            'current_time'                              => $current_time,
-            'current_day'                               => $current_day,
-            'current_month'                             => $current_month,
-            'post_author_nickname'                      => $post_author_nickname,
-            'post_author_email'                         => $post_author_email,
-            'post_author_first_name'                    => $post_author_first_name,
-            'post_author_last_name'                     => $post_author_last_name,
-            'post_author_display_name'                  => $post_author_display_name,
-            'post_author_website_url'                   => $post_author_website_url,
-            'post_author_roles'                         => $post_author_roles,
-            'post_title'                                => $post_title,
-            'post_id'                                   => $post_id,
-            'site_title'                                => $get_site_title,
-            'site_description'                          => $get_site_description,
-            'home_page_url'                             => $home_page_url,
+            'popup_title'                                   => $popup_title,
+            'popup_category_title'                          => $popup_category_title,
+            'user_name'                                     => $user_display_name,
+            'user_email'                                    => $user_email,
+            'user_first_name'                               => $user_first_name,
+            'user_last_name'                                => $user_last_name,
+            'user_nickname'                                 => $user_nickname,
+            'user_wordpress_roles'                          => $user_wordpress_roles,
+            'user_ip_address'                               => $user_ip_address,
+            'user_id'                                       => $current_user_id,
+            'user_registered'                               => $user_registered,
+            'user_website_url'                              => $user_website_url,
+            'admin_email'                                   => $super_admin_email,
+            'current_popup_author'                          => $current_popup_author,
+            'current_popup_author_email'                    => $current_popup_author_email,
+            'current_popup_author_nickname'                 => $current_popup_author_nickname,
+            'current_popup_author_display_name'             => $current_popup_author_display_name,
+            'current_popup_author_website_url'              => $current_popup_author_website_url,
+            'current_popup_author_registered'               => $current_popup_author_registered,
+            'current_popup_page_link'                       => $popup_current_page_link_html,
+            'creation_date'                                 => $creation_date,
+            'current_date'                                  => $current_date,
+            'current_time'                                  => $current_time,
+            'current_day'                                   => $current_day,
+            'current_month'                                 => $current_month,
+            'post_author_nickname'                          => $post_author_nickname,
+            'post_author_email'                             => $post_author_email,
+            'post_author_first_name'                        => $post_author_first_name,
+            'post_author_last_name'                         => $post_author_last_name,
+            'post_author_display_name'                      => $post_author_display_name,
+            'post_author_website_url'                       => $post_author_website_url,
+            'post_author_roles'                             => $post_author_roles,
+            'post_title'                                    => $post_title,
+            'post_id'                                       => $post_id,
+            'site_title'                                    => $get_site_title,
+            'site_description'                              => $get_site_description,
+            'home_page_url'                                 => $home_page_url,
         );  
 
         return $message_variables_data;
@@ -4564,5 +4576,24 @@ class Ays_Pb_Public_Templates {
         }
 
         return sanitize_text_field($ipaddress);
+    }
+
+    public static function get_popup_category_by_id( $id ) {
+        global $wpdb;
+
+        $id = intval( $id );
+
+        if ( ! $id ) {
+            return [];
+        }
+
+        $sql = $wpdb->prepare(
+            "SELECT *
+             FROM {$wpdb->prefix}ays_pb_categories
+             WHERE id = %d",
+            $id
+        );
+
+        return $wpdb->get_row( $sql, ARRAY_A );
     }
 }
