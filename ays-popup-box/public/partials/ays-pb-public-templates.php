@@ -4558,7 +4558,7 @@ class Ays_Pb_Public_Templates {
     }
 
     private static function ays_popup_get_user_ip() {
-        $ipaddress = '';
+        $ipaddress = false;
         if (getenv('HTTP_CLIENT_IP')) {
             $ipaddress = getenv('HTTP_CLIENT_IP');
         } else if (getenv('HTTP_X_FORWARDED_FOR')) {
@@ -4569,13 +4569,18 @@ class Ays_Pb_Public_Templates {
             $ipaddress = getenv('HTTP_FORWARDED_FOR');
         } else if (getenv('HTTP_FORWARDED')) {
             $ipaddress = getenv('HTTP_FORWARDED');
-        } else if (getenv('REMOTE_ADDR')) {
-            $ipaddress = getenv('REMOTE_ADDR');
-        } else {
-            $ipaddress = 'UNKNOWN';
         }
 
-        return sanitize_text_field($ipaddress);
+        if ( $ipaddress !== false && filter_var( $ipaddress, FILTER_VALIDATE_IP ) !== false ) {
+            return $ipaddress;
+        }
+
+        $remote_address = getenv('REMOTE_ADDR');
+        if ( $remote_address !== false && filter_var( $remote_address, FILTER_VALIDATE_IP ) !== false ) {
+            return $remote_address;
+        }
+
+        return 'UNKNOWN';
     }
 
     public static function get_popup_category_by_id( $id ) {

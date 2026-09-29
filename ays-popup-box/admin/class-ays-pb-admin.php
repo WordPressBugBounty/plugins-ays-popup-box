@@ -1067,40 +1067,40 @@ class Ays_Pb_Admin {
             $plugin_action_class_disbaled = strpos($plugin_action_class, 'status-active') !== false ? "disbaled='true'" : "";
             $allow_tags = array(
                 'div' => array(
-                    'class' => array(),
+                    'class'         => array(),
                 ),
                 'img' => array(
-                    'class' => array(),
-                    'src' => array(),
-                    'alt' => array(),
+                    'class'         => array(),
+                    'src'           => array(),
+                    'alt'           => array(),
                 ),
                 'h5' => array(
-                    'class' => array(),
+                    'class'         => array(),
                 ),
                 'p' => array(
-                    'class' => array(),
+                    'class'         => array(),
                 ),
                 'span' => array(
-                    'class' => array(),
-                    'aria-hidden' => array(),
+                    'class'         => array(),
+                    'aria-hidden'   => array(),
                 ),
                 'button' => array(
-                    'class' => array(),
-                    'data-plugin' => array(),
-                    'data-type' => array(),
-                    'disabled' => array(),
+                    'class'         => array(),
+                    'data-plugin'   => array(),
+                    'data-type'     => array(),
+                    'disabled'      => array(),
                 ),
                 'a' => array(
-                    'href' => array(),
-                    'target' => array(),
-                    'rel' => array(),
-                    'class' => array(),
+                    'href'          => array(),
+                    'target'        => array(),
+                    'rel'           => array(),
+                    'class'         => array(),
                 ),
                 'input' => array(
-                    'type' => array(),
-                    'id' => array(),
-                    'name' => array(),
-                    'value' => array(),
+                    'type'          => array(),
+                    'id'            => array(),
+                    'name'          => array(),
+                    'value'         => array(),
                 ),
             );
 
