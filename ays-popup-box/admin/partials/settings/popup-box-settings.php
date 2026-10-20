@@ -532,6 +532,15 @@ $categories_title_length = (isset($options['categories_title_length']) && intval
                                     <span style="font-size:18px;">
                                         <?php echo esc_html__( "The title of the popup category", "ays-popup-box"); ?>
                                     </span>
+                                </p>        
+                                <p class="vmessage">
+                                    <strong>
+                                        <input type="text" onClick="this.setSelectionRange(0, this.value.length)" readonly value="%%popup_category_description%%"/>
+                                    </strong>
+                                    <span> - </span>
+                                    <span style="font-size:18px;">
+                                        <?php echo esc_html__( "The description of the popup category", "ays-popup-box"); ?>
+                                    </span>
                                 </p>
                                 <p class="vmessage">
                                     <strong>
