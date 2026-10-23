@@ -4,7 +4,7 @@ Donate link: https://popup-plugin.com
 Tags: popup, popups, exit popup, pop up, modal
 Requires at least: 4.0
 Tested up to: 7.1
-Stable tag: 6.4.4
+Stable tag: 6.4.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -309,6 +309,9 @@ After clearing the caches, try to check the case with either the **Incognito mod
 
 
 == Changelog ==
+
+= 6.4.5 ( Oct 23, 2026 ) =
+* Improved: Made some changes to the admin dashboard
 
 = 6.4.4 ( Oct 20, 2026 ) =
 * Added: Popup Category Description message variable on the general settings
