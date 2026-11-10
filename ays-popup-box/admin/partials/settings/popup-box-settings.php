@@ -351,6 +351,7 @@ $categories_title_length = (isset($options['categories_title_length']) && intval
                                             </div>
                                         </div>
                                     </div>
+                                    <hr>
                                     <div class="col-sm-12" style="padding:20px;">
                                         <div class="form-group row">
                                             <div class="col-sm-4">
@@ -418,6 +419,22 @@ $categories_title_length = (isset($options['categories_title_length']) && intval
                                     <div class="col-sm-12" style="padding:20px;">
                                         <div class="form-group row">
                                             <div class="col-sm-4">
+                                                <label for="ays_pb_title">
+                                                    <?php echo esc_html__( "Show popup title", "ays-popup-box" ); ?>
+                                                    <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_attr( esc_html__("It will show the current title of the particular popup.","ays-popup-box") ); ?>">
+                                                            <img src="<?php echo esc_url(AYS_PB_ADMIN_URL) . "/images/icons/info-circle.svg"?>">
+                                                    </a>
+                                                </label>
+                                            </div>
+                                            <div class="col-sm-8">
+                                                <input type="text" id="ays_pb_title" class="ays-text-input" onclick="this.setSelectionRange(0, this.value.length)" readonly="" value='[ays_pb_title id="YOUR_PB_ID"]'>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="col-sm-12" style="padding:20px;">
+                                        <div class="form-group row">
+                                            <div class="col-sm-4">
                                                 <label for="ays_pb_current_author">
                                                     <?php echo esc_html__( "Show current popup author", "ays-popup-box" ); ?>
                                                     <a class="ays_help" data-toggle="tooltip" title="<?php echo esc_attr( esc_html__("It will show the current author of the particular popup.","ays-popup-box") ); ?>">
@@ -430,6 +447,7 @@ $categories_title_length = (isset($options['categories_title_length']) && intval
                                             </div>
                                         </div>
                                     </div>
+                                    <hr>
                                     <div class="col-sm-12" style="padding:20px;">
                                         <div class="form-group row">
                                             <div class="col-sm-4">

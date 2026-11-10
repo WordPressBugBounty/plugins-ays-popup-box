@@ -63,6 +63,7 @@ class Ays_Popup_Box_User_Information_Public {
         add_shortcode('ays_pb_user_display_name', array($this, 'ays_generate_user_display_name_method'));
         add_shortcode('ays_pb_user_nickname', array($this, 'ays_user_nickname_method'));
         add_shortcode('ays_pb_user_email', array($this, 'ays_user_email_method'));
+        add_shortcode('ays_pb_title', array($this, 'ays_generate_current_popup_title_method'));
         add_shortcode('ays_pb_current_author', array($this, 'ays_generate_current_popup_author_method'));
         add_shortcode('ays_pb_user_roles', array($this, 'ays_generate_user_roles_method'));
     }
@@ -336,6 +337,71 @@ class Ays_Popup_Box_User_Information_Public {
         Show User Email | End
     ==========================================
     */
+
+    /*
+    ==========================================
+        Show popup title | Start
+    ==========================================
+    */
+
+    public function ays_generate_current_popup_title_method( $attr ) {
+
+        $id = (isset($attr['id']) && $attr['id'] != '') ? absint( sanitize_text_field($attr['id']) ) : null;
+
+        if (is_null($id) || $id == 0 ) {
+            return "";
+        }
+
+        $unique_id = uniqid();
+        $this->unique_id = $unique_id;
+        $this->unique_id_in_class = $id . "-" . $unique_id;
+
+        $popup_title = $this->ays_generate_popup_title_html( $id );
+
+        return str_replace(array("\r\n", "\n", "\r"), "\n", $popup_title);
+    }
+
+    public function ays_generate_popup_title_html( $id ) {
+
+        $popup_data = self::get_popup_by_id( $id );
+
+        if( is_null( $popup_data ) || empty( $popup_data ) ){
+            return "";
+        }
+
+        $popup_title = (isset($popup_data['title']) && $popup_data['title'] != '') ? sanitize_text_field($popup_data['title']) : "";
+
+        if ( $popup_title == "" ) {
+            return "";
+        }
+
+        $content_html = array();
+
+        $content_html[] = "<span class='". $this->html_name_prefix ."popup-title' id='". $this->html_name_prefix ."popup-title-". $this->unique_id_in_class ."' data-id='". $this->unique_id ."'>";
+            $content_html[] = esc_html( $popup_title );
+        $content_html[] = "</span>";
+
+        return implode( '' , $content_html);
+    }
+
+    public static function get_popup_by_id($id){
+        global $wpdb;
+
+        $sql = "SELECT *
+                FROM {$wpdb->prefix}ays_pb
+                WHERE id=" . absint($id);
+
+        $popup = $wpdb->get_row($sql, 'ARRAY_A');
+
+        return $popup;
+    }
+
+    /*
+    ==========================================
+        Show popup title | End
+    ==========================================
+    */
+
 
     /*
     ==========================================

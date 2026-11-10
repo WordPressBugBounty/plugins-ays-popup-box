@@ -469,3 +469,7 @@ body.custom-html {
     }
 }
 /*! Popup Box Deactivate Feedback Popup | End */
+
+#ays-pb-settings-form fieldset hr {
+    width: 100%;
+}
