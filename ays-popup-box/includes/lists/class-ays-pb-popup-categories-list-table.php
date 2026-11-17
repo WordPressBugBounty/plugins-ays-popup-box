@@ -807,9 +807,25 @@ class Popup_Categories_List_Table extends WP_List_Table {
                 }
             }
 
+            // Verify the bulk actions nonce
+            $bulk_actions = array( 'bulk-delete', 'bulk-published', 'bulk-unpublished' );
+            $is_bulk_action = false;
+
+            if ( isset($_POST['action']) && in_array( $_POST['action'], $bulk_actions, true ) ) {
+                $is_bulk_action = true;
+            }
+
+            if ( isset($_POST['action2']) && in_array( $_POST['action2'], $bulk_actions, true ) ) {
+                $is_bulk_action = true;
+            }
+
+            if ( $is_bulk_action ) {
+                check_admin_referer( 'bulk-' . $this->_args['plural'] );
+            }
+
             // If the delete bulk action is triggered
             if ( (isset($_POST["action"]) && $_POST["action"] == "bulk-delete") || (isset($_POST["action2"]) && $_POST["action2"] == "bulk-delete") ) {
-                $delete_ids = ( isset($_POST['bulk-delete']) && !empty($_POST['bulk-delete']) ) ? esc_sql($_POST['bulk-delete']) : array();
+                $delete_ids = ( isset($_POST['bulk-delete']) && !empty($_POST['bulk-delete']) ) ? array_map( 'absint', (array) $_POST['bulk-delete'] ) : array();
 
                 // loop over the array of record IDs and delete them
                 foreach ($delete_ids as $id) {
@@ -820,7 +836,7 @@ class Popup_Categories_List_Table extends WP_List_Table {
                 wp_safe_redirect( $url );
                 exit;
             } elseif ( (isset($_POST['action']) && $_POST['action'] == 'bulk-published') || (isset($_POST['action2']) && $_POST['action2'] == 'bulk-published') ) {
-                $published_ids = ( isset($_POST['bulk-delete']) && !empty($_POST['bulk-delete']) ) ? esc_sql($_POST['bulk-delete']) : array();
+                $published_ids = ( isset($_POST['bulk-delete']) && !empty($_POST['bulk-delete']) ) ? array_map( 'absint', (array) $_POST['bulk-delete'] ) : array();
 
                 // loop over the array of record IDs and mark as read them
                 foreach ($published_ids as $id) {
@@ -831,7 +847,7 @@ class Popup_Categories_List_Table extends WP_List_Table {
                 wp_safe_redirect( $url );
                 exit;
             } elseif ( (isset($_POST['action']) && $_POST['action'] == 'bulk-unpublished') || (isset($_POST['action2']) && $_POST['action2'] == 'bulk-unpublished') ) {
-                $unpublished_ids = ( isset($_POST['bulk-delete']) && !empty($_POST['bulk-delete']) ) ? esc_sql($_POST['bulk-delete']) : array();
+                $unpublished_ids = ( isset($_POST['bulk-delete']) && !empty($_POST['bulk-delete']) ) ? array_map( 'absint', (array) $_POST['bulk-delete'] ) : array();
 
                 // loop over the array of record IDs and mark as read them
                 foreach ($unpublished_ids as $id) {

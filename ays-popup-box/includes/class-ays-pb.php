@@ -251,7 +251,6 @@ class Ays_Pb {
 
 		// Plugin deactivation funtionality
         $this->loader->add_action( 'wp_ajax_deactivate_plugin_option_pb', $plugin_admin, 'deactivate_plugin_option' );
-        $this->loader->add_action( 'wp_ajax_nopriv_deactivate_plugin_option_pb', $plugin_admin , 'deactivate_plugin_option' );
 
 		// Functionality for display option's post types suboption
         $this->loader->add_action( 'wp_ajax_get_selected_options_pb', $plugin_admin, 'get_selected_options_pb' );
@@ -268,27 +267,21 @@ class Ays_Pb {
 
 		// Sale banner dismiss button
 		$this->loader->add_action( 'wp_ajax_ays_pb_dismiss_button', $plugin_admin, 'ays_pb_dismiss_button' );
-        $this->loader->add_action( 'wp_ajax_nopriv_ays_pb_dismiss_button', $plugin_admin, 'ays_pb_dismiss_button' );
 
 		// Change the popup author option functionality
 		$this->loader->add_action( 'wp_ajax_ays_pb_create_author', $plugin_admin, 'ays_pb_create_author' );
-        $this->loader->add_action( 'wp_ajax_nopriv_ays_pb_create_author', $plugin_admin, 'ays_pb_create_author' );
 
 		// Close popup and caches plugins conflict warning note for 1 month
 		$this->loader->add_action( 'wp_ajax_close_warning_note_permanently', $plugin_admin, 'close_warning_note_permanently' );
-        $this->loader->add_action( 'wp_ajax_nopriv_close_warning_note_permanently', $plugin_admin, 'close_warning_note_permanently' );
 
 		// Our Products | Install plugin
 		$this->loader->add_action( 'wp_ajax_ays_pb_install_plugin', $plugin_admin, 'ays_pb_install_plugin' );
-        $this->loader->add_action( 'wp_ajax_nopriv_ays_pb_install_plugin', $plugin_admin, 'ays_pb_install_plugin' );
 
 		// Our Products | Activate plugin
         $this->loader->add_action( 'wp_ajax_ays_pb_activate_plugin', $plugin_admin, 'ays_pb_activate_plugin' );
-        $this->loader->add_action( 'wp_ajax_nopriv_ays_pb_activate_plugin', $plugin_admin, 'ays_pb_activate_plugin' );
 
 		// AJAX handler for changing popupbox status in list table
 		$this->loader->add_action( 'wp_ajax_ays_pb_change_status', $plugin_admin, 'ays_pb_change_status' );
-		$this->loader->add_action( 'wp_ajax_nopriv_ays_pb_change_status', $plugin_admin, 'ays_pb_change_status' );
 		
 		// Dencque third-party scripts and styles
 		// $this->loader->add_action('admin_enqueue_scripts', $plugin_admin, 'maybe_dequeue_third_party_assets');

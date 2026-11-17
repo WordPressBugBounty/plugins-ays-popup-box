@@ -1572,7 +1572,12 @@ class Ays_Pb_Admin {
      */
     public function ays_pb_change_status() {
 
-        check_ajax_referer( $this->plugin_name . '-change-status-nonce', sanitize_key($_REQUEST['_ajax_nonce']) );
+        check_ajax_referer( $this->plugin_name . '-change-status-nonce', '_ajax_nonce' );
+
+        // Check for permissions.
+        if ( !current_user_can( 'manage_options' ) ) {
+            wp_send_json_error();
+        }
 
         global $wpdb;
         $pb_table = $wpdb->prefix . "ays_pb";
