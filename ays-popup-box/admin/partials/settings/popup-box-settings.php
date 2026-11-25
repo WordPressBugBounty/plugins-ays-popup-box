@@ -532,349 +532,369 @@ $categories_title_length = (isset($options['categories_title_length']) && intval
                         </blockquote>
                         <hr>
                         <div class="form-group row">
-                            <div class="col-sm-12">        
-                                <p class="vmessage">
-                                    <strong>
-                                        <input type="text" onClick="this.setSelectionRange(0, this.value.length)" readonly value="%%popup_title%%"/>
-                                    </strong>
-                                    <span> - </span>
-                                    <span style="font-size:18px;">
-                                        <?php echo esc_html__( "The title of the popup", "ays-popup-box"); ?>
-                                    </span>
-                                </p>        
-                                <p class="vmessage">
-                                    <strong>
-                                        <input type="text" onClick="this.setSelectionRange(0, this.value.length)" readonly value="%%popup_category_title%%"/>
-                                    </strong>
-                                    <span> - </span>
-                                    <span style="font-size:18px;">
-                                        <?php echo esc_html__( "The title of the popup category", "ays-popup-box"); ?>
-                                    </span>
-                                </p>        
-                                <p class="vmessage">
-                                    <strong>
-                                        <input type="text" onClick="this.setSelectionRange(0, this.value.length)" readonly value="%%popup_category_description%%"/>
-                                    </strong>
-                                    <span> - </span>
-                                    <span style="font-size:18px;">
-                                        <?php echo esc_html__( "The description of the popup category", "ays-popup-box"); ?>
-                                    </span>
-                                </p>
-                                <p class="vmessage">
-                                    <strong>
-                                        <input type="text" onClick="this.setSelectionRange(0, this.value.length)" readonly value="%%user_name%%"/>
-                                    </strong>
-                                    <span> - </span>
-                                    <span style="font-size:18px;">
-                                        <?php echo esc_html__( "The user's display name that was filled in their WordPress site during registration.", "ays-popup-box"); ?>
-                                    </span>
-                                </p>
-                                <p class="vmessage">
-                                    <strong>
-                                        <input type="text" onClick="this.setSelectionRange(0, this.value.length)" readonly value="%%user_email%%" />
-                                    </strong>
-                                    <span> - </span>
-                                    <span style="font-size:18px;">
-                                        <?php echo esc_html__( "The user's email that was filled in their WordPress site during registration.", "ays-popup-box"); ?>
-                                    </span>
-                                </p>
-                                <p class="vmessage">
-                                    <strong>
-                                        <input type="text" onClick="this.setSelectionRange(0, this.value.length)" readonly value="%%user_first_name%%" class='ays-popup-message-variables-inputs'/>
-                                    </strong>
-                                    <span> - </span>
-                                    <span style="font-size:18px;">
-                                        <?php echo esc_html__( "The user's first name that was filled in their WordPress site during registration.", "ays-popup-box"); ?>
-                                    </span>
-                                </p>
-                                <p class="vmessage">
-                                    <strong>
-                                        <input type="text" onClick="this.setSelectionRange(0, this.value.length)" readonly value="%%user_last_name%%" class='ays-popup-message-variables-inputs'/>
-                                    </strong>
-                                    <span> - </span>
-                                    <span style="font-size:18px;">
-                                        <?php echo esc_html__( "The user's last name that was filled in their WordPress site during registration.", "ays-popup-box"); ?>
-                                    </span>
-                                </p>
-                                <p class="vmessage">
-                                    <strong>
-                                        <input type="text" onClick="this.setSelectionRange(0, this.value.length)" readonly value="%%user_nickname%%" class='ays-popup-message-variables-inputs'/>
-                                    </strong>
-                                    <span> - </span>
-                                    <span style="font-size:18px;">
-                                        <?php echo esc_html__( "The user's nickname that was filled in their WordPress profile.", "ays-popup-box"); ?>
-                                    </span>
-                                </p>
-                                <p class="vmessage">
-                                    <strong>
-                                        <input type="text" onClick="this.setSelectionRange(0, this.value.length)" readonly value="%%user_wordpress_roles%%" class='ays-popup-message-variables-inputs'/>
-                                    </strong>
-                                    <span> - </span>
-                                    <span style="font-size:18px;">
-                                        <?php echo esc_html__( "The user's role(s) when logged-in. In case the user is not logged-in, the field will be empty.", "ays-popup-box"); ?>
-                                    </span>
-                                </p>
-                                <p class="vmessage">
-                                    <strong>
-                                        <input type="text" onClick="this.setSelectionRange(0, this.value.length)" readonly value="%%user_ip_address%%" class='ays-popup-message-variables-inputs'/>
-                                    </strong>
-                                    <span> - </span>
-                                    <span style="font-size:18px;">
-                                        <?php echo esc_html__( "The user's IP address.", "ays-popup-box"); ?>
-                                    </span>
-                                </p>
-                                <p class="vmessage">
-                                    <strong>
-                                        <input type="text" onClick="this.setSelectionRange(0, this.value.length)" readonly value="%%user_id%%" class='ays-pb-message-variables-inputs'/>
-                                    </strong>
-                                    <span> - </span>
-                                    <span style="font-size:18px;">
-                                        <?php echo esc_html__( "The user's ID when logged-in. In case the user is not logged-in, the field will be empty.", "ays-popup-box"); ?>
-                                    </span>
-                                </p>
-                                <p class="vmessage">
-                                    <strong>
-                                        <input type="text" onClick="this.setSelectionRange(0, this.value.length)" readonly value="%%user_registered%%" class='ays-pb-message-variables-inputs'/>
-                                    </strong>
-                                    <span> - </span>
-                                    <span style="font-size:18px;">
-                                        <?php echo esc_html__( "The user's registration date when logged-in. In case the user is not logged-in, the field will be empty.", "ays-popup-box"); ?>
-                                    </span>
-                                </p>
-                                <p class="vmessage">
-                                    <strong>
-                                        <input type="text" onClick="this.setSelectionRange(0, this.value.length)" readonly value="%%user_website_url%%" class='ays-pb-message-variables-inputs'/>
-                                    </strong>
-                                    <span> - </span>
-                                    <span style="font-size:18px;">
-                                        <?php echo esc_html__( "The user's website url that was filled in their WordPress profile.", "ays-popup-box"); ?>
-                                    </span>
-                                </p>
-                                <p class="vmessage">
-                                    <strong>
-                                        <input type="text" onClick="this.setSelectionRange(0, this.value.length)" readonly value="%%admin_email%%" />
-                                    </strong>
-                                    <span> - </span>
-                                    <span style="font-size:18px;">
-                                        <?php echo esc_html__( "Shows the admin's email that was filled in their WordPress profile.", "ays-popup-box"); ?>
-                                    </span>
-                                </p>
-                                <p class="vmessage">
-                                    <strong>
-                                        <input type="text" onClick="this.setSelectionRange(0, this.value.length)" readonly value="%%current_popup_author%%" class='ays-popup-message-variables-inputs'/>
-                                    </strong>
-                                    <span> - </span>
-                                    <span style="font-size:18px;">
-                                        <?php echo esc_html__( "It will show the author of the current popup.", "ays-popup-box"); ?>
-                                    </span>
-                                </p>
-                                <p class="vmessage">
-                                    <strong>
-                                        <input type="text" onClick="this.setSelectionRange(0, this.value.length)" readonly value="%%current_popup_author_email%%" class='ays-popup-message-variables-inputs'/>
-                                    </strong>
-                                    <span> - </span>
-                                    <span style="font-size:18px;">
-                                        <?php echo esc_html__( "It will show the author email of the current form.", "ays-popup-box"); ?>
-                                    </span>
-                                </p>
-                                <p class="vmessage">
-                                    <strong>
-                                        <input type="text" onClick="this.setSelectionRange(0, this.value.length)" readonly value="%%current_popup_author_nickname%%" class='ays-popup-message-variables-inputs'/>
-                                    </strong>
-                                    <span> - </span>
-                                    <span style="font-size:18px;">
-                                        <?php echo esc_html__( "Shows the current popup author's nickname that was filled in their WordPress profile.", "ays-popup-box"); ?>
-                                    </span>
-                                </p>
-                                <p class="vmessage">
-                                    <strong>
-                                        <input type="text" onClick="this.setSelectionRange(0, this.value.length)" readonly value="%%current_popup_author_display_name%%" class='ays-popup-message-variables-inputs'/>
-                                    </strong>
-                                    <span> - </span>
-                                    <span style="font-size:18px;">
-                                        <?php echo esc_html__( "Shows the current popup author's Display name that was filled in their WordPress profile.", "ays-popup-box"); ?>
-                                    </span>
-                                </p>
-                                <p class="vmessage">
-                                    <strong>
-                                        <input type="text" onClick="this.setSelectionRange(0, this.value.length)" readonly value="%%current_popup_author_website_url%%" class='ays-popup-message-variables-inputs'/>
-                                    </strong>
-                                    <span> - </span>
-                                    <span style="font-size:18px;">
-                                        <?php echo esc_html__( "Shows the current popup author's Website URL that was filled in their WordPress profile.", "ays-popup-box"); ?>
-                                    </span>
-                                </p>
-                                <p class="vmessage">
-                                    <strong>
-                                        <input type="text" onClick="this.setSelectionRange(0, this.value.length)" readonly value="%%current_popup_author_registered%%" class='ays-popup-message-variables-inputs'/>
-                                    </strong>
-                                    <span> - </span>
-                                    <span style="font-size:18px;">
-                                        <?php echo esc_html__( "Shows the current popup author's registered date that was filled in their WordPress profile.", "ays-popup-box"); ?>
-                                    </span>
-                                </p>
-                                <p class="vmessage">
-                                    <strong>
-                                        <input type="text" onClick="this.setSelectionRange(0, this.value.length)" readonly value="%%current_popup_page_link%%" class='ays-popup-message-variables-inputs'/>
-                                    </strong>
-                                    <span> - </span>
-                                    <span style="font-size:18px;">
-                                        <?php echo esc_html__( "Prints the webpage link where the current popup is displayed.", "ays-popup-box"); ?>
-                                    </span>
-                                </p>                                
-                                <p class="vmessage">
-                                    <strong>
-                                        <input type="text" onClick="this.setSelectionRange(0, this.value.length)" readonly value="%%creation_date%%" class='ays-pb-message-variables-inputs'/>
-                                    </strong>
-                                    <span> - </span>
-                                    <span style="font-size:18px;">
-                                        <?php echo esc_html__( "The creation date of the popup.", "ays-popup-box"); ?>
-                                    </span>
-                                </p>
-                                <p class="vmessage">
-                                    <strong>
-                                        <input type="text" onClick="this.setSelectionRange(0, this.value.length)" readonly value="%%current_date%%" class='ays-pb-message-variables-inputs'/>
-                                    </strong>
-                                    <span> - </span>
-                                    <span style="font-size:18px;">
-                                        <?php echo esc_html__( "It will show the current date upon opening a popup.", "ays-popup-box"); ?>
-                                    </span>
-                                </p>
-                                <p class="vmessage">
-                                    <strong>
-                                        <input type="text" onClick="this.setSelectionRange(0, this.value.length)" readonly value="%%current_time%%" class='ays-pb-message-variables-inputs'/>
-                                    </strong>
-                                    <span> - </span>
-                                    <span style="font-size:18px;">
-                                        <?php echo esc_html__( "It will show the current time upon opening a popup.", "ays-popup-box"); ?>
-                                    </span>
-                                </p>
-                                <p class="vmessage">
-                                    <strong>
-                                        <input type="text" onClick="this.setSelectionRange(0, this.value.length)" readonly value="%%current_day%%" class='ays-pb-message-variables-inputs'/>
-                                    </strong>
-                                    <span> - </span>
-                                    <span style="font-size:18px;">
-                                        <?php echo esc_html__( "It will show the current day upon opening a popup.", "ays-popup-box"); ?>
-                                    </span>
-                                </p>
-                                <p class="vmessage">
-                                    <strong>
-                                        <input type="text" onClick="this.setSelectionRange(0, this.value.length)" readonly value="%%current_month%%" class='ays-pb-message-variables-inputs'/>
-                                    </strong>
-                                    <span> - </span>
-                                    <span style="font-size:18px;">
-                                        <?php echo esc_html__( "It will show the current month upon opening a popup.", "ays-popup-box"); ?>
-                                    </span>
-                                </p>                                
-                                <p class="vmessage">
-                                    <strong>
-                                        <input type="text" onClick="this.setSelectionRange(0, this.value.length)" readonly value="%%post_author_nickname%%" class='ays-pb-message-variables-inputs'/>
-                                    </strong>
-                                    <span> - </span>
-                                    <span style="font-size:18px;">
-                                        <?php echo esc_html__( "Shows the post author's nickname that was filled in their WordPress profile.", "ays-popup-box"); ?>
-                                    </span>
-                                </p>
-                                <p class="vmessage">
-                                    <strong>
-                                        <input type="text" onClick="this.setSelectionRange(0, this.value.length)" readonly value="%%post_author_email%%" class='ays-pb-message-variables-inputs'/>
-                                    </strong>
-                                    <span> - </span>
-                                    <span style="font-size:18px;">
-                                        <?php echo esc_html__( "Shows the post author's email that was filled in their WordPress profile.", "ays-popup-box"); ?>
-                                    </span>
-                                </p>
-                                <p class="vmessage">
-                                    <strong>
-                                        <input type="text" onClick="this.setSelectionRange(0, this.value.length)" readonly value="%%post_author_first_name%%" class='ays-pb-message-variables-inputs'/>
-                                    </strong>
-                                    <span> - </span>
-                                    <span style="font-size:18px;">
-                                        <?php echo esc_html__( "The First name of the author of the post.", "ays-popup-box"); ?>
-                                    </span>
-                                </p>
-                                <p class="vmessage">
-                                    <strong>
-                                        <input type="text" onClick="this.setSelectionRange(0, this.value.length)" readonly value="%%post_author_last_name%%" class='ays-pb-message-variables-inputs'/>
-                                    </strong>
-                                    <span> - </span>
-                                    <span style="font-size:18px;">
-                                        <?php echo esc_html__( "The Last name of the author of the post.", "ays-popup-box"); ?>
-                                    </span>
-                                </p>
-                                <p class="vmessage">
-                                    <strong>
-                                        <input type="text" onClick="this.setSelectionRange(0, this.value.length)" readonly value="%%post_author_display_name%%" class='ays-pb-message-variables-inputs'/>
-                                    </strong>
-                                    <span> - </span>
-                                    <span style="font-size:18px;">
-                                        <?php echo esc_html__( "The Display name of the author of the post.", "ays-popup-box"); ?>
-                                    </span>
-                                </p>
-                                <p class="vmessage">
-                                    <strong>
-                                        <input type="text" onClick="this.setSelectionRange(0, this.value.length)" readonly value="%%post_author_website_url%%" class='ays-pb-message-variables-inputs'/>
-                                    </strong>
-                                    <span> - </span>
-                                    <span style="font-size:18px;">
-                                        <?php echo esc_html__( "The website url of the author of the post.", "ays-popup-box"); ?>
-                                    </span>
-                                </p>
-                                <p class="vmessage">
-                                    <strong>
-                                        <input type="text" onClick="this.setSelectionRange(0, this.value.length)" readonly value="%%post_author_roles%%" class='ays-pb-message-variables-inputs'/>
-                                    </strong>
-                                    <span> - </span>
-                                    <span style="font-size:18px;">
-                                        <?php echo esc_html__( "The role(s) of the author of the post when logged-in. In case the user is not logged-in, the field will be empty.", "ays-popup-box"); ?>
-                                    </span>
-                                </p>
-                                <p class="vmessage">
-                                    <strong>
-                                        <input type="text" onClick="this.setSelectionRange(0, this.value.length)" readonly value="%%post_title%%" class='ays-pb-message-variables-inputs'/>
-                                    </strong>
-                                    <span> - </span>
-                                    <span style="font-size:18px;">
-                                        <?php echo esc_html__( "The Post title of the current post.", "ays-popup-box"); ?>
-                                    </span>
-                                </p>
-                                <p class="vmessage">
-                                    <strong>
-                                        <input type="text" onClick="this.setSelectionRange(0, this.value.length)" readonly value="%%post_id%%" class='ays-pb-message-variables-inputs'/>
-                                    </strong>
-                                    <span> - </span>
-                                    <span style="font-size:18px;">
-                                        <?php echo esc_html__( "The ID of the current post.", "ays-popup-box"); ?>
-                                    </span>
-                                </p>
-                                <p class="vmessage">
-                                    <strong>
-                                        <input type="text" onClick="this.setSelectionRange(0, this.value.length)" readonly value="%%site_title%%" class='ays-pb-message-variables-inputs'/>
-                                    </strong>
-                                    <span> - </span>
-                                    <span style="font-size:18px;">
-                                        <?php echo esc_html__( "The title of the website.", "ays-popup-box"); ?>
-                                    </span>
-                                </p>
-                                <p class="vmessage">
-                                    <strong>
-                                        <input type="text" onClick="this.setSelectionRange(0, this.value.length)" readonly value="%%site_description%%" class='ays-pb-message-variables-inputs'/>
-                                    </strong>
-                                    <span> - </span>
-                                    <span style="font-size:18px;">
-                                        <?php echo esc_html__( "The description of the website.", "ays-popup-box"); ?>
-                                    </span>
-                                </p>
-                                <p class="vmessage">
-                                    <strong>
-                                        <input type="text" onClick="this.setSelectionRange(0, this.value.length)" readonly value="%%home_page_url%%" class='ays-pb-message-variables-inputs'/>
-                                    </strong>
-                                    <span> - </span>
-                                    <span style="font-size:18px;">
-                                        <?php echo esc_html__( "The URL of the home page.", "ays-popup-box"); ?>
-                                    </span>
-                                </p>
+                            <div class="col-sm-12">
+                                <fieldset>
+                                    <legend>
+                                        <strong style="font-size:30px;">[ ]</strong>
+                                        <h5><?php echo esc_html__('General Message Variables','ays-popup-box'); ?></h5>
+                                    </legend>
+                                    <p class="vmessage">
+                                        <strong>
+                                            <input type="text" onClick="this.setSelectionRange(0, this.value.length)" readonly value="%%current_date%%" class='ays-pb-message-variables-inputs'/>
+                                        </strong>
+                                        <span> - </span>
+                                        <span style="font-size:18px;">
+                                            <?php echo esc_html__( "It will show the current date upon opening a popup.", "ays-popup-box"); ?>
+                                        </span>
+                                    </p>
+                                    <p class="vmessage">
+                                        <strong>
+                                            <input type="text" onClick="this.setSelectionRange(0, this.value.length)" readonly value="%%home_page_url%%" class='ays-pb-message-variables-inputs'/>
+                                        </strong>
+                                        <span> - </span>
+                                        <span style="font-size:18px;">
+                                            <?php echo esc_html__( "The URL of the home page.", "ays-popup-box"); ?>
+                                        </span>
+                                    </p>
+                                    <p class="vmessage">
+                                        <strong>
+                                            <input type="text" onClick="this.setSelectionRange(0, this.value.length)" readonly value="%%admin_email%%" />
+                                        </strong>
+                                        <span> - </span>
+                                        <span style="font-size:18px;">
+                                            <?php echo esc_html__( "Shows the admin's email that was filled in their WordPress profile.", "ays-popup-box"); ?>
+                                        </span>
+                                    </p>
+                                    <p class="vmessage">
+                                        <strong>
+                                            <input type="text" onClick="this.setSelectionRange(0, this.value.length)" readonly value="%%site_title%%" class='ays-pb-message-variables-inputs'/>
+                                        </strong>
+                                        <span> - </span>
+                                        <span style="font-size:18px;">
+                                            <?php echo esc_html__( "The title of the website.", "ays-popup-box"); ?>
+                                        </span>
+                                    </p>
+                                    <p class="vmessage">
+                                        <strong>
+                                            <input type="text" onClick="this.setSelectionRange(0, this.value.length)" readonly value="%%site_description%%" class='ays-pb-message-variables-inputs'/>
+                                        </strong>
+                                        <span> - </span>
+                                        <span style="font-size:18px;">
+                                            <?php echo esc_html__( "The description of the website.", "ays-popup-box"); ?>
+                                        </span>
+                                    </p>                                    
+                                </fieldset> <!-- General Message Variables -->
+                                <hr />
+                                <fieldset>
+                                    <legend>
+                                        <strong style="font-size:30px;">[ ]</strong>
+                                        <h5><?php echo esc_html__('User Message Variables','ays-popup-box'); ?></h5>
+                                    </legend>
+                                    <p class="vmessage">
+                                        <strong>
+                                            <input type="text" onClick="this.setSelectionRange(0, this.value.length)" readonly value="%%user_name%%"/>
+                                        </strong>
+                                        <span> - </span>
+                                        <span style="font-size:18px;">
+                                            <?php echo esc_html__( "The user's display name that was filled in their WordPress site during registration.", "ays-popup-box"); ?>
+                                        </span>
+                                    </p>
+                                    <p class="vmessage">
+                                        <strong>
+                                            <input type="text" onClick="this.setSelectionRange(0, this.value.length)" readonly value="%%user_email%%" />
+                                        </strong>
+                                        <span> - </span>
+                                        <span style="font-size:18px;">
+                                            <?php echo esc_html__( "The user's email that was filled in their WordPress site during registration.", "ays-popup-box"); ?>
+                                        </span>
+                                    </p>
+                                    <p class="vmessage">
+                                        <strong>
+                                            <input type="text" onClick="this.setSelectionRange(0, this.value.length)" readonly value="%%user_first_name%%" class='ays-popup-message-variables-inputs'/>
+                                        </strong>
+                                        <span> - </span>
+                                        <span style="font-size:18px;">
+                                            <?php echo esc_html__( "The user's first name that was filled in their WordPress site during registration.", "ays-popup-box"); ?>
+                                        </span>
+                                    </p>
+                                    <p class="vmessage">
+                                        <strong>
+                                            <input type="text" onClick="this.setSelectionRange(0, this.value.length)" readonly value="%%user_last_name%%" class='ays-popup-message-variables-inputs'/>
+                                        </strong>
+                                        <span> - </span>
+                                        <span style="font-size:18px;">
+                                            <?php echo esc_html__( "The user's last name that was filled in their WordPress site during registration.", "ays-popup-box"); ?>
+                                        </span>
+                                    </p>
+                                    <p class="vmessage">
+                                        <strong>
+                                            <input type="text" onClick="this.setSelectionRange(0, this.value.length)" readonly value="%%user_nickname%%" class='ays-popup-message-variables-inputs'/>
+                                        </strong>
+                                        <span> - </span>
+                                        <span style="font-size:18px;">
+                                            <?php echo esc_html__( "The user's nickname that was filled in their WordPress profile.", "ays-popup-box"); ?>
+                                        </span>
+                                    </p>
+                                    <p class="vmessage">
+                                        <strong>
+                                            <input type="text" onClick="this.setSelectionRange(0, this.value.length)" readonly value="%%user_wordpress_roles%%" class='ays-popup-message-variables-inputs'/>
+                                        </strong>
+                                        <span> - </span>
+                                        <span style="font-size:18px;">
+                                            <?php echo esc_html__( "The user's role(s) when logged-in. In case the user is not logged-in, the field will be empty.", "ays-popup-box"); ?>
+                                        </span>
+                                    </p>
+                                    <p class="vmessage">
+                                        <strong>
+                                            <input type="text" onClick="this.setSelectionRange(0, this.value.length)" readonly value="%%user_ip_address%%" class='ays-popup-message-variables-inputs'/>
+                                        </strong>
+                                        <span> - </span>
+                                        <span style="font-size:18px;">
+                                            <?php echo esc_html__( "The user's IP address.", "ays-popup-box"); ?>
+                                        </span>
+                                    </p>
+                                    <p class="vmessage">
+                                        <strong>
+                                            <input type="text" onClick="this.setSelectionRange(0, this.value.length)" readonly value="%%user_id%%" class='ays-pb-message-variables-inputs'/>
+                                        </strong>
+                                        <span> - </span>
+                                        <span style="font-size:18px;">
+                                            <?php echo esc_html__( "The user's ID when logged-in. In case the user is not logged-in, the field will be empty.", "ays-popup-box"); ?>
+                                        </span>
+                                    </p>
+                                    <p class="vmessage">
+                                        <strong>
+                                            <input type="text" onClick="this.setSelectionRange(0, this.value.length)" readonly value="%%user_registered%%" class='ays-pb-message-variables-inputs'/>
+                                        </strong>
+                                        <span> - </span>
+                                        <span style="font-size:18px;">
+                                            <?php echo esc_html__( "The user's registration date when logged-in. In case the user is not logged-in, the field will be empty.", "ays-popup-box"); ?>
+                                        </span>
+                                    </p>
+                                    <p class="vmessage">
+                                        <strong>
+                                            <input type="text" onClick="this.setSelectionRange(0, this.value.length)" readonly value="%%user_website_url%%" class='ays-pb-message-variables-inputs'/>
+                                        </strong>
+                                        <span> - </span>
+                                        <span style="font-size:18px;">
+                                            <?php echo esc_html__( "The user's website url that was filled in their WordPress profile.", "ays-popup-box"); ?>
+                                        </span>
+                                    </p>
+                                </fieldset> <!-- User Message Variables -->
+                                <hr />
+                                <fieldset>
+                                    <legend>
+                                        <strong style="font-size:30px;">[ ]</strong>
+                                        <h5><?php echo esc_html__('Popup Message Variables','ays-popup-box'); ?></h5>
+                                    </legend>
+                                    <p class="vmessage">
+                                        <strong>
+                                            <input type="text" onClick="this.setSelectionRange(0, this.value.length)" readonly value="%%popup_title%%"/>
+                                        </strong>
+                                        <span> - </span>
+                                        <span style="font-size:18px;">
+                                            <?php echo esc_html__( "The title of the popup", "ays-popup-box"); ?>
+                                        </span>
+                                    </p>        
+                                    <p class="vmessage">
+                                        <strong>
+                                            <input type="text" onClick="this.setSelectionRange(0, this.value.length)" readonly value="%%popup_category_title%%"/>
+                                        </strong>
+                                        <span> - </span>
+                                        <span style="font-size:18px;">
+                                            <?php echo esc_html__( "The title of the popup category", "ays-popup-box"); ?>
+                                        </span>
+                                    </p>        
+                                    <p class="vmessage">
+                                        <strong>
+                                            <input type="text" onClick="this.setSelectionRange(0, this.value.length)" readonly value="%%popup_category_description%%"/>
+                                        </strong>
+                                        <span> - </span>
+                                        <span style="font-size:18px;">
+                                            <?php echo esc_html__( "The description of the popup category", "ays-popup-box"); ?>
+                                        </span>
+                                    </p>                                                                
+                                    <p class="vmessage">
+                                        <strong>
+                                            <input type="text" onClick="this.setSelectionRange(0, this.value.length)" readonly value="%%current_popup_author%%" class='ays-popup-message-variables-inputs'/>
+                                        </strong>
+                                        <span> - </span>
+                                        <span style="font-size:18px;">
+                                            <?php echo esc_html__( "It will show the author of the current popup.", "ays-popup-box"); ?>
+                                        </span>
+                                    </p>
+                                    <p class="vmessage">
+                                        <strong>
+                                            <input type="text" onClick="this.setSelectionRange(0, this.value.length)" readonly value="%%current_popup_author_email%%" class='ays-popup-message-variables-inputs'/>
+                                        </strong>
+                                        <span> - </span>
+                                        <span style="font-size:18px;">
+                                            <?php echo esc_html__( "It will show the author email of the current form.", "ays-popup-box"); ?>
+                                        </span>
+                                    </p>
+                                    <p class="vmessage">
+                                        <strong>
+                                            <input type="text" onClick="this.setSelectionRange(0, this.value.length)" readonly value="%%current_popup_author_nickname%%" class='ays-popup-message-variables-inputs'/>
+                                        </strong>
+                                        <span> - </span>
+                                        <span style="font-size:18px;">
+                                            <?php echo esc_html__( "Shows the current popup author's nickname that was filled in their WordPress profile.", "ays-popup-box"); ?>
+                                        </span>
+                                    </p>
+                                    <p class="vmessage">
+                                        <strong>
+                                            <input type="text" onClick="this.setSelectionRange(0, this.value.length)" readonly value="%%current_popup_author_display_name%%" class='ays-popup-message-variables-inputs'/>
+                                        </strong>
+                                        <span> - </span>
+                                        <span style="font-size:18px;">
+                                            <?php echo esc_html__( "Shows the current popup author's Display name that was filled in their WordPress profile.", "ays-popup-box"); ?>
+                                        </span>
+                                    </p>
+                                    <p class="vmessage">
+                                        <strong>
+                                            <input type="text" onClick="this.setSelectionRange(0, this.value.length)" readonly value="%%current_popup_author_website_url%%" class='ays-popup-message-variables-inputs'/>
+                                        </strong>
+                                        <span> - </span>
+                                        <span style="font-size:18px;">
+                                            <?php echo esc_html__( "Shows the current popup author's Website URL that was filled in their WordPress profile.", "ays-popup-box"); ?>
+                                        </span>
+                                    </p>
+                                    <p class="vmessage">
+                                        <strong>
+                                            <input type="text" onClick="this.setSelectionRange(0, this.value.length)" readonly value="%%current_popup_author_registered%%" class='ays-popup-message-variables-inputs'/>
+                                        </strong>
+                                        <span> - </span>
+                                        <span style="font-size:18px;">
+                                            <?php echo esc_html__( "Shows the current popup author's registered date that was filled in their WordPress profile.", "ays-popup-box"); ?>
+                                        </span>
+                                    </p>
+                                    <p class="vmessage">
+                                        <strong>
+                                            <input type="text" onClick="this.setSelectionRange(0, this.value.length)" readonly value="%%current_popup_page_link%%" class='ays-popup-message-variables-inputs'/>
+                                        </strong>
+                                        <span> - </span>
+                                        <span style="font-size:18px;">
+                                            <?php echo esc_html__( "Prints the webpage link where the current popup is displayed.", "ays-popup-box"); ?>
+                                        </span>
+                                    </p>                                
+                                    <p class="vmessage">
+                                        <strong>
+                                            <input type="text" onClick="this.setSelectionRange(0, this.value.length)" readonly value="%%creation_date%%" class='ays-pb-message-variables-inputs'/>
+                                        </strong>
+                                        <span> - </span>
+                                        <span style="font-size:18px;">
+                                            <?php echo esc_html__( "The creation date of the popup.", "ays-popup-box"); ?>
+                                        </span>
+                                    </p>                                
+                                    <p class="vmessage">
+                                        <strong>
+                                            <input type="text" onClick="this.setSelectionRange(0, this.value.length)" readonly value="%%current_time%%" class='ays-pb-message-variables-inputs'/>
+                                        </strong>
+                                        <span> - </span>
+                                        <span style="font-size:18px;">
+                                            <?php echo esc_html__( "It will show the current time upon opening a popup.", "ays-popup-box"); ?>
+                                        </span>
+                                    </p>
+                                    <p class="vmessage">
+                                        <strong>
+                                            <input type="text" onClick="this.setSelectionRange(0, this.value.length)" readonly value="%%current_day%%" class='ays-pb-message-variables-inputs'/>
+                                        </strong>
+                                        <span> - </span>
+                                        <span style="font-size:18px;">
+                                            <?php echo esc_html__( "It will show the current day upon opening a popup.", "ays-popup-box"); ?>
+                                        </span>
+                                    </p>
+                                    <p class="vmessage">
+                                        <strong>
+                                            <input type="text" onClick="this.setSelectionRange(0, this.value.length)" readonly value="%%current_month%%" class='ays-pb-message-variables-inputs'/>
+                                        </strong>
+                                        <span> - </span>
+                                        <span style="font-size:18px;">
+                                            <?php echo esc_html__( "It will show the current month upon opening a popup.", "ays-popup-box"); ?>
+                                        </span>
+                                    </p>                                
+                                    <p class="vmessage">
+                                        <strong>
+                                            <input type="text" onClick="this.setSelectionRange(0, this.value.length)" readonly value="%%post_author_nickname%%" class='ays-pb-message-variables-inputs'/>
+                                        </strong>
+                                        <span> - </span>
+                                        <span style="font-size:18px;">
+                                            <?php echo esc_html__( "Shows the post author's nickname that was filled in their WordPress profile.", "ays-popup-box"); ?>
+                                        </span>
+                                    </p>
+                                    <p class="vmessage">
+                                        <strong>
+                                            <input type="text" onClick="this.setSelectionRange(0, this.value.length)" readonly value="%%post_author_email%%" class='ays-pb-message-variables-inputs'/>
+                                        </strong>
+                                        <span> - </span>
+                                        <span style="font-size:18px;">
+                                            <?php echo esc_html__( "Shows the post author's email that was filled in their WordPress profile.", "ays-popup-box"); ?>
+                                        </span>
+                                    </p>
+                                    <p class="vmessage">
+                                        <strong>
+                                            <input type="text" onClick="this.setSelectionRange(0, this.value.length)" readonly value="%%post_author_first_name%%" class='ays-pb-message-variables-inputs'/>
+                                        </strong>
+                                        <span> - </span>
+                                        <span style="font-size:18px;">
+                                            <?php echo esc_html__( "The First name of the author of the post.", "ays-popup-box"); ?>
+                                        </span>
+                                    </p>
+                                    <p class="vmessage">
+                                        <strong>
+                                            <input type="text" onClick="this.setSelectionRange(0, this.value.length)" readonly value="%%post_author_last_name%%" class='ays-pb-message-variables-inputs'/>
+                                        </strong>
+                                        <span> - </span>
+                                        <span style="font-size:18px;">
+                                            <?php echo esc_html__( "The Last name of the author of the post.", "ays-popup-box"); ?>
+                                        </span>
+                                    </p>
+                                    <p class="vmessage">
+                                        <strong>
+                                            <input type="text" onClick="this.setSelectionRange(0, this.value.length)" readonly value="%%post_author_display_name%%" class='ays-pb-message-variables-inputs'/>
+                                        </strong>
+                                        <span> - </span>
+                                        <span style="font-size:18px;">
+                                            <?php echo esc_html__( "The Display name of the author of the post.", "ays-popup-box"); ?>
+                                        </span>
+                                    </p>
+                                    <p class="vmessage">
+                                        <strong>
+                                            <input type="text" onClick="this.setSelectionRange(0, this.value.length)" readonly value="%%post_author_website_url%%" class='ays-pb-message-variables-inputs'/>
+                                        </strong>
+                                        <span> - </span>
+                                        <span style="font-size:18px;">
+                                            <?php echo esc_html__( "The website url of the author of the post.", "ays-popup-box"); ?>
+                                        </span>
+                                    </p>
+                                    <p class="vmessage">
+                                        <strong>
+                                            <input type="text" onClick="this.setSelectionRange(0, this.value.length)" readonly value="%%post_author_roles%%" class='ays-pb-message-variables-inputs'/>
+                                        </strong>
+                                        <span> - </span>
+                                        <span style="font-size:18px;">
+                                            <?php echo esc_html__( "The role(s) of the author of the post when logged-in. In case the user is not logged-in, the field will be empty.", "ays-popup-box"); ?>
+                                        </span>
+                                    </p>
+                                    <p class="vmessage">
+                                        <strong>
+                                            <input type="text" onClick="this.setSelectionRange(0, this.value.length)" readonly value="%%post_title%%" class='ays-pb-message-variables-inputs'/>
+                                        </strong>
+                                        <span> - </span>
+                                        <span style="font-size:18px;">
+                                            <?php echo esc_html__( "The Post title of the current post.", "ays-popup-box"); ?>
+                                        </span>
+                                    </p>
+                                    <p class="vmessage">
+                                        <strong>
+                                            <input type="text" onClick="this.setSelectionRange(0, this.value.length)" readonly value="%%post_id%%" class='ays-pb-message-variables-inputs'/>
+                                        </strong>
+                                        <span> - </span>
+                                        <span style="font-size:18px;">
+                                            <?php echo esc_html__( "The ID of the current post.", "ays-popup-box"); ?>
+                                        </span>
+                                    </p>
+                                </fieldset> <!-- Popup Message Variables -->
                             </div>
                         </div>
                     </div>

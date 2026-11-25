@@ -4,7 +4,7 @@ Donate link: https://popup-plugin.com
 Tags: popup, popups, exit popup, pop up, modal
 Requires at least: 4.0
 Tested up to: 7.1
-Stable tag: 6.4.8
+Stable tag: 6.4.9
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -309,6 +309,11 @@ After clearing the caches, try to check the case with either the **Incognito mod
 
 
 == Changelog ==
+
+= 6.4.9 ( Nov 24, 2026 ) =
+* Improved: Some changes on the admin dashboard
+* Updated: POT file
+* Tested: Compatible up to WordPress 7.1.5
 
 = 6.4.8 ( Nov 17, 2026 ) =
 * Improved: Popup status toggle in the list table is now available only for administrators
